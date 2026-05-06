@@ -169,7 +169,9 @@ El envio de mensajes OPC UA se realiza mediante un modelo de publicación-suscri
 El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.\par
 
 \section{Manejo de Variables}
+Las variables en winCC se dividen en tres categorías principales: Variables internas, variables externas y variables de estructura. Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado, son aquellas que siguen una estructura específica definida  para garantizar la interoperabilidad entre diferentes sistemas y dispositivos de tal forma que se mantiene un orden lógico.
 \subsection{Variables internas}
+El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas se dividen en diferentes categorías según su función y propósito. Algunas de las categorías principales de variables internas en WinCC incluyen:
 \subsection{Variables de externas}
 \subsection{Variables de estructura}
 La norma IEC 61400-25-2 es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición de los modelos de información y los servicios de comunicación que permiten la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.
@@ -483,6 +485,31 @@ En concreto, se presenta la jerarquía de pantallas definida para la navegación
 
 Norma IEC 60073 -> Color de las alarmas y estados de turbinas
 \section{Integración de IIoT en la solución}
+
+En el contexto actual de la Industria 4.0, la monitorización y supervisión de infraestructuras energéticas distribuidas, como es el caso de un parque eólico, se demandan soluciones que vayan más allá de los sistemas SCADA tradicionales aislados en planta. La convergencia entre las Tecnologías de la Operación (OT) y las Tecnologías de la Información (IT) permite habilitar el ecosistema del Internet Industrial de las Cosas (IIoT), facilitando el análisis de datos a gran escala, la accesibilidad remota y la escalabilidad del sistema.\par
+
+Este capítulo describe en detalle el diseño, despliegue e integración de una arquitectura en la nube orientada a la adquisición y visualización de datos  provenientes de los aerogeneradores. Mientras que el sistema local (basado en SIMATIC WinCC V8.1) se encarga de la adquisición en tiempo real (Edge) y el control a nivel de campo mediante protocolos industriales como OPC UA, la arquitectura propuesta en este capítulo tiene como misión exportar estos datos de manera segura y eficiente hacia la nube para su almacenamiento histórico y explotación visual.\par
+
+Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquitectura basada en microservicios contenerizados, apoyada en las siguientes capas lógicas:
+
+\begin{itemize}
+    \item Capa de Adquisición y Emisión (Edge): Encargada de la recopilación de datos en tiempo real desde los aerogeneradores y su publicación en la nube mediante protocolos de mensajería ligera como MQTT mediante WinCC Cloud Connector.
+    \item Capa de Infraestructura (Cloud): Proporciona el entorno computacional necesario para el despliegue de los servicios en la nube, garantizando alta disponibilidad y escalabilidad.
+    \item Capa de Ingesta y Procesamiento Intermedio: Responsable de la suscripción a los datos publicados, su filtrado, normalización y transformación antes de su almacenamiento.
+    \item Capa de Almacenamiento (TSDB): Optimizada para el almacenamiento eficiente de datos de series temporales, permitiendo consultas rápidas y eficientes sobre grandes volúmenes de datos
+    \item Capa de Visualización e Inteligencia de Negocio: Permite la construcción de dashboards interactivos para la monitorización del rendimiento del parque eólico y la toma de decisiones informada basada en los datos históricos y en tiempo real.
+\end{itemize}
+\subsection{Despliegue de la infraestructura en Amazon Web Services (AWS)}
+
+Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema IIoT. Para ello, se ha optado por un modelo de Infraestructura como Servicio (IaaS) mediante Amazon Web Services (AWS) ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.16]{figuras/DiagramaCloud.png}
+    \caption{Arquitectura de integración de IIoT para la monitorización de un parque eólico.}
+    \label{fig:IIoT}
+\end{figure}   
+
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante:
 
