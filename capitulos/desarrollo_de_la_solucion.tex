@@ -159,15 +159,14 @@ Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con do
 
 
 \section{Comunicación y adquisición de datos}
-Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos de comunicación industrial. Entre los más comunes se encuentran Modbus TCP. Por otra parte, integra el estandar industrial Open Platform Communication Unified Architecture (OPC UA). A continuación se describe la implementacion de ambas soluciones:
+Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (OPC UA). 
 
 \subsection{OPC UA}
-OPC UA es una tecnología middleware orientada a servicios (SOA). Se divide en dos modelos: El modelo de información y el modelo de comunicación. El modelo de información define cómo se estructuran y organizan los datos dentro del sistema, mientras que el modelo de comunicación establece los protocolos y mecanismos para la transferencia de datos entre los diferentes componentes del sistema. OPC UA es un estándar abierto y multiplataforma que permite la interoperabilidad entre dispositivos y sistemas de diferentes fabricantes. OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos.
+OPC UA es una tecnología middleware orientada a servicios (SOA). Se divide en dos modelos: El modelo de información y el modelo de comunicación. El modelo de información define cómo se estructuran y organizan los datos dentro del sistema, mientras que el modelo de comunicación establece los protocolos y mecanismos para la transferencia de datos entre los diferentes componentes del sistema. OPC UA es un estándar abierto y multiplataforma que permite la interoperabilidad entre dispositivos y sistemas de diferentes fabricantes. OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos.\par
 
 El envio de mensajes OPC UA se realiza mediante un modelo de publicación-suscripción (pub/sub) donde los dispositivos publican datos en el espacio de direcciones especificando el nodo. En el contexto de la solución WinCC actua de cliente OPC UA, suscribiéndose a los nodos del servidor OPC UA para recibir actualizaciones en tiempo real de las variables del proceso.\par
 
-El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.
-
+El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.\par
 
 \section{Manejo de Variables}
 \subsection{Variables internas}
@@ -431,7 +430,7 @@ La interfaz gráfica constituye el punto de interacción principal entre el oper
 En concreto, se presenta la jerarquía de pantallas definida para la navegación (desde vistas generales hasta vistas de detalle), la estructura de menús y accesos, la distribución de los elementos de supervisión y las pautas de representación de estados, alarmas y variables de proceso. Con ello se justifica cómo la arquitectura gráfica facilita tanto la monitorización continua como la operación segura del sistema.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{figuras/jerarquia.png}
+    \includegraphics[scale=0.45]{figuras/jerarquia.png}
     \caption{Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}
     \label{fig:jerarquia_pantallas}
 \end{figure}
@@ -483,7 +482,7 @@ En concreto, se presenta la jerarquía de pantallas definida para la navegación
 \section{Gestión de alarmas y eventos}
 
 Norma IEC 60073 -> Color de las alarmas y estados de turbinas
-
+\section{Integración de IIoT en la solución}
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante:
 
@@ -662,7 +661,7 @@ Los requisitos fundacionales (FR) son los requisitos de seguridad que deben cump
        \item RE 1: Notificación de umbral de almacenamiento de auditoría (SL 3-4).
     \end{itemize}
     Nivel de seguridad SL-T 4: Requerimientos CR2.9.\par
-
+\end{enumerate}
 
 \subsection{Matriz de implementación de requisitos y niveles de seguridad}
 
