@@ -1,0 +1,830 @@
+\chapter{Diseño/Desarrollo de la solución}
+\label{cap:desarrollo_de_la_solucion}
+
+\section{Introducción al entorno de SIMATIC WinCC V8.1}
+SIMATIC WinCC V8.1 es un sistema SCADA, basado en los sistemas operativos Microsoft Windows, desarrollado por Siemens. Está diseñado para la visualización, control y operación de procesos, flujos de producción, máquinas y plantas críticas en diversos sectores industriales.
+
+\par \indent WinCC actúa como una Interfaz Hombre-Máquina (HMI) de alto nivel. A diferencia de los paneles de operador básicos ubicados a pie de máquina, un HMI de alto nivel como WinCC proporciona un entorno gráfico avanzado que abstrae la complejidad de los equipos físicos. Esto permite a los operadores del centro de control manejar, monitorizar y entender de forma intuitiva los procesos dinámicos que se ejecutan en la planta sin tener que estar en la ubicación de la máquina. La comunicación entre el entorno de supervisión WinCC y la maquinaria física se efectúa de manera bidireccional a través de sistemas de automatización, empleando protocolos de comunicación industrial.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.15]{figuras/WinCC.png}
+    \caption{Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}
+    \label{fig:wincc_interface}
+\end{figure}
+
+\par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como ANSI-C y VBScript (Visual Basic). WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del archivado histórico continuo de las variables del proceso y del registro de eventos y fallos.
+
+\par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el sistema de configuración o Configuration Software (CS) y el entorno de ejecución o Runtime (RT):
+\subsection{Software de configuración (SC) WinCC Explorer}
+El software de configuración se denomina WinCC Explorer. En él se realiza toda la estructura y administración del proyecto. Dentro del WinCC Explorer se pueden abrir diferentes editores los cuales son interfaces de los subsistemas de WinCC. Los subsistemas principales de WinCC son:
+\begin{table}[H]
+    \begin{tabular}{p{5cm} p{3cm} p{6cm}} 
+        \toprule
+        \textbf{Subsistema} & \textbf{Editor} & \textbf{Descripción} \\ 
+        \hline
+        Sistema gráfico & Graphic Designer & Diseño de las pantallas de visualización \\[10pt]
+        Comunicación & Tag management & Creación de variables (internos o de estructura) configuración de drivers de comunicación y conexión con los datos del proceso \\[10pt]
+        Sistema de ficheros & Tag logging & Administración de archivado de datos historicos \\[10pt]
+        Sistema de avisos & Alarm logging & Gestión de alertas y eventos \\[10pt]
+        Sistema de informes & Report Designer& Creación y gestión de informes \\[10pt]
+        Administración de usuarios & User Administrator& Gestión de usuarios, grupos y sus respectivos permisos\\[10pt]
+        Subsistema de Scripts & Global Scripts & Diseño de Scripts globales del programa (Visual Basic VBS/ ANSI-C) \\[10pt]
+        Gestión de idiomas & Text library & Configuración y gestión de idiomas \\[10pt]
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5cm}
+    \caption{Descripción de los subsistemas principales del software de configuración de WinCC (\textit{CS}).}
+    \label{tab:wincc_subsystems}
+\end{table}
+
+\subsection{Software \textit{Runtime (RT)}: WinCC Runtime}
+El WinCC RT constituye el núcleo operativo del SCADA. Durante la operación normal del proceso, el Runtime es el motor encargado de ejecutar la adquisición de datos de los PLCs en tiempo real, actualizar dinámicamente la interfaz gráfica, procesar la lógica de los scripts, gestionar el control de acceso de los usuarios y archivar de manera segura los eventos y datos históricos en las bases de datos SQL.\par
+
+\section{Arquitecturas del sistema}
+\subsection{Topología de red del parque eólico y MCR}
+\subsection{Arquitectura de WinCC}
+El diseño de una red SCADA determina la forma en la que se hace la adquisición, procesamiento y visualización de datos. El entorno de Siemens permite multiples arquitecturas y configuraciones de proyecto dependiendo del tipo de sistema
+\subsubsection{Sistemas Monopuesto (\textit{Single User Systems})}
+En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar todas las tareas del SCADA. El puesto actúa tanto como servidor como cliente: El equipo se encarga de realizar las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet o ModBus, OPC UA …) de ejecutar el software del runtime y almacenar los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
+Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera se trata de una estación de ingeniería y runtime con un único PC (ver Figura \ref{fig:monopuesto}). La segunda, es una configuración redundante de la primera donde la estación redundante solo sería una estación runtime (ver Figura \ref{fig:monopuesto_redundante}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{figuras/Monopuesto.png}
+    \caption{Arquitectura de sistema monopuesto con un único PC}
+    \label{fig:monopuesto}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.15]{figuras/MonopuestoRedundante.png}
+    \caption{Arquitectura de sistema monopuesto con configuración redundante}
+    \label{fig:monopuesto_redundante}
+\end{figure}
+
+\subsubsection{Sistemas Multipuesto (\textit{Multi User Systems})}
+
+
+Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde un solo ordenador hace todo), en un sistema multipuesto la carga de trabajo se divide entre uno o varios Servidores centrales y múltiples estaciones Cliente. Este enfoque permite una variedad mayor de arquitecturas 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.17]{figuras/Multipuesto.png}
+    \caption{Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}
+    \label{fig:multipuesto}
+\end{figure}
+\subsubsection{Virtualización mediante SIVaaS}
+
+La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples máquinas virtuales (VM) aisladas, compartiendo recursos como CPU, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: Alojados y Metal-Desnudos.
+\paragraph{Hypervisor alojado  (\textit{Hosted Hypervisor})}
+Este tipo se instala como una aplicación de software más dentro de un sistema operativo convencional que ya está funcionando en el equipo físico (conocido como sistema operativo anfitrión u Host OS).\par
+
+Este tipo de hipervisor genera una dependencia del sistema operativo base ya que el hipervisor debe pedir constantemente permiso para acceder a los recursos del sistema lo cual genera un cuello de botella disminuyendo el rendimiento. \par
+
+Por otro lado, esta dependencia del sistema operativo base es una vulnerabilidad en sí misma para la seguridad y ciberseguridad del sistema, ya que un malfuncionamiento o un virus podrían contagiarse a cada una de las instancias de maquinas virtuales que corren encima.
+
+\paragraph{Hypervisor metal desnudo (\textit{Bare-Metal Hypervisor})}
+
+Se le denomina Bare-Metal (metal desnudo) porque se instala y ejecuta directamente sobre el hardware físico del servidor. No hay ningún sistema operativo tradicional (como Windows Server o Linux) actuando como intermediario. El hipervisor en sí mismo es un sistema operativo altamente especializado y minimalista diseñado con un único propósito: gestionar y asignar recursos físicos a las máquinas virtuales. Al no tener que atravesar ningún sistema operativo anfitrión, las maquinas virtuales tienen acceso más directo a los recursos del sistema reduciendo la latencia y sobrecarga. \par
+
+Al contrario que un hipervisor alojado, es seguro ante vulnerabilidades, debido a que que tiene una superficie de ataque reducida. Además, las máquinas virtuales están aisladas por lo que si una maquina virtual se ve comprometida por un malware el resto de maquinas permanecerán seguras.\par
+
+\paragraph{Virtualización SIMATIC como Servicio (SIVaaS)}
+Siemens ofrece una solución de virtualización completa para sistemas de control basada en hipervisores bare-metal llamada Virtualización SIMATIC como Servicio (SIVaaS). SIVaaS es una solución de virtualización completa para sistemas de control basados en PC. El hardware, el software, la configuración y los servicios de ciclo de vida están totalmente integrados, abarcando desde la configuración del host y el hipervisor hasta las máquinas virtuales, los sistemas operativos y la instalación de software llave en mano. 
+Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con dos máquinas virtuales una haciendo de servidor y la otra de cliente. \par
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{11cm} p{2cm}}
+        \toprule
+        \toprule
+        \multicolumn{2}{c}{\textbf{Primera instancia de Host}} \\
+        \midrule
+        Nombre & Cantidad \\
+        \midrule
+        16X1 HPE HOST SYSTEM "S" & 1\\
+        \hline
+        \multicolumn{2}{c}{\textbf{Maquinas Virtuales}} \\
+        \hline
+        VM SIMATIC WinCC V8 Server & 1\\
+        VM SIMATIC WinCC V8 Engineering Station + Client & 1\\
+        \bottomrule
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5cm}
+    \caption{Inserta aquí la descripción de la tabla.}
+    \label{tab:Equipo 1}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{11cm} p{2cm}}
+        \toprule
+        \toprule
+        \multicolumn{2}{c}{\textbf{Segunda instancia de Host}} \\
+        \midrule
+        Nombre & Cantidad \\
+        \midrule
+        16X1 HPE HOST SYSTEM "S" & 1\\
+        \hline
+        \multicolumn{2}{c}{\textbf{Maquinas Virtuales}} \\
+        \hline
+        VM SIMATIC WinCC V8 Server & 1\\
+        VM SIMATIC WinCC V8 Client & 1\\
+        \bottomrule
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5cm}
+    \caption{Equipo 2: Segunda instancia de Host con dos máquinas virtuales, una haciendo de servidor y la otra de cliente.}
+    \label{tab:Equipo 2}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{11cm} p{2cm}}
+        \toprule
+        \toprule
+        \multicolumn{2}{c}{\textbf{Clientes ligeros}} \\
+        \midrule
+        Nombre & Cantidad \\
+        \midrule
+        IGEL OS Thin Client HP T655 Dual Screen INT& 1\\
+        Management Console HP T655 Dual Screen WIN10 DE & 1\\
+        \bottomrule
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5cm}
+    \caption{Equipo 3: Clientes ligeros para la solución virtualizada.}
+    \label{tab:Equipo 3}
+\end{table}
+
+
+\section{Comunicación y adquisición de datos}
+Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos de comunicación industrial. Entre los más comunes se encuentran Modbus TCP. Por otra parte, integra el estandar industrial Open Platform Communication Unified Architecture (OPC UA). A continuación se describe la implementacion de ambas soluciones:
+
+\subsection{OPC UA}
+OPC UA es una tecnología middleware orientada a servicios (SOA). Se divide en dos modelos: El modelo de información y el modelo de comunicación. El modelo de información define cómo se estructuran y organizan los datos dentro del sistema, mientras que el modelo de comunicación establece los protocolos y mecanismos para la transferencia de datos entre los diferentes componentes del sistema. OPC UA es un estándar abierto y multiplataforma que permite la interoperabilidad entre dispositivos y sistemas de diferentes fabricantes. OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos.
+
+El envio de mensajes OPC UA se realiza mediante un modelo de publicación-suscripción (pub/sub) donde los dispositivos publican datos en el espacio de direcciones especificando el nodo. En el contexto de la solución WinCC actua de cliente OPC UA, suscribiéndose a los nodos del servidor OPC UA para recibir actualizaciones en tiempo real de las variables del proceso.\par
+
+El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.
+
+
+\section{Manejo de Variables}
+\subsection{Variables internas}
+\subsection{Variables de externas}
+\subsection{Variables de estructura}
+La norma IEC 61400-25-2 es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición de los modelos de información y los servicios de comunicación que permiten la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.
+
+La norma establece cuatro tipos de niveles en variables de estructura, cada uno con su propia función y propósito dentro del sistema de comunicación eólico:
+\begin{itemize}
+    \item \textbf{Nivel 1: Nodo Físico} Es el nivel más bajo de la jerarquía y representa los dispositivos físicos reales, como sensores, actuadores, controladores lógicos programables (PLC) y otros equipos de campo. 
+    \item \textbf{Nivel 2: Nodo Lógico} Es un nivel de abstracción que representa conceptos lógicos dentro del sistema  que pueden ser agrupados por funciones dentro del nodo físico
+    \item \textbf{Nivel 3: Variable} Es un contenedor de datos (\textit{Tag}) que puede cambiar durante la ejecución del sistema.
+    \item \textbf{Nivel 4: Atributo de Dato} Es una característica específica de un objeto que almacena información sobre ese objeto: Magnitud de la variable, calidad de la señal y tiempo de la última actualización.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.18]{figuras/Nodos.png}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }
+    \label{fig:Nodos}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{figuras/IEC_61400-25-2_v1.jpg}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}
+    \label{fig:IEC}
+\end{figure}
+A Continuación se muestran las estructuras de variables de nivel 4 según la norma IEC 61400-25-2. En ellas se detallan las Clases de Datos Comunes (CDC), las cuales son utilizadas para representar los diferentes tipos de datos en el sistema segun el estándar. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2, lo que facilita la interoperabilidad entre diferentes dispositivos y sistemas dentro de un parque eólico. Las CDC definen la estructura y el formato de los datos, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{4cm} p{1cm} p{2.7cm} p{5cm}}
+        \toprule
+        \toprule
+        \multicolumn{4}{c}{\textbf{Estructuras de Variables de nivel 4}} \\
+        \midrule
+        Nombre & Dato & Tipo de Dato & Descripción\\
+        \midrule
+        \multirow{4}{*}{\shortstack[l]{\textit{Single Point Status}\\ (SPS)}} & \textit{stVal} & Booleano & Valor de la variable\\
+         & \textit{q} & Booleano & Calidad de la señal\\
+         & \textit{t} & Timestamp & Tiempo de actualización\\
+        &\textit{units} & Units & Información sobre las unidades\\
+         \midrule
+         \multirow{4}{*}{\shortstack[l]{\textit{Integer Status}\\ (INS)}} & \textit{stVal} & Entero con Signo de 16 bits & Valor de la variable\\
+         & \textit{q} & Booleano & Calidad de la señal\\
+         & \textit{t} & Timestamp & Tiempo de actualización\\
+         &\textit{units} & Units & Información sobre las unidades\\      
+         \midrule
+         \multirow{4}{*}{\shortstack[l]{\textit{Measured Value}\vspace{0.5cm} \\(MV)}} & \textit{mag} & Coma flotante IEEE 754 32bits & Valor de la variable\\
+         & \textit{q} & Booleano & Calidad de la señal\\
+         & \textit{t} & Timestamp & Tiempo de actualización\\
+         &\textit{units} & Units & Información sobre las unidades\\
+         \midrule
+         \multirow{4}{*}{\shortstack[l]{\textit{Binary Counter Reading} \\(BCR)}} & \textit{actVal} & Coma flotante IEEE 754 32bits & Valor de la variable\\
+         & \textit{q} & Booleano & Calidad de la señal\\
+         & \textit{t} & Timestamp & Tiempo de actualización\\
+         &\textit{units} & Units & Información sobre las unidades\\
+         \midrule
+         \multirow{2}{*}{\shortstack[l]{\textit{Time Status Value} \\(TMS)}} & \textit{t} & Timestamp & Tiempo de actualización\\
+         & \textit{qTime} & Timestamp & Tiempo de actualización\\
+         \midrule
+         \multirow{2}{*}{\shortstack[l]{\textit{Control Trajectory} \\(WCT) }} & \textit{t} & Timestamp & Tiempo de actualización\\
+         & \textit{qTime} & Timestamp & Tiempo de actualización\\
+         \bottomrule
+         \bottomrule
+    \end{tabular}
+    \vspace{0.5cm}
+    \caption{Estructuras de variables de nivel 4 según norma IEC 61400-25-2.}
+    \label{tab:estructuras_nivel4}
+\end{table}
+El estandar IEC 61400-25-2 viene heredado de la norma IEC 61850-7-4, la cual se desarrolló para la automatización de subestaciones eléctricas. Por lo tanto, el diseño de las estructuras de variables de nivel 2 deben incorporar atributos heredados de IEC 61850-7-4. Esos atributos heredados son los siguientes:
+
+\begin{itemize}
+    \item \textbf{\textit{Mod} (Modo):} Define el modo de operación deseado para el nodo lógico (Ej. On, Off, Auto, Manual, Test, etc.)
+    \item \textbf{\textit{Beh} (Comportamiento):} Define el comportamiento del real del nodo lógico
+    \item \textbf{\textit{Health} (Salud):} Define el estado de salud del nodo lógico
+    \item \textbf{\textit{Loc} (Localización):} Define la ubicación física del nodo lógico
+\end{itemize}
+
+La norma IEC 61400-25 define una jerarquía semántica donde el nivel 2 se identifica mediante siglas de tres o cuatro letras mayúsculas siendo la primera letra la que indica el tipo de objeto (Por ejemplo W para la turbina) seguido por letras que indican la función o característica específica del objeto (por ejemplo, ROT para objetos relacionados con la rotación de la turbina). El nivel 3, por otro lado, se identifica mediante un nombre descriptivo que detalla la función o característica específica de la variable dentro del sistema eólico. 
+\begin{longtable}{p{2cm} p{3cm} p{1cm} p{7cm}}
+    \toprule
+    \toprule
+    \multicolumn{4}{c}{\textbf{Estructuras de Variables de nivel 2 y 3}} \\
+    \midrule
+    Nombre & Dato & CDC & Descripción\\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    \multicolumn{4}{c}{\textbf{Estructuras de Variables de nivel 2 y 3 (continuación)}} \\
+    \midrule
+    Nombre & Dato & CDC & Descripción\\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{4}{r}{Continúa en la siguiente página}\\
+    \endfoot
+
+    \bottomrule
+    \bottomrule
+    \\
+    \caption{Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}
+    \label{tab:equipo3}\\
+    \endlastfoot
+
+        LLN0 & \textit{NamPlt} & DPL & Placa de identificación con datos de nombre y fabricante.\\
+            & \textit{Diag} & SPS & Indicación de diagnóstico general del dispositivo.\\
+            & \textit{MltLev} & SPS & Indicación de nivel múltiple o estado multinivel resumido.\\
+            & \textit{InSSet} & ZID & Identificador de parque eólico.\\
+            & \textit{SubSt} & ZID & Identificador de subestación.\\
+        \midrule
+        LPHD & \textit{PhyNam} & DPL & Nombre físico del dispositivo lógico o equipo asociado.\\
+            & \textit{PhyHealth} & INS & Estado de salud física del dispositivo.\\
+            & \textit{Proxy} & SPS & Indica operación en modo proxy o representación remota.\\
+            & \textit{Sim} & SPS & Indica si el dispositivo está en modo simulación.\\
+            & \textit{PwrUp} & INS & Estado asociado al encendido/arranque del dispositivo.\\
+            & \textit{WrmStr} & INS & Estado de arranque en caliente o reinicio de servicio.\\
+            & \textit{WacTrg} & Valor de 32 bits sin signo & Contador o valor de activación de mantenimiento/servicio.\\
+            & \textit{WdgAct} & SPS & Estado de actividad del watchdog del dispositivo.\\
+            & \textit{OutOv} & SPS & Estado de anulación (override) de salidas.\\
+            & \textit{OpTmh} & INS & Tiempo acumulado de operación del dispositivo (horas).\\
+        \midrule
+        WALM & \textit{NamPlt} & DPL & Placa de identificación del nodo lógico de alarmas.\\
+            & \textit{GrAlm} & SPS & Indicador de alarma general activa.\\
+            & \textit{GrWrn} & SPS & Indicador de advertencia general activa.\\
+            & \textit{AlmCnt} & INS & Contador total de alarmas registradas.\\
+            & \textit{WrnCnt} & INS & Contador total de advertencias registradas.\\
+            & \textit{GenOvSpd} & SPS & Alarma de sobrevelocidad del generador.\\
+            & \textit{GenInSpd} & SPS & Alarma de velocidad insuficiente del generador.\\
+            & \textit{GenStatorTmpHi} & SPS & Alarma de alta temperatura del estator del generador.\\
+            & \textit{GenBrgFronTmpHi} & SPS & Alarma de alta temperatura en rodamiento frontal del generador.\\
+            & \textit{GenBrgRearTmpHi} & SPS & Alarma de alta temperatura en rodamiento trasero del generador.\\
+            & \textit{GenCoolTmpHi} & SPS & Alarma de alta temperatura del sistema de refrigeración del generador.\\
+            & \textit{GenOvV} & SPS & Alarma de sobretensión del generador.\\
+            & \textit{GenUnV} & SPS & Alarma de subtensión del generador.\\
+            & \textit{GenOvA} & SPS & Alarma de sobrecorriente del generador.\\
+            & \textit{GenAsymV} & SPS & Alarma de asimetría de tensión del generador.\\
+            & \textit{GenRevPwr} & SPS & Alarma de potencia inversa del generador.\\
+            & \textit{GenVibHi} & SPS & Alarma de vibración alta del generador.\\
+            & \textit{GenCoolFanFlt} & SPS & Alarma de fallo de ventilador de refrigeración del generador.\\
+            & \textit{GenSlipRingFlt} & SPS & Alarma de fallo en anillos rozantes del generador.\\
+            & \textit{GenHeaFlt} & SPS & Alarma de fallo del calentador del generador.\\
+            & \textit{TurEmerStop} & SPS & Alarma de parada de emergencia de la turbina.\\
+            & \textit{TurGridLoss} & SPS & Alarma de pérdida de red eléctrica.\\
+            & \textit{RotOvrSpd} & SPS & Alarma de sobrevelocidad del rotor.\\
+            & \textit{RotPitcAsym} & SPS & Alarma de asimetría de pitch entre palas.\\
+            & \textit{RotBrkPrsLow} & SPS & Alarma de presión baja en freno del rotor.\\
+            & \textit{GenWdgTmpHi} & SPS & Alarma de alta temperatura en devanados del generador.\\
+            & \textit{GenBrgTmpHi} & SPS & Alarma de alta temperatura en rodamientos del generador.\\
+            & \textit{CnvDCOvrV} & SPS & Alarma de sobretensión en bus DC del convertidor.\\
+            & \textit{CnvIgbtTmpHi} & SPS & Alarma de alta temperatura en IGBT del convertidor.\\
+            & \textit{NacCabTwist} & SPS & Alarma de retorcimiento excesivo de cables en góndola.\\
+            & \textit{NacYawFlt} & SPS & Alarma de fallo del sistema de Yaw de góndola.\\
+            & \textit{TrfBuchholz} & SPS & Alarma Buchholz del transformador.\\
+            & \textit{TrfTmpHi} & SPS & Alarma de alta temperatura del transformador.\\
+            & \textit{MetIceDet} & SPS & Detección de hielo por sistema meteorológico.\\
+        \midrule
+        WGEN & \textit{GnSt} & INS & Estado operativo del generador (ej. Desconectado, Conectado, Fallo)\\
+            & \textit{OpTmh} & INS & Tiempo de operación total del generador (horas)\\
+            & \textit{Spd} & MV & Velocidad de giro del generador (RPM)\\
+            & \textit{Hz} & MV & Frecuencia eléctrica del generador\\
+            & \textit{W} & MV & Potencia activa generada (Bornes)\\
+            & \textit{VAr} & MV & Potencia reactiva generada (Bornes)\\
+            & \textit{CosPhi} & MV & Factor de potencia (cos $\phi$)\\
+            & \textit{Tmp} & MV & Temperatura general del estator / devanados\\
+            & \textit{BrgFronTmp} & MV & Temperatura del rodamiento frontal (Lado acople/Rotor)\\
+            & \textit{BrgRearTmp} & MV & Temperatura del rodamiento trasero (Lado no acople)\\
+            & \textit{CoolTmp} & MV & Temperatura del fluido o aire de refrigeración del generador\\
+            & \textit{HeaSt} & SPS & Estado del calentador del generador (anticondensación)\\
+            & \textit{Slip} & MV & Deslizamiento del generador (típico en asíncronos doblemente alimentados)\\
+        \midrule
+        WMET & \textit{WndSpd} & MV & Velocidad del viento.\\
+            & \textit{WndDir} & MV & Dirección del viento.\\
+            & \textit{EnvTmp} & MV & Temperatura ambiente.\\
+            & \textit{EnvPres} & MV & Presión atmosférica.\\
+            & \textit{EnvHum} & MV & Humedad ambiental.\\
+            & \textit{IceDet} & SPS & Detección de hielo.\\
+            & \textit{Precip} & MV & Precipitación.\\
+            & \textit{Visib} & MV & Visibilidad.\\
+        \midrule
+        WNAC & \textit{NacTmp} & MV & Temperatura en la góndola.\\
+            & \textit{NacHum} & MV & Humedad en la góndola.\\
+            & \textit{YawPos} & MV & Posición angular del sistema de orientación (Yaw).\\
+            & \textit{YawErr} & MV & Error de orientación respecto a la consigna de Yaw.\\
+            & \textit{CabTws} & MV & Estado o magnitud del retorcimiento de cables (cable twist).\\
+            & \textit{YawSt} & INS & Estado del sistema de orientación Yaw.\\
+            & \textit{NacVib} & MV & Nivel de vibración de la góndola.\\
+            & \textit{WlkHtz} & SPS & Estado de habilitación o enclavamiento asociado al nodo de góndola.\\
+        \midrule
+        WREP & \textit{TmsRpt} & INS & Intervalo de tiempo: duración del reporte en segundos (ej. 600 para 10 min).\\
+            & \textit{WAvg} & MV & Potencia media: promedio de potencia activa en el intervalo.\\
+            & \textit{WMax} & MV & Potencia máxima: el pico de potencia alcanzado en el intervalo.\\
+            & \textit{WMin} & MV & Potencia mínima: el valor más bajo de potencia en el intervalo.\\
+            & \textit{WStd} & MV & Desviación estándar de W: indica la estabilidad de la generación.\\
+            & \textit{WsAvg} & MV & Viento medio: velocidad de viento promedio (10 min).\\
+            & \textit{WsMax} & MV & Viento máximo: ráfaga máxima detectada en el intervalo.\\
+            & \textit{RptRst} & SPC & Reset de reporte: comando para forzar el cierre del intervalo actual.\\
+        \midrule
+        WROT & \textit{RotSpd} & MV & Velocidad de rotación\\
+            & \textit{RotAcl} & MV & Aceleración de rotación\\
+            & \textit{RotAzi} & MV & Posición de rotación\\
+            & \textit{RotSt} & MV & Estado de rotación\\
+            & \textit{RotLckP} & MV & Posición de bloqueo del rotor\\
+            & \textit{RotLckSt} & MV & Estado de bloqueo del rotor\\
+            & \textit{Bl1PchAng} & MV & Ángulo de pala A\\
+            & \textit{Bl2PchAng} & MV & Ángulo de pala B\\
+            & \textit{Bl3PchAng} & MV & Ángulo de pala C\\
+            & \textit{BlPchAngRef} & MV & Ángulo de referencia de pala\\
+            & \textit{BlPchOvrTvl} & MV & Viaje excesivo de pala\\
+            & \textit{BlPchAng} & MV & Estado de pitch control\\
+            & \textit{BlPchSpd} & MV & Presión hidráulica\\
+            & \textit{HubTmp} & MV & Estado hidráulico\\
+            & \textit{BlPchAsySt} & MV & Voltaje de batería\\
+            & \textit{BatChrgRte} & MV & Tasa de carga de batería\\
+            & \textit{BatSt} & MV & Estado de batería\\
+            & \textit{HubTmp} & MV & Temperatura del buje\\
+        \midrule
+        WTOW & \textit{NacPos} & MV & Posición de la góndola respecto a la torre.\\
+            & \textit{TowVib} & MV & Nivel de vibración de la torre.\\
+            & \textit{TowInc} & MV & Inclinación de la torre.\\
+            & \textit{GndTmp} & MV & Temperatura ambiente a nivel de suelo.\\
+            & \textit{GndHum} & MV & Humedad relativa a nivel de suelo.\\
+            & \textit{IntTmp} & MV & Temperatura interior en torre/gabinete asociado.\\
+            & \textit{Plt} & SPC & Comando de plataforma o acción de mantenimiento asociada a torre.\\
+            & \textit{LkrSt} & SPS & Estado del enclavamiento o bloqueo de acceso de torre.\\
+        \midrule
+        WTUR & \textit{AvlTmRs} & TMS & Tiempo de disponibilidad de la turbina\\
+            & \textit{OpTmRs} & TMS & Tiempo de operación\\
+            & \textit{StrCnt} & WTC & Número de arranques de turbina\\
+            & \textit{StopCnt} & WTC & Número de paradas de turbina\\
+            & \textit{TotWh} & WTC & Producción total de energía activa (neta)\\
+            & \textit{TotVArh} & WTC & Producción total de energía reactiva (neta)\\
+            & \textit{DmdWh} & BCR & Demanda de energía activa (real)\\
+            & \textit{DmdVArh} & BCR & Demanda de energía reactiva\\
+            & \textit{SupWh} & BCR & Suministro de energía activa (real)\\
+            & \textit{SupVArh} & BCR & Suministro de energía reactiva\\
+            & \textit{TurSt} & SPS & Estado de la turbina\\
+            & \textit{W} & MV & Generación de potencia activa\\
+            & \textit{VAr} & MV & Generación de potencia reactiva\\
+            & \textit{SetTurOp} & SPC & Comando de operación de la turbina eólica\\
+            & \textit{VArOvW} & SPC & Prioridad de reactiva sobre activa\\
+            & \textit{VArRefPri} & SPC & Comando de prioridad de consigna reactiva\\
+            & \textit{DmdW} & APC & Consigna de generación de potencia activa\\
+            & \textit{DmdVAr} & APC & Consigna de generación de potencia reactiva\\
+            & \textit{DmdPF} & APC & Consigna de factor de potencia de turbina\\
+        \midrule
+        WYAW & \textit{YawSt} & INS & Estado del Yaw: 0:Parado, 1:Girando, 2:Frenado, 3:Desenrrollando cables.\\
+            & \textit{YawTrq} & MV & Torque de orientación: fuerza que están haciendo los motores para girar contra el viento.\\
+            & \textit{MotA} & MV & Corriente de los motores: amperaje consumido por los motores de Yaw (detecta bloqueos).\\
+            & \textit{YawDrp} & MV & Desviación de consigna: qué tan rápido está corrigiendo el ángulo el sistema.\\
+            & \textit{YawStop} & SPC & Comando de parada: para detener el giro manualmente desde WinCC.\\
+    \midrule
+\end{longtable}
+
+
+\section{Interfaz Gráfica}
+
+La interfaz gráfica constituye el punto de interacción principal entre el operador y el sistema SCADA, por lo que su diseño debe priorizar la claridad, la rapidez de interpretación y la operabilidad en tiempo real. En esta sección se describe la propuesta de visualización desarrollada en WinCC, explicando la organización general de la interfaz y los criterios utilizados para su construcción.
+\subsection{Jerarquía de pantallas}
+En concreto, se presenta la jerarquía de pantallas definida para la navegación (desde vistas generales hasta vistas de detalle), la estructura de menús y accesos, la distribución de los elementos de supervisión y las pautas de representación de estados, alarmas y variables de proceso. Con ello se justifica cómo la arquitectura gráfica facilita tanto la monitorización continua como la operación segura del sistema.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/jerarquia.png}
+    \caption{Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}
+    \label{fig:jerarquia_pantallas}
+\end{figure}
+\subsection{Scripts globales}
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+    \SetKwFunction{FRead}{LeerTag}
+    \SetKwFunction{FHide}{OcultarFaceplate}
+    \SetKwFunction{FShow}{MostrarFaceplate}
+    \SetKwFunction{FMove}{MoverFaceplate}
+    \SetKwFunction{FMap}{MapearEstadoHMI}
+    \vspace{1cm}
+    Establecer cuadriculas, numero de molinos, prefijos de variables, offsets y posiciones iniciales \par
+
+    Ocultar todos los faceplates de molinos como limpieza inicial \;
+
+    \For{(Numero de molinos Do)}
+    {
+        \FHide{$i$} \;
+    }
+    Bucle de filtrado y posicionamiento \;
+    \For{(Numero de molinos $i$ Do)}
+    {
+        $Estado \leftarrow \FRead{\text{Estado PLC Molino } i}$ \;
+        $Parque \leftarrow \FRead{\text{ID Parque Molino } i}$ \;
+        $Selector \leftarrow \FMap{Selector del HMI}$ \;
+
+        \If{(si el selector es igual al parque del molino $i$ o esta en modo "todos")}
+        {
+            \FShow{$i$} \;
+            \FMove{$i$} \;
+            Siguiente columna\;
+            \If{(superado el numero de columnas por fila)}
+            {
+                pasar a siguiente fila\;
+            }
+        }
+    }
+    \caption{Filtrado Dinámico y Posicionamiento de Aerogeneradores en Cuadrícula}
+\end{algorithm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/GUI.png}
+    \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
+    \label{fig:interfaz_grafica}
+\end{figure}
+
+\section{Gestión de alarmas y eventos}
+
+Norma IEC 60073 -> Color de las alarmas y estados de turbinas
+
+\section{Ciberseguridad IEC 62443-4-2:2019}
+Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante:
+
+\begin{itemize}
+    \item \textbf{SL 1:} Protección contra vulneraciones casuales/accidentales:
+    Protección contra el acceso no autorizado por parte de alguien sin intención maliciosa.
+    \item \textbf{SL 2:} Protección contra vulneraciones intencionadas con medios sencillos:
+    Protección contra ataques genéricos y de bajos recursos.
+    \item \textbf{SL 3:} Protección contra ataques sofisticados:
+    Protección contra atacantes (hackers) con recursos moderados, motivación moderada y conocimientos específicos sobre Sistemas de Automatización y Control Industrial (IACS, por sus siglas en inglés).
+    \item \textbf{SL 4:} Protección contra ataques altamente sofisticados / de Estados-nación:
+    Protección contra atacantes con amplios recursos, alta motivación y profunda experiencia en IACS.
+\end{itemize}
+
+Los requisitos fundacionales (FR) son los requisitos de seguridad que deben cumplirse para alcanzar  el SL específico. Estos requisitos se dividen en siete categorías principales, cada una con sub-requisitos específicos. A continuación se describen los requisitos fundacionales para cada nivel de seguridad:\par
+\subsection{FR1: Identificación y autenticación de usuarios (IAC)}
+\begin{enumerate}
+    \item[] \textbf{Identificación y autenticación de usuarios (CR1.1)}
+    
+    \begin{itemize}
+        \item CR1.1: Acceso limitado a aplicaciones de WinCC V8.1 mediante grupos de usuarios de Windows. Acceso restringido de datos del runtime mediante grupos de usuarios de WinCC. (SL 1)
+        \item RE 1:Identificación única de usuarios mediante ID única, creación de roles con permisos específicos. (SL 2)
+        \item RE 2(No ofertado): Autenticación multifactorial para todas las interfaces (SL 3-4).
+    \end{itemize}
+    
+    Nivel de seguridad SL-T 2 : Requerimientos CR1.1 + RE 1 .\par
+
+    \item[] \textbf{Identificación y autenticación de dispositivos (CR1.2)}
+    
+    \begin{itemize}
+        \item CR1.2:    Identificación y autenticación de dispositivos básica(SL 2)
+        \item RE 1: Identificación única de dispositivos mediante certificados digitales o credenciales seguras, Integrado en comunicaciónes OPC UA. (SL 3-4)
+       
+    \end{itemize}
+
+    Nivel de seguridad SL-T 4: Requerimientos CR1.2 + RE 1.\par
+
+    \item[] \textbf{Gestión de cuentas (CR1.3)}
+    
+    \begin{itemize}
+        \item CR1.3:  Gestión de cuentas mediante:  1-User Administrator, 2-WinCC UserAdminControl, 3-SIMATIC Logon. (SL 1-4).
+       
+    \end{itemize}
+
+    Nivel de seguridad SL-T 4: Requerimientos CR1.3.\par
+
+
+    \item[] \textbf{Gestión de IDs (CR1.4)}
+    
+    \begin{itemize}
+        \item CR1.4: Politica de identificación unica y sistematica  (SL 1-4).
+       
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR1.4.\par
+
+     \item[] \textbf{Gestión de autenticación (CR1.5)}
+    
+    \begin{itemize}
+        \item CR1.5: Registros de eventos de autenticación, Contraseñas encriptadas,   (SL 1-2).
+       \item RE 1(No ofertado): Seguridad de hardware para autenticación (SL 3-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 2: Requerimientos CR1.5.\par
+
+    \item[] \textbf{Fuerza de autenticación basada en contraseñas (CR1.7)}
+    
+    \begin{itemize}
+        \item CR1.7: Contraseñas con complejidad mínima (SL 1-2).
+       \item RE 1(No ofertado): Caducidad de contraseñas para humanos(SL 3).
+       \item RE 2(No ofertado): Caducidad de contraseñas para dispositivos, humanos y software (SL 4).
+    \end{itemize}
+    Nivel de seguridad SL-T 2: Requerimientos CR1.7.\par
+
+    \item[]  \textbf{Infraestructura de clave pública (CR1.8)}
+    
+    \begin{itemize}
+        \item CR1.8:Protocolos de comunicación con uso de certificados digitales (SL 2-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR1.8.\par
+    
+  \item[] \textbf{Retroalimentación de autenticación (CR1.10)}
+    
+    \begin{itemize}
+        \item CR1.10: No revelación de información sensible para asistencia de autenticación a un intruso. Contraseña oculta por caracteres "****", tamaño no revelado.(SL 1-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR1.10.\par
+ \item[] \textbf{Autenticación fallida (CR1.11)}
+    
+    \begin{itemize}
+        \item CR1.11: Limitación del número de intentos de autenticación fallida antes de bloqueo.(SL 1-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR1.11.\par
+
+\item[] \textbf{Autenticación fallida (CR1.11)}
+    
+    \begin{itemize}
+        \item CR1.11: Limitación del número de intentos de autenticación fallida antes de bloqueo.(SL 1-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR1.11.\par
+
+
+\item[] \textbf{Notificaciones de uso de sistema (CR1.12)}
+    
+    \begin{itemize}
+        \item CR1.12: Notificaciones limitadas a grupos de usuarios.(SL 1-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR1.12.\par
+
+\item[] \textbf{Fuerza de contraseña secreta compartida (CR1.13)}
+    
+    \begin{itemize}
+        \item CR1.13: Implementación de políticas de complejidad para contraseñas compartidas.(SL 2).
+        \item RE 1(No ofertado): Contraseñas encriptadas por hardware.(SL 3-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 2: Requerimientos CR1.13.\par
+\end{enumerate}
+
+
+\subsection{FR 2: Control de uso}
+\begin{enumerate}
+    \item[] \textbf{Refuerzo de control de acceso (CR2.1)}
+    
+    \begin{itemize}
+        \item CR2.1: Acceso restringido a usuarios humanos sobre recursos y funciones. (SL 1).
+        \item RE 1: Control de acceso a todos los usuarios procesos y dispositivos mediante identificación.(SL 2).
+        \item RE 2 Control de acceso basado en roles .(SL 2).
+        \item RE 3: Acusado de emergencia  mediante requerimiento de supervisor(SL 3).
+        \item RE 4(No ofertado): Acusación de alarmas siempre por dos usuarios distinto (SL 4).
+    \end{itemize}
+    Nivel de seguridad SL-T 3: Requerimientos CR2.1. + RE1 +RE2 +RE3.\par
+    
+    \item[] \textbf{Refuerzo de control de acceso inalambrico (CR2.2)}
+    No procede.
+    \par
+
+    \item[] \textbf{Presistencia de sesión (CR2.5)}
+    
+    \begin{itemize}
+        \item CR2.5: Log out tras periodo de inactividad (SL 1-4).
+       
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR2.5.\par
+
+     \item[] \textbf{Terminación de sesión para clientes (CR2.6)}
+    
+    \begin{itemize}
+        \item CR2.6: Cierre de sesión automático tras periodo de inactividad (SL 2-4).
+       
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR2.6.\par
+ \item[] \textbf{Limitación de sesiones activas (CR2.7)}
+    
+    \begin{itemize}
+        \item CR2.7: Limitacion de acceso a clientes WEB(SL 3-4).
+       
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR2.7.\par
+    \item[] \textbf{Eventos auditables (CR2.8)}
+    
+    \begin{itemize}
+        \item CR2.8: Registro de eventos auditables (SL 1-4).
+       
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR2.8.\par
+\item[] \textbf{Capacidad de almacenamiento de auditoría (CR2.9)}
+    
+    \begin{itemize}
+        \item CR2.9: Existencia de capacidad de almacenamiento de auditoría (SL 1-2).
+       \item RE 1: Notificación de umbral de almacenamiento de auditoría (SL 3-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR2.9.\par
+
+\item[] \textbf{Capacidad de almacenamiento de auditoría (CR2.9)}
+    
+    \begin{itemize}
+        \item CR2.9: Existencia de capacidad de almacenamiento de auditoría (SL 1-2).
+       \item RE 1: Notificación de umbral de almacenamiento de auditoría (SL 3-4).
+    \end{itemize}
+    Nivel de seguridad SL-T 4: Requerimientos CR2.9.\par
+
+
+\subsection{Matriz de implementación de requisitos y niveles de seguridad}
+
+A continuación se presenta una tabla basada en FR1 (IAC) de la IEC 62443-4-2:2019:
+\begin{longtable}{p{4.1cm} c c c c c}
+    \toprule
+    \textbf{Requisito ID} & \multicolumn{4}{c}{\textbf{Nivel de seguridad}} & \textbf{SL-T} \\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    \textbf{Requisito ID} & \multicolumn{4}{c}{\textbf{Nivel de seguridad}} & \textbf{SL-A} \\
+    \cmidrule(lr){2-5}
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{6}{r}{Continúa en la siguiente página}\\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    \multicolumn{6}{c}{\textbf{FR 1: Identificación y autenticación de usuarios (IAC)}} \\
+    \midrule
+    CR 1.1 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    CR 1.1 RE (1) & --- & 2 & 3 & 4 & $\checkmark$ \\
+    CR 1.1 RE (2) & --- & --- & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.1): 2}} \\
+    \midrule
+    CR 1.2 & --- & 2 & 3 & 4 & $\checkmark$ \\
+    CR 1.2 RE (1) & --- & --- & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.2): 4}} \\
+    \midrule
+    CR 1.3 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.3): 4}} \\
+    \midrule
+    CR 1.4 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.4): 4}} \\
+    \midrule
+    CR 1.5 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    CR 1.5 RE (1) & --- & --- & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.5): 2}} \\
+    \midrule
+    NDR 1.6 & 1 & 2 & 3 & 4 & $\times$ \\
+    NDR 1.6 RE (1) & --- & 2 & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (NDR 1.6): N/A}} \\
+    \midrule
+    CR 1.7 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    CR 1.7 RE (1) & --- & --- & 3 & 4 & $\times$ \\
+    CR 1.7 RE (2) & --- & --- & --- & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.7): 2}} \\
+    \midrule
+    CR 1.8 & --- & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.8): 4}} \\
+    \midrule
+    CR 1.9 & --- & 2 & 3 & 4 & $\checkmark$ \\
+    CR 1.9 RE (1) & --- & --- & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.9): 2}} \\
+    \midrule
+    CR 1.10 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.10): 4}} \\
+    \midrule
+    CR 1.11 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.11): 4}} \\
+    \midrule
+    CR 1.12 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.12): 4}} \\
+    \midrule
+    NDR 1.13 & 1 & 2 & 3 & 4 & $\times$ \\
+    NDR 1.13 RE (1) & --- & --- & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (NDR 1.13): N/A}} \\
+    \midrule
+    CR 1.14 & --- & --- & --- & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 1.14): N/A}} \\
+    \midrule
+    \multicolumn{6}{c}{\textbf{FR 2: Control de uso (UC)}} \\
+    \midrule
+    CR 2.1 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    CR 2.1 RE (1) & --- & 2 & 3 & 4 & $\checkmark$ \\
+    CR 2.1 RE (2) & --- & 2 & 3 & 4 & $\checkmark$ \\
+    CR 2.1 RE (3) & --- & --- & 3 & --- & $\checkmark$ \\
+    CR 2.1 RE (4) & --- & --- & --- & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.1): 3}} \\
+    \midrule
+    CR 2.2 & 1 & 2 & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.2): N/A}} \\
+    \midrule
+    CR 2.3 & --- & --- & --- & --- & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.3): N/A}} \\
+    \midrule
+    SAR 2.4 & 1 & 2 & 3 & 4 & $\times$ \\
+    SAR 2.4 RE (1) & --- & 2 & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (SAR 2.4): N/A}} \\
+    \midrule
+    EDR 2.4 & 1 & 2 & 3 & 4 & $\times$ \\
+    EDR 2.4 RE (1) & --- & 2 & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (EDR 2.4): N/A}} \\
+    \midrule
+    HDR 2.4 & 1 & 2 & 3 & 4 & $\times$ \\
+    HDR 2.4 RE (1) & --- & 2 & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (HDR 2.4): N/A}} \\
+    \midrule
+    NDR 2.4 & 1 & 2 & 3 & 4 & $\times$ \\
+    NDR 2.4 RE (1) & --- & 2 & 3 & 4 & $\times$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (NDR 2.4): N/A}} \\
+    \midrule
+    CR 2.5 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.5): 4}} \\
+    \midrule
+    CR 2.6 & --- & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.6): 4}} \\
+    \midrule
+    CR 2.7 & --- & --- & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.7): 4}} \\
+    \midrule
+    CR 2.8 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.8): 4}} \\
+    \midrule
+    CR 2.9 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    CR 2.9 RE (1) & --- & --- & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.9): 4}} \\
+    \midrule
+    CR 2.10 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.10): 4}} \\
+    \midrule
+    CR 2.11 & 1 & 2 & 3 & 4 & $\checkmark$ \\
+    CR 2.11 RE (1) & --- & 2 & 3 & 4 & $\checkmark$ \\
+    CR 2.11 RE (2) & --- & --- & --- & 4 & $\checkmark$ \\
+    \cmidrule(lr){1-6}
+    \multicolumn{6}{l}{\textit{nivel SL-T maximo alcanzable (CR 2.11): 4}} \\
+
+    \caption{Tabla FR1 y FR2 basada en IEC 62443-4-2:2019. Las columnas de nivel muestran el número de nivel aplicable y la columna SL-A indica si el requerimiento se cumple en la solución ($\checkmark$) o no ($\times$).}
+    \label{tab:fr1_iac_slt}\\
+\end{longtable}
+
+
+\textbf{Conclusión:} La implementación actual de WinCC V8.1 en la solución propuesta alcanza un nivel de seguridad SL 2, con capacidades parciales para SL 3 mediante la adecuada configuración de la segmentación de red y los mecanismos de detección.

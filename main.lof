@@ -1,0 +1,26 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}}{15}{figure.caption.16}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitectura de sistema monopuesto con un único PC}}{17}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Arquitectura de sistema monopuesto con configuración redundante}}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}}{18}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Inserta aquí la descripción de la figura. En esta figura se observa la relación entre un humano y un robot. Para un robot siempre existe un patrón definido. El ser humano, en cambio, es más flexible y su cerebro evoluciona a lo largo de la vida.}}{21}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }}{23}{figure.caption.39}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}}{24}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{32}{figure.caption.44}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}}{34}{figure.caption.46}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\def \@chapapp {\appendixname }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

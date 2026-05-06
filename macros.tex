@@ -1,0 +1,76 @@
+% Añadir paquetes
+\usepackage{amsmath, amsfonts}  % Para las expresiones matemáticas
+\usepackage{xcolor}             % Para utilizar colores en la escritura
+\usepackage{lipsum}             % Para generar texto aleatorio
+\usepackage{acronym}            % Para utilizar acrónimos
+\usepackage{graphicx}           % Para insertar imágenes en el documento
+\usepackage{float}              % Para posicionar imágenes en el documento
+\usepackage{multirow}           % Para juntar múltiples lineas en una tabla
+\usepackage{appendix}           % Para el diseño de los anexos
+\usepackage{blindtext}          % Para generar texto aleatorio
+\usepackage[ruled]{algorithm2e} % Para generar pseudocódigo
+\usepackage{pdfpages}           % Para  añadir pdfs
+\usepackage{booktabs}
+\usepackage{longtable}          % Para tablas que ocupan varias páginas
+\usepackage{listings}           % Para bloques de código con lstlisting
+\usepackage{titlesec}
+
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    showstringspaces=false,
+    tabsize=4
+}
+
+% Reducir el espacio caption -> next paragraph
+\setlength{\belowcaptionskip}{-10pt}  
+\captionsetup[table]{aboveskip= 12pt}
+
+% Copiado de mathrsfs.sty para generar slash zero
+\DeclareSymbolFont{rsfs}{U}{rsfs}{m}{n}
+\DeclareSymbolFontAlphabet{\mathscrsfs}{rsfs}
+\usepackage{stackengine}[2013-09-11]
+\newcommand\slashzero{\stackinset{c}{}{c}{}{/}{0}}
+
+
+\renewcommand{\figurename}{Figura}   % Cambiar el nombre a la figura
+\renewcommand{\tablename}{Tabla}     % Cambiar el nombre a la tabla
+\renewcommand{\chaptername}{Capítulo}  % Cambiar el nombre a la tabla
+\SetAlgorithmName{Algoritmo}{algoritmo}{Lista de Algoritmos} % Cambiar el nombre al algoritmo
+
+% Generación del color del texto "Memoria"
+\usepackage[dvipsnames]{xcolor}
+\definecolor{myblue}{rgb}{0.282, 0.239, 0.545}
+
+
+% Generación del subsubsection{}
+\makeatletter
+\setcounter{secnumdepth}{3}
+\titlespacing{\subsubsection}{0em}{.5em}{0em}%[0pt]
+\ifct@cthesis@hangsubsection
+        \titleformat{\subsubsection}[hang]%
+            {\usekomafont{subsubsection}}%
+            {\color{ctcolorblack}\thesubsubsection\hspace*{10pt}}%
+            {0pt}%
+            {\raggedright}%
+            [\phantomsection]
+\else
+        \titleformat{\subsubsection}[block]%
+            {\usekomafont{subsubsection}}%
+            {\color{ctcolorblack}\thesubsubsection\hspace*{10pt}}%
+            {0pt}%
+            {\raggedright}%
+            [\phantomsection]
+\fi
+\makeatother

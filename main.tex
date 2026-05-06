@@ -1,0 +1,106 @@
+%% Documento creado y editado por Manu Centeno Telleria y revisado por Eloy Irigoyen Gordo.
+%% Copyright 2021 M.Centeno & E.Irigoyen
+
+%--- Definición de la clase del documento
+\documentclass[%
+	paper=A4,					% Tamaño del papel
+	twoside=true,				% Ambos lados de la página para la impresión
+	openright,					% Empieza el cápitulo a la derecha
+	parskip=full,				% Separación de parágrafos
+	chapterprefix=true,			% Prefijo para el estilo del cápitulo
+	11pt,						% Tamaño de letra
+	headings=normal,			% Tamaño de cabeceras
+	bibliography=totoc,			% Incluir la bibliografía en Contenidos
+	listof=totoc,				% Incluir listas en Contenidos
+	titlepage=on,				% Portada
+	captions=tableabove,
+	numbers=noenddot            % Para eliminar el punto después del segundo dígito
+]{scrreprt}%
+%---
+
+%--- Definición del estilo del documento
+%       Se utiliza el estilo del documento definido en http://cleanthesis.der-ric.de/
+%       Adecuamos para que funcione con el sistema bibliográfico BibTeX
+
+\usepackage[utf8]{inputenc}	
+\usepackage[					% clean thesis style
+	figuresep=colon,%
+	sansserif=false,%
+	hangfigurecaption=false,%
+	hangsection=true,%
+	hangsubsection=true,%
+	colorize=full,%
+	colortheme=bluemagenta,%
+% LLT: Use biber if using UTF8 encoding
+	bibsys=bibtex,%
+%  	bibsys=biber,%
+	bibfile=referencias-bibliograficas,%
+	bibstyle=numeric,%
+]{cleanthesis}
+%---
+
+%--- Implementación de los macros
+\input{macros}
+%---
+
+\begin{document}
+
+%--- Insertar la portada
+\includepdf[pages=-]{Portada.pdf} % Se recomienda modificar en word y subir el pdf 
+
+%---
+
+%--- Implementar las partes principales del TFM
+\pagestyle{plain}
+\input{parte-frontal/resumen}
+\input{parte-frontal/indice}
+\input{parte-frontal/lista_de_tablas_ilustraciones}
+\renewcommand{\figurename}{Figura}
+\input{parte-frontal/acronimos_lista}	
+\renewcommand{\tablename}{Tabla}
+\cleardoublepage
+%---
+
+%--- Implementar los capítulos principales del TFM
+\pagenumbering{arabic}			
+\setcounter{page}{1}			
+\pagestyle{maincontentstyle} 	
+\input{capitulos/introduccion}
+\input{capitulos/contexto}
+\input{capitulos/objetivos}
+\input{capitulos/beneficios}
+\input{capitulos/estado_del_arte}
+\input{capitulos/alternativas}
+\input{capitulos/desarrollo_de_la_solucion}
+\input{capitulos/analisis_de_resultados}
+\input{capitulos/metodología}
+\input{capitulos/aspectos_económicos}
+\input{capitulos/conclusiones}
+\cleardoublepage
+%---
+
+%--- Insertar las Referencias Bibliográficas
+{%
+\renewcommand\bibname{Bibliografía}  % Cambiar el nombre a Castellano
+\setstretch{1.1}
+\renewcommand{\bibfont}{\normalfont\small}
+\setlength{\biblabelsep}{0pt}
+\setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
+\printbibliography[nottype=online]
+\printbibliography[heading=subbibliography,title={Webseiten},type=online,prefixnumbers={@}]
+}
+\cleardoublepage
+%---
+
+%--- Insertar los Anexos
+%\input{anexos/portada_anexo_esquemas_y_programas}
+%\cleardoublepage
+\appendix
+\input{anexos/Anexo_1}
+\input{anexos/Anexo_2}
+\input{anexos/Anexo_3}
+\input{anexos/Anexo_4}
+\newpage
+\mbox{}
+
+\end{document}

@@ -1,0 +1,58 @@
+\contentsline {chapter}{Índice de Figuras}{7}{section*.2}%
+\contentsline {chapter}{Índice de Tablas}{9}{section*.2}%
+\contentsline {chapter}{Acrónimos}{11}{section*.4}%
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Contexto}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Objetivos y alcance}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Objetivos}{5}{section*.8}%
+\contentsline {section}{\numberline {3.2}Alcance}{5}{section*.9}%
+\contentsline {chapter}{\numberline {4}Beneficios}{7}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Análisis del estado del arte o descripción de requerimientos (si procede)}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}INTRODUCCIÓN}{9}{section*.12}%
+\contentsline {chapter}{\numberline {6}Análisis de alternativas}{13}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Diseño/Desarrollo de la solución}{15}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introducción al entorno de SIMATIC WinCC V8.1}{15}{section*.15}%
+\contentsline {subsection}{\numberline {7.1.1}Software de configuración (SC) WinCC Explorer}{16}{section*.17}%
+\contentsline {subsection}{\numberline {7.1.2}Software \textit {Runtime (RT)}: WinCC Runtime}{16}{section*.19}%
+\contentsline {section}{\numberline {7.2}Arquitecturas del sistema}{17}{section*.20}%
+\contentsline {subsection}{\numberline {7.2.1}Topología de red del parque eólico y MCR}{17}{section*.21}%
+\contentsline {subsection}{\numberline {7.2.2}Arquitectura de WinCC}{17}{section*.22}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}Sistemas Monopuesto (\textit {Single User Systems})}{17}{section*.23}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}Sistemas Multipuesto (\textit {Multi User Systems})}{18}{section*.26}%
+\contentsline {subsubsection}{\numberline {7.2.2.3}Virtualización mediante SIVaaS}{18}{section*.28}%
+\contentsline {paragraph}{Hypervisor alojado (\textit {Hosted Hypervisor})}{19}{section*.28}%
+\contentsline {paragraph}{Hypervisor metal desnudo (\textit {Bare-Metal Hypervisor})}{19}{section*.28}%
+\contentsline {paragraph}{Virtualización SIMATIC como Servicio (SIVaaS)}{19}{section*.28}%
+\contentsline {section}{\numberline {7.3}Comunicación y adquisición de datos}{21}{section*.32}%
+\contentsline {subsection}{\numberline {7.3.1}OPC UA}{21}{section*.33}%
+\contentsline {section}{\numberline {7.4}Manejo de Variables}{21}{section*.34}%
+\contentsline {subsection}{\numberline {7.4.1}Variables internas}{21}{section*.35}%
+\contentsline {subsection}{\numberline {7.4.2}Variables de externas}{21}{section*.36}%
+\contentsline {subsection}{\numberline {7.4.3}Variables de estructura}{21}{section*.37}%
+\contentsline {section}{\numberline {7.5}Interfaz Gráfica}{31}{section*.41}%
+\contentsline {subsection}{\numberline {7.5.1}Jerarquía de pantallas}{31}{section*.42}%
+\contentsline {subsection}{\numberline {7.5.2}Scripts globales}{32}{section*.44}%
+\contentsline {section}{\numberline {7.6}Gestión de alarmas y eventos}{33}{section*.46}%
+\contentsline {section}{\numberline {7.7}Ciberseguridad IEC 62443-4-2:2019}{33}{section*.47}%
+\contentsline {subsection}{\numberline {7.7.1}FR1: Identificación y autenticación de usuarios (IAC)}{34}{section*.48}%
+\contentsline {subsection}{\numberline {7.7.2}FR 2: Control de uso}{36}{section*.49}%
+\contentsline {subsection}{\numberline {7.7.3}Matriz de implementación de requisitos y niveles de seguridad}{37}{section*.50}%
+\contentsline {chapter}{\numberline {8}Análisis de resultados (si procede)}{41}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Metodología}{43}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Descripción de tareas}{43}{section*.53}%
+\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{43}{section*.54}%
+\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{43}{section*.55}%
+\contentsline {chapter}{\numberline {10}Aspectos económicos}{45}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Descripción del presupuesto y/o del presupuesto ejecutado}{45}{section*.57}%
+\contentsline {section}{\numberline {10.2}Análisis de rentabilidad (si procede)}{45}{section*.58}%
+\contentsline {chapter}{\numberline {11}Conclusiones}{47}{chapter.11}%
+\contentsline {chapter}{\nonumberline Bibliografía}{49}{chapter*.60}%
+\def \@chapapp {\appendixname }
+\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{51}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Función de filtrado dinámico de molinos}{51}{section*.63}%
+\contentsline {subsection}{\numberline {A.1.1}Código fuente}{51}{section*.64}%
+\contentsline {chapter}{\numberline {B}Anexo II: Planos}{55}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas}{57}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Fase I : Pruebas de integración y validación en Node-Red}{57}{section*.67}%
+\contentsline {section}{\numberline {C.2}Fase II : Pruebas de integración y validación en servidor SIVaaS}{57}{section*.68}%
+\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{59}{appendix.D}%

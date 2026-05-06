@@ -1,0 +1,143 @@
+\chapter{Anexo I: Código de la Solución}
+\label{cap:anexo_codigo_solucion}
+\section{Función de filtrado dinámico de molinos}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{
+  language=C,
+  backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=20pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\subsection{Código fuente}
+
+\begin{lstlisting}
+void AplicarFiltroPosicion(){
+
+    int selValue, parkValue;
+    int CANT_MOLINOS, i;
+    int tagRun, tagEmg, tagPark, state;
+    int match;
+
+    // Variables de cuadricula
+    int startX = 10;
+    int startY = 0;
+    int offsetX = 475;
+    int offsetY = 220;
+    int maxCols = 4;
+
+    int currentX;
+    int currentY;
+    int colCount = 0;
+    //Nombres de tags
+    char tagNameRun[100];
+    char tagNameEmg[100];
+    char tagNamePark[100];
+    char FP[50];
+
+    // Guarda IDs de molinos que cumplen el filtro
+    int validList[120];
+    int validCount = 0;
+
+    char* prefijoActual;
+
+    currentX = startX;
+    currentY = startY;
+// Obtener valores de filtros
+    selValue = GetTagWord("HMI_Filtro_Molinos");
+    parkValue = GetTagWord("HMI_Filtro_Parques");
+    prefijoActual = "WTG";
+    CANT_MOLINOS = 120;
+// Evaluar cada molino
+    for (i = 1; i <= CANT_MOLINOS; i++) {
+        sprintf(tagNameEmg, "%s%d.WTUR.TurSt.stVal", prefijoActual, i);
+        sprintf(tagNamePark, "%s%d.LLNO.InSSet.setSrc", prefijoActual, i);
+
+        tagEmg = GetTagWord(tagNameEmg);
+        tagPark = GetTagWord(tagNamePark);
+
+        switch (tagEmg) {
+            case 0:
+                state = 2;
+                break;
+            case 1:
+            case 4:
+                state = 3;
+                break;
+            case 2:
+                state = 4;
+                break;
+            case 3:
+                state = 5;
+                break;
+            case 5:
+            case 7:
+                state = 6;
+                break;
+            case 6:
+                state = 7;
+                break;
+            default:
+                if (tagEmg >= 10 && tagEmg <= 19) {
+                    state = 8;
+                } else {
+                    state = -1;
+                }
+                break;
+        }
+
+        match = 0;
+        if (parkValue == 1 || parkValue == tagPark) {
+            if (selValue == 1 || selValue == state) {
+                match = 1;
+            }
+        }
+
+        if (match == 1) {
+            validList[validCount] = i;
+            validCount++;
+        }
+    }
+// Visualizar molinos que cumplen el filtro
+    for (i = 1; i <= CANT_MOLINOS; i++) {
+        sprintf(FP, "PW_%d", i);
+        SetPropBOOL("20_WTG_Turbine_Overview.PDL", FP, "Visible", FALSE);
+    }
+
+    for (i = 0; i < validCount; i++) {
+        int molinoID = validList[i];
+        sprintf(FP, "PW_%d", molinoID);
+
+        SetPropBOOL("20_WTG_Turbine_Overview.PDL", FP, "Visible", TRUE);
+        SetPropDouble("20_WTG_Turbine_Overview.PDL", FP, "Left", currentX);
+        SetPropDouble("20_WTG_Turbine_Overview.PDL", FP, "Top", currentY);
+
+        colCount++;
+        if (colCount >= maxCols) {
+            currentX = startX;
+            currentY += offsetY;
+            colCount = 0;
+        } else {
+            currentX += offsetX;
+        }
+    }
+}
+\end{lstlisting}
+
+
+
