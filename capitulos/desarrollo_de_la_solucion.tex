@@ -158,6 +158,7 @@ Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con do
 \end{table}
 
 
+
 \section{Comunicación y adquisición de datos}
 Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (OPC UA). 
 
@@ -493,15 +494,12 @@ Este capítulo describe en detalle el diseño, despliegue e integración de una 
 Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquitectura basada en microservicios contenerizados, apoyada en las siguientes capas lógicas:
 
 \begin{itemize}
-    \item Capa de Adquisición y Emisión (Edge): Encargada de la recopilación de datos en tiempo real desde los aerogeneradores y su publicación en la nube mediante protocolos de mensajería ligera como MQTT mediante WinCC Cloud Connector.
-    \item Capa de Infraestructura (Cloud): Proporciona el entorno computacional necesario para el despliegue de los servicios en la nube, garantizando alta disponibilidad y escalabilidad.
-    \item Capa de Ingesta y Procesamiento Intermedio: Responsable de la suscripción a los datos publicados, su filtrado, normalización y transformación antes de su almacenamiento.
-    \item Capa de Almacenamiento (TSDB): Optimizada para el almacenamiento eficiente de datos de series temporales, permitiendo consultas rápidas y eficientes sobre grandes volúmenes de datos
-    \item Capa de Visualización e Inteligencia de Negocio: Permite la construcción de dashboards interactivos para la monitorización del rendimiento del parque eólico y la toma de decisiones informada basada en los datos históricos y en tiempo real.
+    \item Capa de Adquisición y Emisión (Edge): Representada por el módulo Cloud Connect del SCADA WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero MQTT.
+    \item Capa de Infraestructura (Cloud): Soportada por una instancia virtual (EC2) alojada en Amazon Web Services (AWS), que proporciona el entorno computacional necesario con alta disponibilidad. El despliegue de los servicios se ha orquestado íntegramente mediante Docker, garantizando el aislamiento de los procesos y facilitando futuras migraciones.
+    \item Capa de Ingesta y Procesamiento Intermedio: Implementada con Node-RED, que actúa como cliente MQTT para la suscripción a los tópicos de la planta, y proporciona un entorno de flujo de datos visual (flow-based programming) para filtrar, normalizar y transformar las tramas JSON recibidas antes de su inserción en la base de datos.
+    \item Capa de Almacenamiento (TSDB): Soportada por InfluxDB, una base de datos de series temporales optimizada para la escritura de alta frecuencia y el almacenamiento eficiente de datos con marcas de tiempo (timestamps), características inherentes a la telemetría industrial.
+    \item Capa de Visualización e Inteligencia de Negocio: Desarrollada sobre Grafana, que consulta directamente a la base de datos para construir dashboards interactivos, permitiendo la monitorización del rendimiento del parque eólico desde cualquier ubicación con acceso a internet.
 \end{itemize}
-\subsection{Despliegue de la infraestructura en Amazon Web Services (AWS)}
-
-Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema IIoT. Para ello, se ha optado por un modelo de Infraestructura como Servicio (IaaS) mediante Amazon Web Services (AWS) ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
 
 \begin{figure}[H]
     \centering
@@ -509,6 +507,185 @@ Una vez definida la arquitectura conceptual, el siguiente paso consiste en la ma
     \caption{Arquitectura de integración de IIoT para la monitorización de un parque eólico.}
     \label{fig:IIoT}
 \end{figure}   
+
+\subsection{Despliegue de la infraestructura en Amazon Web Services (AWS)}
+
+Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema IIoT. Para ello, se ha optado por un modelo de Infraestructura como Servicio (IaaS) mediante Amazon Web Services (AWS) ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
+\subsubsection{Instancia EC2}
+El núcleo computacional del sistema reside en una instancia de Amazon Elastic Compute Cloud (EC2). Se ha seleccionado una instancia de la familia de microprocesadores t3.medium con un procesador con sistema operativo Ubuntu Server 22.04 LTS, 
+
+\subsubsection{Reglas de entrada del Security Group EC2}
+Las reglas de entrada del grupo de seguridad (Security Group) de la instancia EC2 en AWS definen qué tráfico de red está permitido acceder a la instancia. Estas reglas especifican los puertos, protocolos y orígenes que pueden comunicarse con el servidor. A continuación se presenta la configuración de las reglas implementadas en la solución:
+
+\begin{longtable}{p{2.3cm} p{1cm} p{1.8cm} p{1.2cm} p{1.5cm} p{1.5cm} p{1.2cm}}
+    \toprule
+    \toprule
+    \multicolumn{7}{c}{\textbf{Reglas de entrada del Security Group EC2}} \\
+    \midrule
+    \textbf{ID de regla} & \textbf{IP} & \textbf{Tipo} & \textbf{Proto.} & \textbf{Puertos} & \textbf{Origen} & \textbf{Desc.}\\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    \multicolumn{7}{c}{\textbf{Reglas de entrada del Security Group EC2 (continuación)}} \\
+    \midrule
+    \textbf{ID de regla} & \textbf{IP} & \textbf{Tipo} & \textbf{Proto.} & \textbf{Puertos} & \textbf{Origen} & \textbf{Desc.}\\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{7}{r}{Continúa en la siguiente página}\\
+    \endfoot
+
+    \bottomrule
+    \bottomrule
+    \\
+    \caption{Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}
+    \label{tab:ec2_security_group}\\
+    \endlastfoot
+
+    sgr-09d85840 & IPv4 & TCP Personalizado & TCP & 3000 & 0.0.0.0/0 & --\\
+    sgr-03c60e5a & IPv4 & TCP Personalizado & TCP & 8086 & 0.0.0.0/0 & --\\
+    sgr-0a9de042 & IPv4 & HTTPS & TCP & 443 & 0.0.0.0/0 & --\\
+    sgr-0b782729 & IPv4 & HTTP & TCP & 80 & 0.0.0.0/0 & --\\
+    sgr-014a824e & IPv4 & SSH & TCP & 22 & 0.0.0.0/0 & --\\
+    sgr-0e38166d & IPv4 & TCP Personalizado & TCP & 1880 & 0.0.0.0/0 & --\\
+    sgr-0c3cf32e & IPv4 & TCP Personalizado & TCP & 8883 & 0.0.0.0/0 & --\\
+    sgr-0d805336 & IPv4 & TCP Personalizado & TCP & 1883 & 0.0.0.0/0 & --\\
+\end{longtable}
+
+\subsubsection{Orquestación de microservicios mediante Docker}
+\definecolor{codegreen}{rgb}{0,0.8,0.4}
+\definecolor{codegray}{rgb}{0.75,0.75,0.75}
+\definecolor{codegold}{rgb}{0.9,0.7,0.15}
+\definecolor{codepurple}{rgb}{0.9,0.6,1.0}
+\definecolor{backcolour}{rgb}{0.12,0.13,0.20}
+\definecolor{textcolor}{rgb}{0.95,0.95,0.95}
+\definecolor{codeblue}{rgb}{0,0.4,0.8}
+\lstset{
+  language=bash,
+  rulecolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegold},
+    basicstyle=\ttfamily\footnotesize\color{textcolor},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=false,                
+    numbers=left,                    
+    numbersep=10pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=none,
+    framexleftmargin=0pt,
+    framexrightmargin=0pt,
+    linewidth=\linewidth,
+    columns=fullflexible,
+    xleftmargin=0pt,
+    lineskip=-1pt,
+    aboveskip=0pt,
+    belowskip=0pt
+}
+\newenvironment{codeframe}{%
+\begin{mdframed}[
+    backgroundcolor=backcolour,
+    linecolor=backcolour,
+    hidealllines=true,
+    roundcorner=0pt,
+    innerleftmargin=6pt,
+    innerrightmargin=6pt,
+    innertopmargin=4pt,
+    innerbottommargin=4pt,
+    skipabove=0pt,
+    skipbelow=0pt
+]
+}{%
+\end{mdframed}
+}
+Para garantizar la portabilidad y escalabilidad de la solución, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, InfluxDB y Grafana) utilizando Docker, el cual permite empaquetar las aplicaciones junto con sus dependencias en contenedores ligeros que abstraen el sistema operativo sobre el que se ejecutan. De esta forma, las configuraciones especificas de diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas, producción) se gestionan de forma consistente y replicable. A continuación se describen los pasos para el despliegue de cada servicio:\par
+
+primero se realiza la conexión mediante SSH a la instancia EC2 utilizando un cliente como PuTTY o la terminal de comandos, autenticándose con la clave privada asociada a la instancia. Una vez dentro del entorno de la instancia, se procede a instalar Docker con la siguiente secuencia de comandos:\par
+\begin{codeframe}
+\begin{lstlisting}[language=bash, caption={Comandos para la instalación de Docker en la instancia EC2.}]
+    sudo apt update
+    sudo apt install docker.io docker-compose -y
+    sudo systemctl start docker
+    sudo systemctl enable docker
+\end{lstlisting}
+\end{codeframe}
+El despliegue se ha automatizado mediante un archivo de configuración Docker Compose, que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la integridad industrial:
+\begin{itemize}
+    \item Red Interna Virtual (Docker Network): Se ha creado una red privada aislada (scada\_net) para que los contenedores se comuniquen entre sí (por ejemplo, Node-RED enviando datos a InfluxDB) sin exponer dichos puertos al internet público, reduciendo significativamente la superficie de ataque.
+    \item Persistencia de Datos (Docker Volumes): Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia EC2. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.
+\end{itemize}
+
+El archivo docker-compose.yml utilizado para el despliegue de la arquitectura IIoT en AWS se muestra a continuación:
+\begin{codeframe}
+\begin{lstlisting}[language=bash, caption={Archivo Docker Compose para el despliegue de la arquitectura IIoT en AWS.}]
+    version: '3.8'
+
+services:
+    # Base de Datos de Series Temporales
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb_scada
+    restart: always
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    networks:
+      - scada_net
+
+    # Motor de flujos y procesamiento de datos
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered_scada
+    restart: always
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered_data:/data
+    depends_on:
+      - influxdb
+    networks:
+      - scada_net
+
+    # Visualizacion de datos
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana_scada
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - influxdb
+    networks:
+      - scada_net
+
+networks:
+  scada_net:
+    driver: bridge
+
+volumes:
+  influxdb_data:
+  nodered_data:
+  grafana_data:
+\end{lstlisting}
+\end{codeframe}
+Para levantar la infraestructura, se ejecuta el siguiente comando en la terminal de la instancia EC2:
+\begin{codeframe}
+\begin{lstlisting}[language=bash, caption={Comando para iniciar los servicios definidos en el archivo Docker Compose.}]
+    sudo docker-compose up -d
+\end{lstlisting}
+\end{codeframe}
+
 
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante:

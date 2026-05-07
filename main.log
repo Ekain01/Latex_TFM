@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  14 APR 2026 09:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  7 MAY 2026 13:25
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **./main.tex
 (main.tex
@@ -923,10 +922,122 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabindent=\skip139
 \cfttabnumwidth=\skip140
 ))
-(macros.tex
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count460
+Package zref Info: New property: abspage on input line 67.
+)
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+)
+\mdf@templength=\skip141
+\c@mdf@globalstyle@cnt=\count461
+\mdf@skipabove@length=\skip142
+\mdf@skipbelow@length=\skip143
+\mdf@leftmargin@length=\skip144
+\mdf@rightmargin@length=\skip145
+\mdf@innerleftmargin@length=\skip146
+\mdf@innerrightmargin@length=\skip147
+\mdf@innertopmargin@length=\skip148
+\mdf@innerbottommargin@length=\skip149
+\mdf@splittopskip@length=\skip150
+\mdf@splitbottomskip@length=\skip151
+\mdf@outermargin@length=\skip152
+\mdf@innermargin@length=\skip153
+\mdf@linewidth@length=\skip154
+\mdf@innerlinewidth@length=\skip155
+\mdf@middlelinewidth@length=\skip156
+\mdf@outerlinewidth@length=\skip157
+\mdf@roundcorner@length=\skip158
+\mdf@footenotedistance@length=\skip159
+\mdf@userdefinedwidth@length=\skip160
+\mdf@needspace@length=\skip161
+\mdf@frametitleaboveskip@length=\skip162
+\mdf@frametitlebelowskip@length=\skip163
+\mdf@frametitlerulewidth@length=\skip164
+\mdf@frametitleleftmargin@length=\skip165
+\mdf@frametitlerightmargin@length=\skip166
+\mdf@shadowsize@length=\skip167
+\mdf@extratopheight@length=\skip168
+\mdf@subtitleabovelinewidth@length=\skip169
+\mdf@subtitlebelowlinewidth@length=\skip170
+\mdf@subtitleaboveskip@length=\skip171
+\mdf@subtitlebelowskip@length=\skip172
+\mdf@subtitleinneraboveskip@length=\skip173
+\mdf@subtitleinnerbelowskip@length=\skip174
+\mdf@subsubtitleabovelinewidth@length=\skip175
+\mdf@subsubtitlebelowlinewidth@length=\skip176
+\mdf@subsubtitleaboveskip@length=\skip177
+\mdf@subsubtitlebelowskip@length=\skip178
+\mdf@subsubtitleinneraboveskip@length=\skip179
+\mdf@subsubtitleinnerbelowskip@length=\skip180
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box58
+\mdf@footnotebox=\box59
+\mdf@splitbox@one=\box60
+\mdf@splitbox@two=\box61
+\mdf@splitbox@save=\box62
+\mdfsplitboxwidth=\skip181
+\mdfsplitboxtotalwidth=\skip182
+\mdfsplitboxheight=\skip183
+\mdfsplitboxdepth=\skip184
+\mdfsplitboxtotalheight=\skip185
+\mdfframetitleboxwidth=\skip186
+\mdfframetitleboxtotalwidth=\skip187
+\mdfframetitleboxheight=\skip188
+\mdfframetitleboxdepth=\skip189
+\mdfframetitleboxtotalheight=\skip190
+\mdffootnoteboxwidth=\skip191
+\mdffootnoteboxtotalwidth=\skip192
+\mdffootnoteboxheight=\skip193
+\mdffootnoteboxdepth=\skip194
+\mdffootnoteboxtotalheight=\skip195
+\mdftotallinewidth=\skip196
+\mdfboundingboxwidth=\skip197
+\mdfboundingboxtotalwidth=\skip198
+\mdfboundingboxheight=\skip199
+\mdfboundingboxdepth=\skip256
+\mdfboundingboxtotalheight=\skip257
+\mdf@freevspace@length=\skip258
+\mdf@horizontalwidthofbox@length=\skip259
+\mdf@verticalmarginwhole@length=\skip260
+\mdf@horizontalspaceofbox=\skip261
+\mdfsubtitleheight=\skip262
+\mdfsubsubtitleheight=\skip263
+\c@mdfcountframes=\count462
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count463
+\c@mdf@env@i=\count464
+\c@mdf@env@ii=\count465
+\c@mdf@zref@counter=\count466
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (macros.tex
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip141
+\@mathmargin=\skip264
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
@@ -944,19 +1055,19 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count460
+\inf@bad=\count467
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count461
-\leftroot@=\count462
+\uproot@=\count468
+\leftroot@=\count469
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count463
-\DOTSCASE@=\count464
+\classnum@=\count470
+\DOTSCASE@=\count471
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box58
-\strutbox@=\box59
+\Mathstrutbox@=\box63
+\strutbox@=\box64
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
@@ -964,20 +1075,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen180
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count465
+\macc@depth=\count472
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count466
+\c@MaxMatrixCols=\count473
 \dotsspace@=\muskip22
-\c@parentequation=\count467
-\dspbrk@lvl=\count468
+\c@parentequation=\count474
+\dspbrk@lvl=\count475
 \tag@help=\toks30
-\row@=\count469
-\column@=\count470
-\maxfields@=\count471
+\row@=\count476
+\column@=\count477
+\maxfields@=\count478
 \andhelp@=\toks31
 \eqnshift@=\dimen181
 \alignsep@=\dimen182
@@ -986,8 +1097,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \totwidth@=\dimen185
 \lineht@=\dimen186
 \@envbody=\toks32
-\multlinegap=\skip142
-\multlinetaggap=\skip143
+\multlinegap=\skip265
+\multlinetaggap=\skip266
 \mathdisplay@stack=\toks33
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
@@ -1006,9 +1117,9 @@ eys2e.sty
 Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count472
-\l__lipsum_a_int=\count473
-\l__lipsum_b_int=\count474
+\g__lipsum_par_int=\count479
+\l__lipsum_a_int=\count480
+\l__lipsum_b_int=\count481
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
@@ -1019,95 +1130,95 @@ Package: suffix 2006/07/15 1.5a Variant command support
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\xs_counta=\count475
-\xs_countb=\count476
+\xs_counta=\count482
+\xs_countb=\count483
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
 \AC@clearlist=\toks34
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count477
+\c@float@type=\count484
 \float@exts=\toks35
-\float@box=\box60
+\float@box=\box65
 \@float@everytoks=\toks36
-\@floatcapt=\box61
+\@floatcapt=\box66
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip144
-\multirow@cntb=\count478
-\multirow@dima=\skip145
+\multirow@colwidth=\skip267
+\multirow@cntb=\count485
+\multirow@dima=\skip268
 \bigstrutjot=\dimen187
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count479
-\c@@ppsavesec=\count480
-\c@@ppsaveapp=\count481
+\c@@pps=\count486
+\c@@ppsavesec=\count487
+\c@@ppsaveapp=\count488
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm2e
 .sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count482
-\algocf@hangindent=\skip146
+\c@AlgoLine=\count489
+\algocf@hangindent=\skip269
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count483
+\c@checkoddpage=\count490
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip147
-\skiplinenumber=\skip148
-\skiprule=\skip149
-\skiphlne=\skip150
-\skiptext=\skip151
-\skiplength=\skip152
-\algomargin=\skip153
-\skipalgocfslide=\skip154
+\skiptotal=\skip270
+\skiplinenumber=\skip271
+\skiprule=\skip272
+\skiphlne=\skip273
+\skiptext=\skip274
+\skiplength=\skip275
+\algomargin=\skip276
+\skipalgocfslide=\skip277
 \algowidth=\dimen188
 \inoutsize=\dimen189
 \inoutindent=\dimen190
 \interspacetitleruled=\dimen191
 \interspacealgoruled=\dimen192
 \interspacetitleboxruled=\dimen193
-\algocf@ruledwidth=\skip155
-\algocf@inoutbox=\box62
-\algocf@inputbox=\box63
-\AlCapSkip=\skip156
-\AlCapHSkip=\skip157
-\algoskipindent=\skip158
-\algocf@nlbox=\box64
-\algocf@hangingbox=\box65
-\algocf@untilbox=\box66
-\algocf@skipuntil=\skip159
-\algocf@capbox=\box67
-\algocf@lcaptionbox=\skip160
-\algoheightruledefault=\skip161
-\algoheightrule=\skip162
-\algotitleheightruledefault=\skip163
-\algotitleheightrule=\skip164
-\c@algocfline=\count484
-\c@algocfproc=\count485
-\c@algocf=\count486
-\algocf@algoframe=\box68
-\algocf@algobox=\box69
+\algocf@ruledwidth=\skip278
+\algocf@inoutbox=\box67
+\algocf@inputbox=\box68
+\AlCapSkip=\skip279
+\AlCapHSkip=\skip280
+\algoskipindent=\skip281
+\algocf@nlbox=\box69
+\algocf@hangingbox=\box70
+\algocf@untilbox=\box71
+\algocf@skipuntil=\skip282
+\algocf@capbox=\box72
+\algocf@lcaptionbox=\skip283
+\algoheightruledefault=\skip284
+\algoheightrule=\skip285
+\algotitleheightruledefault=\skip286
+\algotitleheightrule=\skip287
+\c@algocfline=\count491
+\c@algocfproc=\count492
+\c@algocf=\count493
+\algocf@algoframe=\box73
+\algocf@algobox=\box74
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count487
-\calc@Bcount=\count488
+\calc@Acount=\count494
+\calc@Bcount=\count495
 \calc@Adimen=\dimen194
 \calc@Bdimen=\dimen195
-\calc@Askip=\skip165
-\calc@Bskip=\skip166
+\calc@Askip=\skip288
+\calc@Bskip=\skip289
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count489
-\calc@Cskip=\skip167
+\calc@Ccount=\count496
+\calc@Cskip=\skip290
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
@@ -1121,14 +1232,14 @@ Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count490
-\AM@pagebox=\box70
+\pdfpages@includegraphics@status=\count497
+\AM@pagebox=\box75
 \AM@global@opts=\toks37
-\AM@pagecnt=\count491
+\AM@pagecnt=\count498
 \AM@toc@title=\toks38
 \AM@lof@heading=\toks39
-\c@AM@survey=\count492
-\AM@templatesizebox=\box71
+\c@AM@survey=\count499
+\AM@templatesizebox=\box76
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen257
@@ -1141,46 +1252,46 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen264
 \cmidrulekern=\dimen265
 \defaultaddspace=\dimen266
-\@cmidla=\count493
-\@cmidlb=\count494
+\@cmidla=\count500
+\@cmidlb=\count501
 \@aboverulesep=\dimen267
 \@belowrulesep=\dimen268
-\@thisruleclass=\count495
-\@lastruleclass=\count496
+\@thisruleclass=\count502
+\@lastruleclass=\count503
 \@thisrulewidth=\dimen269
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
-\LTleft=\skip168
-\LTright=\skip169
-\LTpre=\skip170
-\LTpost=\skip171
-\LTchunksize=\count497
+\LTleft=\skip291
+\LTright=\skip292
+\LTpre=\skip293
+\LTpost=\skip294
+\LTchunksize=\count504
 \LTcapwidth=\dimen270
-\LT@head=\box72
-\LT@firsthead=\box73
-\LT@foot=\box74
-\LT@lastfoot=\box75
-\LT@gbox=\box76
-\LT@cols=\count498
-\LT@rows=\count499
-\c@LT@tables=\count500
-\c@LT@chunks=\count501
+\LT@head=\box77
+\LT@firsthead=\box78
+\LT@foot=\box79
+\LT@lastfoot=\box80
+\LT@gbox=\box81
+\LT@cols=\count505
+\LT@rows=\count506
+\c@LT@tables=\count507
+\c@LT@chunks=\count508
 \LT@p@ftn=\toks40
 )
 Class scrreprt Info: longtable captions redefined on input line 15.
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count502
-\lst@gtempboxa=\box77
+\lst@mode=\count509
+\lst@gtempboxa=\box82
 \lst@token=\toks41
-\lst@length=\count503
+\lst@length=\count510
 \lst@currlwidth=\dimen271
-\lst@column=\count504
-\lst@pos=\count505
+\lst@column=\count511
+\lst@pos=\count512
 \lst@lostspace=\dimen272
 \lst@width=\dimen273
-\lst@newlines=\count506
-\lst@lineno=\count507
+\lst@newlines=\count513
+\lst@lineno=\count514
 \lst@maxwidth=\dimen274
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
@@ -1188,9 +1299,9 @@ File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count508
-\lst@skipnumbers=\count509
-\lst@framebox=\box78
+\c@lstnumber=\count515
+\lst@skipnumbers=\count516
+\lst@framebox=\box83
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
@@ -1213,24 +1324,24 @@ ways
 .sty
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofite
 ms.tex
-\loi_cnt_foreach_nest=\count510
-\loi_nestcnt=\count511
+\loi_cnt_foreach_nest=\count517
+\loi_nestcnt=\count518
 )
 Package: listofitems 2024/03/09 v1.65 Grab items in lists using user-specified 
 sep char (CT)
 )
-\c@@stackindex=\count512
-\@boxshift=\skip172
-\stack@tmplength=\skip173
-\temp@stkl=\skip174
-\@stackedboxwidth=\skip175
-\@addedbox=\box79
-\@anchorbox=\box80
-\@insetbox=\box81
-\se@backgroundbox=\box82
-\stackedbox=\box83
-\@centerbox=\box84
-\c@ROWcellindex@=\count513
+\c@@stackindex=\count519
+\@boxshift=\skip295
+\stack@tmplength=\skip296
+\temp@stkl=\skip297
+\@stackedboxwidth=\skip298
+\@addedbox=\box84
+\@anchorbox=\box85
+\@insetbox=\box86
+\se@backgroundbox=\box87
+\stackedbox=\box88
+\@centerbox=\box89
+\c@ROWcellindex@=\count520
 ))
 Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           Using `bookmark' together with `hyperref' is recommended,
@@ -1239,7 +1350,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 46.
+(scrreprt)           before \begin{document} on input line 47.
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
@@ -1247,63 +1358,59 @@ Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 )
-\BKM@id=\count514
+\BKM@id=\count521
 ))
-LaTeX Font Info:    Trying to load font information for T1+bch on input line 46
+LaTeX Font Info:    Trying to load font information for T1+bch on input line 47
 .
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1bch.fd
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
-(main.aux
-
-LaTeX Warning: Label `fig:monopuesto' multiply defined.
-
-)
+(main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-Package scrbase Info: activating english \abstractname on input line 46.
-Package scrbase Info: activating english \partname on input line 46.
-Package scrbase Info: activating english \chaptername on input line 46.
-Package scrbase Info: activating english \appendixname on input line 46.
-Package scrbase Info: activating english \figurename on input line 46.
-Package scrbase Info: activating english \tablename on input line 46.
-Package scrbase Info: activating english \contentsname on input line 46.
-Package scrbase Info: activating english \listfigurename on input line 46.
-Package scrbase Info: activating english \listtablename on input line 46.
-Package scrbase Info: activating english \bibname on input line 46.
-Package scrbase Info: activating english \indexname on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+Package scrbase Info: activating english \abstractname on input line 47.
+Package scrbase Info: activating english \partname on input line 47.
+Package scrbase Info: activating english \chaptername on input line 47.
+Package scrbase Info: activating english \appendixname on input line 47.
+Package scrbase Info: activating english \figurename on input line 47.
+Package scrbase Info: activating english \tablename on input line 47.
+Package scrbase Info: activating english \contentsname on input line 47.
+Package scrbase Info: activating english \listfigurename on input line 47.
+Package scrbase Info: activating english \listtablename on input line 47.
+Package scrbase Info: activating english \bibname on input line 47.
+Package scrbase Info: activating english \indexname on input line 47.
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count515
+\scratchcounter=\count522
 \scratchdimen=\dimen275
-\scratchbox=\box85
-\nofMPsegments=\count516
-\nofMParguments=\count517
+\scratchbox=\box90
+\nofMPsegments=\count523
+\nofMParguments=\count524
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count518
+\MPscratchCnt=\count525
 \MPscratchDim=\dimen276
-\MPnumerator=\count519
-\makeMPintoPDFobject=\count520
+\MPnumerator=\count526
+\makeMPintoPDFobject=\count527
 \everyMPtoPDFconversion=\toks43
 )
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1316,13 +1423,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 46.
-Package microtype Info: Applying patch `item' on input line 46.
-Package microtype Info: Applying patch `toc' on input line 46.
-Package microtype Info: Applying patch `eqnum' on input line 46.
-Package microtype Info: Applying patch `footnote' on input line 46.
-Package microtype Info: Applying patch `verbatim' on input line 46.
-LaTeX Info: Redefining \microtypesetup on input line 46.
+LaTeX Info: Redefining \microtypecontext on input line 47.
+Package microtype Info: Applying patch `item' on input line 47.
+Package microtype Info: Applying patch `toc' on input line 47.
+Package microtype Info: Applying patch `eqnum' on input line 47.
+Package microtype Info: Applying patch `footnote' on input line 47.
+Package microtype Info: Applying patch `verbatim' on input line 47.
+LaTeX Info: Redefining \microtypesetup on input line 47.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1338,7 +1445,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 47.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
@@ -1402,8 +1509,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 46.
-Package biblatex Info: Reference segment=0 on input line 46.
+Package biblatex Info: Reference section=0 on input line 47.
+Package biblatex Info: Reference segment=0 on input line 47.
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -1418,10 +1525,10 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-\c@lstlisting=\count521
+\c@lstlisting=\count528
 Package tocbasic Info: omitting babel extension for `lol'
-(tocbasic)             because of missing \bbl@set@language on input line 46.
-\scr@dte@lstlisting@maxnumwidth=\skip176
+(tocbasic)             because of missing \bbl@set@language on input line 47.
+\scr@dte@lstlisting@maxnumwidth=\skip299
 
 
 pdfTeX warning: pdflatex (file ./Portada.pdf): PDF inclusion: found PDF version
@@ -1429,7 +1536,7 @@ pdfTeX warning: pdflatex (file ./Portada.pdf): PDF inclusion: found PDF version
 <Portada.pdf, id=3, 597.55246pt x 845.07718pt>
 File: Portada.pdf Graphic file (type pdf)
 <use Portada.pdf>
-Package pdftex.def Info: Portada.pdf  used on input line 49.
+Package pdftex.def Info: Portada.pdf  used on input line 50.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1442,23 +1549,23 @@ pdfTeX warning: pdflatex (file ./Portada.pdf): PDF inclusion: found PDF version
 <Portada.pdf, id=5, page=1, 597.55246pt x 845.07718pt>
 File: Portada.pdf Graphic file (type pdf)
 <use Portada.pdf, page 1>
-Package pdftex.def Info: Portada.pdf , page1 used on input line 49.
+Package pdftex.def Info: Portada.pdf , page1 used on input line 50.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: Portada.pdf Graphic file (type pdf)
 <use Portada.pdf, page 1>
-Package pdftex.def Info: Portada.pdf , page1 used on input line 49.
+Package pdftex.def Info: Portada.pdf , page1 used on input line 50.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 File: Portada.pdf Graphic file (type pdf)
 <use Portada.pdf, page 1>
-Package pdftex.def Info: Portada.pdf , page1 used on input line 49.
+Package pdftex.def Info: Portada.pdf , page1 used on input line 50.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 File: Portada.pdf Graphic file (type pdf)
 <use Portada.pdf, page 1>
-Package pdftex.def Info: Portada.pdf , page1 used on input line 49.
+Package pdftex.def Info: Portada.pdf , page1 used on input line 50.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 File: Portada.pdf Graphic file (type pdf)
 <use Portada.pdf, page 1>
-Package pdftex.def Info: Portada.pdf , page1 used on input line 49.
+Package pdftex.def Info: Portada.pdf , page1 used on input line 50.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
 [1
 
@@ -1583,7 +1690,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 \openout4 = `main.toc'.
 
 ) (parte-frontal/lista_de_tablas_ilustraciones.tex [6] (main.lof
-Overfull \hbox (125.89992pt too wide) in paragraph at lines 14--14
+Overfull \hbox (125.89992pt too wide) in paragraph at lines 13--13
  [][] [][]\T1/bch/m/n/10.95 (-20) Jerarquía de los nive-les de la norma IEC 614
 00-25-2. fuente: https://www.iec.ch/standards/61400- 
  []
@@ -1602,7 +1709,8 @@ Overfull \hbox (125.89992pt too wide) in paragraph at lines 14--14
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
-) (parte-frontal/acronimos_lista.tex [9] [10
+) (parte-frontal/acronimos_lista.tex [9{C:/Users/Eka_0/AppData/Local/Programs/M
+iKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [10
 
 
 
@@ -1835,7 +1943,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<figuras/WinCC.png, id=319, 371.88937pt x 135.50626pt>
+<figuras/WinCC.png, id=325, 371.88937pt x 135.50626pt>
 File: figuras/WinCC.png Graphic file (type png)
 <use figuras/WinCC.png>
 Package pdftex.def Info: figuras/WinCC.png  used on input line 11.
@@ -1869,12 +1977,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-<figuras/Monopuesto.png, id=338, 1339.0025pt x 596.2275pt>
+<figuras/Monopuesto.png, id=344, 1339.0025pt x 596.2275pt>
 File: figuras/Monopuesto.png Graphic file (type png)
 <use figuras/Monopuesto.png>
 Package pdftex.def Info: figuras/Monopuesto.png  used on input line 54.
-(pdftex.def)             Requested size: 200.8417pt x 89.43027pt.
-<figuras/MonopuestoRedundante.png, id=339, 2501.345pt x 1215.54124pt>
+(pdftex.def)             Requested size: 401.70386pt x 178.86963pt.
+
+Overfull \hbox (6.25204pt too wide) in paragraph at lines 54--55
+ [][] 
+ []
+
+<figuras/MonopuestoRedundante.png, id=345, 2501.345pt x 1215.54124pt>
 File: figuras/MonopuestoRedundante.png Graphic file (type png)
 <use figuras/MonopuestoRedundante.png>
 Package pdftex.def Info: figuras/MonopuestoRedundante.png  used on input line 6
@@ -1884,7 +1997,7 @@ Package pdftex.def Info: figuras/MonopuestoRedundante.png  used on input line 6
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17 <./figuras/Monopuesto.png>]
-<figuras/Multipuesto.png, id=348, 2501.345pt x 1215.54124pt>
+<figuras/Multipuesto.png, id=354, 2501.345pt x 1215.54124pt>
 File: figuras/Multipuesto.png Graphic file (type png)
 <use figuras/Multipuesto.png>
 Package pdftex.def Info: figuras/Multipuesto.png  used on input line 72.
@@ -1895,48 +2008,35 @@ Overfull \hbox (29.77121pt too wide) in paragraph at lines 72--73
  []
 
 [18 <./figuras/MonopuestoRedundante.png> <./figuras/Multipuesto.png>] [19]
-File: figuras/Monopuesto.png Graphic file (type png)
-<use figuras/Monopuesto.png>
-Package pdftex.def Info: figuras/Monopuesto.png  used on input line 171.
-(pdftex.def)             Requested size: 200.8417pt x 89.43027pt.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-Overfull \hbox (10.95pt too wide) in paragraph at lines 187--204
-$[]$ 
- []
-
-[21{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
-nc}{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.e
-nc}{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-<figuras/Nodos.png, id=390, 2380.895pt x 1766.6pt>
+ [21]
+<figuras/Nodos.png, id=381, 2380.895pt x 1766.6pt>
 File: figuras/Nodos.png Graphic file (type png)
 <use figuras/Nodos.png>
-Package pdftex.def Info: figuras/Nodos.png  used on input line 231.
+Package pdftex.def Info: figuras/Nodos.png  used on input line 189.
 (pdftex.def)             Requested size: 428.54262pt x 317.97427pt.
 
-Overfull \hbox (33.0908pt too wide) in paragraph at lines 231--232
+Overfull \hbox (33.0908pt too wide) in paragraph at lines 189--190
  [][] 
  []
 
-<figuras/IEC_61400-25-2_v1.jpg, id=391, 458.46281pt x 249.93375pt>
+<figuras/IEC_61400-25-2_v1.jpg, id=382, 458.46281pt x 249.93375pt>
 File: figuras/IEC_61400-25-2_v1.jpg Graphic file (type jpg)
 <use figuras/IEC_61400-25-2_v1.jpg>
-Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 237.
+Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 195.
 
 (pdftex.def)             Requested size: 412.61272pt x 224.9383pt.
 
-Overfull \hbox (17.1609pt too wide) in paragraph at lines 237--238
+Overfull \hbox (17.1609pt too wide) in paragraph at lines 195--196
  [][] 
  []
 
 
-Underfull \hbox (badness 5847) in paragraph at lines 238--238
+Underfull \hbox (badness 5847) in paragraph at lines 196--196
 [][]|\T1/bch/m/n/10 (+20) Jer-ar-quía de los nive-les de la norma IEC 61400-25-
 2. fuente:
  []
@@ -1944,110 +2044,113 @@ Underfull \hbox (badness 5847) in paragraph at lines 238--238
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23 <./figuras/Nodos.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+ [22]
+[23 <./figuras/Nodos.png> <./figuras/IEC_61400-25-2_v1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 []\T1/bch/m/n/10.95 (+20) Información so-bre las
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--257
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 []\T1/bch/m/n/10.95 (+20) Entero con
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 []\T1/bch/m/n/10.95 (+20) Información so-bre las
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 []\T1/bch/m/n/10.95 (+20) Coma flotante
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 []\T1/bch/m/n/10.95 (+20) Información so-bre las
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
 []\T1/bch/m/n/10.95 (+20) Coma flotante
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 []\T1/bch/m/n/10.95 (+20) Información so-bre las
  []
 
 
-Overfull \hbox (13.89807pt too wide) in paragraph at lines 245--281
+Overfull \hbox (13.89807pt too wide) in paragraph at lines 203--239
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24 <./figuras/IEC_61400-25-2_v1.jpg>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-Overfull \hbox (22.43398pt too wide) in alignment at lines 294--301
+ [24]
+Overfull \hbox (22.43398pt too wide) in alignment at lines 252--259
  [] [] [] [] 
  []
 
 
-Overfull \hbox (22.43398pt too wide) in alignment at lines 301--308
+Overfull \hbox (22.43398pt too wide) in alignment at lines 259--266
  [] [] [] [] 
  []
 
 
-Overfull \hbox (22.43398pt too wide) in alignment at lines 308--312
+Overfull \hbox (22.43398pt too wide) in alignment at lines 266--270
  [] [] [] [] 
  []
 
 
-Overfull \hbox (22.43398pt too wide) in alignment at lines 312--319
+Overfull \hbox (22.43398pt too wide) in alignment at lines 270--277
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--333
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 []|\T1/bch/m/n/10.95 (+20) Valor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--333
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 \T1/bch/m/n/10.95 (+20) bits
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--333
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 \T1/bch/m/n/10.95 (+20) sin
  []
 
 
-Overfull \hbox (22.43398pt too wide) in alignment at lines 319--468
+Overfull \hbox (22.43398pt too wide) in alignment at lines 277--426
  [] [] [] [] 
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [26]
+ignored: Infinite glue shrinkage found in box being split [25]
 ignored: Infinite glue shrinkage fo
-und in box being split [27]
-ignored: Infinite glue shrinkage found in box being split [28
+und in box being split [26]
+ignored: Infinite glue shrinkage found in box being split [27
 ]
-ignored: Infinite glue shrinkage found in box being split [29]
+ignored: Infinite glue shrinkage found in box being split [28{C:/Users/Eka_0/AppData/Lo
+cal/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 ignored: Infinite glue shrinkage f
-ound in box being split [30]
+ound in box being split [29]
 ignored: Infinite glue shrinkage found in box being split [3
-1]
-<figuras/jerarquia.png, id=430, 883.80188pt x 589.4522pt>
+0]
+<figuras/jerarquia.png, id=423, 878.53218pt x 576.65437pt>
 File: figuras/jerarquia.png Graphic file (type png)
 <use figuras/jerarquia.png>
-Package pdftex.def Info: figuras/jerarquia.png  used on input line 478.
-(pdftex.def)             Requested size: 353.5145pt x 235.7767pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-00.
+Package pdftex.def Info: figuras/jerarquia.png  used on input line 436.
+(pdftex.def)             Requested size: 395.33583pt x 259.49207pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+58.
 
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -2057,115 +2160,155 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (10.95pt too wide) in paragraph at lines 484--519
+Overfull \hbox (10.95pt too wide) in paragraph at lines 442--477
 $[]$ 
  []
 
 <figuras/GUI.png, id=431, 1015.54407pt x 557.08125pt>
 File: figuras/GUI.png Graphic file (type png)
 <use figuras/GUI.png>
-Package pdftex.def Info: figuras/GUI.png  used on input line 522.
+Package pdftex.def Info: figuras/GUI.png  used on input line 480.
 (pdftex.def)             Requested size: 406.21043pt x 222.82855pt.
 
-Overfull \hbox (10.75862pt too wide) in paragraph at lines 522--523
+Overfull \hbox (10.75862pt too wide) in paragraph at lines 480--481
  [][] 
  []
 
-[32 <./figuras/jerarquia.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32 <./figuras/jerarquia.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34 <./figuras/GUI.png>] [35] [36] [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 762--762
-[]\T1/bch/m/n/10.95 (+20) Identificación
- []
+ [34 <./figuras/GUI.png>]
+<figuras/DiagramaCloud.png, id=452, 2826.56pt x 1541.76pt>
+File: figuras/DiagramaCloud.png Graphic file (type png)
+<use figuras/DiagramaCloud.png>
+Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 506.
+(pdftex.def)             Requested size: 452.25885pt x 246.68663pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 763--763
-[]\T1/bch/m/n/10.95 (+20) Autenticación
- []
-
-
-Underfull \hbox (badness 1845) in paragraph at lines 767--767
-\T1/bch/m/n/10.95 (+20) ac-ceso a fun-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 768--768
-[]\T1/bch/m/n/10.95 (+20) Registro de
- []
-
-
-Underfull \hbox (badness 2707) in paragraph at lines 768--768
-\T1/bch/m/n/10.95 (+20) ac-ce-sos y ac-
- []
-
-
-Underfull \hbox (badness 2173) in paragraph at lines 770--770
-[]\T1/bch/m/n/10.95 (+20) Protección de
- []
-
-
-Underfull \hbox (badness 2173) in paragraph at lines 771--771
-[]\T1/bch/m/n/10.95 (+20) Protección de
- []
-
-
-Underfull \hbox (badness 3679) in paragraph at lines 771--771
-\T1/bch/m/n/10.95 (+20) in-te-gri-dad de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 773--773
-[]\T1/bch/m/n/10.95 (+20) Registro de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 773--773
-\T1/bch/m/n/10.95 (+20) even-tos de
- []
-
-
-Underfull \hbox (badness 2173) in paragraph at lines 774--774
-[]\T1/bch/m/n/10.95 (+20) Protección de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 776--776
-[]\T1/bch/m/n/10.95 (+20) Control del
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 777--777
-[]\T1/bch/m/n/10.95 (+20) Segmentación
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 779--779
-[]\T1/bch/m/n/10.95 (+20) Detección de
- []
-
-
-Overfull \hbox (32.20758pt too wide) in paragraph at lines 758--784
+Overfull \hbox (56.80704pt too wide) in paragraph at lines 506--507
  [][] 
  []
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 784.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 784.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 784.
+[35 <./figuras/DiagramaCloud.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 547--547
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--547
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 547--547
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 548--548
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 549--549
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--550
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 550--550
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 551--551
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 552--552
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--553
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 553--553
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--554
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--554
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 554--554
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-Overfull \vbox (16.27283pt too high) has occurred while \output is active []
+ [36]
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package mdframed Info: mdframed works in twoside mode on input line 612.
+Package mdframed Info: mdframed works in twoside mode on input line 627.
 
+[37]
+Package mdframed Info: Not enough space on this page on input line 681.
+Package mdframed Info: mdframed works in twoside mode on input line 683.
 
-[40]) (capitulos/analisis_de_resultados.tex [41] [42
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+[39] [40] [41] [42]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1028.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1028.
+
+ignored: Infinite glue shrinkage found in box being split [43]
+ignored: Infinite glue shrinkage fo
+und in box being split [44]) (capitulos/analisis_de_resultados.tex [45]
+[46
 
 
 ]
@@ -2181,7 +2324,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (capitulos/metodologÃ­a.tex [43] [44
+) (capitulos/metodologÃ­a.tex [47] [48
 
 
 ]
@@ -2197,7 +2340,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (capitulos/aspectos_econÃ³micos.tex [45] [46
+) (capitulos/aspectos_econÃ³micos.tex [49] [50
 
 
 ]
@@ -2213,7 +2356,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (capitulos/conclusiones.tex [47] [48
+) (capitulos/conclusiones.tex [51] [52
 
 
 ]
@@ -2229,7 +2372,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [49] [50
+) [53] [54
 
 
 ]
@@ -2245,12 +2388,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[51
+[55
 
 
 ]
 
-Package biblatex Warning: Type 'online' not found on input line 90.
+Package biblatex Warning: Type 'online' not found on input line 91.
 
 
 Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no 
@@ -2258,9 +2401,9 @@ longer supported.
 (biblatex)                Please use 'labelprefix' option to '\newrefcontext'.
 
 
-LaTeX Warning: Empty bibliography on input line 90.
+LaTeX Warning: Empty bibliography on input line 91.
 
-[52] (anexos/Anexo_1.tex
+[56] (anexos/Anexo_1.tex
 chapter A.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -2279,19 +2422,15 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-[53
-
-
-
-
-]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54])
-(anexos/Anexo_2.tex [55] [56
+ [57
 
 
-]
+
+
+])
+(anexos/Anexo_2.tex [58]
 chapter B.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -2304,7 +2443,10 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (anexos/Anexo_3.tex [57] [58
+) (anexos/Anexo_3.tex [59
+
+
+] [60
 
 
 ]
@@ -2320,7 +2462,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (anexos/Anexo_4.tex [59] [60
+) (anexos/Anexo_4.tex [61] [62
 
 
 ]
@@ -2336,7 +2478,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [61] [62] (main.aux)
+) [63] [64] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2345,42 +2487,37 @@ L3 programming layer <2026-01-19>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34157 strings out of 467867
- 619179 string characters out of 5418334
- 2159772 words of memory out of 5000000
- 61848 multiletter control sequences out of 15000+600000
- 760818 words of font info for 324 fonts, out of 8000000 for 9000
+ 35252 strings out of 467867
+ 640630 string characters out of 5418334
+ 2081434 words of memory out of 5000000
+ 62837 multiletter control sequences out of 15000+600000
+ 766990 words of font info for 334 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,17n,131p,11209b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,17n,131p,11209b,2172s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bc
 hb8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/cha
 rter/bchbi8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bits
 trea/charter/bchr8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/bitstrea/charter/bchri8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/lm/lmmi10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/lm/lmmi8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/lm/lmr10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/lm/lmssbx10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/lm/lmsy10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/lm/lmsy8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/lm/lmtt10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/lm/lmtt8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Eka_0/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (74 pages, 7984847 bytes).
+onts/type1/public/lm/lmssbx10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/lm/lmtt9.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Eka_0/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (76 pages, 10789118 bytes).
 PDF statistics:
- 1022 PDF objects out of 1200 (max. 8388607)
- 321 named destinations out of 1000 (max. 500000)
- 65488 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1100 PDF objects out of 1200 (max. 8388607)
+ 384 named destinations out of 1000 (max. 500000)
+ 72165 words of extra memory for PDF output out of 74296 (max. 10000000)
 
