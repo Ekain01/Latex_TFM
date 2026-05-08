@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  7 MAY 2026 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  8 MAY 2026 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2290,28 +2290,26 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 Package mdframed Info: mdframed works in twoside mode on input line 612.
-Package mdframed Info: mdframed works in twoside mode on input line 627.
 
 [37]
-Package mdframed Info: Not enough space on this page on input line 681.
-Package mdframed Info: mdframed works in twoside mode on input line 683.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Package mdframed Info: mdframed works in twoside mode on input line 629.
  [38]
-[39] [40] [41] [42]
+Package mdframed Info: mdframed works in twoside mode on input line 687.
+
+Underfull \vbox (badness 1158) has occurred while \output is active []
+
+ [39]
+[40] [41] [42]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1028.
+(Font)              <10> on input line 1034.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1028.
+(Font)              <7> on input line 1034.
 
 ignored: Infinite glue shrinkage found in box being split [43]
 ignored: Infinite glue shrinkage fo
-und in box being split [44]) (capitulos/analisis_de_resultados.tex [45]
-[46
-
-
-]
+und in box being split [44]
+ignored: Infinite glue shrinkage found in box being split [45
+]) (capitulos/analisis_de_resultados.tex [46]
 chapter 8.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -2324,7 +2322,10 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (capitulos/metodología.tex [47] [48
+) (capitulos/metodología.tex [47
+
+
+] [48
 
 
 ]
@@ -2429,8 +2430,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-])
-(anexos/Anexo_2.tex [58]
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58])
+(anexos/Anexo_2.tex [59] [60
+
+
+]
 chapter B.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -2443,10 +2450,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (anexos/Anexo_3.tex [59
-
-
-] [60
+) (anexos/Anexo_3.tex [61] [62
 
 
 ]
@@ -2462,7 +2466,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (anexos/Anexo_4.tex [61] [62
+) (anexos/Anexo_4.tex [63] [64
 
 
 ]
@@ -2478,7 +2482,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) [63] [64] (main.aux)
+) [65] [66] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2493,12 +2497,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  35252 strings out of 467867
- 640630 string characters out of 5418334
- 2081434 words of memory out of 5000000
- 62837 multiletter control sequences out of 15000+600000
- 766990 words of font info for 334 fonts, out of 8000000 for 9000
+ 640601 string characters out of 5418334
+ 2351599 words of memory out of 5000000
+ 62838 multiletter control sequences out of 15000+600000
+ 766470 words of font info for 330 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,17n,131p,11209b,2172s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,17n,131p,11209b,2184s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bc
 hb8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/cha
 rter/bchbi8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bits
@@ -2515,9 +2519,9 @@ grams/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (76 pages, 10789118 bytes).
+Output written on main.pdf (78 pages, 10794551 bytes).
 PDF statistics:
- 1100 PDF objects out of 1200 (max. 8388607)
- 384 named destinations out of 1000 (max. 500000)
+ 1112 PDF objects out of 1200 (max. 8388607)
+ 389 named destinations out of 1000 (max. 500000)
  72165 words of extra memory for PDF output out of 74296 (max. 10000000)
 

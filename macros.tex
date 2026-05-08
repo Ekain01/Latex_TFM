@@ -14,8 +14,8 @@
 \usepackage{longtable}          % Para tablas que ocupan varias páginas
 \usepackage{listings}           % Para bloques de código con lstlisting
 \usepackage{titlesec}
-
-
+\usepackage{caption}
+\usepackage[section]{placeins}
 \setcounter{secnumdepth}{4}
 
 \titleformat{\paragraph}
@@ -27,8 +27,15 @@
     basicstyle=\ttfamily\small,
     breaklines=true,
     frame=single,
+    framesep=6pt,
+    framexleftmargin=4pt,
+    framexrightmargin=4pt,
+    framextopmargin=4pt,
+    framexbottommargin=0pt,
     numbers=left,
     numberstyle=\tiny,
+    aboveskip=0.75\baselineskip,
+    belowskip=0.25\baselineskip,
     showstringspaces=false,
     tabsize=4
 }
