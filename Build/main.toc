@@ -14,50 +14,50 @@
 \contentsline {section}{\numberline {7.1}Introducción al entorno de SIMATIC WinCC V8.1}{15}{section*.15}%
 \contentsline {subsection}{\numberline {7.1.1}Software de configuración (SC) WinCC Explorer}{16}{section*.17}%
 \contentsline {subsection}{\numberline {7.1.2}Software \textit {Runtime (RT)}: WinCC Runtime}{16}{section*.19}%
-\contentsline {section}{\numberline {7.2}Arquitecturas del sistema}{16}{section*.20}%
-\contentsline {subsection}{\numberline {7.2.1}Topología de red del parque eólico y MCR}{16}{section*.21}%
+\contentsline {section}{\numberline {7.2}Arquitecturas del sistema}{17}{section*.20}%
+\contentsline {subsection}{\numberline {7.2.1}Topología de red del parque eólico y MCR}{17}{section*.21}%
 \contentsline {subsection}{\numberline {7.2.2}Arquitectura de WinCC}{17}{section*.22}%
 \contentsline {subsubsection}{\numberline {7.2.2.1}Sistemas Monopuesto (\textit {Single User Systems})}{17}{section*.23}%
 \contentsline {subsubsection}{\numberline {7.2.2.2}Sistemas Multipuesto (\textit {Multi User Systems})}{17}{section*.26}%
-\contentsline {subsubsection}{\numberline {7.2.2.3}Virtualización mediante SIVaaS}{19}{section*.28}%
+\contentsline {subsubsection}{\numberline {7.2.2.3}Virtualización mediante SIVaaS}{18}{section*.28}%
 \contentsline {paragraph}{Hypervisor alojado (\textit {Hosted Hypervisor})}{19}{section*.28}%
 \contentsline {paragraph}{Hypervisor metal desnudo (\textit {Bare-Metal Hypervisor})}{19}{section*.28}%
-\contentsline {paragraph}{Virtualización SIMATIC como Servicio (SIVaaS)}{20}{section*.28}%
-\contentsline {section}{\numberline {7.3}Comunicación y adquisición de datos}{21}{section*.32}%
-\contentsline {subsection}{\numberline {7.3.1}OPC UA}{21}{section*.33}%
+\contentsline {paragraph}{Virtualización SIMATIC como Servicio (SIVaaS)}{19}{section*.28}%
+\contentsline {section}{\numberline {7.3}Comunicación y adquisición de datos}{20}{section*.32}%
+\contentsline {subsection}{\numberline {7.3.1}OPC UA}{20}{section*.33}%
 \contentsline {section}{\numberline {7.4}Manejo de Variables}{21}{section*.34}%
-\contentsline {subsection}{\numberline {7.4.1}Variables internas}{22}{section*.35}%
-\contentsline {subsection}{\numberline {7.4.2}Variables de externas}{22}{section*.36}%
+\contentsline {subsection}{\numberline {7.4.1}Variables internas}{21}{section*.35}%
+\contentsline {subsection}{\numberline {7.4.2}Variables de externas}{21}{section*.36}%
 \contentsline {subsection}{\numberline {7.4.3}Variables de estructura}{22}{section*.37}%
-\contentsline {section}{\numberline {7.5}Interfaz Gráfica}{32}{section*.41}%
-\contentsline {subsection}{\numberline {7.5.1}Jerarquía de pantallas}{32}{section*.42}%
-\contentsline {subsection}{\numberline {7.5.2}Scripts globales}{32}{section*.44}%
-\contentsline {section}{\numberline {7.6}Gestión de alarmas y eventos}{34}{section*.47}%
-\contentsline {section}{\numberline {7.7}Integración de IIoT en la solución}{34}{section*.48}%
-\contentsline {subsection}{\numberline {7.7.1}Despliegue de la infraestructura en Amazon Web Services (AWS)}{36}{section*.50}%
-\contentsline {subsubsection}{\numberline {7.7.1.1}Instancia EC2}{36}{section*.51}%
-\contentsline {subsubsection}{\numberline {7.7.1.2}Reglas de entrada del Security Group EC2}{36}{section*.52}%
-\contentsline {subsubsection}{\numberline {7.7.1.3}Orquestación de microservicios mediante Docker}{37}{section*.53}%
-\contentsline {section}{\numberline {7.8}Ciberseguridad IEC 62443-4-2:2019}{43}{section*.61}%
-\contentsline {subsection}{\numberline {7.8.1}FR1: Identificación y autenticación de usuarios (IAC)}{43}{section*.62}%
-\contentsline {subsection}{\numberline {7.8.2}FR 2: Control de uso}{45}{section*.63}%
-\contentsline {subsection}{\numberline {7.8.3}Matriz de implementación de requisitos y niveles de seguridad}{46}{section*.64}%
-\contentsline {chapter}{\numberline {8}Análisis de resultados (si procede)}{51}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Metodología}{53}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Descripción de tareas}{53}{section*.67}%
-\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{53}{section*.68}%
-\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{53}{section*.69}%
-\contentsline {chapter}{\numberline {10}Aspectos económicos}{55}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Descripción del presupuesto y/o del presupuesto ejecutado}{55}{section*.71}%
-\contentsline {section}{\numberline {10.2}Análisis de rentabilidad (si procede)}{55}{section*.72}%
-\contentsline {chapter}{\numberline {11}Conclusiones}{57}{chapter.11}%
-\contentsline {chapter}{\nonumberline Bibliografía}{59}{chapter*.74}%
+\contentsline {section}{\numberline {7.5}Interfaz Gráfica}{31}{section*.41}%
+\contentsline {subsection}{\numberline {7.5.1}Jerarquía de pantallas}{31}{section*.42}%
+\contentsline {subsection}{\numberline {7.5.2}Scripts globales}{31}{section*.44}%
+\contentsline {section}{\numberline {7.6}Gestión de alarmas y eventos}{33}{section*.47}%
+\contentsline {section}{\numberline {7.7}Integración de IIoT en la solución}{33}{section*.48}%
+\contentsline {subsection}{\numberline {7.7.1}Despliegue de la infraestructura en Amazon Web Services (AWS)}{35}{section*.50}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}Instancia EC2}{35}{section*.51}%
+\contentsline {subsubsection}{\numberline {7.7.1.2}Reglas de entrada del Security Group EC2}{35}{section*.52}%
+\contentsline {subsubsection}{\numberline {7.7.1.3}Orquestación de microservicios mediante Docker}{36}{section*.53}%
+\contentsline {section}{\numberline {7.8}Ciberseguridad IEC 62443-4-2:2019}{42}{section*.61}%
+\contentsline {subsection}{\numberline {7.8.1}FR1: Identificación y autenticación de usuarios (IAC)}{42}{section*.62}%
+\contentsline {subsection}{\numberline {7.8.2}FR 2: Control de uso}{44}{section*.63}%
+\contentsline {subsection}{\numberline {7.8.3}Matriz de implementación de requisitos y niveles de seguridad}{45}{section*.64}%
+\contentsline {chapter}{\numberline {8}Análisis de resultados (si procede)}{49}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Metodología}{51}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Descripción de tareas}{51}{section*.67}%
+\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{51}{section*.68}%
+\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{51}{section*.69}%
+\contentsline {chapter}{\numberline {10}Aspectos económicos}{53}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Descripción del presupuesto y/o del presupuesto ejecutado}{53}{section*.71}%
+\contentsline {section}{\numberline {10.2}Análisis de rentabilidad (si procede)}{53}{section*.72}%
+\contentsline {chapter}{\numberline {11}Conclusiones}{55}{chapter.11}%
+\contentsline {chapter}{\nonumberline Bibliografía}{57}{chapter*.74}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{61}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Función de filtrado dinámico de molinos}{61}{section*.77}%
-\contentsline {subsection}{\numberline {A.1.1}Código fuente}{61}{section*.78}%
-\contentsline {chapter}{\numberline {B}Anexo II: Planos}{65}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas}{67}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Fase I : Pruebas de integración y validación en Node-Red}{67}{section*.81}%
-\contentsline {section}{\numberline {C.2}Fase II : Pruebas de integración y validación en servidor SIVaaS}{67}{section*.82}%
-\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{69}{appendix.D}%
+\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{59}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Función de filtrado dinámico de molinos}{59}{section*.77}%
+\contentsline {subsection}{\numberline {A.1.1}Código fuente}{59}{section*.78}%
+\contentsline {chapter}{\numberline {B}Anexo II: Planos}{63}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas}{65}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Fase I : Pruebas de integración y validación en Node-Red}{65}{section*.81}%
+\contentsline {section}{\numberline {C.2}Fase II : Pruebas de integración y validación en servidor SIVaaS}{65}{section*.82}%
+\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{67}{appendix.D}%
