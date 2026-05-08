@@ -1,0 +1,25 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Descripción de los subsistemas principales del software de configuración de WinCC (\textit {CS}).}}{16}{table.caption.18}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Inserta aquí la descripción de la tabla.}}{20}{table.caption.29}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Equipo 2: Segunda instancia de Host con dos máquinas virtuales, una haciendo de servidor y la otra de cliente.}}{20}{table.caption.30}%
+\contentsline {table}{\numberline {7.4}{\ignorespaces Equipo 3: Clientes ligeros para la solución virtualizada.}}{20}{table.caption.31}%
+\contentsline {table}{\numberline {7.6}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{30}{table.7.6}%
+\contentsline {table}{\numberline {7.5}{\ignorespaces Estructuras de variables de nivel 4 según norma IEC 61400-25-2.}}{31}{table.caption.40}%
+\contentsline {table}{\numberline {7.7}{\ignorespaces Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}}{37}{table.7.7}%
+\contentsline {table}{\numberline {7.8}{\ignorespaces Tabla FR1 y FR2 basada en IEC 62443-4-2:2019. Las columnas de nivel muestran el número de nivel aplicable y la columna SL-A indica si el requerimiento se cumple en la solución ($\text {$\mathsurround \z@ \mathchar "458$}$) o no ($\times $).}}{49}{table.7.8}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\def \@chapapp {\appendixname }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

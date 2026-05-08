@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex Build/main"] 1778238762.97065 "Build/main.aux" "Build/main.bbl" "Build/main" 1778238780.82882 0
+["bibtex Build/main"] 1778238877.41061 "Build/main.aux" "Build/main.bbl" "Build/main" 1778238896.08037 0
   "./referencias-bibliograficas.bib" 1774599463 26330 44ebbbecf6886c4fad2be85065187752 ""
-  "Build/main.aux" 1778238779 45212 95c2eb29a416dba4007d486bd8f397d1 "pdflatex"
+  "Build/main.aux" 1778238894 45212 75c44ca105f1f0955836a8b684c1d1c1 "pdflatex"
   "C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/bibtex/bst/biblatex/biblatex.bst" 1752408733 65510 9a2a51799b543ff279b8ea2dd91ec499 ""
-  "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/Build/main-blx.bib" 1778238779 342 45fc2611658198a231c91b829f6fe0a6 ""
+  "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/Build/main-blx.bib" 1778238894 342 45fc2611658198a231c91b829f6fe0a6 ""
   (generated)
   "Build/main.bbl"
   "Build/main.blg"
   (rewritten before read)
-["pdflatex"] 1778238763.27194 "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/main.tex" "Build/main.pdf" "main" 1778238780.82997 0
-  "Build/main.aux" 1778238779 45212 95c2eb29a416dba4007d486bd8f397d1 "pdflatex"
-  "Build/main.bbl" 1778238763 37737 cdc06dbc3bc08591fc8af4e0bac08e36 "bibtex Build/main"
-  "Build/main.lof" 1778238779 2608 0aa7a71df5f6740a8d6d9cb61e7c56e7 "pdflatex"
-  "Build/main.lot" 1778238779 1738 8d7311ce0357f57147e0736a2577bbe0 "pdflatex"
-  "Build/main.run.xml" 1778238779 2572 b0184b856638f4b18476128aa8780b93 "pdflatex"
-  "Build/main.toc" 1778238779 5699 3d6877a515c24b2fe63b322810a873b0 "pdflatex"
+["pdflatex"] 1778238877.71772 "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/main.tex" "Build/main.pdf" "main" 1778238896.0816 0
+  "Build/main.aux" 1778238894 45212 75c44ca105f1f0955836a8b684c1d1c1 "pdflatex"
+  "Build/main.bbl" 1778238877 37737 cdc06dbc3bc08591fc8af4e0bac08e36 "bibtex Build/main"
+  "Build/main.lof" 1778238894 2608 d24cd6e0bb4a1dda4118d62b3d084171 "pdflatex"
+  "Build/main.lot" 1778238894 1738 40637ab04f38f482f58044f54fe51a13 "pdflatex"
+  "Build/main.run.xml" 1778238894 2572 b0184b856638f4b18476128aa8780b93 "pdflatex"
+  "Build/main.toc" 1778238894 5699 5c06011d69842398f806b7ca271f3a90 "pdflatex"
   "C:/Users/Eka_0/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778238282 123019 4e6d54fe28a67ad1b512b0cc9d03c2e8 ""
   "C:/Users/Eka_0/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1773823320 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/Eka_0/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1773823321 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -259,7 +259,7 @@
   "capitulos/beneficios.tex" 1773822604 158 9693b88124892fbe8ef91683ef4cb47e ""
   "capitulos/conclusiones.tex" 1773822604 280 eb26dbe00dfe391c2f6988546382aa42 ""
   "capitulos/contexto.tex" 1773822604 381 a83438677164fa850305a9bd8aa26ed4 ""
-  "capitulos/desarrollo_de_la_solucion.tex" 1778238744 65453 3f1b9a38e693ac70e46065846b06a10b ""
+  "capitulos/desarrollo_de_la_solucion.tex" 1778238859 65434 86777dde83980b03f662c31bc8c0cecc ""
   "capitulos/estado_del_arte.tex" 1776150721 6595 62ea9943f0c113baefd9d64ffe1e9878 ""
   "capitulos/introduccion.tex" 1778056340 1902 78858552ca105630b5b01140e7695f12 ""
   "capitulos/metodología.tex" 1773822604 181 808cca7df22e62ebd17e1817b12f92c9 ""

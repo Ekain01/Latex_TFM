@@ -1684,4 +1684,603 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has 
                    \relax 
 l.27 ...s y mejorar la fiabilidad del sistema.\par
                                                    [10]) (capitulos/alternativas.tex
-pdfTeX warning (ext4): destination with the sam
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {AnÃ¡lisis de alternativas} [11]
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {AnÃ¡lisis de alternativas} [12
+
+
+]
+chapter 6.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/desarrollo_de_la_solucion.tex [13] [14
+
+
+]
+chapter 7.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+<figuras/WinCC.png, id=337, 371.88937pt x 135.50626pt>
+File: figuras/WinCC.png Graphic file (type png)
+<use figuras/WinCC.png>
+Package pdftex.def Info: figuras/WinCC.png  used on input line 11.
+(pdftex.def)             Requested size: 55.78099pt x 20.32506pt.
+LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 12.
+
+Underfull \hbox (badness 2680) in paragraph at lines 29--29
+[]\T1/bch/m/n/10.95 (+20) Administración de archivado de
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 32--32
+[]\T1/bch/m/n/10.95 (+20) User Ad-min-is-tra-
+ []
+
+
+Overfull \hbox (38.88675pt too wide) in paragraph at lines 23--38
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./figuras/WinCC.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+<figuras/Monopuesto.png, id=358, 1339.0025pt x 596.2275pt>
+File: figuras/Monopuesto.png Graphic file (type png)
+<use figuras/Monopuesto.png>
+Package pdftex.def Info: figuras/Monopuesto.png  used on input line 55.
+(pdftex.def)             Requested size: 401.70386pt x 178.86963pt.
+
+Overfull \hbox (6.25204pt too wide) in paragraph at lines 55--56
+ [][] 
+ []
+
+<figuras/MonopuestoRedundante.png, id=359, 2501.345pt x 1215.54124pt>
+File: figuras/MonopuestoRedundante.png Graphic file (type png)
+<use figuras/MonopuestoRedundante.png>
+Package pdftex.def Info: figuras/MonopuestoRedundante.png  used on input line 62.
+(pdftex.def)             Requested size: 375.18556pt x 182.32332pt.
+<figuras/Multipuesto.png, id=360, 2501.345pt x 1215.54124pt>
+File: figuras/Multipuesto.png Graphic file (type png)
+<use figuras/Multipuesto.png>
+Package pdftex.def Info: figuras/Multipuesto.png  used on input line 73.
+(pdftex.def)             Requested size: 425.22302pt x 206.63928pt.
+
+Overfull \hbox (29.77121pt too wide) in paragraph at lines 73--74
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./figuras/Monopuesto.png>] [18 <./figuras/MonopuestoRedundante.png> <./figuras/Multipuesto.png>] [19] [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+<figuras/Nodos.png, id=393, 2380.895pt x 1766.6pt>
+File: figuras/Nodos.png Graphic file (type png)
+<use figuras/Nodos.png>
+Package pdftex.def Info: figuras/Nodos.png  used on input line 190.
+(pdftex.def)             Requested size: 428.54262pt x 317.97427pt.
+
+Overfull \hbox (33.0908pt too wide) in paragraph at lines 190--191
+ [][] 
+ []
+
+<figuras/IEC_61400-25-2_v1.jpg, id=394, 458.46281pt x 249.93375pt>
+File: figuras/IEC_61400-25-2_v1.jpg Graphic file (type jpg)
+<use figuras/IEC_61400-25-2_v1.jpg>
+Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 196.
+(pdftex.def)             Requested size: 412.61272pt x 224.9383pt.
+
+Overfull \hbox (17.1609pt too wide) in paragraph at lines 196--197
+ [][] 
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 197--197
+[][]|\T1/bch/m/n/10 (+20) Jer-ar-quía de los nive-les de la norma IEC 61400-25-2. fuente:
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22] [23 <./figuras/Nodos.png> <./figuras/IEC_61400-25-2_v1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+[]\T1/bch/m/n/10.95 (+20) Información so-bre las
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--216
+[]\T1/bch/m/n/10.95 (+20) Entero con
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+[]\T1/bch/m/n/10.95 (+20) Información so-bre las
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
+[]\T1/bch/m/n/10.95 (+20) Coma flotante
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+[]\T1/bch/m/n/10.95 (+20) Información so-bre las
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]\T1/bch/m/n/10.95 (+20) Coma flotante
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+[]\T1/bch/m/n/10.95 (+20) Información so-bre las
+ []
+
+
+Overfull \hbox (13.89807pt too wide) in paragraph at lines 204--240
+ [][] 
+ []
+
+
+Overfull \hbox (22.43398pt too wide) in alignment at lines 253--260
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.43398pt too wide) in alignment at lines 260--267
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.43398pt too wide) in alignment at lines 267--271
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.43398pt too wide) in alignment at lines 271--278
+ [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+[]|\T1/bch/m/n/10.95 (+20) Valor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\T1/bch/m/n/10.95 (+20) bits
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\T1/bch/m/n/10.95 (+20) sin
+ []
+
+
+Overfull \hbox (22.43398pt too wide) in alignment at lines 278--427
+ [] [] [] [] 
+ []
+
+
+ignored: Infinite glue shrinkage found in box being split [24]
+ignored: Infinite glue shrinkage found in box being split [25]
+ignored: Infinite glue shrinkage found in box being split [26]
+ignored: Infinite glue shrinkage found in box being split [27{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+ignored: Infinite glue shrinkage found in box being split [28]
+ignored: Infinite glue shrinkage found in box being split [29] [30] [31]
+<figuras/jerarquia.png, id=440, 878.53218pt x 576.65437pt>
+File: figuras/jerarquia.png Graphic file (type png)
+<use figuras/jerarquia.png>
+Package pdftex.def Info: figuras/jerarquia.png  used on input line 437.
+(pdftex.def)             Requested size: 395.33583pt x 259.49207pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 459.
+ (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+<figuras/GUI.png, id=441, 1015.54407pt x 557.08125pt>
+File: figuras/GUI.png Graphic file (type png)
+<use figuras/GUI.png>
+Package pdftex.def Info: figuras/GUI.png  used on input line 481.
+(pdftex.def)             Requested size: 406.21043pt x 222.82855pt.
+
+Overfull \hbox (10.75862pt too wide) in paragraph at lines 481--482
+ [][] 
+ []
+
+[32] [33 <./figuras/jerarquia.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34 <./figuras/GUI.png>]
+<figuras/DiagramaCloud.png, id=466, 2826.56pt x 1541.76pt>
+File: figuras/DiagramaCloud.png Graphic file (type png)
+<use figuras/DiagramaCloud.png>
+Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 507.
+(pdftex.def)             Requested size: 452.25885pt x 246.68663pt.
+
+Overfull \hbox (56.80704pt too wide) in paragraph at lines 507--508
+ [][] 
+ []
+
+[35 <./figuras/DiagramaCloud.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 548--548
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--549
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 549--549
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 550--550
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--551
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 551--551
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 552--552
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--553
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--553
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 553--553
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--554
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 554--554
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--555
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--555
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 555--555
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36] (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package mdframed Info: mdframed works in twoside mode on input line 613.
+
+
+Package caption Warning: \setcaptiontype
+(caption)                outside box or environment on input line 624.
+See the caption package documentation for explanation.
+
+[37]
+Package mdframed Info: mdframed works in twoside mode on input line 633.
+ [38]
+Package mdframed Info: mdframed works in twoside mode on input line 692.
+<figuras/aws.png, id=546, 1029.09468pt x 66.2475pt>
+File: figuras/aws.png Graphic file (type png)
+<use figuras/aws.png>
+Package pdftex.def Info: figuras/aws.png  used on input line 703.
+(pdftex.def)             Requested size: 411.63057pt x 26.49852pt.
+
+Overfull \hbox (16.17876pt too wide) in paragraph at lines 703--704
+ [][] 
+ []
+
+<figuras/cloudconnect.png, id=547, 417.05812pt x 432.11438pt>
+File: figuras/cloudconnect.png Graphic file (type png)
+<use figuras/cloudconnect.png>
+Package pdftex.def Info: figuras/cloudconnect.png  used on input line 710.
+(pdftex.def)             Requested size: 333.64694pt x 345.69196pt.
+<figuras/NodeRedMQTT.png, id=549, 688.07062pt x 499.8675pt>
+File: figuras/NodeRedMQTT.png Graphic file (type png)
+<use figuras/NodeRedMQTT.png>
+Package pdftex.def Info: figuras/NodeRedMQTT.png  used on input line 718.
+(pdftex.def)             Requested size: 412.84555pt x 299.9228pt.
+
+Overfull \hbox (17.39374pt too wide) in paragraph at lines 718--719
+ [][] 
+ []
+
+<figuras/grafana_config.png, id=551, 371.13657pt x 711.4078pt>
+File: figuras/grafana_config.png Graphic file (type png)
+<use figuras/grafana_config.png>
+Package pdftex.def Info: figuras/grafana_config.png  used on input line 732.
+(pdftex.def)             Requested size: 371.13565pt x 711.40607pt.
+
+LaTeX Warning: Float too large for page by 41.96254pt on input line 735.
+
+[39 <./figuras/aws.png>] [40 <./figuras/cloudconnect.png>] [41 <./figuras/NodeRedMQTT.png>] [42 <./figuras/grafana_config.png>] [43] [44] [45]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1077.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1077.
+
+ignored: Infinite glue shrinkage found in box being split [46]
+ignored: Infinite glue shrinkage found in box being split [47]
+ignored: Infinite glue shrinkage found in box being split [48]) (capitulos/analisis_de_resultados.tex [49] [50
+
+
+]
+chapter 8.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/metodologÃ­a.tex [51] [52
+
+
+]
+chapter 9.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/aspectos_econÃ³micos.tex [53] [54
+
+
+]
+chapter 10.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/conclusiones.tex [55] [56
+
+
+]
+chapter 11.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) [57] [58
+
+
+]
+chapter without number
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+[59
+
+
+]
+
+Package biblatex Warning: Type 'online' not found on input line 91.
+
+
+Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no longer supported.
+(biblatex)                Please use 'labelprefix' option to '\newrefcontext'.
+
+
+LaTeX Warning: Empty bibliography on input line 91.
+
+[60] (anexos/Anexo_1.tex
+chapter A.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]) (anexos/Anexo_2.tex [63] [64
+
+
+]
+chapter B.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (anexos/Anexo_3.tex [65] [66
+
+
+]
+chapter C.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (anexos/Anexo_4.tex [67] [68
+
+
+]
+chapter D.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) [69] [70] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 35342 strings out of 467867
+ 643214 string characters out of 5418334
+ 2351521 words of memory out of 5000000
+ 62896 multiletter control sequences out of 15000+600000
+ 767530 words of font info for 338 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,17n,131p,11256b,2178s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{lstnumber.-1.5} has been referenced but does not exist, replaced by a fixed one
+
+<C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchbi8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.pdf (82 pages, 10939596 bytes).
+PDF statistics:
+ 1162 PDF objects out of 1200 (max. 8388607)
+ 402 named destinations out of 1000 (max. 500000)
+ 72185 words of extra memory for PDF output out of 74296 (max. 10000000)
+
