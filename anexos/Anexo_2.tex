@@ -1,5 +1,13 @@
 \chapter{Anexo II: Planos}
 \label{cap:Planos}
 
-La incorporación de anexos es opcional y se justifica si su lectura no es indispensable para la correcta comprensión de la Memoria. Por ejemplo, puede ser conveniente incluir un Manual de Usuario, un Manual de Instalación, una Hoja de Especificaciones, Planos, Código, etc
+En este anexo se incluyen los planos relacionados con la topología de la red eléctrica del parque eólico, así como la disposición de los aerogeneradores y otros componentes clave. Estos planos proporcionan una visión detallada de la infraestructura física del parque eólico, facilitando la comprensión de su diseño y funcionamiento. Se incluyen diagramas esquemáticos, planos de ubicación y cualquier otro material gráfico relevante que contribuya a una mejor comprensión del proyecto.
 
+% Incrustar el plano en PDF
+\includepdf[
+    pages=-,                 % Incluye todas las páginas del PDF original
+    landscape=true,          % Rota el PDF apaisado (ideal para planos A3/A4 horizontales)
+    scale=0.9,             % Escala un poco para dejar margen si quieres conservar encabezados/pies
+    pagecommand={},          % Mantiene el número de página de tu TFM en el plano
+    addtotoc={1, figure, 1, {Plano topológico de red}, fig:plano_red}
+]{figuras/Topologia.pdf}
