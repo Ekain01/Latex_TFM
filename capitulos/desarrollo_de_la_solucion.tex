@@ -504,7 +504,7 @@ Para mantener esta filosofía, la navegación del sistema se ha estructurado imp
     \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
     \label{fig:interfaz_grafica}
 \end{figure}
-
+\FloatBarrier
 
 \subsubsection{Plantillas dinámicas y reutilización gráfica (\textit{Tag Prefix})}
 \label{sec:tag_prefix}
@@ -528,23 +528,25 @@ Estas interfaces proporcionan la telemetría resumida de un único aerogenerador
 
 \begin{figure}[t]
     \centering
-    % Sustituye el nombre del archivo por el de tu captura real
-    \includegraphics[width=0.85\textwidth]{figuras/WTG_Faceplate.png}
-    \caption{Plantilla genérica de monitorización de turbina, dinamizada mediante \textit{Tag Prefix}.}
-    \label{fig:overview_turbina}
+    \begin{minipage}[t]{0.55\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/WTG_Faceplate.png}
+        \caption{Plantilla genérica de monitorización de turbina, dinamizada mediante \textit{Tag Prefix}.}
+        \label{fig:overview_turbina}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.55\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Park_Faceplate.png}
+        \caption{Pantalla de supervisión de clúster/parque, empleando variables estructuradas para la agregación de datos.}
+        \label{fig:overview_parque}
+    \end{minipage}
 \end{figure}
-
 \paragraph{Vistas de agrupación o clústeres (\textit{Park Overview})}
 De manera análoga a las turbinas individuales, el parque puede subdividirse en subestaciones o clústeres lógicos. Se ha diseñado una plantilla de agrupación que, recibiendo el prefijo correspondiente al clúster, consolida y visualiza los datos agregados de un subconjunto de aerogeneradores (Figura \ref{fig:overview_parque}), optimizando drásticamente el número de archivos en el proyecto y garantizando la homogeneidad visual de la interfaz.
 
-\begin{figure}[t]
-    \centering
-    % Sustituye el nombre del archivo por el de tu captura real
-    \includegraphics[width=0.85\textwidth]{figuras/Park_Faceplate.png}
-    \caption{Pantalla de supervisión de clúster/parque, empleando variables estructuradas para la agregación de datos.}
-    \label{fig:overview_parque}
-\end{figure}
 
+\FloatBarrier
 \subsection{Scripts globales}
 
 

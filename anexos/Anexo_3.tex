@@ -3,3 +3,47 @@
 \section{Fase I : Pruebas de integración y validación en Node-Red}
 La incorporación de anexos es opcional y se justifica si su lectura no es indispensable para la correcta comprensión de la Memoria. Por ejemplo, puede ser conveniente incluir un Manual de Usuario, un Manual de Instalación, una Hoja de Especificaciones, Planos, Código, etc
 \section{Fase II : Pruebas de integración y validación en servidor SIVaaS}
+
+\chapter{Banco de Pruebas y Validación del Sistema (FAT)}
+\label{anexo:banco_pruebas}
+
+\section{Introducción y objetivos}
+El presente anexo documenta el entorno de simulación y el protocolo de pruebas diseñado para validar el correcto funcionamiento del sistema de supervisión (SCADA) y la arquitectura IIoT. Al carecer de conexión física con los equipos electromecánicos reales del parque eólico, se ha desplegado un banco de pruebas virtual. El objetivo es emular el comportamiento dinámico de los aerogeneradores, verificar la correcta adquisición de variables estructuradas y validar la visualización de datos, la gestión de alarmas y la propagación de telemetría hacia la nube.
+
+\section{Arquitectura del entorno de simulación}
+Para la ejecución de las pruebas, se ha configurado una arquitectura de simulación paralela al desarrollo del SCADA, compuesta por los siguientes elementos:
+
+\begin{itemize}
+    \item \textbf{Emulación del control lógico (PLC):} Se ha utilizado el entorno de simulación integrado en Siemens TIA Portal (PLCSIM / PLCSIM Advanced) para alojar la lógica de control y los bloques de datos (DBs) estructurados que representan cada aerogenerador.
+    \item \textbf{Generación de dinámicas del viento y proceso:} Para evitar un comportamiento estático de las variables, se ha implementado un generador de señales. Utilizando secuencias programadas (mediante \textit{scripts} o flujos en Node-RED), se inyectan valores dinámicos a las variables del PLC (velocidad del viento racheado, fluctuación de potencia activa, variación térmica de componentes).
+    \item \textbf{Servidor de comunicaciones:} Se levanta el servidor OPC UA local para exponer las variables simuladas hacia el cliente SIMATIC WinCC V8.1 y hacia los conectores de la capa IIoT.
+\end{itemize}
+
+\section{Protocolo de pruebas y casos de uso}
+Se han definido tres categorías principales de pruebas para garantizar la integridad operativa del proyecto desde el nivel de campo simulado hasta la capa analítica.
+
+\subsection{Prueba de integración local (Comunicaciones y HMI)}
+Esta fase valida el correcto funcionamiento de la interfaz gráfica y la navegación desarrollada en SIMATIC WinCC V8.1.
+\begin{itemize}
+    \item \textbf{Prueba de dinamización mediante \textit{Tag Prefix}:} Se comprueba que, al seleccionar diferentes turbinas en la vista \texttt{10\_WTG\_Overview}, las pantallas de detalle (ej. \texttt{30\_WTG\_Turbine\_Interface}) se actualizan instantáneamente con los valores del equipo correspondiente, sin cruce de variables.
+    \item \textbf{Prueba de latencia y refresco:} Se verifica que el ciclo de actualización de las variables críticas en el \textit{Runtime} de WinCC cumple con los requisitos de monitorización en tiempo real.
+    \item \textbf{Escritura de consignas:} Se introducen límites de potencia activa desde los \textit{Faceplates} del SCADA y se comprueba su correcta escritura en los registros correspondientes del PLC simulado.
+\end{itemize}
+
+\subsection{Prueba de respuesta ante eventos y alarmas}
+Se valida la configuración del \textit{Alarm Logging} y el comportamiento visual del SCADA ante situaciones anómalas.
+\begin{itemize}
+    \item \textbf{Inyección de fallos discretos:} Se fuerza la activación de variables booleanas de error (ej. disparo térmico del generador, pérdida de red) en el controlador.
+    \item \textbf{Validación visual:} Se comprueba que la alarma aparece correctamente temporizada y categorizada en el \textit{Picture Window} inferior del marco base (\texttt{00\_Main\_Interface}). Asimismo, se verifica que el aerogenerador afectado cambia su estado gráfico (color de alerta) en las vistas topológicas.
+    \item \textbf{Reconocimiento de alarmas (\textit{Acknowledge}):} Se prueba el circuito de acuse de recibo por parte del operador y el registro de la actuación en la base de datos histórica.
+\end{itemize}
+
+\subsection{Prueba de despliegue IIoT e infraestructura \textit{Cloud}}
+Esta fase asegura que la información abandona correctamente la capa local OT y se almacena en la infraestructura aprovisionada en la nube.
+\begin{itemize}
+    \item \textbf{Ingesta de datos:} Se verifica la conexión del flujo de datos hacia la base de datos temporal (InfluxDB) desplegada mediante contenedores (Docker) en la instancia de Amazon Web Services (AWS EC2).
+    \item \textbf{Validación de visualización remota:} Se comprueba que el \textit{dashboard} desarrollado en Grafana refleja las mismas curvas de potencia y dinámicas de viento que se están inyectando en el simulador local, validando así la cadena de valor del dato de extremo a extremo.
+\end{itemize}
+
+\section{Evidencias de las pruebas}
+\textit{(Nota para el autor: En esta subsección debes incluir capturas de pantalla a modo de evidencia. Por ejemplo, una imagen partida mostrando la variable forzada en TIA Portal a la izquierda y el estado de alarma reflejado en el Runtime de WinCC a la derecha; y otra captura mostrando la coincidencia de una curva de potencia en WinCC Trend Control frente al dashboard de Grafana en AWS).}
