@@ -286,6 +286,32 @@
     \field{year}{2024}
   \endentry
 
+  \entry{iec60073}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{number}{IEC 60073:2002}
+    \field{title}{Basic and safety principles for man-machine interface,
+  marking and identification - Coding principles for indicators and actuators}
+    \list{location}{1}{%
+      {Geneva, Switzerland}%
+    }
+    \list{institution}{1}{%
+      {IEC}%
+    }
+    \field{type}{Standard}
+    \field{year}{2002}
+  \endentry
+
   \entry{Khan2024}{article}{}{}
     \name{author}{2}{}{%
       {{hash=KPW}{%

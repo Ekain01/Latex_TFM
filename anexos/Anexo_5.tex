@@ -1,0 +1,184 @@
+\chapter{Anexo V: Tablas de variables}
+\label{cap:Tablas_Variab}
+
+\section{Introducción}
+En este anexo se incluyen las tablas de variables utilizadas en la solución desarrollada. Estas tablas detallan los nombres, tipos y descripciones de las variables empleadas en el sistema, proporcionando una referencia completa para el mantenimiento y la configuración del SCADA.
+\section{Variables de Aerogeneradores}
+\begin{longtable}[t]{p{2cm} p{3cm} p{1cm} p{7cm}}
+    \toprule
+    \toprule
+    \multicolumn{4}{c}{\textbf{Estructuras de Variables de nivel 2 y 3}} \\
+    \midrule
+    Nombre & Dato & CDC & Descripción\\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    \multicolumn{4}{c}{\textbf{Estructuras de Variables de nivel 2 y 3 (continuación)}} \\
+    \midrule
+    Nombre & Dato & CDC & Descripción\\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{4}{r}{Continúa en la siguiente página}\\
+    \endfoot
+
+    \bottomrule
+    \bottomrule
+    \\
+    \caption{Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}
+    \label{tab:equipo3}\\
+    \endlastfoot
+
+        LLN0 & \textit{NamPlt} & DPL & Placa de identificación con datos de nombre y fabricante.\\
+            & \textit{Diag} & SPS & Indicación de diagnóstico general del dispositivo.\\
+            & \textit{MltLev} & SPS & Indicación de nivel múltiple o estado multinivel resumido.\\
+            & \textit{InSSet} & ZID & Identificador de parque eólico.\\
+            & \textit{SubSt} & ZID & Identificador de subestación.\\
+        \midrule
+        LPHD & \textit{PhyNam} & DPL & Nombre físico del dispositivo lógico o equipo asociado.\\
+            & \textit{PhyHealth} & INS & Estado de salud física del dispositivo.\\
+            & \textit{Proxy} & SPS & Indica operación en modo proxy o representación remota.\\
+            & \textit{Sim} & SPS & Indica si el dispositivo está en modo simulación.\\
+            & \textit{PwrUp} & INS & Estado asociado al encendido/arranque del dispositivo.\\
+            & \textit{WrmStr} & INS & Estado de arranque en caliente o reinicio de servicio.\\
+            & \textit{WacTrg} & Valor de 32 bits sin signo & Contador o valor de activación de mantenimiento/servicio.\\
+            & \textit{WdgAct} & SPS & Estado de actividad del watchdog del dispositivo.\\
+            & \textit{OutOv} & SPS & Estado de anulación (override) de salidas.\\
+            & \textit{OpTmh} & INS & Tiempo acumulado de operación del dispositivo (horas).\\
+        \midrule
+        WALM & \textit{NamPlt} & DPL & Placa de identificación del nodo lógico de alarmas.\\
+            & \textit{GrAlm} & SPS & Indicador de alarma general activa.\\
+            & \textit{GrWrn} & SPS & Indicador de advertencia general activa.\\
+            & \textit{AlmCnt} & INS & Contador total de alarmas registradas.\\
+            & \textit{WrnCnt} & INS & Contador total de advertencias registradas.\\
+            & \textit{GenOvSpd} & SPS & Alarma de sobrevelocidad del generador.\\
+            & \textit{GenInSpd} & SPS & Alarma de velocidad insuficiente del generador.\\
+            & \textit{GenStatorTmpHi} & SPS & Alarma de alta temperatura del estator del generador.\\
+            & \textit{GenBrgFronTmpHi} & SPS & Alarma de alta temperatura en rodamiento frontal del generador.\\
+            & \textit{GenBrgRearTmpHi} & SPS & Alarma de alta temperatura en rodamiento trasero del generador.\\
+            & \textit{GenCoolTmpHi} & SPS & Alarma de alta temperatura del sistema de refrigeración del generador.\\
+            & \textit{GenOvV} & SPS & Alarma de sobretensión del generador.\\
+            & \textit{GenUnV} & SPS & Alarma de subtensión del generador.\\
+            & \textit{GenOvA} & SPS & Alarma de sobrecorriente del generador.\\
+            & \textit{GenAsymV} & SPS & Alarma de asimetría de tensión del generador.\\
+            & \textit{GenRevPwr} & SPS & Alarma de potencia inversa del generador.\\
+            & \textit{GenVibHi} & SPS & Alarma de vibración alta del generador.\\
+            & \textit{GenCoolFanFlt} & SPS & Alarma de fallo de ventilador de refrigeración del generador.\\
+            & \textit{GenSlipRingFlt} & SPS & Alarma de fallo en anillos rozantes del generador.\\
+            & \textit{GenHeaFlt} & SPS & Alarma de fallo del calentador del generador.\\
+            & \textit{TurEmerStop} & SPS & Alarma de parada de emergencia de la turbina.\\
+            & \textit{TurGridLoss} & SPS & Alarma de pérdida de red eléctrica.\\
+            & \textit{RotOvrSpd} & SPS & Alarma de sobrevelocidad del rotor.\\
+            & \textit{RotPitcAsym} & SPS & Alarma de asimetría de pitch entre palas.\\
+            & \textit{RotBrkPrsLow} & SPS & Alarma de presión baja en freno del rotor.\\
+            & \textit{GenWdgTmpHi} & SPS & Alarma de alta temperatura en devanados del generador.\\
+            & \textit{GenBrgTmpHi} & SPS & Alarma de alta temperatura en rodamientos del generador.\\
+            & \textit{CnvDCOvrV} & SPS & Alarma de sobretensión en bus DC del convertidor.\\
+            & \textit{CnvIgbtTmpHi} & SPS & Alarma de alta temperatura en IGBT del convertidor.\\
+            & \textit{NacCabTwist} & SPS & Alarma de retorcimiento excesivo de cables en góndola.\\
+            & \textit{NacYawFlt} & SPS & Alarma de fallo del sistema de Yaw de góndola.\\
+            & \textit{TrfBuchholz} & SPS & Alarma Buchholz del transformador.\\
+            & \textit{TrfTmpHi} & SPS & Alarma de alta temperatura del transformador.\\
+            & \textit{MetIceDet} & SPS & Detección de hielo por sistema meteorológico.\\
+        \midrule
+        WGEN & \textit{GnSt} & INS & Estado operativo del generador (ej. Desconectado, Conectado, Fallo)\\
+            & \textit{OpTmh} & INS & Tiempo de operación total del generador (horas)\\
+            & \textit{Spd} & MV & Velocidad de giro del generador (RPM)\\
+            & \textit{Hz} & MV & Frecuencia eléctrica del generador\\
+            & \textit{W} & MV & Potencia activa generada (Bornes)\\
+            & \textit{VAr} & MV & Potencia reactiva generada (Bornes)\\
+            & \textit{CosPhi} & MV & Factor de potencia (cos $\phi$)\\
+            & \textit{Tmp} & MV & Temperatura general del estator / devanados\\
+            & \textit{BrgFronTmp} & MV & Temperatura del rodamiento frontal (Lado acople/Rotor)\\
+            & \textit{BrgRearTmp} & MV & Temperatura del rodamiento trasero (Lado no acople)\\
+            & \textit{CoolTmp} & MV & Temperatura del fluido o aire de refrigeración del generador\\
+            & \textit{HeaSt} & SPS & Estado del calentador del generador (anticondensación)\\
+            & \textit{Slip} & MV & Deslizamiento del generador (típico en asíncronos doblemente alimentados)\\
+        \midrule
+        WMET & \textit{WndSpd} & MV & Velocidad del viento.\\
+            & \textit{WndDir} & MV & Dirección del viento.\\
+            & \textit{EnvTmp} & MV & Temperatura ambiente.\\
+            & \textit{EnvPres} & MV & Presión atmosférica.\\
+            & \textit{EnvHum} & MV & Humedad ambiental.\\
+            & \textit{IceDet} & SPS & Detección de hielo.\\
+            & \textit{Precip} & MV & Precipitación.\\
+            & \textit{Visib} & MV & Visibilidad.\\
+        \midrule
+        WNAC & \textit{NacTmp} & MV & Temperatura en la góndola.\\
+            & \textit{NacHum} & MV & Humedad en la góndola.\\
+            & \textit{YawPos} & MV & Posición angular del sistema de orientación (Yaw).\\
+            & \textit{YawErr} & MV & Error de orientación respecto a la consigna de Yaw.\\
+            & \textit{CabTws} & MV & Estado o magnitud del retorcimiento de cables (cable twist).\\
+            & \textit{YawSt} & INS & Estado del sistema de orientación Yaw.\\
+            & \textit{NacVib} & MV & Nivel de vibración de la góndola.\\
+            & \textit{WlkHtz} & SPS & Estado de habilitación o enclavamiento asociado al nodo de góndola.\\
+        \midrule
+        WREP & \textit{TmsRpt} & INS & Intervalo de tiempo: duración del reporte en segundos (ej. 600 para 10 min).\\
+            & \textit{WAvg} & MV & Potencia media: promedio de potencia activa en el intervalo.\\
+            & \textit{WMax} & MV & Potencia máxima: el pico de potencia alcanzado en el intervalo.\\
+            & \textit{WMin} & MV & Potencia mínima: el valor más bajo de potencia en el intervalo.\\
+            & \textit{WStd} & MV & Desviación estándar de W: indica la estabilidad de la generación.\\
+            & \textit{WsAvg} & MV & Viento medio: velocidad de viento promedio (10 min).\\
+            & \textit{WsMax} & MV & Viento máximo: ráfaga máxima detectada en el intervalo.\\
+            & \textit{RptRst} & SPC & Reset de reporte: comando para forzar el cierre del intervalo actual.\\
+        \midrule
+        WROT & \textit{RotSpd} & MV & Velocidad de rotación\\
+            & \textit{RotAcl} & MV & Aceleración de rotación\\
+            & \textit{RotAzi} & MV & Posición de rotación\\
+            & \textit{RotSt} & MV & Estado de rotación\\
+            & \textit{RotLckP} & MV & Posición de bloqueo del rotor\\
+            & \textit{RotLckSt} & MV & Estado de bloqueo del rotor\\
+            & \textit{Bl1PchAng} & MV & Ángulo de pala A\\
+            & \textit{Bl2PchAng} & MV & Ángulo de pala B\\
+            & \textit{Bl3PchAng} & MV & Ángulo de pala C\\
+            & \textit{BlPchAngRef} & MV & Ángulo de referencia de pala\\
+            & \textit{BlPchOvrTvl} & MV & Viaje excesivo de pala\\
+            & \textit{BlPchAng} & MV & Estado de pitch control\\
+            & \textit{BlPchSpd} & MV & Presión hidráulica\\
+            & \textit{HubTmp} & MV & Estado hidráulico\\
+            & \textit{BlPchAsySt} & MV & Voltaje de batería\\
+            & \textit{BatChrgRte} & MV & Tasa de carga de batería\\
+            & \textit{BatSt} & MV & Estado de batería\\
+            & \textit{HubTmp} & MV & Temperatura del buje\\
+        \midrule
+        WTOW & \textit{NacPos} & MV & Posición de la góndola respecto a la torre.\\
+            & \textit{TowVib} & MV & Nivel de vibración de la torre.\\
+            & \textit{TowInc} & MV & Inclinación de la torre.\\
+            & \textit{GndTmp} & MV & Temperatura ambiente a nivel de suelo.\\
+            & \textit{GndHum} & MV & Humedad relativa a nivel de suelo.\\
+            & \textit{IntTmp} & MV & Temperatura interior en torre/gabinete asociado.\\
+            & \textit{Plt} & SPC & Comando de plataforma o acción de mantenimiento asociada a torre.\\
+            & \textit{LkrSt} & SPS & Estado del enclavamiento o bloqueo de acceso de torre.\\
+        \midrule
+        WTUR & \textit{AvlTmRs} & TMS & Tiempo de disponibilidad de la turbina\\
+            & \textit{OpTmRs} & TMS & Tiempo de operación\\
+            & \textit{StrCnt} & WTC & Número de arranques de turbina\\
+            & \textit{StopCnt} & WTC & Número de paradas de turbina\\
+            & \textit{TotWh} & WTC & Producción total de energía activa (neta)\\
+            & \textit{TotVArh} & WTC & Producción total de energía reactiva (neta)\\
+            & \textit{DmdWh} & BCR & Demanda de energía activa (real)\\
+            & \textit{DmdVArh} & BCR & Demanda de energía reactiva\\
+            & \textit{SupWh} & BCR & Suministro de energía activa (real)\\
+            & \textit{SupVArh} & BCR & Suministro de energía reactiva\\
+            & \textit{TurSt} & SPS & Estado de la turbina\\
+            & \textit{W} & MV & Generación de potencia activa\\
+            & \textit{VAr} & MV & Generación de potencia reactiva\\
+            & \textit{SetTurOp} & SPC & Comando de operación de la turbina eólica\\
+            & \textit{VArOvW} & SPC & Prioridad de reactiva sobre activa\\
+            & \textit{VArRefPri} & SPC & Comando de prioridad de consigna reactiva\\
+            & \textit{DmdW} & APC & Consigna de generación de potencia activa\\
+            & \textit{DmdVAr} & APC & Consigna de generación de potencia reactiva\\
+            & \textit{DmdPF} & APC & Consigna de factor de potencia de turbina\\
+        \midrule
+        WYAW & \textit{YawSt} & INS & Estado del Yaw: 0:Parado, 1:Girando, 2:Frenado, 3:Desenrrollando cables.\\
+            & \textit{YawTrq} & MV & Torque de orientación: fuerza que están haciendo los motores para girar contra el viento.\\
+            & \textit{MotA} & MV & Corriente de los motores: amperaje consumido por los motores de Yaw (detecta bloqueos).\\
+            & \textit{YawDrp} & MV & Desviación de consigna: qué tan rápido está corrigiendo el ángulo el sistema.\\
+            & \textit{YawStop} & SPC & Comando de parada: para detener el giro manualmente desde WinCC.\\
+    \midrule
+\end{longtable}
+
+\section{Variables de Transformadores}
+\section{Variables de Subestaciones}

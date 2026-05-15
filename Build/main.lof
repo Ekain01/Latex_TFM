@@ -6,20 +6,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}}{16}{figure.caption.16}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitectura de sistema monopuesto con un único PC}}{18}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitectura de sistema monopuesto con un único PC}}{17}{figure.caption.24}%
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Arquitectura de sistema monopuesto con configuración redundante}}{18}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}}{19}{figure.caption.27}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }}{23}{figure.caption.36}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}}{24}{figure.caption.37}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{36}{figure.caption.41}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}}{36}{figure.caption.42}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Plantilla genérica de monitorización de turbina, dinamizada mediante \textit {Tag Prefix}.}}{38}{figure.caption.44}%
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Pantalla de supervisión de clúster/parque, empleando variables estructuradas para la agregación de datos.}}{38}{figure.caption.44}%
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{41}{figure.caption.49}%
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{45}{figure.caption.57}%
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{46}{figure.caption.58}%
-\contentsline {figure}{\numberline {7.14}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}}{46}{figure.caption.59}%
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Configuración de Grafana para la conexión a InfluxDB como fuente de datos.}}{47}{figure.caption.60}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}}{18}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }}{22}{figure.caption.36}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}}{23}{figure.caption.37}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{27}{figure.caption.42}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}}{29}{figure.caption.47}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Cabecera de navegación en \texttt {10\_WTG\_Overview}, mostrando filtros, selector de vista y matriz de accesos directos.}}{30}{figure.caption.50}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Estructura de contenedor para esquemas eléctricos en \texttt {11\_SUB\_Interface}.}}{31}{figure.caption.52}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Plantilla genérica de monitorización de turbina, dinamizada mediante \textit {Tag Prefix}.}}{32}{figure.caption.54}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Pantalla de supervisión de clúster/parque, empleando variables estructuradas para la agregación de datos.}}{32}{figure.caption.54}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{37}{figure.caption.62}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{41}{figure.caption.70}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{42}{figure.caption.71}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}}{42}{figure.caption.72}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Configuración de Grafana para la conexión a InfluxDB como fuente de datos.}}{43}{figure.caption.73}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
