@@ -312,6 +312,59 @@
     \field{year}{2002}
   \endentry
 
+  \entry{iec61850-7-4}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{number}{IEC 61850-7-4:2010}
+    \field{title}{Communication networks and systems for power utility
+  automation - Part 7-4: Basic communication structure - Compatible logical
+  node classes and data object classes}
+    \list{location}{1}{%
+      {Geneva, Switzerland}%
+    }
+    \list{institution}{1}{%
+      {IEC}%
+    }
+    \field{type}{Standard}
+    \field{year}{2010}
+  \endentry
+
+  \entry{iec62443-4-2}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{number}{IEC 62443-4-2:2019}
+    \field{title}{Security for industrial automation and control systems - Part
+  4-2: Technical security requirements for IACS components}
+    \list{location}{1}{%
+      {Geneva, Switzerland}%
+    }
+    \list{institution}{1}{%
+      {IEC}%
+    }
+    \field{type}{Standard}
+    \field{year}{2019}
+  \endentry
+
   \entry{Khan2024}{article}{}{}
     \name{author}{2}{}{%
       {{hash=KPW}{%
@@ -661,6 +714,43 @@
     \field{journaltitle}{IEEE Transactions on Sustainable Energy}
     \field{month}{01}
     \field{year}{2023}
+  \endentry
+
+  \entry{inproceedings}{inproceedings}{}{}
+    \name{author}{3}{}{%
+      {{hash=SK}{%
+         family={Saadi},
+         familyi={S\bibinitperiod},
+         given={Kaoutar},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=FB}{%
+         family={Farraa},
+         familyi={F\bibinitperiod},
+         given={Berna},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=AR}{%
+         family={Abbou},
+         familyi={A\bibinitperiod},
+         given={Rosa},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SK+1}
+    \strng{fullhash}{SKFBAR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1109/SaCoNeT.2018.8585706
+    \endverb
+    \field{pages}{159\bibrangedash 164}
+    \field{title}{Methodology of conception, implementation and validation of
+  an IEC 61850 communication system in smart grids demonstration platform}
+    \field{month}{10}
+    \field{year}{2018}
   \endentry
 
   \entry{Shi2021}{article}{}{}

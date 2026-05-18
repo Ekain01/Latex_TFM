@@ -580,6 +580,8 @@ INPUT .\figuras\IEC_61400-25-2_v1.jpg
 INPUT .\figuras\IEC_61400-25-2_v1.jpg
 INPUT .\figuras\IEC_61400-25-2_v1.jpg
 INPUT .\figuras\IEC_61400-25-2_v1.jpg
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtk10.tfm
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT .\figuras\jerarquia.png
 INPUT .\figuras\jerarquia.png
 INPUT .\figuras\jerarquia.png
@@ -629,6 +631,7 @@ INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt8.
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\tfm\bitstrea\charter\bchri8t.tfm
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\tfm\bitstrea\charter\bchri8t.tfm
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtti10.tfm
 INPUT .\figuras\DiagramaCloud.png
 INPUT .\figuras\DiagramaCloud.png
 INPUT .\figuras\DiagramaCloud.png
@@ -766,10 +769,14 @@ INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\bitstrea\charter\
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\bitstrea\charter\bchri8a.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr10.pfb
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtk10.pfb
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtk10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt12.pfb
@@ -778,6 +785,8 @@ INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt8.p
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt8.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt9.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt9.pfb
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtti10.pfb
+INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtti10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\qhvb.pfb
