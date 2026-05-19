@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  18 MAY 2026 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  19 MAY 2026 14:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,30 +1173,49 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen275
+\ar@mcellbox=\box84
+\extrarowheight=\dimen276
+\NC@list=\toks42
+\extratabsurround=\skip295
+\backup@length=\skip296
+\ar@cellbox=\box85
+)
+\TX@col@width=\dimen277
+\TX@old@table=\dimen278
+\TX@old@col=\dimen279
+\TX@target=\dimen280
+\TX@delta=\dimen281
+\TX@cols=\count517
+\TX@ftn=\toks43
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
 \symrsfs=\mathgroup6
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine.sty
 Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient ways
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems.sty (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofitems.tex
-\loi_cnt_foreach_nest=\count517
-\loi_nestcnt=\count518
+\loi_cnt_foreach_nest=\count518
+\loi_nestcnt=\count519
 )
 Package: listofitems 2024/03/09 v1.65 Grab items in lists using user-specified sep char (CT)
 )
-\c@@stackindex=\count519
-\@boxshift=\skip295
-\stack@tmplength=\skip296
-\temp@stkl=\skip297
-\@stackedboxwidth=\skip298
-\@addedbox=\box84
-\@anchorbox=\box85
-\@insetbox=\box86
-\se@backgroundbox=\box87
-\stackedbox=\box88
-\@centerbox=\box89
-\c@ROWcellindex@=\count520
+\c@@stackindex=\count520
+\@boxshift=\skip297
+\stack@tmplength=\skip298
+\temp@stkl=\skip299
+\@stackedboxwidth=\skip300
+\@addedbox=\box86
+\@anchorbox=\box87
+\@insetbox=\box88
+\se@backgroundbox=\box89
+\stackedbox=\box90
+\@centerbox=\box91
+\c@ROWcellindex@=\count521
 ))
 Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           Using `bookmark' together with `hyperref' is recommended,
@@ -1210,7 +1229,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count521
+\BKM@id=\count522
 ))
 LaTeX Font Info:    Trying to load font information for T1+bch on input line 47.
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1bch.fd
@@ -1253,17 +1272,17 @@ Package scrbase Info: activating english \bibname on input line 47.
 Package scrbase Info: activating english \indexname on input line 47.
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count522
-\scratchdimen=\dimen275
-\scratchbox=\box90
-\nofMPsegments=\count523
-\nofMParguments=\count524
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count525
-\MPscratchDim=\dimen276
-\MPnumerator=\count526
-\makeMPintoPDFobject=\count527
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count523
+\scratchdimen=\dimen282
+\scratchbox=\box92
+\nofMPsegments=\count524
+\nofMParguments=\count525
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count526
+\MPscratchDim=\dimen283
+\MPnumerator=\count527
+\makeMPintoPDFobject=\count528
+\everyMPtoPDFconversion=\toks45
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1362,10 +1381,10 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-\c@lstlisting=\count528
+\c@lstlisting=\count529
 Package tocbasic Info: omitting babel extension for `lol'
 (tocbasic)             because of missing \bbl@set@language on input line 47.
-\scr@dte@lstlisting@maxnumwidth=\skip299
+\scr@dte@lstlisting@maxnumwidth=\skip301
 
 
 pdfTeX warning: pdflatex (file ./Portada.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
@@ -1491,8 +1510,11 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 1.
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 45.
+) [5
+
+
+{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 48.
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1500,10 +1522,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5
-
-
-{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}] [6])
+ [6])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
@@ -1515,22 +1534,29 @@ Overfull \hbox (125.89992pt too wide) in paragraph at lines 13--13
  [][] [][]\T1/bch/m/n/10.95 (-20) JerarquÌa de los nive-les de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400- 
  []
 
-)
+
+Overfull \hbox (38.68945pt too wide) in paragraph at lines 16--16
+ \T1/bch/m/n/10.95 (-20) GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc- 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9])
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [9] [10
+ [10] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.lot
+Underfull \vbox (badness 3919) has occurred while \output is active []
+
+ [11
 
 
-] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.lot)
+{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}])
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
-) (parte-frontal/acronimos_lista.tex [11{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [12
-
-
-
-]
+) (parte-frontal/acronimos_lista.tex [12]
 
 Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
 (scrreprt)              Note: KOMA-Script does use styles for commands like
@@ -1659,7 +1685,11 @@ LaTeX Warning: Hyper reference `acro:IEC' on page 13 undefined on input line 26.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [13
+
+
+
+]
 
 LaTeX Warning: Hyper reference `acro:IIoT' on page 14 undefined on input line 27.
 
@@ -2056,7 +2086,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<figuras/WinCC.png, id=476, 371.88937pt x 135.50626pt>
+<figuras/WinCC.png, id=501, 371.88937pt x 135.50626pt>
 File: figuras/WinCC.png Graphic file (type png)
 <use figuras/WinCC.png>
 Package pdftex.def Info: figuras/WinCC.png  used on input line 11.
@@ -2064,18 +2094,13 @@ Package pdftex.def Info: figuras/WinCC.png  used on input line 11.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 12.
 
-Underfull \hbox (badness 2680) in paragraph at lines 30--30
-[]\T1/bch/m/n/10.95 (+20) AdministraciÛn de archivado de
+Underfull \hbox (badness 2512) in paragraph at lines 42--42
+[]|\T1/bch/m/n/10.95 (+20) AdministraciÛn de archivado de
  []
 
 
-Underfull \hbox (badness 1960) in paragraph at lines 33--33
-[]\T1/bch/m/n/10.95 (+20) User Ad-min-is-tra-
- []
-
-
-Overfull \hbox (38.88675pt too wide) in paragraph at lines 24--39
- [][] 
+Underfull \hbox (badness 1960) in paragraph at lines 42--42
+[]|\T1/bch/m/n/10.95 (+20) User Ad-min-is-tra-
  []
 
 
@@ -2085,7 +2110,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ...hist√≥ricos en las bases de datos SQL.\par
+l.46 ...hist√≥ricos en las bases de datos SQL.\par
                                                    [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2093,9 +2118,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.48 \subsection{Arquitectura de WinCC}
-                                        [16 <./figuras/WinCC.png>]
-<figuras/Monopuesto.png, id=496, 1339.0025pt x 596.2275pt>
+l.51 ...r√°fica al operario en los monitores. \par
+                                                   [16 <./figuras/WinCC.png>]
+<figuras/Monopuesto.png, id=521, 1339.0025pt x 596.2275pt>
 File: figuras/Monopuesto.png Graphic file (type png)
 <use figuras/Monopuesto.png>
 Package pdftex.def Info: figuras/Monopuesto.png  used on input line 56.
@@ -2105,12 +2130,16 @@ Overfull \hbox (6.25204pt too wide) in paragraph at lines 56--57
  [][] 
  []
 
-<figuras/MonopuestoRedundante.png, id=497, 2501.345pt x 1215.54124pt>
+<figuras/MonopuestoRedundante.png, id=522, 2501.345pt x 1215.54124pt>
 File: figuras/MonopuestoRedundante.png Graphic file (type png)
 <use figuras/MonopuestoRedundante.png>
 Package pdftex.def Info: figuras/MonopuestoRedundante.png  used on input line 63.
 (pdftex.def)             Requested size: 375.18556pt x 182.32332pt.
-<figuras/Multipuesto.png, id=499, 2501.345pt x 1215.54124pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./figuras/Monopuesto.png> <./figuras/MonopuestoRedundante.png>]
+<figuras/Multipuesto.png, id=529, 2501.345pt x 1215.54124pt>
 File: figuras/Multipuesto.png Graphic file (type png)
 <use figuras/Multipuesto.png>
 Package pdftex.def Info: figuras/Multipuesto.png  used on input line 74.
@@ -2123,911 +2152,673 @@ Overfull \hbox (29.77121pt too wide) in paragraph at lines 74--75
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17 <./figuras/Monopuesto.png>]
-Underfull \vbox (badness 3271) has occurred while \output is active []
-
- [18 <./figuras/MonopuestoRedundante.png> <./figuras/Multipuesto.png>] [19]
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
- [20]
+ [18 <./figuras/Multipuesto.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-<figuras/Nodos.png, id=535, 2380.895pt x 1766.6pt>
+ [19] [20] [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+<figuras/Nodos.png, id=571, 2380.895pt x 1766.6pt>
 File: figuras/Nodos.png Graphic file (type png)
 <use figuras/Nodos.png>
-Package pdftex.def Info: figuras/Nodos.png  used on input line 189.
+Package pdftex.def Info: figuras/Nodos.png  used on input line 215.
 (pdftex.def)             Requested size: 428.54262pt x 317.97427pt.
 
-Overfull \hbox (33.0908pt too wide) in paragraph at lines 189--190
+Overfull \hbox (33.0908pt too wide) in paragraph at lines 215--216
  [][] 
  []
 
-<figuras/IEC_61400-25-2_v1.jpg, id=536, 458.46281pt x 249.93375pt>
+<figuras/IEC_61400-25-2_v1.jpg, id=572, 458.46281pt x 249.93375pt>
 File: figuras/IEC_61400-25-2_v1.jpg Graphic file (type jpg)
 <use figuras/IEC_61400-25-2_v1.jpg>
-Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 195.
+Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 221.
 (pdftex.def)             Requested size: 412.61272pt x 224.9383pt.
 
-Overfull \hbox (17.1609pt too wide) in paragraph at lines 195--196
+Overfull \hbox (17.1609pt too wide) in paragraph at lines 221--222
  [][] 
  []
 
 
-Underfull \hbox (badness 5847) in paragraph at lines 196--196
+Underfull \hbox (badness 5847) in paragraph at lines 222--222
 [][]|\T1/bch/m/n/10 (+20) Jer-ar-quÌa de los nive-les de la norma IEC 61400-25-2. fuente:
  []
 
-
-Overfull \hbox (42.49474pt too wide) in paragraph at lines 206--233
- [][] 
- []
-
-
-Underfull \vbox (badness 2165) has occurred while \output is active []
-
- [22]
-Overfull \hbox (111.02507pt too wide) in paragraph at lines 242--251
- [][] 
- []
-
 [23 <./figuras/Nodos.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24 <./figuras/IEC_61400-25-2_v1.jpg>]
-
-LaTeX Warning: Reference `tab:ejemplo_jerarquia_ascendente' on page 25 undefined on input line 275.
-
-
-Overfull \hbox (52.02654pt too wide) in paragraph at lines 280--288
- [][] 
+Underfull \hbox (badness 1062) in paragraph at lines 260--260
+[]|\T1/bch/m/n/10.95 (+20) Coma flotante IEEE 754
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 312--312
-[]\T1/bch/m/n/10.95 (+20) CodificaciÛn de 2 bits
+[24 <./figuras/IEC_61400-25-2_v1.jpg>] [25] [26] [27]
+<figuras/celda_linea.png, id=604, 123.46124pt x 103.13531pt>
+File: figuras/celda_linea.png Graphic file (type png)
+<use figuras/celda_linea.png>
+Package pdftex.def Info: figuras/celda_linea.png  used on input line 390.
+(pdftex.def)             Requested size: 177.9521pt x 148.6642pt.
+<figuras/Celda_Trafo.png, id=605, 152.06813pt x 77.53969pt>
+File: figuras/Celda_Trafo.png Graphic file (type png)
+<use figuras/Celda_Trafo.png>
+Package pdftex.def Info: figuras/Celda_Trafo.png  used on input line 397.
+(pdftex.def)             Requested size: 177.9521pt x 90.73996pt.
+ [28 <./figuras/celda_linea.png> <./figuras/Celda_Trafo.png>]
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [29{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+<figuras/OPCUA_metamodelo.png, id=628, 496.254pt x 273.4215pt>
+File: figuras/OPCUA_metamodelo.png Graphic file (type png)
+<use figuras/OPCUA_metamodelo.png>
+Package pdftex.def Info: figuras/OPCUA_metamodelo.png  used on input line 481.
+(pdftex.def)             Requested size: 297.75468pt x 164.05414pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--482
+\T1/bch/m/n/10 (+20) https://www.unified-automation.com/products/opc-ua/technology/opc-ua-
  []
 
-
-Overfull \hbox (42.49474pt too wide) in paragraph at lines 307--316
- [][] 
- []
-
-
-Underfull \vbox (badness 5274) has occurred while \output is active []
-
- [26]
-Overfull \hbox (176.53871pt too wide) in paragraph at lines 330--336
- [][] 
- []
+[30]
+<figuras/Conexion_Opc.png, id=637, 501.875pt x 494.84875pt>
+File: figuras/Conexion_Opc.png Graphic file (type png)
+<use figuras/Conexion_Opc.png>
+Package pdftex.def Info: figuras/Conexion_Opc.png  used on input line 493.
+(pdftex.def)             Requested size: 301.12732pt x 296.91154pt.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
-
-LaTeX Warning: Reference `tab:arbol_variables_subestacion' on page 28 undefined on input line 347.
+LaTeX Warning: Reference `tab:direccionamiento_opcua_wtg1' on page 31 undefined on input line 498.
 
 
-Overfull \hbox (21.98965pt too wide) in paragraph at lines 352--368
- [][] 
- []
+Underfull \vbox (badness 7168) has occurred while \output is active []
 
+ [31 <./figuras/OPCUA_metamodelo.png>]
+Underfull \vbox (badness 6220) has occurred while \output is active []
 
-Overfull \hbox (11.96344pt too wide) detected at line 375
-[][][][] \OT1/lmr/m/n/10.95 + [] + [] = []
- []
-
-
-Overfull \hbox (49.26462pt too wide) in paragraph at lines 377--378
-\T1/bch/m/n/10.95 (-20) de-vanado del trans-for-mador se re-suelve me-di-ante la di-rec-ciÛn \T1/lmtt/m/n/10.95 SE.T01.PROT.YPTR1.Tmp.mag\T1/bch/m/n/10.95 (-20) . 
- []
-
-
-Underfull \vbox (badness 4940) has occurred while \output is active []
-
- [28{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-<figuras/jerarquia.png, id=594, 878.53218pt x 576.65437pt>
+ [32 <./figuras/Conexion_Opc.png>]
+<figuras/jerarquia.png, id=652, 878.53218pt x 576.65437pt>
 File: figuras/jerarquia.png Graphic file (type png)
 <use figuras/jerarquia.png>
-Package pdftex.def Info: figuras/jerarquia.png  used on input line 405.
+Package pdftex.def Info: figuras/jerarquia.png  used on input line 538.
 (pdftex.def)             Requested size: 395.33583pt x 259.49207pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30 <./figuras/jerarquia.png>]
+ [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-<figuras/GUI.png, id=612, 1011.02719pt x 465.99094pt>
+ [34 <./figuras/jerarquia.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+<figuras/GUI.png, id=676, 1011.02719pt x 465.99094pt>
 File: figuras/GUI.png Graphic file (type png)
 <use figuras/GUI.png>
-Package pdftex.def Info: figuras/GUI.png  used on input line 450.
+Package pdftex.def Info: figuras/GUI.png  used on input line 583.
 (pdftex.def)             Requested size: 404.40372pt x 186.39307pt.
 
-Overfull \hbox (8.9519pt too wide) in paragraph at lines 450--451
+Overfull \hbox (8.9519pt too wide) in paragraph at lines 583--584
  [][] 
  []
 
-[32]
-Overfull \hbox (4.86485pt too wide) in paragraph at lines 458--459
+
+Overfull \hbox (4.86485pt too wide) in paragraph at lines 591--592
 []\T1/bch/m/n/10.95 (-20) La pan-talla \T1/lmtt/m/n/10.95 10_WTG_Overview \T1/bch/m/n/10.95 (-20) ac-t˙a como el nodo prin-ci-pal de en-rutamiento din·mico
  []
 
-<figuras/10_WTG_Overview.png, id=621, 864.98157pt x 303.38344pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36 <./figuras/GUI.png>]
+<figuras/10_WTG_Overview.png, id=689, 864.98157pt x 303.38344pt>
 File: figuras/10_WTG_Overview.png Graphic file (type png)
 <use figuras/10_WTG_Overview.png>
-Package pdftex.def Info: figuras/10_WTG_Overview.png  used on input line 469.
+Package pdftex.def Info: figuras/10_WTG_Overview.png  used on input line 602.
 (pdftex.def)             Requested size: 395.45181pt x 138.70166pt.
-[33 <./figuras/GUI.png>]
-Overfull \hbox (53.2867pt too wide) in paragraph at lines 480--480
+
+Overfull \hbox (53.2867pt too wide) in paragraph at lines 613--613
 []\T1/bch/m/n/10.95 (-20) La de-cisiÛn de no in-te-grar es-tos es-que-mas di-rec-ta-mente en la pan-talla raÌz (\T1/lmtt/m/n/10.95 00_Main_Interface\T1/bch/m/n/10.95 (-20) )
  []
 
-<figuras/11_SUB_Interfaec.png, id=633, 867.99281pt x 302.63063pt>
+<figuras/11_SUB_Interfaec.png, id=690, 867.99281pt x 302.63063pt>
 File: figuras/11_SUB_Interfaec.png Graphic file (type png)
 <use figuras/11_SUB_Interfaec.png>
-Package pdftex.def Info: figuras/11_SUB_Interfaec.png  used on input line 485.
+Package pdftex.def Info: figuras/11_SUB_Interfaec.png  used on input line 618.
 (pdftex.def)             Requested size: 395.45181pt x 137.87724pt.
-[34 <./figuras/10_WTG_Overview.png>]
+[37 <./figuras/10_WTG_Overview.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35 <./figuras/11_SUB_Interfaec.png>]
-capitulos/desarrollo_de_la_solucion.tex:513: Undefined control sequence.
-l.513     \begn
-               {minipage}[t]{0.45\textwidth}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-capitulos/desarrollo_de_la_solucion.tex:513: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.513     \begn{minipage}[t]{0.45\textwidth}
-                                            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:513: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.513     \begn{minipage}[t]{0.45\textwidth}
-                                            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-<figuras/WTG_Faceplate.png, id=650, 676.02562pt x 252.19218pt>
+ [38 <./figuras/11_SUB_Interfaec.png>]
+<figuras/WTG_Faceplate.png, id=709, 676.02562pt x 252.19218pt>
 File: figuras/WTG_Faceplate.png Graphic file (type png)
 <use figuras/WTG_Faceplate.png>
-Package pdftex.def Info: figuras/WTG_Faceplate.png  used on input line 515.
-(pdftex.def)             Requested size: 395.45181pt x 147.52605pt.
-capitulos/desarrollo_de_la_solucion.tex:518: Missing } inserted.
-<inserted text> 
-                }
-l.518     \end{minipage}
-                        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-capitulos/desarrollo_de_la_solucion.tex:518: Undefined control sequence.
-\endminipage ...\expandafter \@iiiparbox \@mpargs 
-                                                  {\unvbox \@tempboxa }
-l.518     \end{minipage}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-capitulos/desarrollo_de_la_solucion.tex:521: Missing number, treated as zero.
-<to be read again> 
-                   \def 
-l.521         \centering
-                        
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:521: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \def 
-l.521         \centering
-                        
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-capitulos/desarrollo_de_la_solucion.tex:521: Package calc Error: `\def ' invalid at this point.
-
-See the calc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.521         \centering
-                        
-I expected to see one of: + - * / )
-
-capitulos/desarrollo_de_la_solucion.tex:521: Undefined control sequence.
-\reserved@a ->\@nil 
-                    
-l.521         \centering
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-capitulos/desarrollo_de_la_solucion.tex:521: LaTeX Error: \begin{figure} on input line 511 ended by \end{minipage}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.521         \centering
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-capitulos/desarrollo_de_la_solucion.tex:521: Missing number, treated as zero.
-<to be read again> 
-                   !
-l.521         \centering
-                        
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:521: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   !
-l.521         \centering
-                        
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:521: Missing } inserted.
-<inserted text> 
-                }
-l.521         \centering
-                        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-<figuras/Park_Faceplate.png, id=651, 701.62125pt x 255.95625pt>
+Package pdftex.def Info: figuras/WTG_Faceplate.png  used on input line 648.
+(pdftex.def)             Requested size: 177.9521pt x 66.38422pt.
+<figuras/Park_Faceplate.png, id=710, 701.62125pt x 255.95625pt>
 File: figuras/Park_Faceplate.png Graphic file (type png)
 <use figuras/Park_Faceplate.png>
-Package pdftex.def Info: figuras/Park_Faceplate.png  used on input line 522.
-(pdftex.def)             Requested size: 395.45181pt x 144.26794pt.
+Package pdftex.def Info: figuras/Park_Faceplate.png  used on input line 655.
+(pdftex.def)             Requested size: 177.9521pt x 64.91843pt.
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 523.
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+\T1/bch/m/n/10 (+20) vari-ables es-truc-turadas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+\T1/bch/m/n/10 (+20) para la agre-gaciÛn de
+ []
+
+[39 <./figuras/WTG_Faceplate.png> <./figuras/Park_Faceplate.png>]
+Underfull \vbox (badness 2418) has occurred while \output is active []
+
+ [40]
+Overfull \hbox (3.60165pt too wide) in paragraph at lines 743--743
+[]|\T1/lmtt/m/n/10.95 Mantenimiento| 
+ []
+
+
+Overfull \hbox (41.11311pt too wide) in paragraph at lines 738--750
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+Overfull \hbox (39.68471pt too wide) in paragraph at lines 786--796
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+<figuras/DiagramaCloud.png, id=755, 2826.56pt x 1541.76pt>
+File: figuras/DiagramaCloud.png Graphic file (type png)
+<use figuras/DiagramaCloud.png>
+Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 817.
+(pdftex.def)             Requested size: 452.25885pt x 246.68663pt.
+
+Overfull \hbox (56.80704pt too wide) in paragraph at lines 817--818
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 855--856
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 856--856
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 856--857
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 857--858
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 858--858
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 858--858
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 858--859
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--859
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--859
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 859--860
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 860--860
+[]|\T1/bch/m/n/10.95 (+20) sgr-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 860--860
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 860--861
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 861--861
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 861--862
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--862
+[]|\T1/bch/m/n/10.95 (+20) TCP Per-
+ []
+
+
+Overfull \hbox (1.26416pt too wide) in paragraph at lines 862--863
+[]|\T1/bch/m/n/10.95 (-20) 0.0.0.0/0| 
+ []
+
+
+ignored: Infinite glue shrinkage found in box being split [45 <./figuras/DiagramaCloud.png>] (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package mdframed Info: mdframed works in twoside mode on input line 920.
+
+
+Package caption Warning: \setcaptiontype
+(caption)                outside box or environment on input line 929.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (60.27287pt too wide) in paragraph at lines 521--523
-[]\T1/bch/m/n/10.95 (-20) minipage  ![] 
+Underfull \vbox (badness 2035) has occurred while \output is active []
+
+ [46]
+Package mdframed Info: mdframed works in twoside mode on input line 938.
+ [47]
+Package mdframed Info: mdframed works in twoside mode on input line 997.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1005
+
  []
 
-capitulos/desarrollo_de_la_solucion.tex:525: Extra }, or forgotten \endgroup.
-\endminipage ...pagefalse \color@endgroup \egroup 
-                                                  \expandafter \@iiiparbox \...
-l.525     \end{minipage}
-                        
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+<figuras/aws.png, id=827, 1006.51031pt x 650.43pt>
+File: figuras/aws.png Graphic file (type png)
+<use figuras/aws.png>
+Package pdftex.def Info: figuras/aws.png  used on input line 1008.
+(pdftex.def)             Requested size: 402.59698pt x 260.16739pt.
 
-capitulos/desarrollo_de_la_solucion.tex:525: Undefined control sequence.
-\endminipage ...\expandafter \@iiiparbox \@mpargs 
-                                                  {\unvbox \@tempboxa }
-l.525     \end{minipage}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Runaway argument?
-{
-capitulos/desarrollo_de_la_solucion.tex:540: Paragraph ended before \calc@assign@generic was complete.
-<to be read again> 
-                   \par 
-l.540     \DontPrintSemicolon
-                             
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-capitulos/desarrollo_de_la_solucion.tex:540: Extra }, or forgotten \endgroup.
-\@iiiparbox ...xswfalse \setlength \@tempdima {#4}
-                                                  \@begin@tempboxa \vbox {\h...
-l.540     \DontPrintSemicolon
-                             
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Runaway argument?
-{\@checkend {minipage}\endgroup \UseHook {env/minipage/after}\if@ignore \ETC.
-capitulos/desarrollo_de_la_solucion.tex:540: Paragraph ended before \calc@assign@generic was complete.
-<to be read again> 
-                   \par 
-l.540     \DontPrintSemicolon
-                             
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-capitulos/desarrollo_de_la_solucion.tex:540: Missing } inserted.
-<inserted text> 
-                }
-l.540     \DontPrintSemicolon
-                             
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Underfull \hbox (badness 10000) detected at line 540
-[][]\T1/bch/m/n/10.95 b[]
- []
-
-capitulos/desarrollo_de_la_solucion.tex:540: Missing } inserted.
-<inserted text> 
-                }
-l.540     \DontPrintSemicolon
-                             
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-capitulos/desarrollo_de_la_solucion.tex:555: You can't use `\prevdepth' in restricted horizontal mode.
-\nointerlineskip ->\prevdepth 
-                              -\@m \p@ 
-l.555     B
-           ucle de filtrado y posicionamiento \;
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-capitulos/desarrollo_de_la_solucion.tex:555: Missing $ inserted.
-<inserted text> 
-                $
-l.555     B
-           ucle de filtrado y posicionamiento \;
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-capitulos/desarrollo_de_la_solucion.tex:555: Missing number, treated as zero.
-<to be read again> 
-                   \toks@ 
-l.555     B
-           ucle de filtrado y posicionamiento \;
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:555: You can't use `\moveright' in math mode.
-\algocf@push ...dvance \skiptotal by #1\moveright 
-                                                  #1
-l.555     B
-           ucle de filtrado y posicionamiento \;
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-capitulos/desarrollo_de_la_solucion.tex:555: Missing number, treated as zero.
-<to be read again> 
-                   \hbox 
-l.555     B
-           ucle de filtrado y posicionamiento \;
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:555: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \hbox 
-l.555     B
-           ucle de filtrado y posicionamiento \;
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:555: Improper `at' size (0.0pt), replaced by 10pt.
-<to be read again> 
-                   relax 
-l.555     B
-           ucle de filtrado y posicionamiento \;
-I can only handle fonts at positive sizes that are
-less than 2048pt, so I've changed what you said to 10pt.
-
-capitulos/desarrollo_de_la_solucion.tex:555: Improper `at' size (0.0pt), replaced by 10pt.
-<to be read again> 
-                   relax 
-l.555     B
-           ucle de filtrado y posicionamiento \;
-I can only handle fonts at positive sizes that are
-less than 2048pt, so I've changed what you said to 10pt.
-
-capitulos/desarrollo_de_la_solucion.tex:555: Missing $ inserted.
-<inserted text> 
-                $
-l.555     B
-           ucle de filtrado y posicionamiento \;
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no Ë in font lmex10!
-capitulos/desarrollo_de_la_solucion.tex:573: You can't use `\prevdepth' in restricted horizontal mode.
-\nointerlineskip ->\prevdepth 
-                              -\@m \p@ 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-capitulos/desarrollo_de_la_solucion.tex:573: Missing $ inserted.
-<inserted text> 
-                $
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-capitulos/desarrollo_de_la_solucion.tex:573: Missing number, treated as zero.
-<to be read again> 
-                   \toks@ 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:573: You can't use `\moveright' in math mode.
-\algocf@push ...dvance \skiptotal by #1\moveright 
-                                                  #1
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-capitulos/desarrollo_de_la_solucion.tex:573: Missing number, treated as zero.
-<to be read again> 
-                   \hbox 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:573: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \hbox 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-capitulos/desarrollo_de_la_solucion.tex:573: Improper `at' size (0.0pt), replaced by 10pt.
-<to be read again> 
-                   relax 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-I can only handle fonts at positive sizes that are
-less than 2048pt, so I've changed what you said to 10pt.
-
-capitulos/desarrollo_de_la_solucion.tex:573: Improper `at' size (0.0pt), replaced by 10pt.
-<to be read again> 
-                   relax 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-I can only handle fonts at positive sizes that are
-less than 2048pt, so I've changed what you said to 10pt.
-
-capitulos/desarrollo_de_la_solucion.tex:573: Improper `at' size (0.0pt), replaced by 10pt.
-<to be read again> 
-                   relax 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-I can only handle fonts at positive sizes that are
-less than 2048pt, so I've changed what you said to 10pt.
-
-capitulos/desarrollo_de_la_solucion.tex:573: Improper `at' size (0.0pt), replaced by 10pt.
-<to be read again> 
-                   relax 
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-I can only handle fonts at positive sizes that are
-less than 2048pt, so I've changed what you said to 10pt.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 573--573
-[]$\OML/lmm/m/it/10.95 Estado \OMS/lmsy/m/n/10.95   [][][]$  $\OML/lmm/m/it/10.95 Parque \OMS/lmsy/m/n/10.95  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 573--573
-[][][]$  $\OML/lmm/m/it/10.95 Selector \OMS/lmsy/m/n/10.95  
- []
-
-capitulos/desarrollo_de_la_solucion.tex:573: Missing $ inserted.
-<inserted text> 
-                $
-l.573     \caption
-                  {Filtrado Din√°mico y Posicionamiento de Aerogeneradores e...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no Ë in font lmex10!
-
-Underfull \hbox (badness 1158) in paragraph at lines 573--573
-[]\T1/bch/b/n/10.95 (+20) Algoritmo 1: \T1/bch/m/n/10.95 (+20) Fil-trado Din·mico y Posi-cionamiento de Aero-gen-er-adores en
- []
-
-capitulos/desarrollo_de_la_solucion.tex:575: Extra }, or forgotten \endgroup.
-\@algocf@finish ->\@algoinsideskip \egroup 
-                                           \hfill \egroup \ifthenelse {\bool...
-l.575 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-capitulos/desarrollo_de_la_solucion.tex:575: Extra }, or forgotten \endgroup.
-\@algocf@finish ...ideskip \egroup \hfill \egroup 
-                                                  \ifthenelse {\boolean {alg...
-l.575 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-capitulos/desarrollo_de_la_solucion.tex:575: Extra }, or forgotten \endgroup.
-\@algocf@finish ... {\skipalgocfslide }}{}\egroup 
-                                                  \end {lrbox}\algocf@maketh...
-l.575 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-capitulos/desarrollo_de_la_solucion.tex:575: LaTeX Error: \begin{algocf} on input line 540 ended by \end{lrbox}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.575 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-capitulos/desarrollo_de_la_solucion.tex:575: Missing } inserted.
-<inserted text> 
-                }
-l.575 \end{algorithm}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-capitulos/desarrollo_de_la_solucion.tex:575: Extra }, or forgotten \endgroup.
-\color@endbox ->\color@endgroup \egroup 
-                                        
-l.575 \end{algorithm}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-capitulos/desarrollo_de_la_solucion.tex:575: LaTeX Error: \begin{algocf@algorithm} on input line 540 ended by \end{algocf}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.575 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-capitulos/desarrollo_de_la_solucion.tex:575: LaTeX Error: \begin{algorithm} on input line 540 ended by \end{algocf@algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.575 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-capitulos/desarrollo_de_la_solucion.tex:575: LaTeX Error: \begin{figure} on input line 511 ended by \end{algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.575 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[36 <./figuras/Park_Faceplate.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37 <./figuras/WTG_Faceplate.png>]
-Overfull \hbox (3.60165pt too wide) in paragraph at lines 611--611
-[]\T1/lmtt/m/n/10.95 Mantenimiento| 
- []
-
-
-Overfull \hbox (41.11311pt too wide) in paragraph at lines 606--618
+Overfull \hbox (7.14517pt too wide) in paragraph at lines 1008--1009
  [][] 
  []
 
+<figuras/cloudconnect.png, id=828, 417.05812pt x 432.11438pt>
+File: figuras/cloudconnect.png Graphic file (type png)
+<use figuras/cloudconnect.png>
+Package pdftex.def Info: figuras/cloudconnect.png  used on input line 1014.
+(pdftex.def)             Requested size: 250.2368pt x 259.27061pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 1019--1019
+
+ []
+
+<figuras/NodeRedMQTT.png, id=831, 688.07062pt x 499.8675pt>
+File: figuras/NodeRedMQTT.png Graphic file (type png)
+<use figuras/NodeRedMQTT.png>
+Package pdftex.def Info: figuras/NodeRedMQTT.png  used on input line 1023.
+(pdftex.def)             Requested size: 344.03447pt x 249.93314pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1028
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1030
+
+ []
+
+<figuras/grafana_config.png, id=862, 371.13657pt x 711.4078pt>
+File: figuras/grafana_config.png Graphic file (type png)
+<use figuras/grafana_config.png>
+Package pdftex.def Info: figuras/grafana_config.png  used on input line 1033.
+(pdftex.def)             Requested size: 371.13565pt x 711.40607pt.
+
+LaTeX Warning: Float too large for page by 41.96254pt on input line 1036.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1038
+
+ []
+
+[49 <./figuras/aws.png>] [50 <./figuras/cloudconnect.png> <./figuras/NodeRedMQTT.png>] [51 <./figuras/grafana_config.png>] [52
+
+] [53] [54]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1377.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1377.
+
+ignored: Infinite glue shrinkage found in box being split [55]
+ignored: Infinite glue shrinkage found in box being split [56]
+ignored: Infinite glue shrinkage found in box being split [57]) (capitulos/analisis_de_resultados.tex [58]
+chapter 8.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/metodolog√≠a.tex [59
+
+
+] [60
+
+
+]
+chapter 9.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/aspectos_econ√≥micos.tex [61] [62
+
+
+]
+chapter 10.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (capitulos/conclusiones.tex [63] [64
+
+
+]
+chapter 11.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) [65] [66
+
+
+]
+chapter without number
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+[67
+
+
+]
+
+Package biblatex Warning: Type 'online' not found on input line 91.
+
+
+Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no longer supported.
+(biblatex)                Please use 'labelprefix' option to '\newrefcontext'.
+
+
+LaTeX Warning: Empty bibliography on input line 91.
+
+[68] (anexos/Anexo_1.tex
+chapter A.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [69
+
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-Overfull \hbox (39.68471pt too wide) in paragraph at lines 654--664
- [][] 
+ [70]) (anexos/Anexo_2.tex [71] [72
+
+
+]
+chapter B.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+
+pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/Topologia.pdf, id=1112, 2392.9802pt x 1690.39525pt>
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf>
+Package pdftex.def Info: figuras/Topologia.pdf  used on input line 13.
+(pdftex.def)             Requested size: 2392.97438pt x 1690.39114pt.
+
+
+pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/Topologia.pdf, id=1114, page=1, 2392.9802pt x 1690.39525pt>
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2392.97438pt x 1690.39114pt.
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+[73]
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+ [74
+
+ <./figuras/Topologia.pdf>]) (anexos/Anexo_3.tex
+chapter C.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+Underfull \vbox (badness 5578) has occurred while \output is active []
+
+ [75
+
+
+] [76]) (anexos/Anexo_4.tex [77] [78
+
+
+]
+chapter D.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+) (anexos/Anexo_5.tex [79] [80
+
+
+]
+chapter E.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+Overfull \hbox (32.24239pt too wide) in alignment at lines 7--12
+ [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40]
-<figuras/DiagramaCloud.png, id=696, 2826.56pt x 1541.76pt>
-File: figuras/DiagramaCloud.png Graphic file (type png)
-<use figuras/DiagramaCloud.png>
-Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 685.
-(pdftex.def)             Requested size: 452.25885pt x 246.68663pt.
-
-Overfull \hbox (56.80704pt too wide) in paragraph at lines 685--686
- [][] 
+Overfull \hbox (32.24239pt too wide) in alignment at lines 12--17
+ [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (32.24239pt too wide) in alignment at lines 17--21
+ [] [] [] [] 
+ []
 
- [41 <./figuras/DiagramaCloud.png>]
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{\fi }\cr 
-                                  
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \crcr.
-<argument> \crcr 
-                 \noalign {\int_step_inline:nn {\LT@rows }{\seq_gput_left:ce...
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+Overfull \hbox (32.24239pt too wide) in alignment at lines 21--24
+ [] [] [] [] 
+ []
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \noalign.
-<argument> \crcr \noalign 
-                          {\int_step_inline:nn {\LT@rows }{\seq_gput_left:ce...
-l.716     \endfoot
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \crcr.
-\LT@echunk ->\crcr 
-                   \LT@save@row \cr \egroup \global \setbox \LT@gbox \lastbo...
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+Underfull \hbox (badness 1303) in paragraph at lines 69--70
+[]|\T1/bch/m/n/10.95 (+20) Alarma de parada de emer-gen-cia de la
+ []
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced alignment tab character &.
-<argument> &
-            
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \omit.
-\LT@entry ...->\ifhmode \@firstofone {&}\fi \omit 
-                                                  \ifnum #1=\c@LT@chunks \el...
-l.716     \endfoot
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
+Overfull \hbox (32.24239pt too wide) in alignment at lines 24--194
+ [] [] [] [] 
+ []
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced alignment tab character &.
-<argument> &
-            
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \omit.
-\LT@entry ...->\ifhmode \@firstofone {&}\fi \omit 
-                                                  \ifnum #1=\c@LT@chunks \el...
-l.716     \endfoot
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
+ignored: Infinite glue shrinkage found in box being split [81]
+ignored: Infinite glue shrinkage found in box being split [82]
+ignored: Infinite glue shrinkage found in box being split [83{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+ignored: Infinite glue shrinkage found in box being split [84]
+ignored: Infinite glue shrinkage found in box being split [85]
+Overfull \hbox (106.36026pt too wide) in alignment at lines 199--204
+ [] [] [] [] 
+ []
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced alignment tab character &.
-<argument> &
-            
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \omit.
-\LT@entry ...->\ifhmode \@firstofone {&}\fi \omit 
-                                                  \ifnum #1=\c@LT@chunks \el...
-l.716     \endfoot
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
+Overfull \hbox (106.36026pt too wide) in alignment at lines 204--207
+ [] [] [] [] 
+ []
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced alignment tab character &.
-<argument> &
-            
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \omit.
-\LT@entry ...->\ifhmode \@firstofone {&}\fi \omit 
-                                                  \ifnum #1=\c@LT@chunks \el...
-l.716     \endfoot
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
+Overfull \hbox (106.36026pt too wide) in alignment at lines 207--257
+ [] [] [] [] 
+ []
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced alignment tab character &.
-<argument> &
-            
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[86]
+ignored: Infinite glue shrinkage found in box being split [87]) [88] [89] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \omit.
-\LT@entry ...->\ifhmode \@firstofone {&}\fi \omit 
-                                                  \ifnum #1=\c@LT@chunks \el...
-l.716     \endfoot
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced alignment tab character &.
-<argument> &
-            
-l.716     \endfoot
-                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+LaTeX Warning: There were undefined references.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \omit.
-\LT@entry ...->\ifhmode \@firstofone {&}\fi \omit 
-                                                  \ifnum #1=\c@LT@chunks \el...
-l.716     \endfoot
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
 
-capitulos/desarrollo_de_la_solucion.tex:716: Misplaced \cr.
-\LT@echunk ->\crcr \LT@save@row \cr 
-                                    \egroup \global \setbox \LT@gbox \lastbo...
-l.716     \endfoot
-                  
-I can't f
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 36017 strings out of 467867
+ 652960 string characters out of 5418334
+ 2363984 words of memory out of 5000000
+ 63279 multiletter control sequences out of 15000+600000
+ 781458 words of font info for 425 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,18n,131p,11256b,2178s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchbi8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.pdf (105 pages, 11934559 bytes).
+PDF statistics:
+ 1888 PDF objects out of 2073 (max. 8388607)
+ 554 named destinations out of 1000 (max. 500000)
+ 78544 words of extra memory for PDF output out of 89155 (max. 10000000)
+

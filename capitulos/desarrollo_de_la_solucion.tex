@@ -21,6 +21,7 @@ El software de configuración se denomina WinCC Explorer. En él se realiza toda
 \begin{table}[t]
     \centering
     \caption{Descripción de los subsistemas principales del software de configuración de WinCC (\textit{CS}).}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{p{5cm} p{3cm} p{6cm}} 
             \toprule
         	\textbf{Subsistema} & \textbf{Editor} & \textbf{Descripción} \\ 
@@ -38,16 +39,15 @@ El software de configuración se denomina WinCC Explorer. En él se realiza toda
     \vspace{0.5cm}
     
     \label{tab:wincc_subsystems}
+    }
 \end{table}
 
 \subsection{Software \textit{Runtime (RT)}: WinCC Runtime}
 El WinCC RT constituye el núcleo operativo del SCADA. Durante la operación normal del proceso, el Runtime es el motor encargado de ejecutar la adquisición de datos de los PLCs en tiempo real, actualizar dinámicamente la interfaz gráfica, procesar la lógica de los scripts, gestionar el control de acceso de los usuarios y archivar de manera segura los eventos y datos históricos en las bases de datos SQL.\par
-
-\section{Arquitecturas del sistema}
-\subsection{Topología de red del parque eólico y MCR}
-\subsection{Arquitectura de WinCC}
+\section{Arquitecturas de WinCC}
+\label{cap:arquitecturas_wincc}
 El diseño de una red SCADA determina la forma en la que se hace la adquisición, procesamiento y visualización de datos. El entorno de Siemens permite multiples arquitecturas y configuraciones de proyecto dependiendo del tipo de sistema
-\subsubsection{Sistemas Monopuesto (\textit{Single User Systems})}
+\subsection{Sistemas Monopuesto (\textit{Single User Systems})}
 En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar todas las tareas del SCADA. El puesto actúa tanto como servidor como cliente: El equipo se encarga de realizar las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet o ModBus, OPC UA …) de ejecutar el software del runtime y almacenar los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
 Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera se trata de una estación de ingeniería y runtime con un único PC (Figura \ref{fig:monopuesto}). La segunda, es una configuración redundante de la primera donde la estación redundante solo sería una estación runtime (Figura \ref{fig:monopuesto_redundante}).
 
@@ -65,7 +65,7 @@ Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera
     \label{fig:monopuesto_redundante}
 \end{figure}
 
-\subsubsection{Sistemas Multipuesto (\textit{Multi User Systems})}
+\subsection{Sistemas Multipuesto (\textit{Multi User Systems})}
 
 
 Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde un solo ordenador hace todo), en un sistema multipuesto la carga de trabajo se divide entre uno o varios Servidores centrales y múltiples estaciones Cliente. Este enfoque permite una variedad mayor de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación. ( Figura \ref{fig:multipuesto}) \par 
@@ -75,30 +75,63 @@ Un sistema multipuesto es una arquitectura distribuida diseñada para separar la
     \caption{Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}
     \label{fig:multipuesto}
 \end{figure}
-\subsubsection{Virtualización mediante SIVaaS}
+\subsection{Virtualización mediante SIVaaS}
 
 La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples máquinas virtuales (VM) aisladas, compartiendo recursos como CPU, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: Alojados y Metal-Desnudos.
-\paragraph{Hypervisor alojado  (\textit{Hosted Hypervisor})}
+\subsubsection{Hypervisor alojado  (\textit{Hosted Hypervisor})}
 Este tipo se instala como una aplicación de software más dentro de un sistema operativo convencional que ya está funcionando en el equipo físico (conocido como sistema operativo anfitrión u Host OS).\par
 
 Este tipo de hipervisor genera una dependencia del sistema operativo base ya que el hipervisor debe pedir constantemente permiso para acceder a los recursos del sistema lo cual genera un cuello de botella disminuyendo el rendimiento. \par
 
 Por otro lado, esta dependencia del sistema operativo base es una vulnerabilidad en sí misma para la seguridad y ciberseguridad del sistema, ya que un malfuncionamiento o un virus podrían contagiarse a cada una de las instancias de maquinas virtuales que corren encima.
 
-\paragraph{Hypervisor metal desnudo (\textit{Bare-Metal Hypervisor})}
+\subsubsection{Hypervisor metal desnudo (\textit{Bare-Metal Hypervisor})}
 
 Se le denomina Bare-Metal (metal desnudo) porque se instala y ejecuta directamente sobre el hardware físico del servidor. No hay ningún sistema operativo tradicional (como Windows Server o Linux) actuando como intermediario. El hipervisor en sí mismo es un sistema operativo altamente especializado y minimalista diseñado con un único propósito: gestionar y asignar recursos físicos a las máquinas virtuales. Al no tener que atravesar ningún sistema operativo anfitrión, las maquinas virtuales tienen acceso más directo a los recursos del sistema reduciendo la latencia y sobrecarga. \par
 
 Al contrario que un hipervisor alojado, es seguro ante vulnerabilidades, debido a que que tiene una superficie de ataque reducida. Además, las máquinas virtuales están aisladas por lo que si una maquina virtual se ve comprometida por un malware el resto de maquinas permanecerán seguras.\par
 
-\paragraph{Virtualización SIMATIC como Servicio (SIVaaS)}
-Siemens ofrece una solución de virtualización completa para sistemas de control basada en hipervisores bare-metal llamada Virtualización SIMATIC como Servicio (SIVaaS). SIVaaS es una solución de virtualización completa para sistemas de control basados en PC. El hardware, el software, la configuración y los servicios de ciclo de vida están totalmente integrados, abarcando desde la configuración del host y el hipervisor hasta las máquinas virtuales, los sistemas operativos y la instalación de software llave en mano. 
-Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con dos máquinas virtuales una haciendo de servidor y la otra de cliente. \par
+\subsubsection{Virtualización SIMATIC como Servicio (SIVaaS)}
+Siemens ofrece una solución de virtualización completa para sistemas de control basada en hipervisores bare-metal llamada Virtualización SIMATIC como Servicio (SIVaaS). SIVaaS es una solución de virtualización completa para sistemas de control basados en PC. El hardware, el software, la configuración y los servicios de ciclo de vida están totalmente integrados, abarcando desde la configuración del host y el hipervisor hasta las máquinas virtuales, los sistemas operativos y la instalación de software llave en mano. \par
+\section{Arquitectura del Sistema de Supervisión y Red de Comunicaciones del Parque Eólico}
+\label{sec:arquitectura_parque_eolico}
 
+La red de potencia del parque, tal como se define en el Anexo \ref{cap:Planos} , se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\textit{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte nacional.
 
-\begin{table}[t]
+\begin{table}[tb]
+    \centering
+    \caption{Nomenclatura confidencial de las subestaciones y rangos de generación eólica asociados.}
+    \label{tab:nombres_subestaciones_abreviados}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{cclcc}
+            \toprule
+            \textbf{Índice} & \textbf{Identificador SCADA} & \textbf{Subestación (Abreviada)} & \textbf{N.º Turbinas} & \textbf{Rango de Aerogeneradores} \\ \midrule
+            1 & \texttt{SS\_01} & CAB II   & 9 & \texttt{WTG1--WTG9} \\
+            2 & \texttt{SS\_02} & CAB III  & 6 & \texttt{WTG10--WTG15} \\
+            3 & \texttt{SS\_03} & CID I    & 2 & \texttt{WTG16-WTG17} \\
+            4 & \texttt{SS\_04} & CID III  & 3 & \texttt{WTG08-WTG10} \\
+            5 & \texttt{SS\_05} & CID IV   & 2 & \texttt{WTG11-WTG12} \\
+            6 & \texttt{SS\_06} & IGL I    & 3 & \texttt{WTG13-WTG15} \\
+            7 & \texttt{SS\_07} & LE I     & 2 & \texttt{WTG16-WTG17} \\
+            8 & \texttt{SS\_08} & LE II    & 3 & \texttt{WTG18-WTG20} \\
+            9 & \texttt{SS\_09} & VAC III  & 2 & \texttt{WTG21-WTG57} \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+\FloatBarrier
+\subsection{Equipamiento de la Sala de Control Central (MCR) y Entorno de Validación}
+\label{sec:equipamiento_mcr}
+
+Para centralizar la supervisión de la infraestructura de generación y las 9 subestaciones descritas, la Sala de Control Central (\textit{Main Control Room} - MCR) requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida y redundante del SCADA.\par 
+
+Como se detalla en el anexo \ref{cap:Pruebas} , la fase final del proyecto no se realiza sobre estaciones monopuesto convencionales, sino que se sustenta íntegramente sobre la solución de virtualización industrial SIVaaS.\par
+
+El despliegue físico y lógico del equipamiento en la MCR para esta fase de validación estructural consta de los siguientes activos unificados especificados en la tabla \ref{tab:Equipamiento_MCR}:
+\begin{table}[p]
     \centering
     \caption{Inserta aquí la descripción de la tabla.}
+    \label{tab:Equipamiento_MCR}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{p{11cm} p{2cm}}
         \toprule
         \multicolumn{2}{c}{\textbf{Primera instancia de Host}} \\
@@ -112,13 +145,15 @@ Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con do
         VM SIMATIC WinCC V8 Server & 1\\
         VM SIMATIC WinCC V8 Engineering Station + Client & 1\\
         \bottomrule
-    \end{tabular}
-    \vspace{0.5cm}
-    
-    \label{tab:Equipo 1}
+    \end{tabular}%
+    }
+\end{table}
 
+\begin{table}[p]
     \centering
     \caption{Equipo 2: Segunda instancia de Host con dos máquinas virtuales, una haciendo de servidor y la otra de cliente.}
+    \label{tab:Equipo 2}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{p{11cm} p{2cm}}
         \toprule
         \multicolumn{2}{c}{\textbf{Segunda instancia de Host}} \\
@@ -130,15 +165,17 @@ Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con do
         \multicolumn{2}{c}{\textbf{Maquinas Virtuales}} \\
         \hline
         VM SIMATIC WinCC V8 Server & 1\\
-        VM SIMATIC WinCC V8 Client & 1\\    
+        VM SIMATIC WinCC V8 Client & 1\\
         \bottomrule
-    \end{tabular}
-    \vspace{0.5cm}
-    
-    \label{tab:Equipo 2}
+    \end{tabular}%
+    }
+\end{table}
 
+\begin{table}[p]
     \centering
     \caption{Equipo 3: Clientes ligeros para la solución virtualizada.}
+    \label{tab:Equipo 3}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{p{11cm} p{2cm}}
         \toprule
         \multicolumn{2}{c}{\textbf{Clientes ligeros}} \\
@@ -149,28 +186,17 @@ Configuración SIVaaS, dos servidores redundados 16X1 HPE HOST SYSTEM "S" con do
         Management Console HP T655 Dual Screen WIN10 DE & 1\\
         \bottomrule
     \end{tabular}
-    \vspace{0.5cm}
-    \label{tab:Equipo 3}
+    }
 \end{table}
 
+Esta infraestructura virtualizada llave en mano dota a la MCR de la flexibilidad necesaria para verificar la adquisición de las variables estructuradas.
 
-
-\section{Comunicación y adquisición de datos}
-Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (OPC UA). 
-
-\subsection{OPC UA}
-OPC UA es una tecnología middleware orientada a servicios (SOA). Se divide en dos modelos: El modelo de información y el modelo de comunicación. El modelo de información define cómo se estructuran y organizan los datos dentro del sistema, mientras que el modelo de comunicación establece los protocolos y mecanismos para la transferencia de datos entre los diferentes componentes del sistema. OPC UA es un estándar abierto y multiplataforma que permite la interoperabilidad entre dispositivos y sistemas de diferentes fabricantes. OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos.\par
-
-El envio de mensajes OPC UA se realiza mediante un modelo de publicación-suscripción (pub/sub) donde los dispositivos publican datos en el espacio de direcciones especificando el nodo. En el contexto de la solución WinCC actua de cliente OPC UA, suscribiéndose a los nodos del servidor OPC UA para recibir actualizaciones en tiempo real de las variables del proceso.\par
-
-El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.\par
-
+\textbf{ESPECIFICAR EL CAJON QUE SE UTILIZARA (PLANOS DE LOS SERVIDORES)}
 \section{Diseño del Modelo de información del SCADA}
 \label{cap:modelo_informacion}
 Las variables en WinCC se dividen en tres categorías principales: Variables internas, variables externas y variables de estructura. Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado, son aquellas que siguen una estructura específica definida  para garantizar la interoperabilidad entre diferentes sistemas y dispositivos de tal forma que se mantiene un orden lógico.
 \subsection{Variables internas}
 El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas se dividen en diferentes categorías según su función y propósito. Algunas de las categorías principales de variables internas en WinCC incluyen:
-\subsection{Variables de externas}
 \subsection{Variables de estructura}
 Las variables de estructura son el nucleo de la solución, ya que permiten estructurar la información de forma lógica y coherente. Para el modelado de las variables de estructura se han seguido dos normas internacionales: La norma IEC 61400-25-2 para el modelado de los aerogeneradores y la norma IEC 61850 para el modelado de la subestación eléctrica. Estas normas establecen un marco común para la representación y organización de datos en sistemas eólicos y eléctricos.\par
 \subsubsection{Modelo de información de aerogeneradores}
@@ -203,6 +229,7 @@ Se han diseñado las estructuras de variables de nivel 5 según la norma IEC 614
     \centering
     \caption{Estructuras de Clases de Datos Comunes (Nivel 5) según norma IEC 61400-25-2.}
     \label{tab:estructuras_nivel5}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llp{4.5cm}p{6cm}@{}}
         \toprule
         \textbf{Clase (CDC)} & \textbf{Atributo} & \textbf{Tipo de Dato base} & \textbf{Descripción Técnica} \\ \midrule
@@ -230,6 +257,7 @@ Se han diseñado las estructuras de variables de nivel 5 según la norma IEC 614
         \texttt{ZID} & \texttt{setVal}& Cadena de caracteres ASCII & Valor de identificación en formato texto (Ej. Nombre del parque). \\
         \texttt{ZID} & \texttt{setSrc}& Entero sin signo (16 bits) & Identidad numérica del origen de la configuración. (Ej. La Unidad 001 tiene el valor 1) \\ \bottomrule
     \end{tabular}
+    }
 \end{table}
 
 \paragraph{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}
@@ -239,15 +267,17 @@ El nivel 2 de estructura de dispositivos agrupa los nodos lógicos que comparten
     \centering
     \caption{Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}
     \label{tab:redundancia_niveles_wtg}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}clll@{}}
         \toprule
         \textbf{Equipo de Planta} & \textbf{Nivel Jerárquico} & \textbf{Código Mapeado} & \textbf{Significado / Función Real} \\ \midrule
         
         % Unidad 001
-        \multirow{2}{*}{\textbf{Unidad 001}} & Nivel 1: PD & \texttt{WTG1} & Identificador de hardware (PLC de la base) \\
-                                             & Nivel 2: LD  & \texttt{WTG1} & Contenedor virtual de software (coincidente) \\ \bottomrule
+        \multirow{2}{*}{\textbf{Unidad 001}} & Nivel 1: PD & \texttt{WTG1} & Identificador de hardware \\
+                                             & Nivel 2: LD  & \texttt{WTG1} & Contenedor virtual de software \\ \bottomrule
        
     \end{tabular}
+    }
 \end{table}
 
 \paragraph{Nivel 3: Estructura de Nodos Lógicos (LN)}
@@ -259,32 +289,34 @@ La norma IEC 61400-25 define una jerarquía semántica donde el nivel 3 se ident
     \item \textbf{WTRF (Transformer):} Supervisa el estado de los activos de transformación eléctrica.
 \end{itemize}
 
-Además, el estandar IEC 61400-25-2 viene heredado de la norma \textbf{IEC 61850-7-4}, la cual se desarrolló para la automatización de subestaciones eléctricas. Por lo tanto, el diseño de las estructuras de variables de nivel 2 deben incorporar atributos heredados de IEC 61850-7-4 \cite{iec61850-7-4}. Esos atributos heredados son los siguientes:
+%Además, el estandar IEC 61400-25-2 viene heredado de la norma \textbf{IEC 61850-7-4}, la cual se desarrolló para la automatización de subestaciones eléctricas. Por lo tanto, el diseño de las estructuras de variables de nivel 2 deben incorporar atributos heredados de IEC 61850-7-4 \cite{iec61850-7-4}. Esos atributos heredados son los siguientes:
 
-\begin{itemize}
-    \item \textbf{\textit{Mod} (Modo):} Define el modo de operación deseado para el nodo lógico (Ej. On, Off, Auto, Manual, Test, etc.)
-    \item \textbf{\textit{Beh} (Comportamiento):} Define el comportamiento del real del nodo lógico
-    \item \textbf{\textit{Health} (Salud):} Define el estado de salud del nodo lógico
-    \item \textbf{\textit{Loc} (Localización):} Define la ubicación física del nodo lógico
-\end{itemize}
+%\begin{itemize}
+ %   \item \textbf{\textit{Mod} (Modo):} Define el modo de operación deseado para el nodo lógico (Ej. On, Off, Auto, Manual, Test, etc.)
+  %  \item \textbf{\textit{Beh} (Comportamiento):} Define el comportamiento del real del nodo lógico
+   % \item \textbf{\textit{Health} (Salud):} Define el estado de salud del nodo lógico
+    %\item \textbf{\textit{Loc} (Localización):} Define la ubicación física del nodo lógico
+%\end{itemize}
 
 
 \paragraph{Nivel 3: Objetos de Datos y Variables de Proceso}
 Finalmente, el Nivel 3 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 3 (Data Object) adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una CDC específica.
 
-En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.CDC}. Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_jerarquia_ascendente} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el SCADA.
+En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.CDC}. Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el SCADA.
 \begin{table}[tb]
     \centering
     \caption{Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}
     \label{tab:ejemplo_fusion_niveles}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}clll@{}}
         \toprule
         \textbf{Nivel} & \textbf{Capa Semántica} & \textbf{Código (\textit{Tag})} & \textbf{Significado en la Turbina} \\ \midrule
-        \textbf{1 + 2} & Dispositivo Físico + Lógico & \texttt{WTG57} & Aerogenerador 57 (Identificador único) \\
+        \textbf{1 + 2} & Dispositivo Físico + Lógico & \texttt{WTG23} & Aerogenerador 23 (Identificador único) \\
         \textbf{3}     & Nodo Lógico (\textit{LN})   & \texttt{WYAW}  & Sistema de Orientación (\textit{Yaw}) \\
         \textbf{4}     & Objeto de Datos (\textit{DO}) & \texttt{YawSt} & Estado complejo del giro de góndola \\
         \textbf{5}     & Atributo de Datos (\textit{DA}) & \texttt{stVal} & Valor digital final (conmutación) \\ \bottomrule
     \end{tabular}
+    }
 \end{table}
 
 
@@ -294,57 +326,88 @@ En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en
 \subsubsection{Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}
 \label{sec:variables_subestacion}
 
-Una vez definida la arquitectura semántica para los aerogeneradores bajo el estándar IEC 61400-25, se procede a estructurar las variables correspondientes a la subestación colectora del parque eólico. Para este dominio, se implementa de forma directa la norma matriz \textbf{IEC 61850}, manteniendo una homogeneidad absoluta en la filosofía de diseño orientada a objetos (Dispositivo Físico, Dispositivo Lógico, Nodo Lógico, Objeto de Datos y Atributo de Datos).
+Habiendo definido la arquitectura semántica para los aerogeneradores, se han estructurado las variables correspondientes a la infraestructura de evacuación del complejo eólico. Para este dominio, se han implementado de forma directa la norma matriz \textbf{IEC 61850}, manteniendo una homogeneidad absoluta en la filosofía de diseño orientada a objetos (Dispositivo Físico, Dispositivo Lógico, Nodo Lógico, Objeto de Datos y Atributo de Datos).
+\FloatBarrier
+% === NIVEL 5 ===
+\paragraph{Nivel 5: Atributos de Dato y Clase de Datos Comunes (DPS)}
+\label{sec:sub_nivel5}
+A diferencia de las variables de proceso analógicas o de los estados lógicos simples mapeados en las turbinas, la supervisión de la alta y media tensión (nodos lógicos \texttt{XCBR} y \texttt{XSWI}) exige un tratamiento de datos más estricto para garantizar la seguridad operativa. Por ello, la norma prescribe el uso de un nuevo tipo de CDC denominada DPS (\textit{Double Point Status}).
 
-A diferencia de las variables de proceso analógicas o de los estados lógicos simples mapeados en las turbinas, la supervisión de la aparamenta de corte y maniobra de alta y media tensión (nodos lógicos \texttt{XCBR} y \texttt{XSWI}) exige un tratamiento de datos mucho más estricto para garantizar la seguridad operativa. Por ello, la norma prescribe el uso de un nuevo tipo de CDC denominada \textbf{DPS (\textit{Double Point Status})}.
-
-La CDC DPS no utiliza un bit booleano convencional para determinar la posición de un equipo, sino que recurre a un código físico de doble punto (2 bits), cuyas combinaciones permiten descartar estados críticos del sistema de potencia como posiciones intermedias o estados de fallo eléctrico (Tabla \ref{tab:cdc_dps_atributos}).
+La CDC DPS no utiliza un bit booleano convencional para determinar la posición de un equipo, sino que recurre a un código de doble punto (2 bits), cuyas combinaciones permiten descartar estados críticos del sistema de potencia como posiciones intermedias o estados de fallo eléctrico (Tabla \ref{tab:cdc_dps_atributos}).
 
 \begin{table}[tb]
     \centering
     \caption{Estructura de atributos y codificación de estados para la Clase de Datos Comunes DPS (\textit{Double Point Status}) según IEC 61850-7-3.}
     \label{tab:cdc_dps_atributos}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llp{4.5cm}p{6cm}@{}}
         \toprule
         \textbf{Clase (CDC)} & \textbf{Atributo} & \textbf{Tipo de Dato base} & \textbf{Descripción Técnica / Valores} \\ \midrule
 
         % Atributos de la CDC
-        \texttt{DPS} & \texttt{stVal} & Codificación de 2 bits (\textit{DbPp}) & Valor de estado de posición real (00 01 10 11)\\
-        \texttt{DPS} & \texttt{q}     & Calidad (\textit{Quality}) & Calidad de la señal (parámetros de validez e integridad del dato). \\
-        \texttt{DPS} & \texttt{t}     & Marca de tiempo (\textit{Timestamp}) & Sello de tiempo exacto de la última transición de estado. \\ \bottomrule
+        \texttt{DPS} & \texttt{stVal} & Entero de 8 bits & Valor de estado de posición real (00 01 10 11)\\
+        \texttt{DPS} & \texttt{q}     & Calidad  & Calidad de la señal (parámetros de validez e integridad del dato). \\
+        \texttt{DPS} & \texttt{t}     & Marca de tiempo  & Sello de tiempo  de la última transición de estado. \\ \bottomrule
     \end{tabular}
+    }
 \end{table}
 
-A diferencia de los aerogeneradores, donde la unificación de los niveles 1 y 2 se justificaba por compartir ubicación , en la subestación electrica se mantiene la separación entre el PD y LD.\par
+\paragraph{Nivel 1 y 2: Estructura de Dispositivos Físicos (IED) y Dispositivos Lógicos (LD)}
+\label{sec:sub_nivel1_2}
 
-En este caso el PD se corresponde con la celda de línea o acoplamiento, mientras que el LD se corresponde con el dispositivo lógico de control (\texttt{CTRL}) o el dispositivo lógico de protección (\texttt{PROT}) dependiendo de la función del nodo lógico.\par
+En los aerogeneradores, la unificación de los niveles 1 y 2 se justificaba por compartir una misma ubicación. No obstante, en la subestación eléctrica se mantiene la separación conceptual entre el Dispositivo Físico (\textit{IED}) y el Dispositivo Lógico (\textit{LD}) como indica la normativa, ya que la subestación presenta un entorno desacoplado: por un lado se sitúan los elementos de corte y por otro la transformación de potencia.\par
 
-Tras definir la estructura simplificada de cuatro niveles para los aerogeneradores, se aborda el modelado de la subestación colectora del parque eólico. En este dominio, las exigencias de operación multifabricante, interoperabilidad y segregación de funciones críticas obligan a respetar de forma estricta la arquitectura conceptual de cinco niveles prescrita por la norma internacional \textbf{IEC 61850} \cite{inproceedings}.
-
-A diferencia de las turbinas, donde el hardware y el software se unifican de forma centralizada en un único PLC, la subestación presenta un entorno físicamente desacoplado. Por un lado, se sitúan los elementos de corte y maniobra de las celdas de línea o acoplamiento y, por otro, los activos de transformación de potencia con su instrumentación intrínseca de salvaguarda. Para absorber esta dualidad sin generar redundancias en la base de datos de \textit{SIMATIC WinCC V8.1}, se han diseñado dos tipos de estructura abstracts o moldes (\textit{Structure Types}), cuyas identidades funcionales se detallan en la Tabla \ref{tab:nomenclatura_estructuras_wincc}.
-
+Para modelar este entorno sin generar redundancias en la base de datos de \textit{SIMATIC WinCC V8.1}, se han diseñado dos tipos de estructura: ST\_BAY\_CTR y ST\_BAY\_TRF, asociados directamente a su función operativa(Tabla \ref{tab:nomenclatura_estructuras_wincc}). \par
+La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de control (\texttt{CTRL}) y gobierna de forma unificada las maniobras y telemedidas de las celdas de línea o acoplamiento. Por su parte, la estructura \texttt{ST\_BAY\_TRF} está vinculada al dispositivo lógico de protección y diagnóstico (\texttt{PROT}) y centraliza de forma independiente las variables de salud del transformador de potencia.
 \begin{table}[t]
     \centering
     \caption{Nomenclatura oficial y asignación de los Tipos de Estructura (\textit{Structure Types}) en el SCADA para la subestación.}
     \label{tab:nomenclatura_estructuras_wincc}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llll@{}}
         \toprule
-        \textbf{Tipo de Estructura} & \textbf{Estándar Base} & \textbf{Descripción Operativa del Bloque} & \textbf{Prefijo de Instancia Típico} \\ \midrule
-        \texttt{CONTR} & IEC 61850 & Control de maniobra y medida de bahía (\texttt{CTRL}) & \texttt{SE.Qxx.CTRL} \\
-        \texttt{PROT} & IEC 61850 & Protección y diagnóstico de transformador (\texttt{PROT}) & \texttt{SE.Txx.PROT} \\ \bottomrule
+        \textbf{Nivel 1 (PD)} & \textbf{Nivel 2 (LD)} & \textbf{Descripción Operativa del Bloque} & \textbf{Instancia } \\ \midrule
+        \texttt{ST\_BAY\_CTR} & \texttt{CONTR} & Control de celda  & \texttt{Qxx.CTRL} \\
+        \texttt{ST\_BAY\_TRF} & \texttt{PROT} & Monitorización de transformador & \texttt{Txx.PROT} \\ \bottomrule
     \end{tabular}
+    }
 \end{table}
 
-\subsubsection{Estructuración Interna de los Tipos de Objeto y Nodos Lógicos}
 
-La flexibilidad del SCADA radica en la instanciación selectiva de estos moldes según la tipología de celda física que se configure en el parque de intemperie:
+\paragraph{Nivel 3: Estructura de Nodos Lógicos (LN)}
+\label{sec:sub_nivel3}
+
+La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de los Nodos Lógicos especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Celdas de Maniobra y Conexión (\texttt{SUB\_CTR}):} Asociadas al dispositivo lógico de control (\texttt{CTRL}). Su topología interna responde siempre a un esquema unifilar de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de barra (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR1}), el seccionador de línea (\texttt{XSWI2}) y el nodo de telemedida eléctrica (\texttt{MMXU1}).
-    \item \textbf{Celda del Transformador de Potencia (\texttt{SUB\_TRF}):} Vinculada exclusivamente al dispositivo lógico de protección y monitorización de salud del activo (\texttt{PROT}). Reúne los nodos del transformador de potencia (\texttt{YPTR1}) para variables térmicas, la unidad de medida específica del trafo (\texttt{MMXU2}), el nodo de supervisión del aislamiento líquido y relé Buchholz (\texttt{SIML1}) y un nodo de entradas/salidas genéricas (\texttt{GGIO1}) encargado de absorber alarmas analógicas o digitales secundarias de la cuba.
+    \item \textbf{Nodos de Control de Bahía (\texttt{CTRL}):} Su topología interna responde al esquema de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de barra (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR1}), el seccionador de línea (\texttt{XSWI2}) y el nodo de telemedida eléctrica (\texttt{MMXU1}) (Figura \ref{fig:celda_linea}).
+    \item \textbf{Nodos de Protección de Activo (\texttt{PROT}):} Reúne los nodos del transformador de potencia (\texttt{YPTR1}) para variables térmicas, la unidad de medida específica del trafo (\texttt{MMXU2}), el nodo de supervisión del aislamiento líquido y relé Buchholz (\texttt{SIML1}) y un nodo de entradas/salidas genéricas (\texttt{GGIO1}) encargado de absorber alarmas secundarias de la cuba(Figura \ref{fig:celda_trafo}).
 \end{enumerate}
+\begin{figure}[tb]
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/celda_linea.png}
+        \caption{SLD de la celda de línea.}
+        \label{fig:celda_linea}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Celda_Trafo.png}
+        \caption{SLD de la celda del transformador de potencia.}
+        \label{fig:celda_trafo}
+    \end{minipage}
+\end{figure}
+% === NIVEL 3 ===
+\FloatBarrier
+% === NIVEL 4 Y MAPEO ===
+\paragraph{Nivel 4: Objetos de Datos}
+\label{sec:sub_nivel4_mapeo}
 
-Esta arquitectura jerárquica de datos se consolida en el árbol de variables del proyecto a través de la concatenación sintáctica indexada por puntos, tal como se desglosa orientativamente en la Tabla \ref{tab:arbol_variables_subestacion}.
+Finalmente, el Nivel 4 identifica las señales específicas (Objetos de Datos) que pueblan cada Nodo Lógico (Anexo \ref{cap:Tablas_Variab}). Como se detalla en la Tabla \ref{tab:arbol_variables_subestacion_corregido}, esta arquitectura permite que cuando el sistema requiera supervisar el estado del interruptor de la celda de línea \texttt{Q01}, WinCC genere la variable \texttt{Q01.CTRL.XCBR1.Pos.stVal}, mientras que la temperatura del transformador \texttt{T01} se resuelve mediante la dirección \texttt{T01.PROT.YPTR1.Tmp.mag}.
+
+% === APARTADO DE LOS 6 NIVELES Y LAS 9 SUBESTACIONES ===
 \begin{table}[tb]
     \centering
     \caption{Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}
@@ -366,21 +429,91 @@ Esta arquitectura jerárquica de datos se consolida en el árbol de variables de
         \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{SIML1} & \texttt{GasAlm} & \texttt{stVal} (Byte) \\ \bottomrule
     \end{tabular}
 \end{table}
-\subsubsection{Mapeo de Variables y Mecánica de Instanciación en WinCC}
+\FloatBarrier
+\paragraph{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}
+\label{sec:sub_jerarquia_6niveles}
 
-La declaración de las variables en el \textit{Tag Management} se automatiza vinculando la ruta de la instancia física con su correspondiente tipo de estructura de datos. De este modo, la sintaxis final de los \textit{Tags} que se comunican a través del servidor OPC UA de \textit{KepServerEX} se resuelve bajo la siguiente ecuación de direccionamiento:
+Un análisis de la sintaxis final de los \textit{tags} creados en el SCADA revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
+
+Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de \textbf{9 subestaciones eléctricas} distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel normativo de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, al coexistir nueve celdas de línea homónimas.
+
+Por este motivo, se ha implementado un «Nivel 0» de subestación en adición a la norma. Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
 
 \begin{equation}
-\text{Prefijo de Celda (Instancia)} + \text{.} + \text{Miembro de Estructura} = \text{Tag Estructurado de WinCC}
+\underbrace{\text{SE\_xx}}_{\text{Prefijo SCADA (Planta)}} . \underbrace{\text{Q01}}_{\text{L1 (IED)}} . \underbrace{\text{CTRL}}_{\text{L2 (LD)}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (DO)}} . \underbrace{\text{stVal}}_{\text{L5 (DA)}}
 \end{equation}
 
-Bajo esta metodología, cuando el sistema requiere supervisar el estado mecánico del interruptor de la celda de línea \texttt{Q01}, WinCC genera automáticamente la variable interna \texttt{SE.Q01.CTRL.XCBR1.Pos.stVal}. Por su parte, la lectura de la temperatura del devanado del transformador se resuelve mediante la dirección \texttt{SE.T01.PROT.YPTR1.Tmp.mag}.
+Esta solución de ingeniería ofrece dos ventajas operativas fundamentales de cara a la explotación del parque:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Desacoplamiento semántico:} Se mantiene la pureza y el cumplimiento estricto de la norma IEC 61850 dentro de cada bloque funcional, permitiendo que un ingeniero de subestaciones identifique de forma nativa la ruta del dato normalizado a partir del segundo campo.
+    \item \textbf{Reutilización masiva de gráficos (\textit{Faceplates}):} En WinCC V8.1, las ventanas emergentes de control de celda se diseñan de forma genérica apuntando a variables relativas (p. ej., \texttt{.CTRL.XCBR1.Pos.stVal}). Al abrir el gráfico desde la pantalla de cualquiera de las 9 subestaciones, el sistema utiliza la propiedad dinámica de prefijo de variables (\textit{Tag Prefix}) concatenando de golpe la raíz \texttt{SE\_xx.Q01}, reduciendo drásticamente las horas de ingeniería de desarrollo, las líneas de script y la probabilidad de error en el direccionamiento de las pantallas.
+\end{enumerate}
 
-Este diseño modular y desacoplado garantiza dos ventajas críticas de ingeniería para el SCADA: en primer lugar, permite la reutilización de ventanas emergentes (\textit{Faceplates}) mediante el uso dinámico de prefijos de variables (\textit{Tag Prefix}) apuntando directamente a \texttt{CTRL.} o \texttt{PROT.}; en segundo lugar, confiere al sistema la flexibilidad necesaria para modificar, sustituir o ampliar los activos físicos de la subestación sin alterar la lógica de direccionamiento base ni la jerarquía del resto de posiciones operativas de la planta.
+\begin{table}[tb]
+    \centering
+    \caption{Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}
+    \label{tab:ejemplo_direccionamiento_subestacion}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{clll}
+            \toprule
+            \textbf{Nivel} & \textbf{Capa Semántica} & \textbf{Código} & \textbf{Significado en la Subestación} \\ \midrule
+            \textbf{Nivel 0}   & Prefijo de Planta (SCADA) & \texttt{IGLI} & Subestación IGL I \\
+            \textbf{Nivel 1}             & Dispositivo Físico (\textit{IED}) & \texttt{Q01} & Celda \\
+            \textbf{Nivel 2}             & Dispositivo Lógico (\textit{LD})  & \texttt{CTRL} & Contenedor de control o protección \\
+            \textbf{Nivel 3}             & Nodo Lógico (\textit{LN})        & \texttt{XCBR1} & Interruptor 1 \\
+            \textbf{Nivel 4}             & Objeto de Datos (\textit{DO})    & \texttt{Pos} & Variable de posición  \\
+            \textbf{Nivel 5}             & Atributo de Datos (\textit{DA})  & \texttt{stVal} & Valor discreto(\textit{DPS}) \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+\subsection{Variables externas}
+Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (OPC UA). 
+
+\subsubsection{OPC UA}
+OPC UA es una tecnología middleware orientada a servicios (SOA). Se divide en dos modelos: El modelo de información y el modelo de comunicación. El modelo de información define cómo se estructuran y organizan los datos dentro del sistema, mientras que el modelo de comunicación establece los protocolos y mecanismos para la transferencia de datos entre los diferentes componentes del sistema. OPC UA es un estándar abierto y multiplataforma que permite la interoperabilidad entre dispositivos y sistemas de diferentes fabricantes. OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos.\par
 
 
+El envio de mensajes OPC UA se realiza mediante un modelo de publicación-suscripción (pub/sub) donde los dispositivos publican datos en el espacio de direcciones especificando el nodo. En el contexto de la solución WinCC actua de cliente OPC UA, suscribiéndose a los nodos del servidor OPC UA para recibir actualizaciones en tiempo real de las variables del proceso.\par
 
+El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.\par
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=0.6]{figuras/OPCUA_metamodelo.png}
+    \caption{Metamodelo de comunicación OPC UA. Fuente: Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}
+    \label{fig:OPC_UA}
+\end{figure}
 \FloatBarrier
+\subsubsection{Integración de Variables Externas en el \textit{Tag Management} mediante Direccionamiento OPC UA}
+\label{sec:integracion_tag_management_opcua}
+Las conexiones de las variables de estructura con variables externas de OPC UA se ha realizado en el \textit{Tag Management}. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo  de las direcciones de red para cada variable externa.\par
+
+En primer lugar, el \textbf{Despliegue del Canal OPC UA} en la raíz del \textit{Tag Management} se ha realizado añadiendo el \textit{driver} de comunicaciones \texttt{OPC UA WinCC Channel}. En segundo lugar, la \textbf{Definición de la Conexión Lógica} se realiza bajo el canal recién creado mediante la conexión \texttt{OPC\_UA\_IGL\_I}, que apunta directamente al \textit{Endpoint URL} del servidor o \textit{gateway} de adquisición de la planta, típicamente en el formato \url{opc.tcp://<IP>:<Puerto>}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt}.\par
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=0.6]{figuras/Conexion_Opc.png}
+    \caption{Configuración de la conexión OPC UA en el entorno de desarrollo de SIMATIC WinCC V8.1.}
+    \label{fig:OPC_UA_WinCC}
+\end{figure}
+
+Por último, el Direccionamiento Espacial establece que, una vez creado el enlace seguro, cada variable externa en WinCC debe apuntar inequívocamente a un nodo de información dentro del espacio de direcciones expuesto por el servidor OPC UA. La sintaxis estandarizada de direccionamiento (\textit{Item Name}) se compone de dos elementos clave: el índice de espacio de nombres ( \texttt{ns}) y el identificador del nodo ( \texttt{s} para cadenas de texto alfanuméricas)(Tabla \ref{tab:direccionamiento_opcua_wtg1}).\par 
+
+\begin{table}[htbp]
+    \centering
+    \caption{Mapeo de variables externas en el \textit{Tag Management} vinculadas al servidor KepServerEX.}
+    \label{tab:mapeo_espacio_direcciones_kepserver}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lll}
+            \toprule
+            \textbf{Variable (Tag en WinCC)} & \textbf{Espacio de Direcciones} & \textbf{Dirección OPC UA Absoluta} \\ \midrule
+            \texttt{WTG1.WROT.RotSpd.mag} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGL1.WTG1.WROT.RotSpd} \\
+            \texttt{WTG1.WROT.RotAzi.mag} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGL1.WTG1.WROT.RotAzi} \\
+            \texttt{SS\_01.Q01.CTRL.XCBR1.Pos.stVal} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGLI.Q01.CTRL.XCBR1.Pos} \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+
+En esta cadena de conexión, el parámetro \texttt{ns=2} indica al cliente WinCC que debe buscar la variable en el segundo espacio de nombres del servidor. Por su parte, la cadena posterior a \texttt{s=} reproduce la ruta jerárquica exacta del nodo dentro del árbol lógico de la pasarela de adquisición.
+
 \section{Interfaz Gráfica}
 
 La interfaz gráfica constituye el punto de interacción principal entre el operador y el sistema SCADA, por lo que su diseño debe priorizar la claridad, la rapidez de interpretación y la operabilidad en tiempo real. En esta sección se describe la propuesta de visualización desarrollada en WinCC, explicando la organización general de la interfaz y los criterios utilizados para su construcción.\par
@@ -573,7 +706,6 @@ De manera análoga a las turbinas individuales, el parque puede subdividirse en 
     \caption{Filtrado Dinámico y Posicionamiento de Aerogeneradores en Cuadrícula}
     \label{alg:filtrado_dinamico}
 \end{algorithm}
-
 \section{Gestión de alarmas y eventos}
 \label{sec:alarmas}
 
@@ -904,7 +1036,6 @@ Finalmente, se accede a Grafana mediante la uri\hspace{0.5cm}\url{http://13.60.2
 \end{figure}
 \vspace{1cm}
 Una vez configurada la fuente de datos, se crean los dashboards personalizados para la monitorización del parque eólico, utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico.\\\par
-
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma \textbf{IEC 62443-4-2:2019} de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
 
