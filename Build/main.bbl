@@ -312,6 +312,34 @@
     \field{year}{2002}
   \endentry
 
+  \entry{iec62541_1}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{{IEC 62541-1:2020 OPC Unified Architecture - Part 1: Overview
+  and Concepts}}
+    \verb{url}
+    \verb https://webstore.iec.ch/publication/67035
+    \endverb
+    \list{location}{1}{%
+      {Geneva, Switzerland}%
+    }
+    \list{institution}{1}{%
+      {IEC}%
+    }
+    \field{type}{Standard}
+    \field{year}{2020}
+  \endentry
+
   \entry{iec62443-4-2}{report}{}{}
     \name{author}{1}{}{%
       {{hash=I}{%

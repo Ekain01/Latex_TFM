@@ -412,6 +412,7 @@ Finalmente, el Nivel 4 identifica las señales específicas (Objetos de Datos) q
     \centering
     \caption{Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}
     \label{tab:arbol_variables_subestacion_corregido}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}lllll@{}}
         \toprule
         \textbf{L1:(IED)} & \textbf{L2: (LD)} & \textbf{L3:(LN)} & \textbf{L4: (DO)} & \textbf{L5: (DA)} \\ \midrule
@@ -428,6 +429,7 @@ Finalmente, el Nivel 4 identifica las señales específicas (Objetos de Datos) q
         \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{GGIO1} & \texttt{Alm} & \texttt{stVal} (Byte) \\
         \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{SIML1} & \texttt{GasAlm} & \texttt{stVal} (Byte) \\ \bottomrule
     \end{tabular}
+    }
 \end{table}
 \FloatBarrier
 \paragraph{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}
@@ -435,19 +437,13 @@ Finalmente, el Nivel 4 identifica las señales específicas (Objetos de Datos) q
 
 Un análisis de la sintaxis final de los \textit{tags} creados en el SCADA revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
 
-Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de \textbf{9 subestaciones eléctricas} distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel normativo de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, al coexistir nueve celdas de línea homónimas.
+Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de \textbf{9 subestaciones eléctricas} distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección.\par
 
-Por este motivo, se ha implementado un «Nivel 0» de subestación en adición a la norma. Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
+Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la norma. Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
 
 \begin{equation}
-\underbrace{\text{SE\_xx}}_{\text{Prefijo SCADA (Planta)}} . \underbrace{\text{Q01}}_{\text{L1 (IED)}} . \underbrace{\text{CTRL}}_{\text{L2 (LD)}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (DO)}} . \underbrace{\text{stVal}}_{\text{L5 (DA)}}
-\end{equation}
-
-Esta solución de ingeniería ofrece dos ventajas operativas fundamentales de cara a la explotación del parque:
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Desacoplamiento semántico:} Se mantiene la pureza y el cumplimiento estricto de la norma IEC 61850 dentro de cada bloque funcional, permitiendo que un ingeniero de subestaciones identifique de forma nativa la ruta del dato normalizado a partir del segundo campo.
-    \item \textbf{Reutilización masiva de gráficos (\textit{Faceplates}):} En WinCC V8.1, las ventanas emergentes de control de celda se diseñan de forma genérica apuntando a variables relativas (p. ej., \texttt{.CTRL.XCBR1.Pos.stVal}). Al abrir el gráfico desde la pantalla de cualquiera de las 9 subestaciones, el sistema utiliza la propiedad dinámica de prefijo de variables (\textit{Tag Prefix}) concatenando de golpe la raíz \texttt{SE\_xx.Q01}, reduciendo drásticamente las horas de ingeniería de desarrollo, las líneas de script y la probabilidad de error en el direccionamiento de las pantallas.
-\end{enumerate}
+\underbrace{\text{SS\_xx}}_{\text{Prefijo SCADA (Planta)}} . \underbrace{\text{Q01}}_{\text{L1 (IED)}} . \underbrace{\text{CTRL}}_{\text{L2 (LD)}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (DO)}} . \underbrace{\text{stVal}}_{\text{L5 (DA)}}
+\end{equation}.
 
 \begin{table}[tb]
     \centering
@@ -470,24 +466,59 @@ Esta solución de ingeniería ofrece dos ventajas operativas fundamentales de ca
 Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (OPC UA). 
 
 \subsubsection{OPC UA}
-OPC UA es una tecnología middleware orientada a servicios (SOA). Se divide en dos modelos: El modelo de información y el modelo de comunicación. El modelo de información define cómo se estructuran y organizan los datos dentro del sistema, mientras que el modelo de comunicación establece los protocolos y mecanismos para la transferencia de datos entre los diferentes componentes del sistema. OPC UA es un estándar abierto y multiplataforma que permite la interoperabilidad entre dispositivos y sistemas de diferentes fabricantes. OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos.\par
+OPC UA es middleware de comunicación orientado a servicios (SOA) desarrollado por OPC Foundation y estandarizado por la norma \textbf{IEC 62541}\cite{iec62541_1}.\par
 
+OPC UA se basa en un modelo de información orientado a objetos, el cual define como se estructuran los datos dentro del sistema de comunicación industrial. Por otra parte, el modelo de comunicación de OPC UA define los mecanismos de transferencia de los datos entre los diferentes componentes del sistema. El modelo de información y el modelo de comunicación son los dos pilares fundamentales que sustentan la arquitectura de OPC UA.\par
 
-El envio de mensajes OPC UA se realiza mediante un modelo de publicación-suscripción (pub/sub) donde los dispositivos publican datos en el espacio de direcciones especificando el nodo. En el contexto de la solución WinCC actua de cliente OPC UA, suscribiéndose a los nodos del servidor OPC UA para recibir actualizaciones en tiempo real de las variables del proceso.\par
-
-El servidor OPC UA se desarrolla mediante la herramienta KEPServerEX, la cual permite configurar un servidor OPC UA. Al igual que en Modbus TCP, los valores del proceso se simulan mediante NodeRed. El cliente OPC UA NodeRed publica los datos en el servidor WinCC se suscribe a los nodos simulados por Node Red para recibir las actualizaciones de las variables del proceso en tiempo real.\par
+OPC UA se basa en un modelo Cliente-Servidor para establecer la conexion TCP entre el servidor OPC UA y el cliente SCADA. Sin embargo, una vez establecida la sesión, la transfrerencia se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión de datos en tiempo real(Figura \ref{fig:OPC_UA}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[scale=0.6]{figuras/OPCUA_metamodelo.png}
     \caption{Metamodelo de comunicación OPC UA. Fuente: Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}
     \label{fig:OPC_UA}
 \end{figure}
+
+OPC UA incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos, además de especial enfoque en la capacidad de tiempo real y la independencia de la plataforma.\par
+
+En el contexto del proyecto, KEPServerEX actúa como el servidor OPC UA que publica los datos del proceso simulador por NodeRed en los topicos, mientras que SIMATIC WinCC V8.1 se configura como cliente OPC UA quien consume la información a la que esta suscrita en tiempo real(Figura \ref{fig:OPC_UA_Kepserver}).\par
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=0.14]{figuras/NodeRed_KepServer.png}
+    \caption{Esquema de comunicación entre el simulador de planta en NodeRed, el servidor OPC UA KEPServerEX y el cliente SCADA SIMATIC WinCC V8.1.}
+    \label{fig:OPC_UA_Kepserver}
+\end{figure}
 \FloatBarrier
+\subsubsection{Habilitación y Securización del Servidor OPC UA en KepServerEX}
+\label{sec:configuracion_servidor_opcua}
+
+El primer paso para el despliegue de la arquitectura de comunicaciones consiste en la inicialización del servidor OPC UA integrado en \textit{KepServerEX}.Se ha definido el punto de acceso a la red  y establecido las políticas de ciberseguridad de interacción de los clientes.\par
+\begin{figure}[tb]
+    \centering
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.45]{figuras/Opc_endpoint.png}
+        \caption{Configuración del \textit{Endpoint} de red y políticas de seguridad en el servidor OPC UA de KepServerEX.}
+        \label{fig:OPC_UA_Endpoint}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.45]{figuras/certificados_opc.png}
+        \caption{Gestión de certificados y políticas de seguridad en el servidor OPC UA de KepServerEX.}
+        \label{fig:OPC_UA_Security}
+    \end{minipage}
+\end{figure}
+La configuración del servidor se ha realizado a través de la herramienta de administración de bajo nivel \textit{OPC UA Configuration Manager}. Para ello en la pestaña \textit{Server Endpoints}, se ha habilitado la interfaz de red del servidor vinculándola a la tarjeta de red correspondiente al banco de pruebas (ver Anexo \ref{cap:Pruebas}).Es decir, La propia maquina virtual contiene tanto el servidor como el cliente OPC UA, por lo que la uri de escucha se reserva solo para \texttt{opc.tcp://localhost:49320}(Figura \ref{fig:OPC_UA_Endpoint}).\par
+
+Por otro lado, se ha realizado la gestión de Certificados, utilizando las clave pública (PKI). Cuando un cliente (ej. WinCC) intenta establecer la primera sesión, KepServerEX bloquea la petición por defecto y aísla el certificado de instancia del cliente en la lista de certificados rechazados. Para habilitar el canal, se ha intervienido en el \textit{Configuration Manager} para trasladar manualmente dicho certificado a la lista de entidades de confianza  garantizando una validación mutua entre las aplicaciones (Figura \ref{fig:OPC_UA_Security}).\par
+
+Una vez que el \textit{Endpoint} se encuentra operativo y el intercambio de certificados con los clientes ha sido autorizado, el motor principal de KepServerEX queda habilitado para comenzar a modelar los canales, instanciar los dispositivos y exponer el espacio de direcciones que albergará las variables del parque eólico.
 \subsubsection{Integración de Variables Externas en el \textit{Tag Management} mediante Direccionamiento OPC UA}
 \label{sec:integracion_tag_management_opcua}
-Las conexiones de las variables de estructura con variables externas de OPC UA se ha realizado en el \textit{Tag Management}. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo  de las direcciones de red para cada variable externa.\par
+Las conexiones de las variables de estructura con variables externas de OPC UA se ha realizado en el servicio de administración de variables. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo  de las direcciones de red para cada variable externa.\par
 
-En primer lugar, el \textbf{Despliegue del Canal OPC UA} en la raíz del \textit{Tag Management} se ha realizado añadiendo el \textit{driver} de comunicaciones \texttt{OPC UA WinCC Channel}. En segundo lugar, la \textbf{Definición de la Conexión Lógica} se realiza bajo el canal recién creado mediante la conexión \texttt{OPC\_UA\_IGL\_I}, que apunta directamente al \textit{Endpoint URL} del servidor o \textit{gateway} de adquisición de la planta, típicamente en el formato \url{opc.tcp://<IP>:<Puerto>}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt}.\par
+En primer lugar, el Despliegue del Canal OPC UA en la raíz de la administración de variables se ha realizado añadiendo el driver de comunicaciones \textit{OPC UA WinCC Channel}. En segundo lugar, la Definición de la Conexión Lógica se realiza bajo el canal recién creado mediante la conexión \texttt{OPC\_UA\_IGL\_I}, que apunta directamente al \textit{Endpoint URL} del servidor de adquisición de la planta en el formato \url{opc.tcp://<IP>:<Puerto>}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[scale=0.6]{figuras/Conexion_Opc.png}
@@ -495,9 +526,9 @@ En primer lugar, el \textbf{Despliegue del Canal OPC UA} en la raíz del \textit
     \label{fig:OPC_UA_WinCC}
 \end{figure}
 
-Por último, el Direccionamiento Espacial establece que, una vez creado el enlace seguro, cada variable externa en WinCC debe apuntar inequívocamente a un nodo de información dentro del espacio de direcciones expuesto por el servidor OPC UA. La sintaxis estandarizada de direccionamiento (\textit{Item Name}) se compone de dos elementos clave: el índice de espacio de nombres ( \texttt{ns}) y el identificador del nodo ( \texttt{s} para cadenas de texto alfanuméricas)(Tabla \ref{tab:direccionamiento_opcua_wtg1}).\par 
+Por último, el Direccionamiento Espacial establece que, una vez creado el enlace seguro, cada variable externa en WinCC debe apuntar a un nodo de información dentro del espacio de direcciones del servidor OPC UA.El direccionamiento  se compone de dos elementos clave: el índice de espacio de nombres ( \texttt{ns}) y el identificador del nodo (\texttt{s})(Tabla \ref{tab:mapeo_espacio_direcciones_kepserver}).\par 
 
-\begin{table}[htbp]
+\begin{table}[tb]
     \centering
     \caption{Mapeo de variables externas en el \textit{Tag Management} vinculadas al servidor KepServerEX.}
     \label{tab:mapeo_espacio_direcciones_kepserver}
@@ -512,7 +543,7 @@ Por último, el Direccionamiento Espacial establece que, una vez creado el enlac
     }
 \end{table}
 
-En esta cadena de conexión, el parámetro \texttt{ns=2} indica al cliente WinCC que debe buscar la variable en el segundo espacio de nombres del servidor. Por su parte, la cadena posterior a \texttt{s=} reproduce la ruta jerárquica exacta del nodo dentro del árbol lógico de la pasarela de adquisición.
+En esta cadena de conexión, el parámetro \texttt{ns=2} indica al cliente WinCC que debe buscar la variable en el segundo espacio de nombres del servidor. Por su parte, la cadena posterior a \texttt{s} indica la ruta exacta del nodo dentro del arbol de variables.
 
 \section{Interfaz Gráfica}
 
@@ -662,13 +693,48 @@ De manera análoga a las turbinas individuales, el parque puede subdividirse en 
 
 
 \FloatBarrier
-\subsection{Scripts globales}
+\subsection{Implementación de \textit{Scripts} Globales para el Filtrado Paramétrico de Activos}
+\label{sec:scripts_globales_filtrado}
 
+Para facilitar la navegación del operador entre los distintos niveles de la planta, se ha desarrollado un sistema de filtrado paramétrico. Este sistema se ejecuta en la pantalla principal de monitorización \texttt{10\_WTG\_Overview} (Figura \ref{fig:10_wtg_overview}), permitiendo la segregación visual de los aerogeneradores en función del parque al que pertenecen o de su identificador de estado específico.\par
 
+La lógica de control que gobierna este comportamiento no se ha programado de forma local en los eventos individuales de cada objeto gráfico. En su lugar, se ha optado por utilizar \textit{scripts} globales en el editor de WinCC. Esta decisión posibilita la creación de acciones reutilizables, además de facilitar el mantenimiento.\par
 
+El flujo de información entre la capa gráfica y el algoritmo de filtrado se desarrolla a través de dos variables internas (\textit{Internal Tags}) las cuales han sido creadas en el \textit{Tag Management} de WinCC (Tabla \ref{tab:variables_internas_filtrado}).
 
+\begin{table}[tb]
+    \centering
+    \caption{Especificación técnica de las variables internas para el almacenamiento de filtros.}
+    \label{tab:variables_internas_filtrado}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Variable Interna (\textit{Tag})} & \textbf{Tipo de Dato} & \textbf{Criterio y Función Operativa} \\ \midrule
+        \texttt{HMI\_Filtro\_Parques} & Text tag (8-bit) & Almacena la subestación seleccionada (p. ej., \texttt{IGL I}). \\
+        \texttt{HMI\_Filtro\_Molinos} & Short Integer & Almacena el código del estado operativo objetivo (p. ej., parado). \\ \bottomrule
+    \end{tabular}
+    }
+    \vspace{1cm}
+\end{table}
+En segundo lugar, la evaluación de los criterios y la manipulación de la interfaz gráfica se realiza en dos funciones globales independientes. Estas funciones se invocan de forma orientada a eventos  (modificar los selectores de la pantalla) actuando según el modo operativo activo tal y como se describe en la Tabla \ref{tab:funciones_globales_filtrado}.\par
 
-\begin{algorithm}[t]
+\begin{table}[tb]
+    \centering
+    \caption{Lógica operativa de ejecución para las funciones globales de filtrado.}
+    \label{tab:funciones_globales_filtrado}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lll}
+            \toprule
+            \textbf{Función Global (\textit{Script})} & \textbf{Variables Evaluadas} & \textbf{Imagen en ventana} \\ \midrule
+            \texttt{AplicarFiltroPosicion()} & \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos} & 20\_WTG\_Turbine\_Overview \\
+            \texttt{AplicarFiltroParques()} & \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos} & 21\_WTG\_Park\_Overview \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+Cuando el operador interactúa con los selectores o menús desplegables integrados en la pantalla \texttt{10\_WTG\_Overview}, se dispara el evento de cambio de propiedad. Este evento invoca la ejecución de los \textit{scripts} globales, los cuales recogen la entrada del usuario, procesan el algoritmo de filtrado y muestran u ocultan los objetos gráficos correspondientes a cada aerogenerador en función de su parque de pertenencia o estado operativo como se describe en los algoritmos \ref{alg:filtrado_dinamico} y \ref{alg:filtrado_dinamico_parque}.
+
+\textit{Nota: El código se muestra en el anexo \ref{cap:anexo_codigo_solucion} en las funciones \texttt{AplicarFiltroPosicion()} y \texttt{AplicarFiltroParques()}.}
+\begin{algorithm}[tb]
     
     \DontPrintSemicolon
     \SetKwFunction{FRead}{LeerTag}
@@ -706,6 +772,45 @@ De manera análoga a las turbinas individuales, el parque puede subdividirse en 
     \caption{Filtrado Dinámico y Posicionamiento de Aerogeneradores en Cuadrícula}
     \label{alg:filtrado_dinamico}
 \end{algorithm}
+\begin{algorithm}[tb]
+    
+    \DontPrintSemicolon
+    \SetKwFunction{FRead}{LeerTag}
+    \SetKwFunction{FHide}{OcultarFaceplate}
+    \SetKwFunction{FShow}{MostrarFaceplate}
+    \SetKwFunction{FMove}{MoverFaceplate}
+    \SetKwFunction{FMap}{MapearEstadoHMI}
+    \vspace{1cm}
+    Establecer cuadriculas, numero de molinos, prefijos de variables, offsets y posiciones iniciales \par
+
+    Ocultar todos los faceplates de molinos como limpieza inicial \;
+
+    \For{(Numero de molinos Do)}
+    {
+        \FHide{$i$} \;
+    }
+    Bucle de filtrado y posicionamiento \;
+    \For{(Numero de molinos $i$ Do)}
+    {
+        $Estado \leftarrow \FRead{\text{Estado PLC Molino } i}$ \;
+        $Parque \leftarrow \FRead{\text{ID Parque Molino } i}$ \;
+        $Selector \leftarrow \FMap{Selector del HMI}$ \;
+
+        \If{(si el selector es igual al parque del molino $i$ o esta en modo "todos")}
+        {
+            \FShow{$i$} \;
+            \FMove{$i$} \;
+            Siguiente columna\;
+            \If{(superado el numero de columnas por fila)}
+            {
+                pasar a siguiente fila\;
+            }
+        }
+    }
+    \caption{Filtrado Dinámico y Posicionamiento de Aerogeneradores en Cuadrícula}
+    \label{alg:filtrado_dinamico_parque}
+\end{algorithm}
+\FloatBarrier
 \section{Gestión de alarmas y eventos}
 \label{sec:alarmas}
 
@@ -735,6 +840,7 @@ El objetivo de esta asignación es garantizar que el operador comprenda la situa
     \centering
     \caption{Asignación de colores y estados de la turbina (Adaptación IEC 60073 a la industria eólica).}
     \label{tab:colores_estados}
+     \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}p{2.5cm}p{6cm}p{6cm}@{}}
         \toprule
         \textbf{Estado} & \textbf{Significado Operativo} & \textbf{Color HMI (IEC 60073)} \\ \midrule
@@ -747,21 +853,71 @@ El objetivo de esta asignación es garantizar que el operador comprenda la situa
         \texttt{Pausa} & Standby por condiciones externas. & \textbf{Blanco} (Condición neutra) \\
         \texttt{Parado} & Estado neutro. & \textbf{Gris} (Inactivo) \\ \bottomrule
     \end{tabular}
+     }
 \end{table}
 
-\textbf{Uso del Naranja/Amarillo:} Se asigna al modo \textit{Mantenimiento} para advertir a los operadores del centro de control que existen técnicos físicos trabajando en la turbina, funcionando como una alerta visual.\par
+Uso del Naranja/Amarillo: Se asigna al modo \textit{Mantenimiento} para advertir a los operadores del centro de control que existen técnicos físicos trabajando en la turbina, funcionando como una alerta visual.\par
 
-\textbf{Uso del Blanco y Gris:} Siguiendo los principios de HMI de alto rendimiento (ISA-101), los estados de \textit{Pausa} y \textit{Parada} (que son condiciones seguras y estacionarias) se representan en escala de grises, con el fin de no saturar la vista del operador.\par
+Uso del Blanco y Gris: Siguiendo los principios de HMI de alto rendimiento (ISA-101), los estados de \textit{Pausa} y \textit{Parada} (que son condiciones seguras y estacionarias) se representan en escala de grises, con el fin de no saturar la vista del operador.\par
 
-\textbf{Uso del Azul:} Según la IEC 60073, el azul se emplea para estados que requieren de intervención obligatoria. Sin embargo, dado que en el contexto eólico los estados de transición como \textit{Arrancando} y \textit{Apagando} no implican una anomalía y estan totalmente automatizadas, se emplea el color azul para indicar estos estados específicos que no estan descritos por otros colores en la norma.\par
+Uso del Azul: Según la IEC 60073, el azul se emplea para estados que requieren de intervención obligatoria. Sin embargo, dado que en el contexto eólico los estados de transición como \textit{Arrancando} y \textit{Apagando} no implican una anomalía y estan totalmente automatizadas, se emplea el color azul para indicar estos estados específicos que no estan descritos por otros colores en la norma.\par
+\FloatBarrier
+\subsection{Codificación Cromática y Representación de Estados en Celdas de Línea}
+\label{sec:codificacion_cromatica_celdas}
+
+Para la representación gráfica de los equipos de maniobra en las pantallas de las subestaciones, la interfaz HMI de WinCC V8.1 diseñada rechaza el uso de paletas de colores arbitrarias y se mantiene el enfoque en la normativa de seguridad visual.\par
+
+En el entorno eléctrico de alta y media tensión, la presencia de energía implica un riesgo importante para el personal de planta. Por este motivo, la visualización de los símbolos que representan los interruptores automáticos (\texttt{XCBR}) y los seccionadores (\texttt{XSWI}) dentro de las plantillas gráficas (\textit{Faceplates}) obedece a la siguiente convención de seguridad detallada en la tabla \ref{tab:colores_estados_celdas}.
+
+\begin{table}[tb]
+    \centering
+    \caption{Codificación cromática de estados para equipos de maniobra en el SCADA.}
+    \label{tab:colores_estados_celdas}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{llll}
+            \toprule
+            \textbf{Estado} & \textbf{Color HMI} & \textbf{Valor} & \textbf{Significado Técnico y Operativo} \\ \midrule
+            Cerrado  & Rojo & 1 & Contactos cerrados con riesgo eléctrico. \\
+            Abierto  & Verde & 0 & Circuito interrumpido. Condición segura. \\
+            Tránsito /Fallo & Amarillo & 3-8 & Maniobra en curso o fallo. \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+
+\begin{figure}[tb]
+    \centering
+    \begin{minipage}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/celda_linea.png}
+        \caption{Interruptor abierto.}
+        \label{fig:celda_linea_1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/celda_linea_2.png}
+        \caption{Interruptor cerrado.}
+        \label{fig:celda_linea_2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/celda_linea_3.png}
+        \caption{Interruptor en tránsito o con discrepancia.}
+        \label{fig:celda_linea_3}
+    \end{minipage}
+\end{figure}
+
+La propiedad de color de fondo del polígono o símbolo SVG se vincula directamente al atributo de valor (\texttt{stVal}) de la variable externa. De este modo, la interfaz gráfica cambia en tiempo real dependiendo de si el \textit{Tag} devuelve un valor entero \texttt{1} (Cerrado/Rojo),\texttt{0} (Abierto/Verde) o un valor entre 3 y 8 (Tránsito/Fallo) sin necesidad de ejecutar \textit{scripts} cíclicos en segundo plano.
+\FloatBarrier
 \subsection{Configuración e implementación del sistema de avisos en SIMATIC WinCC}
 \label{sec:configuracion_alarmas_wincc}
 
-La materialización de la gestión de alarmas en el entorno \textit{Runtime} se estructura mediante el subsistema \textit{WinCC Alarm Logging}. Para mantener la coherencia con el modelo de información estandarizado (Capitulo \ref{cap:modelo_informacion}), todos los eventos discretos del aerogenerador se han concentrado en el Nodo Lógico de alarmas, denominado \textbf{\texttt{WALM}} (ver Anexo \ref{cap:Tablas_Variab}).
+La materialización de la gestión de alarmas en el entorno \textit{Runtime} se estructura mediante el subsistema \textit{WinCC Alarm Logging}. Para mantener la coherencia con el modelo de información estandarizado (Capitulo \ref{cap:modelo_informacion}), todos los eventos discretos del aerogenerador se han concentrado en el Nodo Lógico de alarmas, denominado \texttt{WALM} (ver Anexo \ref{cap:Tablas_Variab}).
 
 La categorización de estos eventos determina su gravedad y a consecuencia su color en la interfaz gráfica, regulando la interacción mediante el bloqueo, acuse y reconocimiento.
 
-\subsubsection{Categorización funcional y variables \texttt{WALM}}
+\subsubsection{Categorización funcional}
 
 Las señales de error, configuradas en WinCC como variables de tipo \textit{Single Point Status (SPS)}, se clasifican en tres clases fundamentales de avisos:
 
@@ -773,16 +929,16 @@ Las señales de error, configuradas en WinCC como variables de tipo \textit{Sing
 
 \subsubsection{Matriz de estados visuales y filosofía de acuse}
 
-El comportamiento cromático en el objeto \textit{WinCC Alarm Control} obedece a una lógica secuencial que refleja de forma precisa si un evento ha sido reconocido por el operador del centro de control, manteniendo la coherencia con los principios de señalización de la norma IEC 60073. 
+El comportamiento cromático en el objeto \textit{WinCC Alarm Control} sigue una lógica secuencial que muestra si un evento ha sido reconocido por el operador del centro de control, manteniendo la coherencia con los principios de señalización de la norma IEC 60073. 
+\par
+Cuando una alarma entra en el sistema (estado activo sin acusar), la interfaz prioriza la captura de la atención del usuario: el texto se presenta en color blanco sobre un fondo cromático saturado representativo de su gravedad (rojo para emergencias y fallos, o amarillo/ámbar para advertencias).\par
 
-Cuando una alarma de la estructura \texttt{WALM} entra en el sistema (estado activo sin acusar), la interfaz prioriza la captura de la atención del usuario: el texto se presenta en color blanco sobre un fondo cromático saturado representativo de su gravedad (rojo para emergencias y fallos, o amarillo/ámbar para advertencias) acompañado de un parpadeo dinámico cuya frecuencia varía según el tipo de aviso.
-
-En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgment}), si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte su polaridad para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica exacta de esta implementación en el \textit{Runtime}.
-
+En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgment}), si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte los colores para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica exacta de esta implementación en el \textit{Runtime}.
 \begin{table}[tb]
     \centering
     \caption{Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}
     \label{tab:matriz_alarmas_wincc}
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{@{}lllll@{}}
         \toprule
         \textbf{Clase de Aviso} & \textbf{Estado del Evento} & \textbf{Color Texto} & \textbf{Color Fondo} & \textbf{Parpadeo} \\ \midrule
@@ -793,9 +949,8 @@ En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgm
         \multirow{2}{*}{Advertencia} & Activa sin acusar & Blanco & Amarillo / Ámbar & Sí \\
                                     & Activa acusada    & Amarillo / Ámbar & Blanco & No \\ \bottomrule
     \end{tabular}
+    }
 \end{table}
-
-\textit{Nota: Una vez que la variable física se normaliza (salida del evento), la línea se elimina automáticamente de la lista de alarmas activas, actualizando los contadores lógicos del sistema como el número total de alarmas acumuladas (\texttt{WALM.AlmCnt}) o advertencias (\texttt{WALM.WrnCnt}) e indexando de forma definitiva el registro histórico en la base de datos SQL del SCADA.}
 \section{Integración de IIoT en la solución}
 
 En el contexto actual de la Industria 4.0, la monitorización y supervisión de infraestructuras energéticas distribuidas, como es el caso de un parque eólico, se demandan soluciones que vayan más allá de los sistemas SCADA tradicionales aislados en planta. La convergencia entre las Tecnologías de la Operación (OT) y las Tecnologías de la Información (IT) permite habilitar el ecosistema del Internet Industrial de las Cosas (IIoT), facilitando el análisis de datos a gran escala, la accesibilidad remota y la escalabilidad del sistema.\par
@@ -814,195 +969,54 @@ Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquit
 
 \begin{figure}[t]
     \centering
-    \includegraphics[scale=0.16]{figuras/DiagramaCloud.png}
+    \includegraphics[scale=0.14]{figuras/DiagramaCloud.png}
     \caption{Arquitectura de integración de IIoT para la monitorización de un parque eólico.}
     \label{fig:IIoT}
 \end{figure}   
-
+\FloatBarrier
 \subsection{Despliegue de la infraestructura en Amazon Web Services (AWS)}
 
 Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema IIoT. Para ello, se ha optado por un modelo de Infraestructura como Servicio (IaaS) mediante Amazon Web Services (AWS) ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
 \subsubsection{Instancia EC2}
 El núcleo computacional del sistema reside en una instancia de Amazon Elastic Compute Cloud (EC2). Se ha seleccionado una instancia de la familia de microprocesadores t3.medium con un procesador con sistema operativo Ubuntu Server 22.04 LTS, 
-
 \subsubsection{Reglas de entrada del Security Group EC2}
 Las reglas de entrada del grupo de seguridad (Security Group) de la instancia EC2 en AWS definen qué tráfico de red está permitido acceder a la instancia. Estas reglas especifican los puertos, protocolos y orígenes que pueden comunicarse con el servidor (tabla \ref{tab:ec2_security_group}).\par
-\begin{longtable}[t]{p{2.3cm} p{1cm} p{1.8cm} p{1.2cm} p{1.5cm} p{1.5cm}}
-    \caption{Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}\\
-    \toprule
-    \multicolumn{6}{c}{\textbf{Reglas de entrada del Security Group EC2}} \\
-    \midrule
-    \textbf{ID de regla} & \textbf{IP} & \textbf{Tipo} & \textbf{Proto.} & \textbf{Puertos} & \textbf{Origen}\\
-    \midrule
-    \endfirsthead
-
-    \toprule
-    \multicolumn{6}{c}{\textbf{Reglas de entrada del Security Group EC2 (continuación)}} \\
-    \midrule
-    \textbf{ID de regla} & \textbf{IP} & \textbf{Tipo} & \textbf{Proto.} & \textbf{Puertos} & \textbf{Origen}\\
-    \midrule
-    \endhead
-
-    \midrule
-    \multicolumn{6}{r}{Continúa en la siguiente página}\\
-    \endfoot
-
-    \bottomrule
-    
-    \label{tab:ec2_security_group}\\
-    \endlastfoot
-
-    sgr-014a824e & IPv4 & SSH & TCP & 22 & 0.0.0.0/0\\
-    sgr-0b782729 & IPv4 & HTTP & TCP & 80 & 0.0.0.0/0\\
-    sgr-0a9de042 & IPv4 & HTTPS & TCP & 443 & 0.0.0.0/0\\
-    sgr-0e38166d & IPv4 & TCP Personalizado & TCP & 1880 & 0.0.0.0/0\\
-    sgr-0d805336 & IPv4 & TCP Personalizado & TCP & 1883 & 0.0.0.0/0\\
-    sgr-09d85840 & IPv4 & TCP Personalizado & TCP & 3000 & 0.0.0.0/0\\
-    sgr-03c60e5a & IPv4 & TCP Personalizado & TCP & 8086 & 0.0.0.0/0\\
-    sgr-0c3cf32e & IPv4 & TCP Personalizado & TCP & 8883 & 0.0.0.0/0\\
-\end{longtable}
-
+\begin{table}[tb]
+    \centering
+    \caption{Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}
+    \label{tab:ec2_security_group}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lllccl}
+            \toprule
+            \multicolumn{6}{c}{\textbf{Reglas de entrada del Security Group EC2}} \\
+            \midrule
+            \textbf{ID de regla} & \textbf{IP} & \textbf{Tipo} & \textbf{Proto.} & \textbf{Puertos} & \textbf{Origen} \\
+            \midrule
+            sgr-014a824e & IPv4 & SSH & TCP & 22 & 0.0.0.0/0 \\
+            sgr-0b782729 & IPv4 & HTTP & TCP & 80 & 0.0.0.0/0 \\
+            sgr-0a9de042 & IPv4 & HTTPS & TCP & 443 & 0.0.0.0/0 \\
+            sgr-0e38166d & IPv4 & TCP Personalizado & TCP & 1880 & 0.0.0.0/0 \\
+            sgr-0d805336 & IPv4 & TCP Personalizado & TCP & 1883 & 0.0.0.0/0 \\
+            sgr-09d85840 & IPv4 & TCP Personalizado & TCP & 3000 & 0.0.0.0/0 \\
+            sgr-03c60e5a & IPv4 & TCP Personalizado & TCP & 8086 & 0.0.0.0/0 \\
+            sgr-0c3cf32e & IPv4 & TCP Personalizado & TCP & 8883 & 0.0.0.0/0 \\
+            \bottomrule
+        \end{tabular}%
+    }
+\end{table}
 \subsubsection{Orquestación de microservicios mediante Docker}
-\definecolor{codegreen}{rgb}{0,0.8,0.4}
-\definecolor{codegray}{rgb}{0.75,0.75,0.75}
-\definecolor{codegold}{rgb}{0.9,0.7,0.15}
-\definecolor{codepurple}{rgb}{0.9,0.6,1.0}
-\definecolor{backcolour}{rgb}{0.12,0.13,0.20}
-\definecolor{textcolor}{rgb}{0.95,0.95,0.95}
-\definecolor{codeblue}{rgb}{0,0.4,0.8}
-\lstset{
-  language=bash,
-  rulecolor=\color{backcolour},
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{codepurple},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codegold},
-    basicstyle=\ttfamily\footnotesize\color{textcolor},
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=false,                
-    numbers=left,                    
-    numbersep=10pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2,
-    frame=none,
-    framexleftmargin=0pt,
-    framexrightmargin=0pt,
-    linewidth=\linewidth,
-    columns=fullflexible,
-    xleftmargin=0pt,
-    lineskip=0pt,
-    aboveskip=0.75\baselineskip,
-    belowskip=0.75\baselineskip
-}
-\newenvironment{codeframe}{%
-\begin{mdframed}[
-    backgroundcolor=backcolour,
-    linecolor=backcolour,
-    hidealllines=true,
-    roundcorner=0pt,
-    innerleftmargin=8pt,
-    innerrightmargin=8pt,
-    innertopmargin=3pt,
-    innerbottommargin=0pt,
-    skipabove=4pt,
-    skipbelow=4pt
-]
-}{%
-\end{mdframed}
-}
-Para garantizar la portabilidad y escalabilidad de la solución, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, InfluxDB y Grafana) utilizando Docker, el cual permite empaquetar las aplicaciones junto con sus dependencias en contenedores ligeros que abstraen el sistema operativo sobre el que se ejecutan. De esta forma, las configuraciones especificas de diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas, producción) se gestionan de forma consistente y replicable. A continuación se describen los pasos que se han realizado para el despliegue de cada servicio:\par
 
-primero se ha realizado la conexión mediante SSH a la instancia EC2 utilizando un cliente como la terminal de comandos, autenticándose con la clave privada asociada a la instancia. Una vez dentro del entorno de la instancia, se procede a instalar Docker mediante el terminal (listado \ref{cod:instalar_docker})\par\vspace{1cm}
-\begin{codeframe}
-\begin{lstlisting}[language=bash]
-    sudo apt update
-    sudo apt install docker.io docker-compose -y
-    sudo systemctl start docker
-    sudo systemctl enable docker
+Para garantizar la portabilidad y escalabilidad de la solución, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, InfluxDB y Grafana) utilizando Docker, el cual permite empaquetar las aplicaciones junto con sus dependencias en contenedores ligeros que abstraen el sistema operativo sobre el que se ejecutan. De esta forma, las configuraciones especificas de diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas, producción) se gestionan de forma consistente y replicable.\par
 
-\end{lstlisting}
-\end{codeframe}
-\captionof{lstlisting}{Comandos para la instalación de Docker en la instancia EC2.}
-\label{cod:instalar_docker}
-\vspace{1cm}
-El despliegue se ha automatizado mediante un archivo de configuración Docker-compose.yml, que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la integridad industrial(listado \ref{cod:docker-compose}):
+Lo primero ha sido realizar la conexión mediante SSH a la instancia EC2 utilizando un cliente como la terminal de comandos, autenticándose con la clave privada asociada a la instancia. Una vez dentro del entorno de la instancia, se procede ha instalado Docker mediante el terminal.\par
+
+El despliegue se ha automatizado mediante un archivo de configuración Docker-compose.yml mostrado en el anexo \ref{cap:anexo_codigo_solucion}, que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la solución:
 \begin{itemize}
     \item Red Interna Virtual (Docker Network): Se ha creado una red privada aislada (scada\_net) para que los contenedores se comuniquen entre sí (por ejemplo, Node-RED enviando datos a InfluxDB) sin exponer dichos puertos al internet público, reduciendo significativamente la superficie de ataque.
     \item Persistencia de Datos (Docker Volumes): Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia EC2. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.
 \end{itemize}
 
-\begin{codeframe}
-\begin{lstlisting}[language=bash]
-    version: '3.8'
-
-services:
-    # Base de Datos de Series Temporales
-  influxdb:
-    image: influxdb:2.7
-    container_name: influxdb_scada
-    restart: always
-    ports:
-      - "8086:8086"
-    volumes:
-      - influxdb_data:/var/lib/influxdb2
-    networks:
-      - scada_net
-
-    # Motor de flujos y procesamiento de datos
-  nodered:
-    image: nodered/node-red:latest
-    container_name: nodered_scada
-    restart: always
-    ports:
-      - "1880:1880"
-    volumes:
-      - nodered_data:/data
-    depends_on:
-      - influxdb
-    networks:
-      - scada_net
-
-    # Visualizacion de datos
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana_scada
-    restart: always
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana_data:/var/lib/grafana
-    depends_on:
-      - influxdb
-    networks:
-      - scada_net
-
-networks:
-  scada_net:
-    driver: bridge
-
-volumes:
-  influxdb_data:
-  nodered_data:
-  grafana_data:
-\end{lstlisting}
-\end{codeframe}
-\captionof{lstlisting}{Archivo Docker Compose para el despliegue de la arquitectura IIoT en AWS.}
-\label{cod:docker-compose}
-\vspace{1cm}
-Se ha levantado el entorno de contenedores mediante la terminal (listado \ref{cod:levantar_contenedores}):\vspace{1cm}\par
-\begin{codeframe}
-\begin{lstlisting}[language=bash]
-    sudo docker-compose up -d
-\end{lstlisting}
-\end{codeframe}
-\captionof{lstlisting}{Comando para iniciar los servicios definidos en el archivo Docker Compose.}
-\label{cod:levantar_contenedores}
-\vspace{1cm}
-Una vez se han levantado los contenedores, se ha configurado el acceso del servicio Cloud Connect de WinCC (figura \ref{fig:cloud_connect}) para publicar los datos en el broker MQTT (puerto 1883) de la instancia EC2 utilizando la direccion IP publica de la instancia EC2 (\texttt{13.60.146.240}) (figura \ref{fig:aws}).\\ \par
+Una vez se han levantado los contenedores, se ha configurado el acceso del servicio Cloud Connect de WinCC (figura \ref{fig:cloud_connect}) para publicar los datos en el broker MQTT (puerto 1883) de la instancia EC2 utilizando la direccion IP publica de esta (\texttt{13.60.146.240}) (figura \ref{fig:aws}).\\ \par
 \begin{figure}[t]
     \centering
     \includegraphics[scale=0.4]{figuras/aws.png}
@@ -1025,17 +1039,11 @@ Ahora en cualquier navegador web se puede acceder al servicio de Node-RED utiliz
     \label{fig:nodered}
 \end{figure}
 
-Se puede acceder al servicio de InfluxDB a través del uri\hspace{0.5cm} \url{http://13.60.240.146:8086}. para configurar la base de datos y los buckets necesarios para almacenar los datos del parque eólico.\\\par 
+Se puede acceder al servicio de InfluxDB a través del uri\hspace{0.5cm} \url{http://13.60.240.146:8086}. para configurar la base de datos y los buckets necesarios para almacenar los datos del parque eólico.\par 
 
-Finalmente, se accede a Grafana mediante la uri\hspace{0.5cm}\url{http://13.60.240.146:3000} para configurar el panel de visualización de los datos almacenados en InfluxDB. Para ello, se selecciona la fuente de datos InfluxDB utilizando la dirección \url{http://13.60.240.146:8086}.y el token de autenticación.(ver figura \ref{fig:grafana_config})\\\par
-\begin{figure}[t]
-    \centering
-    \includegraphics[scale=1]{figuras/grafana_config.png}
-    \caption{Configuración de Grafana para la conexión a InfluxDB como fuente de datos.}
-    \label{fig:grafana_config}
-\end{figure}
-\vspace{1cm}
-Una vez configurada la fuente de datos, se crean los dashboards personalizados para la monitorización del parque eólico, utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico.\\\par
+Finalmente, se accede a Grafana mediante la uri\hspace{0.5cm}\url{http://13.60.240.146:3000} para configurar el panel de visualización de los datos almacenados en InfluxDB. Para ello, se selecciona la fuente de datos InfluxDB utilizando la dirección \url{http://13.60.240.146:8086}.y el token de autenticación.\par
+
+Una vez configurada la fuente de datos, se crean los dashboards personalizados para la monitorización del parque eólico, utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico.\par
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma \textbf{IEC 62443-4-2:2019} de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
 

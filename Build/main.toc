@@ -39,64 +39,67 @@
 \contentsline {paragraph}{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}{29}{table.caption.49}%
 \contentsline {subsection}{\numberline {7.4.3}Variables externas}{30}{section*.51}%
 \contentsline {subsubsection}{\numberline {7.4.3.1}OPC UA}{30}{section*.52}%
-\contentsline {subsubsection}{\numberline {7.4.3.2}Integración de Variables Externas en el \textit {Tag Management} mediante Direccionamiento OPC UA}{31}{section*.54}%
-\contentsline {section}{\numberline {7.5}Interfaz Gráfica}{32}{section*.57}%
-\contentsline {subsection}{\numberline {7.5.1}Jerarquía de pantallas}{33}{section*.58}%
-\contentsline {subsubsection}{\numberline {7.5.1.1}Prefijo Numérico (Jerarquía y Orden de Navegación)}{33}{section*.60}%
-\contentsline {subsubsection}{\numberline {7.5.1.2}Identificador de Categoría (Clasificación de Activos)}{34}{section*.61}%
-\contentsline {subsubsection}{\numberline {7.5.1.3}Descripción Funcional}{35}{section*.62}%
-\contentsline {subsection}{\numberline {7.5.2}Nivel 0: Marco Base (\texttt {00\_Main\_Interface})}{36}{section*.63}%
-\contentsline {subsection}{\numberline {7.5.3}Nivel 1: Supervisión Global}{36}{section*.65}%
-\contentsline {subsubsection}{\numberline {7.5.3.1}Vista General de aerogeneradores (\texttt {10\_WTG\_Overview})}{36}{section*.66}%
-\contentsline {subsubsection}{\numberline {7.5.3.2}Intefaz de diagrama electrico (\texttt {11\_SUB\_Interface})}{37}{section*.68}%
-\contentsline {subsection}{\numberline {7.5.4}Nivel 9: Plantillas dinámicas y reutilización gráfica (\textit {Tag Prefix})}{38}{section*.70}%
-\contentsline {paragraph}{Vistas de detalle de Turbina (\textit {Turbine Overview})}{39}{Item.6}%
-\contentsline {paragraph}{Vistas de agrupación o clústeres (\textit {Park Overview})}{39}{figure.caption.71}%
-\contentsline {subsection}{\numberline {7.5.5}Scripts globales}{39}{section*.72}%
-\contentsline {section}{\numberline {7.6}Gestión de alarmas y eventos}{40}{section*.74}%
-\contentsline {subsection}{\numberline {7.6.1}Criterios de señalización: Norma IEC 60073}{40}{section*.75}%
-\contentsline {subsection}{\numberline {7.6.2}Codificación de estados de la turbina}{41}{section*.76}%
-\contentsline {subsection}{\numberline {7.6.3}Configuración e implementación del sistema de avisos en SIMATIC WinCC}{42}{section*.78}%
-\contentsline {subsubsection}{\numberline {7.6.3.1}Categorización funcional y variables \texttt {WALM}}{42}{section*.79}%
-\contentsline {subsubsection}{\numberline {7.6.3.2}Matriz de estados visuales y filosofía de acuse}{42}{section*.80}%
-\contentsline {section}{\numberline {7.7}Integración de IIoT en la solución}{43}{section*.82}%
-\contentsline {subsection}{\numberline {7.7.1}Despliegue de la infraestructura en Amazon Web Services (AWS)}{44}{section*.84}%
-\contentsline {subsubsection}{\numberline {7.7.1.1}Instancia EC2}{45}{section*.85}%
-\contentsline {subsubsection}{\numberline {7.7.1.2}Reglas de entrada del Security Group EC2}{45}{section*.86}%
-\contentsline {subsubsection}{\numberline {7.7.1.3}Orquestación de microservicios mediante Docker}{46}{section*.87}%
-\contentsline {section}{\numberline {7.8}Ciberseguridad IEC 62443-4-2:2019}{52}{section*.95}%
-\contentsline {subsection}{\numberline {7.8.1}FR1: Identificación y autenticación de usuarios (IAC)}{52}{section*.96}%
-\contentsline {subsection}{\numberline {7.8.2}FR 2: Control de uso}{54}{section*.97}%
-\contentsline {subsection}{\numberline {7.8.3}Matriz de implementación de requisitos y niveles de seguridad}{55}{section*.98}%
-\contentsline {chapter}{\numberline {8}Análisis de resultados (si procede)}{59}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Metodología}{61}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Descripción de tareas}{61}{section*.101}%
-\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{61}{section*.102}%
-\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{61}{section*.103}%
-\contentsline {chapter}{\numberline {10}Aspectos económicos}{63}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Descripción del presupuesto y/o del presupuesto ejecutado}{63}{section*.105}%
-\contentsline {section}{\numberline {10.2}Análisis de rentabilidad (si procede)}{63}{section*.106}%
-\contentsline {chapter}{\numberline {11}Conclusiones}{65}{chapter.11}%
-\contentsline {chapter}{\nonumberline Bibliografía}{67}{chapter*.108}%
+\contentsline {subsubsection}{\numberline {7.4.3.2}Habilitación y Securización del Servidor OPC UA en KepServerEX}{31}{section*.55}%
+\contentsline {subsubsection}{\numberline {7.4.3.3}Integración de Variables Externas en el \textit {Tag Management} mediante Direccionamiento OPC UA}{32}{section*.57}%
+\contentsline {section}{\numberline {7.5}Interfaz Gráfica}{33}{section*.60}%
+\contentsline {subsection}{\numberline {7.5.1}Jerarquía de pantallas}{34}{section*.61}%
+\contentsline {subsubsection}{\numberline {7.5.1.1}Prefijo Numérico (Jerarquía y Orden de Navegación)}{34}{section*.63}%
+\contentsline {subsubsection}{\numberline {7.5.1.2}Identificador de Categoría (Clasificación de Activos)}{35}{section*.64}%
+\contentsline {subsubsection}{\numberline {7.5.1.3}Descripción Funcional}{36}{section*.65}%
+\contentsline {subsection}{\numberline {7.5.2}Nivel 0: Marco Base (\texttt {00\_Main\_Interface})}{36}{section*.66}%
+\contentsline {subsection}{\numberline {7.5.3}Nivel 1: Supervisión Global}{37}{section*.68}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}Vista General de aerogeneradores (\texttt {10\_WTG\_Overview})}{37}{section*.69}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}Intefaz de diagrama electrico (\texttt {11\_SUB\_Interface})}{38}{section*.71}%
+\contentsline {subsection}{\numberline {7.5.4}Nivel 9: Plantillas dinámicas y reutilización gráfica (\textit {Tag Prefix})}{39}{section*.73}%
+\contentsline {paragraph}{Vistas de detalle de Turbina (\textit {Turbine Overview})}{40}{Item.4}%
+\contentsline {paragraph}{Vistas de agrupación o clústeres (\textit {Park Overview})}{40}{figure.caption.74}%
+\contentsline {subsection}{\numberline {7.5.5}Implementación de \textit {Scripts} Globales para el Filtrado Paramétrico de Activos}{40}{section*.75}%
+\contentsline {section}{\numberline {7.6}Gestión de alarmas y eventos}{44}{section*.80}%
+\contentsline {subsection}{\numberline {7.6.1}Criterios de señalización: Norma IEC 60073}{44}{section*.81}%
+\contentsline {subsection}{\numberline {7.6.2}Codificación de estados de la turbina}{44}{section*.82}%
+\contentsline {subsection}{\numberline {7.6.3}Codificación Cromática y Representación de Estados en Celdas de Línea}{45}{section*.84}%
+\contentsline {subsection}{\numberline {7.6.4}Configuración e implementación del sistema de avisos en SIMATIC WinCC}{46}{section*.87}%
+\contentsline {subsubsection}{\numberline {7.6.4.1}Categorización funcional}{46}{section*.88}%
+\contentsline {subsubsection}{\numberline {7.6.4.2}Matriz de estados visuales y filosofía de acuse}{47}{section*.89}%
+\contentsline {section}{\numberline {7.7}Integración de IIoT en la solución}{47}{section*.91}%
+\contentsline {subsection}{\numberline {7.7.1}Despliegue de la infraestructura en Amazon Web Services (AWS)}{49}{section*.93}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}Instancia EC2}{49}{section*.94}%
+\contentsline {subsubsection}{\numberline {7.7.1.2}Reglas de entrada del Security Group EC2}{49}{section*.95}%
+\contentsline {subsubsection}{\numberline {7.7.1.3}Orquestación de microservicios mediante Docker}{49}{section*.97}%
+\contentsline {section}{\numberline {7.8}Ciberseguridad IEC 62443-4-2:2019}{53}{section*.101}%
+\contentsline {subsection}{\numberline {7.8.1}FR1: Identificación y autenticación de usuarios (IAC)}{54}{section*.102}%
+\contentsline {subsection}{\numberline {7.8.2}FR 2: Control de uso}{56}{section*.103}%
+\contentsline {subsection}{\numberline {7.8.3}Matriz de implementación de requisitos y niveles de seguridad}{57}{section*.104}%
+\contentsline {chapter}{\numberline {8}Análisis de resultados (si procede)}{61}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Metodología}{63}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Descripción de tareas}{63}{section*.107}%
+\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{63}{section*.108}%
+\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{63}{section*.109}%
+\contentsline {chapter}{\numberline {10}Aspectos económicos}{65}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Descripción del presupuesto y/o del presupuesto ejecutado}{65}{section*.111}%
+\contentsline {section}{\numberline {10.2}Análisis de rentabilidad (si procede)}{65}{section*.112}%
+\contentsline {chapter}{\numberline {11}Conclusiones}{67}{chapter.11}%
+\contentsline {chapter}{\nonumberline Bibliografía}{69}{chapter*.114}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{69}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Función de filtrado dinámico de molinos}{69}{section*.111}%
-\contentsline {subsection}{\numberline {A.1.1}Código fuente}{69}{section*.112}%
-\contentsline {chapter}{\numberline {B}Anexo II: Planos}{73}{appendix.B}%
-\contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{74}{figure.B.1}%
-\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas y Validación del Sistema (FAT)}{75}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Fase I : Pruebas de integración y validación en Node-Red}{75}{section*.115}%
-\contentsline {section}{\numberline {C.2}Fase II : Pruebas de integración y validación en servidor SIVaaS}{75}{section*.116}%
-\contentsline {section}{\numberline {C.3}Introducción y objetivos}{75}{section*.117}%
-\contentsline {section}{\numberline {C.4}Arquitectura del entorno de simulación}{75}{section*.118}%
-\contentsline {section}{\numberline {C.5}Protocolo de pruebas y casos de uso}{76}{section*.119}%
-\contentsline {subsection}{\numberline {C.5.1}Prueba de integración local (Comunicaciones y HMI)}{76}{section*.120}%
-\contentsline {subsection}{\numberline {C.5.2}Prueba de respuesta ante eventos y alarmas}{76}{section*.121}%
-\contentsline {subsection}{\numberline {C.5.3}Prueba de despliegue IIoT e infraestructura \textit {Cloud}}{76}{section*.122}%
-\contentsline {section}{\numberline {C.6}Evidencias de las pruebas}{77}{section*.123}%
-\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{79}{appendix.D}%
-\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{81}{appendix.E}%
-\contentsline {section}{\numberline {E.1}Introducción}{81}{section*.126}%
-\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{81}{section*.127}%
-\contentsline {section}{\numberline {E.3}Variables de Transformadores}{88}{section*.128}%
-\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{88}{section*.129}%
+\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{71}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Código de WinCC}{71}{section*.117}%
+\contentsline {subsection}{\numberline {A.1.1}Código fuente}{71}{section*.118}%
+\contentsline {section}{\numberline {A.2}Código de IIoT}{73}{section*.119}%
+\contentsline {chapter}{\numberline {B}Anexo II: Planos}{75}{appendix.B}%
+\contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{76}{figure.B.1}%
+\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas y Validación del Sistema (FAT)}{77}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Fase I : Pruebas de integración y validación en Node-Red}{77}{section*.122}%
+\contentsline {section}{\numberline {C.2}Fase II : Pruebas de integración y validación en servidor SIVaaS}{77}{section*.123}%
+\contentsline {section}{\numberline {C.3}Introducción y objetivos}{77}{section*.124}%
+\contentsline {section}{\numberline {C.4}Arquitectura del entorno de simulación}{77}{section*.125}%
+\contentsline {section}{\numberline {C.5}Protocolo de pruebas y casos de uso}{78}{section*.126}%
+\contentsline {subsection}{\numberline {C.5.1}Prueba de integración local (Comunicaciones y HMI)}{78}{section*.127}%
+\contentsline {subsection}{\numberline {C.5.2}Prueba de respuesta ante eventos y alarmas}{78}{section*.128}%
+\contentsline {subsection}{\numberline {C.5.3}Prueba de despliegue IIoT e infraestructura \textit {Cloud}}{79}{section*.129}%
+\contentsline {section}{\numberline {C.6}Evidencias de las pruebas}{79}{section*.130}%
+\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{81}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{83}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Introducción}{83}{section*.133}%
+\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{83}{section*.134}%
+\contentsline {section}{\numberline {E.3}Variables de Transformadores}{90}{section*.135}%
+\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{90}{section*.136}%

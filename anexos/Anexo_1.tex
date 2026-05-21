@@ -1,13 +1,15 @@
 \chapter{Anexo I: Código de la Solución}
 \label{cap:anexo_codigo_solucion}
-\section{Función de filtrado dinámico de molinos}
+
+\section{Código de WinCC}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{1,0.99,0.92}
+
 \lstset{
-  language=C,
-  backgroundcolor=\color{backcolour},   
+    language=C,
+    backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
@@ -18,13 +20,10 @@
     captionpos=b,                    
     keepspaces=true,                 
     numbers=left,                    
-    numbersep=20pt,                  
-    frame=single,
-    framesep=6pt,
-    framexleftmargin=4pt,
-    framexrightmargin=4pt,
-    framextopmargin=4pt,
-    framexbottommargin=0pt,
+    numbersep=10pt,                  % Reducido a 10pt para que no se desplace demasiado al quitar el frame
+    frame=none,                      % CORRECCIÓN: Elimina el borde negro por completo
+    xleftmargin=5pt,                % Añade margen izquierdo al bloque de color de fondo
+    xrightmargin=5pt,                % Añade margen derecho al bloque de color de fondo
     aboveskip=0.75\baselineskip,
     belowskip=0.25\baselineskip,
     showspaces=false,                
@@ -32,6 +31,7 @@
     showtabs=false,                  
     tabsize=2
 }
+
 \subsection{Código fuente}
 
 \begin{lstlisting}
@@ -66,12 +66,12 @@ void AplicarFiltroPosicion(){
 
     currentX = startX;
     currentY = startY;
-// Obtener valores de filtros
+    // Obtener valores de filtros
     selValue = GetTagWord("HMI_Filtro_Molinos");
     parkValue = GetTagWord("HMI_Filtro_Parques");
     prefijoActual = "WTG";
     CANT_MOLINOS = 120;
-// Evaluar cada molino
+    // Evaluar cada molino
     for (i = 1; i <= CANT_MOLINOS; i++) {
         sprintf(tagNameEmg, "%s%d.WTUR.TurSt.stVal", prefijoActual, i);
         sprintf(tagNamePark, "%s%d.LLNO.InSSet.setSrc", prefijoActual, i);
@@ -121,7 +121,7 @@ void AplicarFiltroPosicion(){
             validCount++;
         }
     }
-// Visualizar molinos que cumplen el filtro
+    // Visualizar molinos que cumplen el filtro
     for (i = 1; i <= CANT_MOLINOS; i++) {
         sprintf(FP, "PW_%d", i);
         SetPropBOOL("20_WTG_Turbine_Overview.PDL", FP, "Visible", FALSE);
@@ -148,4 +148,72 @@ void AplicarFiltroPosicion(){
 \end{lstlisting}
 
 
+\section{Código de IIoT}
 
+\begin{lstlisting}[language=bash]
+sudo apt update
+sudo apt install docker.io docker-compose -y
+sudo systemctl start docker
+sudo systemctl enable docker
+\end{lstlisting}
+
+% Tip: He cambiado temporalmente a lenguaje=YAML para que el resaltado del compose sea correcto
+\begin{lstlisting}[language=XML]
+version: '3.8'
+
+services:
+  # Base de Datos de Series Temporales
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb_scada
+    restart: always
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    networks:
+      - scada_net
+
+  # Motor de flujos y procesamiento de datos
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered_scada
+    restart: always
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered_data:/data
+    depends_on:
+      - influxdb
+    networks:
+      - scada_net
+
+  # Visualizacion de datos
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana_scada
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - influxdb
+    networks:
+      - scada_net
+
+networks:
+  scada_net:
+    driver: bridge
+
+volumes:
+  influxdb_data:
+  nodered_data:
+  grafana_data:
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash]
+sudo docker-compose up -d
+\end{lstlisting}
+
+\vspace{1cm}
