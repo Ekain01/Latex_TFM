@@ -48,33 +48,49 @@ El WinCC RT constituye el núcleo operativo del SCADA. Durante la operación nor
 \label{cap:arquitecturas_wincc}
 El diseño de una red SCADA determina la forma en la que se hace la adquisición, procesamiento y visualización de datos. El entorno de Siemens permite multiples arquitecturas y configuraciones de proyecto dependiendo del tipo de sistema
 \subsection{Sistemas Monopuesto (\textit{Single User Systems})}
-En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar todas las tareas del SCADA. El puesto actúa tanto como servidor como cliente: El equipo se encarga de realizar las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet o ModBus, OPC UA …) de ejecutar el software del runtime y almacenar los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
-Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera se trata de una estación de ingeniería y runtime con un único PC (Figura \ref{fig:monopuesto}). La segunda, es una configuración redundante de la primera donde la estación redundante solo sería una estación runtime (Figura \ref{fig:monopuesto_redundante}).
+En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar todas las tareas del SCADA. El puesto actúa tanto como servidor como cliente: El equipo se encarga de realizar las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet o ModBus, OPC UA …) de ejecutar el software del \textit{Runtime} y almacenar los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
+Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera se trata de una estación de ingeniería y \textit{Runtime} con un único PC (Figura \ref{fig:monopuesto_simple}). La segunda, es una configuración redundante de la primera donde la estación redundante solo sería una estación \textit{Runtime} (Figura \ref{fig:monopuesto_redundante}).
 
-\begin{figure}[t]
+% --- PRIMERA FIGURA: ARQUITECTURAS MONOPUESTO (A y B) ---
+\begin{figure}[p] % Usamos [htbp] para que se posicione en el flujo del texto actual
     \centering
-    \includegraphics[scale=0.3]{figuras/Monopuesto.png}
-    \caption{Arquitectura de sistema monopuesto con un único PC}
-    \label{fig:monopuesto}
+    
+    % --- SUBFIGURA A: MONOPUESTO SIMPLE ---
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Monopuesto.png}
+        \caption{Estación con un único PC operativo.}
+        \label{fig:monopuesto_simple}
+    \end{subfigure}
+    \vspace{0.25cm}
+  
+     % Forzar salto de línea para colocar la siguiente abajo
+    
+    % --- SUBFIGURA B: MONOPUESTO REDUNDANTE ---
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/MonopuestoRedundante.png}
+        \caption{Configuración monopuesto con estación redundante.}
+        \label{fig:monopuesto_redundante}
+    \end{subfigure}
+    
+    \vspace{0.8cm} 
+    % --- SUBFIGURA C: MULTIPUESTO DISTRIBUIDO ---
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Multipuesto.png}
+        \caption{Arquitectura multipuesto distribuida con servidores redundantes y estaciones cliente dedicadas.}
+        \label{fig:multipuesto_distribuido}
+    \end{subfigure}
+    \vspace{0.6cm}
+    % Un único pie de foto global para toda la página
+    \caption{Ejemplos de topologías de arquitecturas de sistemas distribuidos en SIMATIC WinCC V8.1: configuraciones monopuesto (a, b) y multipuesto (c).}
+    \label{fig:arquitecturas_scada_global}
 \end{figure}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[scale=0.15]{figuras/MonopuestoRedundante.png}
-    \caption{Arquitectura de sistema monopuesto con configuración redundante}
-    \label{fig:monopuesto_redundante}
-\end{figure}
-
-\subsection{Sistemas Multipuesto (\textit{Multi User Systems})}
-
-
+\subsection{Sistemas Multipuesto (\textit{Multy User Systems})}
 Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde un solo ordenador hace todo), en un sistema multipuesto la carga de trabajo se divide entre uno o varios Servidores centrales y múltiples estaciones Cliente. Este enfoque permite una variedad mayor de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación. ( Figura \ref{fig:multipuesto}) \par 
-\begin{figure}[t]
-    \centering
-    \includegraphics[scale=0.17]{figuras/Multipuesto.png}
-    \caption{Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}
-    \label{fig:multipuesto}
-\end{figure}
+
 \subsection{Virtualización mediante SIVaaS}
 
 La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples máquinas virtuales (VM) aisladas, compartiendo recursos como CPU, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: Alojados y Metal-Desnudos.
@@ -194,9 +210,34 @@ Esta infraestructura virtualizada llave en mano dota a la MCR de la flexibilidad
 \textbf{ESPECIFICAR EL CAJON QUE SE UTILIZARA (PLANOS DE LOS SERVIDORES)}
 \section{Diseño del Modelo de información del SCADA}
 \label{cap:modelo_informacion}
-Las variables en WinCC se dividen en tres categorías principales: Variables internas, variables externas y variables de estructura. Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado, son aquellas que siguen una estructura específica definida  para garantizar la interoperabilidad entre diferentes sistemas y dispositivos de tal forma que se mantiene un orden lógico.
+Las variables en WinCC se dividen en tres categorías principales: Variables internas, variables de estructura y variables externas. Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado,son variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente.\par
 \subsection{Variables internas}
-El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas se dividen en diferentes categorías según su función y propósito. Algunas de las categorías principales de variables internas en WinCC incluyen:
+El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas son fundamentales para la operación del sistema, ya que proporcionan información crítica sobre el estado del sistema, el usuario actual, la máquina local, el idioma activo, la hora local, entre otros aspectos operativos. Estas variables se pueden utilizar en scripts y lógicas de control para implementar funcionalidades específicas y mejorar la interacción con el operador. \par 
+
+En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimiento directo a los requisitos fundacionales de identificación y autenticación (\textit{FR1: IAC}) de la norma de ciberseguridad industrial \textbf{IEC 62443-4-2:2019}, registrando de forma única el operario activo (\texttt{@CurrentUser}) y la estación o cliente ligero de la Sala de Control Central (\texttt{@LocalMachineName}) desde el que se efectúa una orden. Asimismo, para garantizar un entorno distribuido robusto y tolerante a fallos de acuerdo con la arquitectura redundante implementada, el sistema monitoriza constantemente el rol lógico de las máquinas (Maestro o Reserva) y el estado de la sincronización de las bases de datos de Microsoft SQL Server mediante el bloque de variables de redundancia. Las variables internas mas destacadas se detallan en la Tabla~\ref{tab:variables_sistema_wincc}.
+
+\begin{table}[tb]
+    \centering
+    \caption{Especificación técnica de las variables internas por defecto del sistema en WinCC.}
+    \label{tab:variables_sistema_wincc}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llcl}
+        \toprule
+        \textbf{Variable de Sistema (Tag)} & \textbf{Tipo de Dato} & \textbf{Acceso} & \textbf{Propósito Operativo en el HMI} \\
+        \midrule
+        \texttt{@CurrentUser} & Text tag (8-bit) & R/W & Identificador de usuario autenticado y de rol. \\
+        \texttt{@CurrentUserName} & Text tag (8-bit) & R & Nombre descriptivo del operador en sesión. \\
+        \texttt{@LocalMachineName} & Text tag (8-bit) & R & Nombre de red del terminal cliente. \\
+        \texttt{@Language} & Unsigned 32-bit & R/W & ID binario del idioma activo. \\
+        \texttt{@LocalTime} & DateTime & R & Fecha y hora local. \\
+        \texttt{@CR\_ActiveActions} & Unsigned 32-bit & R & Diagnóstico de scripts concurrentes en ejecución. \\
+        \texttt{@LogDiskSpaceLow} & Binary Tag & R & Alarma de espacio insuficiente para históricos. \\
+        \texttt{@RedundantServerState} & Unsigned 32-bit & R & Estado de redundancia. \\
+        \texttt{@RM\_OfflineReason} & Unsigned 16-bit & R & Código de error de red. \\
+        \bottomrule
+    \end{tabular}
+    }
+\end{table}
 \subsection{Variables de estructura}
 Las variables de estructura son el nucleo de la solución, ya que permiten estructurar la información de forma lógica y coherente. Para el modelado de las variables de estructura se han seguido dos normas internacionales: La norma IEC 61400-25-2 para el modelado de los aerogeneradores y la norma IEC 61850 para el modelado de la subestación eléctrica. Estas normas establecen un marco común para la representación y organización de datos en sistemas eólicos y eléctricos.\par
 \subsubsection{Modelo de información de aerogeneradores}
@@ -212,14 +253,14 @@ La norma establece cuatro tipos de niveles en variables de estructura, cada uno 
 \end{itemize}
 \begin{figure}[t]
     \centering
-    \includegraphics[scale=0.18]{figuras/Nodos.png}
-    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }
+    \includegraphics[width=\textwidth]{figuras/Nodos.png}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url{https://windenergietage.de/2023/wp-content/uploads/sites/8/2018/01/31WET09_F17_1345_Windenergietage-2023.pdf}}
     \label{fig:Nodos}
 \end{figure}
 \begin{figure}[t]
     \centering
-    \includegraphics[scale=0.9]{figuras/IEC_61400-25-2_v1.jpg}
-    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}
+    \includegraphics[width=\textwidth]{figuras/IEC_61400-25-2_v1.jpg}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url{https://www.iec.ch/standards/61400-25-2}}
     \label{fig:IEC}
 \end{figure}
 \paragraph{Nivel 5: Atributos de Dato}
@@ -387,14 +428,14 @@ La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de
     \centering
     \begin{minipage}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/celda_linea.png}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea.png}
         \caption{SLD de la celda de línea.}
         \label{fig:celda_linea}
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/Celda_Trafo.png}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/Celda_Trafo.png}
         \caption{SLD de la celda del transformador de potencia.}
         \label{fig:celda_trafo}
     \end{minipage}
@@ -473,8 +514,8 @@ OPC UA se basa en un modelo de información orientado a objetos, el cual define 
 OPC UA se basa en un modelo Cliente-Servidor para establecer la conexion TCP entre el servidor OPC UA y el cliente SCADA. Sin embargo, una vez establecida la sesión, la transfrerencia se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión de datos en tiempo real(Figura \ref{fig:OPC_UA}).\par
 \begin{figure}[tb]
     \centering
-    \includegraphics[scale=0.6]{figuras/OPCUA_metamodelo.png}
-    \caption{Metamodelo de comunicación OPC UA. Fuente: Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}
+    \includegraphics[width=\textwidth]{figuras/OPCUA_metamodelo.png}
+    \caption{Metamodelo de comunicación OPC UA. Obtenido de Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}
     \label{fig:OPC_UA}
 \end{figure}
 
@@ -493,21 +534,24 @@ En el contexto del proyecto, KEPServerEX actúa como el servidor OPC UA que publ
 \label{sec:configuracion_servidor_opcua}
 
 El primer paso para el despliegue de la arquitectura de comunicaciones consiste en la inicialización del servidor OPC UA integrado en \textit{KepServerEX}.Se ha definido el punto de acceso a la red  y establecido las políticas de ciberseguridad de interacción de los clientes.\par
-\begin{figure}[tb]
+\begin{figure}[p]
     \centering
-    \begin{minipage}[t]{0.45\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[scale=0.45]{figuras/Opc_endpoint.png}
+        \includegraphics[width=\textwidth]{figuras/Opc_endpoint.png}
         \caption{Configuración del \textit{Endpoint} de red y políticas de seguridad en el servidor OPC UA de KepServerEX.}
         \label{fig:OPC_UA_Endpoint}
-    \end{minipage}
+    \end{subfigure}
     \hfill
-    \begin{minipage}[t]{0.45\textwidth}
+    \vspace{0.5cm}
+    \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[scale=0.45]{figuras/certificados_opc.png}
+        \includegraphics[width=\textwidth]{figuras/certificados_opc.png}
         \caption{Gestión de certificados y políticas de seguridad en el servidor OPC UA de KepServerEX.}
         \label{fig:OPC_UA_Security}
-    \end{minipage}
+    \end{subfigure}
+    \vspace{1cm}
+    \caption{Configuración del servidor OPC UA en KepServerEX.}
 \end{figure}
 La configuración del servidor se ha realizado a través de la herramienta de administración de bajo nivel \textit{OPC UA Configuration Manager}. Para ello en la pestaña \textit{Server Endpoints}, se ha habilitado la interfaz de red del servidor vinculándola a la tarjeta de red correspondiente al banco de pruebas (ver Anexo \ref{cap:Pruebas}).Es decir, La propia maquina virtual contiene tanto el servidor como el cliente OPC UA, por lo que la uri de escucha se reserva solo para \texttt{opc.tcp://localhost:49320}(Figura \ref{fig:OPC_UA_Endpoint}).\par
 
@@ -521,9 +565,10 @@ Las conexiones de las variables de estructura con variables externas de OPC UA s
 En primer lugar, el Despliegue del Canal OPC UA en la raíz de la administración de variables se ha realizado añadiendo el driver de comunicaciones \textit{OPC UA WinCC Channel}. En segundo lugar, la Definición de la Conexión Lógica se realiza bajo el canal recién creado mediante la conexión \texttt{OPC\_UA\_IGL\_I}, que apunta directamente al \textit{Endpoint URL} del servidor de adquisición de la planta en el formato \url{opc.tcp://<IP>:<Puerto>}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
 \begin{figure}[tb]
     \centering
-    \includegraphics[scale=0.6]{figuras/Conexion_Opc.png}
+    \includegraphics[width=\textwidth]{figuras/Conexion_Opc.png}
     \caption{Configuración de la conexión OPC UA en el entorno de desarrollo de SIMATIC WinCC V8.1.}
     \label{fig:OPC_UA_WinCC}
+    \vspace{0.5cm}
 \end{figure}
 
 Por último, el Direccionamiento Espacial establece que, una vez creado el enlace seguro, cada variable externa en WinCC debe apuntar a un nodo de información dentro del espacio de direcciones del servidor OPC UA.El direccionamiento  se compone de dos elementos clave: el índice de espacio de nombres ( \texttt{ns}) y el identificador del nodo (\texttt{s})(Tabla \ref{tab:mapeo_espacio_direcciones_kepserver}).\par 
@@ -605,57 +650,66 @@ Asimismo, esta estandarización resulta determinante para optimizar el rendimien
 Para mantener esta filosofía, la navegación del sistema se ha estructurado implementando un diseño centralizado basado en estas ventanas de imagen. Esta técnica de SIMATIC WinCC permite mantener un marco estático de control mientras el área de trabajo cambia dinámicamente. La base física de esta jerarquía se fundamenta en el siguiente elemento:\par
 
 \subsection{Nivel 0: Marco Base (\texttt{00\_Main\_Interface})}
-Representa la interfaz matriz o \textbf{Nivel 0} del SCADA (véase Figura \ref{fig:interfaz_grafica}). En lugar de ejecutar transiciones de pantalla completa, esta plantilla actúa como un contenedor estático  que alberga el menú de navegación principal e implementa dos \textit{Picture Windows} independientes.\par
+Representa la interfaz matriz o Nivel 0 del SCADA (Figura \ref{fig:00_main_interface}). En lugar de ejecutar transiciones de pantalla completa, esta plantilla actúa como un contenedor estático  que alberga el menú de navegación principal e implementa dos \textit{Picture Windows} independientes.\par
 
-La \textbf{ventana de trabajo central} ocupa la mayor parte de la pantalla y constituye el área de visualización dinámica donde se cargan todas las interfaces operativas (Niveles 1 a 4). Paralelamente, la \textbf{ventana de alarmas inferior} es un espacio de menores dimensiones anclado de forma fija en el pie de página, cuya única función es garantizar la supervisión ininterrumpida de los eventos críticos independientemente de la profundidad de navegación del usuario.
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[scale=0.4]{figuras/GUI.png}
-    \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
-    \label{fig:interfaz_grafica}
-\end{figure}
+La ventana de trabajo central ocupa la mayor parte de la pantalla y constituye el área de visualización dinámica donde se cargan todas las interfaces operativas (Niveles 1 a 4). Paralelamente, la ventana de alarmas inferiores es un espacio de menores dimensiones anclado de forma fija en el pie de página, cuya única función es garantizar la supervisión ininterrumpida de los eventos críticos independientemente de la profundidad de navegación del usuario.
 \FloatBarrier
 \subsection{Nivel 1: Supervisión Global}
 \label{sec:nivel_1_overview}
 \subsubsection{Vista General de aerogeneradores (\texttt{10\_WTG\_Overview})}
-La pantalla \texttt{10\_WTG\_Overview} actúa como el nodo principal de enrutamiento dinámico del SCADA. Su diseño optimiza la navegación hacia los niveles inferiores mediante tres mecanismos clave integrados en su cabecera.
+La pantalla \texttt{10\_WTG\_Overview} actúa como el nodo principal de enrutamiento dinámico del SCADA. Su diseño optimiza la navegación hacia los niveles inferiores mediante tres mecanismos clave integrados en su cabecera.\par
 
-Por un lado, se ha implementado un sistema de filtrado mediante dos selectores desplegables (Estado y Subestación) que acotan la información visualizada, actualizando los aerogeneradores mostrados sin necesidad de realizar transiciones a otras pantallas ( Algoritmo \ref{alg:filtrado_dinamico}, vease la función \texttt{AplicarFiltroPosicion()} en el Anexo \ref{cap:anexo_codigo_solucion}).\par
+Por un lado, se ha implementado un sistema de filtrado mediante dos selectores desplegables (Figura \ref{fig:interfaz_grafica_selector}) que acotan la información visualizada, actualizando los aerogeneradores mostrados sin necesidad de realizar transiciones a otras pantallas ( Algoritmo \ref{alg:filtrado_dinamico}, vease la función \texttt{AplicarFiltroPosicion()} en el Anexo \ref{cap:anexo_codigo_solucion}).\par
 
-Por otro lado, un selector central gestiona el archivo alojado en el \textit{Picture Window} de trabajo. Permite alternar instantáneamente entre la telemetría individual de las máquinas (\texttt{20\_WTG\_Turbine\_Overview.pdl}) y la vista de datos por parques (\texttt{21\_WTG\_Park\_Overview.pdl}).\par
+Por otro lado, como se observa en la figura \ref{fig:interfaz_grafica_park} un selector central gestiona el archivo alojado en el \textit{Picture Window} de trabajo. Permite alternar instantáneamente entre la telemetría individual de las turbinas (\texttt{20\_WTG\_Turbine\_Overview.pdl}) y la vista de datos por parques (\texttt{21\_WTG\_Park\_Overview.pdl}).\par
 
-Finalmente, una matriz superior de indicadores discretos organizados por parques representa el estado de cada aerogenerador. Seleccionar uno de ellos actúa como acceso directo al Nivel 4 (\texttt{40\_WTG\_Gen}), omitiendo pasos intermedios e inyectando automáticamente el \textit{Tag Prefix} correspondiente para cargar los datos de la máquina seleccionada.\par
+Finalmente, como se muestra en la figura \ref{fig:interfaz_grafica} una matriz superior de indicadores discretos organizados por parques representa el estado de cada aerogenerador. Seleccionar uno de ellos actúa como acceso directo al Nivel 4 (\texttt{40\_WTG\_Gen}), omitiendo pasos intermedios e inyectando automáticamente el \textit{Tag Prefix} correspondiente para cargar los datos de la máquina seleccionada.\par
 
-\begin{figure}[t]
-    \centering
-    % Ajusta la ruta de tu imagen
-    \includegraphics[width=\textwidth]{figuras/10_WTG_Overview.png}
-    \caption{Cabecera de navegación en \texttt{10\_WTG\_Overview}, mostrando filtros, selector de vista y matriz de accesos directos.}
-    \label{fig:10_wtg_overview}
+\begin{figure}[p]
+        \centering
+        \includegraphics[width=\textwidth]{figuras/00_Main_Interface.png}
+        \caption{Interfaz principal del SCADA, en morado se destaca la ventana de imagen principal donde se cargan las pantallas de supervisión, y en turquesa la ventana de alarmas anclada en el pie de página.}
+        \label{fig:00_main_interface}
 \end{figure}
-
-
-\FloatBarrier
+\begin{figure}[p]
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/10_WTG_Overview.png}
+        \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
+        \label{fig:interfaz_grafica_selector}
+        \vspace{1cm}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,height=0.5\linewidth]{figuras/10_WTG_Overview_Selector.png}
+        \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
+        \label{fig:interfaz_grafica_park}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,height=0.5\linewidth]{figuras/10_WTG_Overview_parque.png}
+        \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
+        \label{fig:interfaz_grafica}
+    \end{subfigure}
+    \vspace{0.5cm}   
+    \caption{Ejemplos de interfaces gráficas desarrolladas en WinCC para la supervisión de un proceso industrial.}
+\end{figure}
 \subsubsection{Intefaz de diagrama electrico (\texttt{11\_SUB\_Interface})}
 \label{sec:nivel_1_subestacion}
 Esta pantalla actúa como un contenedor especializado para la visualización de la infraestructura eléctrica del parque. Arquitectónicamente, se ha diseñado como una interfaz intermedia que alberga un único \textit{Picture Window} destinado a cargar los diversos diagramas unifilares (\textit{Single Line Diagrams}).\par
 
 La decisión de no integrar estos esquemas directamente en la pantalla raíz (\texttt{00\_Main\_Interface}) y emplear este encapsulamiento responde a dos criterios técnicos fundamentales, por un lado, la gestión de la visualización y desplazamiento de diagramas eléctricos complejos (\textit{scrolling}), y por otro, el aislamiento de variables mediante \textit{Tag Prefixes} para evitar interferencias con el entorno principal del SCADA.\par
+\subsubsection{Interfaz de monitorización, alarmas y tendencias (\texttt{12\_MET\_Station}, \texttt{13\_SYS\_Alarms} y \texttt{14\_SYS\_Trends})}
+% --- PRIMERA PÁGINA ---
 
-\begin{figure}[t]
-    \centering
-    % Ajusta la ruta de tu imagen cuando la tengas
-    \includegraphics[width=\textwidth]{figuras/11_SUB_Interfaec.png}
-    \caption{Estructura de contenedor para esquemas eléctricos en \texttt{11\_SUB\_Interface}.}
-    \label{fig:11_sub_interface}
-\end{figure}
 
 \FloatBarrier
 \subsection{Nivel 9: Plantillas dinámicas y reutilización gráfica (\textit{Tag Prefix})}
 \label{sec:tag_prefix}
 
-En la monitorización de parques eólicos, la topología del sistema presenta una alta repetición de activos físicos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del SCADA. 
+En la monitorización de parques eólicos, se presenta una alta repetición de activos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del SCADA. 
 
 Para resolver esta problemática, el diseño de las interfaces de detalle se ha fundamentado en el principio de reutilización gráfica, combinando el uso de las variables de estructura (definidas en el apartado 7.4.3) con la propiedad \textit{Tag Prefix} (Prefijo de variable) de las ventanas de imagen (\textit{Picture Windows}) de SIMATIC WinCC.
 
@@ -674,19 +728,21 @@ Estas interfaces proporcionan la telemetría resumida de un único aerogenerador
 
 \begin{figure}[t]
     \centering
-    \begin{minipage}[t]{0.45\textwidth}
+    \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/WTG_Faceplate.png}
-        \caption{Plantilla genérica de monitorización de turbina, dinamizada mediante \textit{Tag Prefix}.}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/WTG_Faceplate.png}
+        \caption{Plantilla de monitorización de turbina.}
         \label{fig:overview_turbina}
-    \end{minipage}
+    \end{subfigure}
     \hfill
-    \begin{minipage}[t]{0.45\textwidth}
+    \begin{subfigure}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/Park_Faceplate.png}
-        \caption{Pantalla de supervisión de clúster/parque, empleando variables estructuradas para la agregación de datos.}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/Park_Faceplate.png}
+        \caption{Pantalla de supervisión de parque.}
         \label{fig:overview_parque}
-    \end{minipage}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \caption{Ejemplos de plantillas de visualización dinamizadas mediante \textit{Tag Prefix} en SIMATIC WinCC V8.1.}
 \end{figure}
 \paragraph{Vistas de agrupación o clústeres (\textit{Park Overview})}
 De manera análoga a las turbinas individuales, el parque puede subdividirse en subestaciones o clústeres lógicos. Se ha diseñado una plantilla de agrupación que, recibiendo el prefijo correspondiente al clúster, consolida y visualiza los datos agregados de un subconjunto de aerogeneradores (Figura \ref{fig:overview_parque}), optimizando drásticamente el número de archivos en el proyecto y garantizando la homogeneidad visual de la interfaz.
@@ -735,7 +791,6 @@ Cuando el operador interactúa con los selectores o menús desplegables integrad
 
 \textit{Nota: El código se muestra en el anexo \ref{cap:anexo_codigo_solucion} en las funciones \texttt{AplicarFiltroPosicion()} y \texttt{AplicarFiltroParques()}.}
 \begin{algorithm}[tb]
-    
     \DontPrintSemicolon
     \SetKwFunction{FRead}{LeerTag}
     \SetKwFunction{FHide}{OcultarFaceplate}
@@ -886,26 +941,28 @@ En el entorno eléctrico de alta y media tensión, la presencia de energía impl
 
 \begin{figure}[tb]
     \centering
-    \begin{minipage}[t]{0.3\textwidth}
+    \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/celda_linea.png}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea.png}
         \caption{Interruptor abierto.}
         \label{fig:celda_linea_1}
-    \end{minipage}
+    \end{subfigure}
     \hfill
-    \begin{minipage}[t]{0.3\textwidth}
+    \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/celda_linea_2.png}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea_2.png}
         \caption{Interruptor cerrado.}
         \label{fig:celda_linea_2}
-    \end{minipage}
+    \end{subfigure}
     \hfill
-    \begin{minipage}[t]{0.3\textwidth}
+    \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{figuras/celda_linea_3.png}
-        \caption{Interruptor en tránsito o con discrepancia.}
+        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea_3.png}
+        \caption{Interruptor en tránsito.}
         \label{fig:celda_linea_3}
-    \end{minipage}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \caption{Ejemplo de codificación cromática de estados en celdas de línea para equipos de maniobra en la interfaz gráfica de WinCC.}
 \end{figure}
 
 La propiedad de color de fondo del polígono o símbolo SVG se vincula directamente al atributo de valor (\texttt{stVal}) de la variable externa. De este modo, la interfaz gráfica cambia en tiempo real dependiendo de si el \textit{Tag} devuelve un valor entero \texttt{1} (Cerrado/Rojo),\texttt{0} (Abierto/Verde) o un valor entre 3 y 8 (Tránsito/Fallo) sin necesidad de ejecutar \textit{scripts} cíclicos en segundo plano.
@@ -1017,24 +1074,24 @@ El despliegue se ha automatizado mediante un archivo de configuración Docker-co
 \end{itemize}
 
 Una vez se han levantado los contenedores, se ha configurado el acceso del servicio Cloud Connect de WinCC (figura \ref{fig:cloud_connect}) para publicar los datos en el broker MQTT (puerto 1883) de la instancia EC2 utilizando la direccion IP publica de esta (\texttt{13.60.146.240}) (figura \ref{fig:aws}).\\ \par
-\begin{figure}[t]
+\begin{figure}[tb]
     \centering
-    \includegraphics[scale=0.4]{figuras/aws.png}
+    \includegraphics[width=\textwidth]{figuras/aws.png}
     \caption{Arquitectura de integración de IIoT para la monitorización de un parque eólico.}
     \label{fig:aws}
 \end{figure}
-\begin{figure}[t]
+\begin{figure}[tb]
     \centering
-    \includegraphics[scale=0.6]{figuras/cloudconnect.png}
+    \includegraphics[width=\textwidth]{figuras/cloudconnect.png}
     \caption{Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}
     \label{fig:cloud_connect}
 \end{figure}
 \vspace{1cm}
 Ahora en cualquier navegador web se puede acceder al servicio de Node-RED utilizando la uri \hspace{0.5cm}\url{http://13.60.146.240:1880}. En este servicio se han configurado las suscripciones a los tópicos MQTT. Se ha realizado mediante un nodo MQTT de tipo "Subscribe" con la dirección del broker MQTT de la instancia EC2, junto con el tópico configurado en Cloud Connect. Posteriormente, se añaden nodos de función para transformar los datos recibidos y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
 
-\begin{figure}[t]
+\begin{figure}[tb]
     \centering
-    \includegraphics[scale=0.5]{figuras/NodeRedMQTT.png}
+    \includegraphics[width=\textwidth]{figuras/NodeRedMQTT.png}
     \caption{Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}
     \label{fig:nodered}
 \end{figure}

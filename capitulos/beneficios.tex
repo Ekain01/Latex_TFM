@@ -2,3 +2,78 @@
 \label{cap:beneficios}
 
 Describir los beneficios que aporta el trabajo realizado:  beneficios tecnológicos, económicos, sociales, etc.
+
+\label{sec:beneficios}
+
+El desarrollo e implementación del sistema de supervisión, control y adquisición de datos centralizado para el clúster energético objeto de este proyecto reporta múltiples beneficios estructurados desde un enfoque multidimensional, abarcando desde el impacto socioambiental hasta consideraciones técnico-económicas de la operación de red.
+
+\section{Beneficios ambientales y sociales}
+\label{subsec:beneficios_ambientales}
+
+En las últimas décadas, España ha impulsado una rigurosa agenda de transición ecológica orientada a la descarbonización del modelo energético nacional. A través del Plan Nacional Integrado de Energía y Clima (PNIEC), se establece el compromiso vinculante de reducir las emisiones de gases de efecto invernadero (GEI) en un 32\% para el año 2030 en comparación con los niveles registrados en 1990. En este marco estratégico, el despliegue de la infraestructura eólica y fotovoltaica resulta indispensable.
+
+La puesta en marcha del clúster del Maestrazgo se presenta como una oportunidad directa para la sustitución progresiva de la generación síncrona basada en combustibles fósiles (carbón y ciclos combinados), relegando estas tecnologías térmicas a funciones de respaldo o soporte puntual ante contingencias de red. Las estimaciones técnicas del proyecto indican que la energía verde inyectada compensará la emisión de aproximadamente 320,000~toneladas de $\text{CO}_2$ anuales, con un ahorro medio equivalente de 284,000~toneladas de gas natural.
+
+Además de mitigar las emisiones directas en el punto de generación, la descentralización renovable elimina la compleja cadena logística vinculada a los combustibles fósiles (extracción, procesamiento, almacenamiento y transporte por buques metaneros, gasoductos o redes ferroviarias). Esta cadena convencional no solo induce un consumo energético parásito significativo, sino que añade graves riesgos ambientales. En el caso del gas natural, la extracción mediante técnicas de fracturación hidráulica (\textit{fracking}) es susceptible de liberar metano a la atmósfera ---un gas de efecto invernadero 84 veces más potente que el $\text{CO}_2$ en el corto plazo---, mientras que el transporte de gas natural licuado (GNL) exige procesos continuos de refrigeración extrema de alto coste energético.
+
+Finalmente, la transición hacia un modelo de generación libre de emisiones impacta positivamente en la salud pública. Atendiendo a los índices de mortalidad por unidad de energía generada (véase la Figura~\ref{fig:death_rates}), por cada teravatio-hora ($\text{TWh}$) producido, el carbón causa una media de 56 muertes prematuras derivadas de la contaminación atmosférica y accidentes laborales en la cadena de suministro. En contraposición, las tecnologías solar y eólica registran tasas marginales de 0.02 y 0.04 muertes/$\text{TWh}$ respectivamente, consolidando el proyecto como una medida directa de prevención sanitaria.
+
+
+
+\section{Beneficios energéticos}
+\label{subsec:beneficios_energeticos}
+
+Desde una perspectiva de soberanía y resiliencia energética, la explotación de los recursos naturales propios del Maestrazgo reduce de manera drástica la dependencia de los mercados de importación de materias primas, disminuyendo la vulnerabilidad geopolítica del sistema eléctrico español.
+
+Desde el punto de vista de la operación de la red, es necesario señalar una particularidad técnica: a diferencia de las centrales convencionales, las plantas eólicas y fotovoltaicas evacúan la energía a través de inversores electrónicos de potencia. Al carecer de grandes masas síncronas giratorias, estas instalaciones aportan una inercia física muy baja al sistema, reduciendo la capacidad intrínseca para amortiguar desviaciones bruscas de frecuencia ante perturbaciones en la red. 
+
+Sin embargo, esta característica se ve compensada por una alta flexibilidad operativa. La ausencia de grandes momentos de inercia y la naturaleza digital de los convertidores otorgan al sistema una elevada velocidad de respuesta, permitiendo la conexión, desconexión y regulación de carga en un intervalo de milisegundos. Esta agilidad es idónea para el seguimiento de la curva de demanda y la prevención de sobrecargas térmicas en las líneas de transporte, superando las limitaciones de las centrales nucleares o térmicas, cuyos protocolos de arranque y parada segura requieren ciclos de varios días. El escenario PNIEC 2023--2030 contempla un incremento sustancial de la potencia bruta instalada (recogida en la Tabla~\ref{tab:pniec_potencia}) con el fin de garantizar una transición segura, estable y eficiente.
+
+\begin{table}[tb]
+    \centering
+    \caption{Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030.}
+    \label{tab:pniec_potencia}
+    \small
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Tecnología de Generación} & \textbf{2019} & \textbf{2020} & \textbf{2025} & \textbf{2030} \\
+        \midrule
+        Eólica & 25,583 & 26,754 & 36,149 & 62,054 \\
+        Solar fotovoltaica & 8,306 & 11,004 & 46,501 & 76,277 \\
+        Solar termoeléctrica & 2,300 & 2,300 & 2,304 & 4,804 \\
+        Hidráulica & 14,006 & 14,011 & 14,261 & 14,511 \\
+        Biogás & 203 & 210 & 240 & 440 \\
+        Biomasa & 413 & 609 & 1,009 & 1,409 \\
+        Otras renovables & 0 & 0 & 25 & 80 \\
+        Carbón & 10,159 & 10,159 & 0 & 0 \\
+        Ciclo combinado & 26,612 & 26,612 & 26,612 & 26,612 \\
+        Cogeneración & 5,446 & 5,276 & 4,068 & 3,784 \\
+        Fuel y Fuel/Gas (No peninsular) & 3,660 & 3,660 & 2,847 & 1,830 \\
+        Nuclear & 7,399 & 7,399 & 7,399 & 3,181 \\
+        \bottomrule
+    \end{tabular}
+    }
+\end{table}
+
+\section{Beneficios económicos}
+\label{subsec:beneficios_economicos}
+
+La implantación de la red de generación en el Maestrazgo de Teruel implica un impacto macroeconómico notable, con una inversión de capital (CAPEX) prevista que supera los 1,000~millones de euros, actuando como un motor de dinamización socioeconómica local mediante la creación de empleo directo e indirecto durante las fases de construcción, ingeniería y operación comercial (\textit{O\&M}).
+
+A nivel de mercado mayorista (\textit{pool} eléctrico), la introducción masiva de energía eólica genera un efecto deflactor directo en los precios marginales. Dado que el viento representa un recurso primario exento de costes variables de combustible, los productores eólicos pueden ofertar su energía a precios significativamente inferiores a los de las centrales térmicas que dependen de la cotización internacional del gas o del carbón. De acuerdo con los balances comerciales del sector, el efecto reductor de la generación eólica en el acumulado anual supuso un ahorro de 19.9~euro/$\text{MWh}$ en el mercado mayorista, lo que se traduce en una reducción del 32\% en el precio medio de la electricidad casada, equivalente a un ahorro global de 5,047~millones de euros para los consumidores.
+
+\subsection{Beneficios del sistema SCADA}
+\label{subsec:beneficios_scada}
+
+La arquitectura de supervisión y adquisición de datos diseñada se fundamenta en los paradigmas de la Industria 4.0, resolviendo de manera centralizada la problemática técnica asociada a la dispersión geográfica inherente a la generación descentralizada.
+
+La centralización de variables críticas (tales como velocidades de viento, potencias activas y reactivas instántaneas o estados operativos de los activos) proporciona los siguientes beneficios lógicos y funcionales:
+
+\begin{itemize}
+    \item \textbf{Optimización de la generación en tiempo real:} Facilita la toma de decisiones operativas inmediatas para adecuar las consignas de potencia del clúster basándose en las condiciones meteorológicas concurrentes y las restricciones dinámicas de la red de transporte.
+    \item \textbf{Evolución hacia el mantenimiento predictivo:} El registro y análisis continuo de los históricos de parámetros eléctricos, térmicos y mecánicos mitiga la necesidad de inspecciones preventivas presenciales recurrentes. Esto disminuye la probabilidad de fallos catastróficos, aminora los costes de operación y reduce los tiempos de inactividad (\textit{downtime}) mediante la planificación remota de activos.
+    \item \textbf{Gestión automatizada de seguridad y alarmas:} La clasificación y priorización normalizada de los eventos de planta activa protocolos de aislamiento automatizados y planes de contingencia inmediatos, resguardando la integridad tanto del personal técnico como de la infraestructura de alta tensión.
+    \item \textbf{Generación de modelos normativos replicables:} El desarrollo de plantillas de visualización estandarizadas y flujos de navegación optimizados asienta una línea base de ingeniería (\textit{blueprint}) altamente escalable, reduciendo los tiempos de diseño e integración en futuras ampliaciones del clúster energético.
+\end{itemize}
+\section{ODS: Objetivos de desarrollo sostenible}

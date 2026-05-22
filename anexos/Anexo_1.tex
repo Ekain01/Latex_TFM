@@ -4,8 +4,8 @@
 \section{Código de WinCC}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{1,0.99,0.92}
+\definecolor{codepurple}{rgb}{0,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
 
 \lstset{
     language=C,
@@ -21,7 +21,8 @@
     keepspaces=true,                 
     numbers=left,                    
     numbersep=10pt,                  % Reducido a 10pt para que no se desplace demasiado al quitar el frame
-    frame=none,                      % CORRECCIÓN: Elimina el borde negro por completo
+    frame=single,                % Añade un borde muy fino
+    framerule=0.2pt,
     xleftmargin=5pt,                % Añade margen izquierdo al bloque de color de fondo
     xrightmargin=5pt,                % Añade margen derecho al bloque de color de fondo
     aboveskip=0.75\baselineskip,

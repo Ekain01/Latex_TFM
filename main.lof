@@ -5,25 +5,37 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}}{15}{figure.caption.16}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitectura de sistema monopuesto con un único PC}}{17}{figure.caption.24}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Arquitectura de sistema monopuesto con configuración redundante}}{18}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Ejemplo de arquitectura de sistema multipuesto: Dos servidores centrales redundantes, el primero Runtime y el segundo ingeniería y Runtime conectados a múltiples estaciones cliente.}}{18}{figure.caption.27}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }}{23}{lstlisting.caption.39}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}}{23}{lstlisting.caption.41}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{31}{figure.caption.46}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}}{33}{figure.caption.49}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{34}{figure.caption.52}%
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{38}{figure.caption.60}%
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{38}{figure.caption.61}%
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}}{39}{figure.caption.62}%
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Configuración de Grafana para la conexión a InfluxDB como fuente de datos.}}{40}{figure.caption.63}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitecturas de sistemas monopuesto en SIMATIC WinCC V8.1.}}{18}{figure.caption.22}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Ejemplo de arquitectura multipuesto distribuida con servidores redundantes y estaciones cliente.}}{18}{figure.caption.23}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: }}{24}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. fuente: https://www.iec.ch/standards/61400-25-2}}{25}{figure.caption.41}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces SLD de la celda de línea.}}{29}{figure.caption.48}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces SLD de la celda del transformador de potencia.}}{29}{figure.caption.48}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Metamodelo de comunicación OPC UA. Fuente: Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}}{31}{figure.caption.53}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Esquema de comunicación entre el simulador de planta en NodeRed, el servidor OPC UA KEPServerEX y el cliente SCADA SIMATIC WinCC V8.1.}}{31}{figure.caption.54}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Configuración del \textit {Endpoint} de red y políticas de seguridad en el servidor OPC UA de KepServerEX.}}{32}{figure.caption.56}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Gestión de certificados y políticas de seguridad en el servidor OPC UA de KepServerEX.}}{32}{figure.caption.56}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Configuración de la conexión OPC UA en el entorno de desarrollo de SIMATIC WinCC V8.1.}}{33}{figure.caption.58}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{36}{figure.caption.62}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Diseño y distribución de las interfaces gráficas de usuario (HMI) en el entorno Runtime de WinCC (Parte I).}}{40}{figure.caption.69}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Diseño y distribución de las interfaces gráficas de usuario (HMI) en el entorno Runtime de WinCC (Parte II).}}{41}{figure.caption.70}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Plantilla genérica de monitorización de turbina, dinamizada mediante \textit {Tag Prefix}.}}{43}{figure.caption.73}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Pantalla de supervisión de clúster/parque, empleando variables estructuradas para la agregación de datos.}}{43}{figure.caption.73}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Interruptor abierto.}}{49}{figure.caption.85}%
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Interruptor cerrado.}}{49}{figure.caption.85}%
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Interruptor en tránsito o con discrepancia.}}{49}{figure.caption.85}%
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{52}{figure.caption.91}%
+\contentsline {figure}{\numberline {7.21}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{54}{figure.caption.97}%
+\contentsline {figure}{\numberline {7.22}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{55}{figure.caption.98}%
+\contentsline {figure}{\numberline {7.23}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}}{56}{figure.caption.99}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

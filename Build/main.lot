@@ -2,29 +2,31 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030.}}{9}{table.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Descripción de los subsistemas principales del software de configuración de WinCC (\textit {CS}).}}{16}{table.caption.18}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Nomenclatura confidencial de las subestaciones y rangos de generación eólica asociados.}}{20}{table.caption.31}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces Inserta aquí la descripción de la tabla.}}{21}{table.caption.33}%
-\contentsline {table}{\numberline {7.4}{\ignorespaces Equipo 2: Segunda instancia de Host con dos máquinas virtuales, una haciendo de servidor y la otra de cliente.}}{21}{table.caption.34}%
-\contentsline {table}{\numberline {7.5}{\ignorespaces Equipo 3: Clientes ligeros para la solución virtualizada.}}{21}{table.caption.35}%
-\contentsline {table}{\numberline {7.6}{\ignorespaces Estructuras de Clases de Datos Comunes (Nivel 5) según norma IEC 61400-25-2.}}{25}{table.caption.42}%
-\contentsline {table}{\numberline {7.7}{\ignorespaces Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}}{25}{table.caption.43}%
-\contentsline {table}{\numberline {7.8}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{26}{table.caption.44}%
-\contentsline {table}{\numberline {7.9}{\ignorespaces Estructura de atributos y codificación de estados para la Clase de Datos Comunes DPS (\textit {Double Point Status}) según IEC 61850-7-3.}}{27}{table.caption.46}%
-\contentsline {table}{\numberline {7.10}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{27}{table.caption.47}%
-\contentsline {table}{\numberline {7.11}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{29}{table.caption.49}%
-\contentsline {table}{\numberline {7.12}{\ignorespaces Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}}{29}{table.caption.50}%
-\contentsline {table}{\numberline {7.13}{\ignorespaces Mapeo de variables externas en el \textit {Tag Management} vinculadas al servidor KepServerEX.}}{32}{table.caption.59}%
-\contentsline {table}{\numberline {7.14}{\ignorespaces Especificación técnica de las variables internas para el almacenamiento de filtros.}}{41}{table.caption.76}%
-\contentsline {table}{\numberline {7.15}{\ignorespaces Lógica operativa de ejecución para las funciones globales de filtrado.}}{41}{table.caption.77}%
-\contentsline {table}{\numberline {7.16}{\ignorespaces Asignación de colores y estados de la turbina (Adaptación IEC 60073 a la industria eólica).}}{45}{table.caption.83}%
-\contentsline {table}{\numberline {7.17}{\ignorespaces Codificación cromática de estados para equipos de maniobra en el SCADA.}}{46}{table.caption.85}%
-\contentsline {table}{\numberline {7.18}{\ignorespaces Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}}{47}{table.caption.90}%
-\contentsline {table}{\numberline {7.19}{\ignorespaces Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}}{50}{table.caption.96}%
-\contentsline {table}{\numberline {7.20}{\ignorespaces Tabla FR1 y FR2 basada en IEC 62443-4-2:2019. Las columnas de nivel muestran el número de nivel aplicable y la columna SL-A indica si el requerimiento se cumple en la solución ($\text {$\mathsurround \z@ \mathchar "458$}$) o no ($\times $).}}{60}{table.7.20}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Descripción de los subsistemas principales del software de configuración de WinCC (\textit {CS}).}}{18}{table.caption.24}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Nomenclatura confidencial de las subestaciones y rangos de generación eólica asociados.}}{22}{table.caption.35}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Inserta aquí la descripción de la tabla.}}{23}{table.caption.37}%
+\contentsline {table}{\numberline {7.4}{\ignorespaces Equipo 2: Segunda instancia de Host con dos máquinas virtuales, una haciendo de servidor y la otra de cliente.}}{23}{table.caption.38}%
+\contentsline {table}{\numberline {7.5}{\ignorespaces Equipo 3: Clientes ligeros para la solución virtualizada.}}{23}{table.caption.39}%
+\contentsline {table}{\numberline {7.6}{\ignorespaces Especificación técnica de las variables internas por defecto del sistema en WinCC.}}{24}{table.caption.42}%
+\contentsline {table}{\numberline {7.7}{\ignorespaces Estructuras de Clases de Datos Comunes (Nivel 5) según norma IEC 61400-25-2.}}{28}{table.caption.47}%
+\contentsline {table}{\numberline {7.8}{\ignorespaces Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}}{28}{table.caption.48}%
+\contentsline {table}{\numberline {7.9}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{29}{table.caption.49}%
+\contentsline {table}{\numberline {7.10}{\ignorespaces Estructura de atributos y codificación de estados para la Clase de Datos Comunes DPS (\textit {Double Point Status}) según IEC 61850-7-3.}}{29}{table.caption.51}%
+\contentsline {table}{\numberline {7.11}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{30}{table.caption.52}%
+\contentsline {table}{\numberline {7.12}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{31}{table.caption.54}%
+\contentsline {table}{\numberline {7.13}{\ignorespaces Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}}{32}{table.caption.55}%
+\contentsline {table}{\numberline {7.14}{\ignorespaces Mapeo de variables externas en el \textit {Tag Management} vinculadas al servidor KepServerEX.}}{36}{table.caption.64}%
+\contentsline {table}{\numberline {7.15}{\ignorespaces Especificación técnica de las variables internas para el almacenamiento de filtros.}}{45}{table.caption.81}%
+\contentsline {table}{\numberline {7.16}{\ignorespaces Lógica operativa de ejecución para las funciones globales de filtrado.}}{45}{table.caption.82}%
+\contentsline {table}{\numberline {7.17}{\ignorespaces Asignación de colores y estados de la turbina (Adaptación IEC 60073 a la industria eólica).}}{49}{table.caption.88}%
+\contentsline {table}{\numberline {7.18}{\ignorespaces Codificación cromática de estados para equipos de maniobra en el SCADA.}}{50}{table.caption.90}%
+\contentsline {table}{\numberline {7.19}{\ignorespaces Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}}{51}{table.caption.95}%
+\contentsline {table}{\numberline {7.20}{\ignorespaces Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}}{54}{table.caption.101}%
+\contentsline {table}{\numberline {7.21}{\ignorespaces Tabla FR1 y FR2 basada en IEC 62443-4-2:2019. Las columnas de nivel muestran el número de nivel aplicable y la columna SL-A indica si el requerimiento se cumple en la solución ($\text {$\mathsurround \z@ \mathchar "458$}$) o no ($\times $).}}{63}{table.7.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -36,6 +38,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{83}{table.E.1}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{89}{table.E.2}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{90}{table.E.2}%
+\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{87}{table.E.1}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{93}{table.E.2}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{94}{table.E.2}%
