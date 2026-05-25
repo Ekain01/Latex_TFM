@@ -105,6 +105,57 @@
     \field{year}{2020}
   \endentry
 
+  \entry{aeeAnuario2025}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Asociación Empresarial Eólica}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Datos consolidados del ejercicio económico. Accedido el: 25
+  de mayo de 2026}
+    \field{title}{{Anuario Eólico 2025: Visión general del sector y
+  aportación socioeconómica de la energía eólica en España}}
+    \verb{url}
+    \verb https://aeeolica.org/
+    \endverb
+    \list{location}{1}{%
+      {Madrid, España}%
+    }
+    \list{institution}{1}{%
+      {AEE}%
+    }
+    \field{type}{Informe Sectorial}
+    \field{year}{2025}
+  \endentry
+
+  \entry{aee2026}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Asociación Empresarial Eólica (AEE)}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{{Estudio macroeconómico del impacto del sector eólico en
+  España}}
+    \verb{url}
+    \verb https://www.aeeolica.org/
+    \endverb
+    \field{year}{2024}
+  \endentry
+
   \entry{Du2023}{article}{}{}
     \name{author}{7}{}{%
       {{hash=DB}{%
@@ -286,6 +337,40 @@
     \field{year}{2024}
   \endentry
 
+  \entry{https://doi.org/10.1002/ese3.35}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=HRW}{%
+         family={Howarth},
+         familyi={H\bibinitperiod},
+         given={Robert\bibnamedelima W.},
+         giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \keyw{Greenhouse gas footprint, methane emissions, natural gas, shale gas}
+    \strng{namehash}{HRW1}
+    \strng{fullhash}{HRW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb https://doi.org/10.1002/ese3.35
+    \endverb
+    \verb{eprint}
+    \verb https://scijournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ese3.35
+    \endverb
+    \field{number}{2}
+    \field{pages}{47\bibrangedash 60}
+    \field{title}{A bridge to nowhere: methane emissions and the greenhouse gas
+  footprint of natural gas}
+    \verb{url}
+    \verb https://scijournals.onlinelibrary.wiley.com/doi/abs/10.1002/ese3.35
+    \endverb
+    \field{volume}{2}
+    \field{journaltitle}{Energy Science \& Engineering}
+    \field{year}{2014}
+  \endentry
+
   \entry{iec60073}{report}{}{}
     \name{author}{1}{}{%
       {{hash=I}{%
@@ -364,6 +449,145 @@
     }
     \field{type}{Standard}
     \field{year}{2019}
+  \endentry
+
+  \entry{iec61400-25}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{number}{IEC 61400-25-2:2015}
+    \field{title}{Wind energy generation systems - Part 25-2: Communications
+  for monitoring and control of wind power plants - Information models}
+    \list{location}{1}{%
+      {Geneva, Switzerland}%
+    }
+    \list{institution}{1}{%
+      {IEC}%
+    }
+    \field{type}{Standard}
+    \field{year}{2015}
+  \endentry
+
+  \entry{ieaNetZero2023Update}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Energy Agency}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I2}
+    \strng{fullhash}{I2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{note}{Accedido el: 25 de mayo de 2026}
+    \field{title}{{Net Zero Roadmap: A Global Pathway to Keep the 1.5 °C Goal
+  in Reach -- 2023 Update}}
+    \verb{url}
+    \verb https://iea.blob.core.windows.net/assets/8ad619b9-17aa-473d-8a2f-4b90
+    \verb 846f5c19/NetZeroRoadmap_AGlobalPathwaytoKeepthe1.5CGoalinReach-2023Up
+    \verb date.pdf
+    \endverb
+    \list{location}{1}{%
+      {París, Francia}%
+    }
+    \list{institution}{1}{%
+      {IEA}%
+    }
+    \field{type}{Technical Report}
+    \field{year}{2023}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{ipcc2021physical}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{IPCC}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{I3}
+    \strng{fullhash}{I3}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \verb{doi}
+    \verb 10.1017/9781009157896
+    \endverb
+    \field{title}{{Climate Change 2021: The Physical Science Basis.
+  Contribution of Working Group I to the Sixth Assessment Report of the
+  Intergovernmental Panel on Climate Change}}
+    \list{location}{1}{%
+      {Cambridge}%
+    }
+    \field{year}{2021}
+  \endentry
+
+  \entry{vattenfall61400}{inproceedings}{}{}
+    \name{author}{4}{}{%
+      {{hash=JA}{%
+         family={Johnsson},
+         familyi={J\bibinitperiod},
+         given={Anders},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LNC}{%
+         family={Liller},
+         familyi={L\bibinitperiod},
+         given={Niels\bibnamedelima Christian},
+         giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Barstad},
+         familyi={B\bibinitperiod},
+         given={Albert},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Sch{\"u}tte},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {European Wind Energy Association (EWEA)}%
+    }
+    \strng{namehash}{JA+1}
+    \strng{fullhash}{JALNCBAST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{Proceedings of the European Wind Energy Conference \&
+  Exhibition (EWEC)}
+    \field{note}{Documento técnico del grupo de usuarios USE61400-25. Accedido
+  el: 25 de mayo de 2026}
+    \field{title}{{Use of IEC 61400-25 to secure access to key O\&M data in
+  wind power plants}}
+    \verb{url}
+    \verb http://use61400-25.com/wp-content/uploads/2016/05/170_Eow2007fullpape
+    \verb r.pdf
+    \endverb
+    \list{location}{1}{%
+      {Mil{\'a}n, Italia}%
+    }
+    \field{year}{2007}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{Khan2024}{article}{}{}
@@ -569,6 +793,79 @@
     \field{year}{2023}
   \endentry
 
+  \entry{makogon2023energy}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=MT}{%
+         family={Makogon},
+         familyi={M\bibinitperiod},
+         given={Taras},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Larsen},
+         familyi={L\bibinitperiod},
+         given={Hans},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MT+1}
+    \strng{fullhash}{MTLHSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{104950}
+    \field{title}{{Energy parasitic consumption and boil-off gas management in
+  the LNG cryogenic supply chain}}
+    \field{volume}{112}
+    \field{journaltitle}{Journal of Natural Gas Science and Engineering}
+    \field{year}{2023}
+  \endentry
+
+  \entry{markandya2007electricity}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=MA}{%
+         family={Markandya},
+         familyi={M\bibinitperiod},
+         given={Anil},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Wilkinson},
+         familyi={W\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MAWP1}
+    \strng{fullhash}{MAWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1016/S0140-6736(07)61253-7
+    \endverb
+    \field{number}{9591}
+    \field{pages}{979\bibrangedash 990}
+    \field{title}{{Electricity generation and health}}
+    \field{volume}{370}
+    \field{journaltitle}{The Lancet}
+    \field{year}{2007}
+  \endentry
+
   \entry{Matsui2021}{article}{}{}
     \name{author}{4}{}{%
       {{hash=MT}{%
@@ -601,7 +898,7 @@
       {Electronics Engineers Inc.}%
     }
     \keyw{Lightning detection system,Lightning protection,SCADA,Wind turbine}
-    \strng{namehash}{MT+1}
+    \strng{namehash}{MT+2}
     \strng{fullhash}{MTYKSSTN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
@@ -638,6 +935,37 @@
     \field{journaltitle}{IEEE Transactions on Power Delivery}
     \field{month}{04}
     \field{year}{2021}
+  \endentry
+
+  \entry{mitecoPNIEC2023}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{Ministerio para la Transición Ecológica y el Reto
+  Demográfico}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{{Plan Nacional Integrado de Energía y Clima (PNIEC)
+  2023-2030. Actualización}}
+    \verb{url}
+    \verb https://www.miteco.gob.es/content/dam/miteco/es/energia/files-1/pniec
+    \verb -2023-2030/PNIEC_2024_240924.pdf
+    \endverb
+    \list{location}{1}{%
+      {Madrid, España}%
+    }
+    \list{institution}{1}{%
+      {Gobierno de España}%
+    }
+    \field{type}{Estrategia Nacional}
+    \field{year}{2023}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{Pandit2023}{article}{}{}
@@ -715,6 +1043,43 @@
     \field{journaltitle}{IEEE Transactions on Sustainable Energy}
     \field{month}{01}
     \field{year}{2023}
+  \endentry
+
+  \entry{ritchie2020safest}{misc}{}{}
+    \name{author}{3}{}{%
+      {{hash=RH}{%
+         family={Ritchie},
+         familyi={R\bibinitperiod},
+         given={Hannah},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Roser},
+         familyi={R\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Pablo},
+         familyi={P\bibinitperiod},
+         given={Pablo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RH+1}
+    \strng{fullhash}{RHRMPP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{howpublished}{Our World in Data}
+    \field{note}{Dataset: ``Death rates per unit of electricity production''.
+  Actualizado y accedido en mayo de 2026}
+    \field{title}{{What are the safest and cleanest sources of energy?}}
+    \verb{url}
+    \verb https://ourworldindata.org/safest-sources-of-energy
+    \endverb
+    \field{year}{2020}
   \endentry
 
   \entry{Shi2021}{article}{}{}
@@ -899,6 +1264,35 @@
     \field{volume}{9}
     \field{journaltitle}{IEEE Access}
     \field{year}{2021}
+  \endentry
+
+  \entry{unfcccParisAgreementPub}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=U}{%
+         family={{UNFCCC}},
+         familyi={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{U1}
+    \strng{fullhash}{U1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{note}{Accedido el: 25 de mayo de 2026}
+    \field{title}{{The Paris Agreement}}
+    \verb{url}
+    \verb https://unfccc.int/sites/default/files/resource/parisagreement_public
+    \verb ation.pdf
+    \endverb
+    \list{location}{1}{%
+      {Bonn, Alemania}%
+    }
+    \list{institution}{1}{%
+      {United Nations Framework Convention on Climate Change}%
+    }
+    \field{type}{Official Publication}
+    \field{year}{2015}
   \endentry
 
   \entry{Xiang2021}{article}{}{}

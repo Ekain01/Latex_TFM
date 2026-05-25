@@ -5,39 +5,61 @@ Describir los beneficios que aporta el trabajo realizado:  beneficios tecnológi
 
 \label{sec:beneficios}
 
-El desarrollo e implementación del sistema de supervisión, control y adquisición de datos centralizado para el clúster energético objeto de este proyecto reporta múltiples beneficios estructurados desde un enfoque multidimensional, abarcando desde el impacto socioambiental hasta consideraciones técnico-económicas de la operación de red.
+El desarrollo e implementación del sistema de supervisión, control y adquisición de datos para el clúster energético objeto de este proyecto trae múltiples beneficios transversales, abarcando desde el impacto socioambiental hasta consideraciones técnico-económicas de la operación de red.
 
 \section{Beneficios ambientales y sociales}
 \label{subsec:beneficios_ambientales}
 
-En las últimas décadas, España ha impulsado una rigurosa agenda de transición ecológica orientada a la descarbonización del modelo energético nacional. A través del Plan Nacional Integrado de Energía y Clima (PNIEC), se establece el compromiso vinculante de reducir las emisiones de gases de efecto invernadero (GEI) en un 32\% para el año 2030 en comparación con los niveles registrados en 1990. En este marco estratégico, el despliegue de la infraestructura eólica y fotovoltaica resulta indispensable.
+En las últimas décadas, España ha impulsado una rigurosa agenda de transición ecológica orientada a la descarbonización del modelo energético nacional. A través del Plan Nacional Integrado de Energía y Clima (PNIEC), se establece el compromiso vinculante de reducir las emisiones de gases de efecto invernadero (GEI) en un 32\% para el año 2030 en comparación con los niveles registrados en 1990 \cite{mitecoPNIEC2023}. En este marco estratégico, el despliegue de la infraestructura eólica y fotovoltaica resulta indispensable.\par
 
-La puesta en marcha del clúster del Maestrazgo se presenta como una oportunidad directa para la sustitución progresiva de la generación síncrona basada en combustibles fósiles (carbón y ciclos combinados), relegando estas tecnologías térmicas a funciones de respaldo o soporte puntual ante contingencias de red. Las estimaciones técnicas del proyecto indican que la energía verde inyectada compensará la emisión de aproximadamente 320,000~toneladas de $\text{CO}_2$ anuales, con un ahorro medio equivalente de 284,000~toneladas de gas natural.
+Además de mitigar las emisiones directas en el punto de generación,  la descentralización renovable elimina la compleja cadena logística vinculada a los combustibles fósiles (extracción, procesamiento, almacenamiento y transporte por buques metaneros, gasoductos o redes ferroviarias que muestra la figura \ref{fig:riesgos})\cite{https://doi.org/10.1002/ese3.35}. Esta cadena convencional no solo induce un consumo energético parásito significativo, sino que añade graves riesgos ambientales. En el caso del gas natural, la extracción mediante técnicas de fracturación hidráulica (\textit{fracking}) es susceptible de liberar metano a la atmósfera un gas de efecto invernadero 84 veces más potente que el $\text{CO}_2$ en el corto plazo \cite{ipcc2021physical}, mientras que el transporte de gas natural licuado (GNL) exige procesos continuos de refrigeración extrema a  $-162~^\circ\text{C}$ de alto coste energético \cite{makogon2023energy}.\par
 
-Además de mitigar las emisiones directas en el punto de generación, la descentralización renovable elimina la compleja cadena logística vinculada a los combustibles fósiles (extracción, procesamiento, almacenamiento y transporte por buques metaneros, gasoductos o redes ferroviarias). Esta cadena convencional no solo induce un consumo energético parásito significativo, sino que añade graves riesgos ambientales. En el caso del gas natural, la extracción mediante técnicas de fracturación hidráulica (\textit{fracking}) es susceptible de liberar metano a la atmósfera ---un gas de efecto invernadero 84 veces más potente que el $\text{CO}_2$ en el corto plazo---, mientras que el transporte de gas natural licuado (GNL) exige procesos continuos de refrigeración extrema de alto coste energético.
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/RiesgosCO2.png}
+    \caption{Riesgos asociados a la generación de energía de combustibles fósiles. Obtenido de : \url{https://www.thelancet.com/action/showPdf?pii=S0140-6736\%2807\%2961253-7}}
+    \label{fig:riesgos}
+\end{figure}
 
-Finalmente, la transición hacia un modelo de generación libre de emisiones impacta positivamente en la salud pública. Atendiendo a los índices de mortalidad por unidad de energía generada (véase la Figura~\ref{fig:death_rates}), por cada teravatio-hora ($\text{TWh}$) producido, el carbón causa una media de 56 muertes prematuras derivadas de la contaminación atmosférica y accidentes laborales en la cadena de suministro. En contraposición, las tecnologías solar y eólica registran tasas marginales de 0.02 y 0.04 muertes/$\text{TWh}$ respectivamente, consolidando el proyecto como una medida directa de prevención sanitaria.
+Finalmente, la transición hacia un modelo de generación libre de emisiones impacta positivamente en la salud pública. Atendiendo a los índices de la literatura epidemiológica internacional sobre mortalidad por unidad de energía generada (véase la tabla \ref{tab:mortalidad_energia}) \cite{ritchie2020safest}, por cada teravatio-hora (TWh) producido, la combustión de carbón convencional causa una media de hasta 24.6 muertes prematuras ---elevándose a cerca de 56 en el caso del lignito--- derivadas de la contaminación atmosférica por material particulado y accidentes laborales en la cadena de suministro \cite{markandya2007electricity}. En contraposición, las tecnologías solar y eólica registran tasas marginales e inocuas de 0.02 y 0.04 muertes/TWh respectivamente \cite{ritchie2020safest}, consolidando el desarrollo de este proyecto como una medida directa de prevención sanitaria.
 
+\begin{table}[tb]
+\centering
+\caption{Índices de mortalidad y efectos sobre la salud asociados a diferentes fuentes de energía por unidad de generación (Casos por TWh).}
+\label{tab:mortalidad_energia}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{\textbf{Muertes por accidentes}} & \multicolumn{3}{c}{\textbf{Efectos asociados a contaminación del aire}} \\
+\cmidrule(r){2-3} \cmidrule(l){4-6}
+& \textbf{Público} & \textbf{Laboral} & \textbf{Muertes} & \textbf{Enfermedad grave} & \textbf{Enfermedad leve} \\
+\midrule
+\textbf{Lignito}  & 0,02 (0,005--0,08) & 0,10 (0,025--0,4)   & 32,6 (8,2--130)   & 298 (74,6--1193)  & 17\,676 (4419--70\,704) \\
+\textbf{Carbón}   & 0,02 (0,005--0,08) & 0,10 (0,025--0,4)   & 24,5 (6,1--98,0)  & 225 (56,2--899)   & 13\,288 (3322--53\,150) \\
+\textbf{Gas}      & 0,02 (0,005--0,08) & 0,001 (0,0003--0,004) & 2,8 (0,70--11,2)  & 30 (7,48--120)    & 703 (176--2813)        \\
+\textbf{Petróleo} & 0,03 (0,008--0,12) & --                  & 18,4 (4,6--73,6)  & 161 (40,4--645,6) & 9\,551 (2388--38\,204)  \\
+\textbf{Biomasa}  & --                 & --                  & 4,63 (1,16--18,5) & 43 (10,8--172,6)  & 2\,276 (569--9104)     \\
+\textbf{Nuclear}  & 0,003              & 0,019               & 0,052             & 0,22              & --                     \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
 
 \section{Beneficios energéticos}
 \label{subsec:beneficios_energeticos}
 
-Desde una perspectiva de soberanía y resiliencia energética, la explotación de los recursos naturales propios del Maestrazgo reduce de manera drástica la dependencia de los mercados de importación de materias primas, disminuyendo la vulnerabilidad geopolítica del sistema eléctrico español.
-
-Desde el punto de vista de la operación de la red, es necesario señalar una particularidad técnica: a diferencia de las centrales convencionales, las plantas eólicas y fotovoltaicas evacúan la energía a través de inversores electrónicos de potencia. Al carecer de grandes masas síncronas giratorias, estas instalaciones aportan una inercia física muy baja al sistema, reduciendo la capacidad intrínseca para amortiguar desviaciones bruscas de frecuencia ante perturbaciones en la red. 
-
-Sin embargo, esta característica se ve compensada por una alta flexibilidad operativa. La ausencia de grandes momentos de inercia y la naturaleza digital de los convertidores otorgan al sistema una elevada velocidad de respuesta, permitiendo la conexión, desconexión y regulación de carga en un intervalo de milisegundos. Esta agilidad es idónea para el seguimiento de la curva de demanda y la prevención de sobrecargas térmicas en las líneas de transporte, superando las limitaciones de las centrales nucleares o térmicas, cuyos protocolos de arranque y parada segura requieren ciclos de varios días. El escenario PNIEC 2023--2030 contempla un incremento sustancial de la potencia bruta instalada (recogida en la Tabla~\ref{tab:pniec_potencia}) con el fin de garantizar una transición segura, estable y eficiente.
+Desde una perspectiva de soberanía y resiliencia energética, la explotación de los recursos naturales propios como el viento, que no requieren importación, reduce la dependencia de los mercados de importación de materias primas, disminuyendo la vulnerabilidad geopolítica del sistema eléctrico nacional. Además, la generación eólica contribuye a la diversificación de la matriz energética, lo que mejora la estabilidad del sistema eléctrico al reducir la exposición a las fluctuaciones de precios y suministro de combustibles fósiles.\par
+Por otro lado, como se observa en la tabla \ref{tab:pniec_potencia} y en la figura \ref{fig:death_rates}, el PNIEC 2023-2030 establece un ambicioso plan de despliegue de energías renovables, con un objetivo específico de alcanzar una potencia instalada de 62~GW en energía eólica para el año 2030, lo que representa un incremento significativo respecto a los niveles actuales\cite{mitecoPNIEC2023}. 
 
 \begin{table}[tb]
     \centering
     \caption{Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030.}
     \label{tab:pniec_potencia}
-    \small
     \resizebox{\textwidth}{!}{
     \begin{tabular}{lcccc}
         \toprule
-        \textbf{Tecnología de Generación} & \textbf{2019} & \textbf{2020} & \textbf{2025} & \textbf{2030} \\
+        \textbf{Tecnología de Generación} & \textbf{2019} & \textbf{2020} & \textbf{2025} & \textbf{2030*} \\
         \midrule
         Eólica & 25,583 & 26,754 & 36,149 & 62,054 \\
         Solar fotovoltaica & 8,306 & 11,004 & 46,501 & 76,277 \\
@@ -55,15 +77,18 @@ Sin embargo, esta característica se ve compensada por una alta flexibilidad ope
     \end{tabular}
     }
 \end{table}
-
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/PNIEC2024.png}
+    \caption{Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030. Fuente: \url{https://www.miteco.gob.es/content/dam/miteco/es/energia/files-1/pniec-2023-2030/PNIEC_2024_240924.pdf}}
+    \label{fig:death_rates}
+\end{figure}
 \section{Beneficios económicos}
 \label{subsec:beneficios_economicos}
 
-La implantación de la red de generación en el Maestrazgo de Teruel implica un impacto macroeconómico notable, con una inversión de capital (CAPEX) prevista que supera los 1,000~millones de euros, actuando como un motor de dinamización socioeconómica local mediante la creación de empleo directo e indirecto durante las fases de construcción, ingeniería y operación comercial (\textit{O\&M}).
+A nivel de mercado mayorista (\textit{pool} eléctrico), la introducción masiva de energía eólica genera un efecto deflactor directo en los precios marginales. Dado que el viento representa un recurso primario exento de costes variables de combustible, los productores eólicos pueden ofertar su energía a precios significativamente inferiores a los de las centrales térmicas que dependen de la cotización internacional del gas o del carbón. De acuerdo con los balances comerciales del sector, el efecto reductor de la generación eólica en el acumulado anual supuso un ahorro de 19.9~euro/$\text{MWh}$ en el mercado mayorista, lo que se traduce en una reducción del 32\% en el precio medio de la electricidad casada, equivalente a un ahorro global de 5,047~millones de euros para los consumidores \cite{aeeAnuario2025}.
 
-A nivel de mercado mayorista (\textit{pool} eléctrico), la introducción masiva de energía eólica genera un efecto deflactor directo en los precios marginales. Dado que el viento representa un recurso primario exento de costes variables de combustible, los productores eólicos pueden ofertar su energía a precios significativamente inferiores a los de las centrales térmicas que dependen de la cotización internacional del gas o del carbón. De acuerdo con los balances comerciales del sector, el efecto reductor de la generación eólica en el acumulado anual supuso un ahorro de 19.9~euro/$\text{MWh}$ en el mercado mayorista, lo que se traduce en una reducción del 32\% en el precio medio de la electricidad casada, equivalente a un ahorro global de 5,047~millones de euros para los consumidores.
-
-\subsection{Beneficios del sistema SCADA}
+\section{Beneficios tecnológicos}
 \label{subsec:beneficios_scada}
 
 La arquitectura de supervisión y adquisición de datos diseñada se fundamenta en los paradigmas de la Industria 4.0, resolviendo de manera centralizada la problemática técnica asociada a la dispersión geográfica inherente a la generación descentralizada.

@@ -89,7 +89,7 @@ Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera
 \end{figure}
 
 \subsection{Sistemas Multipuesto (\textit{Multy User Systems})}
-Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde un solo ordenador hace todo), en un sistema multipuesto la carga de trabajo se divide entre uno o varios Servidores centrales y múltiples estaciones Cliente. Este enfoque permite una variedad mayor de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación. ( Figura \ref{fig:multipuesto}) \par 
+Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde un solo ordenador hace todo), en un sistema multipuesto la carga de trabajo se divide entre uno o varios Servidores centrales y múltiples estaciones Cliente. Este enfoque permite una variedad mayor de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación. (Figura \ref{fig:multipuesto_distribuido}) \par 
 
 \subsection{Virtualización mediante SIVaaS}
 
@@ -145,7 +145,7 @@ Como se detalla en el anexo \ref{cap:Pruebas} , la fase final del proyecto no se
 El despliegue físico y lógico del equipamiento en la MCR para esta fase de validación estructural consta de los siguientes activos unificados especificados en la tabla \ref{tab:Equipamiento_MCR}:
 \begin{table}[p]
     \centering
-    \caption{Inserta aquí la descripción de la tabla.}
+    \caption{Equipamiento principal de la primera instancia de host y sus máquinas virtuales.}
     \label{tab:Equipamiento_MCR}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{p{11cm} p{2cm}}
@@ -208,9 +208,11 @@ El despliegue físico y lógico del equipamiento en la MCR para esta fase de val
 Esta infraestructura virtualizada llave en mano dota a la MCR de la flexibilidad necesaria para verificar la adquisición de las variables estructuradas.
 
 \textbf{ESPECIFICAR EL CAJON QUE SE UTILIZARA (PLANOS DE LOS SERVIDORES)}
-\section{Diseño del Modelo de información del SCADA}
+\section{Modelo de Información (IM) de la solución SCADA}
 \label{cap:modelo_informacion}
-Las variables en WinCC se dividen en tres categorías principales: Variables internas, variables de estructura y variables externas. Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado,son variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente.\par
+El modelo de información de un sistema es la representación estructurada de los datos y la información que maneja ese sistema. Con ello se define la forma en que se organizan, almacenan y acceden a los datoa dentro del sistema. El entorno de SIMATIC WinCC V8.1 permite la creación de variables que se utilizan para representar los datos del proceso, las alarmas, los eventos y otros aspectos operativos del sistema SCADA. Estas variables pueden ser internas, externas o de estructura, dependiendo de su función y origen dentro del sistema. \par
+
+ Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado,son variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente.\par
 \subsection{Variables internas}
 El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas son fundamentales para la operación del sistema, ya que proporcionan información crítica sobre el estado del sistema, el usuario actual, la máquina local, el idioma activo, la hora local, entre otros aspectos operativos. Estas variables se pueden utilizar en scripts y lógicas de control para implementar funcionalidades específicas y mejorar la interacción con el operador. \par 
 
@@ -241,7 +243,7 @@ En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimien
 \subsection{Variables de estructura}
 Las variables de estructura son el nucleo de la solución, ya que permiten estructurar la información de forma lógica y coherente. Para el modelado de las variables de estructura se han seguido dos normas internacionales: La norma IEC 61400-25-2 para el modelado de los aerogeneradores y la norma IEC 61850 para el modelado de la subestación eléctrica. Estas normas establecen un marco común para la representación y organización de datos en sistemas eólicos y eléctricos.\par
 \subsubsection{Modelo de información de aerogeneradores}
-La norma \textbf{IEC 61400-25-2} es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición de los modelos de información y los servicios de comunicación que permiten la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.
+La norma \textbf{IEC 61400-25} es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición de los modelos de información (IM), los cuales definen el acceso al contenido de los datos. Este modelo de información permite la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.\par
 
 La norma establece cuatro tipos de niveles en variables de estructura, cada uno con su propia función y propósito dentro del sistema de comunicación eólico:
 \begin{itemize}
@@ -260,11 +262,11 @@ La norma establece cuatro tipos de niveles en variables de estructura, cada uno 
 \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figuras/IEC_61400-25-2_v1.jpg}
-    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url{https://www.iec.ch/standards/61400-25-2}}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url{https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}
     \label{fig:IEC}
 \end{figure}
 \paragraph{Nivel 5: Atributos de Dato}
-Se han diseñado las estructuras de variables de nivel 5 según la norma IEC 61400-25-2. En ellas se detallan las Clases de Datos Comunes (CDC), las cuales son utilizadas para representar los diferentes tipos de datos en el sistema segun el estándar. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2, lo que facilita la interoperabilidad entre diferentes dispositivos y sistemas dentro de un parque eólico. Las CDC definen la estructura y el formato de los datos, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico. (Tabla \ref{tab:estructuras_nivel5})
+ Las Clases de Datos Comunes (CDC) definidas por la norma, son clases las cuales son utilizadas para representar los diferentes tipos de datos en el sistema. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2. Las CDC definen la estructura y el formato de los datos y representan el nivel 5 de la jerarquía, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico. (Tabla \ref{tab:estructuras_nivel5})
 
 \begin{table}[t]
     \centering
@@ -302,7 +304,9 @@ Se han diseñado las estructuras de variables de nivel 5 según la norma IEC 614
 \end{table}
 
 \paragraph{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}
-El nivel 2 de estructura de dispositivos agrupa los nodos lógicos que comparten una misma ubicación física. En el caso de un aerogenerador que comparte una misma turbina física, la fusión del Dispositivo Físico (Nivel 1) y Lógico (Nivel 2) se justifica por su \textbf{centralización física y funcional} ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el SCADA resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en \textit{SIMATIC WinCC V8.1}(Tabla \ref{tab:ejemplo_fusion_niveles}).
+El nivel 1 de estructura de dispositivos representa los dispositivos físicos reales a los que se accede a través de la red de comunicación. En el caso de un parque eólico, cada aerogenerador se modela como un Dispositivo Físico (PD) con un identificador único (Ej. \texttt{WTG1} para el aerogenerador 1). Este nivel refleja la realidad física de la planta, donde cada dispositivo tiene una ubicación geográfica y una función específica dentro del sistema de generación eólica. \par
+
+El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógicos que comparten una misma ubicación física por ejemplo la góndola dentro de la turbina. En el caso de un aerogenerador que comparte sistemas pertenecientes a una misma turbina física, la fusión del Dispositivo Físico (Nivel 1) y Lógico (Nivel 2) se podría justificar por su centralización física y funcional ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el SCADA  resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en \textit{SIMATIC WinCC V8.1}(Tabla \ref{tab:ejemplo_fusion_niveles}).
 
 \begin{table}[tb]
     \centering
@@ -322,12 +326,18 @@ El nivel 2 de estructura de dispositivos agrupa los nodos lógicos que comparten
 \end{table}
 
 \paragraph{Nivel 3: Estructura de Nodos Lógicos (LN)}
-La norma IEC 61400-25 define una jerarquía semántica donde el nivel 3 se identifica mediante siglas de tres o cuatro letras mayúsculas siendo la primera letra la que indica el tipo de objeto (Por ejemplo W para la turbina) seguido por letras que indican la función o característica específica del objeto (por ejemplo, ROT para objetos relacionados con la rotación de la turbina). Los nodos lógicos se agrupan por subsistemas, cada uno de ellos representando un área funcional específica dentro del parque eólico. Los nodos lógicos más relevantes en el contexto de un parque eólico son los siguientes:
+El nivel 3 representa una agrupación de objetos que comparten una misma funcionalidad lógica. Se identifican mediante siglas de tres o cuatro letras mayúsculas siendo la primera letra la que indica el tipo de objeto (Por ejemplo W para la turbina) seguido por letras que indican la función o característica específica del objeto (por ejemplo, ROT para objetos relacionados con la rotación de la turbina). Los nodos lógicos se agrupan por subsistemas, cada uno de ellos representando un área funcional específica dentro del parque eólico. Se han definido los siguientes nodos lógicos para cada aerogenerador:
 \begin{itemize}
-    \item \textbf{WGEN (Generator):} Agrupa toda la información relativa a la conversión electromecánica.
-    \item \textbf{WROT (Rotor):} Contiene las variables cinemáticas del conjunto de palas y buje.
-    \item \textbf{WYAW (Yaw System):} Gestiona los datos del sistema de orientación de la góndola.
-    \item \textbf{WTRF (Transformer):} Supervisa el estado de los activos de transformación eléctrica.
+    \item \textbf{LLN0 (Logical Node Zero):} Nodo obligatorio que centraliza la información común del dispositivo lógico, tales como la configuración del sistema, versión del firmware y estados generales de operación.
+    \item \textbf{LPHD (Physical Device Information):} Alberga las propiedades estructurales y físicas del hardware que soporta los nodos lógicos, incluyendo el número de serie, fabricante y el estado de salud del dispositivo (\textit{PhyHealth}).
+    \item \textbf{WGEN (Generator):} Agrupa toda la información relativa a la conversión electromecánica y variables eléctricas de salida de la máquina.
+    \item \textbf{WROT (Rotor):} Contiene las variables cinemáticas del conjunto de palas y buje, regulando parámetros esenciales como la velocidad angular del eje principal.
+    \item \textbf{WYAW (Yaw System):} Gestiona los datos del sistema de orientación de la góndola respecto a la dirección predominante del viento.
+    \item \textbf{WTRF (Transformer):} Supervisa el estado de los activos de transformación eléctrica de media tensión integrados en la torre o peana.
+    \item \textbf{WTOW (Tower):} Modela el comportamiento y las variables de la estructura de la torre.
+    \item \textbf{WNAC (Nacelle):} Monitoriza las condiciones ambientales e instrumentación alojada en la góndola, tales como la temperatura interna, vibraciones y la velocidad/dirección del viento medidas por el anemómetro de techo.
+    \item \textbf{WMET (Meteorological Station):} Registra las variables meteorológicas del entorno de la turbina, crucial para evaluar las curvas de potencia analíticas de la planta.
+    \item \textbf{WTUR (Turbine):} Representa la turbina eólica completa, integrando las funciones de los componentes individuales.
 \end{itemize}
 
 %Además, el estandar IEC 61400-25-2 viene heredado de la norma \textbf{IEC 61850-7-4}, la cual se desarrolló para la automatización de subestaciones eléctricas. Por lo tanto, el diseño de las estructuras de variables de nivel 2 deben incorporar atributos heredados de IEC 61850-7-4 \cite{iec61850-7-4}. Esos atributos heredados son los siguientes:
@@ -360,9 +370,6 @@ En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en
     }
 \end{table}
 
-
-
-\textit{Nota: El desglose exhaustivo de todos los Nodos Lógicos y sus correspondientes variables de Nivel 3, agrupados por subsistemas, se encuentra disponible para su consulta en el \textbf{Anexo I}.}
 \FloatBarrier
 \subsubsection{Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}
 \label{sec:variables_subestacion}
@@ -503,6 +510,7 @@ Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la 
         \end{tabular}%
     }
 \end{table}
+\FloatBarrier
 \subsection{Variables externas}
 Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (OPC UA). 
 
@@ -589,6 +597,26 @@ Por último, el Direccionamiento Espacial establece que, una vez creado el enlac
 \end{table}
 
 En esta cadena de conexión, el parámetro \texttt{ns=2} indica al cliente WinCC que debe buscar la variable en el segundo espacio de nombres del servidor. Por su parte, la cadena posterior a \texttt{s} indica la ruta exacta del nodo dentro del arbol de variables.
+\section{Modelo de Intercambio de Información (IEM) de la solución SCADA}
+\label{subsec:modelo_intercambio_solucion}
+
+Mientras que el modelo de información estático determina la semántica y la estructura orientada a objetos de los datos, el modelo de intercambio de información define de manera abstracta las reglas, servicios y verbos mediante los cuales la MCR  interactúa con los datos del parque eólico. En esta solución, el modelo de intercambio abstracto heredado de la norma IEC 61400-25-3 (Figura \ref{fig:IEM}) se ha materializado mediante un mapeo tecnológico directo sobre el estándar \textit{OPC Unified Architecture} (OPC UA) coordinado entre \textit{KepServerEX} como servidor de comunicaciones y \textit{SIMATIC WinCC V8.1} como plataforma SCADA.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/IEM.png}
+    \caption{Modelo de Intercambio de Información (IEM) de la solución SCADA basado en OPC UA. Obtenido de \url{https://webstore.iec.ch/en/iec_catalog/product/preview/?id=L3B1Yi9wZGYvcHJldmlldy9pbmZvX2llYzYxNDAwLTI1LTN7ZWQyLjAuUkxWfWVuLnBkZg==}}
+    \label{fig:IEM}
+\end{figure}
+La implementación práctica de estos servicios de intercambio se articula en base a cuatro pilares operativos dentro de la arquitectura del proyecto:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Recuperación de Datos por Eventos (\textit{Exception Reporting}):} Para evitar la saturación computacional del \textit{Runtime} que provoca el \textit{polling} cíclico convencional de 120 turbinas concurrentes, el intercambio de datos en tiempo real se delega en el mecanismo de \textit{Monitored Items} de OPC UA. Bajo este esquema, el canal de comunicación permanece en silencio y el controlador de campo solo notifica de forma espontánea una actualización hacia WinCC si la variable física (v.g., la velocidad del rotor \texttt{WROT.RotSpd}) rebasa una banda muerta (\textit{deadband}) preconfigurada en el servidor.
+    
+    \item \textbf{Notificación Asíncrona de Alarmas y Condiciones:} La gestión de estados críticos y disparos de los interruptores de la subestación (nodos \texttt{XCBR} bajo IEC 61850) implementa los bloques de control de informes (\textit{Report Control Blocks}). Al producirse una contingencia, el servidor inyecta una ráfaga de eventos asíncronos embebidos con marcas de tiempo de origen (\textit{Source Timestamp}). El módulo \textit{WinCC Alarm Logging} absorbe estas tramas sin bloquear los hilos gráficos, garantizando la trazabilidad cronológica exacta del fallo.
+    
+    \item \textbf{Persistencia y Registro Histórico (\textit{Logging}):} El servicio de almacenamiento histórico se ha implementado en un régimen de doble redundancia operativa. A nivel local en la MCR, WinCC realiza la captura de variables mediante \textit{Tag Logging} sobre una base de datos Microsoft SQL integrada para alimentar las gráficas de tendencia instantáneas del operador. De manera paralela y para salvaguardar el rendimiento local, un cliente de intercambio secundario instrumentado en \textit{Node-RED} captura los flujos industriales y los transfiere mediante la red IT hacia la base de datos de series temporales \textit{InfluxDB} en la nube de AWS, desacoplando la analítica a largo plazo de la operación en tiempo real.
+    
+\end{enumerate}
 
 \section{Interfaz Gráfica}
 
@@ -752,7 +780,7 @@ De manera análoga a las turbinas individuales, el parque puede subdividirse en 
 \subsection{Implementación de \textit{Scripts} Globales para el Filtrado Paramétrico de Activos}
 \label{sec:scripts_globales_filtrado}
 
-Para facilitar la navegación del operador entre los distintos niveles de la planta, se ha desarrollado un sistema de filtrado paramétrico. Este sistema se ejecuta en la pantalla principal de monitorización \texttt{10\_WTG\_Overview} (Figura \ref{fig:10_wtg_overview}), permitiendo la segregación visual de los aerogeneradores en función del parque al que pertenecen o de su identificador de estado específico.\par
+Para facilitar la navegación del operador entre los distintos niveles de la planta, se ha desarrollado un sistema de filtrado paramétrico. Este sistema se ejecuta en la pantalla principal de monitorización \texttt{10\_WTG\_Overview} (Figura \ref{fig:interfaz_grafica_selector}), permitiendo la segregación visual de los aerogeneradores en función del parque al que pertenecen o de su identificador de estado específico.\par
 
 La lógica de control que gobierna este comportamiento no se ha programado de forma local en los eventos individuales de cada objeto gráfico. En su lugar, se ha optado por utilizar \textit{scripts} globales en el editor de WinCC. Esta decisión posibilita la creación de acciones reutilizables, además de facilitar el mantenimiento.\par
 

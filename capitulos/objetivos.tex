@@ -3,21 +3,17 @@
 
 \section{Objetivos}
 
-El objetivo principal es el desarrollo del sistema SCADA para la gestión integral de una red de generación sostenible\par
-Para ello se ha de:
+El objetivo general de este TFM es diseñar e implementar una solución basado en la tecnología SCADA para la supervisión y control de parques eólicos, con un enfoque específico en la integración de datos siguiendo los estándares internacionales IEC 61400-25 e IEC 61850 e integrando las tecnologías IT mediante el IIoT. Para alcanzar este objetivo general, se han definido los siguientes objetivos específicos:
 \begin{itemize}
-\item   Analizar y crear las estructuras de datos necesarias siguiendo la normativa IEC 61400-25-2 para la comunicación en plantas eólicas.
-\item   Diseñar la arquitectura del sistema SCADA incluyendo la estructura de comunicación, la base de datos y la interfaz de usuario.
-\item   Crear el flujo de navegación de pantallas.
-\item   Estudiar el sistema de ciberseguridad IEC 62443 para proteger el sistema SCADA contra amenazas y vulnerabilidades.
-\item	Integrar y analizar todas las señales con sus propiedades de comunicación.
-\item	Crear sistemas de gestión de alarmas y eventos.
-\item	Crear sistemas de análisis de señales analógicas en gráficas de tendencia y datos históricos.
-\item Realizar una despliegue en la nube para la visualización de datos en tiempo real.
-\item Crear un banco de pruebas. 
+
+\item  Objetivo 1: Analizar los requisitos funcionales y no funcionales de un sistema SCADA para parques eólicos, considerando aspectos como la cantidad de turbinas a manejar, la arquitectura del sistema y los requerimientos de comunicación. Además de realizar un estudio del software que se va a utilizar para el desarrollo de la solución, en este caso SIMATIC WinCC V8.1.     
+\item   Objetivo 2: Diseñar el modelo de información (IM) de la planta eólica basado en los estándares IEC 61400-25 e IEC 61850, definiendo la estructura de datos, las variables de proceso y los atributos necesarios para representar la telemetría de las turbinas y la subestación eléctrica. Diseñar la visualización jerarquía y navegación de pantallas y realizar la conectividad con la nube para la visualización de datos en tiempo real.
+
+\item  Objetivo 3: Diseñar e implementar un banco de pruebas basado en NodeRED en el que se simule el comportamiento tanto de las turbinas como de las subestaciones eléctricas de las que cuelgan. Este banco de pruebas se utilizará para validar la correcta implementación del modelo de información y la funcionalidad del sistema SCADA desarrollado.
+
 \end{itemize}
 
 
 \section{Alcance}
 
-Cuál es el ámbito del proyecto, es decir, resuelve un problema concreto, es una metodología que puede aplicarse de forma general a un determinado tipo de problemas…
+Mediante el desarrollo del proyecto se pretende crear una metodología de diseño e implementación de sistemas SCADA para parques eólicos que pueda ser replicable y escalable a diferentes contextos y tamaños de plantas. El alcance del proyecto se limita a la fase de diseño e implementación de la solución SCADA, sin incluir la fase de despliegue en un entorno real. Sin embargo, se busca que la solución sea capaz de ser implementada en un entorno real en el futuro, con las adaptaciones necesarias según las características específicas de un cliente final.
