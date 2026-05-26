@@ -1,16 +1,13 @@
 \chapter{Beneficios}
 \label{cap:beneficios}
-
-Describir los beneficios que aporta el trabajo realizado:  beneficios tecnológicos, económicos, sociales, etc.
-
 \label{sec:beneficios}
 
-El desarrollo e implementación del sistema de supervisión, control y adquisición de datos para el clúster energético objeto de este proyecto trae múltiples beneficios transversales, abarcando desde el impacto socioambiental hasta consideraciones técnico-económicas de la operación de red.
+El desarrollo e implementación del sistema \ac{SCADA} para el clúster energético objeto de este proyecto trae múltiples beneficios transversales, abarcando desde el impacto socioambiental hasta consideraciones técnico-económicas de la operación de red.
 
 \section{Beneficios ambientales y sociales}
 \label{subsec:beneficios_ambientales}
 
-En las últimas décadas, España ha impulsado una rigurosa agenda de transición ecológica orientada a la descarbonización del modelo energético nacional. A través del Plan Nacional Integrado de Energía y Clima (PNIEC), se establece el compromiso vinculante de reducir las emisiones de gases de efecto invernadero (GEI) en un 32\% para el año 2030 en comparación con los niveles registrados en 1990 \cite{mitecoPNIEC2023}. En este marco estratégico, el despliegue de la infraestructura eólica y fotovoltaica resulta indispensable.\par
+En las últimas décadas, España ha impulsado una rigurosa agenda de transición ecológica orientada a la descarbonización del modelo energético nacional. A través del \ac{PNIEC}, se establece el compromiso vinculante de reducir las emisiones de \ac{GEI} en un 32\% para el año 2030 en comparación con los niveles registrados en 1990 \cite{mitecoPNIEC2023}. En este marco estratégico, el despliegue de la infraestructura eólica y fotovoltaica resulta indispensable.\par
 
 Además de mitigar las emisiones directas en el punto de generación,  la descentralización renovable elimina la compleja cadena logística vinculada a los combustibles fósiles (extracción, procesamiento, almacenamiento y transporte por buques metaneros, gasoductos o redes ferroviarias que muestra la figura \ref{fig:riesgos})\cite{https://doi.org/10.1002/ese3.35}. Esta cadena convencional no solo induce un consumo energético parásito significativo, sino que añade graves riesgos ambientales. En el caso del gas natural, la extracción mediante técnicas de fracturación hidráulica (\textit{fracking}) es susceptible de liberar metano a la atmósfera un gas de efecto invernadero 84 veces más potente que el $\text{CO}_2$ en el corto plazo \cite{ipcc2021physical}, mientras que el transporte de gas natural licuado (GNL) exige procesos continuos de refrigeración extrema a  $-162~^\circ\text{C}$ de alto coste energético \cite{makogon2023energy}.\par
 
@@ -21,8 +18,7 @@ Además de mitigar las emisiones directas en el punto de generación,  la descen
     \label{fig:riesgos}
 \end{figure}
 
-Finalmente, la transición hacia un modelo de generación libre de emisiones impacta positivamente en la salud pública. Atendiendo a los índices de la literatura epidemiológica internacional sobre mortalidad por unidad de energía generada (véase la tabla \ref{tab:mortalidad_energia}) \cite{ritchie2020safest}, por cada teravatio-hora (TWh) producido, la combustión de carbón convencional causa una media de hasta 24.6 muertes prematuras ---elevándose a cerca de 56 en el caso del lignito--- derivadas de la contaminación atmosférica por material particulado y accidentes laborales en la cadena de suministro \cite{markandya2007electricity}. En contraposición, las tecnologías solar y eólica registran tasas marginales e inocuas de 0.02 y 0.04 muertes/TWh respectivamente \cite{ritchie2020safest}, consolidando el desarrollo de este proyecto como una medida directa de prevención sanitaria.
-
+Finalmente, la transición hacia un modelo de generación libre de emisiones impacta positivamente en la salud pública. Atendiendo a los índices de la literatura epidemiológica internacional sobre mortalidad por unidad de energía generada (véase la tabla \ref{tab:mortalidad_energia}) \cite{ritchie2020safest}, por cada teravatio-hora (TWh) producido, la combustión de carbón convencional causa una media de hasta 24.62 muertes prematuras elevándose a 32.72 en el caso del lignito derivadas de la contaminación atmosférica por material particulado y accidentes laborales en la cadena de suministro \cite{markandya2007electricity}. En contraposición, las tecnologías solar y eólica registran tasas marginales e inocuas de 0.02 y 0.04 muertes/TWh respectivamente \cite{ritchie2020safest}, consolidando el desarrollo de este proyecto como una medida directa de prevención sanitaria.
 \begin{table}[tb]
 \centering
 \caption{Índices de mortalidad y efectos sobre la salud asociados a diferentes fuentes de energía por unidad de generación (Casos por TWh).}
@@ -40,17 +36,18 @@ Finalmente, la transición hacia un modelo de generación libre de emisiones imp
 \textbf{Petróleo} & 0,03 (0,008--0,12) & --                  & 18,4 (4,6--73,6)  & 161 (40,4--645,6) & 9\,551 (2388--38\,204)  \\
 \textbf{Biomasa}  & --                 & --                  & 4,63 (1,16--18,5) & 43 (10,8--172,6)  & 2\,276 (569--9104)     \\
 \textbf{Nuclear}  & 0,003              & 0,019               & 0,052             & 0,22              & --                     \\
+\textbf{Eólica}   & --                 & --                  & 0,04              & --                & --                     \\
+\textbf{Solar}    & --                 & --                  & 0,02              & --                & --                     \\
 \bottomrule
 \end{tabular}
 }
 \end{table}
 
-
 \section{Beneficios energéticos}
 \label{subsec:beneficios_energeticos}
 
 Desde una perspectiva de soberanía y resiliencia energética, la explotación de los recursos naturales propios como el viento, que no requieren importación, reduce la dependencia de los mercados de importación de materias primas, disminuyendo la vulnerabilidad geopolítica del sistema eléctrico nacional. Además, la generación eólica contribuye a la diversificación de la matriz energética, lo que mejora la estabilidad del sistema eléctrico al reducir la exposición a las fluctuaciones de precios y suministro de combustibles fósiles.\par
-Por otro lado, como se observa en la tabla \ref{tab:pniec_potencia} y en la figura \ref{fig:death_rates}, el PNIEC 2023-2030 establece un ambicioso plan de despliegue de energías renovables, con un objetivo específico de alcanzar una potencia instalada de 62~GW en energía eólica para el año 2030, lo que representa un incremento significativo respecto a los niveles actuales\cite{mitecoPNIEC2023}. 
+Por otro lado, como se observa en la tabla \ref{tab:pniec_potencia} y en la figura \ref{fig:death_rates}, el \ac{PNIEC} 2023-2030 establece un ambicioso plan de despliegue de energías renovables, con un objetivo específico de alcanzar una potencia instalada de 62~GW en energía eólica para el año 2030, lo que representa un incremento significativo respecto a los niveles actuales\cite{mitecoPNIEC2023}. 
 
 \begin{table}[tb]
     \centering
@@ -86,19 +83,37 @@ Por otro lado, como se observa en la tabla \ref{tab:pniec_potencia} y en la figu
 \section{Beneficios económicos}
 \label{subsec:beneficios_economicos}
 
-A nivel de mercado mayorista (\textit{pool} eléctrico), la introducción masiva de energía eólica genera un efecto deflactor directo en los precios marginales. Dado que el viento representa un recurso primario exento de costes variables de combustible, los productores eólicos pueden ofertar su energía a precios significativamente inferiores a los de las centrales térmicas que dependen de la cotización internacional del gas o del carbón. De acuerdo con los balances comerciales del sector, el efecto reductor de la generación eólica en el acumulado anual supuso un ahorro de 19.9~euro/$\text{MWh}$ en el mercado mayorista, lo que se traduce en una reducción del 32\% en el precio medio de la electricidad casada, equivalente a un ahorro global de 5,047~millones de euros para los consumidores \cite{aeeAnuario2025}.
+A nivel de mercado mayorista (\textit{pool} eléctrico), la introducción masiva de energía eólica genera un efecto deflactor directo en los precios marginales\cite{FIGUEIREDO201954}. Dado que el viento representa un recurso primario exento de costes variables de combustible, los productores eólicos pueden ofertar su energía a precios significativamente inferiores a los de las centrales térmicas que dependen de la cotización internacional del gas o del carbón. De acuerdo con los balances comerciales del sector, el efecto reductor de la generación eólica en el acumulado anual supuso un ahorro de 19.9~euro/$\text{MWh}$ en el mercado mayorista, lo que se traduce en una reducción del 32\% en el precio medio de la electricidad casada, equivalente a un ahorro global de 5,047~millones de euros para los consumidores \cite{aeeAnuario2025}.
 
 \section{Beneficios tecnológicos}
 \label{subsec:beneficios_scada}
 
-La arquitectura de supervisión y adquisición de datos diseñada se fundamenta en los paradigmas de la Industria 4.0, resolviendo de manera centralizada la problemática técnica asociada a la dispersión geográfica inherente a la generación descentralizada.
-
-La centralización de variables críticas (tales como velocidades de viento, potencias activas y reactivas instántaneas o estados operativos de los activos) proporciona los siguientes beneficios lógicos y funcionales:
+La arquitectura \ac{SCADA} diseñada se fundamenta en los paradigmas de la Industria 4.0, resolviendo el problema de la descentralización de la generación. Este enfoque permite una gestión integral y en tiempo real de un clúster energético distribuido, facilitando la optimización de la generación, el mantenimiento predictivo y la gestión automatizada de seguridad. Además, el desarrollo de plantillas de visualización estandarizadas y flujos de navegación optimizados asienta una línea base de ingeniería altamente escalable, reduciendo los tiempos de diseño e integración en futuras ampliaciones del clúster energético.
 
 \begin{itemize}
-    \item \textbf{Optimización de la generación en tiempo real:} Facilita la toma de decisiones operativas inmediatas para adecuar las consignas de potencia del clúster basándose en las condiciones meteorológicas concurrentes y las restricciones dinámicas de la red de transporte.
+    \item \textbf{Optimización de la generación en tiempo real:} Facilita la toma de decisiones operativas inmediatas basándose en las condiciones meteorológicas concurrentes y las restricciones dinámicas de la red de transporte.
     \item \textbf{Evolución hacia el mantenimiento predictivo:} El registro y análisis continuo de los históricos de parámetros eléctricos, térmicos y mecánicos mitiga la necesidad de inspecciones preventivas presenciales recurrentes. Esto disminuye la probabilidad de fallos catastróficos, aminora los costes de operación y reduce los tiempos de inactividad (\textit{downtime}) mediante la planificación remota de activos.
     \item \textbf{Gestión automatizada de seguridad y alarmas:} La clasificación y priorización normalizada de los eventos de planta activa protocolos de aislamiento automatizados y planes de contingencia inmediatos, resguardando la integridad tanto del personal técnico como de la infraestructura de alta tensión.
     \item \textbf{Generación de modelos normativos replicables:} El desarrollo de plantillas de visualización estandarizadas y flujos de navegación optimizados asienta una línea base de ingeniería (\textit{blueprint}) altamente escalable, reduciendo los tiempos de diseño e integración en futuras ampliaciones del clúster energético.
 \end{itemize}
-\section{ODS: Objetivos de desarrollo sostenible}
+
+\section{Justificación y Alineación con los \ac{ODS}}
+El desarrollo tecnológico y arquitectónico expuesto en este Trabajo de Fin de Máster no solo responde a un desafío estrictamente técnico de ingeniería de automatización y control, sino que se encuentra intrínsecamente alineado con las directrices de la Agenda 2030 de las Naciones Unidas. A través de la optimización del flujo de datos en plantas de generación renovable, este proyecto contribuye de forma directa al cumplimiento de los siguientes Objetivos de Desarrollo Sostenible (ODS) \ref{fig:ods}
+
+\subsection{ODS 7: Energía Asequible y No Contaminante.}
+    Este trabajo incide directamente en la meta de aumentar sustancialmente la proporción de energía renovable en el conjunto de fuentes energéticas. Al facilitar la integración y optimización de los aerogeneradores se produce en una mayor inyección de energía limpia a la red y en un efecto deflactor en el mercado mayorista eléctrico (\textit{merit-order effect}), abaratando el coste de la electricidad y garantizando un suministro más asequible y sostenible para la sociedad.
+
+    \subsection{ODS 9: Industria, Innovación e Infraestructura.}
+    La columna vertebral de este \ac{TFM} es la modernización y reconversión de las infraestructuras industriales para que sean sostenibles, utilizando los recursos con mayor eficacia y promoviendo la adopción de tecnologías limpias y procesos avanzados. Todo ello mediante la convergencia \ac{OT}/\ac{IT} que dota a la infraestructura eléctrica de una conectividad resiliente, escalable y cibersegura, habilitando el despliegue de soluciones analíticas modernas que impulsan la digitalización y la resiliencia en la gestión de redes de generación.
+
+    \subsection{ODS 12: Producción y Consumo Responsables.}
+    Este objetivo se materializa mediante la aplicación de estrategias de analítica avanzada y mantenimiento predictivo en la nube. A través de la ingesta continua de series temporales en la base de datos \textit{InfluxDB} alojada en \textit{AWS}, el sistema permite el modelado multivariable no paramétrico de las curvas de potencia analíticas de cada turbina (evaluando variables complejas como la intensidad de turbulencia y la cizalladura). La detección temprana de anomalías estructurales o degradaciones mecánicas previene fallos catastróficos. Esto alarga sustancialmente el ciclo de vida útil de los componentes físicos del aerogenerador (palas, multiplicadora, generador), reduciendo la generación de residuos industriales pesados y optimizando el consumo de recursos materiales en la cadena de suministro del sector energético.
+
+    \subsection{ODS 13: Acción por el Clima.}
+    La monitorización inteligente de 120 aerogeneradores es una medida directa para combatir el cambio climático y sus efectos. Cada megavatio-hora (MWh) de origen eólico cuya producción se garantiza de forma eficiente desplaza de la curva de carga agregada a la generación basada en la quema de combustibles fósiles (carbón o ciclos combinados de gas natural). Al optimizar la eficiencia del parque, el SCADA desarrollado mitiga de forma indirecta las emisiones masivas de gases de efecto invernadero ($\text{CO}_2$ y metano), reduciendo la huella de carbono del sistema eléctrico nacional y acelerando el cumplimiento de las metas de descarbonización vinculantes establecidas en la actualización del \textit{PNIEC 2023--2030}.
+    \begin{figure}[tbp]
+        \centering
+        \includegraphics[width=\textwidth]{figuras/ODS.png}
+        \caption{Alineación de los beneficios del proyecto con los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030.}
+        \label{fig:ods}        
+    \end{figure}

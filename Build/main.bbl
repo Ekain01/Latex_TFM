@@ -249,92 +249,62 @@
     \field{year}{2023}
   \endentry
 
-  \entry{Gnana2024}{article}{}{}
-    \name{author}{6}{}{%
-      {{hash=GGS}{%
-         family={Gnana},
-         familyi={G\bibinitperiod},
-         given={Gnana\bibnamedelima Swathika},
-         giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+  \entry{FIGUEIREDO201954}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=FNC}{%
+         family={Figueiredo},
+         familyi={F\bibinitperiod},
+         given={Nuno\bibnamedelima Carvalho},
+         giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod},
       }}%
-      {{hash=KA}{%
-         family={Karthikeyan},
-         familyi={K\bibinitperiod},
-         given={Aayush},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=KK}{%
-         family={Karthikeyan},
-         familyi={K\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=SP}{%
-         family={Sanjeevikumar},
+      {{hash=dSPP}{%
+         prefix={da},
+         prefixi={d\bibinitperiod},
+         family={Silva},
          familyi={S\bibinitperiod},
-         given={P.},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=TSK}{%
-         family={Thomas},
-         familyi={T\bibinitperiod},
-         given={Sajju\bibnamedelima Karapparambil},
-         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
-      }}%
-      {{hash=BA}{%
-         family={Babu},
-         familyi={B\bibinitperiod},
-         given={Amin},
-         giveni={A\bibinitperiod},
+         given={Patrícia\bibnamedelima Pereira},
+         giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Elsevier Ltd}%
-    }
-    \keyw{Airport,Automation,Cybersecurity application,Energy,PLC,Power
-  system,SCADA}
-    \strng{namehash}{GGS+1}
-    \strng{fullhash}{GGSKAKKSPTSKBA1}
+    \keyw{Merit-order effect, Renewable power generation, Feed-in-tariffs,
+  Electricity markets, Volatility, GARCH}
+    \strng{namehash}{FNCSPPd1}
+    \strng{fullhash}{FNCSPPd1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{G}
-    \field{sortinithash}{G}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
     \field{abstract}{%
-    SCADA systems proves to be a promising technology to automate dynamical
-  systems. Many automated systems around the world are built using the
-  principle of SCADA. The Open-SCADA gathers, archives, visualizes, and
-  transmits data among other functions. With SCADA-packages, you can save time
-  developing large distributed systems by using pre-built components. It is
-  also possible to modify your local operating system by using built-in tools
-  and configuration. The Programmable Logic Controller (PLC) on the other hand
-  has the benefits of simple function, fast speed, high dependability, high
-  noise resistance and excellent stability, which serve to be highly
-  advantageous for automated control applications. There is a wide range
-  applicability of PLC in our present market. The studies examined the
-  application of PLCs in engineering studies, energy production research,
-  controlling and automating industry. PLCs certainly have limits, but data
-  show that they have more pros than cons. Thus, PLC may be utilized for any
-  application, whether the control system is basic or complex. This paper along
-  with detailed review of SCADA and PLC discusses about power distribution &
-  SCADA system architecture, the proposed control & monitoring scheme deployed
-  in a real-time network which ensures that at any point of time, power supply
-  is available through proper breaker interlocks at every level of switch
-  boards in their respective substation. To ensure this, even at the SCADA
-  communication network redundant OFC cable and ethernet switches are
-  maintained at every level of RTU's. A detailed case study of how PLC and
-  SCADA are deployed in critical building application is further elaborated.%
+    The investment in renewable energy sources power generation is coming into
+  a stall in face of the removal of incentives in most of the European
+  countries. The technological maturity of wind and solar power generation is
+  the justification basis and market integration of extensive amounts of
+  renewable energy is seen with concern by electricity systems stakeholders.
+  Given the low marginal cost of renewable power generation, the available load
+  in the spot electricity market for conventional and dispatchable power plants
+  is diminishing, the so-called Merit-Order Effect. In this study, we estimate
+  the value of the Merit-Order Effect due to wind and solar power generation in
+  the Iberian electricity market with historical bid supply and demand offers
+  from 2008 to 2017. The estimated values are then used to value determinants
+  and volatility through GARCH econometric modelling. Results demonstrate that
+  the Merit-Order Effect in Iberia is influenced negatively by the residual
+  load and positively by demand, wind power and solar power. Additionally, the
+  high Merit-Order Effect volatility found, mirrors the behavior of spot
+  electricity market.%
     }
     \verb{doi}
-    \verb 10.1016/j.egyr.2024.07.041
+    \verb https://doi.org/10.1016/j.rser.2018.11.042
     \endverb
-    \field{issn}{23524847}
-    \field{pages}{1518\bibrangedash 1530}
-    \field{title}{Critical review Of SCADA And PLC in smart buildings and
-  energy sector}
-    \field{volume}{12}
-    \field{journaltitle}{Energy Reports}
-    \field{month}{12}
-    \field{year}{2024}
+    \field{issn}{1364-0321}
+    \field{pages}{54\bibrangedash 62}
+    \field{title}{The “Merit-order effect” of wind and solar power:
+  Volatility and determinants}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S1364032118307950
+    \endverb
+    \field{volume}{102}
+    \field{journaltitle}{Renewable and Sustainable Energy Reviews}
+    \field{year}{2019}
   \endentry
 
   \entry{https://doi.org/10.1002/ese3.35}{article}{}{}
@@ -451,32 +421,6 @@
     \field{year}{2019}
   \endentry
 
-  \entry{iec61400-25}{report}{}{}
-    \name{author}{1}{}{%
-      {{hash=I}{%
-         family={{International Electrotechnical Commission}},
-         familyi={I\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{I1}
-    \strng{fullhash}{I1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{I}
-    \field{sortinithash}{I}
-    \field{number}{IEC 61400-25-2:2015}
-    \field{title}{Wind energy generation systems - Part 25-2: Communications
-  for monitoring and control of wind power plants - Information models}
-    \list{location}{1}{%
-      {Geneva, Switzerland}%
-    }
-    \list{institution}{1}{%
-      {IEC}%
-    }
-    \field{type}{Standard}
-    \field{year}{2015}
-  \endentry
-
   \entry{ieaNetZero2023Update}{report}{}{}
     \name{author}{1}{}{%
       {{hash=I}{%
@@ -535,59 +479,6 @@
       {Cambridge}%
     }
     \field{year}{2021}
-  \endentry
-
-  \entry{vattenfall61400}{inproceedings}{}{}
-    \name{author}{4}{}{%
-      {{hash=JA}{%
-         family={Johnsson},
-         familyi={J\bibinitperiod},
-         given={Anders},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=LNC}{%
-         family={Liller},
-         familyi={L\bibinitperiod},
-         given={Niels\bibnamedelima Christian},
-         giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod},
-      }}%
-      {{hash=BA}{%
-         family={Barstad},
-         familyi={B\bibinitperiod},
-         given={Albert},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=ST}{%
-         family={Sch{\"u}tte},
-         familyi={S\bibinitperiod},
-         given={Thomas},
-         giveni={T\bibinitperiod},
-      }}%
-    }
-    \list{organization}{1}{%
-      {European Wind Energy Association (EWEA)}%
-    }
-    \strng{namehash}{JA+1}
-    \strng{fullhash}{JALNCBAST1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{J}
-    \field{sortinithash}{J}
-    \field{booktitle}{Proceedings of the European Wind Energy Conference \&
-  Exhibition (EWEC)}
-    \field{note}{Documento técnico del grupo de usuarios USE61400-25. Accedido
-  el: 25 de mayo de 2026}
-    \field{title}{{Use of IEC 61400-25 to secure access to key O\&M data in
-  wind power plants}}
-    \verb{url}
-    \verb http://use61400-25.com/wp-content/uploads/2016/05/170_Eow2007fullpape
-    \verb r.pdf
-    \endverb
-    \list{location}{1}{%
-      {Mil{\'a}n, Italia}%
-    }
-    \field{year}{2007}
-    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{Khan2024}{article}{}{}
@@ -724,73 +615,6 @@
     \field{journaltitle}{Renewable Energy}
     \field{month}{02}
     \field{year}{2020}
-  \endentry
-
-  \entry{Loggia2023}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=LR}{%
-         family={Loggia},
-         familyi={L\bibinitperiod},
-         given={Riccardo},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=FA}{%
-         family={Flamini},
-         familyi={F\bibinitperiod},
-         given={Alessandro},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{2}{%
-      {Institute of Electrical}%
-      {Electronics Engineers Inc.}%
-    }
-    \keyw{3d modeling,BIM,MV-LV substation,SCADA,digital twin,electrical
-  safety}
-    \strng{namehash}{LRFA1}
-    \strng{fullhash}{LRFA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{L}
-    \field{sortinithash}{L}
-    \field{abstract}{%
-    Electrical safety is a critical aspect in design, operation and maintenance
-  of all electrical installations. From planning stage, it is necessary to
-  strictly adhere to the regulations that provide for the complete safety of
-  the installation and to establish an adequate maintenance plan for the
-  duration of its life. However, there are unpredictable situations, such as
-  faults, that can potentially risk the safety of people and equipment
-  installation, leading in some extreme cases to major incidents such as
-  blackouts and fires. The digitalization is leading to huge benefits in every
-  application area, and electrical safety is one of the aspects that could gain
-  the greatest advantage from it. The objective of this paper is to demonstrate
-  how the integration of Building Information Modeling (BIM), supervisory
-  control and data acquisition systems (SCADA) and Digital Twins can make a
-  great contribution to increase the electrical safety and lifetime of the
-  elements that constitute an MV-LV electrical substation. At first, the
-  concepts of 3d modeling characteristic of BIM and how in most installations
-  it's merely a static model that provides predefined and immutable information
-  will be introduced. Such a model, which may be a valid reference for
-  architectural installations, is not so valid in engineering ones, where the
-  parameters that constitute the installation are changeable and iridescent.
-  For this reason, it is possible to combine BIM with a supervision and control
-  system (SCADA), so as to rise a dynamic digital twin, which is much more
-  useful for purposes such as monitoring and security of the entire plant. The
-  case study proposed will highlight this aspect, showing the strengths of the
-  project and the innovation of the proposed model compared to the current
-  state of art.%
-    }
-    \verb{doi}
-    \verb 10.1109/TIA.2023.3332311
-    \endverb
-    \field{issn}{19399367}
-    \field{issue}{2}
-    \field{pages}{2725\bibrangedash 2731}
-    \field{title}{Electrical Safety Enhanced With BIM, SCADA and Digital Twin
-  Integration: A Case Study of a MV-LV Substation}
-    \field{volume}{60}
-    \field{journaltitle}{IEEE Transactions on Industry Applications}
-    \field{year}{2023}
   \endentry
 
   \entry{makogon2023energy}{article}{}{}
@@ -1077,7 +901,8 @@
   Actualizado y accedido en mayo de 2026}
     \field{title}{{What are the safest and cleanest sources of energy?}}
     \verb{url}
-    \verb https://ourworldindata.org/safest-sources-of-energy
+    \verb https://archive.ourworldindata.org/20260518-093348/safest-sources-of-
+    \verb energy.html
     \endverb
     \field{year}{2020}
   \endentry

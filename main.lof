@@ -1,0 +1,30 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Riesgos asociados a la generación de energía de combustibles fósiles. Obtenido de : \url {https://www.thelancet.com/action/showPdf?pii=S0140-6736\%2807\%2961253-7}}}{8}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030. Fuente: \url {https://www.miteco.gob.es/content/dam/miteco/es/energia/files-1/pniec-2023-2030/PNIEC_2024_240924.pdf}}}{10}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Alineación de los beneficios del proyecto con los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030.}}{13}{figure.caption.37}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}}{22}{figure.caption.55}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Ejemplos de topologías de arquitecturas de sistemas distribuidos en SIMATIC WinCC V8.1: configuraciones monopuesto (a, b) y multipuesto (c).}}{23}{figure.caption.63}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url {https://windenergietage.de/2023/wp-content/uploads/sites/8/2018/01/31WET09_F17_1345_Windenergietage-2023.pdf}}}{30}{figure.caption.85}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{31}{figure.caption.86}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces SLD de la celda de línea.}}{35}{figure.caption.97}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces SLD de la celda del transformador de potencia.}}{35}{figure.caption.97}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Metamodelo de comunicación \ac {OPC UA}. Obtenido de Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}}{38}{figure.caption.102}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Esquema de comunicación entre el simulador de planta en NodeRed, el servidor \ac {OPC UA} KEPServerEX y el cliente SCADA SIMATIC WinCC V8.1.}}{38}{figure.caption.103}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Configuración del servidor \ac {OPC UA} en KepServerEX.}}{39}{figure.caption.105}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Configuración de la conexión \ac {OPC UA} en el entorno de desarrollo de SIMATIC WinCC V8.1.}}{40}{figure.caption.107}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Modelo de Intercambio de Información (IEM) de la solución SCADA basado en \ac {OPC UA}. Obtenido de \url {https://webstore.iec.ch/en/iec_catalog/product/preview/?id=L3B1Yi9wZGYvcHJldmlldy9pbmZvX2llYzYxNDAwLTI1LTN7ZWQyLjAuUkxWfWVuLnBkZg==}}}{42}{figure.caption.110}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{44}{figure.caption.113}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Interfaz principal del SCADA, en morado se destaca la ventana de imagen principal donde se cargan las pantallas de supervisión, y en turquesa la ventana de alarmas anclada en el pie de página.}}{48}{figure.caption.120}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Ejemplos de interfaces gráficas desarrolladas en WinCC para la supervisión de un proceso industrial.}}{48}{figure.caption.121}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Ejemplos de plantillas de visualización dinamizadas mediante \textit {Tag Prefix} en SIMATIC WinCC V8.1.}}{50}{figure.caption.125}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Ejemplo de codificación cromática de estados en celdas de línea para equipos de maniobra en la interfaz gráfica de WinCC.}}{56}{figure.caption.137}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{59}{figure.caption.143}%
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{61}{figure.caption.149}%
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{61}{figure.caption.150}%
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}}{62}{figure.caption.151}%
