@@ -1,83 +1,118 @@
-\contentsline {chapter}{Índice de Figuras}{9}{section*.2}%
-\contentsline {chapter}{Índice de Tablas}{11}{section*.2}%
-\contentsline {chapter}{Acrónimos}{13}{section*.12}%
+\contentsline {chapter}{Índice de Figuras}{11}{section*.2}%
+\contentsline {chapter}{Índice de Tablas}{13}{section*.2}%
+\contentsline {chapter}{Acrónimos}{15}{section*.17}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Contexto}{3}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Objetivos y alcance}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Objetivos}{5}{section*.20}%
-\contentsline {section}{\numberline {3.2}Alcance}{5}{section*.21}%
+\contentsline {section}{\numberline {3.1}Objetivos}{5}{section*.25}%
+\contentsline {section}{\numberline {3.2}Alcance}{5}{section*.26}%
 \contentsline {chapter}{\numberline {4}Beneficios}{7}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Beneficios ambientales y sociales}{7}{section*.23}%
-\contentsline {section}{\numberline {4.2}Beneficios energéticos}{9}{section*.26}%
-\contentsline {section}{\numberline {4.3}Beneficios económicos}{11}{section*.29}%
-\contentsline {section}{\numberline {4.4}Beneficios tecnológicos}{11}{section*.30}%
-\contentsline {section}{\numberline {4.5}Justificación y Alineación con los \ac {ODS}}{12}{section*.32}%
-\contentsline {subsection}{\numberline {4.5.1}ODS 7: Energía Asequible y No Contaminante.}{12}{section*.33}%
-\contentsline {subsection}{\numberline {4.5.2}ODS 9: Industria, Innovación e Infraestructura.}{12}{section*.34}%
-\contentsline {subsection}{\numberline {4.5.3}ODS 12: Producción y Consumo Responsables.}{12}{section*.35}%
-\contentsline {subsection}{\numberline {4.5.4}ODS 13: Acción por el Clima.}{13}{section*.36}%
+\contentsline {section}{\numberline {4.1}Beneficios ambientales y sociales}{7}{section*.28}%
+\contentsline {section}{\numberline {4.2}Beneficios energéticos}{9}{section*.31}%
+\contentsline {section}{\numberline {4.3}Beneficios económicos}{11}{section*.34}%
+\contentsline {section}{\numberline {4.4}Beneficios tecnológicos}{11}{section*.35}%
+\contentsline {section}{\numberline {4.5}Justificación y Alineación con los \ac {ODS}}{12}{section*.36}%
+\contentsline {subsection}{\numberline {4.5.1}ODS 7: Energía Asequible y No Contaminante.}{12}{section*.37}%
+\contentsline {subsection}{\numberline {4.5.2}ODS 9: Industria, Innovación e Infraestructura.}{12}{section*.38}%
+\contentsline {subsection}{\numberline {4.5.3}ODS 12: Producción y Consumo Responsables.}{12}{section*.39}%
+\contentsline {subsection}{\numberline {4.5.4}ODS 13: Acción por el Clima.}{13}{section*.40}%
 \contentsline {chapter}{\numberline {5}Análisis del estado del arte o descripción de requerimientos (si procede)}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introducción}{15}{section*.39}%
-\contentsline {subsection}{\numberline {5.1.1}Arquitecturas inalambricas en parques eólicos}{15}{section*.40}%
-\contentsline {subsection}{\numberline {5.1.2}Ciberseguridad en sistemas \ac {SCADA} de parques eólicos}{16}{section*.42}%
-\contentsline {subsection}{\numberline {5.1.3}Mantenimiento predictivo y predicción de potencia mediante inteligencia artificial}{17}{section*.46}%
-\contentsline {section}{\numberline {5.2}Conclusiones del estado del arte}{18}{section*.48}%
+\contentsline {section}{\numberline {5.1}Introducción}{15}{section*.43}%
+\contentsline {subsection}{\numberline {5.1.1}Arquitecturas inalambricas en parques eólicos}{15}{section*.44}%
+\contentsline {subsection}{\numberline {5.1.2}Ciberseguridad en sistemas \ac {SCADA} de parques eólicos}{16}{section*.46}%
+\contentsline {subsection}{\numberline {5.1.3}Mantenimiento predictivo y predicción de potencia mediante inteligencia artificial}{17}{section*.50}%
+\contentsline {section}{\numberline {5.2}Conclusiones del estado del arte}{18}{section*.53}%
 \contentsline {chapter}{\numberline {6}Análisis de alternativas}{19}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Diseño/Desarrollo de la solución}{21}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Introducción al entorno de SIMATIC WinCC V8.1}{21}{section*.53}%
-\contentsline {subsection}{\numberline {7.1.1}Software de configuración (CS) WinCC Explorer}{21}{section*.59}%
-\contentsline {subsection}{\numberline {7.1.2}Sistemas Monopuesto (\textit {Single User Systems})}{22}{section*.61}%
-\contentsline {subsection}{\numberline {7.1.3}Sistemas Multipuesto (\textit {Multy User Systems})}{24}{section*.64}%
-\contentsline {section}{\numberline {7.2}Virtualización mediante \ac {SIVaaS}}{24}{section*.66}%
-\contentsline {subsection}{\numberline {7.2.1}Hypervisor alojado (\textit {Hosted Hypervisor})}{24}{section*.69}%
-\contentsline {subsection}{\numberline {7.2.2}Hypervisor metal desnudo (\textit {Bare-Metal Hypervisor})}{25}{section*.71}%
-\contentsline {subsection}{\numberline {7.2.3}Virtualización SIMATIC como Servicio (\ac {SIVaaS})}{25}{section*.72}%
-\contentsline {section}{\numberline {7.3}Arquitectura del Sistema de Supervisión y Red de Comunicaciones del Parque Eólico}{25}{section*.73}%
-\contentsline {subsection}{\numberline {7.3.1}Equipamiento de la Sala de Control Central (MCR) y Entorno de Validación}{26}{section*.75}%
-\contentsline {section}{\numberline {7.4}\ac {IM} de la solución SCADA}{28}{section*.80}%
-\contentsline {subsection}{\numberline {7.4.1}Variables internas}{28}{section*.81}%
-\contentsline {subsection}{\numberline {7.4.2}Variables de estructura}{28}{section*.83}%
-\contentsline {subsubsection}{\numberline {7.4.2.1}Modelo de información de aerogeneradores}{29}{section*.84}%
-\contentsline {paragraph}{Nivel 5: Atributos de Dato}{30}{figure.caption.86}%
-\contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}{30}{table.caption.88}%
-\contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos (LN)}{31}{table.caption.92}%
-\contentsline {paragraph}{Nivel 3: Objetos de Datos y Variables de Proceso}{33}{table.caption.92}%
-\contentsline {subsubsection}{\numberline {7.4.2.2}Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}{33}{section*.94}%
-\contentsline {paragraph}{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac {DPS})}{34}{section*.94}%
-\contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Físicos (IED) y Dispositivos Lógicos (LD)}{34}{section*.94}%
-\contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos (LN)}{35}{table.caption.96}%
-\contentsline {paragraph}{Nivel 4: Objetos de Datos}{35}{figure.caption.97}%
-\contentsline {paragraph}{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}{36}{table.caption.98}%
-\contentsline {subsection}{\numberline {7.4.3}Variables externas}{37}{section*.100}%
-\contentsline {subsubsection}{\numberline {7.4.3.1}OPC UA}{37}{section*.101}%
-\contentsline {subsubsection}{\numberline {7.4.3.2}Habilitación y Securización del Servidor \ac {OPC UA} en KepServerEX}{38}{section*.104}%
-\contentsline {subsubsection}{\numberline {7.4.3.3}Integración de Variables Externas en el \textit {Tag Management} mediante Direccionamiento \ac {OPC UA}}{40}{section*.106}%
-\contentsline {section}{\numberline {7.5}Modelo de Intercambio de Información (IEM) de la solución SCADA}{41}{section*.109}%
-\contentsline {section}{\numberline {7.6}Interfaz Gráfica}{42}{section*.111}%
-\contentsline {subsection}{\numberline {7.6.1}Jerarquía de pantallas}{43}{section*.112}%
-\contentsline {subsubsection}{\numberline {7.6.1.1}Prefijo Numérico (Jerarquía y Orden de Navegación)}{43}{section*.114}%
-\contentsline {subsubsection}{\numberline {7.6.1.2}Identificador de Categoría (Clasificación de Activos)}{45}{section*.115}%
-\contentsline {subsubsection}{\numberline {7.6.1.3}Descripción Funcional}{45}{section*.116}%
-\contentsline {subsection}{\numberline {7.6.2}Nivel 0: Marco Base (\texttt {00\_Main\_Interface})}{46}{section*.117}%
-\contentsline {subsection}{\numberline {7.6.3}Nivel 1: Supervisión Global}{46}{section*.118}%
-\contentsline {subsubsection}{\numberline {7.6.3.1}Vista General de aerogeneradores (\texttt {10\_WTG\_Overview})}{46}{section*.119}%
-\contentsline {subsubsection}{\numberline {7.6.3.2}Intefaz de diagrama electrico (\texttt {11\_SUB\_Interface})}{47}{section*.122}%
-\contentsline {subsubsection}{\numberline {7.6.3.3}Interfaz de monitorización, alarmas y tendencias (\texttt {12\_MET\_Station}, \texttt {13\_SYS\_Alarms} y \texttt {14\_SYS\_Trends})}{47}{section*.123}%
-\contentsline {subsection}{\numberline {7.6.4}Nivel 9: Plantillas dinámicas y reutilización gráfica (\textit {Tag Prefix})}{49}{section*.124}%
-\contentsline {paragraph}{Vistas de detalle de Turbina (\textit {Turbine Overview})}{49}{Item.7}%
-\contentsline {paragraph}{Vistas de agrupación o clústeres (\textit {Park Overview})}{50}{figure.caption.125}%
-\contentsline {subsection}{\numberline {7.6.5}Implementación de \textit {Scripts} Globales para el Filtrado Paramétrico de Activos}{50}{section*.126}%
-\contentsline {section}{\numberline {7.7}Gestión de alarmas y eventos}{54}{section*.131}%
-\contentsline {subsection}{\numberline {7.7.1}Criterios de señalización: Norma IEC 60073}{54}{section*.132}%
-\contentsline {subsection}{\numberline {7.7.2}Codificación de estados de la turbina}{54}{section*.133}%
-\contentsline {subsection}{\numberline {7.7.3}Codificación Cromática y Representación de Estados en Celdas de Línea}{55}{section*.135}%
-\contentsline {subsection}{\numberline {7.7.4}Configuración e implementación del sistema de avisos en SIMATIC WinCC}{56}{section*.138}%
-\contentsline {subsubsection}{\numberline {7.7.4.1}Categorización funcional}{56}{section*.139}%
-\contentsline {subsubsection}{\numberline {7.7.4.2}Matriz de estados visuales y filosofía de acuse}{57}{section*.140}%
-\contentsline {section}{\numberline {7.8}Integración de IIoT en la solución}{57}{section*.142}%
-\contentsline {subsection}{\numberline {7.8.1}Despliegue de la infraestructura en Amazon Web Services (AWS)}{59}{section*.144}%
-\contentsline {subsubsection}{\numberline {7.8.1.1}Instancia EC2}{59}{section*.145}%
-\contentsline {subsubsection}{\numberline {7.8.1.2}Reglas de entrada del Security Group EC2}{59}{section*.146}%
-\contentsline {subsubsection}{\numberline {7.8.1.3}Orquestación de microservicios mediante Docker}{59}{section*.148}%
-\contentsline {section}{\numberline {7.9}Ciberseguridad IEC 62443-4-2:2019}{62}{section*.152}%
-\contentsline {subsection}{\numberline {7.9.1}FR1: Identificación y autenticación de usuarios (IAC)}{63}{section*.153}%
+\contentsline {section}{\numberline {7.1}Introducción al entorno de SIMATIC WinCC V8.1}{21}{section*.58}%
+\contentsline {subsection}{\numberline {7.1.1}Software de configuración (CS) WinCC Explorer}{21}{section*.64}%
+\contentsline {subsection}{\numberline {7.1.2}Sistemas Monopuesto (\textit {Single User Systems})}{22}{section*.66}%
+\contentsline {subsection}{\numberline {7.1.3}Sistemas Multipuesto (\textit {Multy User Systems})}{23}{section*.68}%
+\contentsline {section}{\numberline {7.2}Virtualización mediante \ac {SIVaaS}}{25}{section*.69}%
+\contentsline {subsection}{\numberline {7.2.1}Hypervisor alojado (\textit {Hosted Hypervisor})}{25}{section*.72}%
+\contentsline {subsection}{\numberline {7.2.2}Hypervisor metal desnudo (\textit {Bare-Metal Hypervisor})}{25}{section*.74}%
+\contentsline {subsection}{\numberline {7.2.3}Virtualización SIMATIC como Servicio (\ac {SIVaaS})}{26}{section*.75}%
+\contentsline {section}{\numberline {7.3}Arquitectura del Sistema de Supervisión y Red de Comunicaciones del Parque Eólico}{26}{section*.76}%
+\contentsline {subsection}{\numberline {7.3.1}Equipamiento de la Sala de Control Central (MCR) y Entorno de Validación}{27}{section*.78}%
+\contentsline {section}{\numberline {7.4}\ac {IM} de la solución SCADA}{29}{section*.82}%
+\contentsline {subsection}{\numberline {7.4.1}Variables internas}{29}{section*.83}%
+\contentsline {subsection}{\numberline {7.4.2}Variables de estructura}{29}{section*.85}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}Modelo de información de aerogeneradores}{30}{section*.86}%
+\contentsline {paragraph}{Nivel 5: Atributos de Dato}{31}{figure.caption.88}%
+\contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}{32}{table.caption.89}%
+\contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos (LN)}{32}{table.caption.93}%
+\contentsline {paragraph}{Nivel 3: Objetos de Datos y Variables de Proceso}{34}{table.caption.93}%
+\contentsline {subsubsection}{\numberline {7.4.2.2}Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}{35}{section*.95}%
+\contentsline {paragraph}{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac {DPS})}{35}{section*.95}%
+\contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Físicos (IED) y Dispositivos Lógicos (LD)}{35}{table.caption.97}%
+\contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos (LN)}{36}{table.caption.98}%
+\contentsline {paragraph}{Nivel 4: Objetos de Datos}{37}{figure.caption.99}%
+\contentsline {paragraph}{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}{37}{table.caption.100}%
+\contentsline {subsection}{\numberline {7.4.3}Variables externas}{38}{section*.102}%
+\contentsline {subsubsection}{\numberline {7.4.3.1}OPC UA}{38}{section*.103}%
+\contentsline {subsubsection}{\numberline {7.4.3.2}Habilitación y Securización del Servidor \ac {OPC UA} en KepServerEX}{39}{section*.106}%
+\contentsline {subsubsection}{\numberline {7.4.3.3}Integración de Variables Externas en el \textit {Tag Management} mediante Direccionamiento \ac {OPC UA}}{41}{section*.108}%
+\contentsline {section}{\numberline {7.5}Modelo de Intercambio de Información (IEM) de la solución SCADA}{42}{section*.111}%
+\contentsline {section}{\numberline {7.6}Interfaz Gráfica}{43}{section*.113}%
+\contentsline {subsection}{\numberline {7.6.1}Jerarquía de pantallas}{44}{section*.114}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}Prefijo Numérico (Jerarquía y Orden de Navegación)}{45}{section*.116}%
+\contentsline {subsubsection}{\numberline {7.6.1.2}Identificador de Categoría (Clasificación de Activos)}{46}{section*.117}%
+\contentsline {subsubsection}{\numberline {7.6.1.3}Descripción Funcional}{46}{section*.118}%
+\contentsline {subsection}{\numberline {7.6.2}Nivel 0: Marco Base (\texttt {00\_Main\_Interface})}{47}{section*.119}%
+\contentsline {subsection}{\numberline {7.6.3}Nivel 1: Supervisión Global}{47}{section*.120}%
+\contentsline {subsubsection}{\numberline {7.6.3.1}Vista General de aerogeneradores (\texttt {10\_WTG\_Overview})}{47}{section*.121}%
+\contentsline {subsubsection}{\numberline {7.6.3.2}Intefaz de diagrama electrico (\texttt {11\_SUB\_Interface})}{48}{section*.124}%
+\contentsline {subsubsection}{\numberline {7.6.3.3}Interfaz de monitorización, alarmas y tendencias (\texttt {12\_MET\_Station}, \texttt {13\_SYS\_Alarms} y \texttt {14\_SYS\_Trends})}{48}{section*.125}%
+\contentsline {subsection}{\numberline {7.6.4}Nivel 9: Plantillas dinámicas y reutilización gráfica (\textit {Tag Prefix})}{50}{section*.126}%
+\contentsline {paragraph}{Vistas de detalle de Turbina (\textit {Turbine Overview})}{50}{Item.7}%
+\contentsline {paragraph}{Vistas de agrupación o clústeres (\textit {Park Overview})}{51}{figure.caption.127}%
+\contentsline {subsection}{\numberline {7.6.5}Implementación de \textit {Scripts} Globales para el Filtrado Paramétrico de Activos}{51}{section*.128}%
+\contentsline {section}{\numberline {7.7}Gestión de alarmas y eventos}{55}{section*.133}%
+\contentsline {subsection}{\numberline {7.7.1}Criterios de señalización: Norma IEC 60073}{55}{section*.134}%
+\contentsline {subsection}{\numberline {7.7.2}Codificación de estados de la turbina}{55}{section*.135}%
+\contentsline {subsection}{\numberline {7.7.3}Codificación Cromática y Representación de Estados en Celdas de Línea}{56}{section*.137}%
+\contentsline {subsection}{\numberline {7.7.4}Configuración e implementación del sistema de avisos en SIMATIC WinCC}{57}{section*.140}%
+\contentsline {subsubsection}{\numberline {7.7.4.1}Categorización funcional}{57}{section*.141}%
+\contentsline {subsubsection}{\numberline {7.7.4.2}Matriz de estados visuales y filosofía de acuse}{58}{section*.142}%
+\contentsline {section}{\numberline {7.8}Integración de IIoT en la solución}{58}{section*.144}%
+\contentsline {subsection}{\numberline {7.8.1}Despliegue de la infraestructura en Amazon Web Services (AWS)}{60}{section*.146}%
+\contentsline {subsubsection}{\numberline {7.8.1.1}Instancia EC2}{60}{section*.147}%
+\contentsline {subsubsection}{\numberline {7.8.1.2}Reglas de entrada del Security Group EC2}{60}{section*.148}%
+\contentsline {subsubsection}{\numberline {7.8.1.3}Orquestación de microservicios mediante Docker}{60}{section*.150}%
+\contentsline {section}{\numberline {7.9}Ciberseguridad IEC 62443-4-2:2019}{63}{section*.154}%
+\contentsline {subsection}{\numberline {7.9.1}FR1: Identificación y autenticación de usuarios (IAC)}{64}{section*.155}%
+\contentsline {subsection}{\numberline {7.9.2}FR 2: Control de uso}{66}{section*.156}%
+\contentsline {subsection}{\numberline {7.9.3}Matriz de implementación de requisitos y niveles de seguridad}{67}{section*.157}%
+\contentsline {chapter}{\numberline {8}Análisis de resultados (si procede)}{71}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Metodología}{73}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Descripción de tareas}{73}{section*.161}%
+\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{73}{section*.162}%
+\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{73}{section*.163}%
+\contentsline {chapter}{\numberline {10}Aspectos económicos}{75}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Descripción del presupuesto y/o del presupuesto ejecutado}{75}{section*.165}%
+\contentsline {section}{\numberline {10.2}Análisis de rentabilidad (si procede)}{75}{section*.166}%
+\contentsline {chapter}{\numberline {11}Conclusiones}{77}{chapter.11}%
+\contentsline {chapter}{\nonumberline Bibliografía}{79}{chapter*.168}%
+\def \@chapapp {\appendixname }
+\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{81}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Código de WinCC}{81}{section*.171}%
+\contentsline {subsection}{\numberline {A.1.1}Código fuente}{81}{section*.172}%
+\contentsline {section}{\numberline {A.2}Código de IIoT}{83}{section*.173}%
+\contentsline {chapter}{\numberline {B}Anexo II: Planos}{85}{appendix.B}%
+\contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{86}{figure.B.1}%
+\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas y Validación del Sistema (FAT)}{87}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Fase I : Pruebas de integración y validación en Node-Red}{87}{section*.176}%
+\contentsline {section}{\numberline {C.2}Fase II : Pruebas de integración y validación en servidor SIVaaS}{87}{section*.177}%
+\contentsline {section}{\numberline {C.3}Introducción y objetivos}{87}{section*.178}%
+\contentsline {section}{\numberline {C.4}Arquitectura del entorno de simulación}{87}{section*.179}%
+\contentsline {section}{\numberline {C.5}Protocolo de pruebas y casos de uso}{88}{section*.180}%
+\contentsline {subsection}{\numberline {C.5.1}Prueba de integración local (Comunicaciones y HMI)}{88}{section*.181}%
+\contentsline {subsection}{\numberline {C.5.2}Prueba de respuesta ante eventos y alarmas}{88}{section*.182}%
+\contentsline {subsection}{\numberline {C.5.3}Prueba de despliegue IIoT e infraestructura \textit {Cloud}}{88}{section*.183}%
+\contentsline {section}{\numberline {C.6}Evidencias de las pruebas}{89}{section*.184}%
+\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{91}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{93}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Introducción}{93}{section*.187}%
+\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{93}{section*.188}%
+\contentsline {section}{\numberline {E.3}Variables de Transformadores}{100}{section*.189}%
+\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{100}{section*.190}%

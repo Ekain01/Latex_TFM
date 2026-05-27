@@ -18,8 +18,10 @@ SIMATIC WinCC V8.1 es un sistema \ac{SCADA}, basado en los sistemas operativos M
 
 \par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el sistema de configuración o \ac{CS} y el entorno de ejecución o \ac{RT}:
 \subsection{Software de configuración (CS) WinCC Explorer}
-El software de configuración se denomina WinCC Explorer. En él se realiza toda la estructura y administración del proyecto. Dentro del WinCC Explorer se pueden abrir diferentes editores los cuales son interfaces de los subsistemas de WinCC \ref{tab:wincc_subsystems}. 
-\begin{table}[t]
+El software de configuración se denomina WinCC Explorer. En él se realiza toda la estructura y administración del proyecto. Dentro del WinCC Explorer se pueden abrir diferentes editores los cuales son interfaces de los subsistemas de WinCC. Estos subsistemas se encargan de diferentes tareas dentro del sistema SCADA, como la creación de variables, la configuración de comunicaciones, la gestión de alarmas, la creación de informes, entre otras funciones. La descripción detallada de cada uno de los subsistemas principales del software de configuración de WinCC se muestra en la Tabla \ref{tab:wincc_subsystems}.
+
+\ref{tab:wincc_subsystems}. 
+\begin{table}[tb]
     \centering
     \caption{Descripción de los subsistemas principales del software de configuración de WinCC (\textit{CS}).}
     \resizebox{\textwidth}{!}{%
@@ -44,10 +46,7 @@ El software de configuración se denomina WinCC Explorer. En él se realiza toda
 \end{table}
 \subsection{Sistemas Monopuesto (\textit{Single User Systems})}
 En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar todas las tareas del \ac{SCADA}. El puesto actúa tanto como servidor como cliente: El equipo se encarga de realizar las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet, ModBus u \ac{OPC UA} etc.) de ejecutar el software \ac{RT} y almacenar los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
-Para este tipo de sistemas Siemens ofrece dos arquitecturas posibles: La primera se trata de una estación de configuración y \ac{RT} con un único PC (Figura \ref{fig:monopuesto_simple}). La segunda configuración 
-
-
-es una configuración redundante de la primera donde la estación redundante solo sería una estación \ac{RT} (Figura \ref{fig:monopuesto_redundante}).
+Siemens propone dos arquitecturas para este tipo de sistemas: una estación única que integra configuración y \ac{RT} en un solo PC (Figura \ref{fig:monopuesto_simple}), y una variante redundante en la que una segunda estación funciona únicamente como \ac{RT} (Figura \ref{fig:monopuesto_redundante}).
 
 % --- PRIMERA FIGURA: ARQUITECTURAS MONOPUESTO (A y B) ---
 \begin{figure}[p] % Usamos [htbp] para que se posicione en el flujo del texto actual
@@ -241,7 +240,7 @@ En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimien
 \subsection{Variables de estructura}
 Las variables de estructura son el nucleo de la solución, ya que permiten estructurar la información de forma lógica y coherente. Para el modelado de las variables de estructura se han seguido dos normas internacionales: La norma IEC 61400-25-2 para el modelado de los aerogeneradores y la norma IEC 61850 para el modelado de la subestación eléctrica. Estas normas establecen un marco común para la representación y organización de datos en sistemas eólicos y eléctricos.\par
 \subsubsection{Modelo de información de aerogeneradores}
-La norma \textbf{IEC 61400-25} es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición de los modelos de información (IM), los cuales definen el acceso al contenido de los datos. Este modelo de información permite la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.\par
+La norma \textbf{IEC 61400-25} es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición del \ac{IM}, los cuales definen el acceso al contenido de los datos. Este modelo de información permite la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.\par
 
 La norma establece cinco tipos de niveles en variables de estructura, cada uno con su propia función y propósito dentro del sistema de comunicación eólico:
 \begin{itemize}
@@ -257,14 +256,8 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
     \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url{https://windenergietage.de/2023/wp-content/uploads/sites/8/2018/01/31WET09_F17_1345_Windenergietage-2023.pdf}}
     \label{fig:Nodos}
 \end{figure}
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figuras/IEC_61400-25-2_v1.jpg}
-    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url{https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}
-    \label{fig:IEC}
-\end{figure}
 \paragraph{Nivel 5: Atributos de Dato}
- Las \ac{CDC} definidas por la norma, son clases las cuales son utilizadas para representar los diferentes tipos de datos en el sistema. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2. Las \ac{CDC} definen la estructura y el formato de los datos y representan el nivel 5 de la jerarquía, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico. (Tabla \ref{tab:estructuras_nivel5})
+ Las \ac{CDC} definidas por la norma, son clases las cuales son utilizadas para representar los diferentes tipos de datos en el sistema. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2. Las \ac{CDC} definen la estructura y el formato de los datos y representan el nivel 5 de la jerarquía, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico. Además de los niveles obligatorios exigidos por la norma se ha creado una estructura adicional llamada ZID para almacenar información de identificación de los aerogeneradores.(Tabla \ref{tab:estructuras_nivel5})
 
 \begin{table}[t]
     \centering
@@ -294,7 +287,7 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
         \texttt{\ac{MV}}  & \texttt{t}     & Marca de tiempo & Última actualización. \\ \midrule
 
         % --- ZID ---
-        \multicolumn{4}{@{}l}{\textbf{ZID: Identificador de Objeto (\textit{Object ID})}} \\ \midrule
+        \multicolumn{4}{@{}l}{\textbf{ZID: Identificador de Objeto (\textit{Object ID})} (Nivel agregado externo a la norma)} \\ \midrule
         \texttt{ZID} & \texttt{setVal}& Cadena de caracteres ASCII & Valor de identificación en formato texto (Ej. Nombre del parque). \\
         \texttt{ZID} & \texttt{setSrc}& Entero sin signo (16 bits) & Identidad numérica del origen de la configuración. (Ej. La Unidad 001 tiene el valor 1) \\ \bottomrule
     \end{tabular}
@@ -322,21 +315,32 @@ El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógico
     \end{tabular}
     }
 \end{table}
-
+\FloatBarrier
 \paragraph{Nivel 3: Estructura de Nodos Lógicos (LN)}
-El nivel 3 representa una agrupación de objetos que comparten una misma funcionalidad lógica. Se identifican mediante siglas de tres o cuatro letras mayúsculas siendo la primera letra la que indica el tipo de objeto (Por ejemplo W para la turbina) seguido por letras que indican la función o característica específica del objeto (por ejemplo, ROT para objetos relacionados con la rotación de la turbina). Los nodos lógicos se agrupan por subsistemas, cada uno de ellos representando un área funcional específica dentro del parque eólico. Se han definido los siguientes nodos lógicos para cada aerogenerador:
+Desde el punto de vista de la ingeniería electromecánica, un aerogenerador moderno es un sistema complejo constituido por múltiples subsistemas e componentes de hardware, tales como el rotor, la góndola, la torre, el sistema de orientación (*yaw*) y la estación meteorológica, entre otros (Figura \ref{fig:IEC_2}). Cada uno de estos componentes tiene una función específica en el proceso de captación y conversión de la energía eólica.\par
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/Nodos_1400.png}
+    \caption{Descomposición de los componentes físicos de un aerogenerador y su correspondencia conceptual según la norma IEC 61400-25-2. Obtenido de \url{https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}
+    \label{fig:IEC_2}
+\end{figure}
+
+Con el fin de supervisar y automatizar el parque eólico, el estándar IEC 61400-25-2 proyecta esta estructura física hacia un modelo digital mediante una capa de abstracción basada en \ac{LN}. Un \ac{LN} no es un elemento material, sino una agrupación virtual de datos, variables y funciones de control que representan el comportamiento de un componente físico específico.\par 
+
+Estos nodos se identifican de manera unívoca mediante siglas de tres o cuatro letras mayúsculas. El primer carácter determina la clase o categoría principal del objeto (por ejemplo, "W" para funciones específicas de la turbina), mientras que las letras sucesivas detallan la función o el subsistema concreto al que representan (por ejemplo, "ROT" para variables asociadas a la rotación del rotor, o "GEN" para los parámetros del generador). De este modo, toda la topología física del aerogenerador queda completamente digitalizada y organizada en áreas funcionales dentro del SCADA. A continuación, se detallan los nodos lógicos definidos para cada sección del aerogenerador:
 \begin{itemize}
     \item \textbf{LLN0 (Logical Node Zero):} Nodo obligatorio que centraliza la información común del dispositivo lógico, tales como la configuración del sistema, versión del firmware y estados generales de operación.
     \item \textbf{LPHD (Physical Device Information):} Alberga las propiedades estructurales y físicas del hardware que soporta los nodos lógicos, incluyendo el número de serie, fabricante y el estado de salud del dispositivo (\textit{PhyHealth}).
     \item \textbf{WGEN (Generator):} Agrupa toda la información relativa a la conversión electromecánica y variables eléctricas de salida de la máquina.
     \item \textbf{WROT (Rotor):} Contiene las variables cinemáticas del conjunto de palas y buje, regulando parámetros esenciales como la velocidad angular del eje principal.
     \item \textbf{WYAW (Yaw System):} Gestiona los datos del sistema de orientación de la góndola respecto a la dirección predominante del viento.
-    \item \textbf{WTRF (Transformer):} Supervisa el estado de los activos de transformación eléctrica de media tensión integrados en la torre o peana.
     \item \textbf{WTOW (Tower):} Modela el comportamiento y las variables de la estructura de la torre.
     \item \textbf{WNAC (Nacelle):} Monitoriza las condiciones ambientales e instrumentación alojada en la góndola, tales como la temperatura interna, vibraciones y la velocidad/dirección del viento medidas por el anemómetro de techo.
     \item \textbf{WMET (Meteorological Station):} Registra las variables meteorológicas del entorno de la turbina, crucial para evaluar las curvas de potencia analíticas de la planta.
     \item \textbf{WTUR (Turbine):} Representa la turbina eólica completa, integrando las funciones de los componentes individuales.
 \end{itemize}
+
 
 %Además, el estandar IEC 61400-25-2 viene heredado de la norma \textbf{IEC 61850-7-4}, la cual se desarrolló para la automatización de subestaciones eléctricas. Por lo tanto, el diseño de las estructuras de variables de nivel 2 deben incorporar atributos heredados de IEC 61850-7-4 \cite{iec61850-7-4}. Esos atributos heredados son los siguientes:
 
@@ -348,11 +352,17 @@ El nivel 3 representa una agrupación de objetos que comparten una misma funcion
 %\end{itemize}
 
 
-\paragraph{Nivel 3: Objetos de Datos y Variables de Proceso}
-Finalmente, el Nivel 3 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 3 (Data Object) adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
+\paragraph{Nivel 4: Objetos de Datos y Variables de Proceso}
+Finalmente, el Nivel 4 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 4 (Data Object) adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
 
-En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.\ac{CDC}}. Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el SCADA.
-\begin{table}[tb]
+En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.\ac{CDC}} (Figura \ref{fig:IEC}). Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el SCADA.
+\begin{figure}[!tbp]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/IEC_61400-25-2_v1.jpg}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url{https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}
+    \label{fig:IEC}
+\end{figure}
+\begin{table}[!tbp]
     \centering
     \caption{Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}
     \label{tab:ejemplo_fusion_niveles}
@@ -361,8 +371,8 @@ En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en
         \toprule
         \textbf{Nivel} & \textbf{Capa Semántica} & \textbf{Código (\textit{Tag})} & \textbf{Significado en la Turbina} \\ \midrule
         \textbf{1 + 2} & Dispositivo Físico + Lógico & \texttt{WTG23} & Aerogenerador 23 (Identificador único) \\
-        \textbf{3}     & Nodo Lógico (\textit{LN})   & \texttt{WYAW}  & Sistema de Orientación (\textit{Yaw}) \\
-        \textbf{4}     & Objeto de Datos (\textit{DO}) & \texttt{YawSt} & Estado complejo del giro de góndola \\
+        \textbf{3}     & Nodo Lógico (\textit{LN})   & \texttt{WROT}  & Sistema de Orientación (\textit{Yaw}) \\
+        \textbf{4}     & Objeto de Datos (\textit{DO}) & \texttt{ROT} & Estado complejo del giro de góndola \\
         \textbf{5}     & Atributo de Datos (\textit{DA}) & \texttt{stVal} & Valor digital final (conmutación) \\ \bottomrule
     \end{tabular}
     }
@@ -377,13 +387,13 @@ Habiendo definido la arquitectura semántica para los aerogeneradores, se han es
 % === NIVEL 5 ===
 \paragraph{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac{DPS})}
 \label{sec:sub_nivel5}
-A diferencia de las variables de proceso analógicas o de los estados lógicos simples mapeados en las turbinas, la supervisión de la alta y media tensión (nodos lógicos \texttt{XCBR} y \texttt{XSWI}) exige un tratamiento de datos más estricto para garantizar la seguridad operativa. Por ello, la norma prescribe el uso de un nuevo tipo de \ac{CDC} denominada \ac{DPS} (\textit{Double Point Status}).
+A diferencia de las variables de proceso analógicas o de los estados lógicos simples mapeados en las turbinas, la supervisión de la alta y media tensión (nodos lógicos \texttt{XCBR} y \texttt{XSWI}) exige un tratamiento de datos más estricto para garantizar la seguridad operativa. Por ello, la norma prescribe el uso de un nuevo tipo de \ac{CDC} denominada \ac{DPS}.
 
 La \ac{CDC} \ac{DPS} no utiliza un bit booleano convencional para determinar la posición de un equipo, sino que recurre a un código de doble punto (2 bits), cuyas combinaciones permiten descartar estados críticos del sistema de potencia como posiciones intermedias o estados de fallo eléctrico (Tabla \ref{tab:CDC_DPS_atributos}).
 
 \begin{table}[tb]
     \centering
-    \caption{Estructura de atributos y codificación de estados para la Clase de Datos Comunes \ac{DPS} según IEC 61850-7-3.}
+    \caption{Estructura de atributos y codificación de estados para la Clase de Datos Comunes (DPS) según IEC 61850-7-3.}
     \label{tab:CDC_DPS_atributos}
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{@{}llp{4.5cm}p{6cm}@{}}
@@ -401,7 +411,7 @@ La \ac{CDC} \ac{DPS} no utiliza un bit booleano convencional para determinar la 
 \paragraph{Nivel 1 y 2: Estructura de Dispositivos Físicos (IED) y Dispositivos Lógicos (LD)}
 \label{sec:sub_nivel1_2}
 
-En los aerogeneradores, la unificación de los niveles 1 y 2 se justificaba por compartir una misma ubicación. No obstante, en la subestación eléctrica se mantiene la separación conceptual entre el Dispositivo Físico (\textit{IED}) y el Dispositivo Lógico (\textit{LD}) como indica la normativa, ya que la subestación presenta un entorno desacoplado: por un lado se sitúan los elementos de corte y por otro la transformación de potencia.\par
+En los aerogeneradores, la unificación de los niveles 1 y 2 se justificaba por compartir una misma ubicación. No obstante, en la subestación eléctrica se mantiene la separación conceptual entre el \ac{PD} y el \ac{LD} como indica la normativa, ya que la subestación presenta un entorno desacoplado: por un lado se sitúan los elementos de corte y por otro la transformación de potencia.\par
 
 Para modelar este entorno sin generar redundancias en la base de datos de \textit{SIMATIC WinCC V8.1}, se han diseñado dos tipos de estructura: ST\_BAY\_CTR y ST\_BAY\_TRF, asociados directamente a su función operativa(Tabla \ref{tab:nomenclatura_estructuras_wincc}). \par
 La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de control (\texttt{CTRL}) y gobierna de forma unificada las maniobras y telemedidas de las celdas de línea o acoplamiento. Por su parte, la estructura \texttt{ST\_BAY\_TRF} está vinculada al dispositivo lógico de protección y diagnóstico (\texttt{PROT}) y centraliza de forma independiente las variables de salud del transformador de potencia.
@@ -513,11 +523,11 @@ Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la 
 Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (\ac{OPC UA}). 
 
 \subsubsection{OPC UA}
-\ac{OPC UA} es middleware de comunicación orientado a servicios (SOA) desarrollado por OPC Foundation y estandarizado por la norma \textbf{IEC 62541}\cite{iec62541_1}.\par
+\ac{OPC UA} es middleware de comunicación \ac{SOA} desarrollado por OPC Foundation y estandarizado por la norma \textbf{IEC 62541}\cite{iec62541_1}.\par
 
 \ac{OPC UA} se basa en un modelo de información orientado a objetos, el cual define como se estructuran los datos dentro del sistema de comunicación industrial. Por otra parte, el modelo de comunicación de \ac{OPC UA} define los mecanismos de transferencia de los datos entre los diferentes componentes del sistema. El modelo de información y el modelo de comunicación son los dos pilares fundamentales que sustentan la arquitectura de \ac{OPC UA}.\par
 
-\ac{OPC UA} se basa en un modelo Cliente-Servidor para establecer la conexion TCP entre el servidor \ac{OPC UA} y el cliente SCADA. Sin embargo, una vez establecida la sesión, la transfrerencia se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión de datos en tiempo real(Figura \ref{fig:OPC_UA}).\par
+\ac{OPC UA} se basa en un modelo Cliente-Servidor para establecer la conexion \ac{TCP} entre el servidor \ac{OPC UA} y el cliente \ac{SCADA}. Sin embargo, una vez establecida la sesión, la transfrerencia se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión de datos en tiempo real(Figura \ref{fig:OPC_UA}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/OPCUA_metamodelo.png}
@@ -671,32 +681,77 @@ El tercer bloque explicita el propósito operativo de la pantalla, agilizando su
 \vspace{0.5cm}
 La adopción de esta nomenclatura trasciende la mera organización de archivos; define la lógica de navegación \textit{Top-Down} requerida en la operación de plantas de generación. El operador inicia la supervisión en una vista global (\texttt{10\_WTG\_Overview}), focaliza la atención en una turbina particular (\texttt{30\_WTG\_Turbine\_Interface}) y profundiza en el diagnóstico de sus componentes mecánicos (\texttt{40\_WTG\_Gen}).\par 
 
-Asimismo, esta estandarización resulta determinante para optimizar el rendimiento de la aplicación gráfica. Al mantener nombres predecibles y estructurados, se facilita el uso de \textit{scripts} y ventanas de imagen (\textit{Picture Windows}) dinámicas, permitiendo que una única pantalla genérica actúe como interfaz para cualquier aerogenerador del parque mediante el paso de parámetros y prefijos de variables estructuradas (\textit{Tag Prefixes}).\par
+Asimismo, esta estandarización resulta determinante para optimizar el rendimiento de la aplicación gráfica. Al mantener nombres predecibles y estructurados, se facilita el uso de \textit{scripts} y ventanas de imagen (\textit{Picture Windows}) dinámicas (Figure \ref{fig:00_main_interface}), permitiendo que una única pantalla genérica actúe como interfaz para cualquier aerogenerador del parque mediante el paso de parámetros y prefijos de variables estructuradas (\textit{Tag Prefixes}).\par
 
-Para mantener esta filosofía, la navegación del sistema se ha estructurado implementando un diseño centralizado basado en estas ventanas de imagen. Esta técnica de SIMATIC WinCC permite mantener un marco estático de control mientras el área de trabajo cambia dinámicamente. La base física de esta jerarquía se fundamenta en el siguiente elemento:\par
-
-\subsection{Nivel 0: Marco Base (\texttt{00\_Main\_Interface})}
-Representa la interfaz matriz o Nivel 0 del SCADA (Figura \ref{fig:00_main_interface}). En lugar de ejecutar transiciones de pantalla completa, esta plantilla actúa como un contenedor estático  que alberga el menú de navegación principal e implementa dos \textit{Picture Windows} independientes.\par
-
-La ventana de trabajo central ocupa la mayor parte de la pantalla y constituye el área de visualización dinámica donde se cargan todas las interfaces operativas (Niveles 1 a 4). Paralelamente, la ventana de alarmas inferiores es un espacio de menores dimensiones anclado de forma fija en el pie de página, cuya única función es garantizar la supervisión ininterrumpida de los eventos críticos independientemente de la profundidad de navegación del usuario.
-\FloatBarrier
-\subsection{Nivel 1: Supervisión Global}
-\label{sec:nivel_1_overview}
-\subsubsection{Vista General de aerogeneradores (\texttt{10\_WTG\_Overview})}
-La pantalla \texttt{10\_WTG\_Overview} actúa como el nodo principal de enrutamiento dinámico del SCADA. Su diseño optimiza la navegación hacia los niveles inferiores mediante tres mecanismos clave integrados en su cabecera.\par
-
-Por un lado, se ha implementado un sistema de filtrado mediante dos selectores desplegables (Figura \ref{fig:interfaz_grafica_selector}) que acotan la información visualizada, actualizando los aerogeneradores mostrados sin necesidad de realizar transiciones a otras pantallas ( Algoritmo \ref{alg:filtrado_dinamico}, vease la función \texttt{AplicarFiltroPosicion()} en el Anexo \ref{cap:anexo_codigo_solucion}).\par
-
-Por otro lado, como se observa en la figura \ref{fig:interfaz_grafica_park} un selector central gestiona el archivo alojado en el \textit{Picture Window} de trabajo. Permite alternar instantáneamente entre la telemetría individual de las turbinas (\texttt{20\_WTG\_Turbine\_Overview.pdl}) y la vista de datos por parques (\texttt{21\_WTG\_Park\_Overview.pdl}).\par
-
-Finalmente, como se muestra en la figura \ref{fig:interfaz_grafica} una matriz superior de indicadores discretos organizados por parques representa el estado de cada aerogenerador. Seleccionar uno de ellos actúa como acceso directo al Nivel 4 (\texttt{40\_WTG\_Gen}), omitiendo pasos intermedios e inyectando automáticamente el \textit{Tag Prefix} correspondiente para cargar los datos de la máquina seleccionada.\par
-
-\begin{figure}[p]
+\begin{figure}[!tbp]
         \centering
         \includegraphics[width=\textwidth]{figuras/00_Main_Interface.png}
-        \caption{Interfaz principal del SCADA, en morado se destaca la ventana de imagen principal donde se cargan las pantallas de supervisión, y en turquesa la ventana de alarmas anclada en el pie de página.}
+        \caption{Interfaz principal del SCADA, en morado se destaca la ventana de imagen principal donde se cargan las pantallas de supervisión, y en turquesa la ventana de alarmas anclada en el pie de página. De esta forma se establece una navegación por niveles desde la pantalla de inicio, manteniendo siempre visible el panel de alarmas para garantizar la seguridad operativa.}
         \label{fig:00_main_interface}
 \end{figure}
+
+Para mantener esta filosofía, la navegación del sistema se ha estructurado implementando un diseño centralizado basado en estas ventanas de imagen. Esta técnica de SIMATIC WinCC permite mantener un marco estático de control mientras el área de trabajo cambia dinámicamente. 
+
+\subsubsection{Plantillas dinámicas y reutilización gráfica (\textit{Tag Prefix})}
+\label{sec:tag_prefix}
+
+En la monitorización de parques eólicos, se presenta una alta repetición de activos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del SCADA. 
+
+Para resolver esta problemática, el diseño de las interfaces de detalle se ha fundamentado en el principio de reutilización gráfica, combinando el uso de las variables de estructura (definidas en el apartado 7.4.3) con la propiedad \textit{Tag Prefix} (Prefijo de variable) de las ventanas de imagen (\textit{Picture Windows}) de SIMATIC WinCC.
+
+La técnica consiste en diseñar una única pantalla genérica (\textit{Faceplate} maestro) donde los objetos gráficos (barras, campos de texto, indicadores de estado) se vinculan a las variables sin especificar la turbina a la que pertenecen (por ejemplo, apuntando a la variable \texttt{.WROT.RotAzi.mag} en lugar de \texttt{WTG1.WROT.RotAzi.mag}).
+
+Durante la operación en el entorno \textit{Runtime}, cuando el operador selecciona un aerogenerador específico desde la vista general, se ejecuta un \textit{script} que realiza dos acciones simultáneas sobre el \textit{Picture Window} central:
+\begin{enumerate}
+    \item Carga el archivo \texttt{.pdl} de la plantilla genérica.
+    \item Asigna el nombre de la turbina seleccionada (ej. \texttt{WTG1}) a la propiedad \textit{Tag Prefix} de la ventana.
+\end{enumerate}
+
+Automáticamente, WinCC concatena este prefijo con el sufijo interno de los objetos gráficos, dinamizando la pantalla completa con los datos reales del equipo seleccionado en cuestión de milisegundos. Esta filosofía se ha aplicado intensivamente en los niveles del proyecto.
+
+\paragraph{Vistas de detalle de Turbina (\textit{Turbine Overview})}
+Estas interfaces proporcionan la telemetría resumida de un único aerogenerador. Como se observa en la Figura \ref{fig:overview_turbina}, la pantalla despliega de forma concisa los valores críticos (velocidad del viento local, régimen del rotor, estado del \textit{pitch} y temperaturas clave). Gracias al \textit{Tag Prefix}, esta misma disposición gráfica sirve para supervisar cualquier máquina del parque eólico.
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,height=0.5\linewidth]{figuras/WTG_Faceplate.png}
+        \caption{Plantilla de monitorización de turbina.}
+        \label{fig:overview_turbina}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,height=0.5\linewidth]{figuras/Park_Faceplate.png}
+        \caption{Pantalla de supervisión de parque.}
+        \label{fig:overview_parque}
+    \end{subfigure}\vspace{0.5cm}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,height=0.5\linewidth]{figuras/TurbinaDinamizada.png}
+        \caption{Plantilla de monitorización de turbina.}
+        \label{fig:turbina_dinamizada}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,height=0.5\linewidth]{figuras/ParqueDinamizado.png}
+        \caption{Pantalla de supervisión de parque.}
+        \label{fig:parque_dinamizado}
+    \end{subfigure}
+    \caption{Ejemplos de plantillas de visualización dinamizadas mediante \textit{Tag Prefix} en SIMATIC WinCC V8.1.}
+\end{figure}
+\paragraph{Vistas de agrupación o clústeres (\textit{Park Overview})}
+De manera análoga a las turbinas individuales, el parque puede subdividirse en subestaciones o clústeres lógicos. Se ha diseñado una plantilla de agrupación que, recibiendo el prefijo correspondiente al clúster, consolida y visualiza los datos agregados de un subconjunto de aerogeneradores (Figura \ref{fig:overview_parque}), optimizando drásticamente el número de archivos en el proyecto y garantizando la homogeneidad visual de la interfaz.
+
+
+\FloatBarrier
+\subsection{Implementación de \textit{Scripts} Globales para el Filtrado de Activos}
+\label{sec:scripts_globales_filtrado}
+
+Para facilitar la navegación del operador entre los distintos niveles de la planta, se ha desarrollado un sistema de filtrado paramétrico. Este sistema se ejecuta en la pantalla principal de monitorización \texttt{10\_WTG\_Overview} (Figura \ref{fig:interfaz_grafica_selector}), permitiendo la segregación visual de los aerogeneradores en función del parque al que pertenecen o de su identificador de estado específico.\par
+
 \begin{figure}[p]
     \begin{subfigure}{\textwidth}
         \centering
@@ -719,70 +774,20 @@ Finalmente, como se muestra en la figura \ref{fig:interfaz_grafica} una matriz s
         \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
         \label{fig:interfaz_grafica}
     \end{subfigure}
-    \vspace{0.5cm}   
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Ordenamiento.png}
+        \caption{Ejemplo de interfaz gráfica desarrollada en WinCC para la supervisión de un proceso industrial.}
+        \label{fig:interfaz_ordenada}
+        \vspace{0.5cm}
+    \end{subfigure}
+
     \caption{Ejemplos de interfaces gráficas desarrolladas en WinCC para la supervisión de un proceso industrial.}
 \end{figure}
-\subsubsection{Intefaz de diagrama electrico (\texttt{11\_SUB\_Interface})}
-\label{sec:nivel_1_subestacion}
-Esta pantalla actúa como un contenedor especializado para la visualización de la infraestructura eléctrica del parque. Arquitectónicamente, se ha diseñado como una interfaz intermedia que alberga un único \textit{Picture Window} destinado a cargar los diversos diagramas unifilares (\textit{Single Line Diagrams}).\par
-
-La decisión de no integrar estos esquemas directamente en la pantalla raíz (\texttt{00\_Main\_Interface}) y emplear este encapsulamiento responde a dos criterios técnicos fundamentales, por un lado, la gestión de la visualización y desplazamiento de diagramas eléctricos complejos (\textit{scrolling}), y por otro, el aislamiento de variables mediante \textit{Tag Prefixes} para evitar interferencias con el entorno principal del SCADA.\par
-\subsubsection{Interfaz de monitorización, alarmas y tendencias (\texttt{12\_MET\_Station}, \texttt{13\_SYS\_Alarms} y \texttt{14\_SYS\_Trends})}
-% --- PRIMERA PÁGINA ---
-
-
-\FloatBarrier
-\subsection{Nivel 9: Plantillas dinámicas y reutilización gráfica (\textit{Tag Prefix})}
-\label{sec:tag_prefix}
-
-En la monitorización de parques eólicos, se presenta una alta repetición de activos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del SCADA. 
-
-Para resolver esta problemática, el diseño de las interfaces de detalle se ha fundamentado en el principio de reutilización gráfica, combinando el uso de las variables de estructura (definidas en el apartado 7.4.3) con la propiedad \textit{Tag Prefix} (Prefijo de variable) de las ventanas de imagen (\textit{Picture Windows}) de SIMATIC WinCC.
-
-La técnica consiste en diseñar una única pantalla genérica (\textit{Faceplate} maestro) donde los objetos gráficos (barras, campos de texto, indicadores de estado) se vinculan a las variables sin especificar la turbina a la que pertenecen (por ejemplo, apuntando a la variable \texttt{.WROT.RotAzi.mag} en lugar de \texttt{WTG1.WROT.RotAzi.mag}).
-
-Durante la operación en el entorno \textit{Runtime}, cuando el operador selecciona un aerogenerador específico desde la vista general, se ejecuta un \textit{script} que realiza dos acciones simultáneas sobre el \textit{Picture Window} central:
-\begin{enumerate}
-    \item Carga el archivo \texttt{.pdl} de la plantilla genérica.
-    \item Asigna el nombre de la turbina seleccionada (ej. \texttt{WTG1}) a la propiedad \textit{Tag Prefix} de la ventana.
-\end{enumerate}
-
-Automáticamente, WinCC concatena este prefijo con el sufijo interno de los objetos gráficos, dinamizando la pantalla completa con los datos reales del equipo seleccionado en cuestión de milisegundos. Esta filosofía se ha aplicado intensivamente en los niveles principales del proyecto
-
-\paragraph{Vistas de detalle de Turbina (\textit{Turbine Overview})}
-Estas interfaces proporcionan la telemetría resumida de un único aerogenerador. Como se observa en la Figura \ref{fig:overview_turbina}, la pantalla despliega de forma concisa los valores críticos (velocidad del viento local, régimen del rotor, estado del \textit{pitch} y temperaturas clave). Gracias al \textit{Tag Prefix}, esta misma disposición gráfica sirve para supervisar cualquier máquina del parque eólico.
-
-\begin{figure}[t]
-    \centering
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/WTG_Faceplate.png}
-        \caption{Plantilla de monitorización de turbina.}
-        \label{fig:overview_turbina}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/Park_Faceplate.png}
-        \caption{Pantalla de supervisión de parque.}
-        \label{fig:overview_parque}
-    \end{subfigure}
-    \vspace{0.5cm}
-    \caption{Ejemplos de plantillas de visualización dinamizadas mediante \textit{Tag Prefix} en SIMATIC WinCC V8.1.}
-\end{figure}
-\paragraph{Vistas de agrupación o clústeres (\textit{Park Overview})}
-De manera análoga a las turbinas individuales, el parque puede subdividirse en subestaciones o clústeres lógicos. Se ha diseñado una plantilla de agrupación que, recibiendo el prefijo correspondiente al clúster, consolida y visualiza los datos agregados de un subconjunto de aerogeneradores (Figura \ref{fig:overview_parque}), optimizando drásticamente el número de archivos en el proyecto y garantizando la homogeneidad visual de la interfaz.
-
-
-\FloatBarrier
-\subsection{Implementación de \textit{Scripts} Globales para el Filtrado Paramétrico de Activos}
-\label{sec:scripts_globales_filtrado}
-
-Para facilitar la navegación del operador entre los distintos niveles de la planta, se ha desarrollado un sistema de filtrado paramétrico. Este sistema se ejecuta en la pantalla principal de monitorización \texttt{10\_WTG\_Overview} (Figura \ref{fig:interfaz_grafica_selector}), permitiendo la segregación visual de los aerogeneradores en función del parque al que pertenecen o de su identificador de estado específico.\par
 
 La lógica de control que gobierna este comportamiento no se ha programado de forma local en los eventos individuales de cada objeto gráfico. En su lugar, se ha optado por utilizar \textit{scripts} globales en el editor de WinCC. Esta decisión posibilita la creación de acciones reutilizables, además de facilitar el mantenimiento.\par
 
-El flujo de información entre la capa gráfica y el algoritmo de filtrado se desarrolla a través de dos variables internas (\textit{Internal Tags}) las cuales han sido creadas en el \textit{Tag Management} de WinCC (Tabla \ref{tab:variables_internas_filtrado}).
+El flujo de información entre la capa gráfica y el algoritmo de filtrado se desarrolla a través de dos variables internas: \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos}, las cuales han sido creadas en el \textit{Tag Management} de WinCC (Tabla \ref{tab:variables_internas_filtrado}).
 
 \begin{table}[tb]
     \centering
@@ -791,14 +796,14 @@ El flujo de información entre la capa gráfica y el algoritmo de filtrado se de
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{lll}
         \toprule
-        \textbf{Variable Interna (\textit{Tag})} & \textbf{Tipo de Dato} & \textbf{Criterio y Función Operativa} \\ \midrule
-        \texttt{HMI\_Filtro\_Parques} & Text tag (8-bit) & Almacena la subestación seleccionada (p. ej., \texttt{IGL I}). \\
-        \texttt{HMI\_Filtro\_Molinos} & Short Integer & Almacena el código del estado operativo objetivo (p. ej., parado). \\ \bottomrule
+        \textbf{Variable Interna (\textit{Tag})} & \textbf{Tipo de Dato} & \textbf{Almacenamiento de dato} \\ \midrule
+        \texttt{HMI\_Filtro\_Parques} & Text tag (8-bit) & Subestación seleccionada (p. ej., \texttt{IGL I}). \\
+        \texttt{HMI\_Filtro\_Molinos} & Short Integer & Estado operativo objetivo (p. ej., parado). \\ \bottomrule
     \end{tabular}
     }
     \vspace{1cm}
 \end{table}
-En segundo lugar, la evaluación de los criterios y la manipulación de la interfaz gráfica se realiza en dos funciones globales independientes. Estas funciones se invocan de forma orientada a eventos  (modificar los selectores de la pantalla) actuando según el modo operativo activo tal y como se describe en la Tabla \ref{tab:funciones_globales_filtrado}.\par
+En segundo lugar, la evaluación de los criterios y la manipulación de la interfaz gráfica se realiza en dos funciones globales independientes. Estas funciones se invocan de forma orientada a eventos, los selectores \texttt{Subestación} y \texttt{Estado} (Figura \ref{fig:selectores_filtrado}), actuando según el modo operativo activo tal y como se describe en la Tabla \ref{tab:funciones_globales_filtrado}.\par
 
 \begin{table}[tb]
     \centering
@@ -813,84 +818,9 @@ En segundo lugar, la evaluación de los criterios y la manipulación de la inter
         \end{tabular}%
     }
 \end{table}
-Cuando el operador interactúa con los selectores o menús desplegables integrados en la pantalla \texttt{10\_WTG\_Overview}, se dispara el evento de cambio de propiedad. Este evento invoca la ejecución de los \textit{scripts} globales, los cuales recogen la entrada del usuario, procesan el algoritmo de filtrado y muestran u ocultan los objetos gráficos correspondientes a cada aerogenerador en función de su parque de pertenencia o estado operativo como se describe en los algoritmos \ref{alg:filtrado_dinamico} y \ref{alg:filtrado_dinamico_parque}.
+Cuando el operador interactúa con los selectores o menús desplegables integrados en la pantalla \texttt{10\_WTG\_Overview}, se dispara el evento de cambio de propiedad. Este evento invoca la ejecución de los \textit{scripts} globales de filtrado, los cuales recogen la entrada del usuario, procesan el algoritmo de filtrado y muestran u ocultan los objetos gráficos correspondientes a cada aerogenerador en función de su parque de pertenencia o estado operativo como se visualiza en la figura \ref{fig:interfaz_ordenada}. El codigo de las funciones esta descrito en los listados \texttt{AplicarFiltroPosicion()} y \texttt{AplicarFiltroParques()} del anexo \ref{cap:anexo_codigo_solucion}.
 
-\textit{Nota: El código se muestra en el anexo \ref{cap:anexo_codigo_solucion} en las funciones \texttt{AplicarFiltroPosicion()} y \texttt{AplicarFiltroParques()}.}
-\begin{algorithm}[tb]
-    \DontPrintSemicolon
-    \SetKwFunction{FRead}{LeerTag}
-    \SetKwFunction{FHide}{OcultarFaceplate}
-    \SetKwFunction{FShow}{MostrarFaceplate}
-    \SetKwFunction{FMove}{MoverFaceplate}
-    \SetKwFunction{FMap}{MapearEstadoHMI}
-    \vspace{1cm}
-    Establecer cuadriculas, numero de molinos, prefijos de variables, offsets y posiciones iniciales \par
 
-    Ocultar todos los faceplates de molinos como limpieza inicial \;
-
-    \For{(Numero de molinos Do)}
-    {
-        \FHide{$i$} \;
-    }
-    Bucle de filtrado y posicionamiento \;
-    \For{(Numero de molinos $i$ Do)}
-    {
-        $Estado \leftarrow \FRead{\text{Estado PLC Molino } i}$ \;
-        $Parque \leftarrow \FRead{\text{ID Parque Molino } i}$ \;
-        $Selector \leftarrow \FMap{Selector del HMI}$ \;
-
-        \If{(si el selector es igual al parque del molino $i$ o esta en modo "todos")}
-        {
-            \FShow{$i$} \;
-            \FMove{$i$} \;
-            Siguiente columna\;
-            \If{(superado el numero de columnas por fila)}
-            {
-                pasar a siguiente fila\;
-            }
-        }
-    }
-    \caption{Filtrado Dinámico y Posicionamiento de Aerogeneradores en Cuadrícula}
-    \label{alg:filtrado_dinamico}
-\end{algorithm}
-\begin{algorithm}[tb]
-    
-    \DontPrintSemicolon
-    \SetKwFunction{FRead}{LeerTag}
-    \SetKwFunction{FHide}{OcultarFaceplate}
-    \SetKwFunction{FShow}{MostrarFaceplate}
-    \SetKwFunction{FMove}{MoverFaceplate}
-    \SetKwFunction{FMap}{MapearEstadoHMI}
-    \vspace{1cm}
-    Establecer cuadriculas, numero de molinos, prefijos de variables, offsets y posiciones iniciales \par
-
-    Ocultar todos los faceplates de molinos como limpieza inicial \;
-
-    \For{(Numero de molinos Do)}
-    {
-        \FHide{$i$} \;
-    }
-    Bucle de filtrado y posicionamiento \;
-    \For{(Numero de molinos $i$ Do)}
-    {
-        $Estado \leftarrow \FRead{\text{Estado PLC Molino } i}$ \;
-        $Parque \leftarrow \FRead{\text{ID Parque Molino } i}$ \;
-        $Selector \leftarrow \FMap{Selector del HMI}$ \;
-
-        \If{(si el selector es igual al parque del molino $i$ o esta en modo "todos")}
-        {
-            \FShow{$i$} \;
-            \FMove{$i$} \;
-            Siguiente columna\;
-            \If{(superado el numero de columnas por fila)}
-            {
-                pasar a siguiente fila\;
-            }
-        }
-    }
-    \caption{Filtrado Dinámico y Posicionamiento de Aerogeneradores en Cuadrícula}
-    \label{alg:filtrado_dinamico_parque}
-\end{algorithm}
 \FloatBarrier
 \section{Gestión de alarmas y eventos}
 \label{sec:alarmas}
@@ -942,6 +872,11 @@ Uso del Naranja/Amarillo: Se asigna al modo \textit{Mantenimiento} para advertir
 Uso del Blanco y Gris: Siguiendo los principios de HMI de alto rendimiento (ISA-101), los estados de \textit{Pausa} y \textit{Parada} (que son condiciones seguras y estacionarias) se representan en escala de grises, con el fin de no saturar la vista del operador.\par
 
 Uso del Azul: Según la IEC 60073, el azul se emplea para estados que requieren de intervención obligatoria. Sin embargo, dado que en el contexto eólico los estados de transición como \textit{Arrancando} y \textit{Apagando} no implican una anomalía y estan totalmente automatizadas, se emplea el color azul para indicar estos estados específicos que no estan descritos por otros colores en la norma.\par
+\begin{figure}[!tbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/Estados.png}
+    \caption{Ejemplo de codificación cromática de estados de la turbina en la interfaz gráfica de supervisión.}
+\end{figure}
 \FloatBarrier
 \subsection{Codificación Cromática y Representación de Estados en Celdas de Línea}
 \label{sec:codificacion_cromatica_celdas}
@@ -969,21 +904,21 @@ En el entorno eléctrico de alta y media tensión, la presencia de energía impl
     \centering
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea.png}
+        \includegraphics[width=\textwidth,height=0.7\linewidth]{figuras/celda_linea.png}
         \caption{Interruptor abierto.}
         \label{fig:celda_linea_1}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea_2.png}
+        \includegraphics[width=\textwidth,height=0.7\linewidth]{figuras/celda_linea_2.png}
         \caption{Interruptor cerrado.}
         \label{fig:celda_linea_2}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth,height=0.6\linewidth]{figuras/celda_linea_3.png}
+        \includegraphics[width=\textwidth,height=0.7\linewidth]{figuras/celda_linea_3.png}
         \caption{Interruptor en tránsito.}
         \label{fig:celda_linea_3}
     \end{subfigure}
@@ -1016,7 +951,7 @@ El comportamiento cromático en el objeto \textit{WinCC Alarm Control} sigue una
 \par
 Cuando una alarma entra en el sistema (estado activo sin acusar), la interfaz prioriza la captura de la atención del usuario: el texto se presenta en color blanco sobre un fondo cromático saturado representativo de su gravedad (rojo para emergencias y fallos, o amarillo/ámbar para advertencias).\par
 
-En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgment}), si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte los colores para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica exacta de esta implementación en el \textit{Runtime}.
+En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgment}), si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte los colores para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica de implementación en el \textit{Runtime}.
 \begin{table}[tb]
     \centering
     \caption{Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}
@@ -1036,18 +971,18 @@ En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgm
 \end{table}
 \section{Integración de IIoT en la solución}
 
-En el contexto actual de la Industria 4.0, la monitorización y supervisión de infraestructuras energéticas distribuidas, como es el caso de un parque eólico, se demandan soluciones que vayan más allá de los sistemas SCADA tradicionales aislados en planta. La convergencia entre las Tecnologías de la Operación (OT) y las Tecnologías de la Información (IT) permite habilitar el ecosistema del Internet Industrial de las Cosas (IIoT), facilitando el análisis de datos a gran escala, la accesibilidad remota y la escalabilidad del sistema.\par
+En el contexto actual de la Industria 4.0, la monitorización y supervisión de infraestructuras energéticas distribuidas, como es el caso de un parque eólico, se demandan soluciones que vayan más allá de los sistemas \ac{SCADA} tradicionales aislados en planta. La convergencia entre \ac{IT} y \ac{OT} permite habilitar el ecosistema del \ac{IIoT}, facilitando el análisis de datos a gran escala, la accesibilidad remota y la escalabilidad del sistema.\par
 
 Este capítulo describe en detalle el diseño, despliegue e integración de una arquitectura en la nube orientada a la adquisición y visualización de datos  provenientes de los aerogeneradores. Mientras que el sistema local (basado en SIMATIC WinCC V8.1) se encarga de la adquisición en tiempo real (Edge) y el control a nivel de campo mediante protocolos industriales como \ac{OPC UA}, la arquitectura propuesta en este capítulo tiene como misión exportar estos datos de manera segura y eficiente hacia la nube para su almacenamiento histórico y explotación visual.\par
 
 Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquitectura basada en microservicios contenerizados, apoyada en las siguientes capas lógicas (figura \ref{fig:IIoT}):
 
 \begin{itemize}
-    \item Capa de Adquisición y Emisión (Edge): Representada por el módulo Cloud Connect del SCADA WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero MQTT.
-    \item Capa de Infraestructura (Cloud): Soportada por una instancia virtual (EC2) alojada en Amazon Web Services (AWS), que proporciona el entorno computacional necesario con alta disponibilidad. El despliegue de los servicios se ha orquestado íntegramente mediante Docker, garantizando el aislamiento de los procesos y facilitando futuras migraciones.
-    \item Capa de Ingesta y Procesamiento Intermedio: Implementada con Node-RED, que actúa como cliente MQTT para la suscripción a los tópicos de la planta, y proporciona un entorno de flujo de datos visual para filtrar y transformar los paquetes JSON recibidos antes de su inserción en la base de datos.
-    \item Capa de Almacenamiento (TSDB): Soportada por InfluxDB, una base de datos de series temporales optimizada para la escritura de alta frecuencia y el almacenamiento eficiente de datos con marcas de tiempo (timestamps).
-    \item Capa de Visualización: Desarrollada sobre Grafana, que consulta directamente a la base de datos para construir dashboards interactivos, permitiendo la monitorización del rendimiento del parque eólico desde cualquier ubicación con acceso a internet.
+    \item \textbf{Capa de Adquisición y Emisión (Edge)}: Representada por el módulo Cloud Connect del \ac{SCADA} WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero \ac{MQTT}.
+    \item \textbf{Capa de Infraestructura (Cloud)}: Soportada por una instancia virtua \ac{EC2} alojada en \ac{AWS}, que proporciona el entorno computacional necesario con alta disponibilidad. El despliegue de los servicios se ha orquestado íntegramente mediante Docker, garantizando el aislamiento de los procesos y facilitando futuras migraciones.
+    \item \textbf{Capa de Ingesta y Procesamiento Intermedio}: Implementada con Node-RED, que actúa como cliente \ac{MQTT} para la suscripción a los tópicos de la planta, y proporciona un entorno de flujo de datos visual para filtrar y transformar los paquetes \ac{JSON} recibidos antes de su inserción en la base de datos.
+    \item \textbf{Capa de Almacenamiento \ac{TSDB}}: Soportada por InfluxDB, una base de datos de series temporales optimizada para la escritura de alta frecuencia y el almacenamiento eficiente de datos con marcas de tiempo (timestamps).
+    \item \textbf{Capa de Visualización}: Desarrollada sobre Grafana, que consulta directamente a la base de datos para construir dashboards interactivos, permitiendo la monitorización del rendimiento del parque eólico desde cualquier ubicación con acceso a internet.
 \end{itemize}
 
 \begin{figure}[t]
@@ -1059,19 +994,19 @@ Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquit
 \FloatBarrier
 \subsection{Despliegue de la infraestructura en Amazon Web Services (AWS)}
 
-Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema IIoT. Para ello, se ha optado por un modelo de Infraestructura como Servicio (IaaS) mediante Amazon Web Services (AWS) ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
-\subsubsection{Instancia EC2}
-El núcleo computacional del sistema reside en una instancia de Amazon Elastic Compute Cloud (EC2). Se ha seleccionado una instancia de la familia de microprocesadores t3.medium con un procesador con sistema operativo Ubuntu Server 22.04 LTS, 
+Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema \ac{IIoT}. Para ello, se ha optado por un modelo de \ac{IaaS} mediante \ac{AWS} ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
+\subsubsection{Instancia \ac{EC2}}
+El núcleo computacional del sistema reside en una instancia de Amazon Elastic Compute Cloud \ac{EC2}. Se ha seleccionado una instancia de la familia de microprocesadores t3.medium con un procesador con sistema operativo Ubuntu Server 22.04 LTS, 
 \subsubsection{Reglas de entrada del Security Group EC2}
-Las reglas de entrada del grupo de seguridad (Security Group) de la instancia EC2 en AWS definen qué tráfico de red está permitido acceder a la instancia. Estas reglas especifican los puertos, protocolos y orígenes que pueden comunicarse con el servidor (tabla \ref{tab:ec2_security_group}).\par
-\begin{table}[tb]
+Las reglas de entrada del grupo de seguridad (Security Group) de la instancia \ac{EC2} en \ac{AWS} definen qué tráfico de red está permitido acceder a la instancia. Estas reglas especifican los puertos, protocolos y orígenes que pueden comunicarse con el servidor (tabla \ref{tab:ec2_security_group}).\par
+\begin{table}[!tb]
     \centering
-    \caption{Configuración de las reglas de entrada del grupo de seguridad de la instancia EC2.}
+    \caption{Configuración de las reglas de entrada del grupo de seguridad de la instancia \ac{EC2}.}
     \label{tab:ec2_security_group}
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{lllccl}
             \toprule
-            \multicolumn{6}{c}{\textbf{Reglas de entrada del Security Group EC2}} \\
+            \multicolumn{6}{c}{\textbf{Reglas de entrada del Security Group \ac{EC2}}} \\
             \midrule
             \textbf{ID de regla} & \textbf{IP} & \textbf{Tipo} & \textbf{Proto.} & \textbf{Puertos} & \textbf{Origen} \\
             \midrule
@@ -1087,33 +1022,50 @@ Las reglas de entrada del grupo de seguridad (Security Group) de la instancia EC
         \end{tabular}%
     }
 \end{table}
-\subsubsection{Orquestación de microservicios mediante Docker}
+\FloatBarrier
+\subsubsection{Orquestación de servicios mediante Docker}
+\label{sec:despliegue_iiot_docker}
 
-Para garantizar la portabilidad y escalabilidad de la solución, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, InfluxDB y Grafana) utilizando Docker, el cual permite empaquetar las aplicaciones junto con sus dependencias en contenedores ligeros que abstraen el sistema operativo sobre el que se ejecutan. De esta forma, las configuraciones especificas de diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas, producción) se gestionan de forma consistente y replicable.\par
+Para garantizar la portabilidad, el aislamiento y la escalabilidad de la solución IIoT orientada al parque eólico, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, InfluxDB y Grafana) utilizando la plataforma Docker. Docker es un motor de virtualización a nivel de sistema operativo que permite empaquetar una aplicación y todas sus dependencias binarias en un artefacto único e independiente.\par 
 
-Lo primero ha sido realizar la conexión mediante SSH a la instancia EC2 utilizando un cliente como la terminal de comandos, autenticándose con la clave privada asociada a la instancia. Una vez dentro del entorno de la instancia, se procede ha instalado Docker mediante el terminal.\par
+A diferencia de las máquinas virtuales tradicionales, que requieren la emulación completa de un sistema operativo invitado sobre un hipervisor, Docker opera mediante el concepto de contenedor. Un contenedor es un proceso aislado y ligero que comparte el mismo núcleo (\textit{kernel}) del sistema operativo host, abstrayendo únicamente las capas de software superiores (Figura \ref{fig:docker_architecture}). De esta forma, las configuraciones específicas de los diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas o producción industrial) se gestionan de forma consistente, replicable y con un consumo de recursos computacionales mínimo.
 
-El despliegue se ha automatizado mediante un archivo de configuración Docker-compose.yml mostrado en el anexo \ref{cap:anexo_codigo_solucion}, que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la solución:
-\begin{itemize}
-    \item Red Interna Virtual (Docker Network): Se ha creado una red privada aislada (scada\_net) para que los contenedores se comuniquen entre sí (por ejemplo, Node-RED enviando datos a InfluxDB) sin exponer dichos puertos al internet público, reduciendo significativamente la superficie de ataque.
-    \item Persistencia de Datos (Docker Volumes): Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia EC2. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.
-\end{itemize}
-
-Una vez se han levantado los contenedores, se ha configurado el acceso del servicio Cloud Connect de WinCC (figura \ref{fig:cloud_connect}) para publicar los datos en el broker MQTT (puerto 1883) de la instancia EC2 utilizando la direccion IP publica de esta (\texttt{13.60.146.240}) (figura \ref{fig:aws}).\\ \par
-\begin{figure}[tb]
+\begin{figure}[!tbp]
     \centering
-    \includegraphics[width=\textwidth]{figuras/aws.png}
-    \caption{Arquitectura de integración de IIoT para la monitorización de un parque eólico.}
-    \label{fig:aws}
+    \includegraphics[width=0.8\textwidth]{figuras/DockerVM.png}
+    \caption{Arquitectura de contenedores Docker para la solución IIoT del parque eólico. Obtenido de \url{https://hanwenzhang123.medium.com/docker-vs-virtual-machine-vs-kubernetes-overview-389db7de7618}}
+    \label{fig:docker_architecture}
 \end{figure}
-\begin{figure}[tb]
+
+El despliegue se ha automatizado mediante un archivo de configuración Docker-compose.yml mostrado en el anexo \ref{cap:anexo_codigo_solucion}, que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la solución: La red interna virtual y los volúmenes de persistencia de datos.\par
+
+\paragraph{Red Interna Virtual (Docker Network)}
+La red interna virtual es la manera en la que Docker gestiona la comunicación entre los contenedores (Figura~\ref{fig:docker_network}). Por defecto, Docker genera un conmutador de software interno (\textit{software bridge}) en el host que asigna un direccionamiento IP privado local a cada contenedor conectado a él. 
+
+\begin{figure}[!tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figuras/DockerNetwork.png}
+    \caption{Arquitectura de red interna y aislamiento de servicios IIoT en el motor Docker. Obtenido de \url{https://k21academy.com/kubernetes/docker-networking-different-types-of-networking-overview-for-beginners/}}
+    \label{fig:docker_network}
+\end{figure}
+
+Para hacer la comunicación de los tres contenedores a utilizar se ha definido una red privada y aislada denominada \texttt{scada\_net} bajo este controlador \textit{bridge}. Esto permite que los contenedores se comuniquen e interconecten entre sí de manera directa mediante resolución de nombres internos (por ejemplo, Node-RED transmitiendo tramas de datos hacia el puerto local \texttt{8086} de InfluxDB) sin necesidad de exponer dichos puertos al internet público, reduciendo significativamente la superficie de ataque frente a accesos no autorizados.\par
+
+\paragraph{Persistencia de Datos (Docker Volumes)}
+
+Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia \ac{EC2}. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.\par
+
+Una vez levantados y estabilizados los servicios en la infraestructura de la nube, se han configurado los accesos del módulo \textit{Cloud Connect} integrado en el sistema SCADA WinCC V8.1 (Figura \ref{fig:cloud_connect}) para proceder a la publicación de los datos capturados en tiempo real de la planta. La pasarela industrial transmite los paquetes de datos hacia el \textit{broker} \ac{MQTT} (mapeado externamente en el puerto de comunicación \texttt{1883}) de la instancia \ac{EC2}, apuntando directamente hacia la dirección IP pública de la misma : \texttt{13.60.146.240}.
+
+\begin{figure}[!tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/cloudconnect.png}
     \caption{Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}
     \label{fig:cloud_connect}
 \end{figure}
+
 \vspace{1cm}
-Ahora en cualquier navegador web se puede acceder al servicio de Node-RED utilizando la uri \hspace{0.5cm}\url{http://13.60.146.240:1880}. En este servicio se han configurado las suscripciones a los tópicos MQTT. Se ha realizado mediante un nodo MQTT de tipo "Subscribe" con la dirección del broker MQTT de la instancia EC2, junto con el tópico configurado en Cloud Connect. Posteriormente, se añaden nodos de función para transformar los datos recibidos y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
+De esta forma cualquier navegador web con las credenciales necesarias puede acceder al servicio de Node-RED utilizando el puerto \texttt{1880}. En este servicio se han configurado las suscripciones a los tópicos MQTT. Se ha realizado mediante un nodo MQTT de tipo "Subscribe" con la dirección del broker MQTT de la instancia EC2, junto con el tópico configurado en Cloud Connect. Posteriormente, nodos de función transforman los datos recibidos para codificarlos y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
 
 \begin{figure}[tb]
     \centering
@@ -1122,7 +1074,7 @@ Ahora en cualquier navegador web se puede acceder al servicio de Node-RED utiliz
     \label{fig:nodered}
 \end{figure}
 
-Se puede acceder al servicio de InfluxDB a través del uri\hspace{0.5cm} \url{http://13.60.240.146:8086}. para configurar la base de datos y los buckets necesarios para almacenar los datos del parque eólico.\par 
+A consecuencia de esta configuración, InfluxDB alojado en el puerto \texttt{8086} recibe los datos enviados desde Node-RED y los almacena en un bucket configurado. para configurar la base de datos y los buckets necesarios para almacenar los datos del parque eólico.\par 
 
 Finalmente, se accede a Grafana mediante la uri\hspace{0.5cm}\url{http://13.60.240.146:3000} para configurar el panel de visualización de los datos almacenados en InfluxDB. Para ello, se selecciona la fuente de datos InfluxDB utilizando la dirección \url{http://13.60.240.146:8086}.y el token de autenticación.\par
 
