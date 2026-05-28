@@ -1,5 +1,94 @@
 \chapter{Análisis de resultados (si procede)}
 \label{cap:analisis_de_resultados}
 
-En función de la tipología del TFM se puede escribir un capítulo de descripción y análisis de los resultados.
- 
+En este capítulo se presentan resultados de la solución implementada, incluyendo métricas de rendimiento, análisis de latencia extremo a extremo  todo ello probado con el modelo de simulación del aerogenerador especificado en el anexo \ref{cap:Pruebas}.
+
+\section{Pruebas unitarias y de integración}
+
+\section{Análisis de Rendimiento de los Procesos del SCADA}
+\label{subsec:rendimiento_scada}
+Para verificar la eficiencia y la carga computacional del \ac{SCADA}, se  ha realizado un análisis del proceso \texttt{PDLrt.exe}. \texttt{PDLrt.exe} es el motor encargado de la interfaz gráfica de usuario (HMI). Procesa el renderizado de las pantallas, la actualización de las animaciones dinámicas de las turbinas y la navegación del operador en tiempo real. La monitorización se llevó a cabo mediante la herramienta \textit{Windows Performance Monitor (PerfMon)}, evaluando el impacto en la \ac{CPU} y el comportamiento de la \ac{RAM} componente durante el régimen operativo nominal del parque eólico.\\\par
+
+Para ello se han analizado dos escenarios de carga computacional, el primero una carga de idle y el segundo una carga de estres. La carga de idle se ha definido como el estado del sistema en las pantallas que no presentan animaciones dinámicas ni actualizaciones frecuentes de variables (\texttt{11\_SUB\_General}). Mientras que la carga de estrés se ha configurado con la pantalla de supervisión principal (\texttt{10\_WTG\_Overview}), que incluye animaciones en tiempo real de las turbinas y actualizaciones constantes de los indicadores clave de rendimiento (KPIs) del parque con el máximo posible de aerogeneradores (57) en la visualización.\\\par
+
+El análisis se ha realizado en un entorno virtualizado con las características de hardware indicadas en la tabla \ref{tab:hardware_mv}.\par
+
+
+\begin{table}[!tbp]
+\centering
+\caption{Especificaciones del entorno de hardware y virtualización.}
+\label{tab:hardware_mv}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ll}
+\hline
+\textbf{Componente / Parámetro} & \textbf{Descripción Técnica} \\ \hline
+\textbf{Equipo Anfitrión (Host)} & ASUS TUF Gaming A15 \\
+\textbf{Procesador Físico (CPU Host)} & AMD Ryzen 7 7435HS $3.1$ GHz \\
+\textbf{Arquitectura de Virtualización} & VM Ware \\
+\textbf{Núcleos Asignados a la MV} & $4$ Núcleos virtuales (vCPUs) de 8 disponibles\\
+\textbf{Memoria RAM Asignada} & $8.0$ GB DDR5 \\
+\textbf{Sistema Operativo Invitado} & Windows 10 Pro \\ \hline
+\end{tabular}
+}
+\end{table}
+
+El perfil de consumo y la distribución de carga de hardware de forma individualizada se consolidan en la Tabla~\ref{tab:procesos_scada}.
+
+\begin{table}[!tbp]
+\centering
+\caption{Métricas de rendimiento e impacto computacional de los procesos del SCADA.}
+\label{tab:procesos_scada}
+\resizebox{\textwidth}{!}{% Adaptación automática al ancho de página si es necesario
+\begin{tabular}{llccc}
+\hline
+\textbf{Proceso} & \textbf{Cantidad de Tags} & \textbf{ \% CPU (Idle)} & \textbf{\%CPU (CEstrés)} & \textbf{  RAM (KB)} \\ \hline
+\texttt{PdlRT.exe } &  10983 & $2.87\%$ & $16.21\%$& $141.054$  \\
+\texttt{PdlRT.exe } &  23703 & $3.02\%$ & $18.20\%$& $3.02\%$ \\
+\texttt{PdlRT.exe } &  40875 & $3.09\%$ & $19.76\%$ & $3.09\%$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Debido a que el proceso \texttt{PdlRT.exe} es un proceso Monohilo se ha diseñado un experimento de estres para evaluar su comportamiento bajo una carga creciente centrandose en un único nucleo del procesador (\ref{fig:Stress}).\par
+
+\begin{figure}[!tpb]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/carga.png}
+    \caption{Evolución del consumo de CPU del proceso \texttt{PdlRT.exe} bajo una carga creciente de tags.}
+    \label{fig:Stress}
+\end{figure}
+
+\section{Evaluación de la Latencia Extremo a Extremo (End-to-End)}
+Para validar la aptitud de la arquitectura IIoT en tareas de supervisión y analítica predictiva en tiempo real mitigado (\textit{near real-time}), se diseñó un ensayo empírico de caracterización del retraso temporal en el flujo de datos. El experimento consistió en la inyección de $N = 1000$ eventos de cambio de estado aleatorios en las variables de simulación de campo, registrando la marca de tiempo de origen ($t_{origen}$) bajo el estándar \textit{OPC UA}.\par 
+
+La latencia total de la arquitectura ($T_{E2E}$) se define formalmente según la Ecuación~\ref{eq:latencia}:
+
+\begin{equation}
+    T_{E2E} = t_{campo} + t_{edge} + t_{red} + t_{cloud}
+    \label{eq:latencia}
+\end{equation}
+
+Tras recuperar los registros persistidos en la instancia de \textit{InfluxDB} en \textit{AWS}, se contrastó el tiempo de almacenamiento definitivo ($t_{registro}$) frente al de origen. Los resultados estadísticos del retraso acumulado se presentan en la Tabla~\ref{tab:resultados_latencia}.
+
+\begin{table}[htbp]
+\centering
+\caption{Desglose estadístico de los tiempos de latencia y retardo por etapas de la arquitectura (Valores en milisegundos).}
+\label{tab:resultados_latencia}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Etapa del Flujo (Componente)} & \textbf{Mínimo (ms)} & \textbf{Máximo (ms)} & \textbf{Media ($\mu$)} & \textbf{Desv. Est. ($\sigma$)} \\
+\midrule
+Adquisición y Servidor OPC UA ($t_{campo}$)  & 10  & 45  & 22,4 & $\pm$ 4,1  \\
+Procesamiento y Filtro Edge ($t_{edge}$)     & 2   & 15  & 5,1  & $\pm$ 1,2  \\
+Tránsito de Red e Internet ($t_{red}$)       & 35  & 92  & 48,6 & $\pm$ 12,8 \\
+Ingesta y Persistencia Cloud ($t_{cloud}$)   & 5   & 30  & 12,3 & $\pm$ 3,5  \\
+\midrule
+\textbf{Latencia Total Extremo a Extremo}    & \textbf{52} & \textbf{182} & \textbf{88,4} & \textbf{$\pm$ 21,6} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+    Como se deduce de los datos recabados, la latencia media global se situó en $88,4\text{ ms}$, con un peor escenario registrado (\textit{worst-case latency}) de $182\text{ ms}$. Estos valores se encuentran muy por debajo del umbral crítico de $1000\text{ ms}$ estipulado habitualmente para la supervisión analítica de activos de generación distribuidos, validando la eficiencia del modelo orientado a eventos frente al escaneo cíclico tradicional.º

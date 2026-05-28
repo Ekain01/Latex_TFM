@@ -1026,7 +1026,7 @@ Las reglas de entrada del grupo de seguridad (Security Group) de la instancia \a
 \subsubsection{Orquestación de servicios mediante Docker}
 \label{sec:despliegue_iiot_docker}
 
-Para garantizar la portabilidad, el aislamiento y la escalabilidad de la solución IIoT orientada al parque eólico, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, InfluxDB y Grafana) utilizando la plataforma Docker. Docker es un motor de virtualización a nivel de sistema operativo que permite empaquetar una aplicación y todas sus dependencias binarias en un artefacto único e independiente.\par 
+Para garantizar la portabilidad, el aislamiento y la escalabilidad de la solución IIoT orientada al parque eólico, se ha optado por contenedorizar cada componente de la arquitectura (Node-RED, Mosquitto, InfluxDB y Grafana) utilizando la plataforma Docker. Docker es un motor de virtualización a nivel de sistema operativo que permite empaquetar una aplicación y todas sus dependencias binarias en un artefacto único e independiente.\par 
 
 A diferencia de las máquinas virtuales tradicionales, que requieren la emulación completa de un sistema operativo invitado sobre un hipervisor, Docker opera mediante el concepto de contenedor. Un contenedor es un proceso aislado y ligero que comparte el mismo núcleo (\textit{kernel}) del sistema operativo host, abstrayendo únicamente las capas de software superiores (Figura \ref{fig:docker_architecture}). De esta forma, las configuraciones específicas de los diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas o producción industrial) se gestionan de forma consistente, replicable y con un consumo de recursos computacionales mínimo.
 
@@ -1049,13 +1049,13 @@ La red interna virtual es la manera en la que Docker gestiona la comunicación e
     \label{fig:docker_network}
 \end{figure}
 
-Para hacer la comunicación de los tres contenedores a utilizar se ha definido una red privada y aislada denominada \texttt{scada\_net} bajo este controlador \textit{bridge}. Esto permite que los contenedores se comuniquen e interconecten entre sí de manera directa mediante resolución de nombres internos (por ejemplo, Node-RED transmitiendo tramas de datos hacia el puerto local \texttt{8086} de InfluxDB) sin necesidad de exponer dichos puertos al internet público, reduciendo significativamente la superficie de ataque frente a accesos no autorizados.\par
+Este controlador \textit{bridge}  permite que los contenedores se comuniquen e interconecten entre sí de manera directa mediante resolución de nombres internos (por ejemplo, Node-RED transmitiendo tramas de datos hacia el puerto local \texttt{8086} de InfluxDB) sin necesidad de exponer dichos puertos al internet público, reduciendo significativamente la superficie de ataque frente a accesos no autorizados.\par
 
 \paragraph{Persistencia de Datos (Docker Volumes)}
 
 Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia \ac{EC2}. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.\par
 
-Una vez levantados y estabilizados los servicios en la infraestructura de la nube, se han configurado los accesos del módulo \textit{Cloud Connect} integrado en el sistema SCADA WinCC V8.1 (Figura \ref{fig:cloud_connect}) para proceder a la publicación de los datos capturados en tiempo real de la planta. La pasarela industrial transmite los paquetes de datos hacia el \textit{broker} \ac{MQTT} (mapeado externamente en el puerto de comunicación \texttt{1883}) de la instancia \ac{EC2}, apuntando directamente hacia la dirección IP pública de la misma : \texttt{13.60.146.240}.
+Una vez levantados y estabilizados los servicios en la infraestructura de la nube, se han configurado los accesos del módulo \textit{Cloud Connect} integrado en el sistema SCADA WinCC V8.1 (Figura \ref{fig:cloud_connect}) para proceder a la publicación de los datos capturados en tiempo real de la planta. La pasarela industrial transmite los paquetes de datos hacia el \textit{broker} Mosquitto \ac{MQTT} (mapeado externamente en el puerto de comunicación \texttt{1883}) de la instancia \ac{EC2}, apuntando directamente hacia la dirección IP pública de la misma : \texttt{13.60.146.240}.
 
 \begin{figure}[!tb]
     \centering
@@ -1065,7 +1065,7 @@ Una vez levantados y estabilizados los servicios en la infraestructura de la nub
 \end{figure}
 
 \vspace{1cm}
-De esta forma cualquier navegador web con las credenciales necesarias puede acceder al servicio de Node-RED utilizando el puerto \texttt{1880}. En este servicio se han configurado las suscripciones a los tópicos MQTT. Se ha realizado mediante un nodo MQTT de tipo "Subscribe" con la dirección del broker MQTT de la instancia EC2, junto con el tópico configurado en Cloud Connect. Posteriormente, nodos de función transforman los datos recibidos para codificarlos y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
+De esta forma cualquier navegador web con las credenciales necesarias puede acceder al servicio de Node-RED utilizando el puerto \texttt{1880}. En este servicio se han configurado las suscripciones a los tópicos \ac{MQTT}. Se ha realizado mediante un nodo \ac{MQTT} de tipo "Subscribe" con la dirección del broker Mosquitto \ac{MQTT} de la instancia \ac{EC2}, junto con el tópico configurado en Cloud Connect. Posteriormente, nodos de función transforman los datos recibidos para codificarlos y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
 
 \begin{figure}[tb]
     \centering
@@ -1078,7 +1078,7 @@ A consecuencia de esta configuración, InfluxDB alojado en el puerto \texttt{808
 
 Finalmente, se accede a Grafana mediante la uri\hspace{0.5cm}\url{http://13.60.240.146:3000} para configurar el panel de visualización de los datos almacenados en InfluxDB. Para ello, se selecciona la fuente de datos InfluxDB utilizando la dirección \url{http://13.60.240.146:8086}.y el token de autenticación.\par
 
-Una vez configurada la fuente de datos, se crean los dashboards personalizados para la monitorización del parque eólico, utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico.\par
+Una vez configurada la fuente de datos, se han creado los dashboards personalizados para la monitorización del parque eólico, utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico. Con este ciclo se integra la parte operativa \ac{OT} con la parte de gestión de datos \ac{IT} haciendo de los aerogeneradores un \ac{CPS} base de la industria 4.0.\par
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma \textbf{IEC 62443-4-2:2019} de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro niveles de seguridad (SL, por sus siglas en inglés) distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
 
