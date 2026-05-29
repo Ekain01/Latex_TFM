@@ -16,7 +16,8 @@ SIMATIC WinCC V8.1 es un sistema \ac{SCADA}, basado en los sistemas operativos M
 
 \par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como \ac{ANSI-C} y VBScript (Visual Basic).Por otro lado, WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del archivado histórico continuo de las variables del proceso y del registro de eventos y fallos.
 
-\par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el sistema de configuración o \ac{CS} y el entorno de ejecución o \ac{RT}:
+\par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el sistema de configuración o \ac{CS} y el entorno de ejecución o \ac{RT}.
+
 \subsection{Software de configuración (CS) WinCC Explorer}
 El software de configuración se denomina WinCC Explorer. En él se realiza toda la estructura y administración del proyecto. Dentro del WinCC Explorer se pueden abrir diferentes editores los cuales son interfaces de los subsistemas de WinCC. Estos subsistemas se encargan de diferentes tareas dentro del sistema SCADA, como la creación de variables, la configuración de comunicaciones, la gestión de alarmas, la creación de informes, entre otras funciones. La descripción detallada de cada uno de los subsistemas principales del software de configuración de WinCC se muestra en la Tabla \ref{tab:wincc_subsystems}.
 
@@ -44,9 +45,13 @@ El software de configuración se denomina WinCC Explorer. En él se realiza toda
     \label{tab:wincc_subsystems}
     }
 \end{table}
+\subsection{Software de ejecución (RT) WinCC Runtime}
+El software de ejecución WinCC Runtime (o \ac{RT}) es el motor  motor encargado de administrar todos los subservicios de WinCC. Es el encargado de ejecutar la adquisición de datosde los PLCs en tiempo real, actualizar dinámicamente la interfaz gráfica, procesarla lógica de los scripts, gestionar el control de acceso de los usuarios y archivar de manera segura los eventos y datos históricos en las bases de datos SQL.\par
+\section{Arquitecturas de software de supervisión en SIMATIC WinCC V8.1}
+La arquitectura en SIMATIC WinCC representa la repartición de los componentes \ac{CS} y \ac{RT} de software sobre los recursos computacionales. Dependiendo de la topología de la red, el número de estaciones de operación y los requisitos de redundancia, se pueden implementar diferentes arquitecturas de software. Estas arquitecturas pueden ser monopuesto o multipuesto.\par
 \subsection{Sistemas Monopuesto (\textit{Single User Systems})}
-En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar todas las tareas del \ac{SCADA}. El puesto actúa tanto como servidor como cliente: El equipo se encarga de realizar las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet, ModBus u \ac{OPC UA} etc.) de ejecutar el software \ac{RT} y almacenar los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
-Siemens propone dos arquitecturas para este tipo de sistemas: una estación única que integra configuración y \ac{RT} en un solo PC (Figura \ref{fig:monopuesto_simple}), y una variante redundante en la que una segunda estación funciona únicamente como \ac{RT} (Figura \ref{fig:monopuesto_redundante}).
+En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar las tareas relacionadas al software de configuración y ejecución. Es decir, el equipo se encarga de realizar por un lado las labores de ingeniería (Diseño de interfaces gráficas, gestion de variables etc.) y por el otro realiza las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet, ModBus u \ac{OPC UA} etc.),  ejecuta la lógica de \textit{scripts}, almacena los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
+Siemens permite dos arquitecturas para este tipo de sistemas: La primera, una estación única que integra configuración y \ac{RT} en una única estación (Figura \ref{fig:monopuesto_simple}), y  la segunda, una variante donde un PC configurado con redundancia ejecuta el software \ac{RT} por si la estación principal falla. (Figura \ref{fig:monopuesto_redundante}).
 
 % --- PRIMERA FIGURA: ARQUITECTURAS MONOPUESTO (A y B) ---
 \begin{figure}[p] % Usamos [htbp] para que se posicione en el flujo del texto actual
@@ -109,7 +114,9 @@ Siemens ofrece una solución de virtualización completa para sistemas de contro
 \section{Arquitectura del Sistema de Supervisión y Red de Comunicaciones del Parque Eólico}
 \label{sec:arquitectura_parque_eolico}
 
-La red de potencia del parque, tal como se define en el Anexo \ref{cap:Planos} , se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\textit{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte nacional.
+La red de potencia del hipotético parque se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\textit{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte general.\par
+
+Cada una de las subestaciones estáría conectada por una red de fibra óptica dedicada a un nodo central de supervisión ubicado en el edificio de organización y mantenimiento, donde se localiza la \ac{MCR}. 
 
 \begin{table}[tb]
     \centering
@@ -134,82 +141,16 @@ La red de potencia del parque, tal como se define en el Anexo \ref{cap:Planos} ,
 \FloatBarrier
 \subsection{Equipamiento de la Sala de Control Central (MCR) y Entorno de Validación}
 \label{sec:equipamiento_mcr}
+La Sala de Control Central (\textit{Main Control Room} - MCR) requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida del SCADA.\par 
 
-Para centralizar la supervisión de la infraestructura de generación y las 9 subestaciones descritas, la Sala de Control Central (\textit{Main Control Room} - MCR) requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida y redundante del SCADA.\par 
+Durante este proyecto se abordará únicamente la solución basada en una arquitectura monopuesto. Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física sin necesidad de agregar nuevos recursos computacionales, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes hosts y máquinas virtuales. \par
 
-Como se detalla en el anexo \ref{cap:Pruebas} , la fase final del proyecto no se realiza sobre estaciones monopuesto convencionales, sino que se sustenta íntegramente sobre la solución de virtualización industrial \ac{SIVaaS}.\par
-
-El despliegue físico y lógico del equipamiento en la MCR para esta fase de validación estructural consta de los siguientes activos unificados especificados en la tabla \ref{tab:Equipamiento_MCR}:
-\begin{table}[p]
-    \centering
-    \caption{Equipamiento principal de la primera instancia de host y sus máquinas virtuales.}
-    \label{tab:Equipamiento_MCR}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{p{11cm} p{2cm}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Primera instancia de Host}} \\
-        \midrule
-        Nombre & Cantidad \\
-        \midrule
-        16X1 HPE HOST SYSTEM "S" & 1\\
-        \hline
-        \multicolumn{2}{c}{\textbf{Maquinas Virtuales}} \\
-        \hline
-        \ac{VM} SIMATIC WinCC V8 Server & 1\\
-        \ac{VM} SIMATIC WinCC V8 Engineering Station + Client & 1\\
-        \bottomrule
-    \end{tabular}%
-    }
-\end{table}
-
-\begin{table}[p]
-    \centering
-    \caption{Equipo 2: Segunda instancia de Host con dos máquinas virtuales, una haciendo de servidor y la otra de cliente.}
-    \label{tab:Equipo 2}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{p{11cm} p{2cm}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Segunda instancia de Host}} \\
-        \midrule
-        Nombre & Cantidad \\
-        \midrule
-        16X1 HPE HOST SYSTEM "S" & 1\\
-        \hline
-        \multicolumn{2}{c}{\textbf{Maquinas Virtuales}} \\
-        \hline
-        \ac{VM} SIMATIC WinCC V8 Server & 1\\
-        \ac{VM} SIMATIC WinCC V8 Client & 1\\
-        \bottomrule
-    \end{tabular}%
-    }
-\end{table}
-
-\begin{table}[p]
-    \centering
-    \caption{Equipo 3: Clientes ligeros para la solución virtualizada.}
-    \label{tab:Equipo 3}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{p{11cm} p{2cm}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Clientes ligeros}} \\
-        \midrule
-        Nombre & Cantidad \\
-        \midrule
-        IGEL OS Thin Client HP T655 Dual Screen INT& 1\\
-        Management Console HP T655 Dual Screen WIN10 DE & 1\\
-        \bottomrule
-    \end{tabular}
-    }
-\end{table}
-
-Esta infraestructura virtualizada llave en mano dota a la MCR de la flexibilidad necesaria para verificar la adquisición de las variables estructuradas.
-
-\textbf{ESPECIFICAR EL CAJON QUE SE UTILIZARA (PLANOS DE LOS SERVIDORES)}
+Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de routers que asignan direcciones IP públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo (\textit{Edge1}) como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un router que proporciona direcciones IP privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección IP.\par
 \section{\ac{IM} de la solución SCADA}
 \label{cap:modelo_informacion}
 El modelo de información de un sistema es la representación estructurada de los datos y la información que maneja ese sistema. Con ello se define la forma en que se organizan, almacenan y acceden a los datoa dentro del sistema. El entorno de SIMATIC WinCC V8.1 permite la creación de variables que se utilizan para representar los datos del proceso, las alarmas, los eventos y otros aspectos operativos del sistema SCADA. Estas variables pueden ser internas, externas o de estructura, dependiendo de su función y origen dentro del sistema. \par
 
- Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, mientras que las variables externas son aquellas que se adquieren a través de la comunicación con los dispositivos físicos o sistemas externos. Las variables de estructura, por otro lado,son variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente.\par
+ Las variables internas son aquellas que se crean y gestionan dentro del entorno de WinCC, únicamente consumen memoria \ac{RAM} y no estan limitadas por las licencias de Siemens. Mientras que las variables externas son aquellas que se adquieren a través de un canal de comunicaciones con los dispositivos físicos o sistemas externos. Estas variables externas consumen licencias de Siemens por lo que es conveniente limitar su uso en base a la licencia disponible. Las variables de estructura, por otro lado, son variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente. Además se pueden configurar como externas o internas segun las necesidades especificas.\par
 \subsection{Variables internas}
 El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas son fundamentales para la operación del sistema, ya que proporcionan información crítica sobre el estado del sistema, el usuario actual, la máquina local, el idioma activo, la hora local, entre otros aspectos operativos. Estas variables se pueden utilizar en scripts y lógicas de control para implementar funcionalidades específicas y mejorar la interacción con el operador. \par 
 
@@ -240,7 +181,7 @@ En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimien
 \subsection{Variables de estructura}
 Las variables de estructura son el nucleo de la solución, ya que permiten estructurar la información de forma lógica y coherente. Para el modelado de las variables de estructura se han seguido dos normas internacionales: La norma IEC 61400-25-2 para el modelado de los aerogeneradores y la norma IEC 61850 para el modelado de la subestación eléctrica. Estas normas establecen un marco común para la representación y organización de datos en sistemas eólicos y eléctricos.\par
 \subsubsection{Modelo de información de aerogeneradores}
-La norma \textbf{IEC 61400-25} es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición del \ac{IM}, los cuales definen el acceso al contenido de los datos. Este modelo de información permite la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.\par
+La norma IEC 61400-25 es una parte fundamental del conjunto de estándares internacionales IEC 61400, los cuales están dedicados a los sistemas de generación de energía eólica. En concreto, la serie "25" se centra exclusivamente en las comunicaciones para la monitorización y el control de parques eólicos. La parte "2" de esta serie se enfoca en la definición del \ac{IM}, los cuales definen el acceso al contenido de los datos. Este modelo de información permite la interoperabilidad entre los diferentes componentes de un sistema eólico, como turbinas, sistemas de control, sensores y sistemas de supervisión. Esta norma establece un marco para la integración y el funcionamiento coordinado de los sistemas eólicos a nivel global.\par
 
 La norma establece cinco tipos de niveles en variables de estructura, cada uno con su propia función y propósito dentro del sistema de comunicación eólico:
 \begin{itemize}
@@ -257,7 +198,7 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
     \label{fig:Nodos}
 \end{figure}
 \paragraph{Nivel 5: Atributos de Dato}
- Las \ac{CDC} definidas por la norma, son clases las cuales son utilizadas para representar los diferentes tipos de datos en el sistema. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2. Las \ac{CDC} definen la estructura y el formato de los datos y representan el nivel 5 de la jerarquía, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico. Además de los niveles obligatorios exigidos por la norma se ha creado una estructura adicional llamada ZID para almacenar información de identificación de los aerogeneradores.(Tabla \ref{tab:estructuras_nivel5})
+ Las \ac{CDC} definidas por la norma, son clases las cuales son utilizadas para representar los diferentes tipos de datos en el sistema. De esta forma se crea una base comun facilmente interpretable por cualquier sistema que siga la norma IEC 61400-25-2. Las \ac{CDC} definen la estructura y el formato de los datos y representan el nivel 5 de la jerarquía, asegurando que la información se transmita de manera consistente y comprensible entre los componentes del sistema eólico. Además de los niveles obligatorios exigidos por la norma se ha creado una estructura adicional llamada ZID para almacenar información de identificación de los aerogeneradores utilizadas en los filtros de selección en la sección.(Tabla \ref{tab:estructuras_nivel5})
 
 \begin{table}[t]
     \centering
@@ -297,7 +238,7 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
 \paragraph{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}
 El nivel 1 de estructura de dispositivos representa los dispositivos físicos reales a los que se accede a través de la red de comunicación. En el caso de un parque eólico, cada aerogenerador se modela como un Dispositivo Físico (PD) con un identificador único (Ej. \texttt{WTG1} para el aerogenerador 1). Este nivel refleja la realidad física de la planta, donde cada dispositivo tiene una ubicación geográfica y una función específica dentro del sistema de generación eólica. \par
 
-El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógicos que comparten una misma ubicación física por ejemplo la góndola dentro de la turbina. En el caso de un aerogenerador que comparte sistemas pertenecientes a una misma turbina física, la fusión del Dispositivo Físico (Nivel 1) y Lógico (Nivel 2) se podría justificar por su centralización física y funcional ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el SCADA  resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en \textit{SIMATIC WinCC V8.1}(Tabla \ref{tab:ejemplo_fusion_niveles}).
+El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógicos que comparten una misma ubicación física por ejemplo la góndola dentro de la turbina. En el caso de un aerogenerador que comparte sistemas pertenecientes a una misma turbina física, la fusión del Dispositivo Físico (Nivel 1) y Lógico (Nivel 2) resultaría en una representación más eficiente ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el SCADA  resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en \textit{SIMATIC WinCC V8.1}(Tabla \ref{tab:ejemplo_fusion_niveles}).
 
 \begin{table}[tb]
     \centering
@@ -382,7 +323,7 @@ En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en
 \subsubsection{Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}
 \label{sec:variables_subestacion}
 
-Habiendo definido la arquitectura semántica para los aerogeneradores, se han estructurado las variables correspondientes a la infraestructura de evacuación del complejo eólico. Para este dominio, se han implementado de forma directa la norma matriz \textbf{IEC 61850}, manteniendo una homogeneidad absoluta en la filosofía de diseño orientada a objetos (Dispositivo Físico, Dispositivo Lógico, Nodo Lógico, Objeto de Datos y Atributo de Datos).
+Habiendo definido la arquitectura semántica para los aerogeneradores, se han estructurado las variables correspondientes a la infraestructura de evacuación del complejo eólico. Para este dominio, se han implementado de forma directa la norma matriz IEC 61850, manteniendo una homogeneidad absoluta en la filosofía de diseño orientada a objetos (Dispositivo Físico, Dispositivo Lógico, Nodo Lógico, Objeto de Datos y Atributo de Datos).
 \FloatBarrier
 % === NIVEL 5 ===
 \paragraph{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac{DPS})}
@@ -413,8 +354,8 @@ La \ac{CDC} \ac{DPS} no utiliza un bit booleano convencional para determinar la 
 
 En los aerogeneradores, la unificación de los niveles 1 y 2 se justificaba por compartir una misma ubicación. No obstante, en la subestación eléctrica se mantiene la separación conceptual entre el \ac{PD} y el \ac{LD} como indica la normativa, ya que la subestación presenta un entorno desacoplado: por un lado se sitúan los elementos de corte y por otro la transformación de potencia.\par
 
-Para modelar este entorno sin generar redundancias en la base de datos de \textit{SIMATIC WinCC V8.1}, se han diseñado dos tipos de estructura: ST\_BAY\_CTR y ST\_BAY\_TRF, asociados directamente a su función operativa(Tabla \ref{tab:nomenclatura_estructuras_wincc}). \par
-La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de control (\texttt{CTRL}) y gobierna de forma unificada las maniobras y telemedidas de las celdas de línea o acoplamiento. Por su parte, la estructura \texttt{ST\_BAY\_TRF} está vinculada al dispositivo lógico de protección y diagnóstico (\texttt{PROT}) y centraliza de forma independiente las variables de salud del transformador de potencia.
+Para modelar este entorno en la base de datos de \textit{SIMATIC WinCC V8.1}, se han diseñado dos tipos de estructura: ST\_BAY\_CTR y ST\_BAY\_TRF, asociados directamente a su función operativa(Tabla \ref{tab:nomenclatura_estructuras_wincc}). \par
+La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de control (\texttt{CTRL}) y gobierna de forma unificada las maniobras y mediciones de las celdas de línea. Por su parte, la estructura \texttt{ST\_BAY\_TRF} está vinculada al dispositivo lógico de transformación (\texttt{PROT}) y centraliza de forma independiente las variables del transformador de potencia.
 \begin{table}[t]
     \centering
     \caption{Nomenclatura oficial y asignación de los Tipos de Estructura (\textit{Structure Types}) en el SCADA para la subestación.}
@@ -430,13 +371,13 @@ La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de co
 \end{table}
 
 
-\paragraph{Nivel 3: Estructura de Nodos Lógicos (LN)}
+\paragraph{Nivel 3: Estructura de Nodos Lógicos \ac{LN}}
 \label{sec:sub_nivel3}
 
-La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de los Nodos Lógicos especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
+La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de los \ac{LN} especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Nodos de Control de Bahía (\texttt{CTRL}):} Su topología interna responde al esquema de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de barra (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR1}), el seccionador de línea (\texttt{XSWI2}) y el nodo de telemedida eléctrica (\texttt{MMXU1}) (Figura \ref{fig:celda_linea}).
+    \item \textbf{Nodos de Control de Bahía (\texttt{CTRL}):} Su topología interna se corresponde al esquema de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de linea (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR1}), el seccionador de línea (\texttt{XSWI2}) y el nodo de medida eléctrica (\texttt{MMXU1}) (Figura \ref{fig:celda_linea}).
     \item \textbf{Nodos de Protección de Activo (\texttt{PROT}):} Reúne los nodos del transformador de potencia (\texttt{YPTR1}) para variables térmicas, la unidad de medida específica del trafo (\texttt{MMXU2}), el nodo de supervisión del aislamiento líquido y relé Buchholz (\texttt{SIML1}) y un nodo de entradas/salidas genéricas (\texttt{GGIO1}) encargado de absorber alarmas secundarias de la cuba(Figura \ref{fig:celda_trafo}).
 \end{enumerate}
 \begin{figure}[tb]
@@ -458,10 +399,10 @@ La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de
 % === NIVEL 3 ===
 \FloatBarrier
 % === NIVEL 4 Y MAPEO ===
-\paragraph{Nivel 4: Objetos de Datos}
+\paragraph{Nivel 4: Objetos de Datos \ac{DO}}
 \label{sec:sub_nivel4_mapeo}
 
-Finalmente, el Nivel 4 identifica las señales específicas (Objetos de Datos) que pueblan cada Nodo Lógico (Anexo \ref{cap:Tablas_Variab}). Como se detalla en la Tabla \ref{tab:arbol_variables_subestacion_corregido}, esta arquitectura permite que cuando el sistema requiera supervisar el estado del interruptor de la celda de línea \texttt{Q01}, WinCC genere la variable \texttt{Q01.CTRL.XCBR1.Pos.stVal}, mientras que la temperatura del transformador \texttt{T01} se resuelve mediante la dirección \texttt{T01.PROT.YPTR1.Tmp.mag}.
+Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan cada \ac{LN} (Anexo \ref{cap:Tablas_Variab}). Como se detalla en la Tabla \ref{tab:arbol_variables_subestacion_corregido}, esta arquitectura permite que cuando el sistema requiera supervisar el estado del interruptor de la celda de línea \texttt{Q01}, WinCC genere la variable \texttt{Q01.CTRL.XCBR1.Pos.stVal}, mientras que la temperatura del transformador \texttt{T01} se resuelve mediante la dirección \texttt{T01.PROT.YPTR1.Tmp.mag}.
 
 % === APARTADO DE LOS 6 NIVELES Y LAS 9 SUBESTACIONES ===
 \begin{table}[tb]
@@ -491,14 +432,14 @@ Finalmente, el Nivel 4 identifica las señales específicas (Objetos de Datos) q
 \paragraph{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}
 \label{sec:sub_jerarquia_6niveles}
 
-Un análisis de la sintaxis final de los \textit{tags} creados en el SCADA revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
+Un análisis final de los \textit{tags} creados en el SCADA revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
 
 Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de \textbf{9 subestaciones eléctricas} distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección.\par
 
 Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la norma. Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
 
 \begin{equation}
-\underbrace{\text{SS\_xx}}_{\text{Prefijo SCADA (Planta)}} . \underbrace{\text{Q01}}_{\text{L1 (IED)}} . \underbrace{\text{CTRL}}_{\text{L2 (LD)}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (DO)}} . \underbrace{\text{stVal}}_{\text{L5 (DA)}}
+\underbrace{\text{SS\_xx}}_{\text{Prefijo SCADA (Planta)}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}} . \underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
 \end{equation}.
 
 \begin{table}[tb]
@@ -520,14 +461,14 @@ Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la 
 \end{table}
 \FloatBarrier
 \subsection{Variables externas}
-Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial como  Open Platform Communication Unified Architecture (\ac{OPC UA}). 
+Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial desde comunicaciones propietarias como \texttt{S7} o \texttt{Profinet} a estandares abiertos como \ac{OPC UA}. Este proyecto principalmente estaba planteado para trabajar con el protocolo \ac{Modbus TCP} pero se decanto por una solución basada en el estandar \ac{OPC UA} por su mayor flexibilidad, escalabilidad y seguridad en la transmisión de datos en tiempo real, además de su capacidad de integración con sistemas heterogéneos y su compatibilidad con la arquitectura orientada a objetos del SCADA.\par
 
 \subsubsection{OPC UA}
 \ac{OPC UA} es middleware de comunicación \ac{SOA} desarrollado por OPC Foundation y estandarizado por la norma \textbf{IEC 62541}\cite{iec62541_1}.\par
 
 \ac{OPC UA} se basa en un modelo de información orientado a objetos, el cual define como se estructuran los datos dentro del sistema de comunicación industrial. Por otra parte, el modelo de comunicación de \ac{OPC UA} define los mecanismos de transferencia de los datos entre los diferentes componentes del sistema. El modelo de información y el modelo de comunicación son los dos pilares fundamentales que sustentan la arquitectura de \ac{OPC UA}.\par
 
-\ac{OPC UA} se basa en un modelo Cliente-Servidor para establecer la conexion \ac{TCP} entre el servidor \ac{OPC UA} y el cliente \ac{SCADA}. Sin embargo, una vez establecida la sesión, la transfrerencia se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión de datos en tiempo real(Figura \ref{fig:OPC_UA}).\par
+\ac{OPC UA} se basa en un modelo Cliente-Servidor para gestionar servicios o ejecutar metodos como la conexión \ac{TCP} entre el servidor \ac{OPC UA} y el cliente \ac{SCADA} o gestionar la suscripción a tópicos. Sin embargo, la transfrerencia de datos se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión en tiempo real(Figura \ref{fig:OPC_UA}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/OPCUA_metamodelo.png}
@@ -537,7 +478,7 @@ Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una am
 
 \ac{OPC UA} incorpora características avanzadas de seguridad, como autenticación, autorización y cifrado, para proteger la integridad y confidencialidad de los datos transmitidos, además de especial enfoque en la capacidad de tiempo real y la independencia de la plataforma.\par
 
-En el contexto del proyecto, KEPServerEX actúa como el servidor \ac{OPC UA} que publica los datos del proceso simulador por NodeRed en los topicos, mientras que SIMATIC WinCC V8.1 se configura como cliente \ac{OPC UA} quien consume la información a la que esta suscrita en tiempo real(Figura \ref{fig:OPC_UA_Kepserver}).\par
+En el contexto del proyecto, KEPServerEX actúa como el servidor y broker \ac{OPC UA} que publica los datos del proceso simulados por NodeRed en los topicos, mientras que SIMATIC WinCC V8.1 se configura como cliente y consumidor \ac{OPC UA} quien consume la información a la que esta suscrita en tiempo real(Figura \ref{fig:OPC_UA_Kepserver}).\par
 
 \begin{figure}[tb]
     \centering
@@ -549,7 +490,7 @@ En el contexto del proyecto, KEPServerEX actúa como el servidor \ac{OPC UA} que
 \subsubsection{Habilitación y Securización del Servidor \ac{OPC UA} en KepServerEX}
 \label{sec:configuracion_servidor_opcua}
 
-El primer paso para el despliegue de la arquitectura de comunicaciones consiste en la inicialización del servidor \ac{OPC UA} integrado en \textit{KepServerEX}.Se ha definido el punto de acceso a la red  y establecido las políticas de ciberseguridad de interacción de los clientes.\par
+El primer paso para el despliegue de la arquitectura de comunicaciones consiste en la inicialización del servidor \ac{OPC UA} integrado en \textit{KepServerEX}. Para ello, se ha definido el punto de acceso a la red y establecido las políticas de ciberseguridad de interacción de los clientes mediante la herramienta de administración de bajo nivel \textit{\ac{OPC UA} Configuration Manager}.\par
 \begin{figure}[p]
     \centering
     \begin{subfigure}{\textwidth}
@@ -569,16 +510,18 @@ El primer paso para el despliegue de la arquitectura de comunicaciones consiste 
     \vspace{1cm}
     \caption{Configuración del servidor \ac{OPC UA} en KepServerEX.}
 \end{figure}
-La configuración del servidor se ha realizado a través de la herramienta de administración de bajo nivel \textit{\ac{OPC UA} Configuration Manager}. Para ello en la pestaña \textit{Server Endpoints}, se ha habilitado la interfaz de red del servidor vinculándola a la tarjeta de red correspondiente al banco de pruebas (ver Anexo \ref{cap:Pruebas}).Es decir, La propia maquina virtual contiene tanto el servidor como el cliente \ac{OPC UA}, por lo que la uri de escucha se reserva solo para \texttt{opc.tcp://localhost:49320}(Figura \ref{fig:OPC_UA_Endpoint}).\par
+Dentro de esta herramienta, en la pestaña \textit{Server Endpoints}, se ha adaptado la conexión TCP del adaptador de red permitiendo únicamente conexiones \textit{loopback}, ya que la arquitectura es un sistema monopuesto donde las simulaciones y el servidor KEPServerEX se encuentran en la misma máquina. El endpoint de acceso es\texttt{opc.tcp://localhost:49320} (ver Anexo \ref{cap:Pruebas}) (Figura \ref{fig:OPC_UA_Endpoint}).\par
 
-Por otro lado, se ha realizado la gestión de Certificados, utilizando las clave pública (PKI). Cuando un cliente (ej. WinCC) intenta establecer la primera sesión, KepServerEX bloquea la petición por defecto y aísla el certificado de instancia del cliente en la lista de certificados rechazados. Para habilitar el canal, se ha intervienido en el \textit{Configuration Manager} para trasladar manualmente dicho certificado a la lista de entidades de confianza  garantizando una validación mutua entre las aplicaciones (Figura \ref{fig:OPC_UA_Security}).\par
+Por otro lado, se ha realizado la gestión de Certificados, utilizando las clave pública (PKI). Cuando un cliente (ej. WinCC) intenta establecer la primera sesión, KepServerEX bloquea la petición por defecto y aísla el certificado de instancia del cliente en la lista de certificados rechazados. Para habilitar el canal, se ha intervienido en el \textit{OPC UA Configuration Manager} para trasladar manualmente dicho certificado a la lista de entidades de confianza  garantizando una validación mutua entre las aplicaciones (Figura \ref{fig:OPC_UA_Security}).\par
 
 Una vez que el \textit{Endpoint} se encuentra operativo y el intercambio de certificados con los clientes ha sido autorizado, el motor principal de KepServerEX queda habilitado para comenzar a modelar los canales, instanciar los dispositivos y exponer el espacio de direcciones que albergará las variables del parque eólico.
 \subsubsection{Integración de Variables Externas en el \textit{Tag Management} mediante Direccionamiento \ac{OPC UA}}
 \label{sec:integracion_tag_management_opcua}
-Las conexiones de las variables de estructura con variables externas de \ac{OPC UA} se ha realizado en el servicio de administración de variables. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo  de las direcciones de red para cada variable externa.\par
+Las conexiones de las variables de estructura con las variables externas \ac{OPC UA} se ha realizado en el editor de administración de variables. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo de las direcciones de red para cada variable externa.\par
 
-En primer lugar, el Despliegue del Canal \ac{OPC UA} en la raíz de la administración de variables se ha realizado añadiendo el driver de comunicaciones \textit{\ac{OPC UA} WinCC Channel}. En segundo lugar, la Definición de la Conexión Lógica se realiza bajo el canal recién creado mediante la conexión \texttt{OPC\_UA\_IGL\_I}, que apunta directamente al \textit{Endpoint URL} del servidor de adquisición de la planta en el formato \url{opc.tcp://<IP>:<Puerto>}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
+En primer lugar, se ha desplegado el driver de comunicaciones \ac{OPC UA} en la raíz del árbol de administración de variables. Este canal actúa de interprete entre las conexiones \ac{OPC UA} y el \ac{RT} y agrupa todas las conexiones y variables relacionadas con el protocolo \ac{OPC UA}. Como cada subestación dispone de una dirección IP cada subestación tiene asociada una conexión, sin embargo, dado que las simulaciones se realizan sobre la misma máquina no es posible mantener dos conexiónes que apunten a la misma dirección por lo que una única conexión llamada \texttt{OPC\_UA\_IGL\_I} (Subestación principal) agrupa todas las hipotéticas conexiones en una sola.\par 
+
+Esta conexión \texttt{OPC\_UA\_IGL\_I} apunta directamente al \textit{Endpoint} del servidor KEPServerEX previamente configurado con la dirección IP local y el puerto configurado en el \textit{OPC UA Configuration Manager} \url{opc.tcp://127.0.0.1:49320}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/Conexion_Opc.png}
