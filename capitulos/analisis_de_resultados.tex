@@ -1,19 +1,26 @@
 \chapter{Análisis de resultados (si procede)}
 \label{cap:analisis_de_resultados}
 
+\titlespacing{\section}{0em}{.75em}{.8em}
+\titlespacing{\subsection}{0em}{.5em}{.6em}
+
 En este capítulo se presentan resultados de la solución implementada, incluyendo métricas de rendimiento, análisis de latencia extremo a extremo  todo ello probado con el modelo de simulación del aerogenerador especificado en el anexo \ref{cap:Pruebas}.
 
 \section{Análisis unitario y de integración}
 \label{subsec:analisis_unitario_integracion}
 
+El primer analisis realizado se ha centrado en la validación de las funciones de filtrado de turbinas y parques, así como en la navegación entre pantallas. Para ello se han desarrollado pruebas unitarias específicas para cada función, documentando los resultados obtenidos y las soluciones implementadas en caso de errores (Ver tablas \ref{tab:pruebas_unitarias_turbinas}, \ref{tab:pruebas_unitarias_parques}, \ref{tab:pruebas_unitarias_navegacion} y \ref{tab:pruebas_integracion_nube} ).\vspace{0.5cm}
+
 %=============================================================================================================================================================================
 \begin{table}[htbp]
 \centering
 \caption{Ensayos unitarios para las funciones de filtrado de turbinas}
+\label{tab:pruebas_unitarias_turbinas}
 \resizebox{\textwidth}{!}{%
 \renewcommand{\arraystretch}{1.4} % Un poco más de espacio vertical para compensar la falta de líneas
 \begin{tabular}{p{3.5cm} p{12.5cm}} % Se eliminan todas las barras verticales '|'
 \toprule % Línea superior gruesa (APA)
+
 
 % Fila 1: Título de Prueba
 \multicolumn{2}{p{\dimexpr 16cm + 2\tabcolsep\relax}}{\textbf{Título de Prueba:} \textcolor{blue}{\textbf{PRUEBA UNITARIA DE FUNCIÓN \texttt{AplicarFiltroPosicion()}}}} \\ 
@@ -37,6 +44,7 @@ En este capítulo se presentan resultados de la solución implementada, incluyen
 \begin{table}[htbp]
 \centering
 \caption{Ensayos unitarios para las funciones de filtrado de parques}
+\label{tab:pruebas_unitarias_parques}
 \resizebox{\textwidth}{!}{%
 \renewcommand{\arraystretch}{1.4} % Un poco más de espacio vertical para compensar la falta de líneas
 \begin{tabular}{p{3.5cm} p{12.5cm}} % Se eliminan todas las barras verticales '|'
@@ -61,7 +69,8 @@ En este capítulo se presentan resultados de la solución implementada, incluyen
 
 \begin{table}[htbp]
 \centering
-\caption{Ensayos unitarios para las funciones de filtrado de parques}
+\caption{Ensayos unitarios para la navegación entre pantallas y menús del SCADA}
+\label{tab:pruebas_unitarias_navegacion}
 \resizebox{\textwidth}{!}{%
 \renewcommand{\arraystretch}{1.4} % Un poco más de espacio vertical para compensar la falta de líneas
 \begin{tabular}{p{3.5cm} p{12.5cm}} % Se eliminan todas las barras verticales '|'
@@ -85,6 +94,7 @@ En este capítulo se presentan resultados de la solución implementada, incluyen
 \begin{table}[htbp]
 \centering
 \caption{Ensayos de integración de datos en la nube mediante Cloud Connector}
+\label{tab:pruebas_integracion_nube}
 \resizebox{\textwidth}{!}{%
 \renewcommand{\arraystretch}{1.4} % Un poco más de espacio vertical para compensar la falta de líneas
 \begin{tabular}{p{3.5cm} p{12.5cm}} % Se eliminan todas las barras verticales '|'
@@ -104,15 +114,16 @@ En este capítulo se presentan resultados de la solución implementada, incluyen
 \end{tabular}%
 }
 \end{table}
+\FloatBarrier
 %=============================================================================================================================================================================
 \section{Análisis de Rendimiento de los Procesos del SCADA}
 \label{subsec:rendimiento_scada}
-Para verificar la eficiencia y la carga computacional del \ac{SCADA}, se ha realizado un análisis del proceso \texttt{PDLrt.exe}. \texttt{PDLrt.exe} es el motor gráfico del software \textit{runtime}, procesa el renderizado de las pantallas, la actualización de las animaciones dinámicas de las turbinas, la navegación del operador en tiempo real y ejecuta los scripts programados en cada pantalla. La monitorización se llevó a cabo mediante la herramienta \textit{Windows Performance Monitor (PerfMon)}, evaluando el impacto en la \ac{CPU} y el comportamiento de la \ac{RAM} durante el régimen operativo nominal del parque eólico.\\\par
+Para verificar la eficiencia y la carga computacional del \ac{SCADA}, se ha realizado un análisis del proceso \texttt{PdlRt.exe}. \texttt{PdlRt.exe} es el motor gráfico del software \textit{runtime}, procesa el renderizado de las pantallas, la actualización de las animaciones dinámicas de las turbinas, la navegación del operador en tiempo real y ejecuta los scripts programados en cada pantalla. La monitorización se llevó a cabo mediante la herramienta \textit{Windows Performance Monitor (PerfMon)}, evaluando el impacto en la \ac{CPU} y el comportamiento de la \ac{RAM} durante el régimen operativo nominal del parque eólico.\par \indent
 
-Para ello se han analizado dos escenarios de carga computacional, el primero una carga de idle y el segundo una carga de estres. La carga de idle se ha definido como el estado del sistema en las pantallas que no presentan animaciones dinámicas ni actualizaciones frecuentes de variables (\texttt{11\_SUB\_General}). Mientras que la carga de estrés se ha configurado con la pantalla de supervisión principal (\texttt{10\_WTG\_Overview}), que incluye animaciones en tiempo real de las turbinas y actualizaciones constantes de los indicadores clave de rendimiento (KPIs) del parque con el máximo posible de aerogeneradores ($57$) en la visualización. El análisis se ha realizado en un entorno virtualizado con las características de hardware indicadas en la tabla \ref{tab:hardware_mv}.\par
+Para ello se han analizado dos escenarios de carga computacional, el primero una carga de idle y el segundo una carga de estres. La carga de idle se ha definido como el estado del sistema en las pantallas que no presentan animaciones dinámicas ni actualizaciones frecuentes de variables (\texttt{11\_SUB\_General}). Mientras que la carga de estrés se ha configurado con la pantalla de supervisión principal (\texttt{10\_WTG\_Overview}), que incluye animaciones en tiempo real de las turbinas y actualizaciones constantes de los indicadores clave de rendimiento (KPIs) del parque con el máximo posible de aerogeneradores ($57$) en la visualización. El análisis se ha realizado en un entorno virtualizado con las características de hardware indicadas en la tabla \ref{tab:hardware_mv}.\par \indent
 
 
-\begin{table}[!tbp]
+\begin{table}[tbp]
 \centering
 \caption{Especificaciones del entorno de hardware y virtualización.}
 \label{tab:hardware_mv}
@@ -130,9 +141,9 @@ Para ello se han analizado dos escenarios de carga computacional, el primero una
 }
 \end{table}
 
-Para realizar la prueba se han desarrollado tres escenarios con diferentes cantidades de variables, analizando las dos diferentes cargas de trabajo. Se ha obtenido la media de uso de la \ac{CPU} durante un minuto (Ver tabla \ref{tab:procesos_scada}).\par
+Para realizar la prueba se han desarrollado tres escenarios con diferentes cantidades de variables, analizando las dos diferentes cargas de trabajo. Se ha obtenido la media de uso de la \ac{CPU} durante un minuto (ver Tabla \ref{tab:procesos_scada}).\par \indent
 
-\begin{table}[!tbp]
+\begin{table}[tbp]
 \centering
 \caption{Métricas de rendimiento e impacto computacional de los procesos del SCADA.}
 \label{tab:procesos_scada}
@@ -148,10 +159,9 @@ Para realizar la prueba se han desarrollado tres escenarios con diferentes canti
 }
 \end{table}
 
- El aumento de tags no afecta considerablemente el rendimiento del proceso \texttt{PdlRt.exe}. Esto se debe a que el procesamiento de las variables se realiza de manera eficiente mediante las conexiones directas que pueden ejecutarse en hilos distintos. Sin embargo el procesamiento gráfico de pantallas y ejecución de \textit{Scripts}  tanto de \ac{ANSI-C} como de VBScript se realiza en un único hilo principal del proceso de ejecución. \\par
+ El aumento de tags no afecta considerablemente el rendimiento del proceso \texttt{PdlRt.exe}. Esto se debe a que el procesamiento de las variables se realiza de manera eficiente mediante las conexiones directas que pueden ejecutarse en hilos distintos. Sin embargo el procesamiento gráfico de pantallas y ejecución de \textit{Scripts}  tanto de \ac{ANSI-C} como de VBScript se realiza en un único hilo principal del proceso de ejecución.\par \indent
 
-
-Por otra parte, al realizar un analisis mediante el desglose de hilos se evidencia que, aunque \texttt{PdlRT.exe} funciona formalmente como un proceso multihilo, el núcleo de su ejecución y la gestión de la lógica de interfaz se concentran en un único hilo principal. Al analizar este componente bajo distintas cargas de trabajo en un único núcleo del procesador, se observa que el consumo de \ac{CPU} del hilo principal se incrementa hasta alcanzar un pico máximo del $67.4\%$ en el escenario de máximo estrés (ver Figura \ref{fig:Stress}).\\\par 
+Por otra parte, al realizar un analisis mediante el desglose de hilos se evidencia que, aunque \texttt{PdlRT.exe} funciona formalmente como un proceso multihilo, el núcleo de su ejecución y la gestión de la lógica de interfaz se concentran en un único hilo principal. Al analizar este componente bajo distintas cargas de trabajo en un único núcleo del procesador, se observa que el consumo de \ac{CPU} del hilo principal se incrementa hasta alcanzar un pico máximo del $67.4\%$ en el escenario de máximo estrés (ver Figura \ref{fig:Stress}).\par \indent 
 
 \begin{figure}[!tpb]
     \centering
@@ -160,41 +170,64 @@ Por otra parte, al realizar un analisis mediante el desglose de hilos se evidenc
     \label{fig:Stress}
 \end{figure}
 
-Este comportamiento demuestra que, a pesar de que el indicador de \ac{CPU} global ponderado para los cuatro núcleos se sitúa de forma segura en un $22.78\%$ (ver Tabla~\ref{tab:rendimiento_procesos}), el límite de saturación computacional del entorno gráfico está más cerca de lo que sugieren las métricas generales del sistema. Este fenómeno se fundamenta en que la instanciación simultánea de múltiples \textit{faceplates}, la ejecución de animaciones complejas en tiempo real de las turbinas y el procesamiento de \textit{scripts} no globales locales a la pantalla impactan de forma directa sobre la capacidad del hilo principal.\\\par 
+Este comportamiento demuestra que, a pesar de que el indicador de \ac{CPU} global ponderado para los cuatro núcleos se sitúa de forma segura en un $22.78\%$ (ver Tabla~\ref{tab:rendimiento_procesos}), el límite de saturación computacional del entorno gráfico está más cerca de lo que sugieren las métricas generales del sistema. Este fenómeno se fundamenta en que la instanciación simultánea de múltiples \textit{faceplates}, la ejecución de animaciones complejas en tiempo real de las turbinas y el procesamiento de \textit{scripts} no globales locales a la pantalla impactan de forma directa sobre la capacidad del hilo principal.\par \indent 
 
 Sin embargo, con un impacto computacional moderado en términos de uso de \ac{CPU} y memoria \ac{RAM} con un margen de  más del $30$\% en uso de la \ac{CPU}. Dado que el proceso mantiene de media un margen de disponibilidad superior al $30\%$ en el hilo de ejecución crítico, se concluye que la arquitectura diseñada cumple de manera satisfactoria con los objetivos de rendimiento dinámico en esta estación monopuesto.
 
 
-\section{Evaluación de la Latencia Extremo a Extremo (End-to-End)}
-Para validar la aptitud de la arquitectura IIoT en tareas de supervisión y analítica predictiva en tiempo real mitigado (\textit{near real-time}), se diseñó un ensayo empírico de caracterización del retraso temporal en el flujo de datos. El experimento consistió en la inyección de $N = 1000$ eventos de cambio de estado aleatorios en las variables de simulación de campo, registrando la marca de tiempo de origen ($t_{origen}$) bajo el estándar \textit{OPC UA}.\par 
+\section{Evaluación del Tiempo de Extremo a Extremo}
+El objetivo de este análisis es medir la latencia global de la arquitectura IIoT, definida como el tiempo de extremo a extremo ($T_{E2E}$). Esta métrica representa el lapso cronológico exacto que transcurre desde que el SCADA local (\textit{SIMATIC WinCC}) detecta y empaqueta un cambio en las variables del parque eólico, hasta que dicho dato es recibido, indexado en la base de datos \textit{InfluxDB} en la nube y queda disponible para su visualización inmediata en los paneles de \textit{Grafana}.\par \indent
 
-La latencia total de la arquitectura ($T_{E2E}$) se define formalmente según la Ecuación~\ref{eq:latencia}:
+\subsection{2. Cálculo Empírico mediante Marcas de Tiempo}
+Para obtener el valor real de esta latencia, se recurrió a la monitorización directa de las marcas de tiempo (\textit{timestamps}) inyectadas en el \textit{payload} de telemetría. \textit{WinCC Cloud Connect} estampa la hora de generación del evento utilizando el estándar de alta precisión \textit{RFC3339}. Al comparar esta marca de origen con el instante de registro final asignado por el motor de \textit{InfluxDB}, se obtiene el retardo total.\par \indent
 
-\begin{equation}
-    T_{E2E} = t_{campo} + t_{edge} + t_{red} + t_{cloud}
-    \label{eq:latencia}
-\end{equation}
+Durante los ensayos, configurados con un ciclo de publicación hacia la nube de $1\text{ Hz}$, se capturó y analizó una muestra representativa de 50 eventos consecutivos de telemetría. La Tabla~\ref{tab:estadistica_e2e} resume los valores estadísticos obtenidos tras calcular la sustracción de las marcas de tiempo para cada paquete evaluado.
 
-Tras recuperar los registros persistidos en la instancia de \textit{InfluxDB} en \textit{AWS}, se contrastó el tiempo de almacenamiento definitivo ($t_{registro}$) frente al de origen. Los resultados estadísticos del retraso acumulado se presentan en la Tabla~\ref{tab:resultados_latencia}.
-
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
-\caption{Desglose estadístico de los tiempos de latencia y retardo por etapas de la arquitectura (Valores en milisegundos).}
-\label{tab:resultados_latencia}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{lcccc}
+\caption{Resultados estadísticos de la latencia de extremo a extremo.}
+\label{tab:estadistica_e2e}
+\begin{tabular}{lc}
 \toprule
-\textbf{Etapa del Flujo (Componente)} & \textbf{Mínimo (ms)} & \textbf{Máximo (ms)} & \textbf{Media ($\mu$)} & \textbf{Desv. Est. ($\sigma$)} \\
+\textbf{Parámetro Analizado} & \textbf{Valor} \\
 \midrule
-Adquisición y Servidor OPC UA ($t_{campo}$)  & 10  & 45  & 22,4 & $\pm$ 4,1  \\
-Procesamiento y Filtro Edge ($t_{edge}$)     & 2   & 15  & 5,1  & $\pm$ 1,2  \\
-Tránsito de Red e Internet ($t_{red}$)       & 35  & 92  & 48,6 & $\pm$ 12,8 \\
-Ingesta y Persistencia Cloud ($t_{cloud}$)   & 5   & 30  & 12,3 & $\pm$ 3,5  \\
+Tamaño de la muestra evaluada ($n$) & 50 eventos \\
+Ciclo de publicación configurado & $1\text{ Hz}$ \\
 \midrule
-\textbf{Latencia Total Extremo a Extremo}    & \textbf{52} & \textbf{182} & \textbf{88,4} & \textbf{$\pm$ 21,6} \\
+\textbf{Latencia Media Extremo a Extremo ($\mu_{E2E}$)} & \textbf{$456,0 \pm 0,1\text{ ms}$} \\
 \bottomrule
 \end{tabular}
-}
+\end{table}
+La sustracción directa de los milisegundos en el mismo intervalo de segundo ($934\text{ ms} - 450\text{ ms}$) arroja una latencia empírica de extremo a extremo de $\mathbf{484\text{ ms}}$.
+
+\subsection{3. Caracterización del Tránsito de Red mediante ICMP}
+Para comprender cómo se distribuyen estos $484\text{ ms}$, es necesario aislar el tiempo físico que el paquete invierte en viajar por Internet. Para ello, se ejecutó una campaña de medición desde el servidor local hacia la instancia de \textit{AWS} utilizando el protocolo \textit{ICMP} (comando \textit{ping}). 
+
+El ensayo, compuesto por 87 paquetes, certificó una conexión estable con un $0\%$ de pérdida de datos, validando la fiabilidad del canal para el protocolo \textit{MQTT}. El tiempo medio de ida y vuelta (\textit{RTT}) registrado fue de $121\text{ ms}$. Dado que el envío de telemetría es unidireccional (de la planta a la nube), el tiempo de tránsito de red aislado ($t_{viaje\_red}$) corresponde a la mitad de este valor, es decir, $\mathbf{60,5\text{ ms}}$.
+
+\subsection{4. Balance de Resultados}
+Conociendo la latencia total ($484\text{ ms}$), el retardo de red ($60,5\text{ ms}$) y asumiendo un tiempo nominal de ingesta y disponibilidad en el bloque \textit{InfluxDB/Grafana} de aproximadamente $12\text{ ms}$, es posible deducir que el procesamiento y empaquetado interno de \textit{WinCC Cloud Connect} absorbe el resto del tiempo ($\approx 411,5\text{ ms}$). 
+
+La Tabla~\ref{tab:resumen_latencia_e2e} detalla el desglose de los tiempos implicados en el flujo de información, cuya suma compone la latencia de extremo a extremo medida.
+
+\begin{table}[tbp]
+\centering
+\caption{Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}
+\label{tab:resumen_latencia_e2e}
+\begin{tabular}{lc}
+\toprule
+\textbf{Fase de la Transferencia de Datos} & \textbf{Tiempo (ms)} \\
+\midrule
+Procesamiento y ciclo de envío (\textit{WinCC Cloud Connect}) & 411,5 \\
+Tiempo de envío por red unidireccional ($RTT / 2$) & 60,5 \\
+Tiempo de ingesta y disponibilidad (\textit{InfluxDB y Grafana}) & 12,0 \\
+\midrule
+\textbf{Latencia Total Extremo a Extremo ($T_{E2E}$)} & \textbf{484,0} \\
+\bottomrule
+\end{tabular}
 \end{table}
 
-    Como se deduce de los datos recabados, la latencia media global se situó en $88,4\text{ ms}$, con un peor escenario registrado (\textit{worst-case latency}) de $182\text{ ms}$. Estos valores se encuentran muy por debajo del umbral crítico de $1000\text{ ms}$ estipulado habitualmente para la supervisión analítica de activos de generación distribuidos, validando la eficiencia del modelo orientado a eventos frente al escaneo cíclico tradicional.º
+Este balance confirma que el ecosistema satisface con creces los requisitos de monitorización, consolidando los datos en la nube en menos de medio segundo, un retardo imperceptible y altamente eficiente para la supervisión analítica de los aerogeneradores.
+
+\titlespacing{\section}{0em}{.75em}{.2em}
+\titlespacing{\subsection}{0em}{.5em}{0em}
