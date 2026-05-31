@@ -24,18 +24,20 @@
 \contentsline {table}{\numberline {7.15}{\ignorespaces Codificación cromática de estados para equipos de maniobra en el SCADA.}}{53}{table.caption.141}%
 \contentsline {table}{\numberline {7.16}{\ignorespaces Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}}{55}{table.caption.146}%
 \contentsline {table}{\numberline {7.17}{\ignorespaces Configuración de las reglas de entrada del grupo de seguridad de la instancia \ac {EC2}.}}{57}{table.caption.156}%
-\contentsline {table}{\numberline {7.19}{\ignorespaces Tabla FR1 y FR2 basada en IEC 62443-4-2:2019. Las columnas de nivel muestran el número de nivel aplicable y la columna SL-A indica si el requerimiento se cumple en la solución ($\text {$\mathsurround \z@ \mathchar "458$}$) o no ($\times $).}}{68}{table.caption.166}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Ensayos unitarios para las funciones de filtrado de turbinas}}{69}{table.caption.169}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Ensayos unitarios para las funciones de filtrado de parques}}{69}{table.caption.170}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Ensayos unitarios para la navegación entre pantallas y menús del SCADA}}{69}{table.caption.171}%
-\contentsline {table}{\numberline {8.4}{\ignorespaces Ensayos de integración de datos en la nube mediante Cloud Connector}}{70}{table.caption.172}%
-\contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{70}{table.caption.174}%
-\contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{71}{table.caption.175}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{72}{table.caption.179}%
-\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{73}{table.caption.182}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Ensayos unitarios para las funciones de filtrado de turbinas}}{63}{table.caption.167}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Ensayos unitarios para las funciones de filtrado de parques}}{63}{table.caption.168}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Ensayos unitarios para la navegación entre pantallas y menús del SCADA}}{64}{table.caption.169}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Ensayos de integración de datos en la nube mediante Cloud Connector}}{64}{table.caption.170}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{65}{table.caption.172}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{65}{table.caption.173}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{66}{table.caption.175}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{67}{table.caption.176}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{71}{table.caption.184}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto de licencias de software, hardware e infraestructura.}}{72}{table.caption.186}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{72}{table.caption.188}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
@@ -44,6 +46,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{97}{table.E.1}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{103}{table.E.2}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{104}{table.E.2}%
+\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{95}{table.E.1}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{101}{table.E.2}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{102}{table.E.2}%

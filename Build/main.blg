@@ -20,7 +20,7 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'field_info' (item size: 4) to 13540 items.
+Reallocating 'field_info' (item size: 4) to 13680 items.
 Database file #1: main-blx.bib
 Database file #2: referencias-bibliograficas.bib
 Warning--I didn't find a database entry for "7.6.3"
@@ -62,45 +62,45 @@ Warning--I didn't find a database entry for "1414"
 Biblatex version: 3.21
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 25 entries,
+You've used 26 entries,
             6402 wiz_defined-function locations,
-            1456 strings with 32108 characters,
-and the built_in function-call counts, 200031 in all, are:
-= -- 15969
-> -- 3360
-< -- 1329
-+ -- 5413
-- -- 1107
-* -- 13922
-:= -- 20576
+            1463 strings with 32313 characters,
+and the built_in function-call counts, 204679 in all, are:
+= -- 16278
+> -- 3470
+< -- 1384
++ -- 5497
+- -- 1133
+* -- 14173
+:= -- 20894
 add.period$ -- 0
-call.type$ -- 25
-change.case$ -- 883
+call.type$ -- 26
+change.case$ -- 924
 chr.to.int$ -- 62
-cite$ -- 48
-duplicate$ -- 20679
-empty$ -- 17196
-format.name$ -- 1680
-if$ -- 41715
+cite$ -- 50
+duplicate$ -- 21187
+empty$ -- 17642
+format.name$ -- 1727
+if$ -- 42772
 int.to.chr$ -- 0
-int.to.str$ -- 87
+int.to.str$ -- 90
 missing$ -- 0
-newline$ -- 956
-num.names$ -- 1726
-pop$ -- 8483
+newline$ -- 981
+num.names$ -- 1801
+pop$ -- 8805
 preamble$ -- 1
-purify$ -- 1001
+purify$ -- 1044
 quote$ -- 0
-skip$ -- 6178
+skip$ -- 6429
 stack$ -- 0
-substring$ -- 28047
-swap$ -- 4610
-text.length$ -- 748
-text.prefix$ -- 24
+substring$ -- 28448
+swap$ -- 4764
+text.length$ -- 772
+text.prefix$ -- 25
 top$ -- 1
-type$ -- 803
+type$ -- 837
 warning$ -- 0
-while$ -- 2470
+while$ -- 2506
 width$ -- 0
-write$ -- 932
+write$ -- 956
 (There were 36 warnings)

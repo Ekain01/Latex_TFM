@@ -161,7 +161,7 @@ Para realizar la prueba se han desarrollado tres escenarios con diferentes canti
 
  El aumento de tags no afecta considerablemente el rendimiento del proceso \texttt{PdlRt.exe}. Esto se debe a que el procesamiento de las variables se realiza de manera eficiente mediante las conexiones directas que pueden ejecutarse en hilos distintos. Sin embargo el procesamiento gráfico de pantallas y ejecución de \textit{Scripts}  tanto de \ac{ANSI-C} como de VBScript se realiza en un único hilo principal del proceso de ejecución.\par \indent
 
-Por otra parte, al realizar un analisis mediante el desglose de hilos se evidencia que, aunque \texttt{PdlRT.exe} funciona formalmente como un proceso multihilo, el núcleo de su ejecución y la gestión de la lógica de interfaz se concentran en un único hilo principal. Al analizar este componente bajo distintas cargas de trabajo en un único núcleo del procesador, se observa que el consumo de \ac{CPU} del hilo principal se incrementa hasta alcanzar un pico máximo del $67.4\%$ en el escenario de máximo estrés (ver Figura \ref{fig:Stress}).\par \indent 
+Por otra parte, al realizar un analisis de hilos se observa que, aunque \texttt{PdlRT.exe} funciona  como un proceso multihilo, el núcleo de su ejecución logica de interfaz se concentra en un único hilo principal. Al analizar este componente bajo distintas cargas de trabajo en un único núcleo del procesador, se observa que el consumo de \ac{CPU} del hilo principal se incrementa hasta alcanzar un pico máximo del $67.4\%$ en el escenario de máximo estrés (ver Figura \ref{fig:Stress}).\par \indent 
 
 \begin{figure}[!tpb]
     \centering
@@ -170,16 +170,13 @@ Por otra parte, al realizar un analisis mediante el desglose de hilos se evidenc
     \label{fig:Stress}
 \end{figure}
 
-Este comportamiento demuestra que, a pesar de que el indicador de \ac{CPU} global ponderado para los cuatro núcleos se sitúa de forma segura en un $22.78\%$ (ver Tabla~\ref{tab:rendimiento_procesos}), el límite de saturación computacional del entorno gráfico está más cerca de lo que sugieren las métricas generales del sistema. Este fenómeno se fundamenta en que la instanciación simultánea de múltiples \textit{faceplates}, la ejecución de animaciones complejas en tiempo real de las turbinas y el procesamiento de \textit{scripts} no globales locales a la pantalla impactan de forma directa sobre la capacidad del hilo principal.\par \indent 
+Este comportamiento demuestra que, a pesar de que el indicador de \ac{CPU} global ponderado para los cuatro núcleos se sitúa de forma segura en un $22.78\%$ (ver Tabla~\ref{tab:procesos_scada}), el límite computacional del entorno gráfico está más cerca de lo que muestran las cargas de \ac{CPU} generales del sistema. Este fenómeno se fundamenta en que la instanciación simultánea de múltiples \textit{faceplates}, la ejecución de animaciones complejas en tiempo real de las turbinas y el procesamiento de \textit{scripts} no globales locales a la pantalla impactan de forma directa sobre la capacidad del hilo principal.\par \indent 
 
-Sin embargo, con un impacto computacional moderado en términos de uso de \ac{CPU} y memoria \ac{RAM} con un margen de  más del $30$\% en uso de la \ac{CPU}. Dado que el proceso mantiene de media un margen de disponibilidad superior al $30\%$ en el hilo de ejecución crítico, se concluye que la arquitectura diseñada cumple de manera satisfactoria con los objetivos de rendimiento dinámico en esta estación monopuesto.
+Sin embargo, con un impacto computacional moderado en términos de uso de \ac{CPU} y memoria \ac{RAM} con un margen de  más del $30$\% en uso de la \ac{CPU}. Dado que el proceso mantiene de media un margen de disponibilidad superior al $30\%$ en el hilo de ejecución crítico, se concluye que la arquitectura diseñada cumple de manera satisfactoria con los objetivos de rendimiento dinámico en esta estación monopuesto.\par\indent
 
+El objetivo de este análisis es medir la latencia global de la arquitectura IIoT, definida como el tiempo de extremo a extremo ($T_{E2E}$). Esta métrica representa el tiempo que transcurre desde que el SCADA local (\textit{SIMATIC WinCC}) detecta y empaqueta un cambio en las variables del parque eólico, hasta que el dato es recibido, indexado en la base de datos \textit{InfluxDB} en la nube y queda disponible para su visualización inmediata en los paneles de \textit{Grafana}.\par \indent
 
-\section{Evaluación del Tiempo de Extremo a Extremo}
-El objetivo de este análisis es medir la latencia global de la arquitectura IIoT, definida como el tiempo de extremo a extremo ($T_{E2E}$). Esta métrica representa el lapso cronológico exacto que transcurre desde que el SCADA local (\textit{SIMATIC WinCC}) detecta y empaqueta un cambio en las variables del parque eólico, hasta que dicho dato es recibido, indexado en la base de datos \textit{InfluxDB} en la nube y queda disponible para su visualización inmediata en los paneles de \textit{Grafana}.\par \indent
-
-\subsection{2. Cálculo Empírico mediante Marcas de Tiempo}
-Para obtener el valor real de esta latencia, se recurrió a la monitorización directa de las marcas de tiempo (\textit{timestamps}) inyectadas en el \textit{payload} de telemetría. \textit{WinCC Cloud Connect} estampa la hora de generación del evento utilizando el estándar de alta precisión \textit{RFC3339}. Al comparar esta marca de origen con el instante de registro final asignado por el motor de \textit{InfluxDB}, se obtiene el retardo total.\par \indent
+Para obtener el valor real de esta latencia, se han monitorizado las marcas de tiempo (\textit{timestamps}) inyectadas en el \textit{payload} de la variable \texttt{WTG1.WTUR.W.mag}. \textit{WinCC Cloud Connect} estampa la hora de generación del evento utilizando el estándar \textit{RFC3339}. Al comparar esta marca de origen con el instante de registro final marcado por el motor de \textit{InfluxDB}, se obtiene la latencia total.\par \indent
 
 Durante los ensayos, configurados con un ciclo de publicación hacia la nube de $1\text{ Hz}$, se capturó y analizó una muestra representativa de 50 eventos consecutivos de telemetría. La Tabla~\ref{tab:estadistica_e2e} resume los valores estadísticos obtenidos tras calcular la sustracción de las marcas de tiempo para cada paquete evaluado.
 
@@ -198,17 +195,15 @@ Ciclo de publicación configurado & $1\text{ Hz}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-La sustracción directa de los milisegundos en el mismo intervalo de segundo ($934\text{ ms} - 450\text{ ms}$) arroja una latencia empírica de extremo a extremo de $\mathbf{484\text{ ms}}$.
+La sustracción directa de los milisegundos en el mismo intervalo de segundo ($T_{InfluxDB}{ ms} - T_{WinCC}\text{ ms}$) arroja una latencia empírica de extremo a extremo de $\mathbf{456\text{ ms}}$.\par\indent
 
-\subsection{3. Caracterización del Tránsito de Red mediante ICMP}
-Para comprender cómo se distribuyen estos $484\text{ ms}$, es necesario aislar el tiempo físico que el paquete invierte en viajar por Internet. Para ello, se ejecutó una campaña de medición desde el servidor local hacia la instancia de \textit{AWS} utilizando el protocolo \textit{ICMP} (comando \textit{ping}). 
+Para entender cómo se distribuyen estos $456\text{ ms}$, es necesario aislar el tiempo que el paquete invierte en viajar por Internet. Para ello, se ejecutó una medición desde el servidor local hacia la instancia de \textit{AWS} utilizando el protocolo \textit{ICMP} (comando \textit{ping}).\par\indent 
 
-El ensayo, compuesto por 87 paquetes, certificó una conexión estable con un $0\%$ de pérdida de datos, validando la fiabilidad del canal para el protocolo \textit{MQTT}. El tiempo medio de ida y vuelta (\textit{RTT}) registrado fue de $121\text{ ms}$. Dado que el envío de telemetría es unidireccional (de la planta a la nube), el tiempo de tránsito de red aislado ($t_{viaje\_red}$) corresponde a la mitad de este valor, es decir, $\mathbf{60,5\text{ ms}}$.
+El ensayo, compuesto por 87 paquetes, certificó una conexión estable con un $0\%$ de pérdida de datos, validando la fiabilidad del canal para el protocolo \textit{MQTT}. El tiempo medio de ida y vuelta (\textit{RTT}) registrado fue de $121\text{ ms}$. Dado que el envío de telemetría es unidireccional (de la planta a la nube), el tiempo de tránsito de red ($t_{viaje\_red}$) es la mitad de este valor, es decir, $\mathbf{60,5\text{ ms}}$.\par\indent
 
-\subsection{4. Balance de Resultados}
-Conociendo la latencia total ($484\text{ ms}$), el retardo de red ($60,5\text{ ms}$) y asumiendo un tiempo nominal de ingesta y disponibilidad en el bloque \textit{InfluxDB/Grafana} de aproximadamente $12\text{ ms}$, es posible deducir que el procesamiento y empaquetado interno de \textit{WinCC Cloud Connect} absorbe el resto del tiempo ($\approx 411,5\text{ ms}$). 
+Conociendo la latencia total ($456\text{ ms}$) y el retardo de red ($60,5\text{ ms}$)  es posible deducir que el procesamiento y empaquetado interno de \textit{WinCC Cloud Connect} absorbe el resto del tiempo ($\approx 395.5\text{ ms}$).\par\indent 
 
-La Tabla~\ref{tab:resumen_latencia_e2e} detalla el desglose de los tiempos implicados en el flujo de información, cuya suma compone la latencia de extremo a extremo medida.
+La Tabla \ref{tab:resumen_latencia_e2e} detalla el desglose de los tiempos implicados en el flujo de información, cuya suma compone la latencia de extremo a extremo medida.\par\indent
 
 \begin{table}[tbp]
 \centering
@@ -218,16 +213,15 @@ La Tabla~\ref{tab:resumen_latencia_e2e} detalla el desglose de los tiempos impli
 \toprule
 \textbf{Fase de la Transferencia de Datos} & \textbf{Tiempo (ms)} \\
 \midrule
-Procesamiento y ciclo de envío (\textit{WinCC Cloud Connect}) & 411,5 \\
+Procesamiento y ciclo de envío (\textit{WinCC Cloud Connect}) & 395.5 \\
 Tiempo de envío por red unidireccional ($RTT / 2$) & 60,5 \\
-Tiempo de ingesta y disponibilidad (\textit{InfluxDB y Grafana}) & 12,0 \\
 \midrule
-\textbf{Latencia Total Extremo a Extremo ($T_{E2E}$)} & \textbf{484,0} \\
+\textbf{Latencia Total Extremo a Extremo ($T_{E2E}$)} & \textbf{456,0} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Este balance confirma que el ecosistema satisface con creces los requisitos de monitorización, consolidando los datos en la nube en menos de medio segundo, un retardo imperceptible y altamente eficiente para la supervisión analítica de los aerogeneradores.
+Este balance confirma que el ecosistema satisface con creces los requisitos de monitorización, consolidando los datos en la nube en menos de medio segundo, un retardo imperceptible y altamente eficiente para la supervisión analítica de los aerogeneradores.\par\indent
 
 \titlespacing{\section}{0em}{.75em}{.2em}
 \titlespacing{\subsection}{0em}{.5em}{0em}

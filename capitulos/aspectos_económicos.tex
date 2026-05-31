@@ -1,7 +1,80 @@
 \chapter{Aspectos económicos}
 \label{cap:económicos}
+\titlespacing{\section}{0em}{.75em}{.2em}
+\titlespacing{\subsection}{0em}{.5em}{0em}
+\section{Presupuesto del Proyecto}
+El presupuesto para el diseño, desarrollo e implementación de la arquitectura IIoT para el parque eólico se ha estructurado en dos bloques principales: los costes de ingeniería o mano de obra, y los costes correspondientes a la adquisición de licencias de software y amortización de infraestructura.\par\indent 
 
-\section{Descripción del presupuesto y/o del presupuesto ejecutado}
+Los precios reflejados en el apartado de software corresponden a tarifas de catálogo industriales vigentes para el ecosistema \textit{SIMATIC WinCC}.
+
+\subsection{Costes de Ingeniería (Mano de Obra)}
+Para la estimación económica de las labores de desarrollo, se ha tomado como referencia el perfil de un Ingeniero Junior en la especialidad de Control, Automatización y Robótica. Tomando como base un salario bruto anual de mercado estimado en $28.000$y añadiendo los costes patronales asociados (Seguridad Social e infraestructura de oficina), se establece una tarifa de facturación interna de $20,00$.\par\indent 
+
+El cálculo de horas (600 horas en total) refleja el volumen de dedicación requerido para un proyecto de esta envergadura.\par\indent
+
+\begin{table}[tbp]
+\centering
+\caption{Presupuesto de ingeniería y desarrollo técnico.}
+\label{tab:presupuesto_mano_obra}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Concepto / Fases del Proyecto} & \textbf{Horas Estimadas} & \textbf{Tarifa ()} & \textbf{Coste Total ()} \\
+\midrule
+Diseño de la topología y comunicaciones (OPC UA) & 150 & 20,00 & 3.000,00 \\
+Desarrollo SCADA local (Mapeo de tags e interfaz) & 200 & 20,00 & 4.000,00 \\
+Despliegue IIoT Cloud (AWS, Docker, Node-RED, InfluxDB) & 150 & 20,00 & 3.000,00 \\
+Pruebas unitarias, latencia y documentación final & 100 & 20,00 & 2.000,00 \\
+\midrule
+\textbf{Total Mano de Obra} & \textbf{600} & & \textbf{12.000,00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Licencias de Software e Infraestructura Cloud}
+El bloque tecnológico exige un alto nivel de inversión debido a la necesidad de gestionar una planta completa con un servidor SCADA masivo. La licencia principal \textit{WinCC RC} (que permite tanto ejecutar el entorno gráfico (\textit{Runtime}) como modificarlo (\textit{Configuration})) se ha dimensionado para soportar hasta 65.536 variables (\textit{tags}), cubriendo holgadamente la telemetría simultánea de todos los aerogeneradores.
+
+Asimismo, se incluye la amortización del entorno virtualizado en la nube y el desgaste de la estación de trabajo física (\textit{ASUS TUF Gaming A15} con procesador \textit{AMD Ryzen 7}) utilizada para la programación y simulaciones locales.
+
+\begin{table}[tbp]
+\centering
+\caption{Presupuesto de licencias de software, hardware e infraestructura.}
+\label{tab:presupuesto_licencias}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Descripción del Software / Hardware} & \textbf{Cantidad} & \textbf{Precio Unit. ()} & \textbf{Coste Total ()} \\
+\midrule
+SIMATIC WinCC RC (65536 tags) & 1 & 16.500,00 & 16.500,00 \\
+SIMATIC WinCC Cloud Connect V8.1 & 1 & 550,00 & 550,00 \\
+SIMATIC WinCC Connectivity Pack V8.1 & 1 & 1.600,00 & 1.600,00 \\
+Instancia AWS EC2 (Coste de servicio por 6 meses) & 1 & 150,00 & 150,00 \\
+Amortización equipo de desarrollo (Estación base) & 1 & 250,00 & 250,00 \\
+\midrule
+\textbf{Total Software e Infraestructura} & & & \textbf{19.050,00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Resumen del Presupuesto y Coste Total}
+La agregación de los costes de ingeniería y la adquisición de activos tecnológicos arroja la base imponible del proyecto. A dicho montante se le aplica el Impuesto sobre el Valor Añadido (IVA) general del $21\,\%$ vigente en el territorio nacional.
+
+\begin{table}[tbp]
+\centering
+\caption{Resumen del presupuesto general del proyecto.}
+\label{tab:presupuesto_total}
+\begin{tabular}{lr}
+\toprule
+\textbf{Partida Presupuestaria} & \textbf{Importe ()} \\
+\midrule
+Costes de Ingeniería (Mano de obra) & 12.000,00 \\
+Costes de Software e Infraestructura & 19.050,00 \\
+\midrule
+\textbf{Base Imponible} & \textbf{31.050,00} \\
+IVA (21 \%) & 6.520,50 \\
+\midrule
+\textbf{Presupuesto Total General} & \textbf{37.570,50} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Análisis de rentabilidad (si procede)}
 

@@ -32,9 +32,9 @@
 \contentsline {figure}{\numberline {7.20}{\ignorespaces Arquitectura de contenedores Docker para la solución IIoT del parque eólico. Obtenido de \url {https://hanwenzhang123.medium.com/docker-vs-virtual-machine-vs-kubernetes-overview-389db7de7618}}}{58}{figure.caption.158}%
 \contentsline {figure}{\numberline {7.21}{\ignorespaces Arquitectura de red interna y aislamiento de servicios IIoT en el motor Docker. Obtenido de \url {https://k21academy.com/kubernetes/docker-networking-different-types-of-networking-overview-for-beginners/}}}{59}{figure.caption.159}%
 \contentsline {figure}{\numberline {7.22}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{60}{figure.caption.160}%
-\contentsline {figure}{\numberline {7.23}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB.}}{61}{figure.caption.161}%
+\contentsline {figure}{\numberline {7.23}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB. En este ejemplo se muestran los nodos relacionados a la Unidad 001.}}{61}{figure.caption.161}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Evolución del consumo de CPU del proceso \texttt {PdlRT.exe} bajo una carga creciente de tags.}}{71}{figure.caption.176}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Evolución del consumo de CPU del proceso \texttt {PdlRT.exe} bajo una carga creciente de tags.}}{65}{figure.caption.174}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

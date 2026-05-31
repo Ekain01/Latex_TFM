@@ -1029,6 +1029,31 @@
     \field{year}{2022}
   \endentry
 
+  \entry{siemens_wincc_security}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Siemens AG}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Siemens Industry Online Support}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Basado en el estándar IEC 62443-4-2:2019}
+    \field{number}{Entry ID: 109986977}
+    \field{title}{Security Guideline - SIMATIC HMI WinCC V8.1}
+    \verb{url}
+    \verb https://support.industry.siemens.com/
+    \endverb
+    \field{year}{2024}
+  \endentry
+
   \entry{Udo2021}{article}{}{}
     \name{author}{2}{}{%
       {{hash=UW}{%
