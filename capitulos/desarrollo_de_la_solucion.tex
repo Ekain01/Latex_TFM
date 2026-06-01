@@ -138,14 +138,12 @@ Cada una de las subestaciones estáría conectada por una red de fibra óptica d
         \end{tabular}%
     }
 \end{table}
-\FloatBarrier
-\subsection{Equipamiento de la Sala de Control Central (MCR) y Entorno de Validación}
-\label{sec:equipamiento_mcr}
+
 La Sala de Control Central (\textit{Main Control Room} - MCR) requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida del SCADA.\par 
 
 Durante este proyecto se abordará únicamente la solución basada en una arquitectura monopuesto. Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física sin necesidad de agregar nuevos recursos computacionales, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes hosts y máquinas virtuales. \par
 
-Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de routers que asignan direcciones IP públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo (\textit{Edge1}) como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un router que proporciona direcciones IP privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección IP.\par
+Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de routers que asignan direcciones IP públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un router que proporciona direcciones IP privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección IP.\par
 \section{\ac{IM} de la solución SCADA}
 \label{cap:modelo_informacion}
 El modelo de información de un sistema es la representación estructurada de los datos y la información que maneja ese sistema. Con ello se define la forma en que se organizan, almacenan y acceden a los datoa dentro del sistema. El entorno de SIMATIC WinCC V8.1 permite la creación de variables que se utilizan para representar los datos del proceso, las alarmas, los eventos y otros aspectos operativos del sistema SCADA. Estas variables pueden ser internas, externas o de estructura, dependiendo de su función y origen dentro del sistema. \par
@@ -154,7 +152,7 @@ El modelo de información de un sistema es la representación estructurada de lo
 \subsection{Variables internas}
 El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas son fundamentales para la operación del sistema, ya que proporcionan información crítica sobre el estado del sistema, el usuario actual, la máquina local, el idioma activo, la hora local, entre otros aspectos operativos. Estas variables se pueden utilizar en scripts y lógicas de control para implementar funcionalidades específicas y mejorar la interacción con el operador. \par 
 
-En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimiento directo a los requisitos fundacionales de identificación y autenticación (\textit{FR1: IAC}) de la norma de ciberseguridad industrial \textbf{IEC 62443-4-2:2019}, registrando de forma única el operario activo (\texttt{@CurrentUser}) y la estación o cliente ligero de la Sala de Control Central (\texttt{@LocalMachineName}) desde el que se efectúa una orden. Asimismo, para garantizar un entorno distribuido robusto y tolerante a fallos de acuerdo con la arquitectura redundante implementada, el sistema monitoriza constantemente el rol lógico de las máquinas (Maestro o Reserva) y el estado de la sincronización de las bases de datos de Microsoft SQL Server mediante el bloque de variables de redundancia. Las variables internas mas destacadas se detallan en la Tabla~\ref{tab:variables_sistema_wincc}.
+En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimiento directo a los requisitos fundacionales de identificación y autenticación (\textit{FR1: IAC}) de la norma de ciberseguridad industrial IEC 62443-4-2:2019, registrando de forma única el operario activo (\texttt{@CurrentUser}) y la estación o cliente ligero de la Sala de Control Central (\texttt{@LocalMachineName}) desde el que se efectúa una orden. Asimismo, para garantizar un entorno distribuido robusto y tolerante a fallos de acuerdo con la arquitectura redundante implementada, el sistema monitoriza constantemente el rol lógico de las máquinas (Maestro o Reserva) y el estado de la sincronización de las bases de datos de Microsoft SQL Server mediante el bloque de variables de redundancia. Las variables internas mas destacadas se detallan en la Tabla~\ref{tab:variables_sistema_wincc}.
 
 \begin{table}[tb]
     \centering
@@ -461,10 +459,10 @@ Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la 
 \end{table}
 \FloatBarrier
 \subsection{Variables externas}
-Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial desde comunicaciones propietarias como \texttt{S7} o \texttt{Profinet} a estandares abiertos como \ac{OPC UA}. Este proyecto principalmente estaba planteado para trabajar con el protocolo \ac{Modbus TCP} pero se decanto por una solución basada en el estandar \ac{OPC UA} por su mayor flexibilidad, escalabilidad y seguridad en la transmisión de datos en tiempo real, además de su capacidad de integración con sistemas heterogéneos y su compatibilidad con la arquitectura orientada a objetos del SCADA.\par
+Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial desde comunicaciones propietarias como \texttt{S7} o \texttt{Profinet} a estandares abiertos como \ac{OPC UA}. Este proyecto principalmente estaba planteado para trabajar con el protocolo\texttt{Modbus TCP} pero se decanto por una solución basada en el estandar \ac{OPC UA} por su mayor flexibilidad, escalabilidad y seguridad en la transmisión de datos en tiempo real, además de su capacidad de integración con sistemas heterogéneos y su compatibilidad con la arquitectura orientada a objetos del SCADA.\par
 
 \subsubsection{OPC UA}
-\ac{OPC UA} es middleware de comunicación \ac{SOA} desarrollado por OPC Foundation y estandarizado por la norma \textbf{IEC 62541}\cite{iec62541_1}.\par
+\ac{OPC UA} es middleware de comunicación \ac{SOA} desarrollado por OPC Foundation y estandarizado por la norma IEC 62541\cite{iec62541_1}.\par
 
 \ac{OPC UA} se basa en un modelo de información orientado a objetos, el cual define como se estructuran los datos dentro del sistema de comunicación industrial. Por otra parte, el modelo de comunicación de \ac{OPC UA} define los mecanismos de transferencia de los datos entre los diferentes componentes del sistema. El modelo de información y el modelo de comunicación son los dos pilares fundamentales que sustentan la arquitectura de \ac{OPC UA}.\par
 
@@ -558,22 +556,15 @@ Mientras que el modelo de información estático determina la semántica y la es
     \caption{Modelo de Intercambio de Información (IEM) de la solución SCADA basado en \ac{OPC UA}. Obtenido de \url{https://webstore.iec.ch/en/iec_catalog/product/preview/?id=L3B1Yi9wZGYvcHJldmlldy9pbmZvX2llYzYxNDAwLTI1LTN7ZWQyLjAuUkxWfWVuLnBkZg==}}
     \label{fig:IEM}
 \end{figure}
-La implementación práctica de estos servicios de intercambio se articula en base a cuatro pilares operativos dentro de la arquitectura del proyecto:
 
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Recuperación de Datos por Eventos (\textit{Exception Reporting}):} Para evitar la saturación computacional del \textit{Runtime} que provoca el \textit{polling} cíclico convencional de 120 turbinas concurrentes, el intercambio de datos en tiempo real se delega en el mecanismo de \textit{Monitored Items} de \ac{OPC UA}. Bajo este esquema, el canal de comunicación permanece en silencio y el controlador de campo solo notifica de forma espontánea una actualización hacia WinCC si la variable física (v.g., la velocidad del rotor \texttt{WROT.RotSpd}) rebasa una banda muerta (\textit{deadband}) preconfigurada en el servidor.
+Para cumplir con la normativa, se ha implementado un servicio de almacenamiento histórico a nivel local en WinCC. WinCC realiza la captura de variables mediante \textit{Tag Logging} sobre una base de datos Microsoft SQL integrada para alimentar las gráficas de tendencia instantáneas del operador recogiendo los datos que son obligatorios.
     
-    \item \textbf{Notificación Asíncrona de Alarmas y Condiciones:} La gestión de estados críticos y disparos de los interruptores de la subestación (nodos \texttt{XCBR} bajo IEC 61850) implementa los bloques de control de informes (\textit{Report Control Blocks}). Al producirse una contingencia, el servidor inyecta una ráfaga de eventos asíncronos embebidos con marcas de tiempo de origen (\textit{Source Timestamp}). El módulo \textit{WinCC Alarm Logging} absorbe estas tramas sin bloquear los hilos gráficos, garantizando la trazabilidad cronológica exacta del fallo.
-    
-    \item \textbf{Persistencia y Registro Histórico (\textit{Logging}):} El servicio de almacenamiento histórico se ha implementado en un régimen de doble redundancia operativa. A nivel local en la MCR, WinCC realiza la captura de variables mediante \textit{Tag Logging} sobre una base de datos Microsoft SQL integrada para alimentar las gráficas de tendencia instantáneas del operador. De manera paralela y para salvaguardar el rendimiento local, un cliente de intercambio secundario instrumentado en \textit{Node-RED} captura los flujos industriales y los transfiere mediante la red IT hacia la base de datos de series temporales \textit{InfluxDB} en la nube de AWS, desacoplando la analítica a largo plazo de la operación en tiempo real.
-    
-\end{enumerate}
 
 \section{Interfaz Gráfica}
 
 La interfaz gráfica constituye el punto de interacción principal entre el operador y el sistema SCADA, por lo que su diseño debe priorizar la claridad, la rapidez de interpretación y la operabilidad en tiempo real. En esta sección se describe la propuesta de visualización desarrollada en WinCC, explicando la organización general de la interfaz y los criterios utilizados para su construcción.\par
 
-Aunque en el diseño actual de interfaces industriales existe una fuerte tendencia hacia la adopción del estándar ISA-101 (High-Performance HMI) —que aboga por el uso casi exclusivo de escalas de grises, gráficos vectoriales abstractos y la minimización radical del color—, en el presente Trabajo Fin de Máster se ha decidido no aplicar este estándar de forma estricta por  razones técnicas y de alcance.\par
+Aunque en el diseño actual de interfaces industriales existe una fuerte tendencia hacia la adopción del estándar ISA-101 (High-Performance HMI) que aboga por el uso casi exclusivo de escalas de grises, gráficos vectoriales abstractos y la minimización radical del color, en el presente Trabajo Fin de Máster se ha decidido no aplicar este estándar de forma estricta por  razones técnicas y de alcance.\par
 
 Por un lado, destaca el enfoque didáctico y demostrativo de esta prueba de concepto. Al abarcar desde la adquisición de datos de campo hasta la integración IIoT en la nube (AWS), una representación ilustrativa y a color facilita enormemente la comprensión inmediata del estado de los aerogeneradores durante la exposición del proyecto.\par
 
@@ -597,7 +588,7 @@ El patrón de diseño definido para nombrar cada interfaz se fundamenta en tres 
 \subsubsection{Prefijo Numérico (Jerarquía y Orden de Navegación)}
 El primer bloque numérico determina la profundidad de la pantalla dentro del árbol de navegación del SCADA, marcando el flujo operativo:
 \begin{itemize}
-    \item \textbf{00 (Nivel Raíz):} Reservado exclusivamente para el marco base de la aplicación y la pantalla de inicio principal (\texttt{00\_Main\_Interface}).Físicamente, la arquitectura gráfica se sustenta en esta plantilla maestra que actúa como \textbf{Nivel 0} o marco base.(figura \ref{fig:interfaz_grafica}).
+    \item \textbf{00 (Nivel Raíz):} Reservado exclusivamente para el marco base de la aplicación y la pantalla de inicio principal (\texttt{00\_Main\_Interface}).Físicamente, la arquitectura gráfica se sustenta en esta plantilla maestra que actúa como Nivel 0.(figura \ref{fig:interfaz_grafica}).
     \item \textbf{1X (Áreas Principales):} Define las divisiones macroscópicas del parque eólico. Incluye la vista general de los aerogeneradores (\texttt{10}), la subestación eléctrica (\texttt{11}), la estación meteorológica (\texttt{12}) y los servicios de diagnóstico del sistema (\texttt{13}, \texttt{14}).
     \item \textbf{2X, 3X, 4X (Niveles de Detalle y Equipos):} Representan submenús y el desglose técnico de los activos. A medida que se incrementa el dígito inicial, aumenta el detalle de la información supervisada. Por ejemplo, los niveles 40, 41 y 42 se destinan a la monitorización de subsistemas de los aerogeneradores, como el generador o el rotor.
     \item \textbf{9X (Pop Ups y Faceplates):} Se reservan para pantallas de uso específico, como ventanas emergentes de alarmas, plantillas de variables (\textit{Faceplates}) o interfaces de configuración avanzada. Estas pantallas no forman parte del flujo de navegación principal, sino que se activan bajo demanda para tareas puntuales.
@@ -622,7 +613,7 @@ El tercer bloque explicita el propósito operativo de la pantalla, agilizando su
 \end{itemize}
 
 \vspace{0.5cm}
-La adopción de esta nomenclatura trasciende la mera organización de archivos; define la lógica de navegación \textit{Top-Down} requerida en la operación de plantas de generación. El operador inicia la supervisión en una vista global (\texttt{10\_WTG\_Overview}), focaliza la atención en una turbina particular (\texttt{30\_WTG\_Turbine\_Interface}) y profundiza en el diagnóstico de sus componentes mecánicos (\texttt{40\_WTG\_Gen}).\par 
+La adopción de esta nomenclatura define la lógica de navegación requerida en la operación de plantas de generación. El operador inicia la supervisión en una vista global (\texttt{10\_WTG\_Overview}), focaliza la atención en una turbina particular (\texttt{30\_WTG\_Turbine\_Interface}) y profundiza en el diagnóstico de sus componentes mecánicos (\texttt{40\_WTG\_Gen}).\par 
 
 Asimismo, esta estandarización resulta determinante para optimizar el rendimiento de la aplicación gráfica. Al mantener nombres predecibles y estructurados, se facilita el uso de \textit{scripts} y ventanas de imagen (\textit{Picture Windows}) dinámicas (Figure \ref{fig:00_main_interface}), permitiendo que una única pantalla genérica actúe como interfaz para cualquier aerogenerador del parque mediante el paso de parámetros y prefijos de variables estructuradas (\textit{Tag Prefixes}).\par
 
@@ -916,15 +907,15 @@ En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgm
 
 En el contexto actual de la Industria 4.0, la monitorización y supervisión de infraestructuras energéticas distribuidas, como es el caso de un parque eólico, se demandan soluciones que vayan más allá de los sistemas \ac{SCADA} tradicionales aislados en planta. La convergencia entre \ac{IT} y \ac{OT} permite habilitar el ecosistema del \ac{IIoT}, facilitando el análisis de datos a gran escala, la accesibilidad remota y la escalabilidad del sistema.\par
 
-Este capítulo describe en detalle el diseño, despliegue e integración de una arquitectura en la nube orientada a la adquisición y visualización de datos  provenientes de los aerogeneradores. Mientras que el sistema local (basado en SIMATIC WinCC V8.1) se encarga de la adquisición en tiempo real (Edge) y el control a nivel de campo mediante protocolos industriales como \ac{OPC UA}, la arquitectura propuesta en este capítulo tiene como misión exportar estos datos de manera segura y eficiente hacia la nube para su almacenamiento histórico y explotación visual.\par
+Este capítulo describe el despliegue e integración de una arquitectura en la nube orientada a la adquisición y visualización de datos  provenientes de los aerogeneradores. Mientras que el sistema local (basado en SIMATIC WinCC V8.1) se encarga de la adquisición en tiempo real (Edge) y la monitorización a nivel de campo mediante protocolos industriales como \ac{OPC UA}, la arquitectura \ac{IIoT} tiene como objetivo exportar estos datos hacia la nube para su almacenamiento histórico y explotación visual.\par
 
-Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquitectura basada en microservicios contenerizados, apoyada en las siguientes capas lógicas (figura \ref{fig:IIoT}):
+Para lograr un sistema robusto y replicable, se ha diseñado una arquitectura basada en microservicios contenerizados, apoyada en las siguientes capas lógicas (figura \ref{fig:IIoT}):
 
 \begin{itemize}
     \item \textbf{Capa de Adquisición y Emisión (Edge)}: Representada por el módulo Cloud Connect del \ac{SCADA} WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero \ac{MQTT}.
     \item \textbf{Capa de Infraestructura (Cloud)}: Soportada por una instancia virtua \ac{EC2} alojada en \ac{AWS}, que proporciona el entorno computacional necesario con alta disponibilidad. El despliegue de los servicios se ha orquestado íntegramente mediante Docker, garantizando el aislamiento de los procesos y facilitando futuras migraciones.
-    \item \textbf{Capa de Ingesta y Procesamiento Intermedio}: Implementada con Node-RED, que actúa como cliente \ac{MQTT} para la suscripción a los tópicos de la planta, y proporciona un entorno de flujo de datos visual para filtrar y transformar los paquetes \ac{JSON} recibidos antes de su inserción en la base de datos.
-    \item \textbf{Capa de Almacenamiento \ac{TSDB}}: Soportada por InfluxDB, una base de datos de series temporales optimizada para la escritura de alta frecuencia y el almacenamiento eficiente de datos con marcas de tiempo (timestamps).
+    \item \textbf{Capa de Ingesta y Procesamiento Intermedio}: Implementada con Mosquitto y Node-RED. Mosquitto actua como el broker \ac{MQTT} mientras que Node-RED consume los datos y proporciona un entorno de flujo de datos visual para filtrar y transformar los paquetes \ac{JSON} recibidos antes de su inserción en la base de datos.
+    \item \textbf{Capa de Almacenamiento}: Soportada por InfluxDB, una base de datos de series temporales optimizada para  el almacenamiento eficiente de datos con marcas de tiempo (timestamps).
     \item \textbf{Capa de Visualización}: Desarrollada sobre Grafana, que consulta directamente a la base de datos para construir dashboards interactivos, permitiendo la monitorización del rendimiento del parque eólico desde cualquier ubicación con acceso a internet.
 \end{itemize}
 
@@ -939,7 +930,7 @@ Para lograr un sistema robusto, modular y replicable, se ha diseñado una arquit
 
 Una vez definida la arquitectura conceptual, el siguiente paso consiste en la materialización de la infraestructura necesaria para soportar el ecosistema \ac{IIoT}. Para ello, se ha optado por un modelo de \ac{IaaS} mediante \ac{AWS} ya que a diferencia de otras opciones como Oracle tiene una gran disponibilidad y ofrece un amplio catálogo de servicios gestionados que facilitan el despliegue, la gestión y la escalabilidad de la solución. 
 \subsubsection{Instancia \ac{EC2}}
-El núcleo computacional del sistema reside en una instancia de Amazon Elastic Compute Cloud \ac{EC2}. Se ha seleccionado una instancia de la familia de microprocesadores t3.medium con un procesador con sistema operativo Ubuntu Server 22.04 LTS, 
+El núcleo computacional del sistema reside en una instancia de Amazon Elastic Compute Cloud \ac{EC2}. Se ha seleccionado una instancia de la familia de microprocesadores t3.medium con un procesador con sistema operativo Ubuntu Server 22.04 LTS.
 \subsubsection{Reglas de entrada del Security Group EC2}
 Las reglas de entrada del grupo de seguridad (Security Group) de la instancia \ac{EC2} en \ac{AWS} definen qué tráfico de red está permitido acceder a la instancia. Estas reglas especifican los puertos, protocolos y orígenes que pueden comunicarse con el servidor (tabla \ref{tab:ec2_security_group}).\par
 \begin{table}[!tb]
@@ -961,6 +952,7 @@ Las reglas de entrada del grupo de seguridad (Security Group) de la instancia \a
             sgr-09d85840 & IPv4 & TCP Personalizado & TCP & 3000 & 0.0.0.0/0 \\
             sgr-03c60e5a & IPv4 & TCP Personalizado & TCP & 8086 & 0.0.0.0/0 \\
             sgr-0c3cf32e & IPv4 & TCP Personalizado & TCP & 8883 & 0.0.0.0/0 \\
+            sgr-0de9ef6a & IPv4 & Todos los ICMP IPv4 & ICMP & Todos & 0.0.0.0/0 \\
             \bottomrule
         \end{tabular}%
     }
@@ -1019,28 +1011,77 @@ De esta forma cualquier navegador web con las credenciales necesarias puede acce
 
 A consecuencia de esta configuración, InfluxDB alojado en el puerto \texttt{8086} recibe los datos enviados desde Node-RED y los almacena en un bucket configurado. para configurar la base de datos y los buckets necesarios para almacenar los datos del parque eólico.\par 
 
-Finalmente, se accede a Grafana mediante la uri\hspace{0.5cm}\url{http://13.60.240.146:3000} para configurar el panel de visualización de los datos almacenados en InfluxDB. Para ello, se selecciona la fuente de datos InfluxDB utilizando la dirección \url{http://13.60.240.146:8086}.y el token de autenticación.\par
 
-Una vez configurada la fuente de datos, se han creado los dashboards personalizados para la monitorización del parque eólico, utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico. Con este ciclo se integra la parte operativa \ac{OT} con la parte de gestión de datos \ac{IT} haciendo de los aerogeneradores un \ac{CPS} base de la industria 4.0.\par
+Una vez configurada la fuente de datos, se han creado los dashboards personalizados para la monitorización del parque eólico en Grafana (ver Figura \ref{fig:grafana_dashboard}), utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico. Con este ciclo se integra la parte operativa \ac{OT} con la parte de gestión de datos \ac{IT} haciendo de los aerogeneradores un \ac{CPS} base de la industria 4.0.\par
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/Grafana.png}
+    \caption{Ejemplo de dashboard de monitorización del parque eólico en Grafana, mostrando datos en tiempo real provenientes de InfluxDB.}
+    \label{fig:grafana_dashboard}
+\end{figure}
 \section{Ciberseguridad IEC 62443-4-2:2019}
 Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma \textbf{IEC 62443-4-2:2019} de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro \ac{SL} distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
 
 \begin{itemize}
-    \item \textbf{SL 1:} Protección contra vulneraciones casuales/accidentales:
+    \item \textbf{\ac{SL} 1:} Protección contra vulneraciones casuales/accidentales:
     Protección contra el acceso no autorizado por parte de alguien sin intención maliciosa.
-    \item \textbf{SL 2:} Protección contra vulneraciones intencionadas con medios sencillos:
+    \item \textbf{\ac{SL} 2:} Protección contra vulneraciones intencionadas con medios sencillos:
     Protección contra ataques genéricos y de bajos recursos.
-    \item \textbf{SL 3:} Protección contra ataques sofisticados:
+    \item \textbf{\ac{SL} 3:} Protección contra ataques sofisticados:
     Protección contra atacantes (hackers) con recursos moderados, motivación moderada y conocimientos específicos sobre Sistemas de Automatización y Control Industrial (IACS, por sus siglas en inglés).
-    \item \textbf{SL 4:} Protección contra ataques altamente sofisticados / de Estados-nación:
+    \item \textbf{\ac{SL} 4:} Protección contra ataques altamente sofisticados / de Estados-nación:
     Protección contra atacantes con amplios recursos, alta motivación y profunda experiencia en IACS.
 \end{itemize}
 
-Los \ac{FR} son los requisitos de seguridad que deben cumplirse para alcanzar  el SL específico. Estos requisitos se dividen en siete categorías principales, cada una con sub-requisitos específicos. Siemens ha evaluado su producto SIMATIC HMI WinCC V8.1 en función de estos requisitos y ha determinado que siguiendo los pasos recomendados en la documentación oficial proporcionada por ellos mismos, se puede alcanzar un nivel de seguridad SL 2, con capacidades parciales para SL 3 mediante la adecuada configuración de la segmentación de red y los mecanismos de detección \cite{siemens_wincc_security}.\par\indent
+Los \ac{FR} son los requisitos de seguridad que deben cumplirse para alcanzar el SL específico. Estos requisitos se dividen en siete categorías principales, cada una con sub-requisitos específicos. Siemens ha evaluado su producto SIMATIC HMI WinCC V8.1 en función de estos requisitos y ha determinado que siguiendo los pasos recomendados en la documentación oficial proporcionada por ellos mismos, se puede alcanzar un nivel de seguridad \ac{SL} 2, con capacidades parciales para \ac{SL} 3 mediante la adecuada configuración de la segmentación de red y los mecanismos de detección \cite{siemens_wincc_security}.\par\indent
 
-Siguiendo estos pasos proporcionados y en adición a las medidas de seguridad de red y cifrado ya aplicadas, se ha utilizado la administración de usuarios y permisos de WinCC (\textit{User group administration}) para reforzar el control de acceso al sistema. Esta funcionalidad permite definir grupos de usuarios con distintos niveles de privilegio, asignando a cada perfil únicamente las acciones necesarias para su cometido, como la visualización de variables, la confirmación de alarmas o la modificación de parámetros de operación. Asimismo, se han establecido credenciales individuales para cada usuario y políticas de contraseñas robustas, evitando el uso de cuentas compartidas y facilitando la trazabilidad de las acciones realizadas en el entorno SCADA. 
+Para dar cumplimiento específico al requisito fundamental \textit{FR 1 (Identification and Authentication Control)} bajo las directrices del nivel de seguridad \textbf{\ac{SL} 2}, se prohíbe explícitamente el empleo de cuentas genéricas o compartidas en la planta. El sistema debe garantizar la identificación única de cada usuario. 
 
-En la solución implementada, esta gestión se ha configurado para separar los perfiles de operador, mantenimiento y administración, de modo que cada uno accede únicamente a las pantallas y funciones autorizadas. Con ello se limita la exposición del sistema frente a accesos indebidos y se complementan las medidas de seguridad de red y cifrado ya aplicadas, alineando la arquitectura final con los principios de mínimo privilegio y defensa en profundidad.
+Con este propósito, se ha diseñado una estructura de \ac{RBCA} mediante la herramienta \textit{WinCC User Administrator}. En la Tabla \ref{tab:roles_wincc} se detalla la configuración de los grupos funcionales creados, su nivel de acceso y las autorizaciones numéricas específicas asignadas dentro del entorno SIMATIC.
 
+\begin{table}[tbp]
+\centering
+\caption{Relación completa de funciones de autorización en WinCC Configuration Studio.}
+\label{tab:leyenda_permisos_completa}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{clcl}
+\toprule
+\textbf{ID} & \textbf{Function (Nomenclatura WinCC)} & \textbf{ID} & \textbf{Function (Nomenclatura WinCC)} \\
+\midrule
+1  & User Administration & 11 & Message Editing \\
+2  & Value input         & 12 & Start archive \\
+3  & Process controlling & 13 & Stop archive \\
+4  & Picture Editing     & 14 & Edit archive values \\
+5  & Change picture      & 15 & Archive Editing \\
+6  & Window selection    & 16 & Action Editing \\
+7  & Hardcopy            & 17 & Project Manager \\
+8  & Confirm alarms      & 18 & Activate remote \\
+9  & Lock alarms         & 19 & Configure remote \\
+10 & Free alarms         &    & \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
-\textbf{Conclusión:} La implementación actual de WinCC V8.1 en la solución propuesta alcanza un nivel de seguridad SL 2, con capacidades parciales para SL 3 mediante la adecuada configuración de la segmentación de red y los mecanismos de detección.
+\begin{table}[tbp]
+\centering
+\caption{Matriz general de asignación de permisos del sistema SCADA (ID 1 al 19).}
+\label{tab:matriz_completa_numerica}
+\footnotesize % Reduce el tamaño de fuente para asegurar que quepa en el ancho de página
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lccccccccccccccccccc}
+\toprule
+& \multicolumn{19}{c}{\textbf{ID de Autorización (Véase Tabla~\ref{tab:leyenda_permisos_completa})}} \\
+\cmidrule(lr){2-20}
+\textbf{Grupo (Rol)} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} \\
+\midrule
+\texttt{SysAdmin}    & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X \\
+\texttt{Engineering} &   & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X \\
+\texttt{Maintenance} &   & X & X &   &   &   & X & X & X & X & X &   &   &   &   &   &   &   &   \\
+\texttt{Operator}    &   & X & X &   &   &   & X & X &   &   &   &   &   &   &   &   &   &   &   \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Adicionalmente, se han implementado políticas de gestión de autenticación que incluyen caducidad de contraseñas y mecanismos de bloqueo de cuentas para prevenir accesos no autorizados. Las contraseñas deben tener una longitud mínima de 8 caracteres y combinar obligatoriamente letras mayúsculas y minúsculas, números y caracteres especiales. Además, ante cinco intentos de acceso fallidos consecutivos se bloquea automáticamente el identificador de usuario para mitigar ataques por fuerza bruta o diccionario. Por último, se configura el cierre automático de sesión en los terminales HMI tras 15 minutos de inactividad, protegiendo así las estaciones desatendidas en la sala de control.

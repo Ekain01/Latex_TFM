@@ -29,8 +29,8 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \texttt{LLN0} & \texttt{Diag}   & SPS & Indicación de diagnóstico general del dispositivo. \\
 \texttt{LLN0} & \texttt{MltLev} & SPS & Indicación de nivel múltiple o estado multinivel resumido. \\
 \texttt{LLN0} & \texttt{InSSet} & ZID & Identificador de parque eólico. \\
-\texttt{LLN0} & \texttt{SubSt}  & ZID & Identificador de subestación. \\ \midrule
-
+\texttt{LLN0} & \texttt{SubSt}  & ZID & Identificador de subestación. \\ 
+\texttt{LLN0} & \texttt{UnitID} & ZID & Identificador numérico de la unidad o dispositivo. \\\midrule
 % --- LPHD ---
 \multicolumn{4}{@{}l}{\textbf{LPHD: Dispositivo Físico (Salud y diagnóstico de hardware)}} \\ \midrule
 \texttt{LPHD} & \texttt{PhyNam}    & DPL & Nombre físico del dispositivo lógico o equipo asociado. \\
@@ -39,47 +39,10 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \texttt{LPHD} & \texttt{Sim}       & SPS & Indica si el dispositivo está en modo simulación. \\
 \texttt{LPHD} & \texttt{PwrUp}     & INS & Estado asociado al encendido/arranque del dispositivo. \\
 \texttt{LPHD} & \texttt{WrmStr}    & INS & Estado de arranque en caliente o reinicio de servicio. \\
-\texttt{LPHD} & \texttt{WacTrg}    & INT32 & Contador o valor de activación de mantenimiento/servicio. \\
+\texttt{LPHD} & \texttt{WacTrg}    & INS & Contador o valor de activación de mantenimiento/servicio. \\
 \texttt{LPHD} & \texttt{WdgAct}    & SPS & Estado de actividad del \textit{watchdog} del dispositivo. \\
 \texttt{LPHD} & \texttt{OutOv}     & SPS & Estado de anulación (\textit{override}) de salidas. \\
 \texttt{LPHD} & \texttt{OpTmh}     & INS & Tiempo acumulado de operación del dispositivo (horas). \\ \midrule
-
-% --- WALM ---
-\multicolumn{4}{@{}l}{\textbf{WALM: Contenedor de Alarmas (Gestión de eventos y fallos)}} \\ \midrule
-\texttt{WALM} & \texttt{NamPlt}          & DPL & Placa de identificación del nodo lógico de alarmas. \\
-\texttt{WALM} & \texttt{GrAlm}           & SPS & Indicador de alarma general activa. \\
-\texttt{WALM} & \texttt{GrWrn}           & SPS & Indicador de advertencia general activa. \\
-\texttt{WALM} & \texttt{AlmCnt}          & INS & Contador total de alarmas registradas. \\
-\texttt{WALM} & \texttt{WrnCnt}          & INS & Contador total de advertencias registradas. \\
-\texttt{WALM} & \texttt{GenOvSpd}        & SPS & Alarma de sobrevelocidad del generador. \\
-\texttt{WALM} & \texttt{GenInSpd}        & SPS & Alarma de velocidad insuficiente del generador. \\
-\texttt{WALM} & \texttt{GenStatorTmpHi}  & SPS & Alarma de alta temperatura del estator del generador. \\
-\texttt{WALM} & \texttt{GenBrgFronTmpHi} & SPS & Alarma de alta temperatura en rodamiento frontal del generador. \\
-\texttt{WALM} & \texttt{GenBrgRearTmpHi} & SPS & Alarma de alta temperatura en rodamiento trasero del generador. \\
-\texttt{WALM} & \texttt{GenCoolTmpHi}    & SPS & Alarma de alta temperatura del sistema de refrigeración. \\
-\texttt{WALM} & \texttt{GenOvV}          & SPS & Alarma de sobretensión del generador. \\
-\texttt{WALM} & \texttt{GenUnV}          & SPS & Alarma de subtensión del generador. \\
-\texttt{WALM} & \texttt{GenOvA}          & SPS & Alarma de sobrecorriente del generador. \\
-\texttt{WALM} & \texttt{GenAsymV}        & SPS & Alarma de asimetría de tensión del generador. \\
-\texttt{WALM} & \texttt{GenRevPwr}       & SPS & Alarma de potencia inversa del generador. \\
-\texttt{WALM} & \texttt{GenVibHi}        & SPS & Alarma de vibración alta del generador. \\
-\texttt{WALM} & \texttt{GenCoolFanFlt}   & SPS & Alarma de fallo de ventilador de refrigeración. \\
-\texttt{WALM} & \texttt{GenSlipRingFlt}  & SPS & Alarma de fallo en anillos rozantes del generador. \\
-\texttt{WALM} & \texttt{GenHeaFlt}       & SPS & Alarma de fallo del calentador del generador. \\
-\texttt{WALM} & \texttt{TurEmerStop}     & SPS & Alarma de parada de emergencia de la turbina. \\
-\texttt{WALM} & \texttt{TurGridLoss}     & SPS & Alarma de pérdida de red eléctrica. \\
-\texttt{WALM} & \texttt{RotOvrSpd}       & SPS & Alarma de sobrevelocidad del rotor. \\
-\texttt{WALM} & \texttt{RotPitcAsym}     & SPS & Alarma de asimetría de pitch entre palas. \\
-\texttt{WALM} & \texttt{RotBrkPrsLow}    & SPS & Alarma de presión baja en freno del rotor. \\
-\texttt{WALM} & \texttt{GenWdgTmpHi}     & SPS & Alarma de alta temperatura en devanados del generador. \\
-\texttt{WALM} & \texttt{GenBrgTmpHi}     & SPS & Alarma de alta temperatura en rodamientos del generador. \\
-\texttt{WALM} & \texttt{CnvDCOvrV}       & SPS & Alarma de sobretensión en bus DC del convertidor. \\
-\texttt{WALM} & \texttt{CnvIgbtTmpHi}    & SPS & Alarma de alta temperatura en IGBT del convertidor. \\
-\texttt{WALM} & \texttt{NacCabTwist}     & SPS & Alarma de retorcimiento excesivo de cables en góndola. \\
-\texttt{WALM} & \texttt{NacYawFlt}       & SPS & Alarma de fallo del sistema de Yaw de góndola. \\
-\texttt{WALM} & \texttt{TrfBuchholz}     & SPS & Alarma Buchholz del transformador. \\
-\texttt{WALM} & \texttt{TrfTmpHi}        & SPS & Alarma de alta temperatura del transformador. \\
-\texttt{WALM} & \texttt{MetIceDet}       & SPS & Detección de hielo por sistema meteorológico. \\ \midrule
 
 % --- WGEN ---
 \multicolumn{4}{@{}l}{\textbf{WGEN: Sistema Generador}} \\ \midrule
@@ -135,7 +98,7 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \texttt{WROT} & \texttt{RotSpd}      & MV & Velocidad de rotación. \\
 \texttt{WROT} & \texttt{RotAcl}      & MV & Aceleración de rotación. \\
 \texttt{WROT} & \texttt{RotAzi}      & MV & Posición azimutal de rotación. \\
-\texttt{WROT} & \texttt{RotSt}       & MV & Estado de rotación. \\
+\texttt{WROT} & \texttt{RotSt}       & SPS & Estado de rotación. \\
 \texttt{WROT} & \texttt{RotLckP}     & MV & Posición de bloqueo del rotor. \\
 \texttt{WROT} & \texttt{RotLckSt}    & MV & Estado de bloqueo del rotor. \\
 \texttt{WROT} & \texttt{Bl1PchAng}   & MV & Ángulo de pala A. \\
@@ -146,9 +109,9 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \texttt{WROT} & \texttt{BlPchAng}    & MV & Estado de control de pitch. \\
 \texttt{WROT} & \texttt{BlPchSpd}    & MV & Presión hidráulica / Velocidad de pitch. \\
 \texttt{WROT} & \texttt{HubTmp}      & MV & Estado hidráulico. \\
-\texttt{WROT} & \texttt{BlPchAsySt}  & MV & Asimetría de pitch / Voltaje de batería. \\
+\texttt{WROT} & \texttt{BlPchAsySt}  & SPS & Asimetría de pitch / Voltaje de batería. \\
 \texttt{WROT} & \texttt{BatChrgRte}  & MV & Tasa de carga de batería. \\
-\texttt{WROT} & \texttt{BatSt}       & MV & Estado de batería. \\
+\texttt{WROT} & \texttt{BatSt}       & SPS & Estado de batería. \\
 \texttt{WROT} & \texttt{HubTmp}      & MV & Temperatura del buje. \\ \midrule
 
 % --- WTOW ---
@@ -159,30 +122,26 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \texttt{WTOW} & \texttt{GndTmp} & MV  & Temperatura ambiente a nivel de suelo. \\
 \texttt{WTOW} & \texttt{GndHum} & MV  & Humedad relativa a nivel de suelo. \\
 \texttt{WTOW} & \texttt{IntTmp} & MV  & Temperatura interior en torre/gabinete asociado. \\
-\texttt{WTOW} & \texttt{Plt}    & SPC & Comando de plataforma o acción de mantenimiento asociada a torre. \\
 \texttt{WTOW} & \texttt{LkrSt}  & SPS & Estado del enclavamiento o bloqueo de acceso de torre. \\ \midrule
 
 % --- WTUR ---
 \multicolumn{4}{@{}l}{\textbf{WTUR: Turbina General (Datos globales y comandos)}} \\ \midrule
-\texttt{WTUR} & \texttt{AvlTmRs}   & TMS & Tiempo de disponibilidad de la turbina. \\
-\texttt{WTUR} & \texttt{OpTmRs}    & TMS & Tiempo de operación. \\
-\texttt{WTUR} & \texttt{StrCnt}    & WTC & Número de arranques de turbina. \\
-\texttt{WTUR} & \texttt{StopCnt}   & WTC & Número de paradas de turbina. \\
-\texttt{WTUR} & \texttt{TotWh}     & WTC & Producción total de energía activa (neta). \\
-\texttt{WTUR} & \texttt{TotVArh}   & WTC & Producción total de energía reactiva (neta). \\
-\texttt{WTUR} & \texttt{DmdWh}     & BCR & Demanda de energía activa (real). \\
-\texttt{WTUR} & \texttt{DmdVArh}   & BCR & Demanda de energía reactiva. \\
-\texttt{WTUR} & \texttt{SupWh}     & BCR & Suministro de energía activa (real). \\
-\texttt{WTUR} & \texttt{SupVArh}   & BCR & Suministro de energía reactiva. \\
+\texttt{WTUR} & \texttt{AvlTmRs}   & INS & Tiempo de disponibilidad de la turbina. \\
+\texttt{WTUR} & \texttt{OpTmRs}    & INS & Tiempo de operación. \\
+\texttt{WTUR} & \texttt{StrCnt}    & INS & Número de arranques de turbina. \\
+\texttt{WTUR} & \texttt{StopCnt}   & INS & Número de paradas de turbina. \\
+\texttt{WTUR} & \texttt{TotWh}     & MV & Producción total de energía activa (neta). \\
+\texttt{WTUR} & \texttt{TotVArh}   & MV & Producción total de energía reactiva (neta). \\
+\texttt{WTUR} & \texttt{DmdWh}     & MV & Demanda de energía activa (real). \\
+\texttt{WTUR} & \texttt{DmdVArh}   & MV & Demanda de energía reactiva. \\
+\texttt{WTUR} & \texttt{SupWh}     & MV & Suministro de energía activa (real). \\
+\texttt{WTUR} & \texttt{SupVArh}   & MV & Suministro de energía reactiva. \\
 \texttt{WTUR} & \texttt{TurSt}     & SPS & Estado general de la turbina. \\
 \texttt{WTUR} & \texttt{W}         & MV  & Generación de potencia activa. \\
 \texttt{WTUR} & \texttt{VAr}       & MV  & Generación de potencia reactiva. \\
-\texttt{WTUR} & \texttt{SetTurOp}  & SPC & Comando de operación de la turbina eólica. \\
-\texttt{WTUR} & \texttt{VArOvW}    & SPC & Prioridad de reactiva sobre activa. \\
-\texttt{WTUR} & \texttt{VArRefPri} & SPC & Comando de prioridad de consigna reactiva. \\
-\texttt{WTUR} & \texttt{DmdW}      & APC & Consigna de generación de potencia activa. \\
-\texttt{WTUR} & \texttt{DmdVAr}    & APC & Consigna de generación de potencia reactiva. \\
-\texttt{WTUR} & \texttt{DmdPF}     & APC & Consigna de factor de potencia de turbina. \\ \midrule
+\texttt{WTUR} & \texttt{DmdW}      & MV & Demanda de potencia activa. \\
+\texttt{WTUR} & \texttt{DmdVAr}    & MV & Demanda de potencia reactiva. \\
+\texttt{WTUR} & \texttt{DmdPF}     & MV & Consigna de factor de potencia de turbina. \\ \midrule
 
 % --- WYAW ---
 \multicolumn{4}{@{}l}{\textbf{WYAW: Sistema de Orientación (Yaw)}} \\ \midrule
@@ -190,7 +149,6 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \texttt{WYAW} & \texttt{YawTrq}  & MV  & Torque de orientación: fuerza de motores para girar contra el viento. \\
 \texttt{WYAW} & \texttt{MotA}    & MV  & Corriente de los motores: amperaje consumido (detecta bloqueos). \\
 \texttt{WYAW} & \texttt{YawDrp}  & MV  & Desviación de consigna: velocidad de corrección de ángulo del sistema. \\
-\texttt{WYAW} & \texttt{YawStop} & SPC & Comando de parada: para detener el giro manualmente desde WinCC. \\ 
 \end{longtable}
 % Recuerda añadir en tu preámbulo:
 % \usepackage{longtable}

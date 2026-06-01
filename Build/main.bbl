@@ -156,6 +156,33 @@
     \field{year}{2024}
   \endentry
 
+  \entry{boe_convenio_ingenierias_2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={{Bolet{\'i}n Oficial del Estado}},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{BOE n{\'u}m. 62, de 12 de marzo de 2024, Referencia:
+  {BOE-A-2024-5873}}
+    \field{note}{Disponible en:
+  \url{https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-5873}}
+    \field{title}{Resoluci{\'o}n de 28 de febrero de 2024, de la Direcci{\'o}n
+  General de Trabajo, por la que se registra y publica la revisi{\'o}n salarial
+  para el a{\~n}o 2024 del {XX} Convenio colectivo nacional de empresas de
+  ingenier{\'i}a y oficinas de estudios t{\'e}cnicos}
+    \field{year}{2024}
+    \field{urlday}{01}
+    \field{urlmonth}{06}
+    \field{urlyear}{2026}
+  \endentry
+
   \entry{Du2023}{article}{}{}
     \name{author}{7}{}{%
       {{hash=DB}{%

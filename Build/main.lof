@@ -12,36 +12,42 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}}{22}{figure.caption.61}%
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Ejemplos de topologías de arquitecturas de sistemas distribuidos en SIMATIC WinCC V8.1: configuraciones monopuesto (a, b) y multipuesto (c).}}{24}{figure.caption.70}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url {https://windenergietage.de/2023/wp-content/uploads/sites/8/2018/01/31WET09_F17_1345_Windenergietage-2023.pdf}}}{30}{figure.caption.88}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Descomposición de los componentes físicos de un aerogenerador y su correspondencia conceptual según la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{32}{figure.caption.94}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{34}{figure.caption.96}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces SLD de la celda de línea.}}{36}{figure.caption.104}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces SLD de la celda del transformador de potencia.}}{36}{figure.caption.104}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Metamodelo de comunicación \ac {OPC UA}. Obtenido de Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}}{39}{figure.caption.113}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Esquema de comunicación entre el simulador de planta en NodeRed, el servidor \ac {OPC UA} KEPServerEX y el cliente SCADA SIMATIC WinCC V8.1.}}{39}{figure.caption.114}%
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Configuración del servidor \ac {OPC UA} en KepServerEX.}}{40}{figure.caption.116}%
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Configuración de la conexión \ac {OPC UA} en el entorno de desarrollo de SIMATIC WinCC V8.1.}}{42}{figure.caption.118}%
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Modelo de Intercambio de Información (IEM) de la solución SCADA basado en \ac {OPC UA}. Obtenido de \url {https://webstore.iec.ch/en/iec_catalog/product/preview/?id=L3B1Yi9wZGYvcHJldmlldy9pbmZvX2llYzYxNDAwLTI1LTN7ZWQyLjAuUkxWfWVuLnBkZg==}}}{43}{figure.caption.121}%
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{45}{figure.caption.124}%
-\contentsline {figure}{\numberline {7.14}{\ignorespaces Interfaz principal del SCADA, en morado se destaca la ventana de imagen principal donde se cargan las pantallas de supervisión, y en turquesa la ventana de alarmas anclada en el pie de página. De esta forma se establece una navegación por niveles desde la pantalla de inicio, manteniendo siempre visible el panel de alarmas para garantizar la seguridad operativa.}}{47}{figure.caption.128}%
-\contentsline {figure}{\numberline {7.15}{\ignorespaces Ejemplos de plantillas de visualización dinamizadas mediante \textit {Tag Prefix} en SIMATIC WinCC V8.1.}}{48}{figure.caption.130}%
-\contentsline {figure}{\numberline {7.16}{\ignorespaces Ejemplos de interfaces gráficas desarrolladas en WinCC para la supervisión de un proceso industrial.}}{50}{figure.caption.132}%
-\contentsline {figure}{\numberline {7.17}{\ignorespaces Ejemplo de codificación cromática de estados de la turbina en la interfaz gráfica de supervisión.}}{53}{figure.caption.139}%
-\contentsline {figure}{\numberline {7.18}{\ignorespaces Ejemplo de codificación cromática de estados en celdas de línea para equipos de maniobra en la interfaz gráfica de WinCC.}}{54}{figure.caption.142}%
-\contentsline {figure}{\numberline {7.19}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{56}{figure.caption.151}%
-\contentsline {figure}{\numberline {7.20}{\ignorespaces Arquitectura de contenedores Docker para la solución IIoT del parque eólico. Obtenido de \url {https://hanwenzhang123.medium.com/docker-vs-virtual-machine-vs-kubernetes-overview-389db7de7618}}}{58}{figure.caption.158}%
-\contentsline {figure}{\numberline {7.21}{\ignorespaces Arquitectura de red interna y aislamiento de servicios IIoT en el motor Docker. Obtenido de \url {https://k21academy.com/kubernetes/docker-networking-different-types-of-networking-overview-for-beginners/}}}{59}{figure.caption.159}%
-\contentsline {figure}{\numberline {7.22}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{60}{figure.caption.160}%
-\contentsline {figure}{\numberline {7.23}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB. En este ejemplo se muestran los nodos relacionados a la Unidad 001.}}{61}{figure.caption.161}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url {https://windenergietage.de/2023/wp-content/uploads/sites/8/2018/01/31WET09_F17_1345_Windenergietage-2023.pdf}}}{29}{figure.caption.87}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Descomposición de los componentes físicos de un aerogenerador y su correspondencia conceptual según la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{32}{figure.caption.93}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{33}{figure.caption.95}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces SLD de la celda de línea.}}{35}{figure.caption.103}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces SLD de la celda del transformador de potencia.}}{35}{figure.caption.103}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Metamodelo de comunicación \ac {OPC UA}. Obtenido de Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}}{38}{figure.caption.111}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Esquema de comunicación entre el simulador de planta en NodeRed, el servidor \ac {OPC UA} KEPServerEX y el cliente SCADA SIMATIC WinCC V8.1.}}{38}{figure.caption.112}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Configuración del servidor \ac {OPC UA} en KepServerEX.}}{39}{figure.caption.114}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Configuración de la conexión \ac {OPC UA} en el entorno de desarrollo de SIMATIC WinCC V8.1.}}{41}{figure.caption.116}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Modelo de Intercambio de Información (IEM) de la solución SCADA basado en \ac {OPC UA}. Obtenido de \url {https://webstore.iec.ch/en/iec_catalog/product/preview/?id=L3B1Yi9wZGYvcHJldmlldy9pbmZvX2llYzYxNDAwLTI1LTN7ZWQyLjAuUkxWfWVuLnBkZg==}}}{42}{figure.caption.119}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Ejemplo de jerarquía de pantallas en una interfaz gráfica de supervisión industrial.}}{44}{figure.caption.122}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Interfaz principal del SCADA, en morado se destaca la ventana de imagen principal donde se cargan las pantallas de supervisión, y en turquesa la ventana de alarmas anclada en el pie de página. De esta forma se establece una navegación por niveles desde la pantalla de inicio, manteniendo siempre visible el panel de alarmas para garantizar la seguridad operativa.}}{46}{figure.caption.126}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Ejemplos de plantillas de visualización dinamizadas mediante \textit {Tag Prefix} en SIMATIC WinCC V8.1.}}{47}{figure.caption.128}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Ejemplos de interfaces gráficas desarrolladas en WinCC para la supervisión de un proceso industrial.}}{48}{figure.caption.130}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Ejemplo de codificación cromática de estados de la turbina en la interfaz gráfica de supervisión.}}{51}{figure.caption.137}%
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Ejemplo de codificación cromática de estados en celdas de línea para equipos de maniobra en la interfaz gráfica de WinCC.}}{52}{figure.caption.140}%
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Arquitectura de integración de IIoT para la monitorización de un parque eólico.}}{55}{figure.caption.148}%
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Arquitectura de contenedores Docker para la solución IIoT del parque eólico. Obtenido de \url {https://hanwenzhang123.medium.com/docker-vs-virtual-machine-vs-kubernetes-overview-389db7de7618}}}{57}{figure.caption.155}%
+\contentsline {figure}{\numberline {7.21}{\ignorespaces Arquitectura de red interna y aislamiento de servicios IIoT en el motor Docker. Obtenido de \url {https://k21academy.com/kubernetes/docker-networking-different-types-of-networking-overview-for-beginners/}}}{58}{figure.caption.156}%
+\contentsline {figure}{\numberline {7.22}{\ignorespaces Configuración del módulo Cloud Connect de WinCC para la publicación de datos en el broker MQTT de la instancia EC2.}}{59}{figure.caption.157}%
+\contentsline {figure}{\numberline {7.23}{\ignorespaces Configuración de Node-RED para la suscripción a tópicos MQTT y procesamiento de datos antes de su inserción en InfluxDB. En este ejemplo se muestran los nodos relacionados a la Unidad 001.}}{60}{figure.caption.158}%
+\contentsline {figure}{\numberline {7.24}{\ignorespaces Ejemplo de dashboard de monitorización del parque eólico en Grafana, mostrando datos en tiempo real provenientes de InfluxDB.}}{60}{figure.caption.159}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Evolución del consumo de CPU del proceso \texttt {PdlRT.exe} bajo una carga creciente de tags.}}{65}{figure.caption.174}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Evolución del consumo de CPU del proceso \texttt {PdlRT.exe} bajo una carga creciente de tags.}}{65}{figure.caption.175}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Estimación de costes para la instancia AWS EC2 t3.medium.}}{72}{figure.caption.189}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Maquina de estados del modelo de simulación de aerogeneradores.}}{91}{figure.caption.205}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Cálculo analógico de variables de interés.}}{91}{figure.caption.206}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Control de alarmas y eventos en el modelo de simulación.}}{91}{figure.caption.207}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Control de alarmas y eventos en el modelo de simulación.}}{92}{figure.caption.208}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

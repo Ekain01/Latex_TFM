@@ -20,87 +20,49 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'field_info' (item size: 4) to 13680 items.
 Database file #1: main-blx.bib
 Database file #2: referencias-bibliograficas.bib
-Warning--I didn't find a database entry for "7.6.3"
-Warning--I didn't find a database entry for "7.3"
-Warning--I didn't find a database entry for "29"
-Warning--I didn't find a database entry for "575"
-Warning--I didn't find a database entry for "1748"
-Warning--I didn't find a database entry for "1763"
-Warning--I didn't find a database entry for "1167"
-Warning--I didn't find a database entry for "1279"
-Warning--I didn't find a database entry for "1241"
-Warning--I didn't find a database entry for "1280"
-Warning--I didn't find a database entry for "1169"
-Warning--I didn't find a database entry for "1200"
-Warning--I didn't find a database entry for "855"
-Warning--I didn't find a database entry for "887"
-Warning--I didn't find a database entry for "1804"
-Warning--I didn't find a database entry for "1064"
-Warning--I didn't find a database entry for "1103"
-Warning--I didn't find a database entry for "362"
-Warning--I didn't find a database entry for "441"
-Warning--I didn't find a database entry for "788"
-Warning--I didn't find a database entry for "1848"
-Warning--I didn't find a database entry for "1856"
-Warning--I didn't find a database entry for "586"
-Warning--I didn't find a database entry for "1285"
-Warning--I didn't find a database entry for "1751"
-Warning--I didn't find a database entry for "1744"
-Warning--I didn't find a database entry for "1745"
-Warning--I didn't find a database entry for "1769"
-Warning--I didn't find a database entry for "600"
-Warning--I didn't find a database entry for "648"
-Warning--I didn't find a database entry for "1179"
-Warning--I didn't find a database entry for "1184"
-Warning--I didn't find a database entry for "1185"
-Warning--I didn't find a database entry for "1186"
-Warning--I didn't find a database entry for "1353"
-Warning--I didn't find a database entry for "1414"
 Biblatex version: 3.21
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 26 entries,
+You've used 27 entries,
             6402 wiz_defined-function locations,
-            1463 strings with 32313 characters,
-and the built_in function-call counts, 204679 in all, are:
-= -- 16278
-> -- 3470
-< -- 1384
-+ -- 5497
-- -- 1133
-* -- 14173
-:= -- 20894
+            1433 strings with 32660 characters,
+and the built_in function-call counts, 210235 in all, are:
+= -- 16543
+> -- 3815
+< -- 1423
++ -- 5790
+- -- 1389
+* -- 14503
+:= -- 21508
 add.period$ -- 0
-call.type$ -- 26
-change.case$ -- 924
-chr.to.int$ -- 62
-cite$ -- 50
-duplicate$ -- 21187
-empty$ -- 17642
-format.name$ -- 1727
-if$ -- 42772
+call.type$ -- 27
+change.case$ -- 933
+chr.to.int$ -- 86
+cite$ -- 52
+duplicate$ -- 21669
+empty$ -- 18124
+format.name$ -- 1773
+if$ -- 43766
 int.to.chr$ -- 0
-int.to.str$ -- 90
+int.to.str$ -- 92
 missing$ -- 0
-newline$ -- 981
-num.names$ -- 1801
-pop$ -- 8805
+newline$ -- 1003
+num.names$ -- 1842
+pop$ -- 9128
 preamble$ -- 1
-purify$ -- 1044
+purify$ -- 1055
 quote$ -- 0
-skip$ -- 6429
+skip$ -- 6606
 stack$ -- 0
-substring$ -- 28448
-swap$ -- 4764
-text.length$ -- 772
-text.prefix$ -- 25
+substring$ -- 28955
+swap$ -- 4913
+text.length$ -- 806
+text.prefix$ -- 26
 top$ -- 1
-type$ -- 837
+type$ -- 871
 warning$ -- 0
-while$ -- 2506
+while$ -- 2558
 width$ -- 0
-write$ -- 956
-(There were 36 warnings)
+write$ -- 977
