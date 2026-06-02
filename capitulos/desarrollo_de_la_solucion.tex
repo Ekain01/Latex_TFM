@@ -14,7 +14,7 @@ SIMATIC WinCC V8.1 es un sistema \ac{SCADA}, basado en los sistemas operativos M
     \vspace{0.5cm}
 \end{figure}
 
-\par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como \ac{ANSI-C} y VBScript (Visual Basic).Por otro lado, WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del archivado histórico continuo de las variables del proceso y del registro de eventos y fallos.
+\par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como \ac{ANSI-C} y \ac{VBS}. Por otro lado, WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del archivado histórico continuo de las variables del proceso y del registro de eventos y fallos.
 
 \par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el sistema de configuración o \ac{CS} y el entorno de ejecución o \ac{RT}.
 
@@ -114,32 +114,64 @@ Siemens ofrece una solución de virtualización completa para sistemas de contro
 \section{Arquitectura del Sistema de Supervisión y Red de Comunicaciones del Parque Eólico}
 \label{sec:arquitectura_parque_eolico}
 
-La red de potencia del hipotético parque se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\textit{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte general.\par
+La red de potencia del hipotético parque se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión y 22 parques eólicos asociados (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\textit{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte general.\par
 
-Cada una de las subestaciones estáría conectada por una red de fibra óptica dedicada a un nodo central de supervisión ubicado en el edificio de organización y mantenimiento, donde se localiza la \ac{MCR}. 
+Cada una de las subestaciones estáría conectada por una red de fibra óptica dedicada a un nodo central de supervisión ubicado en el edificio de organización y mantenimiento, donde se ubica la \ac{MCR}. 
 
 \begin{table}[tb]
     \centering
-    \caption{Nomenclatura confidencial de las subestaciones y rangos de generación eólica asociados.}
+    \caption{Nomenclatura de las subestaciones, parques y sistemas de generación eólica asociados.}
     \label{tab:nombres_subestaciones_abreviados}
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{cclcc}
             \toprule
-            \textbf{Índice} & \textbf{Identificador SCADA} & \textbf{Subestación (Abreviada)} & \textbf{N.º Turbinas} & \textbf{Rango de Aerogeneradores} \\ \midrule
-            1 & \texttt{SS\_01} & CAB II   & 9 & \texttt{WTG1--WTG9} \\
-            2 & \texttt{SS\_02} & CAB III  & 6 & \texttt{WTG10--WTG15} \\
-            3 & \texttt{SS\_03} & CID I    & 2 & \texttt{WTG16-WTG17} \\
-            4 & \texttt{SS\_04} & CID III  & 3 & \texttt{WTG08-WTG10} \\
-            5 & \texttt{SS\_05} & CID IV   & 2 & \texttt{WTG11-WTG12} \\
-            6 & \texttt{SS\_06} & IGL I    & 3 & \texttt{WTG13-WTG15} \\
-            7 & \texttt{SS\_07} & LE I     & 2 & \texttt{WTG16-WTG17} \\
-            8 & \texttt{SS\_08} & LE II    & 3 & \texttt{WTG18-WTG20} \\
-            9 & \texttt{SS\_09} & VAC III  & 2 & \texttt{WTG21-WTG57} \\ \bottomrule
+            \textbf{Subestación} & \textbf{Identificador SCADA} & \textbf{Parque Eólico} & \textbf{N.º Turbinas} & \textbf{Rango de Aerogeneradores} \\ 
+            \midrule
+            
+            % Ejemplo 1: Subestación con múltiples parques
+            IGL I & \texttt{SS\_01} & CON I & 2 & \texttt{WTG1--WTG2} \\
+                  &                 & CON II & 3 & \texttt{WTG3--WTG5} \\
+                  &                 & CON III & 3 & \texttt{WTG6--WTG8} \\ 
+            \midrule
+            CAB II & \texttt{SS\_02} & CAB II & 3 & \texttt{WTG9--WTG11} \\
+                  &                 & VAC I & 3 & \texttt{WTG12--WTG14} \\
+                  &                 & VAC VI & 3 & \texttt{WTG15--WTG17} \\ 
+            \midrule
+            CAB III & \texttt{SS\_03} & VAC V & 3 & \texttt{WTG18--WTG20} \\
+                  &                 & CAB III & 2 & \texttt{WTG21--WTG22} \\
+                  &                 & CAB IV & 2 & \texttt{WTG23--WTG24} \\ 
+            \midrule
+            CID I & \texttt{SS\_04} & CID I& 2 & \texttt{WTG25--WTG26} \\
+                  &                 & &  &  \\
+                  &                 &  & &  \\ 
+            \midrule
+            CID III & \texttt{SS\_05} & CID III & 2 & \texttt{WTG27--WTG28} \\
+                  &                 & CAB III & 3 & \texttt{WTG29--WTG31} \\
+                  &                 & &  &  \\ 
+            \midrule
+              CID IV & \texttt{SS\_06} & CID IV& 2 & \texttt{WTG32--WTG34} \\
+                  &                 & &  &  \\
+                  &                 &  & &  \\ 
+            \midrule
+             LE I & \texttt{SS\_07} & LE I& 3 & \texttt{WTG35--WTG37} \\
+                  &                 & LE IV & 2 & \texttt{WTG38--WTG39} \\
+                  &                 &  & &  \\ 
+            \midrule
+             LE II & \texttt{SS\_08} & LE II& 3 & \texttt{WTG40--WTG42} \\
+                  &                 & LE III & 3 & \texttt{WTG43--WTG45} \\
+                  &                 & MAS I& 3 & \texttt{WTG46--WTG48}  \\ 
+                  &                 & MAS II & 3 &  \texttt{WTG49--WTG51}\\ 
+            \midrule
+            VAC III& \texttt{SS\_09} & VAC II & 2 & \texttt{WTG52--WTG53} \\
+                  &                 & VAC III & 2 & \texttt{WTG54--WTG55} \\
+                  &                 & VAC IV & 2 & \texttt{WTG56--WTG57} \\ 
+    
+            \bottomrule
         \end{tabular}%
     }
 \end{table}
 
-La Sala de Control Central (\textit{Main Control Room} - MCR) requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida del SCADA.\par 
+La Sala de Control Central \ac{MCR} requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida del SCADA.\par 
 
 Durante este proyecto se abordará únicamente la solución basada en una arquitectura monopuesto. Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física sin necesidad de agregar nuevos recursos computacionales, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes hosts y máquinas virtuales. \par
 
@@ -208,19 +240,19 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
         \textbf{Clase (\ac{CDC})} & \textbf{Atributo} & \textbf{Tipo de Dato base} & \textbf{Descripción Técnica} \\ \midrule
 
         % --- \ac{SPS} ---
-        \multicolumn{4}{@{}l}{\textbf{\ac{SPS}: Estado de Punto Simple (\textit{Single Point Status})}} \\ \midrule
+        \multicolumn{4}{@{}l}{\textbf{\ac{SPS}}} \\ \midrule
         \texttt{\ac{SPS}} & \texttt{stVal} & Booleano & Valor de  variable de estado. \\
         \texttt{\ac{SPS}} & \texttt{q}     & Booleano & Calidad de la señal (integridad del dato en la red). \\
         \texttt{\ac{SPS}} & \texttt{t}     & Marca de tiempo & Marca de tiempo exacta de la última actualización. \\ \midrule
 
         % --- \ac{INS} ---
-        \multicolumn{4}{@{}l}{\textbf{\ac{INS}: Estado Entero (\textit{Integer Status})}} \\ \midrule
+        \multicolumn{4}{@{}l}{\textbf{\ac{INS}}} \\ \midrule
         \texttt{\ac{INS}} & \texttt{stVal} & Entero con signo (16 bits) & Valor numérico discreto. \\
         \texttt{\ac{INS}} & \texttt{q}     & Booleano & Calidad de la señal.\\
         \texttt{\ac{INS}} & \texttt{t}     & Marca de tiempo & Marca de tiempo exacta de la última actualización. \\ \midrule
 
         % --- \ac{MV} ---
-        \multicolumn{4}{@{}l}{\textbf{\ac{MV}: Valor Medido (\textit{Measured Value})}} \\ \midrule
+        \multicolumn{4}{@{}l}{\textbf{\ac{MV}}} \\ \midrule
         \texttt{\ac{MV}}  & \texttt{mag}   & Coma flotante IEEE 754 (32 bits) & Magnitud analógica de la variable \\
         \texttt{\ac{MV}}  & \texttt{q}     & Booleano & Calidad de la señal.\\
         \texttt{\ac{MV}}  & \texttt{t}     & Marca de tiempo & Última actualización. \\ \midrule
@@ -347,7 +379,7 @@ La \ac{CDC} \ac{DPS} no utiliza un bit booleano convencional para determinar la 
     }
 \end{table}
 
-\paragraph{Nivel 1 y 2: Estructura de Dispositivos Físicos (IED) y Dispositivos Lógicos (LD)}
+\paragraph{Nivel 1 y 2: Estructura de Dispositivos Físicos (PD) y Dispositivos Lógicos (LD)}
 \label{sec:sub_nivel1_2}
 
 En los aerogeneradores, la unificación de los niveles 1 y 2 se justificaba por compartir una misma ubicación. No obstante, en la subestación eléctrica se mantiene la separación conceptual entre el \ac{PD} y el \ac{LD} como indica la normativa, ya que la subestación presenta un entorno desacoplado: por un lado se sitúan los elementos de corte y por otro la transformación de potencia.\par
@@ -432,12 +464,12 @@ Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan
 
 Un análisis final de los \textit{tags} creados en el SCADA revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
 
-Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de \textbf{9 subestaciones eléctricas} distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección.\par
+Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de 9 subestaciones eléctricas distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección.\par
 
 Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la norma. Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
 
 \begin{equation}
-\underbrace{\text{SS\_xx}}_{\text{Prefijo SCADA (Planta)}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}} . \underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
+\underbrace{\text{SS\_xx}}_{\text{Subestación}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}} . \underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
 \end{equation}.
 
 \begin{table}[tb]
@@ -448,8 +480,8 @@ Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la 
         \begin{tabular}{clll}
             \toprule
             \textbf{Nivel} & \textbf{Capa Semántica} & \textbf{Código} & \textbf{Significado en la Subestación} \\ \midrule
-            \textbf{Nivel 0}   & Prefijo de Planta (SCADA) & \texttt{IGLI} & Subestación IGL I \\
-            \textbf{Nivel 1}             & Dispositivo Físico (\textit{IED}) & \texttt{Q01} & Celda \\
+            \textbf{Nivel 0}   & Prefijo de Planta (SCADA) & \texttt{SS\_01} & Subestación IGL I \\
+            \textbf{Nivel 1}             & Dispositivo Físico (\textit{PD}) & \texttt{Q01} & Celda \\
             \textbf{Nivel 2}             & Dispositivo Lógico (\textit{LD})  & \texttt{CTRL} & Contenedor de control o protección \\
             \textbf{Nivel 3}             & Nodo Lógico (\textit{LN})        & \texttt{XCBR1} & Interruptor 1 \\
             \textbf{Nivel 4}             & Objeto de Datos (\textit{DO})    & \texttt{Pos} & Variable de posición  \\
@@ -861,7 +893,6 @@ En el entorno eléctrico de alta y media tensión, la presencia de energía impl
 \end{figure}
 
 La propiedad de color de fondo del polígono o símbolo SVG se vincula directamente al atributo de valor (\texttt{stVal}) de la variable externa. De este modo, la interfaz gráfica cambia en tiempo real dependiendo de si el \textit{Tag} devuelve un valor entero \texttt{1} (Cerrado/Rojo),\texttt{0} (Abierto/Verde) o un valor entre 3 y 8 (Tránsito/Fallo) sin necesidad de ejecutar \textit{scripts} cíclicos en segundo plano.
-\FloatBarrier
 \subsection{Configuración e implementación del sistema de avisos en SIMATIC WinCC}
 \label{sec:configuracion_alarmas_wincc}
 
