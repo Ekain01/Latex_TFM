@@ -175,7 +175,7 @@ La Sala de Control Central \ac{MCR} requiere de un entorno de hardware y computa
 
 Durante este proyecto se abordará únicamente la solución basada en una arquitectura monopuesto. Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física sin necesidad de agregar nuevos recursos computacionales, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes hosts y máquinas virtuales. \par
 
-Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de routers que asignan direcciones IP públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un router que proporciona direcciones IP privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección IP.\par
+Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de routers que asignan direcciones \ac{IP} públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un router que proporciona direcciones \ac{IP} privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección \ac{IP}.\par
 \section{\ac{IM} de la solución SCADA}
 \label{cap:modelo_informacion}
 El modelo de información de un sistema es la representación estructurada de los datos y la información que maneja ese sistema. Con ello se define la forma en que se organizan, almacenan y acceden a los datoa dentro del sistema. El entorno de SIMATIC WinCC V8.1 permite la creación de variables que se utilizan para representar los datos del proceso, las alarmas, los eventos y otros aspectos operativos del sistema SCADA. Estas variables pueden ser internas, externas o de estructura, dependiendo de su función y origen dentro del sistema. \par
@@ -462,7 +462,7 @@ Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan
 \paragraph{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}
 \label{sec:sub_jerarquia_6niveles}
 
-Un análisis final de los \textit{tags} creados en el SCADA revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
+Un análisis final de las variables creadas en el \ac{SCADA} revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
 
 Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de 9 subestaciones eléctricas distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección.\par
 
@@ -551,7 +551,7 @@ Las conexiones de las variables de estructura con las variables externas \ac{OPC
 
 En primer lugar, se ha desplegado el driver de comunicaciones \ac{OPC UA} en la raíz del árbol de administración de variables. Este canal actúa de interprete entre las conexiones \ac{OPC UA} y el \ac{RT} y agrupa todas las conexiones y variables relacionadas con el protocolo \ac{OPC UA}. Como cada subestación dispone de una dirección IP cada subestación tiene asociada una conexión, sin embargo, dado que las simulaciones se realizan sobre la misma máquina no es posible mantener dos conexiónes que apunten a la misma dirección por lo que una única conexión llamada \texttt{OPC\_UA\_IGL\_I} (Subestación principal) agrupa todas las hipotéticas conexiones en una sola.\par 
 
-Esta conexión \texttt{OPC\_UA\_IGL\_I} apunta directamente al \textit{Endpoint} del servidor KEPServerEX previamente configurado con la dirección IP local y el puerto configurado en el \textit{OPC UA Configuration Manager} \url{opc.tcp://127.0.0.1:49320}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
+Esta conexión \texttt{OPC\_UA\_IGL\_I} apunta directamente al \textit{Endpoint} del servidor KEPServerEX previamente configurado con la dirección \ac{IP} local y el puerto configurado en el \textit{OPC UA Configuration Manager} \url{opc.tcp://127.0.0.1:49320}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/Conexion_Opc.png}
@@ -647,7 +647,7 @@ El tercer bloque explicita el propósito operativo de la pantalla, agilizando su
 \vspace{0.5cm}
 La adopción de esta nomenclatura define la lógica de navegación requerida en la operación de plantas de generación. El operador inicia la supervisión en una vista global (\texttt{10\_WTG\_Overview}), focaliza la atención en una turbina particular (\texttt{30\_WTG\_Turbine\_Interface}) y profundiza en el diagnóstico de sus componentes mecánicos (\texttt{40\_WTG\_Gen}).\par 
 
-Asimismo, esta estandarización resulta determinante para optimizar el rendimiento de la aplicación gráfica. Al mantener nombres predecibles y estructurados, se facilita el uso de \textit{scripts} y ventanas de imagen (\textit{Picture Windows}) dinámicas (Figure \ref{fig:00_main_interface}), permitiendo que una única pantalla genérica actúe como interfaz para cualquier aerogenerador del parque mediante el paso de parámetros y prefijos de variables estructuradas (\textit{Tag Prefixes}).\par
+Asimismo, esta estandarización resulta determinante para optimizar el rendimiento de la aplicación gráfica. Al mantener nombres predecibles y estructurados, se facilita el uso de \textit{scripts} y ventanas de imagen dinámicas (Figure \ref{fig:00_main_interface}), permitiendo que una única pantalla genérica actúe como interfaz para cualquier aerogenerador del parque mediante el paso de parámetros y prefijos de variables estructuradas.\par
 
 \begin{figure}[!tbp]
         \centering
@@ -658,27 +658,26 @@ Asimismo, esta estandarización resulta determinante para optimizar el rendimien
 
 Para mantener esta filosofía, la navegación del sistema se ha estructurado implementando un diseño centralizado basado en estas ventanas de imagen. Esta técnica de SIMATIC WinCC permite mantener un marco estático de control mientras el área de trabajo cambia dinámicamente. 
 
-\subsubsection{Plantillas dinámicas y reutilización gráfica (\textit{Tag Prefix})}
+\subsubsection{Plantillas dinámicas y reutilización gráfica (Prefijos de variable)}
 \label{sec:tag_prefix}
 
 En la monitorización de parques eólicos, se presenta una alta repetición de activos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del SCADA. 
 
-Para resolver esta problemática, el diseño de las interfaces de detalle se ha fundamentado en el principio de reutilización gráfica, combinando el uso de las variables de estructura (definidas en el apartado 7.4.3) con la propiedad \textit{Tag Prefix} (Prefijo de variable) de las ventanas de imagen (\textit{Picture Windows}) de SIMATIC WinCC.
+Para resolver esta problemática, el diseño de las interfaces de detalle se ha fundamentado en el principio de reutilización gráfica, combinando el uso de las variables de estructura con la propiedad Prefijo de variable de las ventanas de imagen de SIMATIC WinCC.
 
-La técnica consiste en diseñar una única pantalla genérica (\textit{Faceplate} maestro) donde los objetos gráficos (barras, campos de texto, indicadores de estado) se vinculan a las variables sin especificar la turbina a la que pertenecen (por ejemplo, apuntando a la variable \texttt{.WROT.RotAzi.mag} en lugar de \texttt{WTG1.WROT.RotAzi.mag}).
+La técnica consiste en diseñar una única pantalla genérica  donde los objetos gráficos (barras, campos de texto, indicadores de estado) se vinculan a las variables sin especificar la turbina a la que pertenecen (por ejemplo, apuntando a la variable \texttt{.WROT.RotAzi.mag} en lugar de \texttt{WTG1.WROT.RotAzi.mag}).
 
-Durante la operación en el entorno \textit{Runtime}, cuando el operador selecciona un aerogenerador específico desde la vista general, se ejecuta un \textit{script} que realiza dos acciones simultáneas sobre el \textit{Picture Window} central:
+Durante la operación en el entorno de ejecución, cuando el operador selecciona un aerogenerador específico desde la vista general, se ejecuta un \textit{script} que realiza dos acciones simultáneas sobre la ventana de imagen central:
 \begin{enumerate}
     \item Carga el archivo \texttt{.pdl} de la plantilla genérica.
-    \item Asigna el nombre de la turbina seleccionada (ej. \texttt{WTG1}) a la propiedad \textit{Tag Prefix} de la ventana.
+    \item Asigna el nombre de la turbina seleccionada (ej. \texttt{WTG1}) a la propiedad de prefijo de variable de la ventana.
 \end{enumerate}
 
-Automáticamente, WinCC concatena este prefijo con el sufijo interno de los objetos gráficos, dinamizando la pantalla completa con los datos reales del equipo seleccionado en cuestión de milisegundos. Esta filosofía se ha aplicado intensivamente en los niveles del proyecto.
+Automáticamente, WinCC concatena este prefijo con el sufijo interno de los objetos gráficos, dinamizando la pantalla completa con los datos reales del equipo seleccionado en cuestión de milisegundos (ver Figura \ref{fig:plantillas_dinamizadas}). Esta filosofía se ha aplicado intensivamente en los niveles del proyecto.
 
-\paragraph{Vistas de detalle de Turbina (\textit{Turbine Overview})}
-Estas interfaces proporcionan la telemetría resumida de un único aerogenerador. Como se observa en la Figura \ref{fig:overview_turbina}, la pantalla despliega de forma concisa los valores críticos (velocidad del viento local, régimen del rotor, estado del \textit{pitch} y temperaturas clave). Gracias al \textit{Tag Prefix}, esta misma disposición gráfica sirve para supervisar cualquier máquina del parque eólico.
 
 \begin{figure}[t]
+    \label{fig:plantillas_dinamizadas}
     \centering
     \begin{subfigure}{0.48\textwidth}
         \centering
@@ -708,8 +707,7 @@ Estas interfaces proporcionan la telemetría resumida de un único aerogenerador
     \end{subfigure}
     \caption{Ejemplos de plantillas de visualización dinamizadas mediante \textit{Tag Prefix} en SIMATIC WinCC V8.1.}
 \end{figure}
-\paragraph{Vistas de agrupación o clústeres (\textit{Park Overview})}
-De manera análoga a las turbinas individuales, el parque puede subdividirse en subestaciones o clústeres lógicos. Se ha diseñado una plantilla de agrupación que, recibiendo el prefijo correspondiente al clúster, consolida y visualiza los datos agregados de un subconjunto de aerogeneradores (Figura \ref{fig:overview_parque}), optimizando drásticamente el número de archivos en el proyecto y garantizando la homogeneidad visual de la interfaz.
+
 
 
 \FloatBarrier
@@ -719,6 +717,7 @@ De manera análoga a las turbinas individuales, el parque puede subdividirse en 
 Para facilitar la navegación del operador entre los distintos niveles de la planta, se ha desarrollado un sistema de filtrado paramétrico. Este sistema se ejecuta en la pantalla principal de monitorización \texttt{10\_WTG\_Overview} (Figura \ref{fig:interfaz_grafica_selector}), permitiendo la segregación visual de los aerogeneradores en función del parque al que pertenecen o de su identificador de estado específico.\par
 
 \begin{figure}[p]
+    \label{fig:filtrado}
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figuras/10_WTG_Overview.png}
@@ -751,9 +750,9 @@ Para facilitar la navegación del operador entre los distintos niveles de la pla
     \caption{Ejemplos de interfaces gráficas desarrolladas en WinCC para la supervisión de un proceso industrial.}
 \end{figure}
 
-La lógica de control que gobierna este comportamiento no se ha programado de forma local en los eventos individuales de cada objeto gráfico. En su lugar, se ha optado por utilizar \textit{scripts} globales en el editor de WinCC. Esta decisión posibilita la creación de acciones reutilizables, además de facilitar el mantenimiento.\par
+La lógica de control que gobierna este comportamiento no se ha programado de forma local en los eventos individuales de cada objeto gráfico. En su lugar, se ha optado por utilizar \textit{scripts} globales en el editor de WinCC. Esta decisión posibilita la creación de acciones reutilizables, además de facilitar el mantenimiento, además de que el motor de ejecución de scripts globales esta separado del motor de ejecución gráfico, mejorando la eficiencia del sistema.\par
 
-El flujo de información entre la capa gráfica y el algoritmo de filtrado se desarrolla a través de dos variables internas: \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos}, las cuales han sido creadas en el \textit{Tag Management} de WinCC (Tabla \ref{tab:variables_internas_filtrado}).
+El flujo de información entre la capa gráfica y el algoritmo de filtrado se desarrolla a través de dos variables internas: \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos}, las cuales han sido creadas en el administrador de variables de WinCC (Tabla \ref{tab:variables_internas_filtrado}).
 
 \begin{table}[tb]
     \centering
@@ -769,7 +768,7 @@ El flujo de información entre la capa gráfica y el algoritmo de filtrado se de
     }
     \vspace{1cm}
 \end{table}
-En segundo lugar, la evaluación de los criterios y la manipulación de la interfaz gráfica se realiza en dos funciones globales independientes. Estas funciones se invocan de forma orientada a eventos, los selectores \texttt{Subestación} y \texttt{Estado} (Figura \ref{fig:selectores_filtrado}), actuando según el modo operativo activo tal y como se describe en la Tabla \ref{tab:funciones_globales_filtrado}.\par
+En segundo lugar, la evaluación de los criterios y la manipulación de la interfaz gráfica se realiza en dos funciones globales independientes. Estas funciones se invocan de forma orientada a eventos, los selectores \texttt{Subestación} y \texttt{Estado} (ver Figura \ref{fig:filtrado}), actuando según el modo operativo activo tal y como se describe en la Tabla \ref{tab:funciones_globales_filtrado}.\par
 
 \begin{table}[tb]
     \centering
@@ -779,8 +778,8 @@ En segundo lugar, la evaluación de los criterios y la manipulación de la inter
         \begin{tabular}{lll}
             \toprule
             \textbf{Función Global (\textit{Script})} & \textbf{Variables Evaluadas} & \textbf{Imagen en ventana} \\ \midrule
-            \texttt{AplicarFiltroPosicion()} & \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos} & 20\_WTG\_Turbine\_Overview \\
-            \texttt{AplicarFiltroParques()} & \texttt{HMI\_Filtro\_Parques} y \texttt{HMI\_Filtro\_Molinos} & 21\_WTG\_Park\_Overview \\ \bottomrule
+            \texttt{AplicarFiltroPosicion()} & \begin{tabular}[c]{@{}l@{}}\texttt{HMI\_Filtro\_Parques}\\\texttt{HMI\_Filtro\_Molinos}\end{tabular} & 20\_WTG\_Turbine\_Overview \\
+            \texttt{AplicarFiltroParques()} & \begin{tabular}[c]{@{}l@{}}\texttt{HMI\_Filtro\_Parques}\\\texttt{HMI\_Filtro\_Molinos}\end{tabular} & 21\_WTG\_Park\_Overview \\ \bottomrule
         \end{tabular}%
     }
 \end{table}
@@ -793,11 +792,11 @@ Cuando el operador interactúa con los selectores o menús desplegables integrad
 
 La gestión de alarmas y eventos es el componente crítico del sistema SCADA encargado de garantizar la seguridad operativa y la conciencia situacional del operador. Su función principal no es solo la detección de anomalías, sino la jerarquización de las mismas para evitar la saturación de información durante incidentes críticos. 
 
-En este proyecto, la supervisión de eventos se integra de forma transversal mediante el \textit{Picture Window} inferior persistente en la pantalla \texttt{00\_Main\_Interface}. Este diseño asegura que, independientemente del nivel de navegación en el que se encuentre el usuario, las notificaciones de mayor prioridad sean visibles de forma inmediata. La implementación se ha realizado empleando el objeto \textit{WinCC Alarm Control}, configurando ciclos de refresco en tiempo real y almacenamiento en una base de datos SQL histórica para auditorías posteriores.
+En este proyecto, la supervisión de eventos se integra de forma transversal mediante la ventanta de imagen inferior persistente en la pantalla \texttt{00\_Main\_Interface}. Este diseño asegura que, independientemente del nivel de navegación en el que se encuentre el usuario, las notificaciones de mayor prioridad sean visibles de forma inmediata. La implementación se ha realizado empleando el objeto \textit{WinCC Alarm Control}, configurando ciclos de refresco en tiempo real y almacenamiento en una base de datos SQL histórica para auditorías posteriores.
 
 \subsection{Criterios de señalización: Norma IEC 60073}
 
-Para garantizar una interpretación unívoca de los estados del proceso, se ha seguido la normativa internacional \textbf{IEC 60073} (\textit{Principios básicos y de seguridad para las interfaces hombre-máquina, el marcado y la identificación}) \cite{iec60073}. Esta norma establece una codificación cromática estricta basada en el significado de la seguridad y el estado del equipo:
+Para garantizar una interpretación unívoca de los estados del proceso, se ha seguido la normativa internacional IEC 60073(\textit{Principios básicos y de seguridad para las interfaces hombre-máquina, el marcado y la identificación}) \cite{iec60073}. Esta norma establece una codificación cromática estricta basada en el significado de la seguridad y el estado del equipo:
 
 \begin{itemize}
     \item \textbf{Rojo:} Indica una situación de peligro, emergencia o actuación inmediata.
@@ -849,7 +848,7 @@ Uso del Azul: Según la IEC 60073, el azul se emplea para estados que requieren 
 
 Para la representación gráfica de los equipos de maniobra en las pantallas de las subestaciones, la interfaz HMI de WinCC V8.1 diseñada rechaza el uso de paletas de colores arbitrarias y se mantiene el enfoque en la normativa de seguridad visual.\par
 
-En el entorno eléctrico de alta y media tensión, la presencia de energía implica un riesgo importante para el personal de planta. Por este motivo, la visualización de los símbolos que representan los interruptores automáticos (\texttt{XCBR}) y los seccionadores (\texttt{XSWI}) dentro de las plantillas gráficas (\textit{Faceplates}) obedece a la siguiente convención de seguridad detallada en la tabla \ref{tab:colores_estados_celdas}.
+En el entorno eléctrico de alta y media tensión, la presencia de energía implica un riesgo importante para el personal de planta. Por este motivo, la visualización de los símbolos que representan los interruptores automáticos (\texttt{XCBR}) y los seccionadores (\texttt{XSWI}) dentro de las plantillas gráficas obedece a la siguiente convención de seguridad detallada en la tabla \ref{tab:colores_estados_celdas}.
 
 \begin{table}[tb]
     \centering
@@ -892,7 +891,7 @@ En el entorno eléctrico de alta y media tensión, la presencia de energía impl
     \caption{Ejemplo de codificación cromática de estados en celdas de línea para equipos de maniobra en la interfaz gráfica de WinCC.}
 \end{figure}
 
-La propiedad de color de fondo del polígono o símbolo SVG se vincula directamente al atributo de valor (\texttt{stVal}) de la variable externa. De este modo, la interfaz gráfica cambia en tiempo real dependiendo de si el \textit{Tag} devuelve un valor entero \texttt{1} (Cerrado/Rojo),\texttt{0} (Abierto/Verde) o un valor entre 3 y 8 (Tránsito/Fallo) sin necesidad de ejecutar \textit{scripts} cíclicos en segundo plano.
+La propiedad de color de fondo del polígono o símbolo SVG se vincula directamente al atributo de valor (\texttt{stVal}) de la variable externa. De este modo, la interfaz gráfica cambia en tiempo real dependiendo de si la variable devuelve un valor entero \texttt{1} (Cerrado/Rojo),\texttt{0} (Abierto/Verde) o un valor entre 3 y 8 (Tránsito/Fallo) sin necesidad de ejecutar \textit{scripts} cíclicos en segundo plano.
 \subsection{Configuración e implementación del sistema de avisos en SIMATIC WinCC}
 \label{sec:configuracion_alarmas_wincc}
 
@@ -946,7 +945,7 @@ Para lograr un sistema robusto y replicable, se ha diseñado una arquitectura ba
     \item \textbf{Capa de Adquisición y Emisión (Edge)}: Representada por el módulo Cloud Connect del \ac{SCADA} WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero \ac{MQTT}.
     \item \textbf{Capa de Infraestructura (Cloud)}: Soportada por una instancia virtua \ac{EC2} alojada en \ac{AWS}, que proporciona el entorno computacional necesario con alta disponibilidad. El despliegue de los servicios se ha orquestado íntegramente mediante Docker, garantizando el aislamiento de los procesos y facilitando futuras migraciones.
     \item \textbf{Capa de Ingesta y Procesamiento Intermedio}: Implementada con Mosquitto y Node-RED. Mosquitto actua como el broker \ac{MQTT} mientras que Node-RED consume los datos y proporciona un entorno de flujo de datos visual para filtrar y transformar los paquetes \ac{JSON} recibidos antes de su inserción en la base de datos.
-    \item \textbf{Capa de Almacenamiento}: Soportada por InfluxDB, una base de datos de series temporales optimizada para  el almacenamiento eficiente de datos con marcas de tiempo (timestamps).
+    \item \textbf{Capa de Almacenamiento}: Soportada por InfluxDB, una base de datos de series temporales optimizada para  el almacenamiento eficiente de datos con marcas de tiempo.
     \item \textbf{Capa de Visualización}: Desarrollada sobre Grafana, que consulta directamente a la base de datos para construir dashboards interactivos, permitiendo la monitorización del rendimiento del parque eólico desde cualquier ubicación con acceso a internet.
 \end{itemize}
 
@@ -996,21 +995,21 @@ Para garantizar la portabilidad, el aislamiento y la escalabilidad de la soluci�
 
 A diferencia de las máquinas virtuales tradicionales, que requieren la emulación completa de un sistema operativo invitado sobre un hipervisor, Docker opera mediante el concepto de contenedor. Un contenedor es un proceso aislado y ligero que comparte el mismo núcleo (\textit{kernel}) del sistema operativo host, abstrayendo únicamente las capas de software superiores (Figura \ref{fig:docker_architecture}). De esta forma, las configuraciones específicas de los diferentes entornos donde se puedan desplegar los servicios (desarrollo, pruebas o producción industrial) se gestionan de forma consistente, replicable y con un consumo de recursos computacionales mínimo.
 
-\begin{figure}[!tbp]
+\begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figuras/DockerVM.png}
+    \includegraphics[width=0.7\textwidth]{figuras/DockerVM.png}
     \caption{Arquitectura de contenedores Docker para la solución IIoT del parque eólico. Obtenido de \url{https://hanwenzhang123.medium.com/docker-vs-virtual-machine-vs-kubernetes-overview-389db7de7618}}
     \label{fig:docker_architecture}
 \end{figure}
 
-El despliegue se ha automatizado mediante un archivo de configuración Docker-compose.yml mostrado en el anexo \ref{cap:anexo_codigo_solucion}, que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la solución: La red interna virtual y los volúmenes de persistencia de datos.\par
+El despliegue se ha automatizado mediante un archivo de configuración Docker-compose.yml (ver Anexo \ref{cap:anexo_codigo_solucion}), que actúa como orquestador de la solución. Este archivo define no solo las imágenes de software a utilizar, sino también dos elementos fundamentales para la solución: La red interna virtual y los volúmenes de persistencia de datos.\par
 
 \paragraph{Red Interna Virtual (Docker Network)}
-La red interna virtual es la manera en la que Docker gestiona la comunicación entre los contenedores (Figura~\ref{fig:docker_network}). Por defecto, Docker genera un conmutador de software interno (\textit{software bridge}) en el host que asigna un direccionamiento IP privado local a cada contenedor conectado a él. 
+La red interna virtual es la manera en la que Docker gestiona la comunicación entre los contenedores (ver Figura \ref{fig:docker_network}). Por defecto, Docker genera un conmutador de software interno (\textit{software bridge}) en el host que asigna un direccionamiento IP privado local a cada contenedor conectado a él. 
 
-\begin{figure}[!tb]
+\begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figuras/DockerNetwork.png}
+    \includegraphics[width=0.7\textwidth]{figuras/DockerNetwork.png}
     \caption{Arquitectura de red interna y aislamiento de servicios IIoT en el motor Docker. Obtenido de \url{https://k21academy.com/kubernetes/docker-networking-different-types-of-networking-overview-for-beginners/}}
     \label{fig:docker_network}
 \end{figure}
@@ -1019,9 +1018,9 @@ Este controlador \textit{bridge}  permite que los contenedores se comuniquen e i
 
 \paragraph{Persistencia de Datos (Docker Volumes)}
 
-Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia \ac{EC2}. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.\par
+Dado que los contenedores son efímeros por naturaleza, se han configurado volúmenes vinculados al almacenamiento físico de la instancia \ac{EC2}. Esto garantiza que, ante un reinicio del sistema o una actualización del software, los datos históricos del parque eólico y las configuraciones de los dashboards no se pierdan.
 
-Una vez levantados y estabilizados los servicios en la infraestructura de la nube, se han configurado los accesos del módulo \textit{Cloud Connect} integrado en el sistema SCADA WinCC V8.1 (Figura \ref{fig:cloud_connect}) para proceder a la publicación de los datos capturados en tiempo real de la planta. La pasarela industrial transmite los paquetes de datos hacia el \textit{broker} Mosquitto \ac{MQTT} (mapeado externamente en el puerto de comunicación \texttt{1883}) de la instancia \ac{EC2}, apuntando directamente hacia la dirección IP pública de la misma : \texttt{13.60.146.240}.
+Una vez levantados y estabilizados los servicios en la infraestructura de la nube, se han configurado los accesos del módulo \textit{Cloud Connect} integrado en el sistema SCADA WinCC V8.1 (Figura \ref{fig:cloud_connect}) para proceder a la publicación de los datos capturados en tiempo real de la planta. La pasarela industrial transmite los paquetes de datos hacia el \textit{broker} Mosquitto \ac{MQTT} (mapeado externamente en el puerto de comunicación \texttt{1883}) de la instancia \ac{EC2}, apuntando directamente hacia la dirección \ac{IP} pública de la misma : \texttt{13.60.146.240}.
 
 \begin{figure}[!tb]
     \centering
@@ -1031,7 +1030,7 @@ Una vez levantados y estabilizados los servicios en la infraestructura de la nub
 \end{figure}
 
 \vspace{1cm}
-De esta forma cualquier navegador web con las credenciales necesarias puede acceder al servicio de Node-RED utilizando el puerto \texttt{1880}. En este servicio se han configurado las suscripciones a los tópicos \ac{MQTT}. Se ha realizado mediante un nodo \ac{MQTT} de tipo "Subscribe" con la dirección del broker Mosquitto \ac{MQTT} de la instancia \ac{EC2}, junto con el tópico configurado en Cloud Connect. Posteriormente, nodos de función transforman los datos recibidos para codificarlos y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
+En NodeRED se han configurado las suscripciones a los tópicos \ac{MQTT}. Se ha realizado mediante un nodo \ac{MQTT} de tipo "Subscribe" con la dirección del broker Mosquitto \ac{MQTT} de la instancia \ac{EC2}, junto con el tópico configurado en Cloud Connect. Posteriormente, nodos de función transforman los datos recibidos en un formato compatible y un nodo de salida para insertar los datos en InfluxDB (\ref{fig:nodered}).\\ \par
 
 \begin{figure}[tb]
     \centering
@@ -1040,8 +1039,7 @@ De esta forma cualquier navegador web con las credenciales necesarias puede acce
     \label{fig:nodered}
 \end{figure}
 
-A consecuencia de esta configuración, InfluxDB alojado en el puerto \texttt{8086} recibe los datos enviados desde Node-RED y los almacena en un bucket configurado. para configurar la base de datos y los buckets necesarios para almacenar los datos del parque eólico.\par 
-
+A consecuencia de esta configuración, InfluxDB alojado en el puerto \texttt{8086} recibe los datos enviados desde Node-RED y los almacena en un bucket configurado. 
 
 Una vez configurada la fuente de datos, se han creado los dashboards personalizados para la monitorización del parque eólico en Grafana (ver Figura \ref{fig:grafana_dashboard}), utilizando las consultas a InfluxDB para mostrar variables como la velocidad del viento, potencia generada, estados de los aerogeneradores, entre otros indicadores clave de rendimiento (KPIs) relevantes para la operación y mantenimiento del parque eólico. Con este ciclo se integra la parte operativa \ac{OT} con la parte de gestión de datos \ac{IT} haciendo de los aerogeneradores un \ac{CPS} base de la industria 4.0.\par
 \begin{figure}[tbp]
@@ -1051,7 +1049,7 @@ Una vez configurada la fuente de datos, se han creado los dashboards personaliza
     \label{fig:grafana_dashboard}
 \end{figure}
 \section{Ciberseguridad IEC 62443-4-2:2019}
-Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma \textbf{IEC 62443-4-2:2019} de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro \ac{SL} distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
+Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro \ac{SL} distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
 
 \begin{itemize}
     \item \textbf{\ac{SL} 1:} Protección contra vulneraciones casuales/accidentales:
@@ -1066,7 +1064,7 @@ Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 
 
 Los \ac{FR} son los requisitos de seguridad que deben cumplirse para alcanzar el SL específico. Estos requisitos se dividen en siete categorías principales, cada una con sub-requisitos específicos. Siemens ha evaluado su producto SIMATIC HMI WinCC V8.1 en función de estos requisitos y ha determinado que siguiendo los pasos recomendados en la documentación oficial proporcionada por ellos mismos, se puede alcanzar un nivel de seguridad \ac{SL} 2, con capacidades parciales para \ac{SL} 3 mediante la adecuada configuración de la segmentación de red y los mecanismos de detección \cite{siemens_wincc_security}.\par\indent
 
-Para dar cumplimiento específico al requisito fundamental \textit{FR 1 (Identification and Authentication Control)} bajo las directrices del nivel de seguridad \textbf{\ac{SL} 2}, se prohíbe explícitamente el empleo de cuentas genéricas o compartidas en la planta. El sistema debe garantizar la identificación única de cada usuario. 
+Para dar cumplimiento específico al requisito fundamental \textit{FR 1 (Identification and Authentication Control)} bajo las directrices del nivel de seguridad \ac{SL} 2, se prohíbe explícitamente el empleo de cuentas genéricas o compartidas en la planta. El sistema debe garantizar la identificación única de cada usuario. 
 
 Con este propósito, se ha diseñado una estructura de \ac{RBCA} mediante la herramienta \textit{WinCC User Administrator}. En la Tabla \ref{tab:roles_wincc} se detalla la configuración de los grupos funcionales creados, su nivel de acceso y las autorizaciones numéricas específicas asignadas dentro del entorno SIMATIC.
 

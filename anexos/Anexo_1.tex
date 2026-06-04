@@ -1,7 +1,6 @@
 \chapter{Anexo I: Código de la Solución}
 \label{cap:anexo_codigo_solucion}
 
-\section{Código de WinCC}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0,0,0.82}
@@ -33,8 +32,9 @@
     tabsize=2
 }
 
-\section{Código fuente}
-\subsection{Filtrado de turbinas por estado y subestación}
+\section{Código WinCC}
+En esta sección se presentan los algoritmos de filtrado implementados mediante scripts globales en WinCC. El código se ha desarrollado en lenguajes de programación compatibles con WinCC, como VBScript o C, y se ha incluido con comentarios explicativos para facilitar su comprensión. Estos algoritmos se encargan de filtrar y organizar la visualización de los aerogeneradores en función de su estado operativo y su pertenencia a parques específicos, además de gestionar la navegación entre diferentes pantallas del sistema SCADA.
+\subsection{\texttt{AplicarFiltroPosicion()}}
 \begin{lstlisting}
 void AplicarFiltroPosicion(){
 
@@ -147,7 +147,7 @@ void AplicarFiltroPosicion(){
     }
 }
 \end{lstlisting}
-\subsection{Filtrado de parques por estado y subestación}
+\subsection{\texttt{AplicarFiltroParque()}}
 \begin{lstlisting}
 #include "apdefap.h" 
 void AplicarFiltroParque(){ 
@@ -280,7 +280,7 @@ void AplicarFiltroParque(){
     } 
 }
 \end{lstlisting}
-\subsection{Navegación menu}
+\subsection{MenuNavigation.bmo}
 \begin{lstlisting}
 Sub MenuNavigation(Byval menuItem)
 Dim myScreen : myScreen =menuItem.userData
@@ -297,15 +297,15 @@ End If
 End Sub
 \end{lstlisting}
 \section{Código de IIoT}
-
+En este apartado se incluyen fragmentos de código relevantes para la solución desarrollada en el ámbito de IIoT. Estos framentos corresponden a comandos de instalación, configuración de Docker Compose.
+\subsection{Instalación de docker}
 \begin{lstlisting}[language=bash]
 sudo apt update
 sudo apt install docker.io docker-compose -y
 sudo systemctl start docker
 sudo systemctl enable docker
 \end{lstlisting}
-
-% Tip: He cambiado temporalmente a lenguaje=YAML para que el resaltado del compose sea correcto
+\subsection{docker-compose.yml}
 \begin{lstlisting}[language=XML]
 version: '3.8'
 
@@ -347,11 +347,285 @@ services:
     restart: always
 
 \end{lstlisting}
-
+\subsection{Despliegue del contenedor}
 \begin{lstlisting}[language=bash]
 sudo docker-compose up -d
 \end{lstlisting}
+\section{Código NodeRED}
 
+En esta sección se presenta el código de las funciones más relevantes implementadas en NodeRED para la simulación y control del aerogenerador. Estos fragmentos de código corresponden a las funciones JavaScript utilizadas en los nodos de función dentro de los flujos de NodeRED, y se han incluido con comentarios explicativos para facilitar su comprensión.
+\subsection{Nodo : parametro de viento}
+Este nodo se encarga de calcular el viento utilizado para los cálculos analógicos a partir de la consigna del usuario. De esta forma, cuando el usuario cambia la consigna de viento, el valor virtual simulado aumenta o disminuye progresivamente. Además, se implementa una lógica de emergencia que hace que el viento virtal caiga a 0 si se supera un umbral de velocidad o si se activa una alarma o mantenimiento.
+\begin{lstlisting}
+    // 1. Intentar leer los valores
+let windSpd = flow.get("windSpd") || 0; // Viento real del sensor
+let target = flow.get("targetWind") || 0;
+let current = flow.get("windSpdTurbine") || 0;
+let alarm = flow.get("Alarmas") || 0;
+let mantenimiento = flow.get("Mantenimiento")|| 0 ;
+// 3. Configuracion de la rampa
+let paso = 0.5; 
+// 2. Logica de EMERGENCIA
+// Si el viento supera los 25 m/s, el objetivo real de la turbina DEBE ser 0
+if (windSpd > 25) {
+    target = 0;
+    paso=1;
+}
+if(alarm){
+    target = 0;
+    paso=1;
+}
+if(mantenimiento){
+    target = 0;
+    paso=1;
+}
+// Asegurarnos de que sean numeros
+target = parseFloat(target);
+current = parseFloat(current);
+
+
+
+// 4. Logica de movimiento (Rampa)
+if (Math.abs(current - target) < paso) {
+    current = target;
+} else if (current < target) {
+    current += paso;
+} else if (current > target) {
+    current -= paso;
+}
+
+// 5. GUARDAR el resultado para el proximo ciclo
+flow.set("windSpdTurbine", current);
+
+// 6. Enviar el valor al SCADA/Kepware
+msg.payload = current;
+
+// Opcional: Enviar info adicional para depuracion en el debug tab
+msg.emergency = (windSpd > 25);
+
+return msg;
+\end{lstlisting}
+\subsection{Nodo: Potencia generada}
+Este nodo se encarga de calcular la potencia generada por el aerogenerador en función de la velocidad del viento virtual. Se implementa una lógica basada en la curva de potencia típica de un aerogenerador, que incluye una fase de arranque, una fase de potencia creciente, una fase de potencia nominal y una fase de corte por viento excesivo.
+\begin{lstlisting}
+    // 1. Recoger velocidad del slider
+let v = parseFloat(flow.get("windSpdTurbine")) || 0;
+
+// Parametros de la curva (2.5 MW)
+const cutIn = 3.5;
+const nominal = 13.0;
+const cutOut = 25.0;
+const potMax = 2500.0;
+
+let potencia = 0;
+
+// 2. Logica de la curva de potencia
+if (v >= cutIn && v < nominal) {
+    // Curva cubica entre arranque y nominal
+    potencia = potMax * Math.pow((v - cutIn) / (nominal - cutIn), 3);
+} else if (v >= nominal && v <= cutOut) {
+    // Potencia maxima constante
+    potencia = potMax;
+} else {
+    // Por debajo de cut-in o por encima de cut-out: 0
+    potencia = 0;
+}
+
+// Redondeamos a 2 decimales
+potencia = Math.round(potencia * 100) / 100;
+
+// 3. LA CLAVE: Enviamos solo el numero, no un objeto
+msg.payload = potencia;
+
+return msg;
+\end{lstlisting}
+\subsection{Nodo: Calculo viento actual}
+Este nodo se encarga de calcular el valor de viento actual que se enviará a la variable dentro de WMET para que salga visualizandose en el SCADA. El valor es el mismo que el del viento actual salvo cuando entra en modo de emergencia, pausa o mantenimiento.
+\begin{lstlisting}
+    // 1. Intentar leer los valores
+let target = flow.get("targetWind");
+let current = flow.get("windSpd");
+
+// 2. Si es la primera vez que se ejecuta, forzamos valores iniciales
+if (target === undefined) target = 0;
+if (current === undefined) current = 0;
+
+// Asegurarnos de que sean numeros
+target = parseFloat(target);
+current = parseFloat(current);
+
+// 3. Configuracion de la rampa
+let paso = 0.5; 
+
+// 4. Logica de movimiento
+if (Math.abs(current - target) < paso) {
+    current = target;
+} else if (current < target) {
+    current += paso;
+} else if (current > target) {
+    current -= paso;
+}
+
+// 5. GUARDAR el resultado
+flow.set("windSpd", current);
+
+
+// 5. Enviar el valor al SCADA/Kepware
+msg.payload=current;
+
+// Solo enviamos mensaje si realmente nos estamos moviendo
+// (O puedes quitar este IF si quieres flujo constante de datos)
+return msg;
+\end{lstlisting}
+\subsection{Nodo :  Orientación}
+Este nodo se encarga de calcular el valor de orientación de la turbina, calculando la dirección de giro en base a la posición actual y la posición objetivo, y actualizando la posición actual progresivamente para simular el movimiento de la turbina hacia la consigna de orientación establecida por el usuario.
+\begin{lstlisting}
+    // 1. Obtener la consigna (Target) y la posicion actual (Current)
+let target = parseFloat(flow.get("targetAngle")) || 0;
+let current = context.get("currentPos") || 0;
+
+// 2. Configurar la velocidad del movimiento
+// Cuanto mas alto sea este numero, mas rapido llegara a la consigna
+let paso = 0.7; 
+
+// 3. Logica de aproximacion
+if (current < target) {
+    // Si la posicion actual es menor, subimos
+    current += paso;
+    // Si nos pasamos del objetivo por el tamano del paso, igualamos
+    if (current > target) current = target;
+    
+} else if (current > target) {
+    // Si la posicion actual es mayor, bajamos
+    current -= paso;
+    // Si nos pasamos bajando, igualamos
+    if (current < target) current = target;
+}
+
+// 4. Guardar la nueva posicion en la memoria del nodo para el proximo ciclo
+context.set("currentPos", current);
+
+// 5. Enviar el valor al SCADA/Kepware
+msg.payload=current;
+
+// Solo enviamos mensaje si realmente nos estamos moviendo
+// (O puedes quitar este IF si quieres flujo constante de datos)
+return msg;
+\end{lstlisting}
+\subsection{Nodo: Orientación de pala}
+Este nodo se encarga de calcular el ángulo de pitch de las palas del aerogenerador en función de la velocidad del viento. Se implementa una lógica que ajusta el ángulo de pitch para optimizar la producción de energía y proteger el aerogenerador en condiciones de viento excesivo, siguiendo una curva típica de control de pitch.
+\begin{lstlisting}
+    // 1. Leer el ultimo valor guardado por el slider en el flujo (flow)
+// Si no existe aun (al arrancar), usamos 0 por defecto
+let windSpd = flow.get("windSpdTurbine") || 0;
+
+// 2. Parametros de la turbina
+const V_ARRANQUE = 3.0;
+const V_NOMINAL = 12.0;
+const V_CORTE = 25.0;
+
+let pitchAngle = 0;
+
+// 3. Logica de Pitch
+if (windSpd < V_ARRANQUE) {
+    pitchAngle = 90; 
+} else if (windSpd >= V_ARRANQUE && windSpd <= V_NOMINAL) {
+    pitchAngle = 0; 
+} else if (windSpd > V_NOMINAL && windSpd <= V_CORTE) {
+    pitchAngle = ((windSpd - V_NOMINAL) / (V_CORTE - V_NOMINAL)) * 90;
+} else {
+    pitchAngle = 90; 
+}
+
+// 4. Preparar el envio para KEPServer
+// Nota: Si en Kepware usas "Short", usa Math.round(pitchAngle)
+// Si usas "Float", dejalo con decimales.
+
+
+// 3. LA CLAVE: Enviamos solo el numero, no un objeto
+msg.payload = pitchAngle;
+return msg;
+\end{lstlisting}
+\subsection{Nodo: Azimut del rotor}
+Este nodo se encarga de calcular el ángulo de azimut del rotor del aerogenerador en función de las RPM del rotor. Se implementa una lógica que actualiza el ángulo de azimut progresivamente en función de las RPM, simulando el movimiento continuo del rotor a medida que gira.
+\begin{lstlisting}
+    // 1. Recuperar las RPM del rotor (calculadas en el nodo anterior)
+// Si no hay valor, asumimos 0 RPM
+let rpm = parseFloat(flow.get("rotorRPM")) || 0;
+
+    // 2. Recuperar el angulo actual de la memoria del contexto
+let currentAngle = context.get("currentAngle") || 0;
+
+// 3. Logica de conversion: de RPM a Grados por segundo
+// Una revolucion = 360 grados.
+// RPM / 60 = Revoluciones por segundo.
+// (RPM / 60) * 360 = Grados por segundo.
+// Simplificado: RPM * 6.
+let gradosPorSegundo = rpm * 6;
+
+// 4. Calcular el incremento para este ciclo de 100ms (0.1 segundos)
+let incremento = gradosPorSegundo * 0.1;
+
+// 5. Sumar el incremento al angulo actual
+currentAngle += incremento;
+
+// 6. Si pasa de 360 grados, resetear (vuelta a empezar)
+// Usamos el operador modulo para mantener precision
+if (currentAngle >= 360) {
+    currentAngle = currentAngle % 360;
+}
+
+// 7. Guardar el nuevo angulo en la memoria del contexto para el proximo ciclo
+context.set("currentAngle", currentAngle);
+
+// 8. Enviar el resultado al SCADA/Kepware
+msg.payload = parseFloat(currentAngle.toFixed(2));
+
+return msg;
+\end{lstlisting}
+\subsection{Nodo: Velocidad del rotor}
+Este nodo se encarga de calcular las RPM del rotor del aerogenerador en función de la velocidad del viento.
+\begin{lstlisting}
+    // 1. Recuperar el viento de la memoria (0 si no hay nada)
+let windSpd = parseFloat(flow.get("windSpdTurbine")) || 0;
+/**
+ * Calculo de RPM basado en la velocidad del viento (windSpd)
+ * Parametros configurables:
+ */
+const cutIn = 3;      // Velocidad minima para empezar a girar (m/s)
+const cutOut = 25;    // Velocidad de parada por seguridad (m/s)
+const ratedSpd = 12;  // Velocidad a la que alcanza RPM maximas (m/s)
+const maxRPM = 15;    // RPM maximas del rotor
+
+let rpm = 0;
+
+// 1. LLogica de estados segun velocidad del viento
+if (windSpd < cutIn) {
+    // Viento insuficiente: El rotor esta en PAUSA o PARADO
+    rpm = 0;
+} 
+else if (windSpd >= cutIn && windSpd < ratedSpd) {
+    // Zona de produccion: Las RPM suben linealmente con el viento
+    // Formula: rpm = (viento - min) * (maxRPM / (viento_nominal - min))
+    rpm = (windSpd - cutIn) * (maxRPM / (ratedSpd - cutIn));
+} 
+else if (windSpd >= ratedSpd && windSpd <= cutOut) {
+    // Zona nominal: El sistema de "pitch" mantiene las RPM constantes
+    rpm = maxRPM;
+} 
+else {
+    // EMERGENCIA: Viento > 25 m/s, el rotor se frena a 0
+    rpm = 0;
+}
+
+// 2. Limpieza de datos (evitar decimales infinitos)
+msg.payload = parseFloat(rpm.toFixed(2));
+
+// 3. (Opcional) Guardar en flujo para otros nodos
+flow.set("rotorRPM", msg.payload);
+
+return msg;
+\end{lstlisting}
 \vspace{1cm}
 
 

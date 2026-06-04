@@ -1,28 +1,71 @@
 \chapter{Anexo III: Banco de Pruebas y Validación del Sistema}
 \label{cap:Pruebas}
+En este anexo se describe el banco de pruebas desarrollado para validad la solucion \ac{SCADA} implementada. Este banco de pruebas se ha diseñado para simular un aerogenerador y generar datos sintéticos que permitan evaluar el funcionamiento del sistema de monitorización y control desarrollado. Se han implementado diferentes escenarios operativos y condiciones de viento para probar la capacidad del sistema para manejar situaciones reales y garantizar su robustez y fiabilidad en un entorno industrial simulado.
 
 \section{Gemelo funcional de aerogeneradores}
-\begin{figure}[htbp]
+
+El gemelo funcional de aerogeneradores se ha desarrollado mediante la herramienta Node RED. Este gemelo se fundamenta en el desarrollo de una máquina de estados que simula el comportamiento dinámico de un aerogenerador en base a condiciones de viento introducidas por el usuario (ver Figura \ref{fig:modelo_GEMMA}).
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figuras/Gemma.png}
+    \caption{Diagrama de estados GEMMA para el modelo de simulación de aerogeneradores.}
+    \label{fig:modelo_GEMMA}
+\end{figure}
+
+Se definen 8 estados operativos principales para el aerogenerador (ver Tabla \ref{tab:estados_aerogenerador}). Cada estado tiene transiciones definidas en función de las condiciones de viento y eventos específicos, lo que permite simular el comportamiento realista del aerogenerador bajo diferentes escenarios operativos.\par
+\begin{table}[tbp]
+    \centering
+    \caption{Definición de los estados operativos del aerogenerador en el sistema SCADA.}
+    \label{tab:estados_aerogenerador}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{c l p{10cm}}
+            \toprule
+            \textbf{Valor ID} & \textbf{Estado Operativo} & \textbf{Descripción del Comportamiento} \\ 
+            \midrule
+            \texttt{0} & Parada  & Turbina parada y desconectada de la red. \\
+            \midrule
+            \texttt{1} & Arranque  & Secuencia de arranque transitoria\\
+            \midrule
+            \texttt{2} & Marcha  & Estado nominal. Aerogenerador acoplado a red. \\
+            \midrule
+            \texttt{3} & En Espera  & Sistema listo a espera de viento \\
+            \midrule
+            \texttt{4} & Apagado  & Secuencia transitoria de apagado.\\
+            \midrule
+            \texttt{5} & Emergencia  & La turbina se detiene de forma abrupta por sobreviento. \\
+            \midrule
+            \texttt{6} & Mantenimiento & Turbina detenida para labores de mantenimiento \\
+            \midrule
+            \texttt{7} & Fallo / Alarma  & La turbina se detiene por seguridad\\
+            \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+El desarrollo de esta maquina de estados se ha realizado utilizando NodeRED. Para desarrollar el modelo, se parte de la idea de observar el estado actual del aerogenerador, evaluar las condiciones de las transiciones entre estados y calcular el nuevo estado del aerogenerador. Para ello se han utilizado nodos de conmutación (Nodos amarillos). (ver Anexo \ref{cap:anexo_codigo_solucion}).
+\begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth]{figuras/maquinaestados.png}
     \caption{Maquina de estados del modelo de simulación de aerogeneradores.}
     \label{fig:modelo_simulacion_aerogenerador}
 \end{figure}
-\begin{figure}[htbp]
+Además de la máquina de estados, el gemelo funcional incluye cálculos analógicos para simular variables de interés como la potencia generada, velocidad del rotor, ángulo de paso de las palas, entre otros (ver Figura \ref{fig:modelo_simulacion_aerogenerador}). Estos cálculos se realizan mediante nodos de función en NodeRED (ver Anexo \ref{cap:anexo_codigo_solucion}). \par
+\begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/CalculoAnalogico.png}
     \caption{Cálculo analógico de variables de interés.}
     \label{fig:modelo_simulacion_aerogenerador}
 \end{figure}
-\begin{figure}[htbp]
+También se han implementado mecanismos de control de alarmas y eventos para simular situaciones de fallo o condiciones operativas anómalas. Al activar algun boton de alarma se activa la variable global de \textit{Alarmas}. De esta forma los demás nodos pueden reaccionar ante estas condiciones. (ver Figura \ref{fig:modelo_alarmas}).\par
+\begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/Alarmas.png}
     \caption{Control de alarmas y eventos en el modelo de simulación.}
-    \label{fig:modelo_simulacion_aerogenerador}
+    \label{fig:modelo_alarmas}
 \end{figure}
-\begin{figure}[htbp]
+Un aerogenerador simulado tiene aproximadamente 650 variables, realizar todas mediante funciones de nodeRED para realizar pruebas de concepto resulta poco eficiente. Por ello, el resto de variables se generan mediante funciones integradas en KEPServerEX, que se ejecutan en paralelo a la máquina de estados de NodeRED. Estas funciones se configuran para generar datos sintéticos basados en fórmulas matemáticas o patrones predefinidos, lo que permite simular un comportamiento más realista y complejo del aerogenerador sin sobrecargar el flujo principal de NodeRED (ver Figura \ref{fig:modelo_Kepserver}).\par
+\begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/SimKepServer.png}
     \caption{Control de alarmas y eventos en el modelo de simulación.}
-    \label{fig:modelo_simulacion_aerogenerador}
+    \label{fig:modelo_Kepserver}
 \end{figure}
