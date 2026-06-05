@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  4 JUN 2026 13:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  5 JUN 2026 13:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1247,6 +1247,9 @@ LaTeX Warning: Label `fig:modelo_simulacion_aerogenerador' multiply defined.
 
 LaTeX Warning: Label `tab:diccionario_walm' multiply defined.
 
+
+LaTeX Warning: Label `tab:diccionario_walm' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1555,7 +1558,7 @@ although it is yet undefined on input line 33.
 Package acronym Info: Label `acro:IM' newly defined as it shall be overridden
 although it is yet undefined on input line 38.
  [8]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 97.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 96.
  (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1910,7 +1913,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<figuras/RiesgosCO2.png, id=892, 420.82219pt x 536.75531pt>
+<figuras/RiesgosCO2.png, id=893, 420.82219pt x 536.75531pt>
 File: figuras/RiesgosCO2.png Graphic file (type png)
 <use figuras/RiesgosCO2.png>
 Package pdftex.def Info: figuras/RiesgosCO2.png  used on input line 16.
@@ -1934,7 +1937,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has b
                    \relax 
 l.46 \section
              {Beneficios energÃ©ticos} [8 <./figuras/RiesgosCO2.png>]
-<figuras/PNIEC2024.png, id=921, 727.21687pt x 438.13687pt>
+<figuras/PNIEC2024.png, id=922, 727.21687pt x 438.13687pt>
 File: figuras/PNIEC2024.png Graphic file (type png)
 <use figuras/PNIEC2024.png>
 Package pdftex.def Info: figuras/PNIEC2024.png  used on input line 79.
@@ -1964,7 +1967,7 @@ l.98 \end{itemize}
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ac' on input line 100.
 
-<figuras/ODS.png, id=951, 1103.322pt x 568.2831pt>
+<figuras/ODS.png, id=952, 1103.322pt x 568.2831pt>
 File: figuras/ODS.png Graphic file (type png)
 <use figuras/ODS.png>
 Package pdftex.def Info: figuras/ODS.png  used on input line 116.
@@ -2003,7 +2006,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<figuras/Wifi.png, id=970, 433.62pt x 382.42876pt>
+<figuras/Wifi.png, id=971, 433.62pt x 382.42876pt>
 File: figuras/Wifi.png Graphic file (type png)
 <use figuras/Wifi.png>
 Package pdftex.def Info: figuras/Wifi.png  used on input line 23.
@@ -2015,7 +2018,7 @@ Underfull \hbox (badness 2653) in paragraph at lines 24--24
 [][]|\T1/bch/m/n/9 (+20) Ar-qui-tec-tura de red in-
  []
 
-<figuras/zigbee.png, id=971, 409.53pt x 329.73187pt>
+<figuras/zigbee.png, id=972, 409.53pt x 329.73187pt>
 File: figuras/zigbee.png Graphic file (type png)
 <use figuras/zigbee.png>
 Package pdftex.def Info: figuras/zigbee.png  used on input line 29.
@@ -2025,7 +2028,7 @@ Underfull \hbox (badness 2469) in paragraph at lines 30--30
 [][]|\T1/bch/m/n/9 (+20) Ar-qui-tec-tura de red in-
  []
 
-<figuras/ethernet.png, id=972, 435.87843pt x 422.32782pt>
+<figuras/ethernet.png, id=973, 435.87843pt x 422.32782pt>
 File: figuras/ethernet.png Graphic file (type png)
 <use figuras/ethernet.png>
 Package pdftex.def Info: figuras/ethernet.png  used on input line 35.
@@ -2063,7 +2066,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has 
                    \relax 
 l.51 
       [16 <./figuras/Wifi.png> <./figuras/zigbee.png> <./figuras/ethernet.png>]
-<figuras/Anomalia.png, id=1008, 786.68906pt x 616.55344pt>
+<figuras/Anomalia.png, id=1009, 786.68906pt x 616.55344pt>
 File: figuras/Anomalia.png Graphic file (type png)
 <use figuras/Anomalia.png>
 Package pdftex.def Info: figuras/Anomalia.png  used on input line 58.
@@ -2129,7 +2132,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 Package acronym Info: Label `acro:HMI' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-<figuras/WinCC.png, id=1044, 371.88937pt x 135.50626pt>
+<figuras/WinCC.png, id=1045, 371.88937pt x 135.50626pt>
 File: figuras/WinCC.png Graphic file (type png)
 <use figuras/WinCC.png>
 Package pdftex.def Info: figuras/WinCC.png  used on input line 11.
@@ -2159,17 +2162,17 @@ Underfull \hbox (badness 1960) in paragraph at lines 46--46
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22 <./figuras/WinCC.png>]
-<figuras/Monopuesto.png, id=1072, 1254.6875pt x 596.2275pt>
+<figuras/Monopuesto.png, id=1073, 1254.6875pt x 596.2275pt>
 File: figuras/Monopuesto.png Graphic file (type png)
 <use figuras/Monopuesto.png>
 Package pdftex.def Info: figuras/Monopuesto.png  used on input line 63.
 (pdftex.def)             Requested size: 355.9042pt x 169.126pt.
-<figuras/MonopuestoRedundante.png, id=1073, 2439.1125pt x 1195.46625pt>
+<figuras/MonopuestoRedundante.png, id=1074, 2439.1125pt x 1195.46625pt>
 File: figuras/MonopuestoRedundante.png Graphic file (type png)
 <use figuras/MonopuestoRedundante.png>
 Package pdftex.def Info: figuras/MonopuestoRedundante.png  used on input line 74.
 (pdftex.def)             Requested size: 355.9042pt x 174.42352pt.
-<figuras/Multipuesto.png, id=1074, 1798.72pt x 1198.4775pt>
+<figuras/Multipuesto.png, id=1075, 1798.72pt x 1198.4775pt>
 File: figuras/Multipuesto.png Graphic file (type png)
 <use figuras/Multipuesto.png>
 Package pdftex.def Info: figuras/Multipuesto.png  used on input line 83.
@@ -2213,7 +2216,7 @@ Underfull \vbox (badness 2521) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-<figuras/Nodos.png, id=1138, 2380.895pt x 1766.6pt>
+<figuras/Nodos.png, id=1139, 2380.895pt x 1766.6pt>
 File: figuras/Nodos.png Graphic file (type png)
 <use figuras/Nodos.png>
 Package pdftex.def Info: figuras/Nodos.png  used on input line 226.
@@ -2238,7 +2241,7 @@ Underfull \hbox (badness 1062) in paragraph at lines 265--265
 Underfull \vbox (badness 1728) has occurred while \output is active []
 
  [29] [30 <./figuras/Nodos.png>]
-<figuras/Nodos_1400.png, id=1171, 699.5736pt x 525.6438pt>
+<figuras/Nodos_1400.png, id=1172, 699.5736pt x 525.6438pt>
 File: figuras/Nodos_1400.png Graphic file (type png)
 <use figuras/Nodos_1400.png>
 Package pdftex.def Info: figuras/Nodos_1400.png  used on input line 295.
@@ -2252,7 +2255,7 @@ Underfull \vbox (badness 3579) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32 <./figuras/Nodos_1400.png>]
-<figuras/IEC_61400-25-2_v1.jpg, id=1189, 458.46281pt x 249.93375pt>
+<figuras/IEC_61400-25-2_v1.jpg, id=1190, 458.46281pt x 249.93375pt>
 File: figuras/IEC_61400-25-2_v1.jpg Graphic file (type jpg)
 <use figuras/IEC_61400-25-2_v1.jpg>
 Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 332.
@@ -2268,12 +2271,12 @@ although it is yet undefined on input line 385.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34 <./figuras/IEC_61400-25-2_v1.jpg>] [35]
-<figuras/celda_linea.png, id=1228, 130.23656pt x 110.66344pt>
+<figuras/celda_linea.png, id=1229, 130.23656pt x 110.66344pt>
 File: figuras/celda_linea.png Graphic file (type png)
 <use figuras/celda_linea.png>
 Package pdftex.def Info: figuras/celda_linea.png  used on input line 417.
 (pdftex.def)             Requested size: 177.95401pt x 106.77771pt.
-<figuras/Celda_Trafo.png, id=1229, 164.86594pt x 82.80937pt>
+<figuras/Celda_Trafo.png, id=1230, 164.86594pt x 82.80937pt>
 File: figuras/Celda_Trafo.png Graphic file (type png)
 <use figuras/Celda_Trafo.png>
 Package pdftex.def Info: figuras/Celda_Trafo.png  used on input line 424.
@@ -2293,7 +2296,7 @@ Package acronym Warning: Acronym DA is not defined on input line 472.
 [37{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 Package acronym Info: Label `acro:SOA' newly defined as it shall be overridden
 although it is yet undefined on input line 497.
-<figuras/OPCUA_metamodelo.png, id=1281, 496.254pt x 273.4215pt>
+<figuras/OPCUA_metamodelo.png, id=1282, 496.254pt x 273.4215pt>
 File: figuras/OPCUA_metamodelo.png Graphic file (type png)
 <use figuras/OPCUA_metamodelo.png>
 Package pdftex.def Info: figuras/OPCUA_metamodelo.png  used on input line 504.
@@ -2303,18 +2306,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 505--505
 \T1/bch/m/n/10 (+20) https://www.unified-automation.com/products/opc-ua/technology/opc-ua-
  []
 
-<figuras/NodeRed_KepServer.png, id=1287, 2826.56pt x 874.26625pt>
+<figuras/NodeRed_KepServer.png, id=1288, 2826.56pt x 874.26625pt>
 File: figuras/NodeRed_KepServer.png Graphic file (type png)
 <use figuras/NodeRed_KepServer.png>
 Package pdftex.def Info: figuras/NodeRed_KepServer.png  used on input line 515.
 (pdftex.def)             Requested size: 395.7157pt x 122.39644pt.
 [38]
-<figuras/Opc_endpoint.png, id=1300, 463.7325pt x 295.1025pt>
+<figuras/Opc_endpoint.png, id=1301, 463.7325pt x 295.1025pt>
 File: figuras/Opc_endpoint.png Graphic file (type png)
 <use figuras/Opc_endpoint.png>
 Package pdftex.def Info: figuras/Opc_endpoint.png  used on input line 528.
 (pdftex.def)             Requested size: 395.45181pt x 251.65782pt.
-<figuras/certificados_opc.png, id=1302, 464.4853pt x 295.1025pt>
+<figuras/certificados_opc.png, id=1303, 464.4853pt x 295.1025pt>
 File: figuras/certificados_opc.png Graphic file (type png)
 <use figuras/certificados_opc.png>
 Package pdftex.def Info: figuras/certificados_opc.png  used on input line 536.
@@ -2327,13 +2330,13 @@ Overfull \hbox (12.9126pt too wide) in paragraph at lines 554--554
 []\T1/bch/m/n/10.95 (-20) Esta conex-ión \T1/lmtt/m/n/10.95 OPC_UA_IGL_I \T1/bch/m/n/10.95 (-20) apunta di-rec-ta-mente al \T1/bch/m/it/10.95 (-20) End-point \T1/bch/m/n/10.95 (-20) del servi-dor KEPServerEX
  []
 
-<figuras/Conexion_Opc.png, id=1331, 372.64218pt x 144.54pt>
+<figuras/Conexion_Opc.png, id=1332, 372.64218pt x 144.54pt>
 File: figuras/Conexion_Opc.png Graphic file (type png)
 <use figuras/Conexion_Opc.png>
 Package pdftex.def Info: figuras/Conexion_Opc.png  used on input line 557.
 (pdftex.def)             Requested size: 395.45181pt x 153.3925pt.
 [41]
-<figuras/IEM.png, id=1346, 724.7075pt x 371.3875pt>
+<figuras/IEM.png, id=1347, 724.7075pt x 371.3875pt>
 File: figuras/IEM.png Graphic file (type png)
 <use figuras/IEM.png>
 Package pdftex.def Info: figuras/IEM.png  used on input line 587.
@@ -2362,7 +2365,7 @@ Overfull \hbox (37.21332pt too wide) in paragraph at lines 588--588
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43 <./figuras/IEM.png (PNG copy)>]
-<figuras/jerarquia.png, id=1365, 878.53218pt x 576.65437pt>
+<figuras/jerarquia.png, id=1366, 878.53218pt x 576.65437pt>
 File: figuras/jerarquia.png Graphic file (type png)
 <use figuras/jerarquia.png>
 Package pdftex.def Info: figuras/jerarquia.png  used on input line 616.
@@ -2374,7 +2377,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [45 <./figuras/jerarquia.png>]
-<figuras/00_Main_Interface.png, id=1383, 1011.02719pt x 465.99094pt>
+<figuras/00_Main_Interface.png, id=1384, 1011.02719pt x 465.99094pt>
 File: figuras/00_Main_Interface.png Graphic file (type png)
 <use figuras/00_Main_Interface.png>
 Package pdftex.def Info: figuras/00_Main_Interface.png  used on input line 654.
@@ -2390,43 +2393,43 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:plantillas_dinamizadas' on page 47 undefined on input line 676.
 
-<figuras/WTG_Faceplate.png, id=1392, 676.02562pt x 252.19218pt>
+<figuras/WTG_Faceplate.png, id=1393, 676.02562pt x 252.19218pt>
 File: figuras/WTG_Faceplate.png Graphic file (type png)
 <use figuras/WTG_Faceplate.png>
 Package pdftex.def Info: figuras/WTG_Faceplate.png  used on input line 684.
 (pdftex.def)             Requested size: 189.81195pt x 94.90662pt.
-<figuras/Park_Faceplate.png, id=1393, 701.62125pt x 255.95625pt>
+<figuras/Park_Faceplate.png, id=1394, 701.62125pt x 255.95625pt>
 File: figuras/Park_Faceplate.png Graphic file (type png)
 <use figuras/Park_Faceplate.png>
 Package pdftex.def Info: figuras/Park_Faceplate.png  used on input line 691.
 (pdftex.def)             Requested size: 189.81497pt x 94.90541pt.
-<figuras/TurbinaDinamizada.png, id=1394, 331.2375pt x 124.21407pt>
+<figuras/TurbinaDinamizada.png, id=1395, 331.2375pt x 124.21407pt>
 File: figuras/TurbinaDinamizada.png Graphic file (type png)
 <use figuras/TurbinaDinamizada.png>
 Package pdftex.def Info: figuras/TurbinaDinamizada.png  used on input line 697.
 (pdftex.def)             Requested size: 189.81313pt x 94.90971pt.
-<figuras/ParqueDinamizado.png, id=1395, 338.76563pt x 132.495pt>
+<figuras/ParqueDinamizado.png, id=1396, 338.76563pt x 132.495pt>
 File: figuras/ParqueDinamizado.png Graphic file (type png)
 <use figuras/ParqueDinamizado.png>
 Package pdftex.def Info: figuras/ParqueDinamizado.png  used on input line 704.
 (pdftex.def)             Requested size: 189.82117pt x 94.90907pt.
 [47 <./figuras/00_Main_Interface.png>]
-<figuras/10_WTG_Overview.png, id=1404, 864.98157pt x 303.38344pt>
+<figuras/10_WTG_Overview.png, id=1405, 864.98157pt x 303.38344pt>
 File: figuras/10_WTG_Overview.png Graphic file (type png)
 <use figuras/10_WTG_Overview.png>
 Package pdftex.def Info: figuras/10_WTG_Overview.png  used on input line 723.
 (pdftex.def)             Requested size: 395.45181pt x 138.70166pt.
-<figuras/10_WTG_Overview_Selector.png, id=1405, 280.04625pt x 97.11281pt>
+<figuras/10_WTG_Overview_Selector.png, id=1406, 280.04625pt x 97.11281pt>
 File: figuras/10_WTG_Overview_Selector.png Graphic file (type png)
 <use figuras/10_WTG_Overview_Selector.png>
 Package pdftex.def Info: figuras/10_WTG_Overview_Selector.png  used on input line 731.
 (pdftex.def)             Requested size: 177.95984pt x 88.97885pt.
-<figuras/10_WTG_Overview_parque.png, id=1406, 496.10344pt x 201.00093pt>
+<figuras/10_WTG_Overview_parque.png, id=1407, 496.10344pt x 201.00093pt>
 File: figuras/10_WTG_Overview_parque.png Graphic file (type png)
 <use figuras/10_WTG_Overview_parque.png>
 Package pdftex.def Info: figuras/10_WTG_Overview_parque.png  used on input line 738.
 (pdftex.def)             Requested size: 177.95364pt x 88.97433pt.
-<figuras/Ordenamiento.png, id=1407, 1444.64719pt x 420.06938pt>
+<figuras/Ordenamiento.png, id=1408, 1444.64719pt x 420.06938pt>
 File: figuras/Ordenamiento.png Graphic file (type png)
 <use figuras/Ordenamiento.png>
 Package pdftex.def Info: figuras/Ordenamiento.png  used on input line 744.
@@ -2451,7 +2454,7 @@ Overfull \hbox (3.60165pt too wide) in paragraph at lines 832--832
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
-<figuras/Estados.png, id=1444, 274.02374pt x 114.4275pt>
+<figuras/Estados.png, id=1445, 274.02374pt x 114.4275pt>
 File: figuras/Estados.png Graphic file (type png)
 <use figuras/Estados.png>
 Package pdftex.def Info: figuras/Estados.png  used on input line 842.
@@ -2460,12 +2463,12 @@ File: figuras/celda_linea.png Graphic file (type png)
 <use figuras/celda_linea.png>
 Package pdftex.def Info: figuras/celda_linea.png  used on input line 872.
 (pdftex.def)             Requested size: 118.63667pt x 83.0497pt.
-<figuras/celda_linea_2.png, id=1446, 115.18031pt x 100.12407pt>
+<figuras/celda_linea_2.png, id=1447, 115.18031pt x 100.12407pt>
 File: figuras/celda_linea_2.png Graphic file (type png)
 <use figuras/celda_linea_2.png>
 Package pdftex.def Info: figuras/celda_linea_2.png  used on input line 879.
 (pdftex.def)             Requested size: 118.63702pt x 83.04947pt.
-<figuras/celda_linea_3.png, id=1447, 125.71968pt x 106.14656pt>
+<figuras/celda_linea_3.png, id=1448, 125.71968pt x 106.14656pt>
 File: figuras/celda_linea_3.png Graphic file (type png)
 <use figuras/celda_linea_3.png>
 Package pdftex.def Info: figuras/celda_linea_3.png  used on input line 886.
@@ -2484,7 +2487,7 @@ Package acronym Info: Label `acro:AWS' newly defined as it shall be overridden
 although it is yet undefined on input line 946.
 Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 although it is yet undefined on input line 947.
-<figuras/DiagramaCloud.png, id=1488, 2826.56pt x 1541.76pt>
+<figuras/DiagramaCloud.png, id=1489, 2826.56pt x 1541.76pt>
 File: figuras/DiagramaCloud.png Graphic file (type png)
 <use figuras/DiagramaCloud.png>
 Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 954.
@@ -2493,7 +2496,7 @@ Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 954.
 Package acronym Info: Label `acro:IaaS' newly defined as it shall be overridden
 although it is yet undefined on input line 961.
  [56 <./figuras/DiagramaCloud.png>]
-<figuras/DockerVM.png, id=1513, 1167.36125pt x 774.895pt>
+<figuras/DockerVM.png, id=1514, 1167.36125pt x 774.895pt>
 File: figuras/DockerVM.png Graphic file (type png)
 <use figuras/DockerVM.png>
 Package pdftex.def Info: figuras/DockerVM.png  used on input line 1000.
@@ -2508,7 +2511,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1001--1001
 \T1/bch/m/n/10 (+20) que eólico. Obtenido de []$\T1/lmtt/m/n/10 https : / / hanwenzhang123 . medium . com /
  []
 
-<figuras/DockerNetwork.png, id=1517, 770.88pt x 528.97626pt>
+<figuras/DockerNetwork.png, id=1518, 770.88pt x 528.97626pt>
 File: figuras/DockerNetwork.png Graphic file (type png)
 <use figuras/DockerNetwork.png>
 Package pdftex.def Info: figuras/DockerNetwork.png  used on input line 1012.
@@ -2537,7 +2540,7 @@ Overfull \hbox (5.35075pt too wide) in paragraph at lines 1021--1022
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58 <./figuras/DockerVM.png> <./figuras/DockerNetwork.png (PNG copy)>]
-<figuras/cloudconnect.png, id=1537, 417.05812pt x 176.91093pt>
+<figuras/cloudconnect.png, id=1538, 417.05812pt x 176.91093pt>
 File: figuras/cloudconnect.png Graphic file (type png)
 <use figuras/cloudconnect.png>
 Package pdftex.def Info: figuras/cloudconnect.png  used on input line 1027.
@@ -2547,7 +2550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1033--1033
 
  []
 
-<figuras/NodeRedMQTT.png, id=1543, 688.07062pt x 499.8675pt>
+<figuras/NodeRedMQTT.png, id=1544, 688.07062pt x 499.8675pt>
 File: figuras/NodeRedMQTT.png Graphic file (type png)
 <use figuras/NodeRedMQTT.png>
 Package pdftex.def Info: figuras/NodeRedMQTT.png  used on input line 1037.
@@ -2556,7 +2559,7 @@ Package pdftex.def Info: figuras/NodeRedMQTT.png  used on input line 1037.
 Underfull \vbox (badness 7433) has occurred while \output is active []
 
  [59 <./figuras/cloudconnect.png>]
-<figuras/Grafana.png, id=1554, 596.2275pt x 251.43938pt>
+<figuras/Grafana.png, id=1555, 596.2275pt x 251.43938pt>
 File: figuras/Grafana.png Graphic file (type png)
 <use figuras/Grafana.png>
 Package pdftex.def Info: figuras/Grafana.png  used on input line 1047.
@@ -2603,7 +2606,7 @@ Overfull \hbox (7.56499pt too wide) in paragraph at lines 162--163
  []
 
 [64]
-<figuras/carga.png, id=1612, 890.5772pt x 170.88844pt>
+<figuras/carga.png, id=1613, 890.5772pt x 170.88844pt>
 File: figuras/carga.png Graphic file (type png)
 <use figuras/carga.png>
 Package pdftex.def Info: figuras/carga.png  used on input line 168.
@@ -2635,7 +2638,48 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (capitulos/aspectos_econÃ³micos.tex [69] [70
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+
+pdfTeX warning: pdflatex (file ./figuras/gantt.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/gantt.pdf, id=1656, 845.07724pt x 597.55246pt>
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf>
+Package pdftex.def Info: figuras/gantt.pdf  used on input line 31.
+(pdftex.def)             Requested size: 845.07518pt x 597.551pt.
+
+
+pdfTeX warning: pdflatex (file ./figuras/gantt.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./figuras/gantt.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/gantt.pdf, id=1658, page=1, 845.07724pt x 597.55246pt>
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 845.07518pt x 597.551pt.
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+[70]
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+ [71
+
+ <./figuras/gantt.pdf>]) (capitulos/aspectos_econÃ³micos.tex [72
 
 
 ]
@@ -2652,13 +2696,13 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              that will remove this deprecated code.
 
 
-LaTeX Warning: Reference `sec:presupuesto_mano_obra' on page 71 undefined on input line 13.
+LaTeX Warning: Reference `sec:presupuesto_mano_obra' on page 73 undefined on input line 13.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
-<figuras/PrecioNube.png, id=1662, 457.71pt x 209.28188pt>
+ [73]
+<figuras/PrecioNube.png, id=1700, 457.71pt x 209.28188pt>
 File: figuras/PrecioNube.png Graphic file (type png)
 <use figuras/PrecioNube.png>
 Package pdftex.def Info: figuras/PrecioNube.png  used on input line 64.
@@ -2666,7 +2710,7 @@ Package pdftex.def Info: figuras/PrecioNube.png  used on input line 64.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72 <./figuras/PrecioNube.png>]) (capitulos/conclusiones.tex [73] [74
+ [74 <./figuras/PrecioNube.png>]) (capitulos/conclusiones.tex [75] [76
 
 
 ]
@@ -2685,7 +2729,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]) [76]
+ [77]) [78]
 chapter without number
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -2698,12 +2742,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[77
+[79
 
 
 
 
-] [78]
+] [80]
 
 Package biblatex Warning: Type 'online' not found on input line 91.
 
@@ -2714,7 +2758,7 @@ Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no l
 
 LaTeX Warning: Empty bibliography on input line 91.
 
-[79] [80
+[81] [82
 
 
 ] (anexos/Anexo_1.tex
@@ -2737,22 +2781,22 @@ File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81
+ [83
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [83]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [84]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [85] (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+ [85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87] (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -2761,12 +2805,6 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [86]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [87]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [88]
@@ -2781,7 +2819,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [91]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [92]) (anexos/Anexo_2.tex [93] [94
+ [92]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [93]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [94]) (anexos/Anexo_2.tex [95] [96
 
 
 ]
@@ -2800,7 +2844,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 
 
 pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/Topologia.pdf, id=2367, 2392.9802pt x 1690.39525pt>
+<figuras/Topologia.pdf, id=2406, 2392.9802pt x 1690.39525pt>
 File: figuras/Topologia.pdf Graphic file (type pdf)
 <use figuras/Topologia.pdf>
 Package pdftex.def Info: figuras/Topologia.pdf  used on input line 13.
@@ -2811,7 +2855,7 @@ pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PD
 
 
 pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/Topologia.pdf, id=2369, page=1, 2392.9802pt x 1690.39525pt>
+<figuras/Topologia.pdf, id=2408, page=1, 2392.9802pt x 1690.39525pt>
 File: figuras/Topologia.pdf Graphic file (type pdf)
 <use figuras/Topologia.pdf, page 1>
 Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
@@ -2820,7 +2864,7 @@ File: figuras/Topologia.pdf Graphic file (type pdf)
 <use figuras/Topologia.pdf, page 1>
 Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
 (pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
-[95]
+[97]
 File: figuras/Topologia.pdf Graphic file (type pdf)
 <use figuras/Topologia.pdf, page 1>
 Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
@@ -2833,15 +2877,15 @@ File: figuras/Topologia.pdf Graphic file (type pdf)
 <use figuras/Topologia.pdf, page 1>
 Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
 (pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
- [96
+ [98
 
  <./figuras/Topologia.pdf>]
-<figuras/Parque.pdf, id=2640, 1764.5925pt x 845.1575pt>
+<figuras/Parque.pdf, id=2678, 1764.5925pt x 845.1575pt>
 File: figuras/Parque.pdf Graphic file (type pdf)
 <use figuras/Parque.pdf>
 Package pdftex.def Info: figuras/Parque.pdf  used on input line 20.
 (pdftex.def)             Requested size: 1764.58821pt x 845.15544pt.
-<figuras/Parque.pdf, id=2642, page=1, 1764.5925pt x 845.1575pt>
+<figuras/Parque.pdf, id=2680, page=1, 1764.5925pt x 845.1575pt>
 File: figuras/Parque.pdf Graphic file (type pdf)
 <use figuras/Parque.pdf, page 1>
 Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
@@ -2862,9 +2906,9 @@ File: figuras/Parque.pdf Graphic file (type pdf)
 <use figuras/Parque.pdf, page 1>
 Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 1588.1186pt x 760.63474pt.
- [97
+ [99
 
- <./figuras/Parque.pdf>]) (anexos/Anexo_3.tex [98
+ <./figuras/Parque.pdf>]) (anexos/Anexo_3.tex [100
 
 
 ]
@@ -2880,12 +2924,12 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-<figuras/Gemma.png, id=2656, 918.43124pt x 557.83406pt>
+<figuras/Gemma.png, id=2694, 918.43124pt x 557.83406pt>
 File: figuras/Gemma.png Graphic file (type png)
 <use figuras/Gemma.png>
 Package pdftex.def Info: figuras/Gemma.png  used on input line 10.
 (pdftex.def)             Requested size: 395.45181pt x 240.18741pt.
-<figuras/maquinaestados.png, id=2659, 1327.96124pt x 425.33907pt>
+<figuras/maquinaestados.png, id=2697, 1327.96124pt x 425.33907pt>
 File: figuras/maquinaestados.png Graphic file (type png)
 <use figuras/maquinaestados.png>
 Package pdftex.def Info: figuras/maquinaestados.png  used on input line 47.
@@ -2893,24 +2937,97 @@ Package pdftex.def Info: figuras/maquinaestados.png  used on input line 47.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [99]
-<figuras/CalculoAnalogico.png, id=2667, 1381.41093pt x 377.15906pt>
+ [101]
+<figuras/CalculoAnalogico.png, id=2706, 1381.41093pt x 377.15906pt>
 File: figuras/CalculoAnalogico.png Graphic file (type png)
 <use figuras/CalculoAnalogico.png>
 Package pdftex.def Info: figuras/CalculoAnalogico.png  used on input line 54.
 (pdftex.def)             Requested size: 395.45181pt x 107.96335pt.
-<figuras/Alarmas.png, id=2669, 892.08281pt x 486.31688pt>
+<figuras/Alarmas.png, id=2708, 892.08281pt x 486.31688pt>
 File: figuras/Alarmas.png Graphic file (type png)
 <use figuras/Alarmas.png>
 Package pdftex.def Info: figuras/Alarmas.png  used on input line 61.
 (pdftex.def)             Requested size: 395.45181pt x 215.58293pt.
- [100 <./figuras/Gemma.png> <./figuras/maquinaestados.png>]
-<figuras/SimKepServer.png, id=2677, 880.79062pt x 384.6872pt>
-File: figuras/SimKepServer.png Graphic file (type png)
-<use figuras/SimKepServer.png>
-Package pdftex.def Info: figuras/SimKepServer.png  used on input line 68.
-(pdftex.def)             Requested size: 395.45181pt x 172.71436pt.
-) (anexos/Anexo_4.tex [101 <./figuras/CalculoAnalogico.png> <./figuras/Alarmas.png>] [102 <./figuras/SimKepServer.png>]
+
+
+LaTeX Warning: Reference `fig:modelo_Kepserver' on page 102 undefined on input line 65.
+
+[102 <./figuras/Gemma.png> <./figuras/maquinaestados.png>]
+Overfull \hbox (50.78314pt too wide) in alignment at lines 67--75
+ [] [] [] 
+ []
+
+
+Overfull \hbox (50.78314pt too wide) in alignment at lines 75--82
+ [] [] [] 
+ []
+
+
+Overfull \hbox (50.78314pt too wide) in alignment at lines 82--86
+ [] [] [] 
+ []
+
+
+Overfull \hbox (50.78314pt too wide) in alignment at lines 86--89
+ [] [] [] 
+ []
+
+
+Underfull \hbox (badness 3428) in paragraph at lines 104--105
+\T1/bch/m/n/10.95 (+20) muy es-tre-cho en-tre 49.95 y
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 105--106
+[]|\T1/bch/m/n/10.95 (+20) Aplica un in-cre-mento lin-eal
+ []
+
+
+Underfull \hbox (badness 6893) in paragraph at lines 105--106
+\T1/bch/m/n/10.95 (+20) (rampa) de 1 unidad cada
+ []
+
+
+Underfull \hbox (badness 8038) in paragraph at lines 112--113
+[]|\T1/bch/m/n/10.95 (+20) Fluctuación aleato-ria bidi-rec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+[]|\T1/bch/m/n/10.95 (+20) Cambios tér-mi-cos sim-u-la-dos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+[]|\T1/bch/m/n/10.95 (+20) Fluctuación aleato-ria ráp-ida
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 164--165
+[]|\T1/bch/m/n/10.95 (+20) Ruido aleato-rio en-tre -500 y
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 175--176
+[]|\T1/bch/m/n/10.95 (+20) Ruido aleato-rio en-tre 70.0 y
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 176--177
+[]|\T1/bch/m/n/10.95 (+20) Ruido aleato-rio en-tre 70.0 y
+ []
+
+
+Overfull \hbox (50.78314pt too wide) in alignment at lines 89--185
+ [] [] [] 
+ []
+
+
+ignored: Infinite glue shrinkage found in box being split [103 <./figuras/CalculoAnalogico.png> <./figuras/Alarmas.png>]
+ignored: Infinite glue shrinkage found in box being split [104]
+ignored: Infinite glue shrinkage found in box being split [105]
+ignored: Infinite glue shrinkage found in box being split [106]
+ignored: Infinite glue shrinkage found in box being split [107]) (anexos/Anexo_4.tex [108]
 chapter D.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -2923,10 +3040,10 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-) (anexos/Anexo_5.tex [103
+) (anexos/Anexo_5.tex [109
 
 
-] [104
+] [110
 
 
 ]
@@ -2968,26 +3085,27 @@ Overfull \hbox (1.92203pt too wide) in alignment at lines 24--152
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [105]
-ignored: Infinite glue shrinkage found in box being split [106]
-ignored: Infinite glue shrinkage found in box being split [107]
-ignored: Infinite glue shrinkage found in box being split [108]
-Overfull \hbox (106.36026pt too wide) in alignment at lines 157--162
- [] [] [] [] 
+ignored: Infinite glue shrinkage found in box being split [111]
+ignored: Infinite glue shrinkage found in box being split [112]
+ignored: Infinite glue shrinkage found in box being split [113]
+ignored: Infinite glue shrinkage found in box being split [114]
+Underfull \hbox (badness 1107) in paragraph at lines 172--173
+[]|\T1/bch/m/n/10.95 (+20) Placa de car-ac-terís-ti-cas e iden-ti-fi-
  []
 
 
-Overfull \hbox (106.36026pt too wide) in alignment at lines 162--165
- [] [] [] [] 
+Underfull \hbox (badness 4266) in paragraph at lines 189--190
+[]|\T1/bch/m/n/10.95 (+20) Alta tem-per-atura en ro-damiento
  []
 
 
-Overfull \hbox (106.36026pt too wide) in alignment at lines 165--215
- [] [] [] [] 
+Underfull \hbox (badness 3601) in paragraph at lines 201--202
+[]|\T1/bch/m/n/10.95 (+20) Alta tem-per-atura gen-eral en ro-
  []
 
 
-ignored: Infinite glue shrinkage found in box being split [109]) [110] [111] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.aux)
+ignored: Infinite glue shrinkage found in box being split [115]
+ignored: Infinite glue shrinkage found in box being split [116]) [117] [118] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3004,17 +3122,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37513 strings out of 467867
- 679841 string characters out of 5418334
- 2565748 words of memory out of 5000000
- 64131 multiletter control sequences out of 15000+600000
- 800215 words of font info for 487 fonts, out of 8000000 for 9000
+ 37530 strings out of 467867
+ 680085 string characters out of 5418334
+ 2566086 words of memory out of 5000000
+ 64138 multiletter control sequences out of 15000+600000
+ 800745 words of font info for 491 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,18n,131p,11256b,2263s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchbi8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.pdf (131 pages, 20361363 bytes).
+Output written on c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.pdf (138 pages, 20678516 bytes).
 PDF statistics:
- 3340 PDF objects out of 3580 (max. 8388607)
- 1104 named destinations out of 1200 (max. 500000)
- 90654 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 3397 PDF objects out of 3580 (max. 8388607)
+ 1108 named destinations out of 1200 (max. 500000)
+ 90656 words of extra memory for PDF output out of 106986 (max. 10000000)
 

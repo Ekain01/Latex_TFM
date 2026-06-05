@@ -1,8 +1,31 @@
 \chapter{Metodología}
 \label{cap:metodologia}
 
+La metodología seguida para el desarrollo de este proyecto se ha estructurado en tareas, cada una con objetivos específicos. A continuación, se describen las principales etapas del proceso de desarrollo desde la concepción inicial hasta la implementación final de la solución. Esta metodología se ha diseñado para garantizar un enfoque sistemático y organizado, permitiendo una gestión eficiente del tiempo y los recursos disponibles.
 \section{Descripción de tareas}
 
-\section{Diagramma de Gantt (si procede)}
+\begin{itemize}
+    \item \textbf{Tarea 1: Análisis de Requisitos y documentación} Durante esta fase se han recopilado y analizado los requisitos y documentación del proyecto asi como una revisión de la normativa general. Se ha definido tanto el objetivo general como objetivos más especificos para cada parte del desarrollo.
+    
+    \item \textbf{Tarea 2: Formación en WinCC v8.1} Durante esta fase se ha realizado una formación en el entorno de desarrollo WinCC v8.1 impartida por Siemens. Esta formación ha sido fundamental para adquirir los conocimientos necesarios para el desarrollo de la solución \ac{SCADA}, incluyendo la creación de pantallas, programación de lógica y configuración de comunicaciones.
+    \item \textbf{Tarea 3: Estudio de entorno de programación} Durante esta fase se han realizado pruebas de concepto, probado las herramientas de desarrollo y se ha realizado un estudio detallado del entorno de programación para garantizar una implementación eficiente y efectiva de la solución \ac{SCADA}.
+    \item \textbf{Tarea 4: Análisis de estado del arte} Durante esta fase se ha realizado un análisis del estado del arte en el ámbito de los sistemas \ac{SCADA} para parques eólicos y subestaciones eléctricas. En este análisis se han revisado articulos de investigación y revisado soluciones comerciales para identificar las mejores prácticas.
+    \item \textbf{Tarea 5: Diseño de jerarquía de pantallas} Durante esta fase se ha estructurado la navegación del usuario y establecido la jerarquía de pantallas para la solución \ac{SCADA}. 
+    \item \textbf{Tarea 6: Desarrollo de interfaces de usuario} Durante esta fase se han diseñado y desarrollado las interfaces de usuario para la solución \ac{SCADA}, incluyendo pantallas de monitorización, control y visualización de datos. Se han implementado elementos gráficos y funcionalidades interactivas para facilitar la interacción del usuario con el sistema. 
+    \item \textbf{Tarea 7: Programación de la lógica SCADA} Esta fase en concurrencia con la anterior se ha dedicado a la programación de la lógica de monitorización del entorno, incluyendo el desarrollo de la lógica de filtrado y navegación entre pantallas.
+    \item \textbf{Tarea 8: Desarrollo de banco de pruebas}Durante esta fase se ha desarrollado un banco de pruebas utilizando las herramientas de NodeRED y KEPServerEX. Mediante estas herramientas se han simulado datos sintéticos de aerogeneradores y creado los servidores y conexiones \ac{OPC UA} necesarias para validar el funcionamiento de la solución \ac{SCADA} implementada. Este banco de pruebas ha permitido evaluar el rendimiento y la fiabilidad del sistema en un entorno controlado antes de su implementación final.
+    \item \textbf{Tarea 9: Integración IIoT}Durante esta fase se ha integrado la solución \ac{SCADA} con tecnologías de \ac{IIoT} para mejorar la conectividad y la capacidad de monitoreo del sistema. Se han implementado protocolos de comunicación y se han configurado dispositivos para permitir la recopilación y transmisión de datos en tiempo real desde los aerogeneradores hacia el sistema \ac{SCADA}.
+    \item \textbf{Tarea 10: Análisis de resultados} Durante esta fase se ha utilizado el banco de pruebas desarrollado para realizar análisis unitarios, de integración y rendimiento de la solución \ac{SCADA} implementada. Se han evaluado los resultados obtenidos para identificar áreas de mejora.
+    \item \textbf{Tarea 11: Redacción de la memoria} Esta fase, en concurrencia con las anteriores, se ha dedicado a la redacción de la memoria del proyecto, documentando cada etapa del desarrollo, los resultados obtenidos y las conclusiones finales. Se han incluido detalles técnicos, gráficos y referencias bibliográficas para respaldar el contenido de la memoria.
+\end{itemize}
 
-\section{Plan de proyecto y planificación (si procede)}
+
+
+
+\includepdf[
+    pages=-,                 % Incluye todas las páginas del PDF original
+    landscape=true,          % Rota el PDF apaisado (ideal para planos A3/A4 horizontales)
+    scale=0.8,             % Escala un poco para dejar margen si quieres conservar encabezados/pies
+    pagecommand={},          % Mantiene el número de página de tu TFM en el plano
+    addtotoc={1, figure, 1, {Diagrama de Gantt}, fig:gantt}
+]{figuras/gantt.pdf}

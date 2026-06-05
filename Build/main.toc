@@ -81,42 +81,41 @@
 \contentsline {section}{\numberline {8.2}Análisis de Rendimiento de los Procesos del SCADA}{64}{section*.174}%
 \contentsline {chapter}{\numberline {9}Metodología}{69}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Descripción de tareas}{69}{section*.182}%
-\contentsline {section}{\numberline {9.2}Diagramma de Gantt (si procede)}{69}{section*.183}%
-\contentsline {section}{\numberline {9.3}Plan de proyecto y planificación (si procede)}{69}{section*.184}%
-\contentsline {chapter}{\numberline {10}Aspectos económicos}{71}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Presupuesto del Proyecto}{71}{section*.186}%
-\contentsline {subsection}{\numberline {10.1.1}Costes de Ingeniería (Mano de Obra)}{71}{section*.187}%
-\contentsline {subsection}{\numberline {10.1.2}Licencias de Software WinCC}{71}{section*.189}%
-\contentsline {subsection}{\numberline {10.1.3}Infraestructura AWS}{72}{section*.191}%
-\contentsline {subsection}{\numberline {10.1.4}Resumen del Presupuesto y Coste Total}{73}{section*.193}%
-\contentsline {chapter}{\numberline {11}Conclusiones}{75}{chapter.11}%
-\contentsline {chapter}{\nonumberline Bibliografía}{77}{chapter*.196}%
+\contentsline {figure}{\numberline {9.1}\ignorespaces {Diagrama de Gantt}}{71}{figure.9.1}%
+\contentsline {chapter}{\numberline {10}Aspectos económicos}{73}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Presupuesto del Proyecto}{73}{section*.184}%
+\contentsline {subsection}{\numberline {10.1.1}Costes de Ingeniería (Mano de Obra)}{73}{section*.185}%
+\contentsline {subsection}{\numberline {10.1.2}Licencias de Software WinCC}{73}{section*.187}%
+\contentsline {subsection}{\numberline {10.1.3}Infraestructura AWS}{74}{section*.189}%
+\contentsline {subsection}{\numberline {10.1.4}Resumen del Presupuesto y Coste Total}{75}{section*.191}%
+\contentsline {chapter}{\numberline {11}Conclusiones}{77}{chapter.11}%
+\contentsline {chapter}{\nonumberline Bibliografía}{79}{chapter*.194}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{81}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Código WinCC}{81}{section*.199}%
-\contentsline {subsection}{\numberline {A.1.1}\texttt {AplicarFiltroPosicion()}}{81}{section*.200}%
-\contentsline {subsection}{\numberline {A.1.2}\texttt {AplicarFiltroParque()}}{83}{section*.201}%
-\contentsline {subsection}{\numberline {A.1.3}MenuNavigation.bmo}{85}{section*.202}%
-\contentsline {section}{\numberline {A.2}Código de IIoT}{86}{section*.203}%
-\contentsline {subsection}{\numberline {A.2.1}Instalación de docker}{86}{section*.204}%
-\contentsline {subsection}{\numberline {A.2.2}docker-compose.yml}{86}{section*.205}%
-\contentsline {subsection}{\numberline {A.2.3}Despliegue del contenedor}{87}{section*.206}%
-\contentsline {section}{\numberline {A.3}Código NodeRED}{87}{section*.207}%
-\contentsline {subsection}{\numberline {A.3.1}Nodo : parametro de viento}{87}{section*.208}%
-\contentsline {subsection}{\numberline {A.3.2}Nodo: Potencia generada}{88}{section*.209}%
-\contentsline {subsection}{\numberline {A.3.3}Nodo: Calculo viento actual}{89}{section*.210}%
-\contentsline {subsection}{\numberline {A.3.4}Nodo : Orientación}{90}{section*.211}%
-\contentsline {subsection}{\numberline {A.3.5}Nodo: Orientación de pala}{90}{section*.212}%
-\contentsline {subsection}{\numberline {A.3.6}Nodo: Azimut del rotor}{91}{section*.213}%
-\contentsline {subsection}{\numberline {A.3.7}Nodo: Velocidad del rotor}{92}{section*.214}%
-\contentsline {chapter}{\numberline {B}Anexo II: Planos}{95}{appendix.B}%
-\contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{96}{figure.B.1}%
-\contentsline {figure}{\numberline {B.2}\ignorespaces {Plano unifilar de potencia}}{97}{figure.B.2}%
-\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas y Validación del Sistema}{99}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Gemelo funcional de aerogeneradores}{99}{section*.217}%
-\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{103}{appendix.D}%
-\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{105}{appendix.E}%
-\contentsline {section}{\numberline {E.1}Introducción}{105}{section*.226}%
-\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{105}{section*.227}%
-\contentsline {section}{\numberline {E.3}Variables de Transformadores}{110}{section*.228}%
-\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{110}{section*.229}%
+\contentsline {chapter}{\numberline {A}Anexo I: Código de la Solución}{83}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Código WinCC}{83}{section*.197}%
+\contentsline {subsection}{\numberline {A.1.1}\texttt {AplicarFiltroPosicion()}}{83}{section*.198}%
+\contentsline {subsection}{\numberline {A.1.2}\texttt {AplicarFiltroParque()}}{85}{section*.199}%
+\contentsline {subsection}{\numberline {A.1.3}MenuNavigation.bmo}{87}{section*.200}%
+\contentsline {section}{\numberline {A.2}Código de IIoT}{88}{section*.201}%
+\contentsline {subsection}{\numberline {A.2.1}Instalación de docker}{88}{section*.202}%
+\contentsline {subsection}{\numberline {A.2.2}docker-compose.yml}{88}{section*.203}%
+\contentsline {subsection}{\numberline {A.2.3}Despliegue del contenedor}{89}{section*.204}%
+\contentsline {section}{\numberline {A.3}Código NodeRED}{89}{section*.205}%
+\contentsline {subsection}{\numberline {A.3.1}Nodo : parametro de viento}{89}{section*.206}%
+\contentsline {subsection}{\numberline {A.3.2}Nodo: Potencia generada}{90}{section*.207}%
+\contentsline {subsection}{\numberline {A.3.3}Nodo: Calculo viento actual}{91}{section*.208}%
+\contentsline {subsection}{\numberline {A.3.4}Nodo : Orientación}{92}{section*.209}%
+\contentsline {subsection}{\numberline {A.3.5}Nodo: Orientación de pala}{92}{section*.210}%
+\contentsline {subsection}{\numberline {A.3.6}Nodo: Azimut del rotor}{93}{section*.211}%
+\contentsline {subsection}{\numberline {A.3.7}Nodo: Velocidad del rotor}{94}{section*.212}%
+\contentsline {chapter}{\numberline {B}Anexo II: Planos}{97}{appendix.B}%
+\contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{98}{figure.B.1}%
+\contentsline {figure}{\numberline {B.2}\ignorespaces {Plano unifilar de potencia}}{99}{figure.B.2}%
+\contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas y Validación del Sistema}{101}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Gemelo funcional de aerogeneradores}{101}{section*.215}%
+\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{109}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{111}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Introducción}{111}{section*.223}%
+\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{111}{section*.224}%
+\contentsline {section}{\numberline {E.3}Variables de Transformadores}{117}{section*.225}%
+\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{117}{section*.226}%

@@ -38,17 +38,16 @@
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Evolución del consumo de CPU del proceso \texttt {PdlRT.exe} bajo una carga creciente de tags.}}{65}{figure.caption.178}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Estimación de costes para la instancia AWS EC2 t3.medium.}}{72}{figure.caption.192}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Estimación de costes para la instancia AWS EC2 t3.medium.}}{74}{figure.caption.190}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de estados GEMMA para el modelo de simulación de aerogeneradores.}}{100}{figure.caption.218}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Maquina de estados del modelo de simulación de aerogeneradores.}}{100}{figure.caption.220}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Cálculo analógico de variables de interés.}}{101}{figure.caption.221}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Control de alarmas y eventos en el modelo de simulación.}}{101}{figure.caption.222}%
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Control de alarmas y eventos en el modelo de simulación.}}{102}{figure.caption.223}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de estados GEMMA para el modelo de simulación de aerogeneradores.}}{102}{figure.caption.216}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Maquina de estados del modelo de simulación de aerogeneradores.}}{102}{figure.caption.218}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Cálculo analógico de variables de interés.}}{103}{figure.caption.219}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Control de alarmas y eventos en el modelo de simulación.}}{103}{figure.caption.220}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
