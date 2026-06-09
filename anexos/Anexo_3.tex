@@ -62,124 +62,124 @@ También se han implementado mecanismos de control de alarmas y eventos para sim
     \caption{Control de alarmas y eventos en el modelo de simulación.}
     \label{fig:modelo_alarmas}
 \end{figure}
-Un aerogenerador simulado tiene aproximadamente 650 variables, realizar todas mediante funciones de nodeRED para realizar pruebas de concepto resulta poco eficiente. Por ello, el resto de variables se generan mediante funciones integradas en KEPServerEX, que se ejecutan en paralelo a la máquina de estados de NodeRED. Estas funciones se configuran para generar datos sintéticos basados en fórmulas matemáticas o patrones predefinidos, lo que permite simular un comportamiento más realista y complejo del aerogenerador sin sobrecargar el flujo principal de NodeRED (ver Figura \ref{fig:modelo_Kepserver}).\par
+Un aerogenerador simulado tiene aproximadamente 650 variables, realizar todas mediante funciones de nodeRED para realizar pruebas de concepto resulta poco eficiente. Por ello, el resto de variables se generan mediante funciones integradas en KEPServerEX, que se ejecutan en paralelo a la máquina de estados de NodeRED. Estas funciones se configuran para generar datos sintéticos basados en fórmulas matemáticas o patrones predefinidos, lo que permite simular un comportamiento más realista y complejo del aerogenerador sin sobrecargar el flujo principal de NodeRED (ver Tabla \ref{tab:funciones_simulacion_kepserver}).\vspace{1cm}
 
-\begin{longtable}{@{}llp{5.5cm}@{}}
-
+\begin{longtable}{@{}p{7cm}p{7cm}@{}}
 \caption{Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}
 \label{tab:funciones_simulacion_kepserver} \\
 
 \toprule
-\textbf{Variable} & \textbf{Función de Simulación} & \textbf{Descripción de la Función Generadora} \\
+\textbf{Variable} & \textbf{Función de Simulación} \\
 \midrule
 \endfirsthead
 
-\multicolumn{3}{c}%
+\multicolumn{2}{c}%
 {{\bfseries \tablename\ \thetable{} -- Continuación de la página anterior}} \\
 \toprule
-\textbf{Variable} & \textbf{Función de Simulación} & \textbf{Descripción de la Función Generadora} \\
+\textbf{Variable} & \textbf{Función de Simulación} \\
 \midrule
 \endhead
 
 \midrule 
-\multicolumn{3}{r}{{Continúa en la siguiente página}} \\
+\multicolumn{2}{r}{{Continúa en la siguiente página}} \\
 \endfoot
 
 \bottomrule
 \endlastfoot
 
 % ---------------- NODO WGEN ----------------
-\multicolumn{3}{l}{\textbf{Nodo Generador (WGEN)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Generador (WGEN)}} \\
 \midrule
-WGEN.A\_phsA & RANDOM (1000, 2455, 2555) & Genera un valor aleatorio uniforme entre 2455 y 2555 cada 1000 ms. \\
-WGEN.A\_phsA\_ang & SINE (1000, -5.0, 5.0, 0.021, 0) & Produce una oscilación senoidal entre -5.0 y 5.0 a 0.021 Hz, evaluada cada 1000 ms. \\
-WGEN.A\_phsB & RANDOM (1000, 2445, 2545) & Genera un valor aleatorio uniforme entre 2445 y 2545 cada 1000 ms. \\
-WGEN.A\_phsB\_ang & SINE (1000, -5.01, 4.98, 0.0205, 0) & Produce una oscilación senoidal entre -5.01 y 4.98 a 0.0205 Hz, evaluada cada 1000 ms. \\
-WGEN.A\_phsC & RANDOM (1000, 2450, 2550) & Genera un valor aleatorio uniforme entre 2450 y 2550 cada 1000 ms. \\
-WGEN.A\_phsC\_ang & SINE (1000, -5.0, 5.0, 0.02, 0) & Produce una oscilación senoidal entre -5.0 y 5.0 a 0.02 Hz, evaluada cada 1000 ms. \\
-WGEN.BrgFronTmp & SINE (1000, 60.0, 75.0, 0.008, 0) & Traza una curva senoidal lenta (0.008 Hz) acotada entre 60.0 y 75.0, actualizada cada 1000 ms. \\
-WGEN.BrgRearTmp & SINE (1000, 50.0, 65.0, 0.008, 0) & Traza una curva senoidal lenta (0.008 Hz) acotada entre 50.0 y 65.0, actualizada cada 1000 ms. \\
-WGEN.CooltTmp & SINE (1000, 45.0, 55.0, 0.01, 0) & Genera un ciclo senoidal térmico de 0.01 Hz entre los valores 45.0 y 55.0 cada 1000 ms. \\
-WGEN.CosPhi & SINE (1000, 0.97, 0.99, 0.02, 0) & Oscilación senoidal de alta compresión entre 0.97 y 0.99 a 0.02 Hz, evaluada cada segundo. \\
-WGEN.Hz & RANDOM (500, 49.95, 50.05) & Inyecta ruido aleatorio de alta frecuencia (500 ms) en un rango muy estrecho entre 49.95 y 50.05. \\
-WGEN.OpTmH & RAMP (100000, 0, 9999, 1) & Aplica un incremento lineal (rampa) de 1 unidad cada 100000 ms, con un límite superior de 9999. \\
-WGEN.Slip & SINE (1000, 0.5, 1.5, 0.05, 0) & Genera una onda senoidal entre 0.5 y 1.5 a 0.05 Hz, recalculada cada 1000 ms. \\
-WGEN.Spd & RANDOM (1000, 1498, 1502) & Inyecta fluctuaciones aleatorias entre los valores 1498 y 1502 cada 1000 ms. \\
-WGEN.Tmp & SINE (1000, 60.0, 75.0, 1.0, 0) & Emite una oscilación senoidal rápida a 1.0 Hz en el rango de 60.0 a 75.0 cada 1000 ms. \\
-WGEN.V\_PhAB & RANDOM (1000, 685, 695) & Genera variaciones aleatorias entre 685 y 695 cada 1000 ms. \\
-WGEN.V\_PhBC & RANDOM (1000, 686, 696) & Genera variaciones aleatorias entre 686 y 696 cada 1000 ms. \\
-WGEN.V\_PhCA & RANDOM (1000, 685, 694) & Genera variaciones aleatorias entre 685 y 694 cada 1000 ms. \\
-WGEN.VAr & RANDOM (500, -500, 500) & Fluctuación aleatoria bidireccional entre -500 y 500 evaluada rápidamente cada 500 ms. \\
-WGEN.W & RANDOM (500, 2000, 4000) & Ruido aleatorio de alta tasa de actualización (500 ms) dentro del rango 2000 a 4000. \\
+WGEN.A\_phsA & RANDOM (1000, 2455, 2555) \\
+WGEN.A\_phsA\_ang & SINE (1000, -5.0, 5.0, 0.021, 0) \\
+WGEN.A\_phsB & RANDOM (1000, 2445, 2545) \\
+WGEN.A\_phsB\_ang & SINE (1000, -5.01, 4.98, 0.0205, 0) \\
+WGEN.A\_phsC & RANDOM (1000, 2450, 2550) \\
+WGEN.A\_phsC\_ang & SINE (1000, -5.0, 5.0, 0.02, 0) \\
+WGEN.BrgFronTmp & SINE (1000, 60.0, 75.0, 0.008, 0) \\
+WGEN.BrgRearTmp & SINE (1000, 50.0, 65.0, 0.008, 0) \\
+WGEN.CooltTmp & SINE (1000, 45.0, 55.0, 0.01, 0) \\
+WGEN.CosPhi & SINE (1000, 0.97, 0.99, 0.02, 0) \\
+WGEN.Hz & RANDOM (500, 49.95, 50.05) \\
+WGEN.OpTmH & RAMP (100000, 0, 9999, 1) \\
+WGEN.Slip & SINE (1000, 0.5, 1.5, 0.05, 0) \\
+WGEN.Spd & RANDOM (1000, 1498, 1502) \\
+WGEN.Tmp & SINE (1000, 60.0, 75.0, 1.0, 0) \\
+WGEN.V\_PhAB & RANDOM (1000, 685, 695) \\
+WGEN.V\_PhBC & RANDOM (1000, 686, 696) \\
+WGEN.V\_PhCA & RANDOM (1000, 685, 694) \\
+WGEN.VAr & RANDOM (500, -500, 500) \\
+WGEN.W & RANDOM (500, 2000, 4000) \\
 
 \midrule
 % ---------------- NODO WMET ----------------
-\multicolumn{3}{l}{\textbf{Nodo Meteorológico (WMET)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Meteorológico (WMET)}} \\
 \midrule
-WMET.EnvHum & RANDOM (10000, 1005, 1020) & Variación aleatoria lenta entre 1005 y 1020 actualizada cada 10 segundos (10000 ms). \\
-WMET.EnvPres & RANDOM (50000, 1010, 1015) & Variación aleatoria muy lenta entre 1010 y 1015 actualizada cada 50 segundos. \\
-WMET.EnvTmp & SINE (1000, 11.0, 24.0, 0.01, 0) & Traza un perfil senoidal entre 11.0 y 24.0 a 0.01 Hz, calculado cada 1000 ms. \\
-WMET.Precip & RANDOM (30000, 0.0, 100.0) & Genera saltos aleatorios entre 0.0 y 100.0 con una cadencia de 30000 ms. \\
-WMET.Visib & RANDOM (30000, 0.0, 100.0) & Genera saltos aleatorios entre 0.0 y 100.0 con una cadencia de 30000 ms. \\
-WMET.WndDir & RANDOM (30000, 0.0, 360.0) & Inyecta ruido direccional en el espectro completo (0 a 360) cada 30000 ms. \\
+WMET.EnvHum & RANDOM (10000, 1005, 1020) \\
+WMET.EnvPres & RANDOM (50000, 1010, 1015) \\
+WMET.EnvTmp & SINE (1000, 11.0, 24.0, 0.01, 0) \\
+WMET.Precip & RANDOM (30000, 0.0, 100.0) \\
+WMET.Visib & RANDOM (30000, 0.0, 100.0) \\
+WMET.WndDir & RANDOM (30000, 0.0, 360.0) \\
 
 \midrule
 % ---------------- NODO WNAC ----------------
-\multicolumn{3}{l}{\textbf{Nodo Góndola (WNAC)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Góndola (WNAC)}} \\
 \midrule
-WNAC.CabTws & RANDOM (300, 0.0, 100.0) & Emite fluctuaciones de alta velocidad (300 ms) entre 0.0 y 100.0. \\
-WNAC.NacHum & RANDOM (300, 0.0, 100.0) & Emite fluctuaciones de alta velocidad (300 ms) entre 0.0 y 100.0. \\
-WNAC.NacTmp & RANDOM (300, 0.0, 100.0) & Emite fluctuaciones de alta velocidad (300 ms) entre 0.0 y 100.0. \\
-WNAC.NacVib & RANDOM (300, 0.0, 100.0) & Simula ruido vibracional de alta frecuencia de muestreo (300 ms) entre 0.0 y 100.0. \\
-WNAC.YawErr & RANDOM (2000, -6.5, 6.5) & Genera error aleatorio bidireccional entre -6.5 y 6.5 cada 2000 ms. \\
+WNAC.CabTws & RANDOM (300, 0.0, 100.0) \\
+WNAC.NacHum & RANDOM (300, 0.0, 100.0) \\
+WNAC.NacTmp & RANDOM (300, 0.0, 100.0) \\
+WNAC.NacVib & RANDOM (300, 0.0, 100.0) \\
+WNAC.YawErr & RANDOM (2000, -6.5, 6.5) \\
 
 \midrule
 % ---------------- NODO WROT ----------------
-\multicolumn{3}{l}{\textbf{Nodo Rotor (WROT)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Rotor (WROT)}} \\
 \midrule
-WROT.BatChrgRte & RAMP (300, 0.0, 100.0, 0.01) & Función rampa que incrementa el valor en 0.01 unidades cada 300 ms, subiendo de 0.0 a 100.0. \\
-WROT.Bl1PchAng & RANDOM (2000, 0.85, 1.15) & Genera valores de ruido blanco entre 0.85 y 1.15 cada 2000 ms. \\
-WROT.Bl2PchAng & RANDOM (2000, 0.80, 1.10) & Genera valores de ruido blanco entre 0.80 y 1.10 cada 2000 ms. \\
-WROT.Bl3PchAng & RANDOM (2000, 0.80, 1.10) & Genera valores de ruido blanco entre 0.80 y 1.10 cada 2000 ms. \\
-WROT.BlPchSpd & RANDOM (2000, 0.90, 1.20) & Fluctuación aleatoria entre 0.90 y 1.20 inyectada cada 2000 ms. \\
-WROT.HubTmp & RANDOM (30000, 30.0, 50.0) & Cambios térmicos simulados aleatoriamente entre 30.0 y 50.0 cada 30 segundos. \\
-WROT.RotAcl & RANDOM (1000, -0.2, 0.2) & Ruido bidireccional estrecho (-0.2 a 0.2) simulado cada 1000 ms. \\
-WROT.RotLckP & USER (5000, 0, 120, 240) & Secuencia definida por el usuario que alterna entre los valores 0, 120 y 240 cada 5000 ms. Emula las posiciones estáticas de enclavamiento, dado que el mantenimiento se hace en parada. \\
+WROT.BatChrgRte & RAMP (300, 0.0, 100.0, 0.01) \\
+WROT.Bl1PchAng & RANDOM (2000, 0.85, 1.15) \\
+WROT.Bl2PchAng & RANDOM (2000, 0.80, 1.10) \\
+WROT.Bl3PchAng & RANDOM (2000, 0.80, 1.10) \\
+WROT.BlPchSpd & RANDOM (2000, 0.90, 1.20) \\
+WROT.HubTmp & RANDOM (30000, 30.0, 50.0) \\
+WROT.RotAcl & RANDOM (1000, -0.2, 0.2) \\
+WROT.RotLckP & USER (5000, 0, 120, 240) \\
 
 \midrule
 % ---------------- NODO WTOW ----------------
-\multicolumn{3}{l}{\textbf{Nodo Torre (WTOW)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Torre (WTOW)}} \\
 \midrule
-WTOW.GndHum & SINE (1000, 40.0, 60.0, 0.01, 0) & Onda senoidal a 0.01 Hz en el rango 40.0 a 60.0, calculada cada 1000 ms. \\
-WTOW.GndTmp & SINE (1000, 10.0, 25.0, 0.01, 0) & Onda senoidal a 0.01 Hz en el rango 10.0 a 25.0, calculada cada 1000 ms. \\
-WTOW.IntTmp & SINE (1000, 18.0, 28.0, 0.01, 0) & Onda senoidal a 0.01 Hz en el rango 18.0 a 28.0, calculada cada 1000 ms. \\
-WTOW.TowInc & RANDOM (300, 0.0, 2.0) & Inyección aleatoria de un valor entre 0.0 y 2.0 con actualización rápida (300 ms). \\
-WTOW.TowVib & RANDOM (500, -0.5, 0.5) & Inyección aleatoria bidireccional entre -0.5 y 0.5 cada 500 ms. \\
+WTOW.GndHum & SINE (1000, 40.0, 60.0, 0.01, 0) \\
+WTOW.GndTmp & SINE (1000, 10.0, 25.0, 0.01, 0) \\
+WTOW.IntTmp & SINE (1000, 18.0, 28.0, 0.01, 0) \\
+WTOW.TowInc & RANDOM (300, 0.0, 2.0) \\
+WTOW.TowVib & RANDOM (500, -0.5, 0.5) \\
 
 \midrule
 % ---------------- NODO WTUR ----------------
-\multicolumn{3}{l}{\textbf{Nodo Turbina General (WTUR)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Turbina General (WTUR)}} \\
 \midrule
-WTUR.DmdPF & RANDOM (100, 0.0, 100.0) & Fluctuación aleatoria rápida (cada 100 ms) entre 0.0 y 100.0. \\
-WTUR.DmdVAr & RANDOM (30000, -500, 500) & Ruido aleatorio entre -500 y 500 recalculado de forma lenta (30000 ms). \\
-WTUR.DmdVArh & RANDOM (100, 0.0, 100.0) & Ruido aleatorio rápido (100 ms) acotado de 0.0 a 100.0. \\
-WTUR.DmdW & RANDOM (15000, 1480, 1520) & Variaciones aleatorias entre 1480 y 1520 simuladas cada 15 segundos (15000 ms). \\
-WTUR.DmdWh & RANDOM (100, 0.0, 100.0) & Ruido aleatorio rápido (100 ms) acotado de 0.0 a 100.0. \\
-WTUR.OpTmRs & RAMP (360000, 0, 999, 1) & Función rampa de muy baja tasa (360000 ms) que incrementa el valor en 1 desde 0 hasta 999. \\
-WTUR.SetTurOp & RANDOM (100, 0.0, 100.0) & Genera un valor aleatorio entre 0.0 y 100.0 cada 100 ms. \\
-WTUR.SupVArh & RANDOM (10000, 70.0, 101.0) & Inyecta ruido simulado entre 70.0 y 101.0 con tasa de actualización de 10000 ms. \\
-WTUR.SupWh & RANDOM (10000, 71.0, 100.0) & Inyecta ruido simulado entre 71.0 y 100.0 con tasa de actualización de 10000 ms. \\
-WTUR.TotVArh & RANDOM (10000, 95.0, 105.0) & Inyecta ruido simulado entre 95.0 y 105.0 con tasa de actualización de 10000 ms. \\
-WTUR.TotWh & RANDOM (10000, 1480, 1520) & Inyecta ruido acotado entre 1480 y 1520 cada 10000 ms. \\
-WTUR.VAr & RANDOM (10000, -500, 500) & Dispersión aleatoria en un rango de amplitud alta (-500 a 500) cada 10000 ms. \\
-WTUR.VArOvW & RANDOM (10000, 70.0, 101.0) & Ruido aleatorio entre 70.0 y 101.0 actualizado cada 10000 ms. \\
-WTUR.VArRefPri & RANDOM (10000, 70.0, 101.0) & Ruido aleatorio entre 70.0 y 101.0 actualizado cada 10000 ms. \\
+WTUR.DmdPF & RANDOM (100, 0.0, 100.0) \\
+WTUR.DmdVAr & RANDOM (30000, -500, 500) \\
+WTUR.DmdVArh & RANDOM (100, 0.0, 100.0) \\
+WTUR.DmdW & RANDOM (15000, 1480, 1520) \\
+WTUR.DmdWh & RANDOM (100, 0.0, 100.0) \\
+WTUR.OpTmRs & RAMP (360000, 0, 999, 1) \\
+WTUR.SetTurOp & RANDOM (100, 0.0, 100.0) \\
+WTUR.SupVArh & RANDOM (10000, 70.0, 101.0) \\
+WTUR.SupWh & RANDOM (10000, 71.0, 100.0) \\
+WTUR.TotVArh & RANDOM (10000, 95.0, 105.0) \\
+WTUR.TotWh & RANDOM (10000, 1480, 1520) \\
+WTUR.VAr & RANDOM (10000, -500, 500) \\
+WTUR.VArOvW & RANDOM (10000, 70.0, 101.0) \\
+WTUR.VArRefPri & RANDOM (10000, 70.0, 101.0) \\
 
 \midrule
 % ---------------- NODO WYAW ----------------
-\multicolumn{3}{l}{\textbf{Nodo Sistema de Orientación (WYAW)}} \\
+\multicolumn{2}{l}{\textbf{Nodo Sistema de Orientación (WYAW)}} \\
 \midrule
-WYAW.MotA & RANDOM (1000, 12.5, 14.8) & Variación aleatoria acotada entre 12.5 y 14.8 cada 1000 ms. \\
-WYAW.YawDrp & SINE (1000, 2.0, 8.0, 0.05, 0) & Onda senoidal oscilante de 0.05 Hz entre 2.0 y 8.0 generada cada 1000 ms. \\
-WYAW.YawTrq & RANDOM (1000, 45.0, 55.0) & Fluctuación aleatoria en el margen de 45.0 a 55.0 cada 1000 ms. \\
+WYAW.MotA & RANDOM (1000, 12.5, 14.8) \\
+WYAW.YawDrp & SINE (1000, 2.0, 8.0, 0.05, 0) \\
+WYAW.YawTrq & RANDOM (1000, 45.0, 55.0) \\
+
 \end{longtable}

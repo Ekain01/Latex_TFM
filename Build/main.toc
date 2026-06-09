@@ -113,9 +113,16 @@
 \contentsline {figure}{\numberline {B.2}\ignorespaces {Plano unifilar de potencia}}{99}{figure.B.2}%
 \contentsline {chapter}{\numberline {C}Anexo III: Banco de Pruebas y Validación del Sistema}{101}{appendix.C}%
 \contentsline {section}{\numberline {C.1}Gemelo funcional de aerogeneradores}{101}{section*.215}%
-\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{109}{appendix.D}%
-\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{111}{appendix.E}%
-\contentsline {section}{\numberline {E.1}Introducción}{111}{section*.223}%
-\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{111}{section*.224}%
-\contentsline {section}{\numberline {E.3}Variables de Transformadores}{117}{section*.225}%
-\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{117}{section*.226}%
+\contentsline {chapter}{\numberline {D}Anexo IV: Manual de Usuario}{107}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Descripción de pantalla principal}{107}{section*.222}%
+\contentsline {section}{\numberline {D.2}Inicio de Sesión}{107}{section*.224}%
+\contentsline {section}{\numberline {D.3}Subestaciones}{108}{section*.226}%
+\contentsline {section}{\numberline {D.4}Aerogeneradores}{109}{section*.229}%
+\contentsline {section}{\numberline {D.5}Monitorización de clima}{113}{section*.234}%
+\contentsline {section}{\numberline {D.6}Gestión de usuarios y alarmas}{113}{section*.236}%
+\contentsline {section}{\numberline {D.7}Históricos de datos}{114}{section*.238}%
+\contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{115}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Introducción}{115}{section*.240}%
+\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{115}{section*.241}%
+\contentsline {section}{\numberline {E.3}Variables de Transformadores}{121}{section*.242}%
+\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{121}{section*.243}%
