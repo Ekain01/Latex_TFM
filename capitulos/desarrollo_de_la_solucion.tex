@@ -407,8 +407,8 @@ La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de co
 La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de los \ac{LN} especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Nodos de Control de Bahía (\texttt{CTRL}):} Su topología interna se corresponde al esquema de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de linea (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR1}), el seccionador de línea (\texttt{XSWI2}) y el nodo de medida eléctrica (\texttt{MMXU1}) (Figura \ref{fig:celda_linea}).
-    \item \textbf{Nodos de Protección de Activo (\texttt{PROT}):} Reúne los nodos del transformador de potencia (\texttt{YPTR1}) para variables térmicas, la unidad de medida específica del trafo (\texttt{MMXU2}), el nodo de supervisión del aislamiento líquido y relé Buchholz (\texttt{SIML1}) y un nodo de entradas/salidas genéricas (\texttt{GGIO1}) encargado de absorber alarmas secundarias de la cuba(Figura \ref{fig:celda_trafo}).
+    \item \textbf{Nodos de Control de Bahía (\texttt{CTRL}):} Su topología interna se corresponde al esquema de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de linea (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR}), el seccionador de línea (\texttt{XSWI2}) y el nodo de medida eléctrica (\texttt{MMXU}) (Figura \ref{fig:celda_linea}).
+    \item \textbf{Nodos de Protección de Activo (\texttt{PROT}):} Reúne los nodos del transformador de potencia (\texttt{YPTR}) para variables térmicas, la unidad de medida específica del trafo (\texttt{MMXU}), el nodo de protección diferencial (\texttt{PDIF}) y un nodo cambiador de tomas (\texttt{YLTC}) encargado de modificar la relación de transformación (Figura \ref{fig:celda_trafo}).
 \end{enumerate}
 \begin{figure}[tb]
     \centering
@@ -445,16 +445,16 @@ Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan
         \textbf{L1:(IED)} & \textbf{L2: (LD)} & \textbf{L3:(LN)} & \textbf{L4: (DO)} & \textbf{L5: (DA)} \\ \midrule
         
         % --- CELDA DE MANIOBRA ---
-        \texttt{Q01} (Celda Línea) & \texttt{CTRL} (\texttt{SUB\_CTR}) & \texttt{XSWI1} & \texttt{Pos} & \texttt{stVal} (\ac{DPS}) \\
-        \texttt{Q01} (Celda Línea) & \texttt{CTRL} (\texttt{SUB\_CTR}) & \texttt{XCBR1} & \texttt{Pos} & \texttt{stVal} (\ac{DPS}) \\
-        \texttt{Q01} (Celda Línea) & \texttt{CTRL} (\texttt{SUB\_CTR}) & \texttt{XSWI2} & \texttt{Pos} & \texttt{stVal} (\ac{DPS}) \\
-        \texttt{Q01} (Celda Línea) & \texttt{CTRL} (\texttt{SUB\_CTR}) & \texttt{MMXU1} & \texttt{A}   & \texttt{mag} (Float) \\ \midrule
+        \texttt{Q01} (Celda Línea) & \texttt{CTRL} & \texttt{XSWI1} & \texttt{Pos} & \texttt{stVal}  \\
+        \texttt{Q01} (Celda Línea) & \texttt{CTRL}  & \texttt{XCBR} & \texttt{Pos} & \texttt{stVal}  \\
+        \texttt{Q01} (Celda Línea) & \texttt{CTRL} & \texttt{XSWI2} & \texttt{Pos} & \texttt{stVal} \\
+        \texttt{Q01} (Celda Línea) & \texttt{CTRL}  & \texttt{MMXU1} & \texttt{A}   & \texttt{mag} \\ \midrule
                     
         % --- CELDA DE TRANSFORMADOR ---
-        \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{YPTR1} & \texttt{Tmp} & \texttt{mag} (Float) \\
-        \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{MMXU2} & \texttt{W}   & \texttt{mag} (Float) \\
-        \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{GGIO1} & \texttt{Alm} & \texttt{stVal} (Byte) \\
-        \texttt{T01} (Celda Trafo) & \texttt{PROT} (\texttt{SUB\_TRF}) & \texttt{SIML1} & \texttt{GasAlm} & \texttt{stVal} (Byte) \\ \bottomrule
+        \texttt{T01} (Celda Trafo) & \texttt{PROT}  & \texttt{YPTR} & \texttt{Tmp} & \texttt{mag}  \\
+        \texttt{T01} (Celda Trafo) & \texttt{PROT}  & \texttt{MMXU} & \texttt{W}   & \texttt{mag} \\
+        \texttt{T01} (Celda Trafo) & \texttt{PROT}  & \texttt{PDIF} & \texttt{Blk} & \texttt{stVal}  \\
+        \texttt{T01} (Celda Trafo) & \texttt{PROT}  & \texttt{YLTC} & \texttt{TapPos} & \texttt{stVal} \\ \bottomrule
     \end{tabular}
     }
 \end{table}
@@ -464,12 +464,12 @@ Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan
 
 Un análisis final de las variables creadas en el \ac{SCADA} revela que es necesaria la implementación de un nivel adicional de prefijo organizativo.\par
 
-Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de 9 subestaciones eléctricas distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión masiva de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección.\par
+Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una infraestructura aislada, sino que consta de un total de 9 subestaciones eléctricas distribuidas a lo largo del complejo energético. Introducir las variables en el \textit{Tag Management} arrancando directamente desde el nivel  de celda (\texttt{Q01}) provocaría una colisión de direccionamiento en la base de datos de WinCC, ya que existirian celdas con la misma dirección. Una opción podria ser que cada subestación tuviera su propio numero de celda, sin embargo, por practicidad, se ha decidido implementar un nivel adicional de organización.\par
 
-Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la norma. Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
+Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
 
 \begin{equation}
-\underbrace{\text{SS\_xx}}_{\text{Subestación}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR1}}_{\text{L3 (LN)}} . \underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}} . \underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
+\underbrace{\text{SS\_xx}}_{\text{Subestación}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR}}_{\text{L3 (\ac{LN})}} . \underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}} . \underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
 \end{equation}.
 
 \begin{table}[tb]
@@ -491,7 +491,7 @@ Por este motivo, se ha implementado un Nivel 0 de subestación en adición a la 
 \end{table}
 \FloatBarrier
 \subsection{Variables externas}
-Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial desde comunicaciones propietarias como \texttt{S7} o \texttt{Profinet} a estandares abiertos como \ac{OPC UA}. Este proyecto principalmente estaba planteado para trabajar con el protocolo\texttt{Modbus TCP} pero se decanto por una solución basada en el estandar \ac{OPC UA} por su mayor flexibilidad, escalabilidad y seguridad en la transmisión de datos en tiempo real, además de su capacidad de integración con sistemas heterogéneos y su compatibilidad con la arquitectura orientada a objetos del SCADA.\par
+Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una amplia variedad de protocolos y estandares de comunicación industrial desde comunicaciones propietarias como \texttt{S7} o \texttt{Profinet} a estandares abiertos como \ac{OPC UA}. Este proyecto principalmente estaba planteado para trabajar con el protocolo \texttt{Modbus TCP} pero se decanto por una solución basada en el estandar \ac{OPC UA} por su mayor flexibilidad, escalabilidad y seguridad en la transmisión de datos en tiempo real, además de su capacidad de integración con sistemas heterogéneos y su compatibilidad con la arquitectura orientada a objetos del SCADA.\par
 
 \subsubsection{OPC UA}
 \ac{OPC UA} es middleware de comunicación \ac{SOA} desarrollado por OPC Foundation y estandarizado por la norma IEC 62541\cite{iec62541_1}.\par

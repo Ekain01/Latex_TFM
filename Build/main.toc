@@ -123,6 +123,6 @@
 \contentsline {section}{\numberline {D.7}Históricos de datos}{114}{section*.238}%
 \contentsline {chapter}{\numberline {E}Anexo V: Tablas de variables}{115}{appendix.E}%
 \contentsline {section}{\numberline {E.1}Introducción}{115}{section*.240}%
-\contentsline {section}{\numberline {E.2}Variables de Aerogeneradores}{115}{section*.241}%
-\contentsline {section}{\numberline {E.3}Variables de Transformadores}{121}{section*.242}%
-\contentsline {section}{\numberline {E.4}Variables de Subestaciones}{121}{section*.243}%
+\contentsline {section}{\numberline {E.2}Mapeo de variables de transformadores IEC 61400-25-2}{115}{section*.241}%
+\contentsline {section}{\numberline {E.3}Mapeo de variables de transformadores IEC 61850}{121}{section*.242}%
+\contentsline {section}{\numberline {E.4}Variables de sistemas de corte IEC 61850}{123}{section*.243}%

@@ -3,7 +3,7 @@
 
 \section{Introducción}
 En este anexo se incluyen las tablas de variables utilizadas en la solución desarrollada. Estas tablas detallan los nombres, tipos y descripciones de las variables empleadas en el sistema, proporcionando una referencia completa para el mantenimiento y la configuración del SCADA.
-\section{Variables de Aerogeneradores}
+\section{Mapeo de variables de transformadores IEC 61400-25-2}
 \begin{longtable}{@{}lllp{7.5cm}@{}}
 \caption{Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}
 \label{tab:equipo3} \\
@@ -11,13 +11,13 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 \textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica / Operativa} \\ \midrule
 \endfirsthead
 
-\multicolumn{4}{c}{{\tablename\ \thetable{} -- Continuación de la página anterior}} \\
+\multicolumn{4}{@{}l}{{\tablename\ \thetable{} -- Continuación de la página anterior}} \\
 \toprule
 \textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica / Operativa} \\ \midrule
 \endhead
 
 \midrule
-\multicolumn{4}{r}{{Continúa en la página siguiente...}} \\
+\multicolumn{4}{@{}l}{{Continúa en la página siguiente...}} \\
 \endfoot
 
 \bottomrule
@@ -213,5 +213,85 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 33 & \texttt{WALM.NacCabTwist}   & SPS & Límite de retorcimiento de cables en la torre \\
 37 & \texttt{WALM.MetIceDet}     & SPS & Detección de presencia de hielo en palas \\
 \end{longtable}
-\section{Variables de Transformadores}
-\section{Variables de Subestaciones}
+\section{Mapeo de variables de transformadores IEC 61850}
+\begin{longtable}{l l c p{7cm}}
+    \caption{Mapeo de variables del transformador (TRF) según el modelo IEC 61850.}
+    \label{tab:variables_trf_iec61850} \\
+    
+    % --- ENCABEZADO DE LA PRIMERA PÁGINA ---
+    \toprule
+    \textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
+    \midrule
+    \endfirsthead
+    
+    % --- ENCABEZADO DE LAS PÁGINAS SIGUIENTES (Si se corta la tabla) ---
+    \multicolumn{4}{@{}l}{{\tablename\ \thetable{} -- Continuación de la página anterior}} \\
+    \toprule
+    \textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
+    \midrule
+    \endhead
+    
+    % --- PIE DE PÁGINA SI LA TABLA CONTINÚA EN LA SIGUIENTE ---
+    \midrule
+    \multicolumn{4}{@{}l}{{\textit{Continúa en la página siguiente...}}} \\
+    \endfoot
+    
+    % --- PIE DE PÁGINA FINAL (Última página de la tabla) ---
+    \bottomrule
+    \endlastfoot
+    
+    % --- CUERPO DE LA TABLA ---
+    
+    \multicolumn{4}{c}{\textbf{Unidad de Medición Eléctrica (MMXU)}} \\ \midrule
+    \texttt{MMXU} & \texttt{Hz} & MV & Frecuencia. \\
+    \texttt{MMXU} & \texttt{PF} & MV & Factor de potencia. \\
+    \texttt{MMXU} & \texttt{TotVA} & MV & Potencia aparente. \\
+    \texttt{MMXU} & \texttt{TotVAr} & MV & Potencia reactiva. \\
+    \texttt{MMXU} & \texttt{TotW} & MV & Potencia activa. \\
+    \texttt{MMXU} & \texttt{A.net} & MV & Corriente neta. \\
+    \texttt{MMXU} & \texttt{A.PhsA} & MV & Corriente fase A. \\
+    \texttt{MMXU} & \texttt{A.PhsB} & MV & Corriente fase B. \\
+    \texttt{MMXU} & \texttt{A.PhsC} & MV & Corriente fase C. \\
+    \texttt{MMXU} & \texttt{PhV.net} & MV & Tensión fase-tierra. \\
+    \texttt{MMXU} & \texttt{PhV.PhsA} & MV & Tensión fase A. \\
+    \texttt{MMXU} & \texttt{PhV.PhsB} & MV & Tensión fase B. \\
+    \texttt{MMXU} & \texttt{PhV.PhsC} & MV & Tensión fase C. \\
+    \texttt{MMXU} & \texttt{PPV.PhAB} & MV & Tensión PhAB. \\
+    \texttt{MMXU} & \texttt{PPV.PhAC} & MV & Tensión PhAC. \\
+    \texttt{MMXU} & \texttt{PPV.PhBC} & MV & Tensión PhBC. \\
+    \midrule
+    
+    \multicolumn{4}{c}{\textbf{Protección Diferencial (PDIF)}} \\ \midrule
+    \texttt{PDIF} & \texttt{Blk} & SPC & Bloqueo. \\
+    \texttt{PDIF} & \texttt{Health} & INS & Estado interno. \\
+    \texttt{PDIF} & \texttt{Op} & INS & Disparo. \\
+    \texttt{PDIF} & \texttt{OpCntRs} & INS & Reinicio contador. \\
+    \texttt{PDIF} & \texttt{Str} & INS & Arranque. \\
+    \texttt{PDIF} & \texttt{DifAClc} & MV & Corriente diferencial. \\
+    \texttt{PDIF} & \texttt{RstA} & MV & Corriente de restricción. \\
+    \midrule
+    
+    \multicolumn{4}{c}{\textbf{Cambiador de Tomas / Tap Changer (YLTC)}} \\ \midrule
+    \texttt{YLTC} & \texttt{EndPosL} & SPS & Fin carrera Izq. \\
+    \texttt{YLTC} & \texttt{EndPosR} & SPS & Fin carrera Der. \\
+    \texttt{YLTC} & \texttt{Loc} & SPS & Control local. \\
+    \texttt{YLTC} & \texttt{OpCnt} & INS & Contador de operaciones. \\
+    \texttt{YLTC} & \texttt{TapChg} & SPC & Comando cambio toma. \\
+    \texttt{YLTC} & \texttt{TapOpn} & SPS & En movimiento. \\
+    \texttt{YLTC} & \texttt{TapPos} & INC & Posición de toma. \\
+    \midrule
+    
+    \multicolumn{4}{c}{\textbf{Transformador de Potencia - Monitorización (YPTR)}} \\ \midrule
+    \texttt{YPTR} & \texttt{BtmOilTmp} & MV & Temp. aceite inferior. \\
+    \texttt{YPTR} & \texttt{CGAlm} & SPS & Alarma Buchholz. \\
+    \texttt{YPTR} & \texttt{CoolFlt} & SPS & Falla refrigeración. \\
+    \texttt{YPTR} & \texttt{EEHlth} & INS & Estado equipo. \\
+    \texttt{YPTR} & \texttt{IsoFlt} & SPS & Pérdida de aislamiento. \\
+    \texttt{YPTR} & \texttt{LoOilLv} & SPS & Bajo nivel aceite. \\
+    \texttt{YPTR} & \texttt{OilTmp1} & MV & Temp. aceite superior. \\
+    \texttt{YPTR} & \texttt{OpTmH} & INS & Horas de operación. \\
+    \texttt{YPTR} & \texttt{PresAlm} & SPS & Alarma de presión. \\
+    \texttt{YPTR} & \texttt{WhlTmp} & MV & Temp. devanado. \\
+
+\end{longtable}
+\section{Variables de sistemas de corte IEC 61850}
