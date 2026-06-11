@@ -6,52 +6,52 @@
 \contentsline {table}{\numberline {4.2}{\ignorespaces Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030.}}{10}{table.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Descripción de los subsistemas principales del software de configuración de WinCC (\textit {CS}).}}{20}{table.caption.66}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Descripción de los subsistemas principales del software de configuración de WinCC (\textit {CS}).}}{22}{table.caption.67}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Nomenclatura de las subestaciones, parques y sistemas de generación eólica asociados.}}{27}{table.caption.81}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces Especificación técnica de las variables internas por defecto del sistema en WinCC.}}{28}{table.caption.86}%
-\contentsline {table}{\numberline {7.4}{\ignorespaces Estructuras de \ac {CDC} (Nivel 5) según norma IEC 61400-25-2.}}{31}{table.caption.90}%
-\contentsline {table}{\numberline {7.5}{\ignorespaces Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}}{31}{table.caption.94}%
-\contentsline {table}{\numberline {7.6}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{33}{table.caption.98}%
-\contentsline {table}{\numberline {7.7}{\ignorespaces Estructura de atributos y codificación de estados para la Clase de Datos Comunes (DPS) según IEC 61850-7-3.}}{35}{table.caption.101}%
-\contentsline {table}{\numberline {7.8}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{35}{table.caption.104}%
-\contentsline {table}{\numberline {7.9}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{37}{table.caption.107}%
-\contentsline {table}{\numberline {7.10}{\ignorespaces Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}}{38}{table.caption.109}%
-\contentsline {table}{\numberline {7.11}{\ignorespaces Mapeo de variables externas en el \textit {Tag Management} vinculadas al servidor KepServerEX.}}{42}{table.caption.119}%
-\contentsline {table}{\numberline {7.12}{\ignorespaces Especificación técnica de las variables internas para el almacenamiento de filtros.}}{50}{table.caption.133}%
-\contentsline {table}{\numberline {7.13}{\ignorespaces Lógica operativa de ejecución para las funciones globales de filtrado.}}{50}{table.caption.134}%
-\contentsline {table}{\numberline {7.14}{\ignorespaces Asignación de colores y estados de la turbina (Adaptación IEC 60073 a la industria eólica).}}{51}{table.caption.138}%
-\contentsline {table}{\numberline {7.15}{\ignorespaces Codificación cromática de estados para equipos de maniobra en el SCADA.}}{52}{table.caption.141}%
-\contentsline {table}{\numberline {7.16}{\ignorespaces Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}}{54}{table.caption.146}%
-\contentsline {table}{\numberline {7.17}{\ignorespaces Configuración de las reglas de entrada del grupo de seguridad de la instancia \ac {EC2}.}}{57}{table.caption.155}%
-\contentsline {table}{\numberline {7.18}{\ignorespaces Relación completa de funciones de autorización en WinCC Configuration Studio.}}{62}{table.caption.166}%
-\contentsline {table}{\numberline {7.19}{\ignorespaces Matriz general de asignación de permisos del sistema SCADA (ID 1 al 19).}}{62}{table.caption.167}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Nomenclatura de las subestaciones, parques y sistemas de generación eólica asociados.}}{26}{table.caption.85}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Especificación técnica de las variables internas por defecto del sistema en WinCC.}}{27}{table.caption.89}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Estructuras de \ac {CDC} (Nivel 5) según norma IEC 61400-25-2.}}{30}{table.caption.93}%
+\contentsline {table}{\numberline {7.4}{\ignorespaces Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}}{30}{table.caption.97}%
+\contentsline {table}{\numberline {7.5}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{32}{table.caption.101}%
+\contentsline {table}{\numberline {7.6}{\ignorespaces Estructura de atributos y codificación de estados para la Clase de Datos Comunes (DPS) según IEC 61850-7-3.}}{34}{table.caption.104}%
+\contentsline {table}{\numberline {7.7}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{34}{table.caption.107}%
+\contentsline {table}{\numberline {7.8}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{36}{table.caption.110}%
+\contentsline {table}{\numberline {7.9}{\ignorespaces Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}}{37}{table.caption.112}%
+\contentsline {table}{\numberline {7.10}{\ignorespaces Mapeo de variables externas en el \textit {Tag Management} vinculadas al servidor KepServerEX.}}{41}{table.caption.122}%
+\contentsline {table}{\numberline {7.11}{\ignorespaces Especificación técnica de las variables internas para el almacenamiento de filtros.}}{49}{table.caption.136}%
+\contentsline {table}{\numberline {7.12}{\ignorespaces Lógica operativa de ejecución para las funciones globales de filtrado.}}{49}{table.caption.137}%
+\contentsline {table}{\numberline {7.13}{\ignorespaces Asignación de colores y estados de la turbina (Adaptación IEC 60073 a la industria eólica).}}{50}{table.caption.141}%
+\contentsline {table}{\numberline {7.14}{\ignorespaces Codificación cromática de estados para equipos de maniobra en el SCADA.}}{51}{table.caption.144}%
+\contentsline {table}{\numberline {7.15}{\ignorespaces Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}}{53}{table.caption.149}%
+\contentsline {table}{\numberline {7.16}{\ignorespaces Configuración de las reglas de entrada del grupo de seguridad de la instancia \ac {EC2}.}}{56}{table.caption.158}%
+\contentsline {table}{\numberline {7.17}{\ignorespaces Relación completa de funciones de autorización en WinCC Configuration Studio.}}{61}{table.caption.169}%
+\contentsline {table}{\numberline {7.18}{\ignorespaces Matriz general de asignación de permisos del sistema SCADA (ID 1 al 19).}}{61}{table.caption.170}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Ensayos unitarios para las funciones de filtrado de turbinas}}{63}{table.caption.170}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Ensayos unitarios para las funciones de filtrado de parques}}{63}{table.caption.171}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Ensayos unitarios para la navegación entre pantallas y menús del SCADA}}{64}{table.caption.172}%
-\contentsline {table}{\numberline {8.4}{\ignorespaces Ensayos de integración de datos en la nube mediante Cloud Connector}}{64}{table.caption.173}%
-\contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{65}{table.caption.176}%
-\contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{65}{table.caption.177}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{66}{table.caption.179}%
-\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{67}{table.caption.180}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Ensayos unitarios para las funciones de filtrado de turbinas}}{63}{table.caption.173}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Ensayos unitarios para las funciones de filtrado de parques}}{63}{table.caption.174}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Ensayos unitarios para la navegación entre pantallas y menús del SCADA}}{64}{table.caption.175}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Ensayos de integración de datos en la nube mediante Cloud Connector}}{64}{table.caption.176}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{65}{table.caption.179}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{65}{table.caption.180}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{66}{table.caption.183}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{67}{table.caption.184}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{73}{table.caption.186}%
-\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto desglosado de licencias de software (Base y Upgrade), hardware e infraestructura.}}{74}{table.caption.188}%
-\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{75}{table.caption.192}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{73}{table.caption.190}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto desglosado de licencias de software (Base y Upgrade), hardware e infraestructura.}}{74}{table.caption.192}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{75}{table.caption.196}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Definición de los estados operativos del aerogenerador en el sistema SCADA.}}{101}{table.caption.217}%
-\contentsline {table}{\numberline {C.2}{\ignorespaces Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}}{103}{table.C.2}%
+\contentsline {table}{\numberline {C.1}{\ignorespaces Definición de los estados operativos del aerogenerador en el sistema SCADA.}}{99}{table.caption.222}%
+\contentsline {table}{\numberline {C.2}{\ignorespaces Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}}{101}{table.C.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{115}{table.E.1}%
+\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}}{113}{table.E.1}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{117}{table.E.2}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{118}{table.E.2}%
 \contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{119}{table.E.2}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{120}{table.E.2}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{121}{table.E.2}%
-\contentsline {table}{\numberline {E.3}{\ignorespaces Mapeo de variables del transformador (TRF) según el modelo IEC 61850.}}{121}{table.E.3}%
+\contentsline {table}{\numberline {E.3}{\ignorespaces Mapeo de variables del transformador (TRF) según el modelo IEC 61850.}}{119}{table.E.3}%

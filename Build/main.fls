@@ -599,11 +599,6 @@ INPUT .\capitulos\alternativas.tex
 INPUT .\capitulos\alternativas.tex
 INPUT .\capitulos\alternativas.tex
 INPUT capitulos\alternativas.tex
-INPUT .\capitulos\desarrollo_de_la_solucion.tex
-INPUT .\capitulos\desarrollo_de_la_solucion.tex
-INPUT .\capitulos\desarrollo_de_la_solucion.tex
-INPUT .\capitulos\desarrollo_de_la_solucion.tex
-INPUT capitulos\desarrollo_de_la_solucion.tex
 INPUT .\figuras\WinCC.png
 INPUT .\figuras\WinCC.png
 INPUT .\figuras\WinCC.png
@@ -636,6 +631,11 @@ INPUT .\figuras\Multipuesto.png
 INPUT .\figuras\Multipuesto.png
 INPUT .\figuras\Multipuesto.png
 INPUT .\figuras\Multipuesto.png
+INPUT .\capitulos\desarrollo_de_la_solucion.tex
+INPUT .\capitulos\desarrollo_de_la_solucion.tex
+INPUT .\capitulos\desarrollo_de_la_solucion.tex
+INPUT .\capitulos\desarrollo_de_la_solucion.tex
+INPUT capitulos\desarrollo_de_la_solucion.tex
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\tfm\bitstrea\charter\bchb8c.tfm
 INPUT C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\fonts\vf\bitstrea\charter\bchb8c.vf
 INPUT .\figuras\Nodos.png

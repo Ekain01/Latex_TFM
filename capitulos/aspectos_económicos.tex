@@ -10,7 +10,7 @@ Los precios reflejados en el apartado de software corresponden a tarifas de cat�
 \subsection{Costes de Ingeniería (Mano de Obra)}
 Para la estimación económica de las labores de desarrollo, se ha tomado como referencia el perfil de un Ingeniero Junior en la especialidad de Control, Automatización y Robótica. Tomando como base el salario especificado en el convenio colectivo de empresas de ingeniería para un nivel salarial 1 \cite{boe_convenio_ingenierias_2024}, se ha aplicado una tarifa de 12,00 € por hora para el ingeniero encargado del desarrollo técnico. Además, se ha considerado una tarifa de 16 € por hora para el director del TFM, quien supervisará y coordinará el proyecto.
 
-El cálculo de horas (850 horas en total) refleja el volumen de dedicación requerido para un proyecto de esta envergadura \ref{sec:presupuesto_mano_obra}.
+El cálculo de horas (880 horas en total) refleja el volumen de dedicación requerido para un proyecto de esta envergadura (ver Tabla \ref{tab:presupuesto_mano_obra}).
 
 \begin{table}[tbp]
 \centering
@@ -21,10 +21,10 @@ El cálculo de horas (850 horas en total) refleja el volumen de dedicación requ
 \toprule
 \textbf{Trabajador} & \textbf{Horas Estimadas} & \textbf{Tarifa (€)} & \textbf{Coste Total (€)} \\
 \midrule
-Ingeniero (Nivel 1) & 850 & 12.00 & 10.200,00 \\
+Ingeniero (Nivel 1) & 880 & 12.00 & 10.560,00 \\
 Director de TFM & 20 & 16.00 & 320,00 \\
 \midrule
-\textbf{Total Mano de Obra} & \textbf{870} & & \textbf{10.520,00} \\
+\textbf{Total Mano de Obra} & \textbf{900} & & \textbf{10.880,00} \\
 \bottomrule
 \end{tabular}
 }
@@ -66,21 +66,21 @@ El coste de la infraestructura en la nube se ha estimado en función del uso de 
 \label{fig:aws_cost_estimation}
 \end{figure}
 \subsection{Resumen del Presupuesto y Coste Total}
-La agregación de los costes de ingeniería, las licencias de software, la amortización de infraestructura local y el coste estimado de la infraestructura en AWS arroja la base imponible del proyecto (ver Tabla \ref{tab:presupuesto_total}).
+La agregación de los costes de ingeniería, las licencias de software, la amortización de infraestructura local y el coste estimado de la infraestructura en AWS arroja la base imponible del proyecto (ver Tabla \ref{tab:presupuesto_total}).\vspace{0.5cm}
 
-\begin{table}[tbp]
+\begin{table}[htbp]
 \centering
 \caption{Resumen del presupuesto general del proyecto.}
 \label{tab:presupuesto_total}
-\begin{tabular}{lr}
+\begin{tabular}{p{10cm}p{3cm}}
 \toprule
 \textbf{Partida Presupuestaria} & \textbf{Importe (EUR)} \\
 \midrule
-Costes de Ingeniería (Mano de obra) & 10.520,00 \\
+Costes de Ingeniería (Mano de obra) & 10.880,00 \\
 Costes de Software e Infraestructura & 19.650,00 \\
-Coste estimado infraestructura AWS & 19,87 \\
+Coste estimado infraestructura AWS (2 meses) & 19,87 \\
 \midrule
-\textbf{Presupuesto Total General} & \textbf{30.189,87} \\
+\textbf{Presupuesto Total General} & \textbf{30.549,87} \\
 \bottomrule
 \end{tabular}
 \end{table}

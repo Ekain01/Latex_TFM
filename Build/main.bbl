@@ -1081,6 +1081,55 @@
     \field{year}{2024}
   \endentry
 
+  \entry{siemens_sivaas_2025}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Siemens AG}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Siemens}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Entry ID: 109995660}
+    \field{number}{A5E54190777-AC}
+    \field{title}{SIMATIC Virtualization as a Service (SIVaaS) based on
+  Hyper-V: Operating Manual SIVaaS V4.2 Standard | IADC V2.4 SP3}
+    \field{month}{10}
+    \field{year}{2025}
+  \endentry
+
+  \entry{siemens_wincc_2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Siemens AG}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Siemens}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Documentación técnica}
+    \field{title}{WinCC V8.0 Architectures}
+    \verb{url}
+    \verb https://assets.new.siemens.com/siemens/assets/api/uuid:37198c83-cd3f-
+    \verb 4649-92e6-5806c8c395c4/05062024-wincc-v8-0-architectures.pdf
+    \endverb
+    \field{year}{2024}
+  \endentry
+
   \entry{Udo2021}{article}{}{}
     \name{author}{2}{}{%
       {{hash=UW}{%
@@ -1170,6 +1219,55 @@
     }
     \field{type}{Official Publication}
     \field{year}{2015}
+  \endentry
+
+  \entry{wen2023baremetal}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=WL}{%
+         family={Wen},
+         familyi={W\bibinitperiod},
+         given={Long},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rickert},
+         familyi={R\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Pan},
+         familyi={P\bibinitperiod},
+         given={Fengjunjie},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Jianjie},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Knoll},
+         familyi={K\bibinitperiod},
+         given={Alois},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WL+1}
+    \strng{fullhash}{WLRMPFLJKA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{2023 IEEE Intelligent Vehicles Symposium (IV)}
+    \verb{doi}
+    \verb 10.1109/IV55152.2023.10186789
+    \endverb
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{Bare-Metal vs. Hypervisors and Containers: Performance
+  Evaluation of Virtualization Technologies for Software-Defined Vehicles}
+    \field{year}{2023}
   \endentry
 
   \entry{Xiang2021}{article}{}{}

@@ -394,14 +394,11 @@ if (Math.abs(current - target) < paso) {
     current -= paso;
 }
 
-// 5. GUARDAR el resultado para el proximo ciclo
+// 5. Guardar el resultado para el proximo ciclo
 flow.set("windSpdTurbine", current);
 
 // 6. Enviar el valor al SCADA/Kepware
 msg.payload = current;
-
-// Opcional: Enviar info adicional para depuracion en el debug tab
-msg.emergency = (windSpd > 25);
 
 return msg;
 \end{lstlisting}
@@ -434,7 +431,7 @@ if (v >= cutIn && v < nominal) {
 // Redondeamos a 2 decimales
 potencia = Math.round(potencia * 100) / 100;
 
-// 3. LA CLAVE: Enviamos solo el numero, no un objeto
+// 3. Enviar el valor
 msg.payload = potencia;
 
 return msg;
@@ -470,11 +467,9 @@ if (Math.abs(current - target) < paso) {
 flow.set("windSpd", current);
 
 
-// 5. Enviar el valor al SCADA/Kepware
+// 5. Enviar el valor 
 msg.payload=current;
 
-// Solo enviamos mensaje si realmente nos estamos moviendo
-// (O puedes quitar este IF si quieres flujo constante de datos)
 return msg;
 \end{lstlisting}
 \subsection{Nodo :  Orientación}
@@ -502,14 +497,11 @@ if (current < target) {
     if (current < target) current = target;
 }
 
-// 4. Guardar la nueva posicion en la memoria del nodo para el proximo ciclo
+// 4. Guardar la nueva posicion en la memoria 
 context.set("currentPos", current);
 
-// 5. Enviar el valor al SCADA/Kepware
+// 5. Enviar el valor 
 msg.payload=current;
-
-// Solo enviamos mensaje si realmente nos estamos moviendo
-// (O puedes quitar este IF si quieres flujo constante de datos)
 return msg;
 \end{lstlisting}
 \subsection{Nodo: Orientación de pala}
@@ -536,13 +528,7 @@ if (windSpd < V_ARRANQUE) {
 } else {
     pitchAngle = 90; 
 }
-
-// 4. Preparar el envio para KEPServer
-// Nota: Si en Kepware usas "Short", usa Math.round(pitchAngle)
-// Si usas "Float", dejalo con decimales.
-
-
-// 3. LA CLAVE: Enviamos solo el numero, no un objeto
+//4. Envio
 msg.payload = pitchAngle;
 return msg;
 \end{lstlisting}
@@ -617,11 +603,6 @@ else {
     // EMERGENCIA: Viento > 25 m/s, el rotor se frena a 0
     rpm = 0;
 }
-
-// 2. Limpieza de datos (evitar decimales infinitos)
-msg.payload = parseFloat(rpm.toFixed(2));
-
-// 3. (Opcional) Guardar en flujo para otros nodos
 flow.set("rotorRPM", msg.payload);
 
 return msg;

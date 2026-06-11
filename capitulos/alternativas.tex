@@ -1,4 +1,122 @@
 \chapter{Análisis de alternativas}
 \label{cap:soa}
 
-Análisis de alternativas y selección de elementos necesario para la ejecución del TFM.
+En este capítulo se realiza un análisis de las distintas alternativas para la implementación de la arquitecturas de SIMATIC WinCC V8.1. Para ello se describe primero el entorno de trabajo y sus características principales y posteriormente se explica cada una de las alternativas posibles. Finalmente, se presenta la selección abordada justificando su elección.
+
+\section{Introducción al entorno de SIMATIC WinCC V8.1}
+SIMATIC WinCC V8.1 es un sistema \ac{SCADA}, basado en los sistemas operativos Microsoft Windows, desarrollado por Siemens AG. Está diseñado para la visualización, control y operación de procesos, flujos de producción, máquinas y plantas críticas en diversos sectores industriales.
+
+\par \indent WinCC actúa como una \ac{HMI} de alto nivel. A diferencia de los paneles de operador básicos ubicados a pie de máquina, un \ac{HMI} de alto nivel como WinCC proporciona un entorno gráfico avanzado que permite a los operadores del centro de control manejar, monitorizar y entender de forma intuitiva los procesos dinámicos que se ejecutan en la planta sin tener que estar en la ubicación de la máquina. La comunicación entre el entorno de supervisión WinCC y la maquinaria física se efectúa de manera bidireccional a través de sistemas de automatización, empleando protocolos de comunicación industrial.(\ref{fig:wincc_interface})
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/WinCC.png}
+    \caption{Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}
+    \label{fig:wincc_interface}
+    \vspace{0.5cm}
+\end{figure}
+
+\par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como \ac{ANSI-C} y \ac{VBS}. Por otro lado, WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del archivado histórico continuo de las variables del proceso y del registro de eventos y fallos.
+
+\par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el \ac{CS} y el o \ac{RT}.
+
+\subsection{Software de configuración (CS) WinCC Explorer}
+El software de configuración se denomina WinCC Explorer. En él se realiza toda la estructura y administración del proyecto. Dentro del WinCC Explorer se pueden abrir diferentes editores los cuales son interfaces de los subsistemas de WinCC. Estos subsistemas se encargan de diferentes tareas dentro del sistema SCADA, como la creación de variables, la configuración de comunicaciones, la gestión de alarmas, la creación de informes, entre otras funciones. La descripción detallada de cada uno de los subsistemas principales del software de configuración de WinCC se muestra en la Tabla \ref{tab:wincc_subsystems}.
+\begin{table}[tb]
+    \centering
+    \caption{Descripción de los subsistemas principales del software de configuración de WinCC (\textit{CS}).}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{p{5cm} p{3cm} p{6cm}} 
+            \toprule
+        	\textbf{Subsistema} & \textbf{Editor} & \textbf{Descripción} \\ 
+        \hline
+        Sistema gráfico & Graphic Designer & Diseño de las pantallas de visualización \\
+        Comunicación & Tag management & Creación de variables (internos o de estructura) configuración de drivers de comunicación y conexión con los datos del proceso \\[10pt]
+        Sistema de ficheros & Tag logging & Administración de archivado de datos historicos \\[10pt]
+        Sistema de avisos & Alarm logging & Gestión de alertas y eventos \\[10pt]
+        Sistema de informes & Report Designer& Creación y gestión de informes \\[10pt]
+        Administración de usuarios & User Administrator& Gestión de usuarios, grupos y sus respectivos permisos\\[10pt]
+        Subsistema de Scripts & Global Scripts & Diseño de Scripts globales del programa (Visual Basic VBS/ ANSI-C) \\[10pt]
+        Gestión de idiomas & Text library & Configuración y gestión de idiomas \\[10pt]
+        \bottomrule
+    \end{tabular}
+    \vspace{0.5cm}
+    
+    \label{tab:wincc_subsystems}
+    }
+\end{table}
+\subsection{Software de ejecución (RT) WinCC Runtime}
+El software de ejecución WinCC Runtime (o \ac{RT}) es el motor  motor encargado de administrar todos los subservicios de WinCC. Es el encargado de ejecutar la adquisición de datos de los \ac{PLC} en tiempo real, actualizar dinámicamente la interfaz gráfica, procesar la lógica de los scripts, gestionar el control de acceso de los usuarios y archivar de manera segura los eventos y datos históricos en las bases de datos SQL.\par
+\section{Arquitecturas de software de supervisión en SIMATIC WinCC V8.1}
+La arquitectura en SIMATIC WinCC representa la repartición de los componentes \ac{CS} y \ac{RT} de software sobre los recursos computacionales. Dependiendo de la topología de la red, el número de estaciones de operación y los requisitos de redundancia, se pueden implementar diferentes arquitecturas de software. Estas arquitecturas pueden ser monopuesto o multipuesto \cite{siemens_wincc_2024}.\par
+\subsection{Sistemas Monopuesto (\textit{Single User Systems})}
+En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar las tareas relacionadas al software de configuración y software de  ejecución. Es decir, el equipo se encarga de realizar por un lado las labores de ingeniería (Diseño de interfaces gráficas, gestion de variables etc.) y por el otro realiza las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet, ModBus u \ac{OPC UA} etc.),  ejecuta la lógica de \textit{scripts}, almacena los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
+Siemens permite dos arquitecturas para este tipo de sistemas: La primera, una estación única que integra \ac{CS} y \ac{RT} en una única estación, tambien denominada estación \ac{RC} (Figura \ref{fig:monopuesto_simple}), y la segunda, una variante donde un PC configurado con redundancia ejecuta el software \ac{RT} por si la estación principal falla. (Figura \ref{fig:monopuesto_redundante}).
+
+% --- PRIMERA FIGURA: ARQUITECTURAS MONOPUESTO (A y B) ---
+\begin{figure}[p] % Usamos [htbp] para que se posicione en el flujo del texto actual
+    \centering
+    
+    % --- SUBFIGURA A: MONOPUESTO SIMPLE ---
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Monopuesto.png}
+        \caption{Estación con un único PC operativo.}
+        \label{fig:monopuesto_simple}
+    \end{subfigure}
+    \vspace{0.25cm}
+  
+     % Forzar salto de línea para colocar la siguiente abajo
+    
+    % --- SUBFIGURA B: MONOPUESTO REDUNDANTE ---
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/MonopuestoRedundante.png}
+        \caption{Configuración monopuesto con estación redundante.}
+        \label{fig:monopuesto_redundante}
+    \end{subfigure}
+    
+    \vspace{0.8cm} 
+    % --- SUBFIGURA C: MULTIPUESTO DISTRIBUIDO ---
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/Multipuesto.png}
+        \caption{Arquitectura multipuesto distribuida con servidores redundantes y estaciones cliente dedicadas.}
+        \label{fig:multipuesto_distribuido}
+    \end{subfigure}
+    \vspace{0.6cm}
+    % Un único pie de foto global para toda la página
+    \caption{Ejemplos de topologías de arquitecturas de sistemas distribuidos en SIMATIC WinCC V8.1: configuraciones monopuesto (a, b) y multipuesto (c).}
+    \label{fig:arquitecturas_scada_global}
+\end{figure}
+
+\subsection{Sistemas Multipuesto (\textit{Multy User Systems})}
+Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde una única estación de operación realiza todas las tareas), en un sistema multipuesto la carga de trabajo se divide entre uno o varios servidores centrales (configuradas como \textit{Multi-User Project}) y múltiples estaciones cliente (configuradas como \textit{Client Project}). Este enfoque permite una variedad grande de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación, siendo el foco de implementación final. (Figura \ref{fig:multipuesto_distribuido}) \par 
+
+\section{Virtualización de sistemas de WinCC}
+Las arquitecturas de sistemas WinCC  pueden ser implementadas de forma física o virtualizada. La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples \ac{VM} aisladas, compartiendo recursos como \ac{CPU}, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: Alojados y Metal-Desnudos.
+\subsection{Hypervisor alojado  (\textit{Hosted Hypervisor})}
+Este tipo se instala como una aplicación de software más dentro de un sistema operativo convencional que ya está funcionando en el equipo físico (conocido como \ac{OS} Anfitrión o Host \ac{OS}).\par
+
+Este tipo de hipervisor genera una dependencia del \ac{OS} base ya que el hipervisor debe pedir constantemente permiso para acceder a los recursos del sistema lo cual genera un cuello de botella disminuyendo el rendimiento. \par
+
+Por otro lado, esta dependencia del \ac{OS} base es una vulnerabilidad en sí misma para la seguridad y ciberseguridad del sistema, ya que un malfuncionamiento o un virus podrían contagiarse a cada una de las instancias de maquinas virtuales que corren encima.
+
+\subsection{Hypervisor metal desnudo (\textit{Bare-Metal Hypervisor})}
+
+Se le denomina \textit{Bare-Metal} (metal desnudo) porque se instala y ejecuta directamente sobre el hardware físico del servidor. No hay ningún sistema operativo tradicional (como Windows Server o Linux) actuando como intermediario. El hipervisor en sí mismo es un sistema operativo altamente especializado y minimalista diseñado con un único propósito: gestionar y asignar recursos físicos a las máquinas virtuales. Al no tener que atravesar ningún sistema operativo anfitrión, las maquinas virtuales tienen acceso más directo a los recursos del sistema reduciendo la latencia y mejorando el rendimiento \cite{wen2023baremetal}. \par
+
+Al contrario que un hipervisor alojado, es seguro ante vulnerabilidades, debido a que que tiene una superficie de ataque reducida. Además, las máquinas virtuales están aisladas por lo que si una maquina virtual se ve comprometida por un malware el resto de maquinas permanecerán seguras.\par
+
+\subsection{Virtualización SIMATIC como Servicio (\ac{SIVaaS})}
+Siemens ofrece una solución de virtualización completa para sistemas de control basada en hipervisores bare-metal llamada Virtualización SIMATIC como Servicio (\ac{SIVaaS}). \ac{SIVaaS} es una solución de virtualización completa para sistemas de control basados en PC. El hardware, el software, la configuración y los servicios de ciclo de vida están totalmente integrados, abarcando desde la configuración del host y el hipervisor hasta las máquinas virtuales, los sistemas operativos y la instalación de software llave en mano \cite{siemens_sivaas_2025}.  \par
+
+\section{Selección de la arquitectura}
+
+Tras evaluar las distintas topologías distribuidas habituales en entornos de producción a gran escala, para el desarrollo y validación de esta prueba de concepto se ha optado por desplegar una arquitectura de estación monopuesto virtualizada.\par
+
+Esta decisión se fundamenta, en primer lugar, en las limitaciones para el aprovisionamiento a tiempo de la infraestructura de hardware físico dedicado \ac{SIVaaS}, dado que los elevados requisitos de memoria \ac{RAM} y recursos de \ac{CPU}  dificultaban su disponibilidad en el plazo del proyecto. Ante este problema de suministro, se ha recurrido a máquinas virtuales industriales provistas de las licencias oficiales requeridas para ejecutar \textit{SIMATIC WinCC} a pleno rendimiento.\par 
+
+Esta estrategia de virtualización resulta especialmente ventajosa al permitir la completa abstracción del núcleo del \ac{SCADA} respecto al sistema operativo base del equipo anfitrión (\textit{Host}). Esto no solo garantiza un entorno de ejecución estable y libre de conflictos informáticos, sino que facilita enormemente la portabilidad de la solución y agiliza las labores de respaldo mediante puntos de restauración durante la fase de desarrollo.
+
+Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes hosts y máquinas virtuales. Por lo que el diseño es altamente flexible y para la realización de la prueba de concepto la solucion adoptada es suficiente.\par
