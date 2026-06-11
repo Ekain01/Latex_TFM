@@ -2093,4 +2093,1041 @@ Underfull \hbox (badness 1960) in paragraph at lines 46--46
 []|\T1/bch/m/n/10.95 (+20) User Ad-min-is-tra-
  []
 
-Package acronym Info: Label `acro:PLC' newly defined a
+Package acronym Info: Label `acro:PLC' newly defined as it shall be overridden
+although it is yet undefined on input line 49.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.20}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.49 ...histÃ³ricos en las bases de datos SQL.\par
+                                                   [20]
+Package acronym Info: Label `acro:RC' newly defined as it shall be overridden
+although it is yet undefined on input line 54.
+<figuras/Monopuesto.png, id=1126, 1254.6875pt x 596.2275pt>
+File: figuras/Monopuesto.png Graphic file (type png)
+<use figuras/Monopuesto.png>
+Package pdftex.def Info: figuras/Monopuesto.png  used on input line 63.
+(pdftex.def)             Requested size: 355.9042pt x 169.126pt.
+<figuras/MonopuestoRedundante.png, id=1127, 2439.1125pt x 1195.46625pt>
+File: figuras/MonopuestoRedundante.png Graphic file (type png)
+<use figuras/MonopuestoRedundante.png>
+Package pdftex.def Info: figuras/MonopuestoRedundante.png  used on input line 74.
+(pdftex.def)             Requested size: 355.9042pt x 174.42352pt.
+<figuras/Multipuesto.png, id=1128, 1798.72pt x 1198.4775pt>
+File: figuras/Multipuesto.png Graphic file (type png)
+<use figuras/Multipuesto.png>
+Package pdftex.def Info: figuras/Multipuesto.png  used on input line 83.
+(pdftex.def)             Requested size: 355.9042pt x 237.13103pt.
+
+
+LaTeX Warning: Float too large for page by 4.18431pt on input line 91.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21] [22 <./figuras/Monopuesto.png> <./figuras/MonopuestoRedundante.png> <./figuras/Multipuesto.png>]
+Package acronym Info: Label `acro:VM' newly defined as it shall be overridden
+although it is yet undefined on input line 97.
+Package acronym Info: Label `acro:CPU' newly defined as it shall be overridden
+although it is yet undefined on input line 97.
+Package acronym Info: Label `acro:OS' newly defined as it shall be overridden
+although it is yet undefined on input line 99.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 111.
+
+Package acronym Info: Label `acro:RAM' newly defined as it shall be overridden
+although it is yet undefined on input line 118.
+) (capitulos/desarrollo_de_la_solucion.tex [24]
+chapter 7.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+Package acronym Info: Label `acro:WTG' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
+Package acronym Info: Label `acro:IP' newly defined as it shall be overridden
+although it is yet undefined on input line 66.
+[25
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 67.
+
+
+Underfull \vbox (badness 2521) has occurred while \output is active []
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+<figuras/Nodos.png, id=1208, 2380.895pt x 1766.6pt>
+File: figuras/Nodos.png Graphic file (type png)
+<use figuras/Nodos.png>
+Package pdftex.def Info: figuras/Nodos.png  used on input line 114.
+(pdftex.def)             Requested size: 395.45181pt x 293.41727pt.
+
+Underfull \hbox (badness 7308) in paragraph at lines 115--115
+[][]|\T1/bch/m/n/10 (+20) Jer-ar-quía de los nive-les de la norma IEC 61400-25-2. Adap-
+ []
+
+Package acronym Info: Label `acro:SPS' newly defined as it shall be overridden
+although it is yet undefined on input line 153.
+Package acronym Info: Label `acro:INS' newly defined as it shall be overridden
+although it is yet undefined on input line 153.
+Package acronym Info: Label `acro:MV' newly defined as it shall be overridden
+although it is yet undefined on input line 153.
+
+Underfull \hbox (badness 1062) in paragraph at lines 153--153
+[]|\T1/bch/m/n/10.95 (+20) Coma flotante IEEE 754
+ []
+
+
+Underfull \vbox (badness 1728) has occurred while \output is active []
+
+ [28] [29 <./figuras/Nodos.png>]
+<figuras/Nodos_1400.png, id=1241, 699.5736pt x 525.6438pt>
+File: figuras/Nodos_1400.png Graphic file (type png)
+<use figuras/Nodos_1400.png>
+Package pdftex.def Info: figuras/Nodos_1400.png  used on input line 183.
+(pdftex.def)             Requested size: 395.45181pt x 297.13367pt.
+Package acronym Info: Label `acro:LN' newly defined as it shall be overridden
+although it is yet undefined on input line 188.
+
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./figuras/Nodos_1400.png>]
+<figuras/IEC_61400-25-2_v1.jpg, id=1259, 458.46281pt x 249.93375pt>
+File: figuras/IEC_61400-25-2_v1.jpg Graphic file (type jpg)
+<use figuras/IEC_61400-25-2_v1.jpg>
+Package pdftex.def Info: figuras/IEC_61400-25-2_v1.jpg  used on input line 220.
+(pdftex.def)             Requested size: 395.45181pt x 215.59097pt.
+ [32]
+Package acronym Info: Label `acro:DPS' newly defined as it shall be overridden
+although it is yet undefined on input line 247.
+Package acronym Info: Label `acro:PD' newly defined as it shall be overridden
+although it is yet undefined on input line 273.
+Package acronym Info: Label `acro:LD' newly defined as it shall be overridden
+although it is yet undefined on input line 273.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33 <./figuras/IEC_61400-25-2_v1.jpg>] [34]
+<figuras/celda_linea.png, id=1296, 130.23656pt x 110.66344pt>
+File: figuras/celda_linea.png Graphic file (type png)
+<use figuras/celda_linea.png>
+Package pdftex.def Info: figuras/celda_linea.png  used on input line 305.
+(pdftex.def)             Requested size: 177.95401pt x 106.77771pt.
+<figuras/Celda_Trafo.png, id=1297, 164.86594pt x 82.80937pt>
+File: figuras/Celda_Trafo.png Graphic file (type png)
+<use figuras/Celda_Trafo.png>
+Package pdftex.def Info: figuras/Celda_Trafo.png  used on input line 312.
+(pdftex.def)             Requested size: 177.95694pt x 106.77776pt.
+Package acronym Info: Label `acro:DO' newly defined as it shall be overridden
+although it is yet undefined on input line 320.
+ [35 <./figuras/celda_linea.png> <./figuras/Celda_Trafo.png>]
+Package acronym Info: Label `acro:DA' newly defined as it shall be overridden
+although it is yet undefined on input line 360.
+
+
+Package acronym Warning: Acronym DA is not defined on input line 360.
+
+
+Package acronym Warning: Acronym DA is not defined on input line 360.
+
+[36{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+Package acronym Info: Label `acro:SOA' newly defined as it shall be overridden
+although it is yet undefined on input line 385.
+<figuras/OPCUA_metamodelo.png, id=1351, 496.254pt x 273.4215pt>
+File: figuras/OPCUA_metamodelo.png Graphic file (type png)
+<use figuras/OPCUA_metamodelo.png>
+Package pdftex.def Info: figuras/OPCUA_metamodelo.png  used on input line 392.
+(pdftex.def)             Requested size: 395.45181pt x 217.8822pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+\T1/bch/m/n/10 (+20) https://www.unified-automation.com/products/opc-ua/technology/opc-ua-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+<figuras/NodeRed_KepServer.png, id=1366, 2826.56pt x 874.26625pt>
+File: figuras/NodeRed_KepServer.png Graphic file (type png)
+<use figuras/NodeRed_KepServer.png>
+Package pdftex.def Info: figuras/NodeRed_KepServer.png  used on input line 403.
+(pdftex.def)             Requested size: 395.7157pt x 122.39644pt.
+<figuras/Opc_endpoint.png, id=1371, 463.7325pt x 295.1025pt>
+File: figuras/Opc_endpoint.png Graphic file (type png)
+<use figuras/Opc_endpoint.png>
+Package pdftex.def Info: figuras/Opc_endpoint.png  used on input line 416.
+(pdftex.def)             Requested size: 395.45181pt x 251.65782pt.
+<figuras/certificados_opc.png, id=1373, 464.4853pt x 295.1025pt>
+File: figuras/certificados_opc.png Graphic file (type png)
+<use figuras/certificados_opc.png>
+Package pdftex.def Info: figuras/certificados_opc.png  used on input line 424.
+(pdftex.def)             Requested size: 395.45181pt x 251.24805pt.
+ [38 <./figuras/OPCUA_metamodelo.png> <./figuras/NodeRed_KepServer.png>] [39 <./figuras/Opc_endpoint.png> <./figuras/certificados_opc.png>]
+Overfull \hbox (12.9126pt too wide) in paragraph at lines 442--442
+[]\T1/bch/m/n/10.95 (-20) Esta conex-ión \T1/lmtt/m/n/10.95 OPC_UA_IGL_I \T1/bch/m/n/10.95 (-20) apunta di-rec-ta-mente al \T1/bch/m/it/10.95 (-20) End-point \T1/bch/m/n/10.95 (-20) del servi-dor KEPServerEX
+ []
+
+<figuras/Conexion_Opc.png, id=1402, 372.64218pt x 144.54pt>
+File: figuras/Conexion_Opc.png Graphic file (type png)
+<use figuras/Conexion_Opc.png>
+Package pdftex.def Info: figuras/Conexion_Opc.png  used on input line 445.
+(pdftex.def)             Requested size: 395.45181pt x 153.3925pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
+<figuras/IEM.png, id=1415, 724.7075pt x 371.3875pt>
+File: figuras/IEM.png Graphic file (type png)
+<use figuras/IEM.png>
+Package pdftex.def Info: figuras/IEM.png  used on input line 475.
+(pdftex.def)             Requested size: 395.45181pt x 202.66pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--476
+[][]|\T1/bch/m/n/10 (+20) Mod-elo de In-ter-cam-bio de In-for-ma-ción (IEM) de la solu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--476
+\T1/bch/m/n/10 (+20) ción SCADA basado en [][]. Obtenido de []$\T1/lmtt/m/n/10 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--476
+\T1/lmtt/m/n/10 / / webstore . iec . ch / en / iec _ catalog / product / preview / ?id =
+ []
+
+
+Overfull \hbox (37.21332pt too wide) in paragraph at lines 476--476
+\T1/lmtt/m/n/10 L3B1Yi9wZGYvcHJldmlldy9pbmZvX2llYzYxNDAwLTI1LTN7ZWQyLjAuUkxWfWVuLnBkZg =
+ []
+
+[41 <./figuras/Conexion_Opc.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42 <./figuras/IEM.png (PNG copy)>]
+<figuras/jerarquia.png, id=1435, 878.53218pt x 576.65437pt>
+File: figuras/jerarquia.png Graphic file (type png)
+<use figuras/jerarquia.png>
+Package pdftex.def Info: figuras/jerarquia.png  used on input line 504.
+(pdftex.def)             Requested size: 395.33583pt x 259.49207pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+Package acronym Info: Label `acro:SUB' newly defined as it shall be overridden
+although it is yet undefined on input line 521.
+Package acronym Info: Label `acro:MET' newly defined as it shall be overridden
+although it is yet undefined on input line 522.
+Package acronym Info: Label `acro:SYS' newly defined as it shall be overridden
+although it is yet undefined on input line 523.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44 <./figuras/jerarquia.png>]
+<figuras/00_Main_Interface.png, id=1457, 1011.02719pt x 465.99094pt>
+File: figuras/00_Main_Interface.png Graphic file (type png)
+<use figuras/00_Main_Interface.png>
+Package pdftex.def Info: figuras/00_Main_Interface.png  used on input line 542.
+(pdftex.def)             Requested size: 395.45181pt x 182.26901pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45]
+
+Package caption Warning: \label without proper reference on input line 568.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:plantillas_dinamizadas' on page 46 undefined on input line 564.
+
+<figuras/WTG_Faceplate.png, id=1466, 676.02562pt x 252.19218pt>
+File: figuras/WTG_Faceplate.png Graphic file (type png)
+<use figuras/WTG_Faceplate.png>
+Package pdftex.def Info: figuras/WTG_Faceplate.png  used on input line 572.
+(pdftex.def)             Requested size: 189.81195pt x 94.90662pt.
+<figuras/Park_Faceplate.png, id=1467, 701.62125pt x 255.95625pt>
+File: figuras/Park_Faceplate.png Graphic file (type png)
+<use figuras/Park_Faceplate.png>
+Package pdftex.def Info: figuras/Park_Faceplate.png  used on input line 579.
+(pdftex.def)             Requested size: 189.81497pt x 94.90541pt.
+<figuras/TurbinaDinamizada.png, id=1468, 331.2375pt x 124.21407pt>
+File: figuras/TurbinaDinamizada.png Graphic file (type png)
+<use figuras/TurbinaDinamizada.png>
+Package pdftex.def Info: figuras/TurbinaDinamizada.png  used on input line 585.
+(pdftex.def)             Requested size: 189.81313pt x 94.90971pt.
+<figuras/ParqueDinamizado.png, id=1469, 338.76563pt x 132.495pt>
+File: figuras/ParqueDinamizado.png Graphic file (type png)
+<use figuras/ParqueDinamizado.png>
+Package pdftex.def Info: figuras/ParqueDinamizado.png  used on input line 592.
+(pdftex.def)             Requested size: 189.82117pt x 94.90907pt.
+[46 <./figuras/00_Main_Interface.png>]
+<figuras/10_WTG_Overview.png, id=1477, 864.98157pt x 303.38344pt>
+File: figuras/10_WTG_Overview.png Graphic file (type png)
+<use figuras/10_WTG_Overview.png>
+Package pdftex.def Info: figuras/10_WTG_Overview.png  used on input line 611.
+(pdftex.def)             Requested size: 395.45181pt x 138.70166pt.
+<figuras/10_WTG_Overview_Selector.png, id=1478, 280.04625pt x 97.11281pt>
+File: figuras/10_WTG_Overview_Selector.png Graphic file (type png)
+<use figuras/10_WTG_Overview_Selector.png>
+Package pdftex.def Info: figuras/10_WTG_Overview_Selector.png  used on input line 619.
+(pdftex.def)             Requested size: 177.95984pt x 88.97885pt.
+<figuras/10_WTG_Overview_parque.png, id=1479, 496.10344pt x 201.00093pt>
+File: figuras/10_WTG_Overview_parque.png Graphic file (type png)
+<use figuras/10_WTG_Overview_parque.png>
+Package pdftex.def Info: figuras/10_WTG_Overview_parque.png  used on input line 626.
+(pdftex.def)             Requested size: 177.95364pt x 88.97433pt.
+<figuras/Ordenamiento.png, id=1480, 1444.64719pt x 420.06938pt>
+File: figuras/Ordenamiento.png Graphic file (type png)
+<use figuras/Ordenamiento.png>
+Package pdftex.def Info: figuras/Ordenamiento.png  used on input line 632.
+(pdftex.def)             Requested size: 395.45181pt x 114.98422pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47 <./figuras/WTG_Faceplate.png> <./figuras/Park_Faceplate.png> <./figuras/TurbinaDinamizada.png> <./figuras/ParqueDinamizado.png>] [48 <./figuras/10_WTG_Overview.png> <./figuras/10_WTG_Overview_Selector.png> <./figuras/10_WTG_Overview_parque.png> <./figuras/Ordenamiento.png>] [49]
+Overfull \hbox (3.60165pt too wide) in paragraph at lines 720--720
+[]|\T1/lmtt/m/n/10.95 Mantenimiento| 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+<figuras/Estados.png, id=1518, 274.02374pt x 114.4275pt>
+File: figuras/Estados.png Graphic file (type png)
+<use figuras/Estados.png>
+Package pdftex.def Info: figuras/Estados.png  used on input line 730.
+(pdftex.def)             Requested size: 276.81505pt x 115.60228pt.
+File: figuras/celda_linea.png Graphic file (type png)
+<use figuras/celda_linea.png>
+Package pdftex.def Info: figuras/celda_linea.png  used on input line 760.
+(pdftex.def)             Requested size: 118.63667pt x 83.0497pt.
+<figuras/celda_linea_2.png, id=1520, 115.18031pt x 100.12407pt>
+File: figuras/celda_linea_2.png Graphic file (type png)
+<use figuras/celda_linea_2.png>
+Package pdftex.def Info: figuras/celda_linea_2.png  used on input line 767.
+(pdftex.def)             Requested size: 118.63702pt x 83.04947pt.
+<figuras/celda_linea_3.png, id=1521, 125.71968pt x 106.14656pt>
+File: figuras/celda_linea_3.png Graphic file (type png)
+<use figuras/celda_linea_3.png>
+Package pdftex.def Info: figuras/celda_linea_3.png  used on input line 774.
+(pdftex.def)             Requested size: 118.6369pt x 83.04826pt.
+
+Underfull \vbox (badness 5475) has occurred while \output is active []
+
+ [51 <./figuras/Estados.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52 <./figuras/celda_linea_2.png> <./figuras/celda_linea_3.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53]
+Package acronym Info: Label `acro:AWS' newly defined as it shall be overridden
+although it is yet undefined on input line 834.
+Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
+although it is yet undefined on input line 835.
+<figuras/DiagramaCloud.png, id=1562, 2826.56pt x 1541.76pt>
+File: figuras/DiagramaCloud.png Graphic file (type png)
+<use figuras/DiagramaCloud.png>
+Package pdftex.def Info: figuras/DiagramaCloud.png  used on input line 842.
+(pdftex.def)             Requested size: 395.7157pt x 215.84492pt.
+ [54]
+Package acronym Info: Label `acro:IaaS' newly defined as it shall be overridden
+although it is yet undefined on input line 849.
+ [55 <./figuras/DiagramaCloud.png>]
+<figuras/DockerVM.png, id=1587, 1167.36125pt x 774.895pt>
+File: figuras/DockerVM.png Graphic file (type png)
+<use figuras/DockerVM.png>
+Package pdftex.def Info: figuras/DockerVM.png  used on input line 888.
+(pdftex.def)             Requested size: 276.81505pt x 183.74387pt.
+
+Underfull \hbox (badness 1931) in paragraph at lines 889--889
+[][]|\T1/bch/m/n/10 (+20) Ar-qui-tec-tura de con-tene-dores Docker para la solu-ción IIoT del par-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 889--889
+\T1/bch/m/n/10 (+20) que eólico. Obtenido de []$\T1/lmtt/m/n/10 https : / / hanwenzhang123 . medium . com /
+ []
+
+<figuras/DockerNetwork.png, id=1591, 770.88pt x 528.97626pt>
+File: figuras/DockerNetwork.png Graphic file (type png)
+<use figuras/DockerNetwork.png>
+Package pdftex.def Info: figuras/DockerNetwork.png  used on input line 900.
+(pdftex.def)             Requested size: 276.81505pt x 189.947pt.
+
+Underfull \hbox (badness 3148) in paragraph at lines 901--901
+[][]|\T1/bch/m/n/10 (+20) Ar-qui-tec-tura de red in-terna y ais-lamiento de ser-vi-cios IIoT en el
+ []
+
+
+Underfull \hbox (badness 4013) in paragraph at lines 901--901
+\T1/bch/m/n/10 (+20) mo-tor Docker. Obtenido de []$\T1/lmtt/m/n/10 https : / / k21academy . com / kubernetes /
+ []
+
+
+Overfull \hbox (41.21332pt too wide) in paragraph at lines 901--901
+\T1/lmtt/m/n/10 docker-[]networking-[]different-[]types-[]of-[]networking-[]overview-[]for-[]beginners/$[]| 
+ []
+
+[56]
+Overfull \hbox (5.35075pt too wide) in paragraph at lines 909--910
+\T1/bch/m/n/10.95 (-20) Dado que los con-tene-dores son efímeros por nat-u-raleza, se han con-fig-u-rado volúmenes
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57 <./figuras/DockerVM.png> <./figuras/DockerNetwork.png (PNG copy)>]
+<figuras/cloudconnect.png, id=1611, 417.05812pt x 176.91093pt>
+File: figuras/cloudconnect.png Graphic file (type png)
+<use figuras/cloudconnect.png>
+Package pdftex.def Info: figuras/cloudconnect.png  used on input line 915.
+(pdftex.def)             Requested size: 395.45181pt x 167.75398pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 921--921
+
+ []
+
+<figuras/NodeRedMQTT.png, id=1617, 688.07062pt x 499.8675pt>
+File: figuras/NodeRedMQTT.png Graphic file (type png)
+<use figuras/NodeRedMQTT.png>
+Package pdftex.def Info: figuras/NodeRedMQTT.png  used on input line 925.
+(pdftex.def)             Requested size: 395.45181pt x 287.28429pt.
+
+Underfull \vbox (badness 7433) has occurred while \output is active []
+
+ [58 <./figuras/cloudconnect.png>]
+<figuras/Grafana.png, id=1627, 596.2275pt x 251.43938pt>
+File: figuras/Grafana.png Graphic file (type png)
+<use figuras/Grafana.png>
+Package pdftex.def Info: figuras/Grafana.png  used on input line 935.
+(pdftex.def)             Requested size: 395.45181pt x 166.7677pt.
+ [59 <./figuras/NodeRedMQTT.png>]
+Package acronym Info: Label `acro:SL' newly defined as it shall be overridden
+although it is yet undefined on input line 940.
+Package acronym Info: Label `acro:FR' newly defined as it shall be overridden
+although it is yet undefined on input line 953.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60 <./figuras/Grafana.png>]
+Package acronym Info: Label `acro:RBCA' newly defined as it shall be overridden
+although it is yet undefined on input line 957.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 1001.
+) (capitulos/analisis_de_resultados.tex [61] [62
+
+
+]
+chapter 8.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+[63]
+Package acronym Info: Label `acro:KPI' newly defined as it shall be overridden
+although it is yet undefined on input line 123.
+
+Overfull \hbox (7.56499pt too wide) in paragraph at lines 162--163
+[]\T1/bch/m/n/10.95 (-20) El au-mento de tags no afecta con-sid-er-able-mente el rendimiento del pro-ceso \T1/lmtt/m/n/10.95 PdlRt.exe\T1/bch/m/n/10.95 (-20) .
+ []
+
+[64]
+<figuras/carga.png, id=1694, 890.5772pt x 170.88844pt>
+File: figuras/carga.png Graphic file (type png)
+<use figuras/carga.png>
+Package pdftex.def Info: figuras/carga.png  used on input line 168.
+(pdftex.def)             Requested size: 395.45181pt x 75.88214pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65 <./figuras/carga.png>]
+Overfull \hbox (2.04843pt too wide) in paragraph at lines 199--200
+\T1/bch/m/n/10.95 (-20) ($\OML/lmm/m/it/10.95 T[] \OMS/lmsy/m/n/10.95 ^^@ \OML/lmm/m/it/10.95 T[]$\T1/bch/m/n/10.95 (-20) ) ar-roja una la-ten-cia em-pírica de ex-tremo a ex-tremo de $\OT1/lmr/m/n/10.95 456[]$\T1/bch/m/n/10.95 (-20) . 
+ []
+
+[66]) (capitulos/metodologÃ­a.tex [67] [68
+
+
+]
+chapter 9.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+
+pdfTeX warning: pdflatex (file ./figuras/gantt.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/gantt.pdf, id=1738, 845.07724pt x 597.55246pt>
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf>
+Package pdftex.def Info: figuras/gantt.pdf  used on input line 31.
+(pdftex.def)             Requested size: 845.07518pt x 597.551pt.
+
+
+pdfTeX warning: pdflatex (file ./figuras/gantt.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./figuras/gantt.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/gantt.pdf, id=1740, page=1, 845.07724pt x 597.55246pt>
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 845.07518pt x 597.551pt.
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+[70]
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+File: figuras/gantt.pdf Graphic file (type pdf)
+<use figuras/gantt.pdf, page 1>
+Package pdftex.def Info: figuras/gantt.pdf , page1 used on input line 31.
+(pdftex.def)             Requested size: 676.06271pt x 478.04262pt.
+ [71
+
+ <./figuras/gantt.pdf>]) (capitulos/aspectos_econÃ³micos.tex [72
+
+
+]
+chapter 10.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73]
+<figuras/PrecioNube.png, id=1783, 457.71pt x 209.28188pt>
+File: figuras/PrecioNube.png Graphic file (type png)
+<use figuras/PrecioNube.png>
+Package pdftex.def Info: figuras/PrecioNube.png  used on input line 64.
+(pdftex.def)             Requested size: 395.45181pt x 180.82193pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74 <./figuras/PrecioNube.png>]) (capitulos/conclusiones.tex [75] [76
+
+
+]
+chapter 11.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]) [78]
+chapter without number
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+[79
+
+
+
+
+] [80]
+
+Package biblatex Warning: Type 'online' not found on input line 91.
+
+
+Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no longer supported.
+(biblatex)                Please use 'labelprefix' option to '\newrefcontext'.
+
+
+LaTeX Warning: Empty bibliography on input line 91.
+
+[81] [82
+
+
+] (anexos/Anexo_1.tex
+chapter A.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+(C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87] (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (C:\Users\Eka_0\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [89]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [92]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [93]) (anexos/Anexo_2.tex [94]
+chapter B.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+
+pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/Topologia.pdf, id=2467, 2392.9802pt x 1690.39525pt>
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf>
+Package pdftex.def Info: figuras/Topologia.pdf  used on input line 13.
+(pdftex.def)             Requested size: 2392.97438pt x 1690.39114pt.
+
+
+pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./figuras/Topologia.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/Topologia.pdf, id=2469, page=1, 2392.9802pt x 1690.39525pt>
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2392.97438pt x 1690.39114pt.
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+[95
+
+
+]
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+File: figuras/Topologia.pdf Graphic file (type pdf)
+<use figuras/Topologia.pdf, page 1>
+Package pdftex.def Info: figuras/Topologia.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 2153.66232pt x 1521.3417pt.
+ [96
+
+ <./figuras/Topologia.pdf>]
+<figuras/Parque.pdf, id=2740, 1764.5925pt x 845.1575pt>
+File: figuras/Parque.pdf Graphic file (type pdf)
+<use figuras/Parque.pdf>
+Package pdftex.def Info: figuras/Parque.pdf  used on input line 20.
+(pdftex.def)             Requested size: 1764.58821pt x 845.15544pt.
+<figuras/Parque.pdf, id=2742, page=1, 1764.5925pt x 845.1575pt>
+File: figuras/Parque.pdf Graphic file (type pdf)
+<use figuras/Parque.pdf, page 1>
+Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
+(pdftex.def)             Requested size: 1764.58821pt x 845.15544pt.
+File: figuras/Parque.pdf Graphic file (type pdf)
+<use figuras/Parque.pdf, page 1>
+Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
+(pdftex.def)             Requested size: 1588.1186pt x 760.63474pt.
+File: figuras/Parque.pdf Graphic file (type pdf)
+<use figuras/Parque.pdf, page 1>
+Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
+(pdftex.def)             Requested size: 1588.1186pt x 760.63474pt.
+File: figuras/Parque.pdf Graphic file (type pdf)
+<use figuras/Parque.pdf, page 1>
+Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
+(pdftex.def)             Requested size: 1588.1186pt x 760.63474pt.
+File: figuras/Parque.pdf Graphic file (type pdf)
+<use figuras/Parque.pdf, page 1>
+Package pdftex.def Info: figuras/Parque.pdf , page1 used on input line 20.
+(pdftex.def)             Requested size: 1588.1186pt x 760.63474pt.
+ [97
+
+ <./figuras/Parque.pdf>]) (anexos/Anexo_3.tex [98
+
+
+]
+chapter C.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+<figuras/Gemma.png, id=2756, 918.43124pt x 557.83406pt>
+File: figuras/Gemma.png Graphic file (type png)
+<use figuras/Gemma.png>
+Package pdftex.def Info: figuras/Gemma.png  used on input line 10.
+(pdftex.def)             Requested size: 395.45181pt x 240.18741pt.
+<figuras/maquinaestados.png, id=2759, 1327.96124pt x 425.33907pt>
+File: figuras/maquinaestados.png Graphic file (type png)
+<use figuras/maquinaestados.png>
+Package pdftex.def Info: figuras/maquinaestados.png  used on input line 47.
+(pdftex.def)             Requested size: 395.45181pt x 126.66162pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [99]
+<figuras/CalculoAnalogico.png, id=2767, 1381.41093pt x 377.15906pt>
+File: figuras/CalculoAnalogico.png Graphic file (type png)
+<use figuras/CalculoAnalogico.png>
+Package pdftex.def Info: figuras/CalculoAnalogico.png  used on input line 54.
+(pdftex.def)             Requested size: 395.45181pt x 107.96335pt.
+<figuras/Alarmas.png, id=2769, 892.08281pt x 486.31688pt>
+File: figuras/Alarmas.png Graphic file (type png)
+<use figuras/Alarmas.png>
+Package pdftex.def Info: figuras/Alarmas.png  used on input line 61.
+(pdftex.def)             Requested size: 395.45181pt x 215.58293pt.
+ [100 <./figuras/Gemma.png> <./figuras/maquinaestados.png>]
+Overfull \hbox (14.88675pt too wide) in alignment at lines 67--74
+ [] [] 
+ []
+
+
+Overfull \hbox (14.88675pt too wide) in alignment at lines 74--81
+ [] [] 
+ []
+
+
+Overfull \hbox (14.88675pt too wide) in alignment at lines 81--85
+ [] [] 
+ []
+
+
+Overfull \hbox (14.88675pt too wide) in alignment at lines 85--88
+ [] [] 
+ []
+
+
+Overfull \hbox (14.88675pt too wide) in alignment at lines 88--185
+ [] [] 
+ []
+
+
+ignored: Infinite glue shrinkage found in box being split [101 <./figuras/CalculoAnalogico.png> <./figuras/Alarmas.png>]
+ignored: Infinite glue shrinkage found in box being split [102]) (anexos/Anexo_4.tex [103] [104
+
+
+]
+chapter D.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+<figuras/manual_4.png, id=2797, 1444.64719pt x 690.32906pt>
+File: figuras/manual_4.png Graphic file (type png)
+<use figuras/manual_4.png>
+Package pdftex.def Info: figuras/manual_4.png  used on input line 10.
+(pdftex.def)             Requested size: 395.45181pt x 188.96152pt.
+<figuras/manual_1.png, id=2800, 608.2725pt x 222.07968pt>
+File: figuras/manual_1.png Graphic file (type png)
+<use figuras/manual_1.png>
+Package pdftex.def Info: figuras/manual_1.png  used on input line 20.
+(pdftex.def)             Requested size: 193.76944pt x 96.88513pt.
+<figuras/manual_2.png, id=2801, 378.66469pt x 161.10187pt>
+File: figuras/manual_2.png Graphic file (type png)
+<use figuras/manual_2.png>
+Package pdftex.def Info: figuras/manual_2.png  used on input line 27.
+(pdftex.def)             Requested size: 193.77512pt x 96.89047pt.
+[105 <./figuras/manual_4.png>]
+<figuras/manual_0.png, id=2810, 1444.64719pt x 690.32906pt>
+File: figuras/manual_0.png Graphic file (type png)
+<use figuras/manual_0.png>
+Package pdftex.def Info: figuras/manual_0.png  used on input line 38.
+(pdftex.def)             Requested size: 395.45181pt x 188.96152pt.
+
+Underfull \vbox (badness 2165) has occurred while \output is active []
+
+ [106 <./figuras/manual_1.png> <./figuras/manual_2.png> <./figuras/manual_0.png>]
+<figuras/manual_3.png, id=2819, 1443.14156pt x 690.32906pt>
+File: figuras/manual_3.png Graphic file (type png)
+<use figuras/manual_3.png>
+Package pdftex.def Info: figuras/manual_3.png  used on input line 47.
+(pdftex.def)             Requested size: 395.45181pt x 189.16167pt.
+<figuras/manual_6.png, id=2821, 1444.64719pt x 688.82344pt>
+File: figuras/manual_6.png Graphic file (type png)
+<use figuras/manual_6.png>
+Package pdftex.def Info: figuras/manual_6.png  used on input line 55.
+(pdftex.def)             Requested size: 395.45181pt x 188.5494pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figuras/manual_7.png, id=2823, 1444.64719pt x 688.82344pt>
+File: figuras/manual_7.png Graphic file (type png)
+<use figuras/manual_7.png>
+Package pdftex.def Info: figuras/manual_7.png  used on input line 65.
+(pdftex.def)             Requested size: 395.45181pt x 188.5494pt.
+<figuras/manual_8.png, id=2824, 1444.64719pt x 692.5875pt>
+File: figuras/manual_8.png Graphic file (type png)
+<use figuras/manual_8.png>
+Package pdftex.def Info: figuras/manual_8.png  used on input line 73.
+(pdftex.def)             Requested size: 395.45181pt x 189.57971pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figuras/manual_9.png, id=2826, 1444.64719pt x 691.08188pt>
+File: figuras/manual_9.png Graphic file (type png)
+<use figuras/manual_9.png>
+Package pdftex.def Info: figuras/manual_9.png  used on input line 84.
+(pdftex.def)             Requested size: 395.45181pt x 189.16759pt.
+
+Underfull \vbox (badness 6110) has occurred while \output is active []
+
+ [107 <./figuras/manual_3.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figuras/manual_10.png, id=2836, 1444.64719pt x 683.55376pt>
+File: figuras/manual_10.png Graphic file (type png)
+<use figuras/manual_10.png>
+Package pdftex.def Info: figuras/manual_10.png  used on input line 92.
+(pdftex.def)             Requested size: 395.45181pt x 187.10695pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[108 <./figuras/manual_6.png>] [109 <./figuras/manual_7.png> <./figuras/manual_8.png> <./figuras/manual_9.png>] [110 <./figuras/manual_10.png>]
+<figuras/manual_11.png, id=2855, 1444.64719pt x 689.57625pt>
+File: figuras/manual_11.png Graphic file (type png)
+<use figuras/manual_11.png>
+Package pdftex.def Info: figuras/manual_11.png  used on input line 100.
+(pdftex.def)             Requested size: 395.45181pt x 188.75545pt.
+<figuras/manual_12.png, id=2857, 1444.64719pt x 694.09312pt>
+File: figuras/manual_12.png Graphic file (type png)
+<use figuras/manual_12.png>
+Package pdftex.def Info: figuras/manual_12.png  used on input line 109.
+(pdftex.def)             Requested size: 395.45181pt x 189.99185pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[111
+
+ <./figuras/manual_11.png>]
+
+LaTeX Warning: Reference `fig:HIS1' on page 112 undefined on input line 114.
+
+) (anexos/Anexo_5.tex [112 <./figuras/manual_12.png>]
+chapter E.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+
+Overfull \hbox (1.92203pt too wide) in alignment at lines 7--12
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.92203pt too wide) in alignment at lines 12--17
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.92203pt too wide) in alignment at lines 17--21
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.92203pt too wide) in alignment at lines 21--24
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.92203pt too wide) in alignment at lines 24--152
+ [] [] [] [] 
+ []
+
+
+ignored: Infinite glue shrinkage found in box being split [113
+
+
+]
+ignored: Infinite glue shrinkage found in box being split [114]
+ignored: Infinite glue shrinkage found in box being split [115]
+ignored: Infinite glue shrinkage found in box being split [116]
+Underfull \hbox (badness 1107) in paragraph at lines 172--173
+[]|\T1/bch/m/n/10.95 (+20) Placa de car-ac-terís-ti-cas e iden-ti-fi-
+ []
+
+
+Underfull \hbox (badness 4266) in paragraph at lines 189--190
+[]|\T1/bch/m/n/10.95 (+20) Alta tem-per-atura en ro-damiento
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 201--202
+[]|\T1/bch/m/n/10.95 (+20) Alta tem-per-atura gen-eral en ro-
+ []
+
+
+ignored: Infinite glue shrinkage found in box being split [117]
+ignored: Infinite glue shrinkage found in box being split [118]
+ignored: Infinite glue shrinkage found in box being split [119])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [120] [121] [122] (c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 37708 strings out of 467867
+ 683952 string characters out of 5418334
+ 2571104 words of memory out of 5000000
+ 64283 multiletter control sequences out of 15000+600000
+ 801584 words of font info for 497 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,18n,131p,11256b,2263s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchbi8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvri.pfb><C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on c:\Users\Eka_0\Desktop\Ekain\INCAR\TFM\Latex_TFM\Build\main.pdf (142 pages, 23126882 bytes).
+PDF statistics:
+ 3562 PDF objects out of 3580 (max. 8388607)
+ 1132 named destinations out of 1200 (max. 500000)
+ 90796 words of extra memory for PDF output out of 106986 (max. 10000000)
+

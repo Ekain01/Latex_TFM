@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex Build/main"] 1781177660.0702 "Build/main.aux" "Build/main.bbl" "Build/main" 1781177682.69686 0
+["bibtex Build/main"] 1781177800.16264 "Build/main.aux" "Build/main.bbl" "Build/main" 1781177823.33155 0
   "./referencias-bibliograficas.bib" 1781168976 40502 ed8f588942da445adbe24905f9cac42a ""
-  "Build/main.aux" 1781177681 131156 e14db05a4e790068dc43ea7f37e46651 "pdflatex"
+  "Build/main.aux" 1781177821 131003 76525bc90bb816d3cdfc4545fa46a5c2 "pdflatex"
   "C:/Users/Eka_0/AppData/Local/Programs/MiKTeX/bibtex/bst/biblatex/biblatex.bst" 1752408733 65510 9a2a51799b543ff279b8ea2dd91ec499 ""
-  "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/Build/main-blx.bib" 1781177681 342 45fc2611658198a231c91b829f6fe0a6 ""
+  "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/Build/main-blx.bib" 1781177821 342 45fc2611658198a231c91b829f6fe0a6 ""
   (generated)
   "Build/main.bbl"
   "Build/main.blg"
   (rewritten before read)
-["pdflatex"] 1781177660.39267 "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/main.tex" "Build/main.pdf" "main" 1781177682.69813 0
-  "Build/main.aux" 1781177681 131156 e14db05a4e790068dc43ea7f37e46651 "pdflatex"
-  "Build/main.bbl" 1781177660 49566 702e364f2e81dfa3f82eea0977709655 "bibtex Build/main"
-  "Build/main.lof" 1781177681 8848 ca60b7060e0f2beaf3f04bb5129063a7 "pdflatex"
-  "Build/main.lot" 1781177681 6674 bade8f20c43fc22ccdd2e1d47176d8ab "pdflatex"
-  "Build/main.run.xml" 1781177681 2572 b0184b856638f4b18476128aa8780b93 "pdflatex"
-  "Build/main.toc" 1781177681 12866 1846ac01488f69a2652c9e329392e57e "pdflatex"
+["pdflatex"] 1781177800.48547 "c:/Users/Eka_0/Desktop/Ekain/INCAR/TFM/Latex_TFM/main.tex" "Build/main.pdf" "main" 1781177823.33308 0
+  "Build/main.aux" 1781177821 131003 76525bc90bb816d3cdfc4545fa46a5c2 "pdflatex"
+  "Build/main.bbl" 1781177800 49566 702e364f2e81dfa3f82eea0977709655 "bibtex Build/main"
+  "Build/main.lof" 1781177822 8848 ca60b7060e0f2beaf3f04bb5129063a7 "pdflatex"
+  "Build/main.lot" 1781177822 6674 bade8f20c43fc22ccdd2e1d47176d8ab "pdflatex"
+  "Build/main.run.xml" 1781177822 2572 b0184b856638f4b18476128aa8780b93 "pdflatex"
+  "Build/main.toc" 1781177822 12866 1846ac01488f69a2652c9e329392e57e "pdflatex"
   "C:/Users/Eka_0/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778238282 123019 4e6d54fe28a67ad1b512b0cc9d03c2e8 ""
   "C:/Users/Eka_0/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1773823320 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/Eka_0/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1773823321 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -350,7 +350,7 @@
   "figuras/zigbee.png" 1779788657 214913 67120d4c5cb1fabbf6f870de6021d4d6 ""
   "macros.tex" 1779438671 3042 b2e4817ca52adb2382161af14b47874d ""
   "main.tex" 1780394802 3088 ad9701555b178bd0b8380e301984b67c ""
-  "parte-frontal/acronimos_lista.tex" 1781163102 3449 ad9ccaeee664b53bc4ef992833de0061 ""
+  "parte-frontal/acronimos_lista.tex" 1781177776 3344 a34c27b7c3b029f51a65d273e520a997 ""
   "parte-frontal/indice.tex" 1773822604 164 e7488c3c85374a58a3a597c1ba9ab8d4 ""
   "parte-frontal/lista_de_tablas_ilustraciones.tex" 1773822604 573 b886d9d8f8c9f9ed61caa476a03be62a ""
   "parte-frontal/resumen.tex" 1781177043 5989 2c81b1fbee333303c401adcae042ebed ""
