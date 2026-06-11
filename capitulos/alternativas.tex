@@ -90,7 +90,7 @@ Siemens permite dos arquitecturas para este tipo de sistemas: La primera, una es
     \label{fig:arquitecturas_scada_global}
 \end{figure}
 
-\subsection{Sistemas Multipuesto (\textit{Multy User Systems})}
+\subsection{Sistemas Multipuesto (\textit{Multi-User Systems})}
 Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde una única estación de operación realiza todas las tareas), en un sistema multipuesto la carga de trabajo se divide entre uno o varios servidores centrales (configuradas como \textit{Multi-User Project}) y múltiples estaciones cliente (configuradas como \textit{Client Project}). Este enfoque permite una variedad grande de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación, siendo el foco de implementación final. (Figura \ref{fig:multipuesto_distribuido}) \par 
 
 \section{Virtualización de sistemas de WinCC}
@@ -102,7 +102,7 @@ Este tipo de hipervisor genera una dependencia del \ac{OS} base ya que el hiperv
 
 Por otro lado, esta dependencia del \ac{OS} base es una vulnerabilidad en sí misma para la seguridad y ciberseguridad del sistema, ya que un malfuncionamiento o un virus podrían contagiarse a cada una de las instancias de maquinas virtuales que corren encima.
 
-\subsection{Hypervisor metal desnudo (\textit{Bare-Metal Hypervisor})}
+\subsection{Hypervisor nativamente instalado (\textit{Bare-Metal Hypervisor})}
 
 Se le denomina \textit{Bare-Metal} (metal desnudo) porque se instala y ejecuta directamente sobre el hardware físico del servidor. No hay ningún sistema operativo tradicional (como Windows Server o Linux) actuando como intermediario. El hipervisor en sí mismo es un sistema operativo altamente especializado y minimalista diseñado con un único propósito: gestionar y asignar recursos físicos a las máquinas virtuales. Al no tener que atravesar ningún sistema operativo anfitrión, las maquinas virtuales tienen acceso más directo a los recursos del sistema reduciendo la latencia y mejorando el rendimiento \cite{wen2023baremetal}. \par
 

@@ -4,7 +4,7 @@ En esta sección se detalla el proceso de diseño y desarrollo de la solución d
 \section{Arquitectura del Sistema de Supervisión y Red de Comunicaciones del Parque Eólico}
 \label{sec:arquitectura_parque_eolico}
 
-La red de potencia del hipotético parque se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión y 22 parques eólicos asociados (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\textit{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte general.\par
+La red de potencia del hipotético parque se estructura de forma descentralizada a través de un total de 9 subestaciones de transformación e interconexión y 22 parques eólicos asociados (Tabla \ref{tab:nombres_subestaciones_abreviados}). Cada una de estas subestaciones actúa como un nodo de concentración de energía e información, agrupando los circuitos procedentes de los aerogeneradores (\ac{WTG}) de sus respectivas áreas de influencia antes de la elevación final de tensión y evacuación a la red de transporte general.\par
 
 Cada una de las subestaciones estáría conectada por una red de fibra óptica dedicada a un nodo central de supervisión ubicado en el edificio de organización y mantenimiento, donde se ubica la \ac{MCR}. 
 
@@ -357,8 +357,8 @@ Tal como se recoge en el Anexo \ref{cap:Planos}, el proyecto no supervisa una in
 Este campo actúa como una raíz que encapsula los cinco niveles normativos de cada subestación independiente, estructurándose de la siguiente forma:
 
 \begin{equation}
-\underbrace{\text{SS\_xx}}_{\text{Subestación}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR}}_{\text{L3 (\ac{LN})}} . \underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}} . \underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
-\end{equation}.
+\underbrace{\text{SS\_xx}}_{\text{Subestación}} . \underbrace{\text{Q01}}_{\text{L1 \ac{PD}}} . \underbrace{\text{CTRL}}_{\text{L2 (\ac{LD})}} . \underbrace{\text{XCBR}}_{\text{L3 (\ac{LN})}}.\underbrace{\text{Pos}}_{\text{L4 (\ac{DO})}}.\underbrace{\text{stVal}}_{\text{L5 (\ac{DA})}}
+\end{equation}
 
 \begin{table}[tb]
     \centering
@@ -386,7 +386,7 @@ Para la adquisición de datos el entorno de WinCC V8.1 ofrece drivers con una am
 
 \ac{OPC UA} se basa en un modelo de información orientado a objetos, el cual define como se estructuran los datos dentro del sistema de comunicación industrial. Por otra parte, el modelo de comunicación de \ac{OPC UA} define los mecanismos de transferencia de los datos entre los diferentes componentes del sistema. El modelo de información y el modelo de comunicación son los dos pilares fundamentales que sustentan la arquitectura de \ac{OPC UA}.\par
 
-\ac{OPC UA} se basa en un modelo Cliente-Servidor para gestionar servicios o ejecutar metodos como la conexión \ac{TCP} entre el servidor \ac{OPC UA} y el cliente \ac{SCADA} o gestionar la suscripción a tópicos. Sin embargo, la transfrerencia de datos se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión en tiempo real(Figura \ref{fig:OPC_UA}).\par
+\ac{OPC UA} se basa en un modelo Cliente-Servidor para gestionar servicios o ejecutar metodos como la conexión \ac{TCP} entre el servidor \ac{OPC UA} y el cliente \ac{SCADA} o gestionar la suscripción a tópicos. Sin embargo, la transferencia de datos se hace mediante publicación-suscripción (Pub/Sub) para optimizar la eficiencia en la transmisión en tiempo real(Figura \ref{fig:OPC_UA}).\par
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/OPCUA_metamodelo.png}
@@ -437,7 +437,7 @@ Una vez que el \textit{Endpoint} se encuentra operativo y el intercambio de cert
 \label{sec:integracion_tag_management_opcua}
 Las conexiones de las variables de estructura con las variables externas \ac{OPC UA} se ha realizado en el editor de administración de variables. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo de las direcciones de red para cada variable externa.\par
 
-En primer lugar, se ha desplegado el driver de comunicaciones \ac{OPC UA} en la raíz del árbol de administración de variables. Este canal actúa de interprete entre las conexiones \ac{OPC UA} y el \ac{RT} y agrupa todas las conexiones y variables relacionadas con el protocolo \ac{OPC UA}. Como cada subestación dispone de una dirección IP cada subestación tiene asociada una conexión, sin embargo, dado que las simulaciones se realizan sobre la misma máquina no es posible mantener dos conexiónes que apunten a la misma dirección por lo que una única conexión llamada \texttt{OPC\_UA\_IGL\_I} (Subestación principal) agrupa todas las hipotéticas conexiones en una sola.\par 
+En primer lugar, se ha desplegado el driver de comunicaciones \ac{OPC UA} en la raíz del árbol de administración de variables. Este canal actúa de interprete entre las conexiones \ac{OPC UA} y el \ac{RT} y agrupa todas las conexiones y variables relacionadas con el protocolo \ac{OPC UA}. Como cada subestación dispone de una dirección IP cada subestación tiene asociada una conexión, sin embargo, dado que las simulaciones se realizan sobre la misma máquina no es posible mantener dos conexiones que apunten a la misma dirección por lo que una única conexión llamada \texttt{OPC\_UA\_IGL\_I} (Subestación principal) agrupa todas las hipotéticas conexiones en una sola.\par 
 
 Esta conexión \texttt{OPC\_UA\_IGL\_I} apunta directamente al \textit{Endpoint} del servidor KEPServerEX previamente configurado con la dirección \ac{IP} local y el puerto configurado en el \textit{OPC UA Configuration Manager} \url{opc.tcp://127.0.0.1:49320}, definiendo  la política de intercambio de mensajes, y forzando un modo seguro de tipo \textit{SignAndEncrypt} (Figura \ref{fig:OPC_UA_WinCC}).\par
 \begin{figure}[tb]
@@ -517,10 +517,10 @@ El primer bloque numérico determina la profundidad de la pantalla dentro del á
 \subsubsection{Identificador de Categoría (Clasificación de Activos)}
 El segundo bloque emplea acrónimos técnicos para identificar de forma unívoca la familia de sistemas a la que pertenece la interfaz:
 \begin{itemize}
-    \item \textbf{WTG (Wind Turbine Generator):} Pantallas dedicadas a la monitorización, control y operación directa de los aerogeneradores.
-    \item \textbf{SUB (Substation):} Interfaz enfocada en la infraestructura eléctrica de evacuación, esquemas unifilares y transformadores.
-    \item \textbf{MET (Meteorological):} Visualización de los datos climáticos adquiridos por la torre meteorológica.
-    \item \textbf{SYS (System):} Funcionalidades globales del entorno SCADA, abarcando la gestión de alarmas y las pantallas de tendencias (\textit{Trends}).
+    \item \textbf{\ac{WTG} (Wind Turbine Generator):} Pantallas dedicadas a la monitorización, control y operación directa de los aerogeneradores.
+    \item \textbf{\ac{SUB} (Substation):} Interfaz enfocada en la infraestructura eléctrica de evacuación, esquemas unifilares y transformadores.
+    \item \textbf{\ac{MET} (Meteorological):} Visualización de los datos climáticos adquiridos por la torre meteorológica.
+    \item \textbf{\ac{SYS} (System):} Funcionalidades globales del entorno SCADA, abarcando la gestión de alarmas y las pantallas de tendencias (\textit{Trends}).
 \end{itemize}
 
 \subsubsection{Descripción Funcional}
@@ -680,7 +680,7 @@ Cuando el operador interactúa con los selectores o menús desplegables integrad
 
 La gestión de alarmas y eventos es el componente crítico del sistema SCADA encargado de garantizar la seguridad operativa y la conciencia situacional del operador. Su función principal no es solo la detección de anomalías, sino la jerarquización de las mismas para evitar la saturación de información durante incidentes críticos. 
 
-En este proyecto, la supervisión de eventos se integra de forma transversal mediante la ventanta de imagen inferior persistente en la pantalla \texttt{00\_Main\_Interface}. Este diseño asegura que, independientemente del nivel de navegación en el que se encuentre el usuario, las notificaciones de mayor prioridad sean visibles de forma inmediata. La implementación se ha realizado empleando el objeto \textit{WinCC Alarm Control}, configurando ciclos de refresco en tiempo real y almacenamiento en una base de datos SQL histórica para auditorías posteriores.
+En este proyecto, la supervisión de eventos se integra de forma transversal mediante la ventana de imagen inferior persistente en la pantalla \texttt{00\_Main\_Interface}. Este diseño asegura que, independientemente del nivel de navegación en el que se encuentre el usuario, las notificaciones de mayor prioridad sean visibles de forma inmediata. La implementación se ha realizado empleando el objeto \textit{WinCC Alarm Control}, configurando ciclos de refresco en tiempo real y almacenamiento en una base de datos SQL histórica para auditorías posteriores.
 
 \subsection{Criterios de señalización: Norma IEC 60073}
 
