@@ -5,15 +5,15 @@
 En este anexo se incluyen las tablas de variables utilizadas en la solución desarrollada. Estas tablas detallan los nombres, tipos y descripciones de las variables empleadas en el sistema, proporcionando una referencia completa para el mantenimiento y la configuración del SCADA.
 \section{Mapeo de variables de turbinas IEC 61400-25-2}
 \begin{longtable}{@{}lllp{7.5cm}@{}}
-\caption{Estructuras de variables de nivel 2 y 3 según norma IEC 61400-25-2.}
+\caption{Estructuras de variables de nivel 3 y 4 según norma IEC 61400-25-2.}
 \label{tab:equipo3} \\
 \toprule
-\textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica / Operativa} \\ \midrule
+\textbf{Nivel 3 (LN)} & \textbf{Nivel 4 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica / Operativa} \\ \midrule
 \endfirsthead
 
 \multicolumn{4}{@{}l}{{\tablename\ \thetable{} -- Continuación de la página anterior}} \\
 \toprule
-\textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica / Operativa} \\ \midrule
+\textbf{Nivel 3 (LN)} & \textbf{Nivel 4 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica / Operativa} \\ \midrule
 \endhead
 
 \midrule
@@ -220,14 +220,14 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
     
     % --- ENCABEZADO DE LA PRIMERA PÁGINA ---
     \toprule
-    \textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
+    \textbf{Nivel 3 (LN)} & \textbf{Nivel 4 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
     \midrule
     \endfirsthead
     
     % --- ENCABEZADO DE LAS PÁGINAS SIGUIENTES (Si se corta la tabla) ---
     \multicolumn{4}{@{}l}{{\tablename\ \thetable{} -- Continuación de la página anterior}} \\
     \toprule
-    \textbf{Nivel 2 (LN)} & \textbf{Nivel 3 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
+    \textbf{Nivel 3 (LN)} & \textbf{Nivel 4 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
     \midrule
     \endhead
     
@@ -295,3 +295,65 @@ En este anexo se incluyen las tablas de variables utilizadas en la solución des
 
 \end{longtable}
 \section{Variables de sistemas de corte IEC 61850}
+
+\begin{longtable}{l l c p{7cm}}
+    \caption{Mapeo de variables de la celda de corte según el modelo IEC 61850.}
+    \label{tab:variables_celda_corte} \\
+    
+    % --- ENCABEZADO DE LA PRIMERA PÁGINA ---
+    \toprule
+    \textbf{Nivel 3 (LN)} & \textbf{Nivel 4 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
+    \midrule
+    \endfirsthead
+    
+    % --- ENCABEZADO DE LAS PÁGINAS SIGUIENTES ---
+    \multicolumn{4}{c}{{\tablename\ \thetable{} -- Continuación de la página anterior}} \\
+    \toprule
+    \textbf{Nivel 3 (LN)} & \textbf{Nivel 4 (DO)} & \textbf{CDC} & \textbf{Descripción Técnica} \\ 
+    \midrule
+    \endhead
+    
+    % --- PIE DE PÁGINA SI LA TABLA CONTINÚA ---
+    \midrule
+    \multicolumn{4}{r}{{\textit{Continúa en la página siguiente...}}} \\
+    \endfoot
+    
+    % --- PIE DE PÁGINA FINAL ---
+    \bottomrule
+    \endlastfoot
+    
+    % --- CUERPO DE LA TABLA ---
+    
+    \multicolumn{4}{c}{\textbf{Interruptor Automático / Circuit Breaker (XCBR)}} \\ \midrule
+    \texttt{XCBR} & \texttt{Loc} & SPS & Control local activo. \\
+    \texttt{XCBR} & \texttt{OpCnt} & INS & Contador de operaciones. \\
+    \texttt{XCBR} & \texttt{Pos} & DPC & Posición (Abierto/Cerrado). \\
+    \texttt{XCBR} & \texttt{CBOpCap} & INS & Capacidad operativa. \\
+    \midrule
+    
+    \multicolumn{4}{c}{\textbf{Seccionador Principal / Disconnect Switch (XSWI1/2)}} \\ \midrule
+    \texttt{XSWI1/2} & \texttt{Loc} & SPS & Control local activo. \\
+    \texttt{XSWI1/2} & \texttt{Pos} & DPS & Posición (Abierto/Cerrado). \\
+    \texttt{XSWI1/2} & \texttt{OpCnt} & INS & Contador de operaciones. \\
+    \midrule
+
+
+    \multicolumn{4}{c}{\textbf{Unidad de Medición de Celda (MMXU)}} \\ \midrule
+    \texttt{MMXU} & \texttt{Hz} & MV & Frecuencia. \\
+    \texttt{MMXU} & \texttt{PF} & MV & Factor de potencia. \\
+    \texttt{MMXU} & \texttt{TotVA} & MV & Potencia aparente. \\
+    \texttt{MMXU} & \texttt{TotVAr} & MV & Potencia reactiva. \\
+    \texttt{MMXU} & \texttt{TotW} & MV & Potencia activa. \\
+    \texttt{MMXU} & \texttt{A.net} & MV & Corriente neta. \\
+    \texttt{MMXU} & \texttt{A.PhsA} & MV & Corriente fase A. \\
+    \texttt{MMXU} & \texttt{A.PhsB} & MV & Corriente fase B. \\
+    \texttt{MMXU} & \texttt{A.PhsC} & MV & Corriente fase C. \\
+    \texttt{MMXU} & \texttt{PhV.net} & MV & Tensión fase-tierra. \\
+    \texttt{MMXU} & \texttt{PhV.PhsA} & MV & Tensión fase A. \\
+    \texttt{MMXU} & \texttt{PhV.PhsB} & MV & Tensión fase B. \\
+    \texttt{MMXU} & \texttt{PhV.PhsC} & MV & Tensión fase C. \\
+    \texttt{MMXU} & \texttt{PPV.PhAB} & MV & Tensión PhAB. \\
+    \texttt{MMXU} & \texttt{PPV.PhAC} & MV & Tensión PhAC. \\
+    \texttt{MMXU} & \texttt{PPV.PhBC} & MV & Tensión PhBC. \\
+
+\end{longtable}

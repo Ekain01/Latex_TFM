@@ -81,7 +81,7 @@ En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimien
     \resizebox{\textwidth}{!}{
         \begin{tabular}{llcl}
         \toprule
-        \textbf{Variable de Sistema (Tag)} & \textbf{Tipo de Dato} & \textbf{Acceso} & \textbf{Propósito Operativo en el HMI} \\
+        \textbf{Variable de Sistema (Tag)} & \textbf{Tipo de Dato} & \textbf{Acceso} & \textbf{Propósito Operativo en el \ac{HMI}} \\
         \midrule
         \texttt{@CurrentUser} & Text tag (8-bit) & R/W & Identificador de usuario autenticado y de rol. \\
         \texttt{@CurrentUserName} & Text tag (8-bit) & R & Nombre descriptivo del operador en sesión. \\
@@ -156,7 +156,7 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
 \paragraph{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}
 El nivel 1 de estructura de dispositivos representa los dispositivos físicos reales a los que se accede a través de la red de comunicación. En el caso de un parque eólico, cada aerogenerador se modela como un Dispositivo Físico (PD) con un identificador único (Ej. \texttt{WTG1} para el aerogenerador 1). Este nivel refleja la realidad física de la planta, donde cada dispositivo tiene una ubicación geográfica y una función específica dentro del sistema de generación eólica. \par
 
-El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógicos que comparten una misma ubicación física por ejemplo la góndola dentro de la turbina. En el caso de un aerogenerador que comparte sistemas pertenecientes a una misma turbina física, la fusión del Dispositivo Físico (Nivel 1) y Lógico (Nivel 2) resultaría en una representación más eficiente ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el SCADA  resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en \textit{SIMATIC WinCC V8.1}(Tabla \ref{tab:ejemplo_fusion_niveles}).
+El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógicos que comparten una misma ubicación física por ejemplo la góndola dentro de la turbina. En el caso de un aerogenerador que comparte sistemas pertenecientes a una misma turbina física, la fusión del Dispositivo Físico (Nivel 1) y Lógico (Nivel 2) resultaría en una representación más eficiente ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el \ac{SCADA} resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en \textit{SIMATIC WinCC V8.1}(Tabla \ref{tab:ejemplo_fusion_niveles}).
 
 \begin{table}[tb]
     \centering
@@ -187,7 +187,7 @@ Desde el punto de vista de la ingeniería electromecánica, un aerogenerador mod
 
 Con el fin de supervisar y automatizar el parque eólico, el estándar IEC 61400-25-2 proyecta esta estructura física hacia un modelo digital mediante una capa de abstracción basada en \ac{LN}. Un \ac{LN} no es un elemento material, sino una agrupación virtual de datos, variables y funciones de control que representan el comportamiento de un componente físico específico.\par 
 
-Estos nodos se identifican de manera unívoca mediante siglas de tres o cuatro letras mayúsculas. El primer carácter determina la clase o categoría principal del objeto (por ejemplo, "W" para funciones específicas de la turbina), mientras que las letras sucesivas detallan la función o el subsistema concreto al que representan (por ejemplo, "ROT" para variables asociadas a la rotación del rotor, o "GEN" para los parámetros del generador). De este modo, toda la topología física del aerogenerador queda completamente digitalizada y organizada en áreas funcionales dentro del SCADA. A continuación, se detallan los nodos lógicos definidos para cada sección del aerogenerador:
+Estos nodos se identifican de manera unívoca mediante siglas de tres o cuatro letras mayúsculas. El primer carácter determina la clase o categoría principal del objeto (por ejemplo, "W" para funciones específicas de la turbina), mientras que las letras sucesivas detallan la función o el subsistema concreto al que representan (por ejemplo, "ROT" para variables asociadas a la rotación del rotor, o "GEN" para los parámetros del generador). De este modo, toda la topología física del aerogenerador queda completamente digitalizada y organizada en áreas funcionales dentro del \ac{SCADA}. A continuación, se detallan los nodos lógicos definidos para cada sección del aerogenerador:
 \begin{itemize}
     \item \textbf{LLN0 (Logical Node Zero):} Nodo obligatorio que centraliza la información común del dispositivo lógico, tales como la configuración del sistema, versión del firmware y estados generales de operación.
     \item \textbf{LPHD (Physical Device Information):} Alberga las propiedades estructurales y físicas del hardware que soporta los nodos lógicos, incluyendo el número de serie, fabricante y el estado de salud del dispositivo (\textit{PhyHealth}).
@@ -212,13 +212,13 @@ Estos nodos se identifican de manera unívoca mediante siglas de tres o cuatro l
 
 
 \paragraph{Nivel 4: Objetos de Datos y Variables de Proceso}
-Finalmente, el Nivel 4 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 4 (Data Object) adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
+Finalmente, el Nivel 4 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 4 (\ac{DO}) adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
 
-En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.\ac{CDC}} (Figura \ref{fig:IEC}). Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el SCADA.
+En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.\ac{CDC}} (Figura \ref{fig:IEC}). Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el \ac{SCADA}.
 \begin{figure}[!tbp]
     \centering
-    \includegraphics[width=\textwidth]{figuras/IEC_61400-25-2_v1.jpg}
-    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url{https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}
+    \includegraphics[width=\textwidth,height=0.6\textwidth]{figuras/IEC61400-25.png}
+    \caption{Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url{https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}
     \label{fig:IEC}
 \end{figure}
 \begin{table}[!tbp]
@@ -230,8 +230,8 @@ En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en
         \toprule
         \textbf{Nivel} & \textbf{Capa Semántica} & \textbf{Código (\textit{Tag})} & \textbf{Significado en la Turbina} \\ \midrule
         \textbf{1 + 2} & Dispositivo Físico + Lógico & \texttt{WTG23} & Aerogenerador 23 (Identificador único) \\
-        \textbf{3}     & Nodo Lógico (\textit{LN})   & \texttt{WROT}  & Sistema de Orientación (\textit{Yaw}) \\
-        \textbf{4}     & Objeto de Datos (\textit{DO}) & \texttt{ROT} & Estado complejo del giro de góndola \\
+        \textbf{3}     & Nodo Lógico (\textit{LN})   & \texttt{WROT}  & Sistema del rotor \\
+        \textbf{4}     & Objeto de Datos (\textit{DO}) & \texttt{RotAzi} & Posición Azimutal del Rotor \\
         \textbf{5}     & Atributo de Datos (\textit{DA}) & \texttt{stVal} & Valor digital final (conmutación) \\ \bottomrule
     \end{tabular}
     }
@@ -242,8 +242,6 @@ En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en
 \label{sec:variables_subestacion}
 
 Habiendo definido la arquitectura semántica para los aerogeneradores, se han estructurado las variables correspondientes a la infraestructura de evacuación del complejo eólico. Para este dominio, se han implementado de forma directa la norma matriz IEC 61850, manteniendo una homogeneidad absoluta en la filosofía de diseño orientada a objetos (Dispositivo Físico, Dispositivo Lógico, Nodo Lógico, Objeto de Datos y Atributo de Datos).
-\FloatBarrier
-% === NIVEL 5 ===
 \paragraph{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac{DPS})}
 \label{sec:sub_nivel5}
 A diferencia de las variables de proceso analógicas o de los estados lógicos simples mapeados en las turbinas, la supervisión de la alta y media tensión (nodos lógicos \texttt{XCBR} y \texttt{XSWI}) exige un tratamiento de datos más estricto para garantizar la seguridad operativa. Por ello, la norma prescribe el uso de un nuevo tipo de \ac{CDC} denominada \ac{DPS}.
@@ -292,7 +290,7 @@ La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de co
 \paragraph{Nivel 3: Estructura de Nodos Lógicos \ac{LN}}
 \label{sec:sub_nivel3}
 
-La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de los \ac{LN} especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
+La flexibilidad y modularidad del \ac{SCADA} radica en la instanciación selectiva de los \ac{LN} especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
 
 \begin{enumerate}[leftmargin=*]
     \item \textbf{Nodos de Control de Bahía (\texttt{CTRL}):} Su topología interna se corresponde al esquema de tres equipos de corte en serie flanqueados por una unidad de medida. Mapea de forma nativa los nodos lógicos del seccionador de linea (\texttt{XSWI1}), el interruptor automático principal (\texttt{XCBR}), el seccionador de línea (\texttt{XSWI2}) y el nodo de medida eléctrica (\texttt{MMXU}) (Figura \ref{fig:celda_linea}).
@@ -320,7 +318,7 @@ La flexibilidad y modularidad del SCADA radica en la instanciación selectiva de
 \paragraph{Nivel 4: Objetos de Datos \ac{DO}}
 \label{sec:sub_nivel4_mapeo}
 
-Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan cada \ac{LN} (Anexo \ref{cap:Tablas_Variab}). Como se detalla en la Tabla \ref{tab:arbol_variables_subestacion_corregido}, esta arquitectura permite que cuando el sistema requiera supervisar el estado del interruptor de la celda de línea \texttt{Q01}, WinCC genere la variable \texttt{Q01.CTRL.XCBR1.Pos.stVal}, mientras que la temperatura del transformador \texttt{T01} se resuelve mediante la dirección \texttt{T01.PROT.YPTR1.Tmp.mag}.
+Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan cada \ac{LN} (Anexo \ref{cap:Tablas_Variab}). Como se detalla en la Tabla \ref{tab:arbol_variables_subestacion_corregido}, esta arquitectura permite que cuando el sistema requiera supervisar el estado del interruptor de la celda de línea \texttt{Q01}, WinCC genere la variable \texttt{Q01.CTRL.XCBR.Pos.stVal}, mientras que la temperatura del transformador \texttt{T01} se resuelve mediante la dirección \texttt{T01.PROT.YPTR.Tmp.mag}.
 
 % === APARTADO DE LOS 6 NIVELES Y LAS 9 SUBESTACIONES ===
 \begin{table}[tb]
@@ -328,7 +326,7 @@ Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan
     \caption{Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}
     \label{tab:arbol_variables_subestacion_corregido}
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}lllll@{}}
+    \begin{tabular}{@{}p{4cm}p{3cm}lll@{}}
         \toprule
         \textbf{L1:(IED)} & \textbf{L2: (LD)} & \textbf{L3:(LN)} & \textbf{L4: (DO)} & \textbf{L5: (DA)} \\ \midrule
         
@@ -336,7 +334,7 @@ Finalmente, el Nivel 4 identifica las señales específicas  \ac{DO} que pueblan
         \texttt{Q01} (Celda Línea) & \texttt{CTRL} & \texttt{XSWI1} & \texttt{Pos} & \texttt{stVal}  \\
         \texttt{Q01} (Celda Línea) & \texttt{CTRL}  & \texttt{XCBR} & \texttt{Pos} & \texttt{stVal}  \\
         \texttt{Q01} (Celda Línea) & \texttt{CTRL} & \texttt{XSWI2} & \texttt{Pos} & \texttt{stVal} \\
-        \texttt{Q01} (Celda Línea) & \texttt{CTRL}  & \texttt{MMXU1} & \texttt{A}   & \texttt{mag} \\ \midrule
+        \texttt{Q01} (Celda Línea) & \texttt{CTRL}  & \texttt{MMXU} & \texttt{A}   & \texttt{mag} \\ \midrule
                     
         % --- CELDA DE TRANSFORMADOR ---
         \texttt{T01} (Celda Trafo) & \texttt{PROT}  & \texttt{YPTR} & \texttt{Tmp} & \texttt{mag}  \\
@@ -371,7 +369,7 @@ Este campo actúa como una raíz que encapsula los cinco niveles normativos de c
             \textbf{Nivel 0}   & Prefijo de Planta (SCADA) & \texttt{SS\_01} & Subestación IGL I \\
             \textbf{Nivel 1}             & Dispositivo Físico (\textit{PD}) & \texttt{Q01} & Celda \\
             \textbf{Nivel 2}             & Dispositivo Lógico (\textit{LD})  & \texttt{CTRL} & Contenedor de control o protección \\
-            \textbf{Nivel 3}             & Nodo Lógico (\textit{LN})        & \texttt{XCBR1} & Interruptor 1 \\
+            \textbf{Nivel 3}             & Nodo Lógico (\textit{LN})        & \texttt{XCBR} & Interruptor 1 \\
             \textbf{Nivel 4}             & Objeto de Datos (\textit{DO})    & \texttt{Pos} & Variable de posición  \\
             \textbf{Nivel 5}             & Atributo de Datos (\textit{DA})  & \texttt{stVal} & Valor discreto(\textit{\ac{DPS}}) \\ \bottomrule
         \end{tabular}%
@@ -428,7 +426,7 @@ El primer paso para el despliegue de la arquitectura de comunicaciones consiste 
     \vspace{1cm}
     \caption{Configuración del servidor \ac{OPC UA} en KepServerEX.}
 \end{figure}
-Dentro de esta herramienta, en la pestaña \textit{Server Endpoints}, se ha adaptado la conexión TCP del adaptador de red permitiendo únicamente conexiones \textit{loopback}, ya que la arquitectura es un sistema monopuesto donde las simulaciones y el servidor KEPServerEX se encuentran en la misma máquina. El endpoint de acceso es\texttt{opc.tcp://localhost:49320} (ver Anexo \ref{cap:Pruebas}) (Figura \ref{fig:OPC_UA_Endpoint}).\par
+Dentro de esta herramienta, en la pestaña \textit{Server Endpoints}, se ha adaptado la conexión TCP del adaptador de red permitiendo únicamente conexiones \textit{loopback}, ya que la arquitectura es un sistema monopuesto donde las simulaciones y el servidor KEPServerEX se encuentran en la misma máquina. El endpoint de acceso es \texttt{opc.tcp://localhost:49320} (ver Anexo \ref{cap:Pruebas}) (Figura \ref{fig:OPC_UA_Endpoint}).\par
 
 Por otro lado, se ha realizado la gestión de Certificados, utilizando las clave pública (PKI). Cuando un cliente (ej. WinCC) intenta establecer la primera sesión, KepServerEX bloquea la petición por defecto y aísla el certificado de instancia del cliente en la lista de certificados rechazados. Para habilitar el canal, se ha intervienido en el \textit{OPC UA Configuration Manager} para trasladar manualmente dicho certificado a la lista de entidades de confianza  garantizando una validación mutua entre las aplicaciones (Figura \ref{fig:OPC_UA_Security}).\par
 
@@ -460,7 +458,7 @@ Por último, el Direccionamiento Espacial establece que, una vez creado el enlac
             \textbf{Variable (Tag en WinCC)} & \textbf{Espacio de Direcciones} & \textbf{Dirección \ac{OPC UA} Absoluta} \\ \midrule
             \texttt{WTG1.WROT.RotSpd.mag} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGL1.WTG1.WROT.RotSpd} \\
             \texttt{WTG1.WROT.RotAzi.mag} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGL1.WTG1.WROT.RotAzi} \\
-            \texttt{SS\_01.Q01.CTRL.XCBR1.Pos.stVal} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGLI.Q01.CTRL.XCBR1.Pos} \\ \bottomrule
+            \texttt{SS\_01.Q01.CTRL.XCBR.Pos.stVal} & \texttt{KEPServerEX} & \texttt{ns=2;s=IGLI.Q01.CTRL.XCBR.Pos} \\ \bottomrule
         \end{tabular}%
     }
 \end{table}
@@ -484,7 +482,7 @@ Para cumplir con la normativa, se ha implementado un servicio de almacenamiento 
 
 La interfaz gráfica constituye el punto de interacción principal entre el operador y el sistema SCADA, por lo que su diseño debe priorizar la claridad, la rapidez de interpretación y la operabilidad en tiempo real. En esta sección se describe la propuesta de visualización desarrollada en WinCC, explicando la organización general de la interfaz y los criterios utilizados para su construcción.\par
 
-Aunque en el diseño actual de interfaces industriales existe una fuerte tendencia hacia la adopción del estándar ISA-101 (High-Performance HMI) que aboga por el uso casi exclusivo de escalas de grises, gráficos vectoriales abstractos y la minimización radical del color, en el presente Trabajo Fin de Máster se ha decidido no aplicar este estándar de forma estricta por  razones técnicas y de alcance.\par
+Aunque en el diseño actual de interfaces industriales existe una fuerte tendencia hacia la adopción del estándar ISA-101 (High-Performance \ac{HMI}) que aboga por el uso casi exclusivo de escalas de grises, gráficos vectoriales abstractos y la minimización radical del color, en el presente Trabajo Fin de Máster se ha decidido no aplicar este estándar de forma estricta por  razones técnicas y de alcance.\par
 
 Por un lado, destaca el enfoque didáctico y demostrativo de esta prueba de concepto. Al abarcar desde la adquisición de datos de campo hasta la integración IIoT en la nube (AWS), una representación ilustrativa y a color facilita enormemente la comprensión inmediata del estado de los aerogeneradores durante la exposición del proyecto.\par
 
@@ -549,7 +547,7 @@ Para mantener esta filosofía, la navegación del sistema se ha estructurado imp
 \subsubsection{Plantillas dinámicas y reutilización gráfica (Prefijos de variable)}
 \label{sec:tag_prefix}
 
-En la monitorización de parques eólicos, se presenta una alta repetición de activos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del SCADA. 
+En la monitorización de parques eólicos, se presenta una alta repetición de activos idénticos (decenas de aerogeneradores con la misma instrumentación). Desarrollar un archivo \texttt{.pdl} individual para cada turbina o clúster resultaría ineficiente, consumiendo recursos excesivos del sistema y dificultando el mantenimiento futuro del \ac{SCADA}. 
 
 Para resolver esta problemática, el diseño de las interfaces de detalle se ha fundamentado en el principio de reutilización gráfica, combinando el uso de las variables de estructura con la propiedad Prefijo de variable de las ventanas de imagen de SIMATIC WinCC.
 
@@ -561,11 +559,10 @@ Durante la operación en el entorno de ejecución, cuando el operador selecciona
     \item Asigna el nombre de la turbina seleccionada (ej. \texttt{WTG1}) a la propiedad de prefijo de variable de la ventana.
 \end{enumerate}
 
-Automáticamente, WinCC concatena este prefijo con el sufijo interno de los objetos gráficos, dinamizando la pantalla completa con los datos reales del equipo seleccionado en cuestión de milisegundos (ver Figura \ref{fig:plantillas_dinamizadas}). Esta filosofía se ha aplicado intensivamente en los niveles del proyecto.
+Automáticamente, WinCC concatena este prefijo con el sufijo interno de los objetos gráficos, dinamizando la pantalla completa con los datos reales del equipo seleccionado en cuestión de milisegundos (ver Figuras \ref{fig:overview_turbina}, \ref{overview_parque}, \ref{fig:turbina_dinamizada} y \ref{fig:parque_dinamizado}). Esta filosofía se ha aplicado intensivamente en los niveles del proyecto.
 
 
 \begin{figure}[t]
-    \label{fig:plantillas_dinamizadas}
     \centering
     \begin{subfigure}{0.48\textwidth}
         \centering
@@ -593,6 +590,7 @@ Automáticamente, WinCC concatena este prefijo con el sufijo interno de los obje
         \caption{Pantalla de supervisión de parque.}
         \label{fig:parque_dinamizado}
     \end{subfigure}
+
     \caption{Ejemplos de plantillas de visualización dinamizadas mediante \textit{Tag Prefix} en SIMATIC WinCC V8.1.}
 \end{figure}
 
@@ -684,7 +682,7 @@ En este proyecto, la supervisión de eventos se integra de forma transversal med
 
 \subsection{Criterios de señalización: Norma IEC 60073}
 
-Para garantizar una interpretación unívoca de los estados del proceso, se ha seguido la normativa internacional IEC 60073(\textit{Principios básicos y de seguridad para las interfaces hombre-máquina, el marcado y la identificación}) \cite{iec60073}. Esta norma establece una codificación cromática estricta basada en el significado de la seguridad y el estado del equipo:
+Para garantizar una interpretación unívoca de los estados del proceso, se ha seguido la normativa internacional IEC 60073 (\textit{Principios básicos y de seguridad para las interfaces hombre-máquina, el marcado y la identificación}) \cite{iec60073}. Esta norma establece una codificación cromática estricta basada en el significado de la seguridad y el estado del equipo:
 
 \begin{itemize}
     \item \textbf{Rojo:} Indica una situación de peligro, emergencia o actuación inmediata.
@@ -696,7 +694,7 @@ Para garantizar una interpretación unívoca de los estados del proceso, se ha s
 \FloatBarrier
 \subsection{Codificación de estados de la turbina}
 
-La determinación de los estados operativos del aerogenerador se fundamenta en la norma IEC 61400-25, la cual define la turbina como una máquina de estados. Sin embargo, dado que esta norma no especifica una paleta de colores para las HMI, la representación visual se ha diseñado utilizando los principios de seguridad de la norma IEC 60073 con los estándares en la industria de generación eólica (tabla \ref{tab:colores_estados}).
+La determinación de los estados operativos del aerogenerador se fundamenta en la norma IEC 61400-25, la cual define la turbina como una máquina de estados. Sin embargo, dado que esta norma no especifica una paleta de colores para las \ac{HMI}, la representación visual se ha diseñado utilizando los principios de seguridad de la norma IEC 60073 con los estándares en la industria de generación eólica (tabla \ref{tab:colores_estados}).
 
 El objetivo de esta asignación es garantizar que el operador comprenda la situación del parque en un solo vistazo, reservando los colores de alta saturación exclusivamente para condiciones que requieran atención. 
 
@@ -722,7 +720,7 @@ El objetivo de esta asignación es garantizar que el operador comprenda la situa
 
 Uso del Naranja/Amarillo: Se asigna al modo \textit{Mantenimiento} para advertir a los operadores del centro de control que existen técnicos físicos trabajando en la turbina, funcionando como una alerta visual.\par
 
-Uso del Blanco y Gris: Siguiendo los principios de HMI de alto rendimiento (ISA-101), los estados de \textit{Pausa} y \textit{Parada} (que son condiciones seguras y estacionarias) se representan en escala de grises, con el fin de no saturar la vista del operador.\par
+Uso del Blanco y Gris: Siguiendo los principios de \ac{HMI} de alto rendimiento (ISA-101), los estados de \textit{Pausa} y \textit{Parada} (que son condiciones seguras y estacionarias) se representan en escala de grises, con el fin de no saturar la vista del operador.\par
 
 Uso del Azul: Según la IEC 60073, el azul se emplea para estados que requieren de intervención obligatoria. Sin embargo, dado que en el contexto eólico los estados de transición como \textit{Arrancando} y \textit{Apagando} no implican una anomalía y estan totalmente automatizadas, se emplea el color azul para indicar estos estados específicos que no estan descritos por otros colores en la norma.\par
 \begin{figure}[!tbp]
@@ -734,7 +732,7 @@ Uso del Azul: Según la IEC 60073, el azul se emplea para estados que requieren 
 \subsection{Codificación Cromática y Representación de Estados en Celdas de Línea}
 \label{sec:codificacion_cromatica_celdas}
 
-Para la representación gráfica de los equipos de maniobra en las pantallas de las subestaciones, la interfaz HMI de WinCC V8.1 diseñada rechaza el uso de paletas de colores arbitrarias y se mantiene el enfoque en la normativa de seguridad visual.\par
+Para la representación gráfica de los equipos de maniobra en las pantallas de las subestaciones, la interfaz \ac{HMI} de WinCC V8.1 diseñada rechaza el uso de paletas de colores arbitrarias y se mantiene el enfoque en la normativa de seguridad visual.\par
 
 En el entorno eléctrico de alta y media tensión, la presencia de energía implica un riesgo importante para el personal de planta. Por este motivo, la visualización de los símbolos que representan los interruptores automáticos (\texttt{XCBR}) y los seccionadores (\texttt{XSWI}) dentro de las plantillas gráficas obedece a la siguiente convención de seguridad detallada en la tabla \ref{tab:colores_estados_celdas}.
 
@@ -745,7 +743,7 @@ En el entorno eléctrico de alta y media tensión, la presencia de energía impl
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{llll}
             \toprule
-            \textbf{Estado} & \textbf{Color HMI} & \textbf{Valor} & \textbf{Significado Técnico y Operativo} \\ \midrule
+            \textbf{Estado} & \textbf{Color \ac{HMI}} & \textbf{Valor} & \textbf{Significado Técnico y Operativo} \\ \midrule
             Cerrado  & Rojo & 1 & Contactos cerrados con riesgo eléctrico. \\
             Abierto  & Verde & 0 & Circuito interrumpido. Condición segura. \\
             Tránsito /Fallo & Amarillo & 3-8 & Maniobra en curso o fallo. \\ \bottomrule
@@ -804,20 +802,25 @@ El comportamiento cromático en el objeto \textit{WinCC Alarm Control} sigue una
 Cuando una alarma entra en el sistema (estado activo sin acusar), la interfaz prioriza la captura de la atención del usuario: el texto se presenta en color blanco sobre un fondo cromático saturado representativo de su gravedad (rojo para emergencias y fallos, o amarillo/ámbar para advertencias).\par
 
 En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgment}), si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte los colores para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica de implementación en el \textit{Runtime}.
+
+Una vez la alarma desaparece (estado desaparecido), el sistema la marca como resuelta, mostrando el texto en verde sobre fondo blanco para indicar que la condición de fallo ha sido corregida y el sistema ha vuelto a un estado seguro.
 \begin{table}[tb]
     \centering
     \caption{Matriz de codificación cromática y comportamiento de alarmas para el nodo WALM (IEC 60073).}
     \label{tab:matriz_alarmas_wincc}
     \resizebox{\textwidth}{!}{
-    \begin{tabular}{@{}lllll@{}}
+    \begin{tabular}{@{}p{4cm}p{4cm}ll@{}}
         \toprule
-        \textbf{Clase de Aviso} & \textbf{Estado del Evento} & \textbf{Color Texto} & \textbf{Color Fondo} & \textbf{Parpadeo} \\ \midrule
-        \multirow{2}{*}{Emergencia} & Activa sin acusar & Blanco & Rojo & Sí (Rápido) \\
-                                    & Activa acusada    & Rojo   & Blanco & No \\ \midrule
-        \multirow{2}{*}{Fallo}      & Activa sin acusar & Blanco & Rojo & Sí (Lento) \\
-                                    & Activa acusada    & Rojo   & Blanco & No \\ \midrule
-        \multirow{2}{*}{Advertencia} & Activa sin acusar & Blanco & Amarillo / Ámbar & Sí \\
-                                    & Activa acusada    & Amarillo / Ámbar & Blanco & No \\ \bottomrule
+        \textbf{Clase de Aviso} & \textbf{Estado del Evento} & \textbf{Color Texto} & \textbf{Color Fondo} \\ \midrule
+        \multirow{3}{*}{Emergencia} & Activa sin acusar & Blanco & Rojo \\
+                                    & Activa acusada    & Rojo   & Blanco \\
+                                    & Desaparecida      & Verde  & Blanco \\ \midrule
+        \multirow{3}{*}{Fallo}      & Activa sin acusar & Blanco & Rojo \\
+                                    & Activa acusada    & Rojo   & Blanco \\
+                                    & Desaparecida      & Verde  & Blanco \\ \midrule
+        \multirow{3}{*}{Advertencia} & Activa sin acusar & Blanco & Amarillo / Ámbar \\
+                                    & Activa acusada    & Amarillo / Ámbar & Blanco \\
+                                    & Desaparecida      & Verde  & Blanco \\ \bottomrule
     \end{tabular}
     }
 \end{table}
@@ -937,7 +940,7 @@ Una vez configurada la fuente de datos, se han creado los dashboards personaliza
     \label{fig:grafana_dashboard}
 \end{figure}
 \section{Ciberseguridad IEC 62443-4-2:2019}
-Esta sección es una directriz de seguridad válida para SIMATIC HMI WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro \ac{SL} distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
+Esta sección es una directriz de seguridad válida para SIMATIC \ac{HMI} WinCC V8.1 que describe sus funciones de ciberseguridad. Sigue la norma IEC 62443-4-2:2019 de ciberseguridad para sistemas de automatización y control industrial. La norma IEC 62443 define cuatro \ac{SL} distintos, basados en los recursos, las habilidades y la motivación del posible atacante \cite{iec62443-4-2}:
 
 \begin{itemize}
     \item \textbf{\ac{SL} 1:} Protección contra vulneraciones casuales/accidentales:

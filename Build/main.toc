@@ -44,11 +44,11 @@
 \contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Lógicos (LD) y Dispositivos Físicos (PD)}{29}{table.caption.94}%
 \contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos (LN)}{30}{table.caption.98}%
 \contentsline {paragraph}{Nivel 4: Objetos de Datos y Variables de Proceso}{32}{figure.caption.99}%
-\contentsline {subsubsection}{\numberline {7.2.2.2}Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}{33}{section*.103}%
-\contentsline {paragraph}{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac {DPS})}{33}{section*.103}%
-\contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Físicos (PD) y Dispositivos Lógicos (LD)}{34}{table.caption.105}%
-\contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos \ac {LN}}{34}{table.caption.108}%
-\contentsline {paragraph}{Nivel 4: Objetos de Datos \ac {DO}}{35}{figure.caption.109}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}Modelado de Variables de Estructura para la Subestación Eléctrica (IEC 61850)}{33}{section*.104}%
+\contentsline {paragraph}{Nivel 5: Atributos de Dato y Clase de Datos Comunes (\ac {DPS})}{33}{section*.104}%
+\contentsline {paragraph}{Nivel 1 y 2: Estructura de Dispositivos Físicos (PD) y Dispositivos Lógicos (LD)}{34}{table.caption.106}%
+\contentsline {paragraph}{Nivel 3: Estructura de Nodos Lógicos \ac {LN}}{34}{table.caption.109}%
+\contentsline {paragraph}{Nivel 4: Objetos de Datos \ac {DO}}{35}{figure.caption.110}%
 \contentsline {paragraph}{Justificación de la Jerarquía de Direccionamiento y Multi-Subestación (6 Niveles vs. 5 Niveles)}{36}{table.caption.111}%
 \contentsline {subsection}{\numberline {7.2.3}Variables externas}{37}{section*.114}%
 \contentsline {subsubsection}{\numberline {7.2.3.1}OPC UA}{37}{section*.115}%

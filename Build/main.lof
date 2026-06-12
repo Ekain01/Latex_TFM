@@ -14,9 +14,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url {https://windenergietage.de/2023/wp-content/uploads/sites/8/2018/01/31WET09_F17_1345_Windenergietage-2023.pdf}}}{29}{figure.caption.93}%
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Descomposición de los componentes físicos de un aerogenerador y su correspondencia conceptual según la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{31}{figure.caption.99}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Obtenido de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{33}{figure.caption.101}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces SLD de la celda de línea.}}{35}{figure.caption.109}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces SLD de la celda del transformador de potencia.}}{35}{figure.caption.109}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Jerarquía de los niveles de la norma IEC 61400-25-2. Adaptado de \url {https://commons.wikimedia.org/wiki/File:IEC_61400-25-2_v1.jpg}}}{33}{figure.caption.102}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces SLD de la celda de línea.}}{35}{figure.caption.110}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces SLD de la celda del transformador de potencia.}}{35}{figure.caption.110}%
 \contentsline {figure}{\numberline {7.6}{\ignorespaces Metamodelo de comunicación \ac {OPC UA}. Obtenido de Unified Automation GmbH. https://www.unified-automation.com/products/opc-ua/technology/opc-ua-metamodel.html}}{38}{figure.caption.117}%
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Esquema de comunicación entre el simulador de planta en NodeRed, el servidor \ac {OPC UA} KEPServerEX y el cliente SCADA SIMATIC WinCC V8.1.}}{38}{figure.caption.118}%
 \contentsline {figure}{\numberline {7.8}{\ignorespaces Configuración del servidor \ac {OPC UA} en KepServerEX.}}{39}{figure.caption.120}%
