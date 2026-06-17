@@ -8,7 +8,7 @@ El presupuesto para el diseño, desarrollo e implementación de la arquitectura 
 Los precios reflejados en el apartado de software corresponden a tarifas de catálogo industriales vigentes para el ecosistema \textit{SIMATIC WinCC}.
 
 \subsection{Costes de Ingeniería (Mano de Obra)}
-Para la estimación económica de las labores de desarrollo, se ha tomado como referencia el perfil de un Ingeniero Junior en la especialidad de Control, Automatización y Robótica. Tomando como base el salario especificado en el convenio colectivo de empresas de ingeniería para un nivel salarial 1 \cite{boe_convenio_ingenierias_2024}, se ha aplicado una tarifa de 12,00 € por hora para el ingeniero encargado del desarrollo técnico. Además, se ha considerado una tarifa de 16 € por hora para el director del TFM, quien supervisará y coordinará el proyecto.
+Para la estimación económica de las labores de desarrollo, se ha tomado como referencia el perfil de un Ingeniero Junior en la especialidad de Control, Automatización y Robótica. Partiendo del salario base especificado en el convenio colectivo de empresas de ingeniería para el nivel salarial 1 \cite{boe_convenio_ingenierias_2024}, e incluyendo la revisión salarial prevista para el año en curso así como los costes sociales y generales asociados, se ha fijado una tarifa de 38,00 €/hora para el ingeniero encargado del desarrollo técnico. Además, se ha considerado una tarifa de 45,00 €/hora para el director del TFM, encargado de las labores de supervisión y coordinación del proyecto.
 
 El cálculo de horas (880 horas en total) refleja el volumen de dedicación requerido para un proyecto de esta envergadura (ver Tabla \ref{tab:presupuesto_mano_obra}).
 
@@ -19,38 +19,37 @@ El cálculo de horas (880 horas en total) refleja el volumen de dedicación requ
 \resizebox{\textwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
-\textbf{Trabajador} & \textbf{Horas Estimadas} & \textbf{Tarifa (€)} & \textbf{Coste Total (€)} \\
+\textbf{Trabajador} & \textbf{Horas Estimadas} & \textbf{Tarifa (€/h)} & \textbf{Coste Total (€)} \\
 \midrule
-Ingeniero (Nivel 1) & 880 & 12.00 & 10.560,00 \\
-Director de TFM & 20 & 16.00 & 320,00 \\
+Ingeniero (Nivel 1) & 880 & 38.00 & 33.440,00 \\
+Director de TFM & 20 & 45.00 & 900,00 \\
 \midrule
-\textbf{Total Mano de Obra} & \textbf{900} & & \textbf{10.880,00} \\
+\textbf{Total Mano de Obra} & \textbf{900} & & \textbf{34.340,00} \\
 \bottomrule
 \end{tabular}
 }
 \end{table}
 
 \subsection{Licencias de Software WinCC}
-El bloque tecnológico exige un alto nivel de inversión debido a la necesidad de gestionar una planta completa con un servidor SCADA masivo. La licencia principal \textit{WinCC RC} (que permite tanto ejecutar el entorno gráfico (\textit{Runtime}) como modificarlo (\textit{Configuration})) se ha dimensionado para soportar hasta 65.536 variables (\textit{tags}), cubriendo los datos simultáneos de todos los aerogeneradores. Por otro lado se utilizará la licencia de conectividad \textit{WinCC Connectivity Pack} para integrar el entorno SCADA con la nube, y la licencia de \textit{WinCC Cloud Connect} para habilitar la comunicación con la instancia virtualizada en AWS.
+El bloque tecnológico exige un alto nivel de inversión debido a la necesidad de gestionar una planta completa con un servidor SCADA masivo. La licencia principal \textit{WinCC RC} (que permite tanto ejecutar el entorno gráfico (\textit{Runtime}) como modificarlo (\textit{Configuration})) se ha dimensionado para soportar mas de 65.536 variables (\textit{tags}), cubriendo los datos simultáneos de todos los aerogeneradores. Por otro lado se utilizará la licencia de conectividad \textit{WinCC Connectivity Pack} para integrar el entorno SCADA con la nube, la licencia de \textit{WinCC Cloud Connect} para habilitar la comunicación con la instancia virtualizada en AWS y la licencia de \textit{WinCC Archive} para el almacenamiento de datos históricos.
 
 \begin{table}[tbp]
 \centering
-\caption{Presupuesto desglosado de licencias de software (Base y Upgrade), hardware e infraestructura.}
+\caption{Presupuesto desglosado de licencias WinCC e infraestructura local.}
 \label{tab:presupuesto_licencias_desglosado}
 \resizebox{\textwidth}{!}{
-\begin{tabular}{lcr}
+\begin{tabular}{llcr}
 \toprule
-\textbf{Descripción del Software / Hardware} & \textbf{Cantidad} & \textbf{Coste Total (EUR)} \\
+\textbf{Nombre} & \textbf{Referencia} & \textbf{Cantidad} & \textbf{P.V.P. (EUR)} \\
 \midrule
-SIMATIC WinCC RC (65536 tags) - Licencia Base & 1 & 14.200,00 \\
-SIMATIC WinCC RC (65536 tags) - Upgrade a V8.1 & 1 & 2.300,00 \\
-SIMATIC WinCC Cloud Connect - Licencia Base & 1 & 400,00 \\
-SIMATIC WinCC Cloud Connect - Upgrade a V8.1 & 1 & 150,00 \\
-SIMATIC WinCC Connectivity Pack - Licencia Base & 1 & 1.150,00 \\
-SIMATIC WinCC Connectivity Pack - Upgrade a V8.1 & 1 & 450,00 \\
-Amortización equipo de desarrollo (Estación base) & 1 & 1.000,00 \\
+WinCC/Cloud Connect 8.1 & 6AV6362-5AA08-1BB0 & 1 & 422,21 \\
+WinCC/Connectivity Pack V8.1 & 6AV6371-1DR18-1AX0 & 1 & 4.287,91 \\
+WinCC/Archive V8.0, 1500 Arch. Tags & 6AV6371-1DQ10-0AX0 & 1 & 3.522,30 \\
+WinCC/Webux Monitor, 1 Client & 6AV6362-2AB00-0BB0 & 1 & 713,87 \\
+WinCC RC unlimited, V8.1 DL & 6AV6381-2BU08-1AH0 & 1 & 17.750,30 \\
+Amortización de estación & & 1 & 1.349,99 \\
 \midrule
-\textbf{Total Software e Infraestructura} & & \textbf{19.650,00} \\
+\textbf{Total Software e Infraestructura} & & & \textbf{35.732,26} \\
 \bottomrule
 \end{tabular}
 }
@@ -59,9 +58,9 @@ Amortización equipo de desarrollo (Estación base) & 1 & 1.000,00 \\
 
 El coste de la infraestructura en la nube se ha estimado en función del uso de una instancia EC2 de tipo \textit{t3.medium} . Este tipo de instancia ofrece un equilibrio adecuado entre recursos computacionales y coste, permitiendo alojar el entorno virtualizado necesario para la integración con el sistema SCADA. Como se observa en la Figura \ref{fig:aws_cost_estimation}, el coste mensual de esta instancia se ha calculado en base a las tarifas vigentes de AWS, considerando un uso continuo durante un periodo de aproximadamente 2 meses para cubrir la fase de desarrollo, pruebas e implementación del proyecto llegando a una estimación total de 19,87\$. 
 
-\begin{figure}[tbp]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{figuras/PrecioNube.png}
+\includegraphics[width=0.8\textwidth]{figuras/PrecioNube.png}
 \caption{Estimación de costes para la instancia AWS EC2 t3.medium.}
 \label{fig:aws_cost_estimation}
 \end{figure}
@@ -76,11 +75,11 @@ La agregación de los costes de ingeniería, las licencias de software, la amort
 \toprule
 \textbf{Partida Presupuestaria} & \textbf{Importe (EUR)} \\
 \midrule
-Costes de Ingeniería (Mano de obra) & 10.880,00 \\
-Costes de Software e Infraestructura & 19.650,00 \\
+Costes de Ingeniería (Mano de obra) & 34.340,00 \\
+Costes de Software e Infraestructura & 35.732,26 \\
 Coste estimado infraestructura AWS (2 meses) & 19,87 \\
 \midrule
-\textbf{Presupuesto Total General} & \textbf{30.549,87} \\
+\textbf{Presupuesto Total General} & \textbf{70.092,13} \\
 \bottomrule
 \end{tabular}
 \end{table}
