@@ -105,6 +105,39 @@
     \field{year}{2020}
   \endentry
 
+  \entry{ahmed2014communication}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=AMA}{%
+         family={Ahmed},
+         familyi={A\bibinitperiod},
+         given={Mohamed\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=KYC}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Young-Chon},
+         giveni={Y\bibinithyphendelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MDPI}%
+    }
+    \strng{namehash}{AMAKYC1}
+    \strng{fullhash}{AMAKYC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{6}
+    \field{pages}{3900\bibrangedash 3921}
+    \field{title}{Communication network architectures for smart-wind power
+  farms}
+    \field{volume}{7}
+    \field{journaltitle}{Energies}
+    \field{year}{2014}
+  \endentry
+
   \entry{aeeAnuario2025}{report}{}{}
     \name{author}{1}{}{%
       {{hash=A}{%
@@ -276,6 +309,48 @@
     \field{year}{2023}
   \endentry
 
+  \entry{ferrari2020evaluation}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=FP}{%
+         family={Ferrari},
+         familyi={F\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Sisinni},
+         familyi={S\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Brand{\~a}o},
+         familyi={B\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rocha},
+         familyi={R\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{FP+1}
+    \strng{fullhash}{FPSEBDRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Evaluation of Communication Delay in IoT and MQTT-based SCADA
+  Systems}
+    \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+    \field{year}{2020}
+  \endentry
+
   \entry{FIGUEIREDO201954}{article}{}{}
     \name{author}{2}{}{%
       {{hash=FNC}{%
@@ -332,6 +407,39 @@
     \field{volume}{102}
     \field{journaltitle}{Renewable and Sustainable Energy Reviews}
     \field{year}{2019}
+  \endentry
+
+  \entry{gungor2009industrial}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=GVC}{%
+         family={Gungor},
+         familyi={G\bibinitperiod},
+         given={Vehbi\bibnamedelima C},
+         giveni={V\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HGP}{%
+         family={Hancke},
+         familyi={H\bibinitperiod},
+         given={Gerhard\bibnamedelima P},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{GVCHGP1}
+    \strng{fullhash}{GVCHGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{10}
+    \field{pages}{4258\bibrangedash 4265}
+    \field{title}{Industrial wireless sensor networks: Challenges, design
+  principles, and technical approaches}
+    \field{volume}{56}
+    \field{journaltitle}{IEEE Transactions on Industrial Electronics}
+    \field{year}{2009}
   \endentry
 
   \entry{https://doi.org/10.1002/ese3.35}{article}{}{}
@@ -642,6 +750,43 @@
     \field{journaltitle}{Renewable Energy}
     \field{month}{02}
     \field{year}{2020}
+  \endentry
+
+  \entry{mahmood2015review}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=MA}{%
+         family={Mahmood},
+         familyi={M\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=JN}{%
+         family={Javaid},
+         familyi={J\bibinitperiod},
+         given={Nadeem},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Razzaq},
+         familyi={R\bibinitperiod},
+         given={Shafiullah},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MA+1}
+    \strng{fullhash}{MAJNRS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{248\bibrangedash 260}
+    \field{title}{A review of wireless communications for smart grid}
+    \field{volume}{41}
+    \field{journaltitle}{Renewable and sustainable energy reviews}
+    \field{year}{2015}
   \endentry
 
   \entry{makogon2023energy}{article}{}{}

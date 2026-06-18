@@ -1,4 +1,4 @@
-\chapter{Análisis de resultados (si procede)}
+\chapter{Análisis de resultados}
 \label{cap:analisis_de_resultados}
 
 \titlespacing{\section}{0em}{.75em}{.2em}
@@ -9,7 +9,7 @@ En este capítulo se presentan resultados de la solución implementada, incluyen
 \section{Análisis unitario y de integración}
 \label{subsec:analisis_unitario_integracion}
 
-El primer analisis realizado se ha centrado en la validación de las funciones de filtrado de turbinas y parques, así como en la navegación entre pantallas. Para ello se han desarrollado pruebas unitarias específicas para cada función, documentando los resultados obtenidos y las soluciones implementadas en caso de errores (Ver tablas \ref{tab:pruebas_unitarias_turbinas}, \ref{tab:pruebas_unitarias_parques}, \ref{tab:pruebas_unitarias_navegacion} y \ref{tab:pruebas_integracion_nube} ).\vspace{0.5cm}
+El primer análisis realizado se ha centrado en la validación de las funciones de filtrado de turbinas y parques, así como en la navegación entre pantallas. Para ello se han desarrollado pruebas unitarias específicas para cada función, documentando los resultados obtenidos y las soluciones implementadas en caso de errores (Ver tablas \ref{tab:pruebas_unitarias_turbinas}, \ref{tab:pruebas_unitarias_parques}, \ref{tab:pruebas_unitarias_navegacion} y \ref{tab:pruebas_integracion_nube} ).\vspace{0.5cm}
 
 %=============================================================================================================================================================================
 \begin{table}[htbp]
@@ -35,7 +35,7 @@ El primer analisis realizado se ha centrado en la validación de las funciones d
 \midrule
 
 % Bloque de Error 1
-\multirow{2}{*}{\parbox{3.5cm}{\centering \textbf{Nº Error}}} & \textbf{Descripción error:} El filtro funcionaba correctamente para las 20 primeras turbinas, sin embargo no funcionaba para las siguientes debido a que el \textit{Tag Prefix} no estaba correctamente configurado \\[0.6cm] \cmidrule{2-2} % Línea horizontal que solo abarca la columna 2
+\multirow{2}{*}{\parbox{3.5cm}{\centering \textbf{Nº Error}}} & \textbf{Descripción error:} El filtro funcionaba correctamente para las 20 primeras turbinas. Sin embargo, no funcionaba para las siguientes debido a que el \textit{Tag Prefix} no estaba correctamente configurado \\[0.6cm] \cmidrule{2-2} % Línea horizontal que solo abarca la columna 2
  & \textbf{Solución utilizada:} Ajustar correctamente el tag prefix a la ventana correspondiente \\[0.6cm] \midrule
 \end{tabular}%
 }
@@ -116,11 +116,11 @@ El primer analisis realizado se ha centrado en la validación de las funciones d
 \end{table}
 \FloatBarrier
 %=============================================================================================================================================================================
-\section{Análisis de Rendimiento de los Procesos del SCADA}
+\section{Análisis de rendimiento de los procesos del SCADA}
 \label{subsec:rendimiento_scada}
 Para verificar la eficiencia y la carga computacional del \ac{SCADA}, se ha realizado un análisis del proceso \texttt{PdlRt.exe}. \texttt{PdlRt.exe} es el motor gráfico del software \textit{runtime}, procesa el renderizado de las pantallas, la actualización de las animaciones dinámicas de las turbinas, la navegación del operador en tiempo real y ejecuta los scripts programados en cada pantalla. La monitorización se llevó a cabo mediante la herramienta \textit{Windows Performance Monitor (PerfMon)}, evaluando el impacto en la \ac{CPU} y el comportamiento de la \ac{RAM} durante el régimen operativo nominal del parque eólico.\par \indent
 
-Para ello se han analizado dos escenarios de carga computacional, el primero una carga de idle y el segundo una carga de estres. La carga de idle se ha definido como el estado del sistema en las pantallas que no presentan animaciones dinámicas ni actualizaciones frecuentes de variables (\texttt{11\_SUB\_General}). Mientras que la carga de estrés se ha configurado con la pantalla de supervisión principal (\texttt{10\_WTG\_Overview}), que incluye animaciones en tiempo real de las turbinas y actualizaciones constantes de los \ac{KPI} del parque con el máximo posible de aerogeneradores ($57$) en la visualización. El análisis se ha realizado en un entorno virtualizado con las características de hardware indicadas en la tabla \ref{tab:hardware_mv}.\par \indent
+Para ello se han analizado dos escenarios de carga computacional, el primero una carga de idle y el segundo una carga de estrés. La carga de idle se ha definido como el estado del sistema en las pantallas que no presentan animaciones dinámicas ni actualizaciones frecuentes de variables (\texttt{11\_SUB\_General}). Mientras que la carga de estrés se ha configurado con la pantalla de supervisión principal (\texttt{10\_WTG\_Overview}), que incluye animaciones en tiempo real de las turbinas y actualizaciones constantes de los \ac{KPI} del parque con el máximo posible de aerogeneradores ($57$) en la visualización. El análisis se ha realizado en un entorno virtualizado con las características de hardware indicadas en la tabla \ref{tab:hardware_mv}.\par \indent
 
 
 \begin{table}[tbp]
@@ -159,9 +159,9 @@ Para realizar la prueba se han desarrollado tres escenarios con diferentes canti
 }
 \end{table}
 
- El aumento de tags no afecta considerablemente el rendimiento del proceso \texttt{PdlRt.exe}. Esto se debe a que el procesamiento de las variables se realiza de manera eficiente mediante las conexiones directas que pueden ejecutarse en hilos distintos. Sin embargo el procesamiento gráfico de pantallas y ejecución de \textit{Scripts}  tanto de \ac{ANSI-C} como de \ac{VBS} se realiza en un único hilo principal del proceso de ejecución.
+ El aumento de tags no afecta considerablemente el rendimiento del proceso \texttt{PdlRt.exe}. Esto se debe a que el procesamiento de las variables se realiza de manera eficiente mediante las conexiones directas que pueden ejecutarse en hilos distintos. Sin embargo, el procesamiento gráfico de pantallas y ejecución de \textit{Scripts}  tanto de \ac{ANSI-C} como de \ac{VBS} se realiza en un único hilo principal del proceso de ejecución.
 
-Por otra parte, al realizar un analisis de hilos se observa que, aunque \texttt{PdlRT.exe} funciona  como un proceso multihilo, el núcleo de su ejecución logica de interfaz se concentra en un único hilo principal. Al analizar este componente bajo distintas cargas de trabajo en un único núcleo del procesador, se observa que el consumo de \ac{CPU} del hilo principal se incrementa hasta alcanzar un pico máximo del $67.4\%$ en el escenario de máximo estrés (ver Figura \ref{fig:Stress}).
+Por otra parte, al realizar un análisis de hilos se observa que, aunque \texttt{PdlRT.exe} funciona  como un proceso multihilo, el núcleo de su ejecución lógica de interfaz se concentra en un único hilo principal. Al analizar este componente bajo distintas cargas de trabajo en un único núcleo del procesador, se observa que el consumo de \ac{CPU} del hilo principal se incrementa hasta alcanzar un pico máximo del $67.4\%$ en el escenario de máximo estrés (ver Figura \ref{fig:Stress}).
 
 \begin{figure}[!tpb]
     \centering
@@ -177,7 +177,7 @@ Sin embargo, con un impacto computacional moderado en términos de uso de \ac{CP
 \section{Análisis de latencia extremo a extremo}
 El objetivo de este análisis es medir la latencia global de la arquitectura IIoT, definida como el tiempo de extremo a extremo ($T_{E2E}$). Esta métrica representa el tiempo que transcurre desde que el SCADA local (\textit{SIMATIC WinCC}) detecta y empaqueta un cambio en las variables del parque eólico, hasta que el dato es recibido, indexado en la base de datos \textit{InfluxDB} en la nube y queda disponible para su visualización inmediata en los paneles de \textit{Grafana}.
 
-Para obtener el valor real de esta latencia, se han monitorizado las marcas de tiempo (\textit{timestamps}) inyectadas en el \textit{payload} de la variable \texttt{WTG1.WTUR.W.mag}. \textit{WinCC Cloud Connect} estampa la hora de generación del evento utilizando el estándar \textit{RFC3339}. Al comparar esta marca de origen con el instante de registro final marcado por el motor de \textit{InfluxDB}, se obtiene la latencia total.
+Para obtener el valor real de esta latencia, se han monitorizado las marcas de tiempo (\textit{timestamps}) inyectadas en la carga útil de la variable \texttt{WTG1.WTUR.W.mag}. \textit{WinCC Cloud Connect} estampa la hora de generación del evento utilizando el estándar \textit{RFC3339}. Al comparar esta marca de origen con el instante de registro final marcado por el motor de \textit{InfluxDB}, se obtiene la latencia total.
 
 Durante los ensayos, configurados con un ciclo de publicación hacia la nube de $1\text{ Hz}$, se capturó y analizó una muestra representativa de 50 eventos consecutivos de telemetría. La Tabla~\ref{tab:estadistica_e2e} resume los valores estadísticos obtenidos tras calcular la sustracción de las marcas de tiempo para cada paquete evaluado.
 

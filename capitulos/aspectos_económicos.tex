@@ -2,13 +2,13 @@
 \label{cap:económicos}
 \titlespacing{\section}{0em}{.75em}{.2em}
 \titlespacing{\subsection}{0em}{.5em}{0em}
-\section{Presupuesto del Proyecto}
+\section{Presupuesto del proyecto}
 El presupuesto para el diseño, desarrollo e implementación de la arquitectura IIoT para el parque eólico se ha estructurado en dos bloques principales: los costes de ingeniería y los costes correspondientes a la adquisición de licencias de software y amortización de infraestructura.
 
 Los precios reflejados en el apartado de software corresponden a tarifas de catálogo industriales vigentes para el ecosistema \textit{SIMATIC WinCC}.
 
-\subsection{Costes de Ingeniería (Mano de Obra)}
-Para la estimación económica de las labores de desarrollo, se ha tomado como referencia el perfil de un Ingeniero Junior en la especialidad de Control, Automatización y Robótica. Partiendo del salario base especificado en el convenio colectivo de empresas de ingeniería para el nivel salarial 1 \cite{boe_convenio_ingenierias_2024}, e incluyendo la revisión salarial prevista para el año en curso así como los costes sociales y generales asociados, se ha fijado una tarifa de 38,00 €/hora para el ingeniero encargado del desarrollo técnico. Además, se ha considerado una tarifa de 45,00 €/hora para el director del TFM, encargado de las labores de supervisión y coordinación del proyecto.
+\subsection{Costes de ingeniería (mano de obra)}
+Para la estimación económica de las labores de desarrollo, se ha tomado como referencia el perfil de un Ingeniero Junior en la especialidad de Control, Automatización y Robótica. Partiendo del salario base especificado en el convenio colectivo de empresas de ingeniería para el nivel salarial 1 \cite{boe_convenio_ingenierias_2024}, e incluyendo la revisión salarial prevista para el año en curso, así como los costes sociales y generales asociados, se ha fijado una tarifa de 38,00 €/hora para el ingeniero encargado del desarrollo técnico. Además, se ha considerado una tarifa de 45,00 €/hora para el director del TFM, encargado de las labores de supervisión y coordinación del proyecto.
 
 El cálculo de horas (880 horas en total) refleja el volumen de dedicación requerido para un proyecto de esta envergadura (ver Tabla \ref{tab:presupuesto_mano_obra}).
 
@@ -30,7 +30,7 @@ Director de TFM & 20 & 45.00 & 900,00 \\
 }
 \end{table}
 
-\subsection{Licencias de Software WinCC}
+\subsection{Licencias de software WinCC}
 El bloque tecnológico exige un alto nivel de inversión debido a la necesidad de gestionar una planta completa con un servidor SCADA masivo. La licencia principal \textit{WinCC RC} (que permite tanto ejecutar el entorno gráfico (\textit{Runtime}) como modificarlo (\textit{Configuration})) se ha dimensionado para soportar mas de 65.536 variables (\textit{tags}), cubriendo los datos simultáneos de todos los aerogeneradores. Por otro lado se utilizará la licencia de conectividad \textit{WinCC Connectivity Pack} para integrar el entorno SCADA con la nube, la licencia de \textit{WinCC Cloud Connect} para habilitar la comunicación con la instancia virtualizada en AWS y la licencia de \textit{WinCC Archive} para el almacenamiento de datos históricos.
 
 \begin{table}[tbp]
@@ -56,7 +56,7 @@ Amortización de estación & & 1 & 1.349,99 \\
 \end{table}
 \subsection{Infraestructura AWS}
 
-El coste de la infraestructura en la nube se ha estimado en función del uso de una instancia EC2 de tipo \textit{t3.medium} . Este tipo de instancia ofrece un equilibrio adecuado entre recursos computacionales y coste, permitiendo alojar el entorno virtualizado necesario para la integración con el sistema SCADA. Como se observa en la Figura \ref{fig:aws_cost_estimation}, el coste mensual de esta instancia se ha calculado en base a las tarifas vigentes de AWS, considerando un uso continuo durante un periodo de aproximadamente 2 meses para cubrir la fase de desarrollo, pruebas e implementación del proyecto llegando a una estimación total de 19,87\$. 
+El coste de la infraestructura en la nube se ha estimado en función del uso de una instancia EC2 de tipo \textit{t3.medium} . Este tipo de instancia ofrece un equilibrio adecuado entre recursos computacionales y coste, permitiendo alojar el entorno virtualizado necesario para la integración con el sistema SCADA. Como se observa en la Figura \ref{fig:aws_cost_estimation}, el coste mensual de esta instancia se ha calculado en base a las tarifas vigentes de AWS, considerando un uso continuo durante un periodo de aproximadamente 2 meses para cubrir la fase de desarrollo, pruebas e implementación del proyecto llegando a una estimación total de 17,34 €. 
 
 \begin{figure}[htbp]
 \centering
@@ -64,7 +64,7 @@ El coste de la infraestructura en la nube se ha estimado en función del uso de 
 \caption{Estimación de costes para la instancia AWS EC2 t3.medium.}
 \label{fig:aws_cost_estimation}
 \end{figure}
-\subsection{Resumen del Presupuesto y Coste Total}
+\subsection{Resumen del presupuesto y coste total}
 La agregación de los costes de ingeniería, las licencias de software, la amortización de infraestructura local y el coste estimado de la infraestructura en AWS arroja la base imponible del proyecto (ver Tabla \ref{tab:presupuesto_total}).\vspace{0.5cm}
 
 \begin{table}[htbp]
@@ -77,9 +77,9 @@ La agregación de los costes de ingeniería, las licencias de software, la amort
 \midrule
 Costes de Ingeniería (Mano de obra) & 34.340,00 \\
 Costes de Software e Infraestructura & 35.732,26 \\
-Coste estimado infraestructura AWS (2 meses) & 19,87 \\
+Coste estimado infraestructura AWS (2 meses) & 17,34 \\
 \midrule
-\textbf{Presupuesto Total General} & \textbf{70.092,13} \\
+\textbf{Presupuesto Total General} & \textbf{70.089,60} \\
 \bottomrule
 \end{tabular}
 \end{table}

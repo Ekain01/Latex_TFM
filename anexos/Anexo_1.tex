@@ -1,4 +1,4 @@
-\chapter{Anexo I: Código de la Solución}
+\chapter{Anexo I: código de la solución}
 \label{cap:anexo_codigo_solucion}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -354,7 +354,7 @@ sudo docker-compose up -d
 \section{Código NodeRED}
 
 En esta sección se presenta el código de las funciones más relevantes implementadas en NodeRED para la simulación y control del aerogenerador. Estos fragmentos de código corresponden a las funciones JavaScript utilizadas en los nodos de función dentro de los flujos de NodeRED, y se han incluido con comentarios explicativos para facilitar su comprensión.
-\subsection{Nodo : parametro de viento}
+\subsection{Nodo: parametro de viento}
 Este nodo se encarga de calcular el viento utilizado para los cálculos analógicos a partir de la consigna del usuario. De esta forma, cuando el usuario cambia la consigna de viento, el valor virtual simulado aumenta o disminuye progresivamente. Además, se implementa una lógica de emergencia que hace que el viento virtal caiga a 0 si se supera un umbral de velocidad o si se activa una alarma o mantenimiento.
 \begin{lstlisting}
     // 1. Intentar leer los valores
@@ -402,7 +402,7 @@ msg.payload = current;
 
 return msg;
 \end{lstlisting}
-\subsection{Nodo: Potencia generada}
+\subsection{Nodo: potencia generada}
 Este nodo se encarga de calcular la potencia generada por el aerogenerador en función de la velocidad del viento virtual. Se implementa una lógica basada en la curva de potencia típica de un aerogenerador, que incluye una fase de arranque, una fase de potencia creciente, una fase de potencia nominal y una fase de corte por viento excesivo.
 \begin{lstlisting}
     // 1. Recoger velocidad del slider
@@ -436,7 +436,7 @@ msg.payload = potencia;
 
 return msg;
 \end{lstlisting}
-\subsection{Nodo: Calculo viento actual}
+\subsection{Nodo: cálculo viento actual}
 Este nodo se encarga de calcular el valor de viento actual que se enviará a la variable dentro de WMET para que salga visualizandose en el SCADA. El valor es el mismo que el del viento actual salvo cuando entra en modo de emergencia, pausa o mantenimiento.
 \begin{lstlisting}
     // 1. Intentar leer los valores
@@ -472,7 +472,7 @@ msg.payload=current;
 
 return msg;
 \end{lstlisting}
-\subsection{Nodo :  Orientación}
+\subsection{Nodo: cálculo de orientación}
 Este nodo se encarga de calcular el valor de orientación de la turbina, calculando la dirección de giro en base a la posición actual y la posición objetivo, y actualizando la posición actual progresivamente para simular el movimiento de la turbina hacia la consigna de orientación establecida por el usuario.
 \begin{lstlisting}
     // 1. Obtener la consigna (Target) y la posicion actual (Current)
@@ -504,7 +504,7 @@ context.set("currentPos", current);
 msg.payload=current;
 return msg;
 \end{lstlisting}
-\subsection{Nodo: Orientación de pala}
+\subsection{Nodo: orientación de pala}
 Este nodo se encarga de calcular el ángulo de pitch de las palas del aerogenerador en función de la velocidad del viento. Se implementa una lógica que ajusta el ángulo de pitch para optimizar la producción de energía y proteger el aerogenerador en condiciones de viento excesivo, siguiendo una curva típica de control de pitch.
 \begin{lstlisting}
     // 1. Leer el ultimo valor guardado por el slider en el flujo (flow)
@@ -532,7 +532,7 @@ if (windSpd < V_ARRANQUE) {
 msg.payload = pitchAngle;
 return msg;
 \end{lstlisting}
-\subsection{Nodo: Azimut del rotor}
+\subsection{Nodo: azimut del rotor}
 Este nodo se encarga de calcular el ángulo de azimut del rotor del aerogenerador en función de las RPM del rotor. Se implementa una lógica que actualiza el ángulo de azimut progresivamente en función de las RPM, simulando el movimiento continuo del rotor a medida que gira.
 \begin{lstlisting}
     // 1. Recuperar las RPM del rotor (calculadas en el nodo anterior)
@@ -569,7 +569,7 @@ msg.payload = parseFloat(currentAngle.toFixed(2));
 
 return msg;
 \end{lstlisting}
-\subsection{Nodo: Velocidad del rotor}
+\subsection{Nodo: velocidad del rotor}
 Este nodo se encarga de calcular las RPM del rotor del aerogenerador en función de la velocidad del viento.
 \begin{lstlisting}
     // 1. Recuperar el viento de la memoria (0 si no hay nada)

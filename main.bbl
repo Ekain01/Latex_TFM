@@ -105,6 +105,39 @@
     \field{year}{2020}
   \endentry
 
+  \entry{ahmed2014communication}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=AMA}{%
+         family={Ahmed},
+         familyi={A\bibinitperiod},
+         given={Mohamed\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=KYC}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Young-Chon},
+         giveni={Y\bibinithyphendelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MDPI}%
+    }
+    \strng{namehash}{AMAKYC1}
+    \strng{fullhash}{AMAKYC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{6}
+    \field{pages}{3900\bibrangedash 3921}
+    \field{title}{Communication network architectures for smart-wind power
+  farms}
+    \field{volume}{7}
+    \field{journaltitle}{Energies}
+    \field{year}{2014}
+  \endentry
+
   \entry{aeeAnuario2025}{report}{}{}
     \name{author}{1}{}{%
       {{hash=A}{%
@@ -154,6 +187,33 @@
     \verb https://www.aeeolica.org/
     \endverb
     \field{year}{2024}
+  \endentry
+
+  \entry{boe_convenio_ingenierias_2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={{Bolet{\'i}n Oficial del Estado}},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{BOE n{\'u}m. 62, de 12 de marzo de 2024, Referencia:
+  {BOE-A-2024-5873}}
+    \field{note}{Disponible en:
+  \url{https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-5873}}
+    \field{title}{Resoluci{\'o}n de 28 de febrero de 2024, de la Direcci{\'o}n
+  General de Trabajo, por la que se registra y publica la revisi{\'o}n salarial
+  para el a{\~n}o 2024 del {XX} Convenio colectivo nacional de empresas de
+  ingenier{\'i}a y oficinas de estudios t{\'e}cnicos}
+    \field{year}{2024}
+    \field{urlday}{01}
+    \field{urlmonth}{06}
+    \field{urlyear}{2026}
   \endentry
 
   \entry{Du2023}{article}{}{}
@@ -249,6 +309,48 @@
     \field{year}{2023}
   \endentry
 
+  \entry{ferrari2020evaluation}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=FP}{%
+         family={Ferrari},
+         familyi={F\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Sisinni},
+         familyi={S\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Brand{\~a}o},
+         familyi={B\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rocha},
+         familyi={R\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{FP+1}
+    \strng{fullhash}{FPSEBDRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Evaluation of Communication Delay in IoT and MQTT-based SCADA
+  Systems}
+    \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+    \field{year}{2020}
+  \endentry
+
   \entry{FIGUEIREDO201954}{article}{}{}
     \name{author}{2}{}{%
       {{hash=FNC}{%
@@ -305,6 +407,39 @@
     \field{volume}{102}
     \field{journaltitle}{Renewable and Sustainable Energy Reviews}
     \field{year}{2019}
+  \endentry
+
+  \entry{gungor2009industrial}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=GVC}{%
+         family={Gungor},
+         familyi={G\bibinitperiod},
+         given={Vehbi\bibnamedelima C},
+         giveni={V\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HGP}{%
+         family={Hancke},
+         familyi={H\bibinitperiod},
+         given={Gerhard\bibnamedelima P},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{GVCHGP1}
+    \strng{fullhash}{GVCHGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{10}
+    \field{pages}{4258\bibrangedash 4265}
+    \field{title}{Industrial wireless sensor networks: Challenges, design
+  principles, and technical approaches}
+    \field{volume}{56}
+    \field{journaltitle}{IEEE Transactions on Industrial Electronics}
+    \field{year}{2009}
   \endentry
 
   \entry{https://doi.org/10.1002/ese3.35}{article}{}{}
@@ -615,6 +750,43 @@
     \field{journaltitle}{Renewable Energy}
     \field{month}{02}
     \field{year}{2020}
+  \endentry
+
+  \entry{mahmood2015review}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=MA}{%
+         family={Mahmood},
+         familyi={M\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=JN}{%
+         family={Javaid},
+         familyi={J\bibinitperiod},
+         given={Nadeem},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Razzaq},
+         familyi={R\bibinitperiod},
+         given={Shafiullah},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{MA+1}
+    \strng{fullhash}{MAJNRS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{248\bibrangedash 260}
+    \field{title}{A review of wireless communications for smart grid}
+    \field{volume}{41}
+    \field{journaltitle}{Renewable and sustainable energy reviews}
+    \field{year}{2015}
   \endentry
 
   \entry{makogon2023energy}{article}{}{}
@@ -1029,6 +1201,80 @@
     \field{year}{2022}
   \endentry
 
+  \entry{siemens_wincc_security}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Siemens AG}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Siemens Industry Online Support}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Basado en el estándar IEC 62443-4-2:2019}
+    \field{number}{Entry ID: 109986977}
+    \field{title}{Security Guideline - SIMATIC HMI WinCC V8.1}
+    \verb{url}
+    \verb https://support.industry.siemens.com/
+    \endverb
+    \field{year}{2024}
+  \endentry
+
+  \entry{siemens_sivaas_2025}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Siemens AG}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Siemens}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Entry ID: 109995660}
+    \field{number}{A5E54190777-AC}
+    \field{title}{SIMATIC Virtualization as a Service (SIVaaS) based on
+  Hyper-V: Operating Manual SIVaaS V4.2 Standard | IADC V2.4 SP3}
+    \field{month}{10}
+    \field{year}{2025}
+  \endentry
+
+  \entry{siemens_wincc_2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Siemens AG}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Siemens}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Documentación técnica}
+    \field{title}{WinCC V8.0 Architectures}
+    \verb{url}
+    \verb https://assets.new.siemens.com/siemens/assets/api/uuid:37198c83-cd3f-
+    \verb 4649-92e6-5806c8c395c4/05062024-wincc-v8-0-architectures.pdf
+    \endverb
+    \field{year}{2024}
+  \endentry
+
   \entry{Udo2021}{article}{}{}
     \name{author}{2}{}{%
       {{hash=UW}{%
@@ -1118,6 +1364,55 @@
     }
     \field{type}{Official Publication}
     \field{year}{2015}
+  \endentry
+
+  \entry{wen2023baremetal}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=WL}{%
+         family={Wen},
+         familyi={W\bibinitperiod},
+         given={Long},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rickert},
+         familyi={R\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Pan},
+         familyi={P\bibinitperiod},
+         given={Fengjunjie},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Jianjie},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Knoll},
+         familyi={K\bibinitperiod},
+         given={Alois},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WL+1}
+    \strng{fullhash}{WLRMPFLJKA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{2023 IEEE Intelligent Vehicles Symposium (IV)}
+    \verb{doi}
+    \verb 10.1109/IV55152.2023.10186789
+    \endverb
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{Bare-Metal vs. Hypervisors and Containers: Performance
+  Evaluation of Virtualization Technologies for Software-Defined Vehicles}
+    \field{year}{2023}
   \endentry
 
   \entry{Xiang2021}{article}{}{}
