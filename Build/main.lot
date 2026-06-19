@@ -14,9 +14,9 @@
 \contentsline {table}{\numberline {7.4}{\ignorespaces Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}}{32}{table.caption.100}%
 \contentsline {table}{\numberline {7.5}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{35}{table.caption.105}%
 \contentsline {table}{\numberline {7.6}{\ignorespaces Estructura de atributos y codificación de estados para la Clase de Datos Comunes (DPS) según IEC 61850-7-3.}}{36}{table.caption.108}%
-\contentsline {table}{\numberline {7.7}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{37}{table.caption.110}%
-\contentsline {table}{\numberline {7.8}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{38}{table.caption.112}%
-\contentsline {table}{\numberline {7.9}{\ignorespaces Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}}{39}{table.caption.114}%
+\contentsline {table}{\numberline {7.7}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{36}{table.caption.110}%
+\contentsline {table}{\numberline {7.8}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{37}{table.caption.112}%
+\contentsline {table}{\numberline {7.9}{\ignorespaces Ejemplo de direccionamiento en WinCC para los componentes de la subestación.}}{38}{table.caption.114}%
 \contentsline {table}{\numberline {7.10}{\ignorespaces Mapeo de variables externas en el \textit {Tag Management} vinculadas al servidor KepServerEX.}}{43}{table.caption.124}%
 \contentsline {table}{\numberline {7.11}{\ignorespaces Especificación técnica de las variables internas para el almacenamiento de filtros.}}{51}{table.caption.141}%
 \contentsline {table}{\numberline {7.12}{\ignorespaces Lógica operativa de ejecución para las funciones globales de filtrado.}}{51}{table.caption.142}%
@@ -50,9 +50,9 @@
 \contentsline {table}{\numberline {C.2}{\ignorespaces Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}}{103}{table.C.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 3 y 4 según norma IEC 61400-25-2.}}{115}{table.E.1}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{119}{table.E.2}%
-\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{120}{table.E.2}%
+\contentsline {table}{\numberline {E.1}{\ignorespaces Estructuras de variables de nivel 3 y 4 según norma IEC 61400-25-2.}}{117}{table.E.1}%
 \contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{121}{table.E.2}%
-\contentsline {table}{\numberline {E.3}{\ignorespaces Mapeo de variables del transformador (TRF) según el modelo IEC 61850.}}{121}{table.E.3}%
-\contentsline {table}{\numberline {E.4}{\ignorespaces Mapeo de variables de la celda de corte según el modelo IEC 61850.}}{123}{table.E.4}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{122}{table.E.2}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Clasificación y direccionamiento de las variables del nodo lógico de alarmas (\texttt {WALM}).}}{123}{table.E.2}%
+\contentsline {table}{\numberline {E.3}{\ignorespaces Mapeo de variables del transformador (TRF) según el modelo IEC 61850.}}{123}{table.E.3}%
+\contentsline {table}{\numberline {E.4}{\ignorespaces Mapeo de variables de la celda de corte según el modelo IEC 61850.}}{125}{table.E.4}%

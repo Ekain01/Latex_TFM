@@ -45,11 +45,11 @@
 \contentsline {paragraph}{Nivel 1 y 2: estructura de dispositivos lógicos (LD) y dispositivos físicos (PD) / dispositivos electrónicos inteligentes (IED)}{31}{table.caption.94}%
 \contentsline {paragraph}{Nivel 3: estructura de nodos lógicos (LN)}{32}{table.caption.100}%
 \contentsline {paragraph}{Nivel 4: objetos de datos y variables de proceso}{34}{figure.caption.101}%
-\contentsline {subsubsection}{\numberline {7.2.2.2}Modelado de variables de estructura para subestaciones eléctricas (IEC 61850)}{36}{section*.106}%
-\contentsline {paragraph}{Nivel 5: atributos de dato y clases de datos comunes (\ac {DPS})}{36}{section*.106}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}Modelado de variables de estructura para subestaciones eléctricas (IEC 61850)}{35}{section*.106}%
+\contentsline {paragraph}{Nivel 5: atributos de dato y clases de datos comunes (\ac {DPS})}{35}{section*.106}%
 \contentsline {paragraph}{Nivel 1 y 2: estructura de dispositivos físicos (PD) y dispositivos lógicos (LD)}{36}{table.caption.108}%
-\contentsline {paragraph}{Nivel 3: estructura de nodos lógicos \ac {LN}}{37}{table.caption.110}%
-\contentsline {paragraph}{Nivel 4: objetos de datos \ac {DO}}{38}{figure.caption.111}%
+\contentsline {paragraph}{Nivel 3: estructura de nodos lógicos \ac {LN}}{36}{table.caption.110}%
+\contentsline {paragraph}{Nivel 4: objetos de datos \ac {DO}}{37}{figure.caption.111}%
 \contentsline {paragraph}{Justificación de la jerarquía de direccionamiento y multi-subestación (6 Niveles vs. 5 Niveles)}{38}{table.caption.112}%
 \contentsline {subsection}{\numberline {7.2.3}Variables externas}{39}{section*.115}%
 \contentsline {subsubsection}{\numberline {7.2.3.1}OPC UA}{39}{section*.116}%
@@ -120,12 +120,12 @@
 \contentsline {section}{\numberline {D.1}Descripción de pantalla principal}{107}{section*.231}%
 \contentsline {section}{\numberline {D.2}Inicio de sesión}{107}{section*.233}%
 \contentsline {section}{\numberline {D.3}Subestaciones}{108}{section*.235}%
-\contentsline {section}{\numberline {D.4}Aerogeneradores}{109}{section*.238}%
-\contentsline {section}{\numberline {D.5}Monitorización de clima}{111}{section*.243}%
-\contentsline {section}{\numberline {D.6}Gestión de usuarios y alarmas}{112}{section*.245}%
-\contentsline {section}{\numberline {D.7}Históricos de datos}{112}{section*.247}%
-\contentsline {chapter}{\numberline {E}Anexo V: tablas de variables}{115}{appendix.E}%
-\contentsline {section}{\numberline {E.1}Introducción}{115}{section*.249}%
-\contentsline {section}{\numberline {E.2}Mapeo de variables de turbinas IEC 61400-25-2}{115}{section*.250}%
-\contentsline {section}{\numberline {E.3}Mapeo de variables de transformadores IEC 61850}{121}{section*.251}%
-\contentsline {section}{\numberline {E.4}Variables de sistemas de corte IEC 61850}{123}{section*.252}%
+\contentsline {section}{\numberline {D.4}Aerogeneradores}{110}{section*.238}%
+\contentsline {section}{\numberline {D.5}Monitorización de clima}{113}{section*.242}%
+\contentsline {section}{\numberline {D.6}Gestión de usuarios y alarmas}{114}{section*.244}%
+\contentsline {section}{\numberline {D.7}Históricos de datos}{114}{section*.247}%
+\contentsline {chapter}{\numberline {E}Anexo V: tablas de variables}{117}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Introducción}{117}{section*.250}%
+\contentsline {section}{\numberline {E.2}Mapeo de variables de turbinas IEC 61400-25-2}{117}{section*.251}%
+\contentsline {section}{\numberline {E.3}Mapeo de variables de transformadores IEC 61850}{123}{section*.252}%
+\contentsline {section}{\numberline {E.4}Variables de sistemas de corte IEC 61850}{125}{section*.253}%
