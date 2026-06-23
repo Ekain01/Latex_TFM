@@ -117,6 +117,7 @@
 \contentsline {chapter}{\numberline {B}Anexo II: planos}{99}{appendix.B}%
 \contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{100}{figure.B.1}%
 \contentsline {figure}{\numberline {B.2}\ignorespaces {Plano unifilar de potencia}}{101}{figure.B.2}%
+\contentsline {figure}{\numberline {B.3}\ignorespaces {Plano de subestaciones}}{102}{figure.B.3}%
 \contentsline {chapter}{\numberline {C}anexo III: banco de pruebas y validación del sistema}{103}{appendix.C}%
 \contentsline {section}{\numberline {C.1}Gemelo funcional de aerogeneradores}{103}{section*.229}%
 \contentsline {chapter}{\numberline {D}Anexo IV: manual de usuario}{109}{appendix.D}%

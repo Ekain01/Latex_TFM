@@ -123,26 +123,25 @@ Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada
 
 \section{Análisis de alternativas arquitectónicas IIoT para el banco de pruebas}
 
-Para la implementación del banco de pruebas y la optimización del flujo de datos en la plataforma de monitorización, se ha evaluado la idoneidad de dos opciones tecnológicas. El propósito fundamental de este estudio es determinar el entorno óptimo para la adquisición, el procesamiento intermedio y la posterior convergencia de la información proveniente de los nodos de campo de la subestación.
-
+Para la implementación del banco de pruebas y la optimización del flujo de datos en la plataforma de monitorización, se ha evaluado la validez de dos opciones. El propósito fundamental de este estudio es identificar la alternativa más adecuada para la integración de los gemelos funcionales de los aerogeneradores y la subestación eléctrica para validar el entorno de supervisión. A continuación, se presentan las dos alternativas consideradas, junto con sus características y ventajas específicas.
 \subsection{Alternativa 1: arquitectura basada en el estándar IEC 61499 y el entorno Eclipse 4diac}
-La realización de un gemelo funcional de los aerogeneradores y de la subestación eléctrica requiere un enfoque de programación que permita la integración de múltiples dispositivos de campo y la gestión eficiente de eventos en tiempo real. En este contexto, se ha considerado la posibilidad de realizar un banco de pruebas basado en el estandar IEC 61499 y el entorno de desarrollo Eclipse 4diac para ejecución de un programa de usuario en un PLC (ver figura \ref{fig:4diac}).\par
+La realización de un gemelo funcional de los aerogeneradores y de la subestación eléctrica requiere un enfoque de programación que permita la integración de múltiples dispositivos de campo y la gestión eficiente de eventos en tiempo real. En este contexto, se ha considerado la posibilidad de realizar un banco de pruebas basado en el estandar IEC 61499 y el entorno de desarrollo Eclipse 4diac para ejecución de un programa de usuario en un \ac{PLC} (ver figura \ref{fig:4diac}).\par
 
-El estándar IEC 61499 propone una arquitectura basada en bloques de función orientados a eventos para el diseño de sistemas de medición y control distribuidos. A diferencia de su predecesor, la normativa IEC 61131-3, este enfoque introduce un paradigma donde la lógica de control no está centralizada en un único autómata, sino que se distribuye de manera homogénea entre múltiples dispositivos de campo interconectados, garantizando la interoperabilidad y la reutilización de código independientemente del fabricante del \textit{hardware}.\par
+El estándar IEC 61499 propone una arquitectura basada en bloques de función orientados a eventos para el diseño de sistemas de medición y control distribuidos. A diferencia de su predecesor, la normativa IEC 61131-3, la lógica de control no está centralizada en un único autómata, sino que se distribuye de manera homogénea entre múltiples dispositivos de campo interconectados, garantizando la interoperabilidad y la reutilización de código independientemente del fabricante del \textit{hardware}.\par
 
 En el ámbito del \textit{software} de código abierto, el ecosistema de referencia para la implementación y validación de esta normativa es la plataforma Eclipse 4diac. Este entorno de ingeniería se estructura principalmente en dos componentes tecnológicos diferenciados: la herramienta de diseño 4diac IDE y el entorno de ejecución 4diac FORTE.
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth, height=0.4\textwidth]{figuras/4diac.png}
-    \caption{Entorno 4diac para programación de PLCs mediante IEC 61499.}
+    \caption{Entorno 4diac para programación de PLCs mediante IEC 61499. Obtenido de: \url{https://www.eclipse.org/4diac/}}
     \label{fig:4diac}
 \end{figure}
 \FloatBarrier
 \subsection{Alternativa 2: arquitectura basada en la plataforma Node-RED}
 
-Como contrapartida, se ha analizado la integración de Node-RED, una herramienta de programación visual de código abierto desarrollada originalmente por IBM y construida sobre el motor de ejecución Node.js (ver figura \ref{fig:node-red}). Esta plataforma fundamenta su funcionamiento en  programación orientada a flujos, el cual permite interconectar dispositivos de \textit{hardware}, interfaces de programación de aplicaciones y servicios en línea mediante la unión de nodos funcionales dentro de un lienzo web.
+Como contraparte, se ha analizado la integración de Node-RED, una herramienta de programación visual de código abierto desarrollada originalmente por IBM y construida sobre el motor de ejecución Node.js (ver figura \ref{fig:node-red}). Esta plataforma se fundamenta en una programación orientada a flujos, el cual permite interconectar dispositivos de \textit{hardware}, interfaces de programación de aplicaciones y servicios en línea mediante la unión de nodos funcionales dentro de un lienzo web.
 
-La principal fortaleza de Node-RED radica en la simplicidad de su interfaz gráfica, que permite a los desarrolladores arrastrar y soltar nodos predefinidos para construir flujos de datos complejos sin necesidad de escribir código extenso. Por otro lado, la plataforma ofrece una amplia biblioteca de nodos que facilitan la integración con protocolos industriales como OPC UA y MQTT, así como con servicios en la nube y bases de datos. 
+La principal fortaleza de Node-RED está en la simplicidad de su interfaz gráfica, que permite a los desarrolladores arrastrar y soltar nodos predefinidos para construir flujos de datos complejos sin necesidad de escribir código extenso. Por otro lado, la plataforma ofrece una amplia biblioteca de nodos que facilitan la integración con protocolos industriales como OPC UA y MQTT, así como con servicios en la nube y bases de datos. 
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth, height=0.4\textwidth]{figuras/NodeRed.jpg}
@@ -152,4 +151,4 @@ La principal fortaleza de Node-RED radica en la simplicidad de su interfaz gráf
 \FloatBarrier
 \subsection{Justificación técnica de la alternativa seleccionada}
 
-Tras un análisis, se ha optado por Node-RED para el banco de pruebas debido a su eficacia para resolver la convergencia IT/OT frente a la rigidez del entorno IEC 61499. Esta herramienta facilita la integración directa de protocolos esenciales como OPC UA y MQTT, agilizando además la validación técnica de las señales mediante el diseño rápido de \textit{dashboards} interactivos. En conjunto Node-RED proporciona una infraestructura más que suficiente para la prueba de concepto, permitiendo la simulación de un entorno de subestación eléctrica y la monitorización de los aerogeneradores.
+Tras un análisis, se ha optado por Node-RED para el banco de pruebas debido a su eficacia para resolver la convergencia \ac{IT}/\ac{OT} frente a la rigidez del entorno IEC 61499. Esta herramienta facilita la integración directa de protocolos esenciales como \ac{OPC UA} y \ac{MQTT}, agilizando además la validación técnica de las señales mediante el diseño rápido de \textit{dashboards} interactivos. En conjunto Node-RED proporciona una infraestructura más que suficiente para la prueba de concepto, permitiendo la simulación de un entorno de subestación eléctrica y la monitorización de los aerogeneradores.
