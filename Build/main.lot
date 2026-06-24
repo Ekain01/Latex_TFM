@@ -31,22 +31,22 @@
 \contentsline {table}{\numberline {8.2}{\ignorespaces Ensayos unitarios para las funciones de filtrado de parques}}{67}{table.caption.184}%
 \contentsline {table}{\numberline {8.3}{\ignorespaces Ensayos unitarios para la navegación entre pantallas y menús del SCADA}}{67}{table.caption.185}%
 \contentsline {table}{\numberline {8.4}{\ignorespaces Ensayos de integración de datos en la nube mediante Cloud Connector}}{68}{table.caption.186}%
-\contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{68}{table.caption.189}%
-\contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{69}{table.caption.190}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{70}{table.caption.193}%
-\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{71}{table.caption.194}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{68}{table.caption.188}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{69}{table.caption.189}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{70}{table.caption.192}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{71}{table.caption.193}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{77}{table.caption.200}%
-\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto desglosado de licencias WinCC e infraestructura local.}}{78}{table.caption.202}%
-\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{79}{table.caption.206}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{77}{table.caption.199}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto desglosado de licencias WinCC e infraestructura local.}}{78}{table.caption.201}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{79}{table.caption.205}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Definición de los estados operativos del aerogenerador en el sistema SCADA.}}{103}{table.caption.231}%
+\contentsline {table}{\numberline {C.1}{\ignorespaces Definición de los estados operativos del aerogenerador en el sistema SCADA.}}{103}{table.caption.230}%
 \contentsline {table}{\numberline {C.2}{\ignorespaces Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}}{105}{table.C.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

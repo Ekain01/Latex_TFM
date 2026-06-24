@@ -1,10 +1,10 @@
 \chapter{anexo III: banco de pruebas y validación del sistema}
 \label{cap:Pruebas}
-En este anexo se describe el banco de pruebas desarrollado para validad la solucion \ac{SCADA} implementada. Este banco de pruebas se ha diseñado para simular un aerogenerador y generar datos sintéticos que permitan evaluar el funcionamiento del sistema de monitorización y control desarrollado. Se han implementado diferentes escenarios operativos y condiciones de viento para probar la capacidad del sistema para manejar situaciones reales y garantizar su robustez y fiabilidad en un entorno industrial simulado.
+En este anexo se describe el banco de pruebas desarrollado para validar la solución \ac{SCADA} implementada. Este banco de pruebas se ha diseñado para simular un aerogenerador y generar datos sintéticos que permitan evaluar el funcionamiento del sistema de monitorización desarrollado. Se han implementado diferentes escenarios operativos y condiciones de viento para probar la capacidad del sistema para manejar situaciones reales y garantizar su robustez y fiabilidad en un entorno industrial simulado.
 
 \section{Gemelo funcional de aerogeneradores}
 
-El gemelo funcional de aerogeneradores se ha desarrollado mediante la herramienta Node-RED. Este gemelo se fundamenta en el desarrollo de una máquina de estados que simula el comportamiento dinámico de un aerogenerador en base a condiciones de viento introducidas por el usuario (ver figura \ref{fig:modelo_GEMMA}).
+El gemelo funcional de aerogeneradores se fundamenta en una máquina de estados que simula el comportamiento dinámico de un aerogenerador en base a condiciones de viento introducidas por el usuario, evaluando las transiciones entre estados (ver figura \ref{fig:modelo_GEMMA}).
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figuras/Gemma.png}
@@ -41,7 +41,7 @@ Se definen 8 estados operativos principales para el aerogenerador (ver tabla \re
         \end{tabular}%
     }
 \end{table}
-El desarrollo de esta maquina de estados se ha realizado utilizando Node-RED. Para desarrollar el modelo, se parte de la idea de observar el estado actual del aerogenerador, evaluar las condiciones de las transiciones entre estados y calcular el nuevo estado del aerogenerador. Para ello se han utilizado nodos de conmutación (nodos amarillos). (ver anexo \ref{cap:anexo_codigo_solucion}).
+El desarrollo de esta maquina de estados se ha realizado utilizando Node-RED. Para desarrollar el modelo, se parte de la idea de observar el estado actual del aerogenerador, evaluar las condiciones de las transiciones entre estados y calcular el nuevo estado del aerogenerador. Para ello se han utilizado nodos de conmutación (nodos amarillos). (ver anexo \ref{cap:anexo_codigo_solucion}). Este diseño implementa directamente el diagrama de estados GEMMA, permitiendo una fácil comprensión y modificación del modelo de simulación. \par
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth]{figuras/maquinaestados.png}
