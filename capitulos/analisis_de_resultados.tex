@@ -179,7 +179,7 @@ El objetivo de este análisis es medir la latencia global de la arquitectura IIo
 
 Para obtener el valor real de esta latencia, se han monitorizado las marcas de tiempo (\textit{timestamps}) inyectadas en la carga útil de la variable \texttt{WTG1.WTUR.W.mag}. Al ocurrir un evento, \textit{Cloud Connect} estampa la hora de generación utilizando el estándar \textit{RFC3339}. Al comparar esta marca de origen con el instante de registro final marcado por el motor de InfluxDB, se obtiene la latencia total.
 
-Durante los ensayos, configurados con un ciclo de publicación hacia la nube de $1\text{ Hz}$, se capturó y analizó una muestra representativa de 50 eventos consecutivos de telemetría. La tabla~\ref{tab:estadistica_e2e} resume los valores estadísticos obtenidos tras calcular la sustracción de las marcas de tiempo para cada paquete evaluado.
+Durante los ensayos, configurados con un ciclo de publicación hacia la nube de $1\text{ Hz}$, se capturó y analizó una muestra representativa de 50 eventos consecutivos de telemetría. La tabla~\ref{tab:estadistica_e2e} resume los valores estadísticos obtenidos tras calcular la sustracción de las marcas de tiempo para cada paquete evaluado. La sustracción directa de los milisegundos en el mismo intervalo de segundo ($T_{InfluxDB}- T_{WinCC}$) arroja una latencia empírica de extremo a extremo de $456\text{ ms}$.
 
 \begin{table}[b]
 \centering
@@ -196,7 +196,6 @@ Ciclo de publicación configurado & $1\text{ Hz}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-La sustracción directa de los milisegundos en el mismo intervalo de segundo ($T_{InfluxDB}- T_{WinCC}$) arroja una latencia empírica de extremo a extremo de $456\text{ ms}$.
 
 Para entender cómo se distribuyen estos $456\text{ ms}$, es necesario aislar el tiempo que el paquete invierte en viajar por Internet. Para ello, se ejecutó una medición desde el servidor local hacia la instancia de \textit{AWS} utilizando el protocolo \textit{ICMP} (comando \textit{ping}).
 

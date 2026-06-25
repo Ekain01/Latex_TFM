@@ -31,7 +31,7 @@ Director de TFM & 20 & 45.00 & 900,00 \\
 \end{table}
 
 \subsection{Licencias de software WinCC}
-El bloque tecnológico exige un alto nivel de inversión debido a la necesidad de gestionar una planta completa con un servidor SCADA masivo. La licencia principal \textit{WinCC RC} (que permite tanto ejecutar el entorno gráfico (\textit{Runtime}) como modificarlo (\textit{Configuration})) se ha dimensionado para soportar mas de 65.536 variables (\textit{tags}), cubriendo los datos simultáneos de todos los aerogeneradores. Por otro lado se utilizará la licencia de conectividad \textit{WinCC Connectivity Pack} para integrar el entorno SCADA con la nube, la licencia de \textit{WinCC Cloud Connect} para habilitar la comunicación con la instancia virtualizada en AWS y la licencia de \textit{WinCC Archive} para el almacenamiento de datos históricos.
+El bloque tecnológico exige un alto nivel de inversión debido a la necesidad de gestionar una planta completa con un servidor SCADA masivo. La licencia principal \textit{WinCC RC} (que permite tanto ejecutar el entorno gráfico como modificarlo ) se ha dimensionado para soportar mas de 65.536 variables, cubriendo los datos simultáneos de todos los aerogeneradores. Por otro lado se utilizará la licencia de conectividad \textit{WinCC Connectivity Pack} para integrar el entorno SCADA con la nube, la licencia de \textit{WinCC Cloud Connect} para habilitar la comunicación con la instancia virtualizada en \ac{AWS} y la licencia de \textit{WinCC Archive} para el almacenamiento de datos históricos.
 
 \begin{table}[tbp]
 \centering
@@ -56,7 +56,7 @@ Amortización de estación & & 1 & 1.349,99 \\
 \end{table}
 \subsection{Infraestructura AWS}
 
-El coste de la infraestructura en la nube se ha estimado en función del uso de una instancia EC2 de tipo \textit{t3.medium} . Este tipo de instancia ofrece un equilibrio adecuado entre recursos computacionales y coste, permitiendo alojar el entorno virtualizado necesario para la integración con el sistema SCADA. Como se observa en la Figura \ref{fig:aws_cost_estimation}, el coste mensual de esta instancia se ha calculado en base a las tarifas vigentes de AWS, considerando un uso continuo durante un periodo de aproximadamente 2 meses para cubrir la fase de desarrollo, pruebas e implementación del proyecto llegando a una estimación total de 17,34 €. 
+El coste de la infraestructura en la nube se ha estimado en función del uso de una instancia EC2 de tipo \textit{t3.medium} . Este tipo de instancia ofrece un equilibrio adecuado entre recursos computacionales y coste, permitiendo alojar el entorno virtualizado necesario para la integración con el sistema SCADA. Como se observa en la figura \ref{fig:aws_cost_estimation}, el coste mensual de esta instancia se ha calculado en base a las tarifas vigentes de AWS, considerando un uso continuo durante un periodo de aproximadamente 2 meses para cubrir la fase de desarrollo, pruebas e implementación del proyecto llegando a una estimación total de 17,34 €. 
 
 \begin{figure}[htbp]
 \centering

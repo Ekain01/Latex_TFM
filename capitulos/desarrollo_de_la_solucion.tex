@@ -1,6 +1,6 @@
 \chapter{Desarrollo de la solución}
 \label{cap:desarrollo_de_la_solucion}
-En esta sección se detalla el proceso de diseño y desarrollo de la solución de supervisión y control para el parque eólico, incluyendo la arquitectura del sistema y el modelo de información utilizado para representar los datos y variables del sistema \ac{SCADA}. Se describen las decisiones técnicas tomadas para garantizar la eficiencia, escalabilidad y seguridad del sistema, así como la implementación de las normas internacionales IEC 61400-25-2 e IEC 61850 para el modelado de los aerogeneradores y la subestación eléctrica, respectivamente. Además, se presentan ejemplos concretos de cómo se han estructurado las variables internas, externas y de estructura dentro del entorno de desarrollo SIMATIC WinCC V8.1 para facilitar la monitorización y control efectivo del parque eólico.
+En esta sección se detalla el proceso de diseño y desarrollo de la solución de supervisión y control para el parque eólico, incluyendo la arquitectura del sistema y el modelo de información utilizado para representar los datos y variables del sistema \ac{SCADA}. Se describen las decisiones técnicas tomadas para garantizar la eficiencia, escalabilidad y seguridad del sistema, así como la implementación de las normas internacionales IEC 61400-25 e IEC 61850 para el modelado de los aerogeneradores y la subestación eléctrica, respectivamente. Además, se presentan ejemplos concretos de cómo se han estructurado las variables internas, externas y de estructura dentro del entorno de desarrollo SIMATIC WinCC V8.1 para facilitar la monitorización y control efectivo del parque eólico.
 \section{Arquitectura del sistema de supervisión y red de comunicaciones del parque eólico}
 \label{sec:arquitectura_parque_eolico}
 
@@ -63,7 +63,7 @@ Cada una de las subestaciones estaría conectada por una red de fibra óptica de
 
 La Sala de Control Central \ac{MCR} requiere de un entorno de hardware y computación de alta disponibilidad capaz de asegurar la ejecución ininterrumpida del SCADA.\par 
 
-Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de rúters que asignan direcciones \ac{IP} públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un rúter que proporciona direcciones \ac{IP} privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección \ac{IP}.\par
+Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de rúters que asignan direcciones sobre el \ac{IP} públicas y privadas al \ac{SCADA}, facilitando tanto la comunicación con los sistemas de campo como la transferencia de datos a plataformas de análisis en la nube. Asimismo, cada subestación de transformación e interconexión cuenta con un rúter que proporciona direcciones \ac{IP} privadas y switches a nivel de enlace hacia los aerogeneradores. De tal forma que los aerogeneradores que cuelguen de una misma subestación comparten la misma dirección \ac{IP}.\par
 \section{Modelo de información (IM) de la solución SCADA}
 \label{cap:modelo_informacion}
 El modelo de información de un sistema es la representación estructurada de los datos y la información que maneja ese sistema. Con ello se define la forma en que se organizan, almacenan y acceden a los datos dentro del sistema. El entorno de SIMATIC WinCC V8.1 permite la creación de variables que se utilizan para representar los datos del proceso, las alarmas, los eventos y otros aspectos operativos del sistema SCADA. Estas variables pueden ser internas, externas o de estructura, dependiendo de su función y origen dentro del sistema. \par
@@ -76,9 +76,9 @@ El modelo de información de un sistema es la representación estructurada de lo
 \subsection{Variables internas}
 El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas son fundamentales para la operación del sistema, ya que proporcionan información crítica sobre el estado del sistema, el usuario actual, la máquina local, el idioma activo, la hora local, entre otros aspectos operativos. Estas variables se pueden utilizar en scripts y lógicas de control para implementar funcionalidades específicas y mejorar la interacción con el operador. \par 
 
-En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimiento directo a los requisitos fundacionales de identificación y autenticación (\textit{FR1: IAC}) de la norma de ciberseguridad industrial IEC 62443-4-2:2019, registrando de forma única el operario activo (\texttt{@CurrentUser}) y la estación o cliente ligero de la Sala de Control Central (\texttt{@LocalMachineName}) desde el que se efectúa una orden. Asimismo, para garantizar un entorno distribuido robusto y tolerante a fallos de acuerdo con la arquitectura redundante implementada, el sistema monitoriza constantemente el rol lógico de las máquinas (Maestro o Reserva) y el estado de la sincronización de las bases de datos de Microsoft SQL Server mediante el bloque de variables de redundancia. Las variables internas más destacadas se detallan en la Tabla~\ref{tab:variables_sistema_wincc}.
+En el contexto del proyecto, estas etiquetas permiten por ejemplo dar cumplimiento directo a los requisitos fundacionales de identificación y autenticación (\textit{FR1: IAC}) de la norma de ciberseguridad industrial IEC 62443-4-2:2019, registrando de forma única el operario activo (\texttt{@CurrentUser}) y la estación o cliente ligero de la sala de control central (\texttt{@LocalMachineName}) desde el que se efectúa una orden. Las variables internas más destacadas se detallan en la Tabla~\ref{tab:variables_sistema_wincc}.
 
-\begin{table}[tb]
+\begin{table}[b]
     \centering
     \caption{Especificación técnica de las variables internas por defecto del sistema en WinCC.}
     \label{tab:variables_sistema_wincc}
@@ -216,7 +216,7 @@ Estos nodos se identifican de manera unívoca mediante siglas de tres o cuatro l
 
 
 \paragraph{Nivel 4: objetos de datos y variables de proceso}
-Finalmente, el Nivel 4 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 4 (\ac{DO}) adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
+Finalmente, el Nivel 4 identifica las señales específicas que pueblan cada Nodo Lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de Nivel 4, u \ac{DO}, adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
 
 En el entorno de desarrollo de SIMATIC WinCC V8.1, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.\ac{CDC}} (ver figura \ref{fig:IEC}). Para ilustrar esta integración final, la Tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el \ac{SCADA}.
 \begin{figure}[!tbp]
@@ -469,7 +469,7 @@ Por último, el Direccionamiento Espacial establece que, una vez creado el enlac
 \end{table}
 
 En esta cadena de conexión, el parámetro \texttt{ns=2} indica al cliente WinCC que debe buscar la variable en el segundo espacio de nombres del servidor. Por su parte, la cadena posterior a \texttt{s} indica la ruta exacta del nodo dentro del árbol de variables.
-\section{Modelo de intercambio de información (IEM) de la solución SCADA}
+\section{ Modelo de intercambio de información \ac{IEM} de la solución SCADA}
 \label{subsec:modelo_intercambio_solucion}
 
 Mientras que el modelo de información estático determina la semántica y la estructura orientada a objetos de los datos, el modelo de intercambio de información define de manera abstracta las reglas, servicios y verbos mediante los cuales la MCR  interactúa con los datos del parque eólico. En esta solución, el modelo de intercambio abstracto heredado de la norma IEC 61400-25-3 (ver figura \ref{fig:IEM}) se ha materializado mediante un mapeo tecnológico directo sobre el estándar \textit{OPC Unified Architecture} (\ac{OPC UA}) coordinado entre KepServerEX como servidor de comunicaciones y SIMATIC WinCC V8.1 como plataforma SCADA.
@@ -788,7 +788,7 @@ La propiedad de color de fondo del polígono o símbolo SVG se vincula directame
 \subsection{Configuración e implementación del sistema de avisos en SIMATIC WinCC}
 \label{sec:configuracion_alarmas_wincc}
 
-La materialización de la gestión de alarmas en el entorno \textit{Runtime} se estructura mediante el subsistema \textit{WinCC Alarm Logging}. Para mantener la coherencia con el modelo de información estandarizado (Capitulo \ref{cap:modelo_informacion}), todos los eventos discretos del aerogenerador se han concentrado en el Nodo Lógico de alarmas, denominado \texttt{WALM} (ver Anexo \ref{cap:Tablas_Variab}).
+La materialización de la gestión de alarmas en el entorno \textit{runtime} se estructura mediante el subsistema \textit{WinCC Alarm Logging}. Para mantener la coherencia con el modelo de información estandarizado (Capitulo \ref{cap:modelo_informacion}), todos los eventos discretos del aerogenerador se han concentrado en el nodo lógico de alarmas, denominado \texttt{WALM} (ver anexo \ref{cap:Tablas_Variab}).
 
 La categorización de estos eventos determina su gravedad y a consecuencia su color en la interfaz gráfica, regulando la interacción mediante el bloqueo, acuse y reconocimiento.
 
@@ -797,9 +797,9 @@ La categorización de estos eventos determina su gravedad y a consecuencia su co
 Las señales de error, configuradas en WinCC como variables de tipo \textit{Single Point Status (\ac{SPS})}, se clasifican en tres clases fundamentales de avisos:
 
 \begin{itemize}
-    \item \textbf{Alarmas de Emergencia (Críticas):} Eventos que implican un riesgo inminente para la integridad de la máquina o de la red, provocando la parada inmediata de la turbina. 
-    \item \textbf{Alarmas de Fallo (Operativas):} Indican averías de componentes mecánicos o eléctricos que interrumpen la producción, pero mantienen el sistema en un estado controlado. 
-    \item \textbf{Advertencias (Avisos):} Notifican condiciones ambientales o desviaciones técnicas que requieren atención preventiva sin forzar una parada inmediata.
+    \item \textbf{Alarmas de emergencia (críticas):} eventos que implican un riesgo inminente para la integridad de la máquina o de la red, provocando la parada inmediata de la turbina. 
+    \item \textbf{Alarmas de fallo (operativas):} indican averías de componentes mecánicos o eléctricos que interrumpen la producción, pero mantienen el sistema en un estado controlado. 
+    \item \textbf{Advertencias (avisos):} notifican condiciones ambientales o desviaciones técnicas que requieren atención preventiva sin forzar una parada inmediata.
 \end{itemize}
 
 \subsubsection{Matriz de estados visuales y filosofía de acuse}
@@ -808,7 +808,7 @@ El comportamiento cromático en el objeto \textit{WinCC Alarm Control} sigue una
 \par
 Cuando una alarma entra en el sistema (estado activo sin acusar), la interfaz prioriza la captura de la atención del usuario: el texto se presenta en color blanco sobre un fondo cromático saturado representativo de su gravedad (rojo para emergencias y fallos, o amarillo/ámbar para advertencias).\par
 
-En el momento en que el operador realiza el acuse de recibo (\textit{Acknowledgment}), si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte los colores para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica de implementación en el \textit{Runtime}.
+En el momento en que el operador realiza el acuse de recibo, si la condición de fallo persiste en el campo (estado activo acusado), la codificación visual invierte los colores para indicar un estado de control humano: el fondo de la línea de alarma pasa a ser completamente blanco y el texto adopta de forma fija el color identificativo de su clase, cesando todo parpadeo. La Tabla \ref{tab:matriz_alarmas_wincc} detalla la lógica de implementación en el \textit{runtime}.
 
 Una vez la alarma desaparece (estado desaparecido), el sistema la marca como resuelta, mostrando el texto en verde sobre fondo blanco para indicar que la condición de fallo ha sido corregida y el sistema ha vuelto a un estado seguro.
 \begin{table}[tb]
@@ -840,7 +840,7 @@ Este capítulo describe el despliegue e integración de una arquitectura en la n
 Para lograr un sistema robusto y replicable, se ha diseñado una arquitectura basada en microservicios contenerizados, apoyada en las siguientes capas lógicas (ver figura \ref{fig:IIoT}):
 
 \begin{itemize}
-    \item \textbf{Capa de adquisición y emisión (edge)}: Representada por el módulo \textit{Cloud Connect} del \ac{SCADA} WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero \ac{MQTT}.
+    \item \textbf{Capa de adquisición y emisión (edge)}: representada por el módulo \textit{Cloud Connect} del \ac{SCADA} WinCC, encargado de empaquetar las variables de proceso (velocidad del viento, potencia generada, estados, etc.) y publicarlas mediante el protocolo de mensajería ligero \ac{MQTT}.
     \item \textbf{Capa de infraestructura (cloud)}: Soportada por una instancia virtual \ac{EC2} alojada en \ac{AWS}, que proporciona el entorno computacional necesario con alta disponibilidad. El despliegue de los servicios se ha orquestado íntegramente mediante Docker, garantizando el aislamiento de los procesos y facilitando futuras migraciones.
     \item \textbf{Capa de ingesta y procesamiento intermedio}: Implementada con Mosquitto y Node-RED. Mosquitto actúa como el broker \ac{MQTT} mientras que Node-RED consume los datos y proporciona un entorno de flujo de datos visual para filtrar y transformar los paquetes \ac{JSON} recibidos antes de su inserción en la base de datos.
     \item \textbf{Capa de almacenamiento}: Soportada por InfluxDB, una base de datos de series temporales optimizada para  el almacenamiento eficiente de datos con marcas de tiempo.

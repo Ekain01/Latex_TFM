@@ -2,8 +2,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Índices de mortalidad y efectos sobre la salud asociados a diferentes fuentes de energía por unidad de generación (Casos por TWh).}}{9}{table.caption.33}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030.}}{10}{table.caption.35}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Índices de mortalidad y efectos sobre la salud asociados a diferentes fuentes de energía por unidad de generación (Casos por TWh).}}{9}{table.caption.34}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030.}}{10}{table.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {6.1}{\ignorespaces Descripción de los subsistemas principales del software de configuración de WinCC (\textit {CS}).}}{20}{table.caption.66}%
@@ -12,7 +12,7 @@
 \contentsline {table}{\numberline {7.2}{\ignorespaces Especificación técnica de las variables internas por defecto del sistema en WinCC.}}{31}{table.caption.95}%
 \contentsline {table}{\numberline {7.3}{\ignorespaces Estructuras de \ac {CDC} (Nivel 5) según norma IEC 61400-25-2.}}{34}{table.caption.99}%
 \contentsline {table}{\numberline {7.4}{\ignorespaces Correspondencia redundante de los Niveles 1 y 2 para múltiples aerogeneradores en el parque.}}{34}{table.caption.105}%
-\contentsline {table}{\numberline {7.5}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{37}{table.caption.110}%
+\contentsline {table}{\numberline {7.5}{\ignorespaces Ejemplo de direccionamiento en WinCC con los Niveles 1 y 2 fusionados.}}{36}{table.caption.110}%
 \contentsline {table}{\numberline {7.6}{\ignorespaces Estructura de atributos y codificación de estados para la Clase de Datos Comunes (DPS) según IEC 61850-7-3.}}{38}{table.caption.113}%
 \contentsline {table}{\numberline {7.7}{\ignorespaces Nomenclatura oficial y asignación de los Tipos de Estructura (\textit {Structure Types}) en el SCADA para la subestación.}}{38}{table.caption.115}%
 \contentsline {table}{\numberline {7.8}{\ignorespaces Desglose jerárquico estricto de los 5 niveles de la norma IEC 61850 en la subestación.}}{39}{table.caption.117}%
@@ -33,20 +33,20 @@
 \contentsline {table}{\numberline {8.4}{\ignorespaces Ensayos de integración de datos en la nube mediante Cloud Connector}}{68}{table.caption.186}%
 \contentsline {table}{\numberline {8.5}{\ignorespaces Especificaciones del entorno de hardware y virtualización.}}{68}{table.caption.188}%
 \contentsline {table}{\numberline {8.6}{\ignorespaces Métricas de rendimiento e impacto computacional de los procesos del SCADA.}}{69}{table.caption.189}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{70}{table.caption.192}%
-\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{71}{table.caption.193}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Resultados estadísticos de la latencia de extremo a extremo.}}{70}{table.caption.193}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Desglose de la latencia de extremo a extremo en la arquitectura IIoT.}}{71}{table.caption.194}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{77}{table.caption.199}%
-\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto desglosado de licencias WinCC e infraestructura local.}}{78}{table.caption.201}%
-\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{79}{table.caption.205}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Presupuesto de ingeniería y desarrollo técnico.}}{77}{table.caption.200}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Presupuesto desglosado de licencias WinCC e infraestructura local.}}{78}{table.caption.202}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Resumen del presupuesto general del proyecto.}}{79}{table.caption.206}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Definición de los estados operativos del aerogenerador en el sistema SCADA.}}{103}{table.caption.230}%
+\contentsline {table}{\numberline {C.1}{\ignorespaces Definición de los estados operativos del aerogenerador en el sistema SCADA.}}{103}{table.caption.231}%
 \contentsline {table}{\numberline {C.2}{\ignorespaces Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}}{105}{table.C.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

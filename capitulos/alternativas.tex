@@ -6,17 +6,17 @@ En este capítulo se realiza un análisis de las distintas alternativas para la 
 \section{Introducción al entorno de SIMATIC WinCC V8.1}
 SIMATIC WinCC V8.1 es un sistema \ac{SCADA}, basado en Microsoft Windows, desarrollado por Siemens AG. Está diseñado para la visualización, control y operación de procesos, flujos de producción, máquinas y plantas críticas en diversos sectores industriales.
 
-\par \indent WinCC actúa como una \ac{HMI} de alto nivel. A diferencia de los paneles de operador básicos ubicados a pie de máquina, un \ac{HMI} de alto nivel como WinCC proporciona un entorno gráfico avanzado que permite a los operadores del centro de control manejar, monitorizar y entender de forma intuitiva los procesos dinámicos que se ejecutan en la planta sin tener que estar en la ubicación de la máquina. La comunicación entre el entorno de supervisión WinCC y la maquinaria física se efectúa de manera bidireccional a través de sistemas de automatización, empleando protocolos de comunicación industrial.(\ref{fig:wincc_interface})
+\par \indent WinCC actúa como una \ac{HMI} de alto nivel. A diferencia de los paneles de operador básicos ubicados a pie de máquina, un \ac{HMI} de alto nivel como WinCC proporciona un entorno gráfico avanzado que permite a los operadores del centro de control manejar, monitorizar y entender de forma intuitiva los procesos dinámicos que se ejecutan en la planta sin tener que estar en la ubicación de la máquina. La comunicación entre el entorno de supervisión WinCC y la maquinaria física se efectúa de manera bidireccional a través de sistemas de automatización, empleando protocolos de comunicación industrial (ver figura \ref{fig:wincc_interface}).
 
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/WinCC.png}
-    \caption{Ejemplo de interfaz gráfica de WinCC V8.1. Fuente: Siemens}
+    \caption{Ejemplo de interfaz gráfica de WinCC V8.1. \cite{siemens_sivaas_2025}}
     \label{fig:wincc_interface}
     \vspace{0.5cm}
 \end{figure}
 
-\par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como \ac{ANSI-C} y \ac{VBS}. Por otro lado, WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del almacenamiento histórico continuo de las variables del proceso y del registro de eventos y fallos.
+\par \indent Por otro lado, WinCC es plataforma altamente programable. Integra un motor de ejecución que permite la creación de lógicas complejas y automatización de tareas de supervisión utilizando interfaces de aplicación  como ANSI-C y \ac{VBS}. Por otro lado, WinCC V8.1 utiliza de forma nativa el motor de bases de datos Microsoft SQL Server. Este gestor de bases de datos opera en segundo plano y se encarga del almacenamiento histórico continuo de las variables del proceso y del registro de eventos y fallos.
 
 \par \indent Desde el punto de vista de la arquitectura de software, el entorno de WinCC se divide en dos componentes fundamentales y complementarios: el \ac{CS} y el o \ac{RT}.
 
@@ -94,7 +94,7 @@ Siemens permite dos arquitecturas para este tipo de sistemas: la primera, una es
 Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde una única estación de operación realiza todas las tareas), en un sistema multipuesto la carga de trabajo se divide entre uno o varios servidores centrales (configuradas como \textit{Multi-User Project}) y múltiples estaciones cliente (configuradas como \textit{Client Project}). Este enfoque permite una variedad grande de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación, siendo el foco de implementación final. (Figura \ref{fig:multipuesto_distribuido}) \par 
 
 \section{Virtualización de sistemas de WinCC}
-Las arquitecturas de sistemas WinCC  pueden ser implementadas de forma física o virtualizada. La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples máquinas virtuales  aisladas, compartiendo recursos como \ac{CPU}, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: alojados y bare-metal.
+Las arquitecturas de sistemas WinCC  pueden ser implementadas de forma física o virtualizada. La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples máquinas virtuales  aisladas, compartiendo recursos como la \ac{CPU}, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: alojados y bare-metal.
 \subsection{Hypervisor alojado  (\textit{Hosted Hypervisor})}
 Este tipo se instala como una aplicación de software más dentro de un sistema operativo convencional que ya está funcionando en el equipo físico (conocido como \ac{OS} Anfitrión o Host \ac{OS}).\par
 
@@ -123,7 +123,8 @@ Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada
 
 \section{Análisis de alternativas arquitectónicas IIoT para el banco de pruebas}
 
-Para la implementación del banco de pruebas y la optimización del flujo de datos en la plataforma de monitorización, se ha evaluado la validez de dos opciones. El propósito fundamental de este estudio es identificar la alternativa más adecuada para la integración de los gemelos funcionales de los aerogeneradores y la subestación eléctrica para validar el entorno de supervisión. A continuación, se presentan las dos alternativas consideradas, junto con sus características y ventajas específicas.
+El propósito fundamental de este estudio es identificar la alternativa más adecuada para la integración de los gemelos funcionales de los aerogeneradores y la subestación eléctrica para validar el entorno de supervisión. A continuación, se presentan las dos alternativas consideradas, junto con sus características y ventajas específicas.
+
 \subsection{Alternativa 1: arquitectura basada en el estándar IEC 61499 y el entorno Eclipse 4diac}
 La realización de un gemelo funcional de los aerogeneradores y de la subestación eléctrica requiere un enfoque de programación que permita la integración de múltiples dispositivos de campo y la gestión eficiente de eventos en tiempo real. En este contexto, se ha considerado la posibilidad de realizar un banco de pruebas basado en el estandar IEC 61499 y el entorno de desarrollo Eclipse 4diac para ejecución de un programa de usuario en un \ac{PLC} (ver figura \ref{fig:4diac}).\par
 

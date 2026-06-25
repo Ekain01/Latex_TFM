@@ -18,6 +18,15 @@
 \usepackage{tabularx}
 \usepackage{subcaption}
 \usepackage[section]{placeins}
+\usepackage{etoolbox}
+
+\makeatletter
+\newif\if@in@acrolist
+\AtBeginEnvironment{acronym}{\@in@acrolisttrue}
+\AtEndEnvironment{acronym}{\@in@acrolistfalse}
+\DeclareRobustCommand{\formatoacro}[2]{\if@in@acrolist#1\else#2\fi}
+\makeatother
+
 \setcounter{secnumdepth}{4}
 
 \titleformat{\paragraph}
