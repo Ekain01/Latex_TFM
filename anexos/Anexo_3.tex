@@ -1,6 +1,6 @@
-\chapter{anexo III: banco de pruebas y validación del sistema}
+\chapter{Anexo: Banco de pruebas y validación del sistema}
 \label{cap:Pruebas}
-En este anexo se describe el banco de pruebas desarrollado para validar la solución \ac{SCADA} implementada. Este banco de pruebas se ha diseñado para simular un aerogenerador y generar datos sintéticos que permitan evaluar el funcionamiento del sistema de monitorización desarrollado. Se han implementado diferentes escenarios operativos y condiciones de viento para probar la capacidad del sistema para manejar situaciones reales y garantizar su robustez y fiabilidad en un entorno industrial simulado.
+En este anexo se describe el banco de pruebas desarrollado para validar la solución \ac{SCADA} implementada. Este banco de pruebas se ha diseñado para simular un aerogenerador y generar datos sintéticos que permitan evaluar el funcionamiento del sistema de monitorización desarrollado. Se han implementado diferentes escenarios operativos además de un abanico de condiciones de viento para probar la capacidad del sistema para manejar situaciones reales y garantizar su robustez y fiabilidad en un entorno industrial simulado.
 
 \section{Gemelo funcional de aerogeneradores}
 
@@ -41,7 +41,7 @@ Se definen 8 estados operativos principales para el aerogenerador (ver tabla \re
         \end{tabular}%
     }
 \end{table}
-El desarrollo de esta maquina de estados se ha realizado utilizando Node-RED. Para desarrollar el modelo, se parte de la idea de observar el estado actual del aerogenerador, evaluar las condiciones de las transiciones entre estados y calcular el nuevo estado del aerogenerador. Para ello se han utilizado nodos de conmutación (nodos amarillos). (ver anexo \ref{cap:anexo_codigo_solucion}). Este diseño implementa directamente el diagrama de estados GEMMA, permitiendo una fácil comprensión y modificación del modelo de simulación. \par
+El desarrollo de esta maquina de estados se ha realizado utilizando Node-RED. Para desarrollar el modelo, se parte de la idea de observar el estado actual del aerogenerador, evaluar las condiciones de las transiciones entre estados y calcular el nuevo estado del aerogenerador. Para ello se han utilizado nodos de conmutación (nodos amarillos, ver anexo \ref{cap:anexo_codigo_solucion}). Este diseño implementa directamente el diagrama de estados GEMMA, permitiendo una fácil comprensión y modificación del modelo de simulación. \par
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth]{figuras/maquinaestados.png}
@@ -62,7 +62,7 @@ También se han implementado mecanismos de control de alarmas y eventos para sim
     \caption{Control de alarmas y eventos en el modelo de simulación.}
     \label{fig:modelo_alarmas}
 \end{figure}
-Un aerogenerador simulado tiene aproximadamente 650 variables, realizar todas mediante funciones de Node-RED para realizar pruebas de concepto resulta poco eficiente. Por ello, el resto de variables se generan mediante funciones integradas en KEPServerEX, que se ejecutan en paralelo a la máquina de estados de Node-RED. Estas funciones se configuran para generar datos sintéticos basados en fórmulas matemáticas o patrones predefinidos, lo que permite simular un comportamiento más realista y complejo del aerogenerador sin sobrecargar el flujo principal de Node-RED (ver tabla \ref{tab:funciones_simulacion_kepserver}).\vspace{1cm}
+Un aerogenerador simulado tiene aproximadamente 650 variables. Realizar todas mediante funciones de Node-RED para realizar pruebas de concepto resulta poco eficiente. Por ello, el resto de variables se generan mediante funciones integradas en KEPServerEX que se ejecutan en paralelo a la máquina de estados de Node-RED. Estas funciones se configuran por el usuario para generar datos sintéticos basados en fórmulas matemáticas o patrones predefinidos, lo que permite simular un comportamiento más realista y complejo del aerogenerador sin sobrecargar el flujo principal de Node-RED (ver tabla \ref{tab:funciones_simulacion_kepserver}).\vspace{1cm}
 
 \begin{longtable}{@{}p{7cm}p{7cm}@{}}
 \caption{Análisis de las funciones de simulación nativas de KEPServerEX aplicadas al banco de pruebas}

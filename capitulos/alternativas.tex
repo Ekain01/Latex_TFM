@@ -49,7 +49,7 @@ El software de configuración se denomina WinCC Explorer. En él se realiza toda
 El software de ejecución WinCC Runtime (\ac{RT}) es el motor encargado de administrar todos los subservicios de WinCC. Es el encargado de ejecutar la adquisición de datos de los \ac{PLC} en tiempo real, actualizar dinámicamente la interfaz gráfica, procesar la lógica de los scripts, gestiónar el control de acceso de los usuarios y archivar de manera segura los eventos y datos históricos en las bases de datos SQL.\par
 \section{Arquitecturas de software de supervisión en SIMATIC WinCC V8.1}
 La arquitectura en SIMATIC WinCC representa la distribución de los componentes \ac{CS} y \ac{RT} de software sobre los recursos computacionales. Dependiendo de la topología de la red, el número de estaciones de operación y los requisitos de redundancia, se pueden implementar diferentes arquitecturas de software. Estas arquitecturas pueden ser monopuesto o multipuesto \cite{siemens_wincc_2024}.\par
-\subsection{Sistemas monopuesto (\textit{Single User Systems})}
+\subsection{Sistemas monopuesto (\textit{single user systems})}
 En la arquitectura de sistema monopuesto un único equipo físico o estación se encarga de realizar las tareas relacionadas al software de configuración y software de  ejecución. Es decir, el equipo se encarga de realizar por un lado las labores de ingeniería (Diseño de interfaces gráficas, gestión de variables,  etc.) y por el otro realiza las comunicaciones con la parte operativa (mediante los protocolos de comunicación como Profinet, Modbus TCP u \ac{OPC UA}),  ejecuta la lógica de \textit{scripts}, almacena los históricos y alarmas en la base de datos SQL a la vez que muestra la interfaz gráfica al operario en los monitores. \par
 Siemens permite dos arquitecturas para este tipo de sistemas: la primera, una estación única que integra \ac{CS} y \ac{RT} en una única estación, también denominada estación \ac{RC} (Figura \ref{fig:monopuesto_simple}), y la segunda, una variante donde un PC configurado con redundancia ejecuta el software \ac{RT} por si la estación principal falla. (Figura \ref{fig:monopuesto_redundante}).
 
@@ -86,25 +86,25 @@ Siemens permite dos arquitecturas para este tipo de sistemas: la primera, una es
     \end{subfigure}
     \vspace{0.6cm}
     % Un único pie de foto global para toda la página
-    \caption{Ejemplos de topologías de arquitecturas de sistemas distribuidos en SIMATIC WinCC V8.1: configuraciones monopuesto (a, b) y multipuesto (c).}
+    \caption{Ejemplos de topologías de arquitecturas de sistemas distribuidos en SIMATIC WinCC V8.1: configuraciones monopuesto (a, b) y multipuesto (c) \cite{siemens_wincc_2024}.}
     \label{fig:arquitecturas_scada_global}
 \end{figure}
 
-\subsection{Sistemas multipuesto (\textit{Multi-User Systems})}
+\subsection{Sistemas multipuesto (\textit{multi-user systems})}
 Un sistema multipuesto es una arquitectura distribuida diseñada para separar las tareas de procesamiento de datos de las tareas de visualización. A diferencia de un sistema monopuesto (donde una única estación de operación realiza todas las tareas), en un sistema multipuesto la carga de trabajo se divide entre uno o varios servidores centrales (configuradas como \textit{Multi-User Project}) y múltiples estaciones cliente (configuradas como \textit{Client Project}). Este enfoque permite una variedad grande de arquitecturas y configuraciones de proyecto, adaptándose a las necesidades específicas de cada instalación, siendo el foco de implementación final. (Figura \ref{fig:multipuesto_distribuido}) \par 
 
 \section{Virtualización de sistemas de WinCC}
 Las arquitecturas de sistemas WinCC  pueden ser implementadas de forma física o virtualizada. La virtualización es un método por el que los recursos físicos de un equipo se pueden dividir en diversos entornos virtuales. Para ello se utiliza un hipervisor que se encarga de ejecutar múltiples máquinas virtuales  aisladas, compartiendo recursos como la \ac{CPU}, memoria y almacenamiento. Este aislamiento evita los conflictos debidos a las dependencias de software y proporciona la capacidad de iniciar y detener las máquinas virtuales de forma independiente. Solo la máquina virtual en cuestión se ve afectada por un fallo (o caída del sistema). Existen dos tipos de hipervisores: alojados y bare-metal.
-\subsection{Hypervisor alojado  (\textit{Hosted Hypervisor})}
+\subsection{Hypervisor alojado  (\textit{hosted hypervisor})}
 Este tipo se instala como una aplicación de software más dentro de un sistema operativo convencional que ya está funcionando en el equipo físico (conocido como \ac{OS} Anfitrión o Host \ac{OS}).\par
 
 Este tipo de hipervisor genera una dependencia del \ac{OS} base ya que el hipervisor debe pedir constantemente permiso para acceder a los recursos del sistema lo cual genera un cuello de botella disminuyendo el rendimiento. \par
 
 Por otro lado, esta dependencia del \ac{OS} base es una vulnerabilidad en sí misma para la seguridad y ciberseguridad del sistema, ya que un malfuncionamiento o un virus podrían contagiarse a cada una de las instancias de máquinas virtuales que corren encima.
 
-\subsection{Hypervisor Bare-Metal (\textit{Bare-Metal Hypervisor})}
+\subsection{Hypervisor bare-metal (\textit{bare-metal hypervisor})}
 
-Se le denomina \textit{Bare-Metal} (metal desnudo) porque se instala y ejecuta directamente sobre el hardware físico del servidor. No hay ningún sistema operativo tradicional (como Windows Server o Linux) actuando como intermediario. El hipervisor en sí mismo es un sistema operativo altamente especializado y minimalista diseñado con un único propósito: gestiónar y asignar recursos físicos a las máquinas virtuales. Al no tener que atravesar ningún sistema operativo anfitrión, las máquinas virtuales tienen acceso más directo a los recursos del sistema reduciendo la latencia y mejorando el rendimiento \cite{wen2023baremetal}. \par
+Se le denomina \textit{bare-metal} (metal desnudo) porque se instala y ejecuta directamente sobre el hardware físico del servidor. No hay ningún sistema operativo tradicional (como Windows Server o Linux) actuando como intermediario. El hipervisor en sí mismo es un sistema operativo altamente especializado y minimalista diseñado con un único propósito: gestiónar y asignar recursos físicos a las máquinas virtuales. Al no tener que atravesar ningún sistema operativo anfitrión, las máquinas virtuales tienen acceso más directo a los recursos del sistema reduciendo la latencia y mejorando el rendimiento \cite{wen2023baremetal}. \par
 
 Al contrario que un hipervisor alojado, el hipervisor bare-metal es seguro ante vulnerabilidades, debido a que tiene una superficie de ataque reducida. Además, las máquinas virtuales están aisladas por lo que si una máquina virtual se ve comprometida por un malware el resto de máquinas permanecerán seguras.\par
 
@@ -117,9 +117,9 @@ Tras evaluar las distintas topologías distribuidas habituales en entornos de pr
 
 Esta decisión se fundamenta, en primer lugar, en las limitaciones para el aprovisionamiento a tiempo de la infraestructura de hardware físico dedicado \ac{SIVaaS}, dado que los elevados requisitos de \ac{RAM} y recursos de \ac{CPU}  dificultaban su disponibilidad en el plazo del proyecto. Ante este problema de suministro, se ha recurrido a máquinas virtuales industriales provistas de las licencias oficiales requeridas para ejecutar \textit{SIMATIC WinCC} a pleno rendimiento.\par 
 
-Esta estrategia de virtualización resulta especialmente ventajosa al permitir la completa abstracción del núcleo del \ac{SCADA} respecto al sistema operativo base del equipo anfitrión (\textit{Host}). Esto no solo garantiza un entorno de ejecución estable y libre de conflictos informáticos, sino que facilita enormemente la portabilidad de la solución y agiliza las labores de respaldo mediante puntos de restauración durante la fase de desarrollo.
+Esta estrategia de virtualización resulta especialmente ventajosa al permitir la completa abstracción del núcleo del \ac{SCADA} respecto al sistema operativo base del equipo anfitrión (\textit{host}). Esto no solo garantiza un entorno de ejecución estable y libre de conflictos informáticos, sino que facilita enormemente la portabilidad de la solución y agiliza las labores de respaldo mediante puntos de restauración durante la fase de desarrollo.
 
-Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes hosts y máquinas virtuales. Por lo que el diseño es altamente flexible y para la realización de la prueba de concepto la solución adoptada es suficiente.\par
+Esta arquitectura puede ser posteriormente convertida a multipuesto virtualizada o física, simplemente redistribuyendo las tareas de configuración y ejecución entre los diferentes \textit{hosts} y máquinas virtuales. Por lo que el diseño es altamente flexible y para la realización de la prueba de concepto la solución adoptada es suficiente.\par
 
 \section{Análisis de alternativas arquitectónicas IIoT para el banco de pruebas}
 
@@ -140,7 +140,7 @@ En el ámbito del \textit{software} de código abierto, el ecosistema de referen
 \FloatBarrier
 \subsection{Alternativa 2: arquitectura basada en la plataforma Node-RED}
 
-Como contraparte, se ha analizado la integración de Node-RED, una herramienta de programación visual de código abierto desarrollada originalmente por IBM y construida sobre el motor de ejecución Node.js (ver figura \ref{fig:node-red}). Esta plataforma se fundamenta en una programación orientada a flujos, el cual permite interconectar dispositivos de \textit{hardware}, interfaces de programación de aplicaciones y servicios en línea mediante la unión de nodos funcionales dentro de un lienzo web.
+Como contraparte, se ha analizado la integración de Node-RED, una herramienta de programación visual de código abierto desarrollada originalmente por IBM y construida sobre el motor de ejecución Node.js (ver figura \ref{fig:node-red}). Esta plataforma se fundamenta en una programación orientada a flujos, el cual permite interconectar dispositivos de \textit{hardware}, interfaces de programación de aplicaciones y servicios en línea mediante la unión de nodos funcionales dentro de un panel web.
 
 La principal fortaleza de Node-RED está en la simplicidad de su interfaz gráfica, que permite a los desarrolladores arrastrar y soltar nodos predefinidos para construir flujos de datos complejos sin necesidad de escribir código extenso. Por otro lado, la plataforma ofrece una amplia biblioteca de nodos que facilitan la integración con protocolos industriales como OPC UA y MQTT, así como con servicios en la nube y bases de datos. 
 \begin{figure}[tb]
@@ -152,4 +152,4 @@ La principal fortaleza de Node-RED está en la simplicidad de su interfaz gráfi
 \FloatBarrier
 \subsection{Justificación técnica de la alternativa seleccionada}
 
-Tras un análisis, se ha optado por Node-RED para el banco de pruebas debido a su eficacia para resolver la convergencia \ac{IT}/\ac{OT} frente a la rigidez del entorno IEC 61499. Esta herramienta facilita la integración directa de protocolos esenciales como \ac{OPC UA} y \ac{MQTT}, agilizando además la validación técnica de las señales mediante el diseño rápido de \textit{dashboards} interactivos. En conjunto Node-RED proporciona una infraestructura más que suficiente para la prueba de concepto, permitiendo la simulación de un entorno de subestación eléctrica y la monitorización de los aerogeneradores.
+Tras un análisis, se ha optado por Node-RED para el banco de pruebas debido a su eficacia para resolver la convergencia \ac{IT}/\ac{OT} frente a la rigidez del entorno IEC 61499. Esta herramienta facilita la integración directa de protocolos esenciales como \ac{OPC UA} y \ac{MQTT}, agilizando además la validación técnica de las señales mediante el diseño rápido de \textit{dashboards} interactivos. En conjunto Node-RED proporciona un entorno más que suficiente para la prueba de concepto, permitiendo la simulación de un entorno de subestación eléctrica y la monitorización de los aerogeneradores.

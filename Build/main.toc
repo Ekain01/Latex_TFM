@@ -27,11 +27,11 @@
 \contentsline {subsection}{\numberline {6.1.1}Software de configuración \ac {CS} WinCC Explorer}{20}{section*.65}%
 \contentsline {subsection}{\numberline {6.1.2}Software de ejecución (\ac {RT}) WinCC Runtime}{21}{section*.67}%
 \contentsline {section}{\numberline {6.2}Arquitecturas de software de supervisión en SIMATIC WinCC V8.1}{21}{section*.69}%
-\contentsline {subsection}{\numberline {6.2.1}Sistemas monopuesto (\textit {Single User Systems})}{21}{section*.70}%
-\contentsline {subsection}{\numberline {6.2.2}Sistemas multipuesto (\textit {Multi-User Systems})}{21}{section*.73}%
+\contentsline {subsection}{\numberline {6.2.1}Sistemas monopuesto (\textit {single user systems})}{21}{section*.70}%
+\contentsline {subsection}{\numberline {6.2.2}Sistemas multipuesto (\textit {multi-user systems})}{21}{section*.73}%
 \contentsline {section}{\numberline {6.3}Virtualización de sistemas de WinCC}{23}{section*.74}%
-\contentsline {subsection}{\numberline {6.3.1}Hypervisor alojado (\textit {Hosted Hypervisor})}{23}{section*.76}%
-\contentsline {subsection}{\numberline {6.3.2}Hypervisor Bare-Metal (\textit {Bare-Metal Hypervisor})}{23}{section*.78}%
+\contentsline {subsection}{\numberline {6.3.1}Hypervisor alojado (\textit {hosted hypervisor})}{23}{section*.76}%
+\contentsline {subsection}{\numberline {6.3.2}Hypervisor bare-metal (\textit {bare-metal hypervisor})}{23}{section*.78}%
 \contentsline {subsection}{\numberline {6.3.3}Virtualización SIMATIC como Servicio (\ac {SIVaaS})}{24}{section*.79}%
 \contentsline {section}{\numberline {6.4}Selección de la arquitectura}{24}{section*.80}%
 \contentsline {section}{\numberline {6.5}Análisis de alternativas arquitectónicas IIoT para el banco de pruebas}{25}{section*.82}%
@@ -53,7 +53,7 @@
 \contentsline {paragraph}{Nivel 1 y 2: estructura de dispositivos físicos (PD) y dispositivos lógicos (LD)}{38}{table.caption.113}%
 \contentsline {paragraph}{Nivel 3: estructura de nodos lógicos \ac {LN}}{38}{table.caption.115}%
 \contentsline {paragraph}{Nivel 4: objetos de datos \ac {DO}}{39}{figure.caption.116}%
-\contentsline {paragraph}{Justificación de la jerarquía de direccionamiento y multi-subestación (6 Niveles vs. 5 Niveles)}{40}{table.caption.117}%
+\contentsline {paragraph}{Justificación de la jerarquía de direccionamiento y multi-subestación (6 niveles vs. 5 niveles)}{40}{table.caption.117}%
 \contentsline {subsection}{\numberline {7.2.3}Variables externas}{41}{section*.120}%
 \contentsline {subsubsection}{\numberline {7.2.3.1}OPC UA}{41}{section*.121}%
 \contentsline {subsubsection}{\numberline {7.2.3.2}Habilitación y securización del servidor \ac {OPC UA} en KEPServerEX}{42}{section*.125}%
@@ -82,54 +82,54 @@
 \contentsline {paragraph}{Persistencia de datos (\textit {Docker Volumes})}{62}{figure.caption.171}%
 \contentsline {section}{\numberline {7.7}Ciberseguridad IEC 62443-4-2:2019}{64}{section*.175}%
 \contentsline {chapter}{\numberline {8}Análisis de resultados}{67}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Análisis unitario y de integración}{67}{section*.182}%
-\contentsline {section}{\numberline {8.2}Análisis de rendimiento de los procesos del SCADA}{68}{section*.187}%
-\contentsline {section}{\numberline {8.3}Análisis de latencia extremo a extremo}{70}{section*.192}%
+\contentsline {section}{\numberline {8.1}Análisis unitario y de integración}{67}{section*.183}%
+\contentsline {section}{\numberline {8.2}Análisis de rendimiento de los procesos del SCADA}{68}{section*.188}%
+\contentsline {section}{\numberline {8.3}Análisis de latencia extremo a extremo}{70}{section*.193}%
 \contentsline {chapter}{\numberline {9}Metodología}{73}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Descripción de tareas}{73}{section*.196}%
+\contentsline {section}{\numberline {9.1}Descripción de tareas}{73}{section*.197}%
 \contentsline {figure}{\numberline {9.1}\ignorespaces {Diagrama de Gantt}}{75}{figure.9.1}%
 \contentsline {chapter}{\numberline {10}Aspectos económicos}{77}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Presupuesto del proyecto}{77}{section*.198}%
-\contentsline {subsection}{\numberline {10.1.1}Costes de ingeniería (mano de obra)}{77}{section*.199}%
-\contentsline {subsection}{\numberline {10.1.2}Licencias de software WinCC}{77}{section*.201}%
-\contentsline {subsection}{\numberline {10.1.3}Infraestructura AWS}{78}{section*.203}%
-\contentsline {subsection}{\numberline {10.1.4}Resumen del presupuesto y coste total}{78}{section*.205}%
+\contentsline {section}{\numberline {10.1}Presupuesto del proyecto}{77}{section*.199}%
+\contentsline {subsection}{\numberline {10.1.1}Costes de ingeniería (mano de obra)}{77}{section*.200}%
+\contentsline {subsection}{\numberline {10.1.2}Licencias de software WinCC}{77}{section*.202}%
+\contentsline {subsection}{\numberline {10.1.3}Infraestructura AWS}{78}{section*.204}%
+\contentsline {subsection}{\numberline {10.1.4}Resumen del presupuesto y coste total}{78}{section*.206}%
 \contentsline {chapter}{\numberline {11}Conclusiones}{81}{chapter.11}%
-\contentsline {chapter}{\nonumberline Bibliografía}{83}{chapter*.208}%
+\contentsline {chapter}{\nonumberline Bibliografía}{83}{chapter*.209}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Anexo I: código de la solución}{87}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Código WinCC}{87}{section*.211}%
-\contentsline {subsection}{\numberline {A.1.1}\texttt {AplicarFiltroPosicion()}}{87}{section*.212}%
-\contentsline {subsection}{\numberline {A.1.2}\texttt {AplicarFiltroParque()}}{89}{section*.213}%
-\contentsline {subsection}{\numberline {A.1.3}MenuNavigation.bmo}{91}{section*.214}%
-\contentsline {section}{\numberline {A.2}Código de IIoT}{92}{section*.215}%
-\contentsline {subsection}{\numberline {A.2.1}Instalación de docker}{92}{section*.216}%
-\contentsline {subsection}{\numberline {A.2.2}docker-compose.yml}{92}{section*.217}%
-\contentsline {subsection}{\numberline {A.2.3}Despliegue del contenedor}{93}{section*.218}%
-\contentsline {section}{\numberline {A.3}Código NodeRED}{93}{section*.219}%
-\contentsline {subsection}{\numberline {A.3.1}Nodo: parametro de viento}{93}{section*.220}%
-\contentsline {subsection}{\numberline {A.3.2}Nodo: potencia generada}{94}{section*.221}%
-\contentsline {subsection}{\numberline {A.3.3}Nodo: cálculo viento actual}{95}{section*.222}%
-\contentsline {subsection}{\numberline {A.3.4}Nodo: cálculo de orientación}{96}{section*.223}%
-\contentsline {subsection}{\numberline {A.3.5}Nodo: orientación de pala}{96}{section*.224}%
-\contentsline {subsection}{\numberline {A.3.6}Nodo: azimut del rotor}{97}{section*.225}%
-\contentsline {subsection}{\numberline {A.3.7}Nodo: velocidad del rotor}{98}{section*.226}%
-\contentsline {chapter}{\numberline {B}Anexo II: planos}{99}{appendix.B}%
+\contentsline {chapter}{\numberline {A}Anexo: Código de la solución}{87}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Código WinCC}{87}{section*.212}%
+\contentsline {subsection}{\numberline {A.1.1}\texttt {AplicarFiltroPosicion()}}{87}{section*.213}%
+\contentsline {subsection}{\numberline {A.1.2}\texttt {AplicarFiltroParque()}}{89}{section*.214}%
+\contentsline {subsection}{\numberline {A.1.3}MenuNavigation.bmo}{91}{section*.215}%
+\contentsline {section}{\numberline {A.2}Código de IIoT}{92}{section*.216}%
+\contentsline {subsection}{\numberline {A.2.1}Instalación de docker}{92}{section*.217}%
+\contentsline {subsection}{\numberline {A.2.2}docker-compose.yml}{92}{section*.218}%
+\contentsline {subsection}{\numberline {A.2.3}Despliegue del contenedor}{93}{section*.219}%
+\contentsline {section}{\numberline {A.3}Código NodeRED}{93}{section*.220}%
+\contentsline {subsection}{\numberline {A.3.1}Nodo: parametro de viento}{93}{section*.221}%
+\contentsline {subsection}{\numberline {A.3.2}Nodo: potencia generada}{94}{section*.222}%
+\contentsline {subsection}{\numberline {A.3.3}Nodo: cálculo viento actual}{95}{section*.223}%
+\contentsline {subsection}{\numberline {A.3.4}Nodo: cálculo de orientación}{96}{section*.224}%
+\contentsline {subsection}{\numberline {A.3.5}Nodo: orientación de pala}{96}{section*.225}%
+\contentsline {subsection}{\numberline {A.3.6}Nodo: azimut del rotor}{97}{section*.226}%
+\contentsline {subsection}{\numberline {A.3.7}Nodo: velocidad del rotor}{98}{section*.227}%
+\contentsline {chapter}{\numberline {B}Anexo: Planos}{99}{appendix.B}%
 \contentsline {figure}{\numberline {B.1}\ignorespaces {Plano topológico de red}}{100}{figure.B.1}%
 \contentsline {figure}{\numberline {B.2}\ignorespaces {Plano unifilar de potencia}}{101}{figure.B.2}%
 \contentsline {figure}{\numberline {B.3}\ignorespaces {Plano de subestaciones}}{102}{figure.B.3}%
-\contentsline {chapter}{\numberline {C}anexo III: banco de pruebas y validación del sistema}{103}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Gemelo funcional de aerogeneradores}{103}{section*.229}%
-\contentsline {chapter}{\numberline {D}Anexo IV: manual de usuario}{109}{appendix.D}%
-\contentsline {section}{\numberline {D.1}Descripción de pantalla principal}{109}{section*.236}%
-\contentsline {section}{\numberline {D.2}Inicio de sesión}{109}{section*.238}%
-\contentsline {section}{\numberline {D.3}Subestaciones}{110}{section*.240}%
-\contentsline {section}{\numberline {D.4}Aerogeneradores}{112}{section*.243}%
-\contentsline {section}{\numberline {D.5}Monitorización de clima}{115}{section*.247}%
-\contentsline {section}{\numberline {D.6}Gestión de usuarios y alarmas}{116}{section*.249}%
-\contentsline {section}{\numberline {D.7}Históricos de datos}{116}{section*.252}%
-\contentsline {chapter}{\numberline {E}Anexo V: tablas de variables}{119}{appendix.E}%
-\contentsline {section}{\numberline {E.1}Introducción}{119}{section*.255}%
-\contentsline {section}{\numberline {E.2}Mapeo de variables de turbinas IEC 61400-25-2}{119}{section*.256}%
-\contentsline {section}{\numberline {E.3}Mapeo de variables de transformadores IEC 61850}{125}{section*.257}%
-\contentsline {section}{\numberline {E.4}Variables de sistemas de corte IEC 61850}{127}{section*.258}%
+\contentsline {chapter}{\numberline {C}Anexo: Banco de pruebas y validación del sistema}{103}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Gemelo funcional de aerogeneradores}{103}{section*.230}%
+\contentsline {chapter}{\numberline {D}Anexo: Manual de usuario}{109}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Descripción de pantalla principal}{109}{section*.237}%
+\contentsline {section}{\numberline {D.2}Inicio de sesión}{109}{section*.239}%
+\contentsline {section}{\numberline {D.3}Subestaciones}{110}{section*.241}%
+\contentsline {section}{\numberline {D.4}Aerogeneradores}{112}{section*.244}%
+\contentsline {section}{\numberline {D.5}Monitorización de clima}{115}{section*.248}%
+\contentsline {section}{\numberline {D.6}Gestión de usuarios y alarmas}{116}{section*.250}%
+\contentsline {section}{\numberline {D.7}Históricos de datos}{116}{section*.253}%
+\contentsline {chapter}{\numberline {E}Anexo: Tablas de variables}{119}{appendix.E}%
+\contentsline {section}{\numberline {E.1}Introducción}{119}{section*.256}%
+\contentsline {section}{\numberline {E.2}Mapeo de variables de turbinas IEC 61400-25-2}{119}{section*.257}%
+\contentsline {section}{\numberline {E.3}Mapeo de variables de transformadores IEC 61850}{125}{section*.258}%
+\contentsline {section}{\numberline {E.4}Variables de sistemas de corte IEC 61850}{127}{section*.259}%
