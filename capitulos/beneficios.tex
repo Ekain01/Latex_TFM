@@ -14,7 +14,7 @@ Además de mitigar las emisiones directas en el punto de generación,  la descen
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth]{figuras/RiesgosCO2.png}
-    \caption{Riesgos asociados a la generación de energía de combustibles fósiles. Obtenido de : \url{https://www.thelancet.com/action/showPdf?pii=S0140-6736\%2807\%2961253-7}}
+    \caption{Riesgos asociados a la generación de energía de combustibles fósiles \cite{markandya2007electricity}.}
     \label{fig:riesgos}
 \end{figure}
 
@@ -77,7 +77,7 @@ Por otro lado, como se observa en la tabla \ref{tab:pniec_potencia} y en la figu
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{figuras/PNIEC2024.png}
-    \caption{Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030. Fuente: \url{https://www.miteco.gob.es/content/dam/miteco/es/energia/files-1/pniec-2023-2030/PNIEC_2024_240924.pdf}}
+    \caption{Evolución y previsión de la potencia bruta instalada (MW) según el escenario PNIEC 2023--2030 \cite{mitecoPNIEC2023}.}
     \label{fig:death_rates}
 \end{figure}
 \section{Beneficios económicos}
@@ -88,13 +88,12 @@ A nivel de mercado, la introducción masiva de energía eólica genera un efecto
 \section{Beneficios tecnológicos}
 \label{subsec:beneficios_scada}
 
-La arquitectura \ac{SCADA} diseñada se fundamenta en los paradigmas de la Industria 4.0, resolviendo el problema de la descentralización de la generación. Este enfoque permite una gestión integral y en tiempo real de un clúster energético distribuido, facilitando la optimización de la generación, el mantenimiento predictivo y la gestión automatizada de seguridad. Además, el desarrollo de plantillas de visualización estandarizadas y flujos de navegación optimizados asienta una línea base de ingeniería altamente escalable, reduciendo los tiempos de diseño e integración en futuras ampliaciones del clúster energético.
-
+La arquitectura \ac{SCADA} diseñada se fundamenta en los paradigmas de la Industria 4.0, resolviendo el problema de la descentralización de la generación. Los beneficios tecnológicos de la solución desarrollada se resumen en los siguientes puntos:
 \begin{itemize}
-    \item \textbf{Optimización de la generación en tiempo real:} facilita la toma de decisiones de operación inmediatas basándose en las condiciones meteorológicas y las restricciones de la red de transporte.
-    \item \textbf{Evolución hacia el mantenimiento predictivo:} el registro y análisis continuo de los históricos de parámetros eléctricos, térmicos y mecánicos reduce la necesidad de inspecciones preventivas presenciales. Esto disminuye la probabilidad de fallos catastróficos, aminora los costes de operación y reduce los tiempos de inactividad mediante la planificación remota de activos.
-    \item \textbf{Gestión automatizada de seguridad y alarmas:} la clasificación y priorización de los eventos de planta activa protocolos de seguridad automatizados y planes de contingencia inmediatos, resguardando la integridad tanto del personal técnico como de la infraestructura de alta tensión.
-    \item \textbf{Generación de modelos normativos replicables:} el desarrollo de plantillas de visualización estandarizadas y flujos de navegación optimizados asienta una línea base de ingeniería altamente escalable, reduciendo los tiempos de diseño e integración en futuras ampliaciones del clúster energético.
+    \item \textbf{Optimización de la generación en tiempo real:} Facilita la toma de decisiones de operación inmediatas basándose en las condiciones meteorológicas y las restricciones de la red de transporte.
+    \item \textbf{Evolución hacia el mantenimiento predictivo:} El registro y análisis continuo de los históricos de parámetros eléctricos, térmicos y mecánicos reduce la necesidad de inspecciones preventivas presenciales. Esto disminuye la probabilidad de fallos catastróficos, aminora los costes de operación y reduce los tiempos de inactividad mediante la planificación remota de activos.
+    \item \textbf{Gestión automatizada de seguridad y alarmas:} La clasificación y priorización de los eventos de planta activa protocolos de seguridad automatizados y planes de contingencia inmediatos, resguardando la integridad tanto del personal técnico como de la infraestructura de alta tensión.
+    \item \textbf{Generación de modelos normativos replicables:} El desarrollo de plantillas de visualización estandarizadas y flujos de navegación optimizados asienta una línea base de ingeniería altamente escalable, reduciendo los tiempos de diseño e integración en futuras ampliaciones del clúster energético.
 \end{itemize}
 
 \section{Justificación y alineación con los \ac{ODS}}
@@ -107,7 +106,7 @@ El desarrollo tecnológico expuesto en este \ac{TFM} no solo responde a un desaf
     El \ac{TFM} contribuye al objetivo mediante la planificación de desarrollo de infraestructura eólica.  Todo ello mediante la convergencia \ac{OT}/\ac{IT} que dota a la infraestructura eléctrica de una conectividad  escalable y cibersegura, habilitando el despliegue de soluciones analíticas modernas que impulsan la digitalización y la resiliencia en la gestión de redes de generación.
 
     \subsection{ODS 12: producción y consumo responsables.}
-    Este objetivo se materializa mediante la aplicación de estrategias de analítica avanzada y mantenimiento predictivo en la nube. A través de la ingesta continua de series temporales en la base de datos \textit{InfluxDB} alojada en \textit{AWS}, el sistema permite el modelado multivariable de las curvas de potencia analíticas de cada turbina. La detección temprana de anomalías estructurales o degradaciones mecánicas previene fallos catastróficos. Esto alarga el ciclo de vida útil de los componentes del aerogenerador (palas, multiplicadora, generador), reduciendo la generación de residuos industriales  y optimizando el consumo de recursos materiales del sector energético.
+    Este objetivo se materializa mediante la aplicación de estrategias de analítica avanzada y mantenimiento predictivo en la nube. A través de la ingesta continua de series temporales en la base de datos, el sistema permite el modelado multivariable de las curvas de potencia analíticas de cada turbina. La detección temprana de anomalías estructurales o degradaciones mecánicas previene fallos catastróficos. Esto alarga el ciclo de vida útil de los componentes del aerogenerador (palas, multiplicadora, generador), reduciendo la generación de residuos industriales  y optimizando el consumo de recursos materiales del sector energético.
 
     \subsection{ODS 13: acción por el clima.}
     La monitorización inteligente de aerogeneradores es una medida directa para combatir el cambio climático y sus efectos. Cada megavatio-hora (MWh) de origen eólico  reduce la generación basada en la quema de combustibles fósiles (carbón o ciclos combinados de gas natural). Al optimizar la eficiencia del parque, el SCADA desarrollado reduce de forma indirecta las emisiones masivas de \ac{GEI} ($\text{CO}_2$ y metano), reduciendo la huella de carbono del sistema eléctrico nacional y acelerando el cumplimiento de las metas de descarbonización establecidas en el \textit{PNIEC 2023--2030}.

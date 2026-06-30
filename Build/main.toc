@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {4.5.1}ODS 7: energía asequible y no contaminante.}{12}{section*.41}%
 \contentsline {subsection}{\numberline {4.5.2}ODS 9: industria, innovación e infraestructura.}{12}{section*.42}%
 \contentsline {subsection}{\numberline {4.5.3}ODS 12: producción y consumo responsables.}{12}{section*.43}%
-\contentsline {subsection}{\numberline {4.5.4}ODS 13: acción por el clima.}{13}{section*.44}%
+\contentsline {subsection}{\numberline {4.5.4}ODS 13: acción por el clima.}{12}{section*.44}%
 \contentsline {chapter}{\numberline {5}Análisis del estado del arte}{15}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Introducción}{15}{section*.47}%
 \contentsline {subsection}{\numberline {5.1.1}Arquitecturas inalámbricas en parques eólicos}{15}{section*.48}%
