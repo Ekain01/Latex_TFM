@@ -3,7 +3,7 @@
 
 \section{Objetivos}
 
-El objetivo general de este proyecto de fin de master es diseñar e implementar una solución basada en la tecnología \ac{SCADA} para la supervisión y control de parques eólicos, con un enfoque específico en la integración de datos siguiendo el estándar internacional IEC 61400-25 y la norma matriz IEC 61850,  integrando además las tecnologías \ac{IT} mediante el internet industrial de las cosas (\ac{IIoT}). Para alcanzar este objetivo general, se han definido los siguientes objetivos específicos:
+El objetivo general de este proyecto de fin de master es diseñar e implementar una solución de supervisión y control de parques eólicos, con un enfoque específico en la integración de datos siguiendo el estándar internacional IEC 61400-25 y la norma matriz IEC 61850,  integrando además las tecnologías \ac{IT} mediante el internet industrial de las cosas (\ac{IIoT}). Para alcanzar este objetivo general, se han definido los siguientes objetivos específicos:
 \begin{itemize}
 
 \item  Objetivo 1: analizar los requisitos funcionales y no funcionales de un sistema de monitorización para parques eólicos, considerando aspectos como la cantidad de turbinas a manejar, la arquitectura del sistema y las especificaciones de comunicación. Además de realizar un estudio de software de desarrollo de la solución.  
@@ -16,4 +16,8 @@ El objetivo general de este proyecto de fin de master es diseñar e implementar 
 
 \section{Alcance}
 
-Mediante el desarrollo del proyecto se pretende crear una metodología de diseño e implementación de sistemas \ac{SCADA} para parques eólicos que pueda ser replicable y escalable a diferentes contextos y tamaños de plantas. El alcance del proyecto se limita a la fase de diseño e implementación de la solución \ac{SCADA}, sin incluir la fase de despliegue en un entorno real. Sin embargo, se busca que la solución sea capaz de ser implementada en un entorno real en el futuro, con las adaptaciones necesarias según las características específicas de un cliente final.
+El presente trabajo abarca la definición, diseño y construcción de un prototipo funcional de supervisión orientado a parques eólicos, prestando especial atención a la especificación del modelo de información, la interoperabilidad entre equipos y la integración con servicios en la nube. La solución se orienta exclusivamente a la visualización y monitorización del estado de los activos: no contempla el envío de consignas de control ni la ejecución de órdenes de mando desde el SCADA hacia las turbinas o la subestación. Como resultados concretos se entregarán el modelo de información detallado, un banco de pruebas para la simulación de turbinas y subestaciones, y la documentación técnica necesaria para la replicación y adaptación de la solución.\par
+
+El trabajo contemplará además la verificación funcional mediante casos de prueba y procedimientos de validación ejecutables en el banco de pruebas; se evaluarán criterios básicos de rendimiento, escalabilidad y robustez (por ejemplo latencia de adquisición, integridad de datos y capacidad de añadir nuevos nodos), y se redactarán recomendaciones para mitigación de riesgos y consideraciones de ciberseguridad aplicables a escenarios de despliegue.\par
+
+Quedan fuera del alcance las actividades de control de instalación física, puesta en marcha en campo y operación continuada en un emplazamiento productivo.\par

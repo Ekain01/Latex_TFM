@@ -69,9 +69,9 @@ Como se describe en el anexo \ref{cap:Pruebas}, la \ac{MCR} dispone de rúters q
 El modelo de información de un sistema es la representación estructurada de los datos y la información que maneja ese sistema. Con ello se define la forma en que se organizan, almacenan y acceden a los datos dentro del sistema. El entorno de SIMATIC WinCC V8.1 permite la creación de variables que se utilizan para representar los datos del proceso, las alarmas, los eventos y otros aspectos operativos del sistema SCADA. Estas variables pueden ser internas, externas o de estructura, dependiendo de su función y origen dentro del sistema. \par
 
 \begin{itemize}
-    \item \textbf{Las variables internas} son aquellas que se crean y gestionan dentro del entorno de WinCC, únicamente consumen memoria \ac{RAM} y no están limitadas por las licencias de Siemens. 
-    \item \textbf{Las variables externas} son aquellas que se adquieren a través de un canal de comunicaciones con los dispositivos físicos o sistemas externos. Estas variables externas consumen licencias de Siemens por lo que es conveniente limitar su uso en base a la licencia disponible.
-    \item \textbf{Las variables de estructura}, por otro lado, son variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente. Además, se pueden configurar como externas o internas según las necesidades específicas.\par
+    \item \textbf{Las variables internas}: Variables que se crean y gestionan dentro del entorno de WinCC, únicamente consumen memoria \ac{RAM} y no están limitadas por las licencias de Siemens. 
+    \item \textbf{Las variables externas}: Variables que se adquieren a través de un canal de comunicaciones con los dispositivos físicos o sistemas externos. Estas variables externas consumen licencias de Siemens por lo que es conveniente limitar su uso en base a la licencia disponible.
+    \item \textbf{Las variables de estructura}: Variables orientadas a objetos las cuales sirven para estructurar la información. Este tipo de variables son muy útiles para organizar y replicar la información de forma lógica y coherente. Además, se pueden configurar como externas o internas según las necesidades específicas.\par
 \end{itemize}    
 \subsection{Variables internas}
 El entorno de SIMATIC WinCC V8.1 ofrece una lista de variables internas predeterminadas que se utilizan para diversas funciones dentro del sistema SCADA. Estas variables internas son fundamentales para la operación del sistema, ya que proporcionan información crítica sobre el estado del sistema, el usuario actual, la máquina local, el idioma activo, la hora local, entre otros aspectos operativos. Estas variables se pueden utilizar en scripts y lógicas de control para implementar funcionalidades específicas y mejorar la interacción con el operador. \par 
@@ -107,11 +107,11 @@ La norma IEC 61400-25 es una parte fundamental del conjunto de estándares inter
 
 La norma establece cinco tipos de niveles en variables de estructura, cada uno con su propia función y propósito dentro del sistema de comunicación eólico:
 \begin{itemize}
-    \item \textbf{Nivel 1 (dispositivo físico / dispositivo electrónico inteligente):} es el nivel más bajo de la jerarquía y representa los dispositivos físicos reales, como sensores, actuadores, \ac{PLC} y otros equipos de campo. 
+    \item \textbf{Nivel 1 (dispositivo físico / dispositivo electrónico inteligente):} Es el nivel más bajo de la jerarquía y representa los dispositivos físicos reales, como sensores, actuadores, \ac{PLC} y otros equipos de campo. 
     \item \textbf{Nivel 2 (dispositivo lógico):} Es un nivel de abstracción que agrupa nodos lógicos que comparten una misma ubicación física.
     \item \textbf{Nivel 3 (nodo lógico):} es un nivel de abstracción que representa un componente mecánico real o una unidad funcional.
-    \item \textbf{Nivel 4 (variable):} es un contenedor de datos (\textit{Tag}) que puede cambiar durante la ejecución del sistema.
-    \item \textbf{Nivel 5 (atributo de dato):} es una característica específica de un objeto que almacena información sobre ese objeto: Magnitud de la variable, calidad de la señal y tiempo de la última actualización.
+    \item \textbf{Nivel 4 (variable):} Es un contenedor de datos (\textit{Tag}) que puede cambiar durante la ejecución del sistema.
+    \item \textbf{Nivel 5 (atributo de dato):} Es una característica específica de un objeto que almacena información sobre ese objeto: Magnitud de la variable, calidad de la señal y tiempo de la última actualización.
 \end{itemize}
 \begin{figure}[t]
     \centering
@@ -157,7 +157,7 @@ La norma establece cinco tipos de niveles en variables de estructura, cada uno c
     }
 \end{table}
 
-\paragraph{Nivel 1 y 2: estructura de dispositivos lógicos (LD) y dispositivos físicos (PD) / dispositivos electrónicos inteligentes (IED)}
+\paragraph{Nivel 1 y 2: Estructura de dispositivos lógicos (LD) y dispositivos físicos (PD) / dispositivos electrónicos inteligentes (IED)}
 El nivel 1 de estructura de dispositivos representa los dispositivos físicos reales a los que se accede a través de la red de comunicación. En el caso de un parque eólico, cada aerogenerador se modela como un \ac{PD} con un identificador único (Ej. \texttt{WTG1} para el aerogenerador 1). Este nivel refleja la realidad física de la planta, donde cada dispositivo tiene una ubicación geográfica y una función específica dentro del sistema de generación eólica. A nivel de red, sin embargo, la supervisión de estos activos no se realiza de forma directa, sino a través de un \ac{IED}. Por simplicidad se ha referido a este nivel como el nivel de dispositivos físicos. \par
 
 El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógicos que comparten una misma ubicación física por ejemplo la góndola dentro de la turbina. En el caso de un aerogenerador que comparte sistemas pertenecientes a una misma turbina física, la fusión del dispositivo físico (nivel 1) y lógico (nivel 2) resultaría en una representación más eficiente ya que todos sus subsistemas (\texttt{WROT}, \texttt{WGEN}, \texttt{WYAW}) comparten la misma ubicación geográfica y de red. Mantener una separación en el \ac{SCADA} resultaría redundante, por lo que su unificación bajo el prefijo único \texttt{WTGxx} optimiza el árbol de variables en WinCC (tabla \ref{tab:ejemplo_fusion_niveles}).
@@ -179,7 +179,7 @@ El nivel 2 de estructura de dispositivos, por su parte, agrupa los nodos lógico
     }
 \end{table}
 \FloatBarrier
-\paragraph{Nivel 3: estructura de nodos lógicos (LN)}
+\paragraph{Nivel 3: Estructura de nodos lógicos (LN)}
 Desde el punto de vista de la ingeniería electromecánica, un aerogenerador moderno es un sistema complejo constituido por múltiples subsistemas e componentes hardware, tales como el rotor, la góndola, la torre, el sistema de orientación y la estación meteorológica, entre otros (figura \ref{fig:IEC_2}). Cada uno de estos componentes tiene una función específica en el proceso de captación y conversión de la energía eólica.\par
 
 \begin{figure}[tb]
@@ -215,7 +215,7 @@ Estos nodos se identifican de manera unívoca mediante siglas de tres o cuatro l
 %\end{itemize}
 
 
-\paragraph{Nivel 4: objetos de datos y variables de proceso}
+\paragraph{Nivel 4: Objetos de datos y variables de proceso}
 Finalmente, el nivel 4 identifica las señales específicas que pueblan cada nodo lógico. Es en este punto donde la estructura toma su forma definitiva para el operador. Una variable de nivel 4, u \ac{DO}, adquiere su significado completo solo cuando se instancia dentro de un nodo y bajo una \ac{CDC} específica.
 
 En el entorno de desarrollo de WinCC, esta jerarquía se traduce en nombres de variables estructuradas con el formato \texttt{Nodo.Variable.\ac{CDC}} (ver figura \ref{fig:IEC}). Para ilustrar esta integración final, la tabla \ref{tab:ejemplo_fusion_niveles} muestra cómo los niveles previamente explicados convergen para formar las etiquetas de proceso que utiliza el \ac{SCADA}.
@@ -247,7 +247,7 @@ En el entorno de desarrollo de WinCC, esta jerarquía se traduce en nombres de v
 \label{sec:variables_subestacion}
 
 Una vez definida la arquitectura semántica para los aerogeneradores, se han estructurado las variables correspondientes a la infraestructura de evacuación del complejo eólico. Para este dominio, se han implementado de forma directa la norma matriz IEC 61850, manteniendo una homogeneidad absoluta en la filosofía de diseño orientada a objetos (dispositivo físico, dispositivo lógico, nodo lógico, objeto de datos y atributo de datos).
-\paragraph{Nivel 5: atributos de dato y clases de datos comunes (\ac{DPS})}
+\paragraph{Nivel 5: Atributos de dato y clases de datos comunes (\ac{DPS})}
 \label{sec:sub_nivel5}
 A diferencia de las variables de proceso analógicas o de los estados lógicos simples mapeados en las turbinas, la supervisión de alta y media tensión (nodos lógicos \texttt{XCBR} y \texttt{XSWI}) exige un tratamiento de datos más estricto para garantizar la seguridad operativa. Por ello, la norma prescribe el uso de un nuevo tipo de \ac{CDC} denominada \ac{DPS}.
 
@@ -270,7 +270,7 @@ La \ac{CDC} \ac{DPS} no utiliza un bit booleano convencional para determinar la 
     }
 \end{table}
 
-\paragraph{Nivel 1 y 2: estructura de dispositivos físicos (PD) y dispositivos lógicos (LD)}
+\paragraph{Nivel 1 y 2: Estructura de dispositivos físicos (PD) y dispositivos lógicos (LD)}
 \label{sec:sub_nivel1_2}
 
 En los aerogeneradores, la unificación de los niveles 1 y 2 se justificaba por compartir una misma ubicación. No obstante, en la subestación eléctrica se mantiene la separación conceptual entre el \ac{PD} y el \ac{LD} como indica la normativa, ya que la subestación presenta un entorno desacoplado: por un lado, se sitúan los elementos de corte y por otro la transformación de potencia.\par
@@ -292,7 +292,7 @@ La estructura \texttt{ST\_BAY\_CTR} está vinculada al dispositivo lógico de co
 \end{table}
 
 
-\paragraph{Nivel 3: estructura de nodos lógicos \ac{LN}}
+\paragraph{Nivel 3: Estructura de nodos lógicos \ac{LN}}
 \label{sec:sub_nivel3}
 
 La flexibilidad y modularidad del \ac{SCADA} radica en la instanciación selectiva de los \ac{LN} especialistas dentro de los dispositivos lógicos correspondientes según la función física de la celda en el parque de intemperie:
@@ -320,7 +320,7 @@ La flexibilidad y modularidad del \ac{SCADA} radica en la instanciación selecti
 % === NIVEL 3 ===
 \FloatBarrier
 % === NIVEL 4 Y MAPEO ===
-\paragraph{Nivel 4: objetos de datos \ac{DO}}
+\paragraph{Nivel 4: Objetos de datos \ac{DO}}
 \label{sec:sub_nivel4_mapeo}
 
 Finalmente, el nivel 4 identifica las señales específicas  \ac{DO} que pueblan cada \ac{LN} (anexo \ref{cap:Tablas_Variab}). Como se detalla en la tabla \ref{tab:arbol_variables_subestacion_corregido}, esta arquitectura permite que cuando el sistema requiera supervisar el estado del interruptor de la celda de línea \texttt{Q01}, WinCC genere la variable \texttt{Q01.CTRL.XCBR.Pos.stVal}, mientras que la temperatura del transformador \texttt{T01} se resuelve mediante la dirección \texttt{T01.PROT.YPTR.Tmp.mag}.
@@ -436,7 +436,7 @@ Dentro de esta herramienta, en la pestaña \textit{Server Endpoints}, se ha adap
 Por otro lado, se ha realizado la gestión de Certificados, utilizando las clave pública (PKI). Cuando un cliente (ej. WinCC) intenta establecer la primera sesión, KepServerEX bloquea la petición por defecto y aísla el certificado de instancia del cliente en la lista de certificados rechazados. Para habilitar el canal, se ha intervenido en el \textit{OPC UA Configuration Manager} para trasladar manualmente dicho certificado a la lista de entidades de confianza  garantizando una validación mutua entre las aplicaciones (ver figura \ref{fig:OPC_UA_Security}).\par
 
 Una vez que el \textit{Endpoint} se encuentra operativo y el intercambio de certificados con los clientes ha sido autorizado, el motor principal de KepServerEX queda habilitado para comenzar a modelar los canales, instanciar los dispositivos y exponer el espacio de direcciones que albergará las variables del parque eólico.
-\subsubsection{Integración de Variables Externas en el \textit{Tag Management} mediante Direccionamiento \ac{OPC UA}}
+\subsubsection{Integración de variables externas en el administrador de variables mediante direccionamiento \ac{OPC UA}}
 \label{sec:integracion_tag_management_opcua}
 Las conexiones de las variables de estructura con las variables externas \ac{OPC UA} se ha realizado en el editor de administración de variables. Para que el SCADA pueda consumir la información de los aerogeneradores y subestaciones, se ha configurado la jerarquía de comunicaciones y establecido el mapeo de las direcciones de red para cada variable externa.\par
 
@@ -526,7 +526,7 @@ El segundo bloque emplea acrónimos técnicos para identificar de forma unívoca
     \item \textbf{\ac{SYS} (System):} Funcionalidades globales del entorno SCADA, abarcando la gestión de alarmas y las pantallas de tendencias (\textit{Trends}).
 \end{itemize}
 
-\subsubsection{Descripción Funcional}
+\subsubsection{Descripción funcional}
 El tercer bloque explicita el propósito operativo de la pantalla, agilizando su localización por parte del programador o integrador:
 \begin{itemize}
     \item \textbf{Overview:} Vista panorámica que agrega los indicadores clave (KPIs) y el estado general de un conjunto de activos.
